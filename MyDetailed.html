@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>画客网</title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/detailedcss.css">
+    <link rel="stylesheet" href="css/client/dialog.css">
+    <link rel="stylesheet" href="css/fenye.css">
+    <!--<link rel="stylesheet" href="css/social.css"/>-->
+    <link rel="stylesheet" href="css/detailed.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/introduction.css">-->
+    <link rel="stylesheet" href="css/star-rating-svg.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+            if (location.href.indexOf('detailed.html') > -1) {
+                $("#nav .hkw_header_nav_ul a").eq(0).children().css("color", "#0679CA");
+                $("#nav .hkw_header_nav_ul a").eq(0).children().children("i.navLogo").css("background-image", "url(./images/slidebanner1.png)");
+            };
+            var WL = $('div.wrap-list').length;
+            //$.show_more_init();//文本展开收起
+            /*************文字展开收起************/
+            $('div.wrap-list:eq(0)').css({
+                'display': 'block'
+            });
+        })
+    </script>
+    <style>
+        #alertNoLoginMessage {
+            transition: all 0.7s linear;
+        }
+        
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            background-color: transparent;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        #nav .new {
+            background: url(images/xltps1.png);
+        }
+        #header.header-neiye #nav ul.hkw-header-nav-ul li {
+            color: #929292;
+        }
+        #header.header-neiye {
+            background: rgba(36, 35, 35, 1);
+        }
+        .hkw-work-bottom {
+            padding: 9px 0 0 8px;
+        }
+        
+        .hkw-work-bottom img {
+            border-radius: 50%;
+            vertical-align: top;
+        }
+        
+        .designer-select-navUl li span.text a {
+            margin-left: 20px;
+        }
+        
+        .hkw-btn_1 {
+            width: 250px;
+            height: 44px;
+            border: 1px solid #ECECEC;
+            border-radius: 5px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 44px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #fff;
+        }
+        
+        .hkw-btn_1 a {
+            width: 250px;
+            height: 44px;
+            display: block;
+            border-radius: 5px;
+            color: #0084E1;
+        }
+        
+        .hkw-work-list.fn-clear {
+            margin-bottom: 0;
+        }
+        
+        .ca-item {
+            z-index: 0;
+        }
+        #sourcesShow .pblUls li.grid-item {
+            height: 410px;
+            width: 286px;
+            overflow: hidden;
+            padding: 0;
+        }
+        .doSource {
+            position: absolute;
+            z-index: 99999;
+            width: 276px;
+            height: 32px;
+            padding: 10px 10px 0 0;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .doSource a {
+            border: 1px solid #00A0E9;
+            background-color: #00A0E9;
+            color: #fff;
+            padding: 0 5px;
+            margin-left: 10px;
+            float: right;
+            font-size: 16px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+        .fileFullScreen>a {
+            height: 410px;
+            position: relative;
+            display: block;
+            z-index: 100;
+        }
+        .enjoyFile {
+            display: none;
+            background-color: transparent !important;
+            top: 0!important;
+            opacity: 1!important;
+        }
+        .enjoyFileTransition {
+            opacity: 1!important;
+        }
+        .doSource .what {
+            display: none;
+        }
+        #sourcesShow .pblUls li.grid-item .fileFullScreen a>img{
+            width: 100%;
+        }
+        .intro-left ul li p:nth-child(3) a {
+            color: rgb(255, 255, 255);
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+        }
+        
+        .intro-tag {
+            margin: 0 20px;
+        }
+        
+        .intro-tag span.sp1-bk {
+            border: 1px solid #888;
+            border-radius: 50px;
+            color: #888;
+            display: block;
+            float: left;
+            height: 25px;
+            line-height: 25px;
+            margin: 4px 4px 0 0;
+            padding: 0 7px;
+            text-align: center;
+        }
+        
+        .city-barWrap {
+            top: 2px;
+            left: 10px;
+        }
+        
+        .ca-inntro {
+            height: 40px;
+            padding-left: 24px;
+            line-height: 40px;
+        }
+        
+        .hkw-work-list li {
+            width: 285px;
+            height: auto;
+        }
+        
+        .thumb-a {
+            width: 260px;
+            left: 12px;
+        }
+        
+        .hkw-work-bottom {
+            padding: 9px 0 0 8px;
+        }
+        
+        .hkw-work-bottom img {
+            border-radius: 50%;
+            vertical-align: top;
+        }
+        
+        .pblUl_works li:hover .maxImgWidth {
+            transform: scale(1.05);
+        }
+        
+        .pblUl li:hover .maxImgWidth {
+            transform: scale(1.05);
+        }
+        
+        .caption h4 .sc {
+            margin-right: 10px;
+        }
+        
+        #workListKindMoreContentChange li {
+            float: left;
+            display: inline-block;
+        }
+        
+        .grid-item:hover .caption {
+            bottom: 0;
+        }
+        
+        #work_list_content .caption h4 {
+            font-size: 18px;
+            line-height: 22px;
+        }
+        
+        .bbs {
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #fff;
+            margin-top: 25px;
+        }
+        
+        .bbs .title {
+            font-size: 18.669px;
+            font-family: "HiraginoSansGB";
+            color: rgb(31, 31, 31);
+            line-height: 1.714;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+        
+        .bbs .message {
+            margin: 40px 62px 30px 62px;
+        }
+        
+        .message .star {
+            margin-bottom: 15px;
+        }
+        
+        .message .star i {
+            font-size: 14px;
+            font-family: "HiraginoSansGB";
+            color: rgb(51, 51, 51);
+            line-height: 2.286;
+        }
+        
+        .message .star .symbol {
+            color: rgb(255, 0, 0);
+        }
+        
+        fieldset {
+            display: inline-block;
+        }
+        
+        .rating {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        textarea {
+            overflow: hidden;
+            resize: none;
+            outline-color: #04a4ee;
+        }
+        
+        .bbs .message textarea {
+            width: 930px;
+            height: 48px;
+            padding: 5px 126px 5px 10px;
+        }
+        
+        .sublime {
+            display: inline-block;
+            width: 90px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            background-color: #3388ff;
+            border-radius: 3px;
+            float: right;
+            position: relative;
+            top: -47px;
+            right: 20px;
+        }
+        
+        .message .tag {
+            margin-top: 50px;
+        }
+        
+        .message .tag li {
+            color: #31bdff;
+            float: left;
+            /*width:105px;*/
+            height: 28px;
+            border-radius: 14px;
+            border: 1px solid #aee5ff;
+            background-color: #f2faff;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        .message .tag li i:first-child {
+            line-height: 8px;
+            margin: 4px 5px 0px 10px;
+            display: inline-block;
+            padding: 5px 10px 5px 0px;
+            border-right: 1px solid #aee5ff;
+        }
+        
+        .message .tag li i:last-child {
+            display: inline-block;
+            margin-right: 5px;
+        }
+        
+        .card {
+            margin: 0px 62px 30px 62px;
+            border-bottom: 1px solid #dce0e0;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .card-title {
+            height: 20px;
+            line-height: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .project-name {
+            margin-right: 10px;
+        }
+        
+        .rating-tag {
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 0 5px;
+            margin-left: 5px;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+        
+        .project-price {
+            font-size: 12px;
+        }
+        
+        .project-price i {
+            color: #ed7266;
+        }
+        
+        .card-body img {
+            float: left;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        
+        .card-body .right-body {
+            margin-left: 70px;
+            margin-bottom: 25px;
+        }
+        
+        .right-body .name {
+            margin-bottom: 8px;
+            vertical-align: middle;
+        }
+        
+        .right-body .name i {
+            margin-left: 25px;
+            font-size: 12px;
+            color: #9999b2;
+            vertical-align: top;
+        }
+        
+        .card-body-text {
+            font-size: 12px;
+        }
+        
+        .red-start {
+            display: inline-block;
+            background-image: url(images/twostart_left.png);
+            background-repeat: round;
+        }
+        
+        .black-start {
+            display: inline-block;
+            background-image: url(images/twostart_right.png);
+            background-repeat: round;
+        }
+        
+        .rating-read {
+            display: inline-block;
+        }
+        
+        .hkw-work-list .title {
+            font-size: 18.669px;
+            font-family: "HiraginoSansGB";
+            color: rgb(31, 31, 31);
+            line-height: 1.714;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .hkw-work-list li {
+            background-color: #fff;
+            box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+            float: left;
+            height: 212px;
+            margin: 2px 11px 10px 1px;
+            padding: 9px 15px 12px 0;
+            position: relative;
+            width: 260px;
+        }
+        
+        .thumb-a {
+            margin: 0 0 0 0px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            width: 260px;
+            z-index: 0;
+            left: 8px;
+        }
+        
+        div.hkw-work-list.fn-clear.pbl ul.pblUl li div.thumb-a {
+            height: 180px;
+        }
+        
+        .hkw-work-list li:hover img {
+            transform: scale(1.05);
+        }
+        
+        .card-body .hudong {
+            float: right;
+            margin: -25px 25px 0 0;
+            width: 17px;
+            height: 25px;
+            background: url("images/xxtb.jpg") 0px 2px no-repeat;
+        }
+        
+        .card-body .hudong span {
+            margin-left: 20px;
+            color: #A5ABB6;
+        }
+        
+        .hudong_txtContent {
+            border: 1px solid #d9d9d9;
+            height: 70px;
+            padding: 5px 10px;
+            width: 962px;
+            line-height: 24px;
+            overflow-y: auto;
+        }
+        
+        .hudong_txt {
+            padding: 10px 0 50px 68px;
+            display: none;
+        }
+        
+        .curShow {
+            display: block;
+        }
+        
+        .hudong_txt input {
+            display: inline-block;
+            width: 90px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            background-color: #3388ff;
+            border-radius: 3px;
+            position: relative;
+            top: 12px;
+            right: 12px;
+            border: 0 none;
+            float: right;
+        }
+        
+        .hkw-work-bottom a {
+            width: 130px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .hkw-work-bottom a img {
+            position: relative;
+            top: 1px;
+            margin-right: 4px;
+        }
+        
+        .tousu_lahei_img_hover div {
+            display: none;
+        }
+        
+        .tousu_lahei_img_hover:hover div {
+            display: block;
+        }
+        
+        .tempNullPng {
+            width: 160px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        
+        .message a {
+            cursor: pointer;
+        }
+        
+        #view0Work .hkw-work-bottom a,
+        #view1Work .hkw-work-bottom a,
+        #view5Work .hkw-work-bottom a {
+            max-width: 130px;
+            width: auto;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .hkw-work-bar.fn-right {
+            max-width: 129px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .hkw-work-list li {
+            width: 272px;
+            height: auto;
+        }
+        
+        div.hkw-work-list.fn-clear.pbl #view0Work li div.thumb-a,
+        div.hkw-work-list.fn-clear.pbl #view1Work li div.thumb-a,
+        div.hkw-work-list.fn-clear.pbl #view5Work li div.thumb-a {
+            height: auto;
+        }
+        
+        #view0Work .thumb-a,
+        #view1Work .thumb-a,
+        #view5Work .thumb-a {
+            width: 268px;
+            left: 10px;
+        }
+        
+        #view0Work .hkw-work-img .caption,
+        #view1Work .hkw-work-img .caption,
+        #view5Work .hkw-work-img .caption {
+            bottom: 0;
+        }
+        
+        #view0Work .fn-hide h4,
+        #view1Work .fn-hide h4,
+        #view5Work .fn-hide h4 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        #view0Work .fn-hide p,
+        #view1Work .fn-hide p,
+        #view5Work .fn-hide p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            padding: 2px 0 0 10px;
+        }
+        
+        #designer_content_fiveBox .tab {
+            display: table;
+            width: auto;
+        }
+        
+        .header .p-img {
+            margin-left: 45px;
+        }
+        
+        #viewServreCard .serve-card {
+            position: relative;
+        }
+        
+        #viewServreCard .bgTips {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 5px;
+            left: 300px;
+        }
+        
+        .pblUl_works0 li:hover .maxImgWidth {
+            transform: scale(1.05);
+        }
+        
+        .header {
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 start -->
+    <div id="header" class="header-neiye"></div>
+    <div class="header">
+        <div class="header-container">
+            <div class="intro-left">
+                <ul>
+                    <li>
+                        <p></p>
+                        <p>评论</p>
+                        <p onselectstart="return false"><a href="#introductionTextArea">留言</a></p>
+                    </li>
+                    <li>
+                        <p></p>
+                        <p>粉丝</p>
+                        <p onselectstart="return false" style="cursor: initial;color: #fff;pointer-events: none" id="followIcon">关注</p>
+                    </li>
+                    <li>
+                        <p></p>
+                        <p>得票</p>
+                        <p onselectstart="return false" id="voteIcon">投一票</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="p-img" id="p-img">
+                <img class="img-touxiang img_1" src="image/bigAvator1.jpg" id="img-touxiang">
+                <p class="name"></p>
+                <p class="text">""</p>
+                <p class="min-text"></p>
+                <div class="intro-more" id="intro-more">
+                    <ul class="testify clearfix">
+                        <li class="real-name-status">
+                            <i>实名认证</i>
+                            <i class="status-icon hkfont">&#xe639;</i>
+                        </li>
+                        <li class="phone-status">
+                            <i>手机绑定</i>
+                            <i class="status-icon diyhkfont hkfont">&#xe609;</i>
+                        </li>
+                        <li class="auth-status">
+                            <i>设计师认证</i>
+                            <i class="status-icon iconfontNew">&#xe6b8;</i>
+                        </li>
+                    </ul>
+                    <p class="intro-tag clearfix">
+                    </p>
+                    <p class="one-word-introduce"></p>
+                    <p class="intro-more-bottom" id="intro-more-bottom" style="cursor: pointer;">
+                        <i class="hkfont">&#xe650;</i>
+                    </p>
+                </div>
+            </div>
+            <div class="intro-left">
+                <ul>
+                    <li>
+                        <p></p>
+                        <p>作品</p>
+                        <p><a href="Personal-x.html" onclick="return false;">对话</a></p>
+                    </li>
+                    <li>
+                        <p></p>
+                        <p>见过</p>
+                        <p><a href="appointment.html" onclick="return false;">约见</a></p>
+                    </li>
+                    <li>
+                        <p></p>
+                        <p>信用度</p>
+                        <p><a href="publish.html" onclick="return false;">发需求</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="context" id="designer_content_fiveBox">
+        <ul class="tab clearfix">
+            <li><i class="icon hkfont">&#xe61b;</i>主页</li>
+            <li>案例展示</li>
+            <li id="myResources">资源分享</li>
+            <li>我的服务</li>
+            <li id="loveWorkList">喜欢的作品 <i></i></li>
+            <li id="loveDesignerList">喜欢的设计师 <i></i></li>
+        </ul>
+        <div class="wrap-list">
+            <div class="hkw-work-list fn-clear pbl" style="margin-top:20px;">
+                <!-- 主页的作品的容器 -->
+                <ul class="pblUl clearfix" id="view0Work"></ul>
+                <!-- 主页的作品的模板 -->
+                <script type="text/template" id="template0Work">
+                    {{~it:val:eq}}
+                    <li class="hover-li {{= it[0].diyAnchorPage ? it[0].diyAnchorPage : 'page_1'}}">
+                        <div class="iInspir-block"></div>
+                        <div class="hkw-work-img thumb-a h_a">
+                            <a href="introduction.html?id={{=val.id}}" target=_blank><img class="delay maxImgWidth" src="{{=val.path ? (val.path.indexOf('upaiyun.com') != -1?val.path+'!540x390' :val.path): 'images/17.jpg'}}" style="" /></a>
+                            <div class="privacy top-hide">
+                                <a href="javascript:void(0)" data-type="important" class="sc important {{= val.is_home_page == '0' ? 'no' : 'yes'}}" data-value="{{=val.is_home_page ? val.is_home_page : 0}}" data-id="{{=val.id ? val.id : 0}}">
+                                {{= val.is_home_page == "0" ? "主页展示" : "取消主页展示"}}
+                            </a>
+                                <a href="javascript:void(0)" data-type="hide" class="sc hide {{= val.is_show_out == '0' ? 'yes' : 'no'}}" data-value="{{=val.is_show_out ? val.is_show_out : 0}}" data-id="{{=val.id ? val.id : 0}}">
+                                {{= val.is_show_out == "0" ? "已隐藏" : "隐藏"}}
+                            </a>
+                                <a href="PublishedWork.html?work_id={{=val.id}}" target="_blank" class="sc modify" data-id="{{=val.id ? val.id : 0}}">修改</a>
+                            </div>
+                            <div class="caption fn-hide">
+                                <h4>
+                                    {{=val.title ? val.title : ""}}
+                                    <!-- <a href="javascript:void(0)" class="sc deleteWroks" data-islove="{{=val.MyIslove ? val.MyIslove : 0}}" data-id="{{=val.id ? val.id : 0}}">
+                                    {{= val.MyIslove ? "已收藏" : "收藏"}}
+                                </a> -->
+                                </h4>
+                                <p>{{=val.abstract ? val.abstract : ""}}</p>
+                            </div>
+                        </div>
+                        <div class="hkw-work-bottom">
+                            <a href="detailed.html?id={{=val.uid}}" target=_blank><img src="{{=val.user_path ? val.user_path : 'images/selec.jpeg'}}" width="16" height="16" /> {{=val.nick_name ? val.nick_name : ""}}</a>
+                            <div class="hkw-work-bar fn-right">
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-join-icon">
+                        </span> {{=val.hits ? val.hits : ""}}
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-comment-icon">
+                        </span> {{=val.comment_count ? val.comment_count : ""}}
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-collection-icon">
+                        </span> {{=val.love_count ? val.love_count : ""}}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{~}}
+                </script>
+                <!-- 主页的作品的空状态 -->
+                <div id="error_workslist_showout_designer" style="width: 100%;height: 400px;background: #fff;display: none;overflow: hidden">
+                    <div style="margin: 150px auto 0;width: 600px;height: 101px;">
+                        <img style="float: left" src="image/errorContent.png" />
+                        <a style="color: #aaa;line-height: 101px;font-size: 16px;display: inline-block;float: left;height: 101px;">TA还不是认证设计师/TA的作品都没有被设为主页展示</a>
+                    </div>
+                </div>
+                <!-- <ul style="overflow: hidden" class="pblUl_works0">
+        </ul> -->
+                <div name="workListAddMoreContent" id="workListAddMoreContent_designer0" style="width: 100px;height: 40px;margin: 0 auto;cursor: pointer;background: #eee;border: 1px solid #aaa;border-radius: 4px;display: block">
+                    <h2 style="line-height: 40px;text-align: center;font-weight: bold">加载更多</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap-list">
+            <div class="hkw-work-list fn-clear pbl" style="margin-top:20px;">
+                <!-- <img id="work_list_loadingImage_ds" src="./image/loading.gif" style="display: block;margin:10px auto;"/> -->
+                <!-- 案例展示的作品的容器 -->
+                <ul class="pblUl clearfix" id="view1Work"></ul>
+                <!-- 案例展示的作品的模板 -->
+                <script type="text/template" id="template1Work">
+                    {{~it:val:eq}}
+                    <li class="hover-li {{= it[0].diyAnchorPage ? it[0].diyAnchorPage : 'page_1'}}">
+                        <div class="iInspir-block"></div>
+                        <div class="hkw-work-img thumb-a h_a">
+                            <div class="display">
+                                {{? val.display == "0"}}
+                                <img class="img" src="image/examine.png" alt=""> {{?}} {{? val.display == "2"}}
+                                <img class="img" src="image/notPass.png" alt=""> {{?}} {{? val.display == "3"}}
+                                <img class="img" src="image/punish.png" alt=""> {{?}}
+                            </div>
+                            <a href="introduction.html?id={{=val.id}}" target=_blank><img class="delay maxImgWidth" src="{{=val.path ? (val.path.indexOf('upaiyun.com') != -1?val.path+'!540x390' :val.path): 'images/17.jpg'}}" style="" /></a>
+                            <div class="privacy top-hide">
+                                {{? val.display == "1"}}
+                                <a href="javascript:void(0)" data-type="important" class="sc important {{= val.is_home_page == '0' ? 'no' : 'yes'}}" data-value="{{=val.is_home_page ? val.is_home_page : 0}}" data-id="{{=val.id ? val.id : 0}}">
+                                {{= val.is_home_page == "0" ? "主页展示" : "取消主页展示"}}
+                            </a>
+                                <a href="javascript:void(0)" data-type="hide" class="sc hide {{= val.is_show_out == '0' ? 'yes' : 'no'}}" data-value="{{=val.is_show_out ? val.is_show_out : 0}}" data-id="{{=val.id ? val.id : 0}}">
+                                {{= val.is_show_out == "0" ? "已隐藏" : "隐藏"}}
+                            </a> {{?}} {{? val.display != "1"}}
+                                <a href="javascript:void(0)" class="sc delete" data-type="delete" data-value="0" data-id="{{=val.id ? val.id : 0}}">删除</a> {{?}}
+                                <a href="PublishedWork.html?work_id={{=val.id}}" target="_blank" class="sc modify" data-id="{{=val.id ? val.id : 0}}">修改</a>
+                            </div>
+                            <div class="caption fn-hide">
+                                <h4>
+                                    {{=val.title ? val.title : ""}}
+                                    <!-- <a href="javascript:void(0)" class="sc deleteWroks" data-islove="{{=val.MyIslove ? val.MyIslove : 0}}" data-id="{{=val.id ? val.id : 0}}">
+                                    {{= val.MyIslove ? "已收藏" : "收藏"}}
+                                </a> -->
+                                </h4>
+                                <p>{{=val.abstract ? val.abstract : ""}}</p>
+                            </div>
+                        </div>
+                        <div class="hkw-work-bottom">
+                            <a href="detailed.html?id={{=val.uid}}" target=_blank><img src="{{=val.user_path ? val.user_path : 'images/selec.jpeg'}}" width="16" height="16" /> {{=val.nick_name ? val.nick_name : ""}}</a>
+                            <div class="hkw-work-bar fn-right">
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-join-icon">
+                        </span> {{=val.hits ? val.hits : ""}}
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-comment-icon">
+                        </span> {{=val.comment_count ? val.comment_count : ""}}
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-collection-icon">
+                        </span> {{=val.love_count ? val.love_count : ""}}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{~}}
+                </script>
+                <!-- 案例展示的作品的空状态 -->
+                <div id="error_workslist_designer" style="width: 100%;height: 400px;background: #fff;display: none;overflow: hidden">
+                    <div style="margin: 150px auto 0;width: 600px;height: 101px;">
+                        <img style="float: left" src="image/errorContent.png" />
+                        <a style="color: #aaa;line-height: 101px;font-size: 16px;display: inline-block;float: left;height: 101px;">TA还不是认证设计师</a>
+                    </div>
+                </div>
+
+                <div name="workListAddMoreContent" id="workListAddMoreContent_designer" style="width: 100px;height: 40px;margin: 0 auto;cursor: pointer;background: #eee;border: 1px solid #aaa;border-radius: 4px;display: block">
+                    <h2 style="line-height: 40px;text-align: center;font-weight: bold">加载更多</h2>
+                </div>
+            </div>
+        </div>
+        <!--资源分享-->
+        <div id="sourcesShow" class="wrap-list hkw-work-list fn-clear pbl" style="margin:20px auto 0 auto; width:1200px;padding-left: 8px;">
+            <ul id="work_list_content" class="pblUls fn-clear"
+                data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 100 }'>
+            </ul>
+            <img id="work_list_loadingImage" src="./images/work-loading.gif" style="display: block;margin:30px auto;"/>
+            <div id="workListNoMoreContent" style="width: 100px;height: 40px;margin: 0 auto;cursor: pointer;background: #eee;border: 1px solid #aaa;border-radius: 4px;display: none;">
+                <h2 style="font-weight: bold;line-height: 40px;text-align: center">没有更多了</h2>
+            </div>
+        </div>
+
+        <div class="wrap-list clearfix">
+            <p class="serve-title">标准化服务仅限于一些简单的需求，涉及复杂定制化需求建议设计师使用云报价一对一向客户发送</p>
+            <div id="viewServreCard"></div>
+            <script type="text/template" id="templateServreCard">
+                {{~it:val:eq}}
+                <div class="serve-card {{= !eq ? 'cur' : ''}} {{= val.display == '3' ? 'undercarriage' : ''}}">
+                    <!-- <div class="card-lift-chackbox"></div> -->
+                    {{?val.display == "3"}}
+                    <img class="bgTips" src="image/undercarriage.png" alt="已下架"> {{?}} {{ var displayTxt = ["待审核","审核通过","审核不通过","已下架"]; }}
+                    <div class="card-right-box">
+                        <p class="card-right-title">
+                            <span class="card-right-word">{{=val.Name ? val.Name : ""}} —— {{= displayTxt[val.display]}}</span>
+                            <span class="card-right-price">{{=val.unit ? val.unit : ""}}</span>
+                            <span class="card-right-money">{{=val.unit_price ? val.unit_price : ""}}</span>
+                        </p>
+                        <p class="card-right-body ellipsis">{{=val.Description ? val.Description : ""}}</p>
+                        <p class="card-right-label">
+                            {{~val.tags:val2:eq2}}
+                            <span>{{= val2 ? val2 : "" }}</span> {{~}}
+                        </p>
+                        <p class="setting-right">
+                            <span class="mondify" data-eq="{{=eq}}" data-id="{{= val.id ? val.id : 0}}">修改</span>
+                            <span class="delete" data-id="{{= val.id ? val.id : 0}}">删除</span>
+                        </p>
+                    </div>
+                </div>
+                {{~}}
+            </script>
+            <div class="buy-serve" id="add-serve">添加有偿服务</div>
+            <div id="kkpager" style="margin-top: 40px;"></div>
+        </div>
+
+        <div class="wrap-list Wrap">
+            <div class="hkw-work-list fn-clear pbl" style="margin-top:20px;">
+                <!-- <img id="work_list_loadingImage" src="./image/loading.gif" style="display: block;margin:10px auto;"/> -->
+                <!-- 喜欢的作品的容器 -->
+                <ul class="pblUl clearfix" id="view5Work"></ul>
+                <!-- 喜欢的作品的模板 -->
+                <script type="text/template" id="template5Work">
+                    {{~it:val:eq}} {{ var val = val.works_info; }}
+                    <li class="hover-li {{= it[0].diyAnchorPage ? it[0].diyAnchorPage : 'page_1'}}">
+                        <div class="iInspir-block"></div>
+                        <div class="hkw-work-img thumb-a h_a">
+                            <a href="introduction.html?id={{=val.id}}" target=_blank><img class="delay maxImgWidth" src="{{=val.path ? (val.path.indexOf('upaiyun.com') != -1?val.path+'!540x390' :val.path): 'images/17.jpg'}}" style="" /></a>
+                            <div class="caption fn-hide">
+                                <h4>
+                                    {{=val.title ? val.title : ""}}
+                                    <a href="javascript:void(0)" class="sc deleteWroks" data-islove="{{=val.MyIsFavorite ? val.MyIsFavorite : 0}}" data-id="{{=val.id ? val.id : 0}}">
+                                    {{= val.MyIsFavorite ? "已收藏" : "收藏"}}
+                                </a>
+                                </h4>
+                                <p>{{=val.abstract ? val.abstract : ""}}</p>
+                            </div>
+                        </div>
+                        <div class="hkw-work-bottom">
+                            <a href="detailed.html?id={{=it[eq]}}" target=_blank><img src="{{=val.user_path_thumb ? val.user_path_thumb : 'images/selec.jpeg'}}" width="16" height="16" /> {{=val.nick_name ? val.nick_name : ""}}</a>
+                            <div class="hkw-work-bar fn-right">
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-join-icon">
+                        </span> {{=val.hits ? val.hits : ""}}
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-comment-icon">
+                        </span> {{=val.comment_count ? val.comment_count : ""}}
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-collection-icon">
+                        </span> {{=val.love_count ? val.love_count : ""}}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{~}}
+                </script>
+                <!-- 喜欢的作品的空状态 -->
+                <div id="error_workslist_user_like" style="width: 100%;height: 400px;background: #fff;display: none;overflow: hidden">
+                    <div style="margin: 150px auto 0;width: 600px;height: 101px;">
+                        <img style="float: left" src="image/errorContent.png" />
+                        <a style="color: #aaa;line-height: 101px;font-size: 16px;display: inline-block;float: left;height: 101px;">TA的评价标准很高，还没有作品能够得到TA的赞赏</a>
+                    </div>
+                </div>
+                <div name="workListAddMoreContent" id="workListAddMoreContent" style="width: 100px;height: 40px;margin: 0 auto;cursor: pointer;background: #eee;border: 1px solid #aaa;border-radius: 4px;display: block;">
+                    <h2 style="line-height: 40px;text-align: center;font-weight: bold" data-page="1" data-maxPage="1">加载更多</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap-list clearfix">
+            <div id="ca-container " class="ca-container designer-ca-container">
+                <div class="ca-wrapper">
+                    <div class="ca-item-wrap">
+
+                    </div>
+                </div>
+            </div>
+            <div id="error_Designerlist_user_like" style="width: 100%;height: 400px;background: #fff;display: none;overflow: hidden">
+                <div style="margin: 150px auto 0;width: 600px;height: 101px;">
+                    <img style="float: left" src="image/errorContent.png" />
+                    <a style="color: #aaa;line-height: 101px;font-size: 16px;display: inline-block;float: left;height: 101px;">TA的评价标准很高，还没有设计师能够得到TA的赞赏</a>
+                </div>
+
+            </div>
+
+            <div id="kkpagers" class="kkpager"></div>
+        </div>
+        <!--fenye-->
+        <div class="op-nice">
+            <p class="nice">最近访客：</p>
+            <ul class="ulslidetb clearfix " id="vistor_ul_list">
+
+            </ul>
+            <div class="fxhf">
+                <p class="text2"></p>
+            </div>
+        </div>
+
+        <div id="main-body" class="bbs">
+            <div id="introudoction_pinglunBox"></div>
+            <!--分页开始-->
+            <div id="kkpager"></div>
+            <!--分页结束-->
+        </div>
+    </div>
+
+
+    <div id="mask-detailed"></div>
+    <div class="pay-detailed" id="pay-detailed">
+        <p class="pay-title">
+            <span class="pay-title-word">支付确认</span>
+            <i class="hkfont" id="mask-close">&#xe600;</i>
+        </p>
+        <div class="pay-person">
+            <img src="images/selec.jpeg" alt="" class="left">
+            <div class="pay-person-right">
+                <p class="person-right-title">
+                    <span>MiaZhang</span>
+                    <span>女</span>
+                    <span>10年经验</span>
+                    <span>20件作品</span>
+                </p>
+                <p class="person-right-address"><i class="hkfont">&#xe641;</i>杭州市-滨江区</p>
+            </div>
+        </div>
+        <table id="cartTable" class="cartTable">
+            <tbody id="tempView1">
+            </tbody>
+            <script type="text/template" id="template1">
+                {{~it:value}}
+                <tr data-unitPrice="{{=value[1]}}">
+                    <td>
+                        <span class="title ellipsis">{{=value[0]}}</span>
+                    </td>
+                    <td>
+                        <span class="number">
+							<span class="rightTitle rightbuyNumber">
+								<span class="buyNumberLess" onselectstart="return false">
+								-
+								</span>
+                        <span class="buyNumberInput">
+									<input data-value="1" type="text" data-max="200" data-min="1" value="1">
+								</span>
+                        <span class="buyNumberPlus" onselectstart="return false">
+								+
+								</span>
+                        </span>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="subtotal">
+							<span class="subtotal-in" data-linePrice="{{=value[1]}}">{{=value[1]}}</span>元/小时
+                        </span>
+                    </td>
+                </tr>
+                {{~}}
+            </script>
+        </table>
+        <textarea rows="1" cols="98" placeholder="需求备注：对本次交易的说明（建议填写前双方就合作内容达成一致）"></textarea>
+        <div class="tax">
+            <span class="tax-title">发票：</span>
+            <span class="tax-rate cur">不需要</span>
+            <span class="tax-rate" style="display:none;"></span>
+            <span class="tax-rate">需要(税率6%)</span>
+            <span class="tax-price-out">含税：<span id="taxPrice" data-taxRate="0">0.00</span>元</span>
+        </div>
+        <div class="cycle-out">
+            <div class="cycle">
+                <span>约定完成周期</span>
+                <span class="number" id="cycle-in">
+						<span class="rightTitle rightbuyNumber">
+							<span class="buyNumberLess" onselectstart="return false">
+							-
+							</span>
+                <span class="buyNumberInput">
+								<input data-value="1" type="text" data-min="1" value="1">
+							</span>
+                <span class="buyNumberPlus" onselectstart="return false">
+							+
+							</span>
+                </span>
+                </span>
+                <span>天</span>
+            </div>
+            <span class="priceTotal-out">总计：￥<span id="priceTotal">666.00</span>元</span>
+        </div>
+        <div class="paymentMainDiv fkfs">
+            <ul class="zfUl">
+                <li class="cur"><span class="ss zfb"></span><span>支付宝支付</span></li>
+                <li><span class="ss wx"></span><span>微信支付</span></li>
+                <li><span class="ss hk"></span><span>画客网余额支付</span></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="ewm">
+                <div class="ewmLeft">
+                    <img src="images/ewma1.png" />
+                    <p class="text">扫码支付1</p>
+                </div>
+                <div class="text">
+                    <p>
+                        <span class="text-left">实付款:</span>
+                        <span class="RMB-icon">￥</span>
+                        <span class="RMB">80.00</span>
+                        <span class="refresh"></span>
+                    </p>
+                    <p>
+                        <span class="text-left">寄送至: </span>
+                        <span class="text-right">浙江省 杭州市 滨江区 长河街道 南岸晶都花园19幢3单元702</span>
+                    </p>
+                    <p>
+                        <span class="text-left">收货人: </span>
+                        <span class="text-right">张兰 13958054563</span>
+                    </p>
+                    <a href="javascript:;" class="TzLink">跳转网页版支付宝支付>></a>
+                </div>
+                <div class="yuejianClose closeFkfs" id="closeZFB"></div>
+            </div>
+            <div class="ewm" style="display: none;">
+                <div class="ewmLeft">
+                    <img src="images/ewma.png" />
+                    <p class="text">扫码支付2</p>
+                </div>
+                <div class="text">
+                    <p>
+                        <span class="text-left">实付款:</span>
+                        <span class="RMB-icon">￥</span>
+                        <span class="RMB">80.00</span>
+                        <span class="refresh"></span>
+                    </p>
+                    <p>
+                        <span class="text-left">寄送至: </span>
+                        <span class="text-right">浙江省 杭州市 滨江区 长河街道 南岸晶都花园19幢3单元702</span>
+                    </p>
+                    <p>
+                        <span class="text-left">收货人: </span>
+                        <span class="text-right">张兰 13958054563</span>
+                    </p>
+                    <a href="javascript:;" class="TzLink">跳转网页版微信支付>></a>
+                </div>
+                <div class="yuejianClose closeFkfs" id="closeZFB"></div>
+            </div>
+            <div class="ewm" style="display: none;">
+                <div class="dqye2">
+                    <span class="zhye">余额：</span>
+                    <span class="color">￥<span class="money">503.00</span>元</span>
+                    <p>您的余额不足，请充值！</p>
+                    <br>
+                    <span class="qrzf">确认支付</span>
+                    <span class="zhcz">账户充值</span>
+                </div>
+                <div class="text">
+                    <p>
+                        <span class="text-left">实付款:</span>
+                        <span class="RMB-icon">￥</span>
+                        <span class="RMB">80.00</span>
+                        <span class="refresh"></span>
+                    </p>
+                    <p>
+                        <span class="text-left">寄送至: </span>
+                        <span class="text-right">浙江省 杭州市 滨江区 长河街道 南岸晶都花园19幢3单元702</span>
+                    </p>
+                    <p>
+                        <span class="text-left">收货人: </span>
+                        <span class="text-right">张兰 13958054563</span>
+                    </p>
+                    <a href="javascript:;" class="TzLink">跳转网页版微信支付>></a>
+                </div>
+                <div class="yuejianClose closeFkfs" id="closeZFB"></div>
+            </div>
+        </div>
+    </div>
+    <!--底部开始-->
+    <div class="footer_on"></div>
+
+    <!--底部结束-->
+    <div id="addPaidServices" style="display: none;">
+        <h3>标准化有偿服务</h3>
+        <p class="add-course-input-p">服务名称<em>*</em></p>
+        <div class="validate">
+            <input class="add-course-input courseName valid" type="text" data-rule="courseName" msg="请输入服务名称(20字以内)" placeholder="请输入服务名称">
+        </div>
+        <p class="add-course-input-p">服务描述<em>*</em></p>
+        <div class="validate">
+            <input class="add-course-input coursePremise valid" data-rule="courseTxt" msg="服务描述限制在1到150个字" type="text" placeholder="请输入服务描述">
+        </div>
+        <p class="add-course-input-p">服务方式<em>*</em></p>
+        <div class="validate">
+            <input class="add-course-input courseBook valid" data-rule="courseName" msg="请输入服务方式(10字以内)" type="text" placeholder="请输入服务方式">
+        </div>
+        <div class="add-course-custom-price1">
+            <p class="add-course-input-p">计费标准<em>*</em></p>
+            <div class="validate">
+                <input class="add-course-input courseBook valid" data-rule="number" msg="请输入数字单价(10字以内)" type="text" placeholder="请输入数字单价,如：99">
+            </div>
+        </div>
+        <div class="add-course-custom-price2">
+            <p class="add-course-input-p"></p>
+            <div class="validate">
+                <input class="add-course-input courseBook valid" data-rule="userName" msg="请输入单价的单位(10字以内)" type="text" placeholder="请输入单价的单位,如：天，时">
+            </div>
+        </div>
+        <div class="out-validate">
+            <div class="add-course-custom-price3 validate">
+                <p class="add-course-input-p">合作标签</p>
+                <input class="add-course-input courseBook valid isNull" data-rule="userName" msg="请输入自定义合作标签(10字以内)" type="text" placeholder="添加自定义合作标签">
+                <span class="addTage">添加</span>
+            </div>
+        </div>
+        <p class="tag-p"></p>
+        <p class="isSameArea" data-isSameArea="1">
+            <span class="left span cur">限同城</span>
+            <span class="right span">不限地区</span>
+        </p>
+        <p class="user-profile-settings-save box1">
+            <span class="save">保存</span>
+            <span class="cancel">取消</span>
+        </p>
+    </div>
+</body>
+
+
+<script src="js/lzy_NEW/masonry.pkgd.min.js"></script>
+<script src="js/plugs/imgloaded.js"></script>
+<script>
+    var $workListMasonry_designer = $('.pblUl_works').masonry({
+        // options
+        itemSelector: '.grid-item',
+        //        columnWidth: 300
+    });
+
+    var $workListMasonry = $('.pblUl').masonry({
+        // options
+        itemSelector: '.grid-item',
+        //        columnWidth: 100
+    });
+
+    var $sourceListMasonry = $('.pblUls').masonry({
+        // options
+        itemSelector: '.grid-item',
+        //        columnWidth: 100
+    });
+</script>
+<script type="text/javascript" src="js/personal/config.js"></script>
+<script type="text/javascript" src="js/ratingRead.js"></script>
+<script type="text/javascript" src="js/plugs/doT.min.js"></script>
+<script type="text/javascript" src="js/plugs/jquery.star-rating-svg.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/personal/layer/layer.js"></script>
+<script type="text/javascript" src="js/personal/common-input-valid.js"></script>
+<script type="text/javascript" src="js/lzy_NEW/works_list_s.js"></script>
+<script type="text/javascript" src="js/MyDetailed.js"></script>
+<script type="text/javascript">
+    $("#set-rating").starRating({
+        starSize: 20,
+        useFullStars: true,
+        hoverColor: '#ED7266',
+        activeColor: '#ED7266',
+        disableAfterRate: false,
+        useGradient: false,
+        callback: function(currentRating, $el) {
+            // make a server call here
+        }
+    });
+    //鼠标滑过头像，设置透明度动画效果
+    $(function() {
+        $("#p-img").hover(function() {
+            $("#img-touxiang").hover(function() {
+                $("#intro-more").css('opacity', '1');
+                $("#p-img").css({
+                    "background-color": '#22212e',
+                    "z-index": '1'
+                });
+            }, function() {
+
+            });
+        }, function() {
+            $("#p-img").css({
+                "background-color": 'transparent',
+                "z-index": '0'
+            });
+            $("#intro-more").css('opacity', '0');
+        });
+        /**
+         * 点击个人信息底部向上按钮，自动关闭个人信息
+         * @param
+         * @return {[type]}        [description]
+         */
+        $("#intro-more-bottom").click(function(event) {
+            $("#p-img").css({
+                "background-color": 'transparent',
+                "z-index": '0'
+            });
+            $("#intro-more").css('opacity', '0');
+        });
+    });
+    $(function() {
+        var ratingReadArray = document.getElementsByClassName("rating-read");
+        for (var i = 0; i < ratingReadArray.length; i++) {
+            var dataStart = ratingReadArray[i].getAttribute("data-start");
+            ratingRead(dataStart, 15, ratingReadArray[i]);
+        }
+        $(".context .wrap-list:first").css('display', 'block');
+        $(".context .tab li:first").addClass('cur');
+
+        $(".hudong").click(function() {
+            $(this).next().toggleClass("curShow");
+        });
+        //    页面跳转传值
+        if (window.location.href.split("?")[1]) {
+            var tag = window.location.href.split("?")[1].split("=")[1];
+            if (tag == 2) {
+                $(".context .tab").children("li").eq(0).removeClass("cur");
+                $(".context .wrap-list").eq(0).css('display', 'none');
+                $(".context .wrap-list").eq(tag).css("display", "block");
+                $(".context .tab").children("li").eq(tag).addClass("cur");
+            }
+        }
+    });
+</script>
+<script id="pages" type="text/javascript" src="js/plugs/jq.page.js"></script>
+<script src="js/client/dialog-plus-min.js"></script>
+<script src="js/lzy_NEW/detailed_Designer.js"></script>
+<!-- <script src="js/lzy_NEW/user_like_works_list.js"></script> -->
+<script src="js/lzy_NEW/user_like_designer_list.js"></script>
+<script src="js/lzy_NEW/project_data.js"></script>
+<!-- <script src="js/lzy_NEW/pinglunBox.js"></script> -->
+
+<script>
+    function waterfall(parent, li) {
+        var $aLi = $('ul.pblUl>li'); //获取li
+        var LiW = $('ul.pblUl>li').eq(0).width() + 27; //获取li的宽度
+        // $('ul.pblUl').css({
+        // 	'width': LiW * 4
+        // });
+        var LiHArr = []; //用于存储 没列中所有块相加的高度
+
+        $('ul.pblUl').each(function() {
+            $(this).children('li').each(function(index, value) {
+                var LiH = $(this).parent().children('li').eq(index).height();
+                if (index < 4) {
+                    LiHArr[index] = LiH;
+                } else {
+                    var minH = Math.min.apply(null, LiHArr);
+                    var minHIndex = $.inArray(minH, LiHArr);
+                    $(value).finish().css({
+                        'position': 'absolute',
+                        'top': minH + 35,
+                        'left': $(this).parent().children('li').eq(minHIndex).position().left
+                    });
+                    //数组 最小高元素的高 + 添加上的aLi[i]块框高
+                    LiHArr[minHIndex] += $(this).parent().children('li').eq(index).height() + 35;
+                    var maxH = Math.max.apply(null, LiHArr);
+                    var maxHIndex = $.inArray(maxH, LiHArr);
+                    $(this).parent().finish().css({
+                        'height': maxH,
+                        'margin-bottom': '80px'
+                    });
+                }
+            });
+        });
+    };
+    $("body").on("mouseenter mouseleave", "#view5Work li,#view0Work li,#view1Work li", function(event) {
+        event.preventDefault();
+        if (event.type == "mouseenter") {
+            $(this).find('div.caption,div.privacy').finish().slideDown(100);
+            $(this).children('.iInspir-block').css({
+                'border': '1px solid #03a5ee'
+            });
+        } else if (event.type == "mouseleave") {
+            $(this).find('div.caption,div.privacy').finish().slideUp(100);
+            $(this).children('.iInspir-block').css({
+                'border': '1px solid #ececec'
+            });
+        }
+    });
+</script>
+
+</html>

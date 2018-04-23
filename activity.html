@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>画客网</title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+            } else {
+
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+
+            }
+        });
+    </script>
+    <style>
+        /*@font-face*/
+        /*{*/
+        /*font-family: 'myFirstFont';*/
+        /*src: url('css/Mechanical.otf')*/
+        /*}*/
+        
+        @font-face {
+            font-family: 'mechanicalregular';
+            src: url('./css/selffont/mechanical-webfont.eot');
+            src: url('./css/selffont/mechanical-webfont.eot?#iefix') format('embedded-opentype'), url('./css/selffont/mechanical-webfont.woff2') format('woff2'), url('./css/selffont/mechanical-webfont.woff') format('woff'), url('./css/selffont/mechanical-webfont.ttf') format('truetype'), url('./css/selffont/mechanical-webfont.svg#mechanicalregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        body {
+            font-family: "mechanicalregular";
+        }
+        
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        .city-bar {
+            margin: 20px auto 0;
+        }
+        
+        .mapclk {
+            left: 41%;
+        }
+        
+        .city-barWrap {
+            left: 40%;
+        }
+        
+        div.biaojiaWrap {
+            position: fixed;
+            z-index: 9999;
+            left: 50%;
+            margin-left: -360px;
+        }
+        
+        a.baojia:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containers">
+        <!-- 头部 start -->
+        <div class="biaojiaWrap"></div>
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeaders" style="margin-bottom: 35px; height: auto;">
+            <div class="designer-select-nav2">
+                <ul class="designer-select-navUl auto">
+                    <li><span class="text text1" style="color: red">全部城市：</span></li>
+                    <li><span class="text"><a href="##">北京</a></span></li>
+                    <li><span class="text"><a href="##">上海</a></span></li>
+                    <li><span class="text"><a href="##">广州</a></span></li>
+                    <li><span class="text"><a href="##">深圳</a></span></li>
+                    <li><span class="text"><a href="##">杭州</a></span></li>
+                    <li><span class="text"><a href="##">南京</a></span></li>
+                    <li><span class="text"><a href="##">重庆</a></span></li>
+                </ul>
+                <ul class="designer-select-navUl auto">
+                    <li><span class="text text1" style="color: red">全部时间：</span></li>
+                    <li><span class="text"><a href="##">今天</a></span></li>
+                    <li><span class="text"><a href="##">明天</a></span></li>
+                    <li><span class="text"><a href="##">最近一周</a></span></li>
+                    <li><span class="text"><a href="##">周末</a></span></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 输入地址时间 -->
+        <!-- 头部 end -->
+        <div class="container-main">
+            <!-- box start -->
+            <div class="ca-container activity-container">
+                <div class="ca-wrapper">
+                    <!-- minboxstart -->
+                    <div class="ca-item activity-item activity-item1">
+                        <div class="ca-item-main activity-item-main activity-item-wrap">
+                            <div class="itemWrap1">
+                                <a href="activityDetail.html"><img src="images/activity_pic1.png" class="image" alt="pic1"></a>
+                                <div class="fn-hide activity-title">
+                                    <h3>国际体验设计大会，不见不散！</h3>
+                                </div>
+                            </div>
+                            <div class="itemWrap2">
+                                <div class="item-innerwrap">
+                                    <div class="itemNotice"> <i class="activity_clock"></i><span>2016/03/06 周日 14:00~17:00</span></div>
+                                    <div class="itemNotice"> <i class="activity_local"></i><span>杭州等报名通过后定向通知</span></div>
+                                    <div class="itemNotice"> <i class="activity_sponsor"></i><span>主办方：浙江青年创业学院<span class="shugang">|</span>媳妇创投联盟（筹）</span>
+                                    </div>
+                                </div>
+                                <span class="itemTitle2">&yen;&nbsp;<h3>30000</h3></span>
+                                <span class="itemEnroll1">已报名<span class="itemNumber">123</span>人/ 限<span class="itemNumber">123</span>人</span>
+                                <a class="itemEnroll2 itemEnrollActive" href="##">我要报名</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- minboxend -->
+                    <!-- minboxstart -->
+                    <div class="ca-item activity-item activity-item2">
+                        <div class="ca-item-main activity-item-main activity-item-wrap2">
+                            <div class="itemWrap1">
+                                <a href="##"><img src="images/activity_pic2.png" class="image" alt="pic2"></a>
+                                <div class="fn-hide activity-title">
+                                    <h3>国际体验设计大会，不见不散！</h3>
+                                </div>
+                            </div>
+                            <div class="itemWrap2">
+                                <div class="item-innerwrap">
+                                    <div class="itemNotice"> <i class="activity_clock"></i><span>2016/03/06 周日 14:00~17:00</span></div>
+                                    <div class="itemNotice"> <i class="activity_local"></i><span>杭州等报名通过后定向通知</span></div>
+                                    <div class="itemNotice"> <i class="activity_sponsor"></i><span>主办方：浙江青年创业学院<span class="shugang">|</span>媳妇创投联盟（筹）</span>
+                                    </div>
+                                </div>
+                                <span class="itemTitle2">免费</span>
+                                <span class="itemEnroll1">已报名<span class="itemNumber">123</span>人/ 限<span class="itemNumber">123</span>人</span>
+                                <a class="itemEnroll2 itemEnrollRegistered" href="##">已报名</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- minboxend -->
+                    <!-- minboxstart -->
+                    <div class="ca-item activity-item activity-item3">
+                        <div class="ca-item-main activity-item-main activity-item-wrap">
+                            <div class="itemWrap1">
+                                <a href="##"><img src="images/activity_pic3.png" class="image" alt="pic3"></a>
+                                <div class="fn-hide activity-title">
+                                    <h3>国际体验设计大会，不见不散！</h3>
+                                </div>
+                            </div>
+                            <div class="itemWrap2">
+                                <div class="item-innerwrap">
+                                    <div class="itemNotice"> <i class="activity_clock"></i><span>2016/03/06 周日 14:00~17:00</span></div>
+                                    <div class="itemNotice"> <i class="activity_local"></i><span>杭州等报名通过后定向通知</span></div>
+                                    <div class="itemNotice"> <i class="activity_sponsor"></i><span>主办方：浙江青年创业学院<span class="shugang">|</span>媳妇创投联盟（筹）</span>
+                                    </div>
+                                </div>
+                                <span class="itemTitle2">免费</span>
+                                <span class="itemEnroll1">已报名<span class="itemNumber">123</span>人/ 限<span class="itemNumber">123</span>人</span>
+                                <a class="itemEnroll2 itemEnrollOver" href="##">活动已结束</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- minboxend -->
+                    <!-- minboxstart -->
+                    <div class="ca-item activity-item activity-item1">
+                        <div class="ca-item-main activity-item-main activity-item-wrap">
+                            <div class="itemWrap1">
+                                <a href="##"><img src="images/activity_pic4.png" class="image" alt="pic4"></a>
+                                <div class="fn-hide activity-title">
+                                    <h3>国际体验设计大会，不见不散！</h3>
+                                </div>
+                            </div>
+                            <div class="itemWrap2">
+                                <div class="item-innerwrap">
+                                    <div class="itemNotice"> <i class="activity_clock"></i><span>2016/03/06 周日 14:00~17:00</span></div>
+                                    <div class="itemNotice"> <i class="activity_local"></i><span>杭州等报名通过后定向通知</span></div>
+                                    <div class="itemNotice"> <i class="activity_sponsor"></i><span>主办方：浙江青年创业学院<span class="shugang">|</span>媳妇创投联盟（筹）</span>
+                                    </div>
+                                </div>
+                                <span class="itemTitle2">&yen;&nbsp;<h3>30000</h3></span>
+                                <span class="itemEnroll1">已报名<span class="itemNumber">123</span>人/ 限<span class="itemNumber">123</span>人</span>
+                                <a class="itemEnroll2 itemEnrollActive" href="##">我要报名</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- minboxend -->
+                    <!-- minboxstart -->
+                    <div class="ca-item activity-item activity-item2">
+                        <div class="ca-item-main activity-item-main activity-item-wrap2">
+                            <div class="itemWrap1">
+                                <a href="##"><img src="images/activity_pic5.png" class="image" alt="pic5"></a>
+                                <div class="fn-hide activity-title">
+                                    <h3>国际体验设计大会，不见不散！</h3>
+                                </div>
+                            </div>
+                            <div class="itemWrap2">
+                                <div class="item-innerwrap">
+                                    <div class="itemNotice"> <i class="activity_clock"></i><span>2016/03/06 周日 14:00~17:00</span></div>
+                                    <div class="itemNotice"> <i class="activity_local"></i><span>杭州等报名通过后定向通知</span></div>
+                                    <div class="itemNotice"> <i class="activity_sponsor"></i><span>主办方：浙江青年创业学院<span class="shugang">|</span>媳妇创投联盟（筹）</span>
+                                    </div>
+                                </div>
+                                <span class="itemTitle2">免费</span>
+                                <span class="itemEnroll1">已报名<span class="itemNumber">123</span>人/ 限<span class="itemNumber">123</span>人</span>
+                                <a class="itemEnroll2 itemEnrollRegistered" href="##">已报名</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- minboxend -->
+                    <!-- minboxstart -->
+                    <div class="ca-item activity-item activity-item3">
+                        <div class="ca-item-main activity-item-main activity-item-wrap">
+                            <div class="itemWrap1">
+                                <a href="##"><img src="images/activity_pic6.png" class="image" alt="pic6"></a>
+                                <div class="fn-hide activity-title">
+                                    <h3>国际体验设计大会，不见不散！</h3>
+                                </div>
+                            </div>
+                            <div class="itemWrap2">
+                                <div class="item-innerwrap">
+                                    <div class="itemNotice"> <i class="activity_clock"></i><span>2016/03/06 周日 14:00~17:00</span></div>
+                                    <div class="itemNotice"> <i class="activity_local"></i><span>杭州等报名通过后定向通知</span></div>
+                                    <div class="itemNotice"> <i class="activity_sponsor"></i><span>主办方：浙江青年创业学院<span class="shugang">|</span>媳妇创投联盟（筹）</span>
+                                    </div>
+                                </div>
+                                <span class="itemTitle2">免费</span>
+                                <span class="itemEnroll1">已报名<span class="itemNumber">123</span>人/ 限<span class="itemNumber">123</span>人</span>
+                                <a class="itemEnroll2 itemEnrollOver" href="##">活动已结束</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- minboxend -->
+                    <!-- minboxstart -->
+                    <div class="ca-item activity-item activity-item1">
+                        <div class="ca-item-main activity-item-main activity-item-wrap">
+                            <div class="itemWrap1">
+                                <a href="##"><img src="images/activity_pic4.png" class="image" alt="pic7"></a>
+                                <div class="fn-hide activity-title">
+                                    <h3>国际体验设计大会，不见不散！</h3>
+                                </div>
+                            </div>
+                            <div class="itemWrap2">
+                                <div class="item-innerwrap">
+                                    <div class="itemNotice"> <i class="activity_clock"></i><span>2016/03/06 周日 14:00~17:00</span></div>
+                                    <div class="itemNotice"> <i class="activity_local"></i><span>杭州等报名通过后定向通知</span></div>
+                                    <div class="itemNotice"> <i class="activity_sponsor"></i><span>主办方：浙江青年创业学院<span class="shugang">|</span>媳妇创投联盟（筹）</span>
+                                    </div>
+                                </div>
+                                <span class="itemTitle2">&yen;&nbsp;<h3>30000</h3></span>
+                                <span class="itemEnroll1">已报名<span class="itemNumber">123</span>人/ 限<span class="itemNumber">123</span>人</span>
+                                <a class="itemEnroll2 itemEnrollActive" href="##">我要报名</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- minboxend -->
+                    <!-- minboxstart -->
+                    <div class="ca-item activity-item activity-item2">
+                        <div class="ca-item-main activity-item-main activity-item-wrap2">
+                            <div class="itemWrap1">
+                                <a href="##"><img src="images/activity_pic5.png" class="image" alt="pic8"></a>
+                                <div class="fn-hide activity-title">
+                                    <h3>国际体验设计大会，不见不散！</h3>
+                                </div>
+                            </div>
+                            <div class="itemWrap2">
+                                <div class="item-innerwrap">
+                                    <div class="itemNotice"> <i class="activity_clock"></i><span>2016/03/06 周日 14:00~17:00</span></div>
+                                    <div class="itemNotice"> <i class="activity_local"></i><span>杭州等报名通过后定向通知</span></div>
+                                    <div class="itemNotice"> <i class="activity_sponsor"></i><span>主办方：浙江青年创业学院<span class="shugang">|</span>媳妇创投联盟（筹）</span>
+                                    </div>
+                                </div>
+                                <span class="itemTitle2">免费</span>
+                                <span class="itemEnroll1">已报名<span class="itemNumber">123</span>人/ 限<span class="itemNumber">123</span>人</span>
+                                <a class="itemEnroll2 itemEnrollRegistered" href="##">已报名</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- minboxend -->
+                    <!-- minboxstart -->
+                    <div class="ca-item activity-item activity-item3">
+                        <div class="ca-item-main activity-item-main activity-item-wrap">
+                            <div class="itemWrap1">
+                                <a href="##"><img src="images/activity_pic6.png" class="image" alt="pic9"></a>
+                                <div class="fn-hide activity-title">
+                                    <h3>国际体验设计大会，不见不散！</h3>
+                                </div>
+                            </div>
+                            <div class="itemWrap2">
+                                <div class="item-innerwrap">
+                                    <div class="itemNotice"> <i class="activity_clock"></i><span>2016/03/06 周日 14:00~17:00</span></div>
+                                    <div class="itemNotice"> <i class="activity_local"></i><span>杭州等报名通过后定向通知</span></div>
+                                    <div class="itemNotice"> <i class="activity_sponsor"></i><span>主办方：浙江青年创业学院<span class="shugang">|</span>媳妇创投联盟（筹）</span>
+                                    </div>
+                                </div>
+                                <span class="itemTitle2">免费</span>
+                                <span class="itemEnroll1">已报名<span class="itemNumber">123</span>人/ 限<span class="itemNumber">123</span>人</span>
+                                <a class="itemEnroll2 itemEnrollOver" href="##">活动已结束</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- minboxend -->
+                    <div style="clear: both; margin-bottom: 25px;"></div>
+                    <!-- 页码 -->
+                    <div id="main-body-bottom" class="auto"></div>
+                    <!-- 页码 -->
+                </div>
+            </div>
+        </div>
+        <div style="clear: both; margin-bottom: 75px;+margin-bottom: 1080px"></div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+</body>
+
+</html>

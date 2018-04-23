@@ -1,0 +1,412 @@
+<style type="text/css">
+.course-popup {
+  width: 645px;
+  height: 530px;
+  position: fixed;
+  z-index: 1001;
+  padding: 15px 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: none;
+  left: 500px;
+  top: 0px;
+  color: #526069;
+}
+
+.course-popup .course-popup-title {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.course-popup .course-popup-title .iconfont {
+  float: right;
+  font-size: 16px;
+  color: #ccd5db;
+  font-weight: 700;
+}
+
+.course-popup .subtitle {
+  font-size: 14px;
+}
+
+.course-popup .main-box {
+  padding: 10px 17px;
+  background-color: #f0f2f5;
+}
+
+.course-popup .main-box .pic-a {
+  float: left;
+  width: 140px;
+  max-height: 78.85px;
+  overflow: hidden;
+}
+
+.course-popup .main-box .pic-a .pic {
+  width: 140px;
+}
+
+.course-popup .main-box .right-box {
+  margin-left: 156px;
+  height: 78.85px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding-top: 25px;
+}
+
+.course-popup .right-box .course-title {
+  font-size: 18px;
+  color: #171717;
+  width: 300px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.course-popup .right-box .course-title:hover {
+  color: #744f86;
+}
+
+.course-popup .right-box .course-more {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #969799;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.course-popup .course-elements-p .iconfont {
+  font-size: 18px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.course-popup .course-elements-p span {
+  margin-right: 8px;
+}
+
+.course-popup .price-out {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.course-popup .price-out .iconfont {
+  color: #fff;
+  background-color: #62aa0e;
+  font-size: 14px;
+}
+
+.course-popup .price-out .protocol {
+  color: #00a0e9;
+}
+
+.course-popup .price-out .right-span {
+  float: right;
+}
+
+.course-popup .price-out .price {
+  color: #f00;
+  font-size: 18px;
+}
+
+.course-popup .zfUl {
+  background-color: #ececec;
+  margin-top: 30px;
+  border-top: 1px  dashed #ccd5db;
+}
+
+.course-popup .zfUl li {
+  width: 130px;
+  height: 40px;
+  float: left;
+  line-height: 40px;
+  text-indent: 35px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.course-popup .zfUl li.cur {
+  background-color: #fff;
+}
+
+.course-popup .zfUl li span.ss {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  float: left;
+  left: 0;
+  margin: 7px 0 0 5px;
+}
+
+.course-popup .zfUl li span.zfb {
+  background-image: url("images/alipay.png");
+}
+
+.course-popup .zfUl li span.wx {
+  background-image: url("images/weixin.png");
+}
+
+.course-popup .ewm {
+  width: 100%;
+  height: 140px;
+  background: #fff;
+  padding-top: 20px;
+}
+
+.course-popup .ewm .ewmLeft {
+  float: left;
+  width: 110px;
+  height: 110px;
+  margin: 0 0 0 5px;
+}
+
+.course-popup .ewm .ewm-pic {
+  max-width: 110px;
+  max-height: 110px;
+}
+
+.course-popup .ewm .ewmLeft .text {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.course-popup .ewm .right-words {
+  height: 80px;
+  float: left;
+  position: relative;
+  margin-left: 20px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.course-popup .ewm .p {
+  line-height: 21px;
+  position: relative;
+}
+
+.course-popup .ewm .p .text-left {
+  font-size: 15px;
+  color: #333333;
+}
+
+.course-popup .ewm .p .RMB-icon {
+  font-size: 26px;
+  font-weight: 100;
+  color: #999;
+}
+
+.course-popup .ewm .p .RMB {
+  font-size: 26px;
+  font-weight: 600;
+  color: #ff4400;
+}
+
+.course-popup .ewm .p .iconfont {
+  font-size: 14px;
+  color: #1ba9eb;
+  position: absolute;
+  right: -20px;
+  top: -10px;
+  font-weight: 700;
+}
+
+.course-popup .ewm .TzLink {
+  color: #1ba9eb;
+  display: inline-block;
+  width: 160px;
+  margin-top: 6px;
+  position: absolute;
+  bottom: 10px;
+  font-weight: 500;
+}
+
+.course-popup .border {
+  border-bottom: 1px  dashed #ccd5db;
+  margin-bottom: 10px;
+}
+
+#mask-course {
+  background: #333;
+  opacity: 0.55;
+  filter: alpha(opacity=55);
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: none;
+}
+
+#mask-close {
+  cursor: pointer;
+}	
+</style>
+<!-- 遮罩层start -->
+<div id="mask-course"></div>
+<!-- 弹出层start -->
+<div class="course-popup" id="course-popup">
+    <p class="course-popup-title">
+        <span class="pay-title-word">支付确认</span>
+        <i class="iconfont" id="mask-close">&#xe600;</i>
+    </p>
+    <p class="subtitle">课程信息:</p>
+    <div class="main-box clearfix">
+        <div class="border">
+            <a class="pic-a" href="courseDetails.html" target="_blank">
+                <img class="pic" src="" alt="">
+            </a>
+            <div class="right-box">
+                <a href="courseDetails.html" class="course-title" target="_blank"></a>
+                <!-- <p class="course-more">课程详细内容，课程详细内容，课程详细内容，课程详细内容，课程详细内容，课程详细内容，课程详细内容，课程详细内容课程详细内容，课程详细内容</p> -->
+            </div>
+        </div>
+        <p class="course-elements-p">
+            <i class="iconfont">&#xe612;</i>
+            <span class="time"></span>
+        </p>
+        <p class="course-elements-p">
+            <i class="iconfont">&#xe6d6;</i>
+            <span class="location"></span>
+        </p>
+        <p class="course-elements-p">
+            <i class="iconfont">&#xe627;</i>
+            <span class="people"></span>
+        </p>
+        <p class="price-out">
+            <span class="left-span">
+				<i class="iconfont">&#xe6cc;</i>
+				<span>同意</span>
+            <a href="protocol.html" class="protocol" target="_blank">学术葩服务协议</a>
+            </span>
+            <span class="right-span">
+				<span>课程价格:</span>
+            <span class="price">￥<span></span></span>
+            </span>
+        </p>
+    </div>
+    <ul class="zfUl clearfix">
+        <li class="cur">
+            <span class="ss zfb"></span>
+            <span>支付宝支付</span>
+        </li>
+        <li>
+            <span class="ss wx"></span>
+            <span>微信支付</span>
+        </li>
+    </ul>
+    <div class="ewm">
+        <div class="ewmLeft">
+            <img class="ewm-pic" src="images/ewma1.png" />
+            <p class="text">扫码支付1</p>
+        </div>
+        <div class="right-words">
+            <p class="p">
+                <span class="text-left">实付款:</span>
+                <span class="RMB-icon">￥</span>
+                <span class="RMB"></span>
+                <i class="iconfont">&#x3437;</i>
+            </p>
+            <a href="javascript:;" class="TzLink">跳转到网页版支付宝支付>></a>
+        </div>
+    </div>
+    <div class="ewm" style="display: none;">
+        <div class="ewmLeft">
+            <img class="ewm-pic" src="images/ewm.jpg" />
+            <p class="text">扫码支付2</p>
+        </div>
+        <div class="right-words">
+            <p class="p">
+                <span class="text-left">实付款:</span>
+                <span class="RMB-icon">￥</span>
+                <span class="RMB"></span>
+                <i class="iconfont">&#x3437;</i>
+            </p>
+            <a href="javascript:;" class="TzLink">跳转网页版微信支付>></a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+/**弹出层中支付宝，微信支付方式切换**/
+$("body").on('click', '.course-popup ul.zfUl li', function(event) {
+    event.preventDefault();
+    $('.course-popup ul.zfUl li').removeClass('cur');
+    $(this).toggleClass('cur');
+    var liIndex = $('.course-popup ul.zfUl li').index($(this));
+    $('.course-popup .ewm').css({
+        'display': 'none'
+    });
+    $('.course-popup .ewm:eq(' + liIndex + ')').css({
+        'display': 'block'
+    });
+});
+
+/**
+ * 遮罩弹出层代码
+ * @param  {[type]} mask  [遮罩层id]
+ * @param  {[type]} login [弹出层di]
+ * @param  {[type]} close [关闭按钮id]
+ * @param  {[type]} btn   [打开弹出层按钮id]
+ * @return {[type]}       [没有返回值]
+ */
+function popUp(mask, login, close, btn) {
+    var oMask = document.getElementById(mask);
+    var oLogin = document.getElementById(login);
+
+    function displayNone() {
+        $(oMask).fadeOut();
+        $(oLogin).fadeOut();
+    }
+
+    function displayBlock() {
+        $(oMask).fadeIn(300);
+        $(oLogin).fadeIn(300);
+    }
+
+    function openNewLogin() {
+        var sHeight = document.documentElement.scrollHeight;
+        var sWidth = document.documentElement.scrollWidth;
+        var wHeight = document.documentElement.clientHeight;
+        oMask.style.height = sHeight + "px";
+        oMask.style.width = sWidth + "px";
+        displayBlock(); //显示弹出层
+        var dHeight = oLogin.offsetHeight;
+        var dWidth = oLogin.offsetWidth;
+        oLogin.style.left = (sWidth - dWidth) / 2 + "px";
+        oLogin.style.top = (wHeight - dHeight) / 2 + "px";
+
+        var oClose = document.getElementById(close);
+        oClose.onclick = function() {
+            displayNone(); //隐藏弹出层
+        }
+        return true;
+    }
+    $("body").on('click', '.btnWrapTwo .agree.BtnS', function(event) {
+        event.preventDefault();
+        // getData(this) && openNewLogin();
+        openNewLogin();
+    });
+    // var oBtn = document.getElementById(btn);
+    // oBtn.onclick = function(){
+    // 	openNewLogin();
+    // } 
+}
+
+/**
+ * 初始化弹出层
+ * @param  {[type]} ){} [description]
+ * @return {[type]}       [description]
+ */
+$(function() {
+    popUp("mask-course", "course-popup", "mask-close");
+});
+</script>

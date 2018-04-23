@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css"/>
+    <link rel="stylesheet" href="css/client/dialog.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+
+            } else {
+                window.history.go(-1);
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('div.WrapZc:eq(0)').css({
+                'display': 'block'
+            });
+            $('#header.header-neiye').load('head.html'); //加载nav
+            $('.footer_on').load('bottom.html');
+        });
+    </script>
+
+</head>
+
+<body style="background:#198ede;">
+<div class="containers">
+    <!-- 头部 start -->
+    <div id="header" class="header-neiye"></div>
+    <!-- 头部 end -->
+    <div id="main-body" style="">
+        <div class="register_main ">
+            <div class="top">
+                <div class="top-left">注册画客网账号</div>
+                <div class="top-right">有意见或建议 , <a href="#" class="ll">对画客网说两句</a></div>
+            </div>
+            <div class="left">
+                <div class="zctop">
+                    <div class="zctop-box">手机号注册</div>
+                </div>
+                <div class="zcmain">
+                    <form id="formzc" autocomplete="off">
+                        <div class="WrapZc" id="firstInput_two_data">
+                            <div class="zcrows shouji" style="position: relative">
+                                <span class="sp1"></span>
+                                <input type="text" name="pohone" placeholder="请输入手机号"/>
+                                <span class="sp2_alert"
+                                      style="visibility: hidden;color:red;position: absolute;right: 10px;top: 35px;">该用户已被注册!<a
+                                        href="forget-pass.html" style="color: #00a0e9;margin: 0 3px;">忘记密码</a></span>
+                                <label style="color: red;position:relative;left: 20px;top: 3px;"></label>
+                            </div>
+                            <div class="zcrows yxyz">
+                                <span class="sp3"></span>
+                                <input class="yxyzInput" type="text" name="yanzhengma"
+                                       style="text-transform: uppercase;" maxlength="4" placeholder="输入验证码"/>
+                                <span class="sp2yz"><img id="wrapYZM" src="images/loading.gif"/></span>
+                            </div>
+                            <div class="zcrows" style="border:none">
+                                <div id="nextInput_three_data">
+                                    <div class="zcrows sjmm">
+                                        <span class="sp1"></span>
+                                        <input type="text" name="yanzhengma" maxlength="4" placeholder="输入手机验证码"
+                                               id="dxyzma" value=""/>
+                                        <span class="sp2" id="verifiction">获取手机验证码</span>
+                                        <span class="sp2" id="verifiction_timewait" style="display: none; width: 110px">获取手机验证码</span>
+                                    </div>
+                                    <div class="zcrows sjzc password_real">
+                                        <span class="sp3"></span>
+                                        <input type="password" name="password_real" placeholder="设置密码(6-16)位"/>
+                                    </div>
+                                    <div class="clearfix">
+                                        <input class="tongyi" name="tongyi" type="checkbox" data-value="true" value="1" checked/>
+                                        <p class="p1"> 我已阅读并接受<a
+                                                href="https://www.huakewang.com/page/index/222/11.html"><span> 版权声明 </span>
+                                        </a>和 <a
+                                                href="https://www.huakewang.com/page/index/222/11.html"><span> 使用协议 </span></a>
+                                        </p>
+                                    </div>
+                                    <div class="zcrows" style="border:none">
+                                        <a id="user_register_send" class="qdzc"
+                                           style="display: block;margin: 25px auto;">确定注册</a>
+                                    </div>
+                                </div>
+                                <!--<a class="qdzc" style="display: block;margin: 25px auto;" id="first_goto_next"> 下一步</a>-->
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="qth"></div>
+                <div class="zhwrap">
+                    <a href="https://www.huakewang.com/wxopenapi/auth_redirect">
+                        <div class="wx"><span class="sp1"></span>&nbsp;&nbsp;微信</div>
+                    </a>
+                    <a href="https://www.huakewang.com/main/qq_oauth.html">
+                        <div class="qq"><span class="sp1"></span>&nbsp;&nbsp;QQ</div>
+                    </a>
+                    <a href="https://www.huakewang.com/main/sina_oauth.html">
+                        <div class="wb"><span class="sp1"></span>&nbsp;&nbsp;微博</div>
+                    </a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="rightText">已经有画客网账号？<a href="login.html"><span style="background:#008cd7">登录</span></a>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    <div style="clear:both;"></div>
+    <!--底部开始-->
+    <div class="footer_on"></div>
+    <!--底部结束-->
+</div>
+
+</body>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="js/lzy_NEW/registerJS.js"></script>
+
+</html>

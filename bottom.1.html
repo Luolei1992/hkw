@@ -1,0 +1,916 @@
+<link rel="stylesheet" type="text/css" href="https://www.huakewang.com/2017_data/css/client/dialog.css">
+<script type="text/javascript" src="https://www.huakewang.com/2017_data/js/client/dialog-plus-min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var baseLink = 'https://www.huakewang.com/',
+            baseRim = 'hkw_newapi/',
+            baseURL = baseLink + baseRim,
+            baseSrc = window.location.href,
+            mainWord = '',
+            timerArr = [],
+            countNum = 10;
+        // seo优化信息获取
+        getSeoMeg();
+        // 定时查询页面登陆状态
+//        setInterval(function() {
+//            $.ajax({
+//                url: baseURL + 'check_session',
+//                type: "get",
+//                dataType: "json",
+//                success: function(res) {
+//                    if (res.success) {
+//                        console.log("登陆成功");
+//                        console.log(getNowFormatDate());
+//                    } else {
+////                        $.cookie('user_id', null, { path: '/', expires: -1 });
+////                        $.cookie('lng', null, { path: '/', expires: -1 });
+////                        $.cookie('lat', null, { path: '/', expires: -1 });
+////                        $.cookie('avatar', null, { path: '/', expires: -1 });
+////                        $.cookie('nick_name', null, { path: '/', expires: -1 });
+////                        $.cookie('mobile', null, { path: '/', expires: -1 });
+////                        $.cookie('hxid', null, { path: '/', expires: -1 });
+////                        window.location.reload();
+//                        console.log("登陆失效");
+//                        console.log(getNowFormatDate());
+//                    };
+//                }
+//            })
+//        }, 600000);
+//        function getNowFormatDate() {
+//            var date = new Date();
+//            var seperator1 = "-";
+//            var seperator2 = ":";
+//            var month = date.getMonth() + 1;
+//            var strDate = date.getDate();
+//            if (month >= 1 && month <= 9) {
+//                month = "0" + month;
+//            }
+//            if (strDate >= 0 && strDate <= 9) {
+//                strDate = "0" + strDate;
+//            }
+//            var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+//                + " " + date.getHours() + seperator2 + date.getMinutes()
+//                + seperator2 + date.getSeconds();
+//            return currentdate;
+//        }
+        $(document).on("click",".but-dl,div.pub-box-list a,.hkw-login,.hkw_reg_href_cookie,.pub-box-other li:first",function () {
+            $.ajax({
+                url:baseURL+'save_url',
+                type:"post",
+                data:{
+                    url:baseSrc
+                },
+                dataType:"json",
+                success:function (res) {
+                    console.log(res);
+                }
+            })
+        });
+
+        var hasClassFlag = $("#header").hasClass("header-neiye");
+
+        function getSeoMeg() {
+            //判断是那个页面
+            if (!hasClassFlag) {
+                mainWord = "主页";
+                ajaxSeoMsg(mainWord);
+            } else if (baseSrc.indexOf("designer.html") != -1) {
+                mainWord = '设计师';
+                ajaxSeoMsg(mainWord);
+                return false;
+            } else if (baseSrc.indexOf("works.html") != -1) {
+                mainWord = '作品';
+                ajaxSeoMsg(mainWord);
+            } else if (baseSrc.indexOf("project.html") != -1) {
+                mainWord = '项目SEO';
+                ajaxSeoMsg(mainWord);
+            } else if (baseSrc.indexOf("yun.html") != -1) {
+                mainWord = '云报价';
+                ajaxSeoMsg(mainWord);
+            } else if (baseSrc.indexOf("fastdesign.html") != -1) {
+                mainWord = '设计提速';
+                ajaxSeoMsg(mainWord);
+            } else if (baseSrc.indexOf("yunStep.html") != -1) {
+                mainWord = '报价单';
+                ajaxSeoMsg(mainWord);
+            } else if (baseSrc.indexOf("works-list.html") != -1) {
+                mainWord = '作品分类';
+                ajaxSeoMsg(mainWord);
+            } else if (baseSrc.indexOf("publish.html") != -1) {
+                mainWord = '发布需求';
+                ajaxSeoMsg(mainWord);
+            } else if (baseSrc.indexOf("PublishedWork.html") != -1) {
+                mainWord = '发布作品';
+                ajaxSeoMsg(mainWord);
+            } else if (baseSrc.indexOf("searchResult.html") != -1) {
+                mainWord = '搜索结果';
+                ajaxSeoMsg(mainWord);
+            } else if (baseSrc.indexOf("selfpage.html") != -1) {
+                mainWord = '设计师认证';
+                ajaxSeoMsg(mainWord);
+            } else {
+                return false;
+            };
+        };
+
+        function ajaxSeoMsg(key) {
+            $.ajax({
+                url: baseURL + 'get_menu_class_by_name/' + key,
+                type: "get",
+                dataType: "json",
+                success: function(res) {
+                    if (res.success) {
+                        //标题
+                        $("title").html(res.data.seo_title);
+                        //关键词
+                        $("meta[name=keywords]").attr("content", res.data.keyword);
+                        //页面描述
+                        if (res.data.content) {
+                            $("meta[name=description]").attr("content", res.data.content);
+                        } else {
+                            $("meta[name=description]").attr("content", res.data.cover_keyword);
+                        };
+                        //页面功能
+                        if (res.data.abstract) {
+                            $("meta[name=description]").attr("content", res.data.abstract);
+                        };
+                    } else {
+                        console.log(res.message);
+                    };
+                },
+                error: function(res) {
+                    console.log(res.message);
+                }
+            })
+        }
+        /**
+         * 点击获取二维码的按钮/一元提案
+         * @param $ele
+         * @param phone
+         */
+        function hqdxyzm($ele, phone) {
+            console.log($(".getback_yanzhengmas"));
+            $.ajax({
+                url: baseURL + 'get_reg_sms_code',
+                type: 'post',
+                data: {
+                    type: "simple_proposal",
+                    mobile: phone,
+                    tokeen: $(".getback_yanzhengmas").val().toUpperCase()
+                },
+                dataType: 'json',
+                success: function(res) {
+                    if (res.success) {
+                        SMSCountdown($ele);
+                    } else {
+                        alertUploadMsg(res.message);
+                    };
+                },
+                error: function() {
+                    alertUploadMsg("验证码获取失败！");
+                }
+            });
+        };
+        //验证图形验证码
+        function picCheck(ele,phone) {
+            $.ajax({
+                url: "https://www.huakewang.com/verifycode/check",
+                type: "POST",
+                dataType: "JSON",
+                data: {
+                    secode: $(".getback_yanzhengmas").val().toUpperCase()
+                },
+                success: function(res) {
+                    if (res.success) {
+                        hqdxyzm(ele, phone);
+                    } else {
+                        alertUploadMsg("请输入正确的图形验证码！");
+                        $('#wrapYZMs').click();
+                    };
+                }
+            });
+        };
+        /**
+         * 验证码倒计时
+         * @param $dom
+         * @constructor
+         */
+        function SMSCountdown($dom) {
+            var second = 60;
+
+            function render() {
+                var value = second + "秒后重试";
+                $dom.html(value);
+                second--;
+                if (second == 0) {
+                    window.clearInterval(token);
+                    $dom.html("获取验证码");
+                };
+            };
+            var token = window.setInterval(render, 1000);
+        };
+        /**
+         * 验证手机号
+         * @param $val
+         * @returns {boolean}
+         */
+        function phoneValid($val) {
+            if ($val != "" && /^((\(\d{2,3}\))|(\d{3}\-))?(13|14|15|16|17|18|19)\d{9}$/.test($val)) {
+                return true;
+            } else {
+                return false;
+            };
+        };
+        $(".fans_more").click(function() {
+            if ($(".miui_fans").css("top") == "191px") {
+                $(".miui_fans").finish().animate({
+                    top: 0
+                }, 'fast');
+                $(".footer_links").finish().animate({
+                    top: -191
+                }, 'fast');
+                $(".fans_more").children(".up").hide();
+                $(".fans_more").children(".down").show();
+            } else {
+                $(".miui_fans").stop().animate({
+                    top: 191
+                }, 'fast');
+                $(".footer_links").stop().animate({
+                    top: 0
+                }, 'fast');
+                $(".fans_more").children(".down").hide();
+                $(".fans_more").children(".up").show();
+            }
+        });
+        /*图片验证码*/
+        $(document).on("click","#wrapYZMs",function () {
+            countNum++;
+            $(this).attr('src', 'https://www.huakewang.com/2017_data/images/loading.gif');
+            setTimeout(function () {
+                $("#wrapYZMs").attr('src', baseLink + 'index.php/verifycode/index/' + countNum);
+            },300);
+        });
+        /**回顶部效果**/
+        $('div.tools li.tul5').click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 400);
+        });
+        /**回顶部效果**/
+        $('div.tools ul.toolsUl li.toolsUlLi.tul2').hover(function() {
+            $(this).css({
+                'background': 'url(https://www.huakewang.com/2017_data/images/saoyisao_hover.png)'
+            });
+            $(this).parents('.tools').find('div.toolsimgwrap').css({
+                'display': 'block'
+            });
+        }, function() {
+            $(this).css({
+                'background': 'url(https://www.huakewang.com/2017_data/images/saoyisao.png)'
+            });
+            $(this).parents('.tools').find('div.toolsimgwrap').css({
+                'display': 'none'
+            });
+        });
+        /*咨询电话*/
+        $('.tools .tul3 a').mouseenter(function() {
+            $('.tools .tul3 div').css("display", "block");
+        });
+        $('.tools .tul3').mouseleave(function() {
+            $('.tools .tul3 div').css("display", "none");
+        });
+        /*二维码扫描*/
+        $('.tools .tul4').mouseenter(function() {
+            $('.tools .tul4 span').css("display", "block");
+        });
+        $('.tools .tul4').mouseleave(function() {
+            $('.tools .tul4 span').css("display", "none");
+        });
+        /*一元报价*/
+        $(".tul1 a").click(function() {
+            $(".onePriceWrapStatic").css("display", "block");
+            $(".onePriceWrap").css("display", "block");
+        });
+        $(".onePriceWrapStatic").click(function() {
+            $(this).css("display", "none");
+            $(".onePriceWrap").css("display", "none");
+            $(".onePricePayWrap").css("display", "none");
+        });
+        /*点击关闭一元报价*/
+        $(".onePriceWrap .onePriceClose").click(function() {
+            $(this).parent().css("display", "none");
+            $(".onePriceWrapStatic").css("display", "none");
+        });
+        /*点击关闭一元报价支付*/
+        $(".onePricePayWrap .onePriceClose").click(function() {
+            $(this).parent().css("display", "none");
+            $(".onePriceWrap").css("display", "block");
+        });
+        $(".whatIsOne").click(function() {
+            $(".whatIsOneDetail").slideToggle();
+        });
+        $(".onePriceWrap_4_yzm").click(function() {
+            var phone = $(".onePriceWrap_3 input").val().trim();
+            if (phoneValid(phone)) {
+                picCheck($(this),phone);
+            } else {
+                alertUploadMsg("请输入正确的手机号码！");
+            }
+        });
+        $(".onePriceWrap a").click(function() {
+            var city = $(".onePriceWrap_2 .currentCity").html(),
+                title = $(".onePriceWrap_1 select").val(),
+                phone = $(".onePriceWrap_3 input").val(),
+                code = $(".onePriceWrap_4 input").val();
+            console.log(city + title + phone + code);
+            if (!phoneValid(phone)) {
+                alertUploadMsg("请输入正确的手机号码！");
+                return false;
+            } else if (code.trim() == "") {
+                alertUploadMsg("请输入验证码！");
+                return false;
+            } else {
+                $(".ewmLeft1 img").attr("src", "https://www.huakewang.com/2017_data/images/zwwem.png");
+                sendOnePrice(city, title, phone, code);
+            };
+        });
+        /**
+         * 发送一元报价
+         * @param city
+         * @param title
+         * @param phone
+         * @param code
+         */
+        function sendOnePrice(city, title, phone, code) {
+            $.ajax({
+                url: baseLink + "quoteApi/save_simple_proposal",
+                type: "post",
+                data: {
+                    user_id: getCookie("user_id"),
+                    city: city,
+                    title: title,
+                    phone: phone,
+                    code: code
+                },
+                dataType: "json",
+                success: function(res) {
+                    if (res.success) {
+                        //弹出付款弹窗
+                        $(".sec").attr("data-id", res.message);
+                        $(".fst").attr("data-id", res.message);
+                        $(".onePriceWrap").css("display", "none").next().css("display", "block");
+                        //获取支付二维码
+                        getErweima(res.message, 1, "simple_proposal", "AliPay");
+                    } else {
+                        alertUploadMsg(res.message);
+                    };
+                }
+            });
+        };
+        $(".onePricePayWrap ul li").click(function() {
+            var payid = $(this).attr("data-id");
+            var paytype = $(this).attr("data-paytype");
+            getErweima(payid, 1, "simple_proposal", paytype);
+            if ($(this).hasClass("fst")) {
+                $(".onePricePayWrap>p>i").html("手机支付宝");
+                $(".sec").find("img").attr("src", "");
+                $(this).find("img").attr("src", "https://www.huakewang.com/2017_data/images/yiyuanborder.png");
+            } else if ($(this).hasClass("sec")) {
+                $(".onePricePayWrap>p>i").html("手机微信");
+                $(this).find("img").attr("src", "https://www.huakewang.com/2017_data/images/yiyuanborder.png");
+                $(".fst").find("img").attr("src", "");
+            };
+        });
+        /**
+         * 支付二维码生成
+         * @param id[约见id]
+         * @param paymoney
+         * @param mod [支付模块meet]
+         */
+        function getErweima(id, paymoney, mod, typePay) {
+            $.ajax({
+                url: baseLink + 'payapi/get_pay_qrcode',
+                type: "post",
+                data: {
+                    user_id: getCookie("user_id"), //支付用户的id
+                    totalAmount: paymoney, //费用总数
+                    pay_type: typePay, //AliPay：支付宝支付，WxPay：微信支付
+                    pay_model: mod, //支付模块
+                    model_id: id //一元报价id
+                },
+                dataType: "json",
+                success: function(res) {
+                    if (res.success) {
+                        $(".ewmLeft1 img").attr("src", res.data.qr_path);
+                        //定时查询支付状态
+                        timerArr.push(timer = setInterval(function() {
+                            getPayStaus(res.data.out_trade_no);
+                        }, 3000));
+                    } else {
+                        alertUploadMsg(res.message);
+                    };
+                },
+                error: function() {
+                    alertUploadMsg("数据获取异常！");
+                }
+            });
+        };
+
+        //获取约见的支付状态
+        function getPayStaus(key) {
+            $.ajax({
+                url: baseLink + 'payapi/get_pay_status',
+                type: "post",
+                data: {
+                    user_id: getCookie('user_id'),
+                    out_trade_no: key
+                },
+                dataType: "json",
+                success: function(res) {
+                    if (res.success) {
+                        if (res.data.trade_status == "TRADE_SUCCESS") {
+                            alertUploadMsg("支付成功");
+                            // 一元报价费用付款成功
+                            $(".onePriceWrap_3 input,.onePriceWrap_4 input").val("");
+                            $(".onePriceWrapStatic").css("display", "none");
+                            $(".onePriceWrap").css("display", "none");
+                            $(".onePricePayWrap").css("display", "none");
+                            for (var i = 0; i < timerArr.length; i++) {
+                                clearInterval(timerArr[i]);
+                            };
+                            console.log("dingshiqi");
+                            console.log(timerArr);
+                        };
+                    } else {
+                        for (var i = 0; i < timerArr.length; i++) {
+                            clearInterval(timerArr[i]);
+                        };
+                        alertUploadMsg("支付失败！");
+                    };
+                }
+            });
+        };
+        //全局搜索页
+        $(document).on("click", ".hkw-header-search-but", function() {
+            var keyword = $(".hkw-header-search-input").val().trim();
+            if (keyword == "") {
+                alert("请输入要搜索内容！");
+            } else {
+                window.open("https://www.huakewang.com/2017_data/searchResult.html?keyword=" + keyword);
+            };
+        });
+        //监听滚动事件
+        $(".navLogo-select").scroll(function() {
+            var leftNum = $(".navLogo-select").scrollLeft();
+            $(".navLogo-select-b").css("margin-left", leftNum);
+        });
+    });
+</script>
+<style>
+    .navLogo-select-line {
+        width: 1330px;
+    }
+    
+    .navLogo-select {
+        overflow-y: hidden;
+    }
+    /*一元提案*/
+    
+    .onePriceWrapStatic {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        filter: progid: DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000, endcolorstr=#7F000000);
+        z-index: 9995;
+        display: none;
+    }
+    
+    .onePriceWrap {
+        font-size: 14px;
+        position: fixed;
+        width: 370px;
+        background-color: #fff;
+        left: 50%;
+        top: 20%;
+        margin-left: -185px;
+        z-index: 9999;
+        padding: 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        display: none;
+    }
+    
+    .onePricePayWrap {
+        font-size: 14px;
+        position: fixed;
+        width: 370px;
+        background-color: #fff;
+        left: 50%;
+        top: 20%;
+        margin-left: -185px;
+        z-index: 9999;
+        padding: 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        display: none;
+    }
+    
+    .onePriceWrap p {
+        margin-bottom: 15px;
+    }
+    
+    .onePriceWrap a {
+        display: inline-block;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+        height: 30px;
+        background-color: #00A1E1;
+        width: 114px;
+        line-height: 30px;
+        text-align: center;
+        color: #fff;
+        margin: 10px 0 10px 76px;
+    }
+    
+    .onePriceWrap .whatIsOne {
+        color: #41BDF8;
+        text-decoration: underline;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+    
+    .onePriceWrap p span {
+        display: inline-block;
+        width: 75px;
+        text-align: right;
+    }
+    
+    .onePriceWrap input,
+    .onePriceWrap select {
+        height: 28px;
+        padding-left: 6px;
+    }
+    
+    .onePriceWrap button {
+        height: 30px;
+        padding: 0 18px;
+        position: relative;
+        top: 1px;
+        background-color: #fff;
+        outline: none;
+    }
+    
+    .onePriceWrap button.currentCity {
+        border: 1px solid #41BDF8;
+        color: #41BDF8;
+        padding: 0 10px;
+        margin-right: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    
+    .onePriceWrap button.onePriceWrap_4_yzm {
+        background-color: #939393;
+        border: 0 none;
+        color: #fff;
+    }
+    
+    .onePriceWrap_3 input {
+        width: 220px;
+    }
+    
+    .whatIsOneDetail {
+        display: none;
+    }
+    
+    .whatIsOneDetail p {
+        margin-bottom: 10px;
+        padding-left: 10px;
+    }
+    
+    .whatIsOneDetail h3 {
+        font-weight: 700;
+        margin: 15px 0 6px 0;
+        padding-left: 10px;
+    }
+    
+    .onePriceClose {
+        width: 14px;
+        height: 14px;
+        background: url("https://www.huakewang.com/2017_data/images/uploadify-cancel.png") no-repeat;
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    
+    .onePricePayWrap span,
+    .onePricePayWrap p {
+        display: block;
+        margin-bottom: 10px;
+        padding-left: 32px;
+    }
+    
+    .onePricePayWrap ul {
+        display: table;
+        margin: 0 auto;
+    }
+    
+    .onePricePayWrap ul li {
+        cursor: pointer;
+    }
+    
+    .payErWeiMa img {
+        margin-left: 33px;
+    }
+    
+    .onePricePayWrap .one {
+        color: red;
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 0;
+        height: 20px;
+    }
+    
+    .onePricePayWrap .one span {
+        padding: 0;
+        display: inline-block;
+    }
+    
+    .onePricePayWrap li.fst {
+        background: url("https://www.huakewang.com/2017_data/images/yiyuanzfb.png") no-repeat;
+        width: 152px;
+        height: 41px;
+    }
+    
+    .onePricePayWrap li.sec {
+        background: url("https://www.huakewang.com/2017_data/images/yiyuanwx.png") no-repeat;
+        width: 152px;
+        height: 41px;
+    }
+    .getback_yanzhengmas {
+        text-transform: uppercase;
+        width: 120px;
+    }
+    .picChecked {
+        width: 96px !important;
+        height: 32px;
+        text-align: center !important;
+        overflow: hidden;
+        position:relative;
+        top: 11px;
+    }
+    #wrapYZMs {
+        vertical-align: middle;
+        position: relative;
+        left: -14px;
+    }
+    .onePriceWrap_4 input {
+        width: 120px;
+    }
+</style>
+<div class="tools">
+    <ul>
+        <li class="tul1"><a href="javascript:;">一元<br>提案</a></li>
+        <li class="tul2">
+            <a href="http://wpa.qq.com/msgrd?uin=87419708&menu=yes"></a>
+        </li>
+        <li class="tul3">
+            <a href="javascript:;"></a>
+            <div>
+                <p>画客网售前咨询电话</p>
+                <span href="javascript:;">0571-86803103</span>
+            </div>
+        </li>
+        <li class="tul4">
+            <a href="javascript:;"></a>
+            <span></span>
+        </li>
+        <li class="tul5"><a href="javascript:;">TOP</a></li>
+    </ul>
+</div>
+<div class="onePriceWrapStatic"></div>
+<div class="onePriceWrap">
+    <i class="onePriceClose"></i>
+    <p class="onePriceWrap_1">
+        <span>提案类型：</span>
+        <select>
+            <option value="艺术绘画">艺术绘画</option>
+            <option value="品牌建设">品牌建设</option>
+            <option value="互联网设计">互联网设计</option>
+            <option value="产品设计">产品设计</option>
+            <option value="空间设计">空间设计</option>
+            <option value="虚拟现实">虚拟现实</option>
+            <option value="多媒体">多媒体</option>
+            <option value="程序开发">程序开发</option>
+        </select>
+    </p>
+    <p class="onePriceWrap_2">
+        <span>所在城市：</span>
+        <button class="currentCity">杭州</button>
+        <i style="color: red;">注:目前只支持杭州！</i>
+    </p>
+    <p class="onePriceWrap_3" style="margin-bottom: 5px;">
+        <span>手机号码：</span>
+        <input type="text">
+    </p>
+    <p class="onePriceWrap_5">
+        <span></span>
+        <input type="text" class="getback_yanzhengmas">
+        <span class="picChecked">
+            <img id="wrapYZMs" src="https://www.huakewang.com/index.php/verifycode/index/2">
+        </span>
+    </p>
+    <p class="onePriceWrap_4">
+        <span>验证码：</span>
+        <input type="text">
+        <button class="onePriceWrap_4_yzm">获取验证码</button>
+    </p>
+    <a href="javascript:;">提交一元提案</a>
+    <span class="whatIsOne">什么是一元提案？</span>
+    <div class="whatIsOneDetail">
+        <h3>什么是一元提案？</h3>
+        <p>您可以线上提交设计需求，画客网客服会根据您的需求，</p>
+        <p>为您匹配全网合适的设计师，联系你们进行沟通与合作。</p>
+        <h3>一元提案的流程：</h3>
+        <p>1.提交您的设计需求</p>
+        <p>2.客服帮您匹配合适的设计师</p>
+        <p>3.双方联系，进行需求沟通</p>
+        <p>4.确认是否合作</p>
+    </div>
+</div>
+<div class="onePricePayWrap">
+    <i class="onePriceClose onePricePayClose"></i>
+    <span>选择支付方式：</span>
+    <ul class="clearfix">
+        <li class="fl fst" data-paytype="AliPay" title="点击刷新二维码">
+            <img src="https://www.huakewang.com/2017_data/images/yiyuanborder.png" alt="">
+        </li>
+        <li class="fl sec" data-paytype="WxPay" title="点击刷新二维码">
+            <img src="" alt="">
+        </li>
+    </ul>
+    <p>请打开<i style="color:#00A0E4;">手机支付宝</i>扫一扫快捷支付</p>
+    <div class="payErWeiMa ewmLeft1">
+        <img src="https://www.huakewang.com/2017_data/images/zwwem.png" alt="" width="170" height="170">
+    </div>
+    <p class="one">￥<span>1.00</span>元</p>
+</div>
+<div class="footer">
+    <div class="footer_inform">
+        <div class="footer_links">
+            <div class="fooer_links_main">
+                <div class="footer_logo"><img src="https://www.huakewang.com/2017_data/images/footlogo.png"></div>
+                <p>长于设计而羞于销售，一直是设计师的一个致命点，画客正在打破<br/>设计行业这一固有认识，通过“聚需求 团设计”的定位，让设计师
+                    <br/>切实走进市场，摆拖企业管理约束，解放设计师同时提高设计师综<br/> 合素质。更高品质，更高效率，更加专业的服务市场。
+                </p>
+                <p><span style="color:#1996E9">永久承诺: </span><span style="color:#1996E9">决不向设计师收取任何拥金!</span></p>
+            </div>
+
+            <ul>
+                <li class="firstli">
+                    <a href="">关&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;于</a><br>
+                    <a href="https://www.huakewang.com/index.php/page/index/222/10.html">关于画客网</a><br>
+                    <a href="https://www.huakewang.com/page/index/222/14.html">网站规则</a><br>
+                    <a href="https://www.huakewang.com/page/index/222/11.html">用户协议</a><br>
+                    <a href="https://www.huakewang.com/page/index/222/15.html">免责声明</a><br>
+                    <a href="https://www.huakewang.com/page/index/222/8.html">版权声明</a><br>
+                    <a href="https://www.huakewang.com/page/index/222/16.html">网站地图</a><br>
+                </li>
+                <li class="firstli">
+                    <a href="">服&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务</a><br>
+                    <a href="https://www.huakewang.com/2017_data/designer.html">找设计师</a><br>
+                    <a href="https://www.huakewang.com/2017_data/project.html">找设计团体</a><br>
+                    <a href="https://www.huakewang.com/2017_data/works-list.html">找作品原创者</a><br>
+                    <a href="https://www.huakewang.com/activity/index/446.html">赛事/活动</a><br>
+                    <a href="https://www.huakewang.com/circle/index/444.html">设计师圈子</a><br>
+                    <a href="javascript:void(0);">画客移动端</a><br>
+                </li>
+                <li class="firstli">
+                    <a href="">设&nbsp;&nbsp;计&nbsp;&nbsp;师</a><br>
+                    <a href="https://www.huakewang.com/index.php/resource/cover/148.html">设计素材</a><br>
+                    <a href="https://www.huakewang.com/doc/index/142.html">设计文档</a><br>
+                    <a href="https://huaban.com/">设计灵感</a><br>
+                    <a href="https://www.huakewang.com/link.html">设计网址</a><br>
+                    <a href="https://www.huakewang.com/cool/index/140.html">设计酷站</a><br>
+                    <a href="https://www.huakewang.com/job/index/380.html">靠谱岗位</a><br>
+                </li>
+                <li class="middleli">
+                    <a href="">商&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务</a><br>
+                    <a href="https://www.huakewang.com/page/index/223.html">企业服务</a><br>
+                    <a href="https://www.huakewang.com/page/index/223/18.html">赛事服务</a><br>
+                    <a href="https://www.huakewang.com/page/index/223/20.html">活动服务</a><br>
+                    <a href="https://www.huakewang.com/page/index/223/19.html">设计服务</a><br>
+                    <a href="https://www.huakewang.com/2017_data/selfpage.html">设计师入住</a><br>
+                </li>
+                <li class="lastli">
+                    <a href="https://www.huakewang.com/link.html">联&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;系</a><br>
+                    <a href="https://www.huakewang.com/index.php/page/index/231/10.html">在线提问</a><br>
+                    <a href="">画客网微博</a><br>
+                    <a href="https://www.huakewang.com/index.php/page/index/231/12.html">画客网微信</a><br>
+                    <a href="https://www.huakewang.com/page/index/225/21.html">常见问题</a><br>
+                    <a href="https://www.huakewang.com/page/index/225/12.html">联系我们</a><br>
+                </li>
+                <div style="clear:both"></div>
+            </ul>
+            <div class="foot_lianjie"></div>
+        </div>
+        <div class="miui_fans">
+            <a href="https://www.huakewang.com/user/index/152/1/all/北京.html">北京设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/all/上海.html">上海设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/all/天津.html">天津设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/all/广州.html">广州设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/all/深圳.html">深圳设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/all/杭州.html">杭州设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/all/南京.html">南京设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/all/成都.html">成都设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/all/西安.html">西安设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/all/厦门.html">厦门设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/all/珠海.html">珠海设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/all/佛山.html">佛山设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/平面设计师/all.html">平面设计师</a>
+            <a href="https://www.huakewang.com/user/index/152.html">网页设计师</a>
+            <a href="https://www.huakewang.com/user/index/152/1/交互_界面设计师/all.html">交互设计师</a>
+            <a href="">界面设计师</a>
+            <a href="">室内设计师</a>
+            <a href="">工业设计师</a>
+            <a href="">多媒体制作</a>
+            <a href="">游戏设计师</a>
+            <a href="">上海设计公司</a>
+            <a href="">天津设计公司</a>
+            <a href="">广州设计公司</a>
+            <a href="">深圳设计公司</a>
+            <a href="">杭州设计公司</a>
+            <a href="">南京设计公司</a>
+            <a href="">成都设计公司</a>
+            <a href="">西安设计公司</a>
+            <a href="">厦门设计公司</a>
+            <a href="">珠海设计公司</a>
+            <a href="">佛山设计公司</a>
+            <a href="https://www.huakewang.com/user/index/152/1/摄影师/all.html">摄影师</a>
+            <a href="https://www.huakewang.com/works/index/243/all/all/all.html">网页设计作品</a>
+            <a href="https://www.huakewang.com/works/index/277/all/all/all.html">界面设计作品</a>
+            <a href="https://www.huakewang.com/works/index/275/all/all/all.html">图标设计</a>
+            <a href="https://www.huakewang.com/works/index/148/all/1.html">优秀设计作品</a>
+            <a href="https://www.huakewang.com/works/index/353/all/all/all.html">名片画册</a>
+            <a href="https://www.huakewang.com/works/index/258/all/all/all.html">logo设计</a>
+            <a href="https://www.huakewang.com/works/index/278/all/all/all.html">游戏界面</a>
+            <a href="https://www.huakewang.com/works/index/293/all/all/all.html">室内设计</a>
+            <a href="https://www.huakewang.com/works/index/271/all/all/all.html">网店装修</a>
+            <a href="https://www.huakewang.com/works/index/245/all/all/all.html">工业设计</a>
+            <a href="https://www.huakewang.com/user/index/152/2/all/广东.html">香港设计师</a>
+            <a href="https://www.huakewang.com/works/index/241/253.html">艺术绘画</a>
+            <a href="https://www.huakewang.com/works/index/245/all/all/all.html">产品设计</a>
+            <a href="https://www.huakewang.com/works/index/260/all/all/all.html">字体设计</a>
+            <a href="https://www.huakewang.com/link.html">优秀设计网址</a>
+            <a href="https://www.huakewang.com/cool/index/140.html">优秀网站欣赏</a>
+            <a href="https://www.huakewang.com/user/index/152/1/all/all.html">杭州设计人才</a></div>
+    </div>
+    <div class="yqljwz">
+        <div class="yqljwzWrap fn-clear">
+            <a href="javascript:;" class="fl yqljwzWrap1">画客网址: </a>
+            <p class="fl">当前收录设计名站:<span>&nbsp;1122</span>个,&nbsp;<i>1</i>个待审核,&nbsp;画客网官方交流群: <a href="javascript:;" class="qqlink">64017908</a>
+            </p>
+            <a href="https://www.huakewang.com/link.html" class="fl yqljwzWrap-pub">进入画客网址</a>
+            <a href="https://www.huakewang.com/link/collection.html" class="fl yqljwzWrap-pub">申请收录</a>
+        </div>
+        <!--<a href="#">友情链接</a>-->
+        <!--<a href="#">Hypefolio</a>-->
+        <!--<a href="#">微企点</a>-->
+        <!--<a href="#">腾讯</a>-->
+        <!--<a href="#">网易</a>-->
+        <!--<a href="#">顺丰</a>-->
+        <!--<a href="#">壹基金</a>-->
+        <!--<a href="#">国家电网</a>-->
+        <!--<a href="#">汉庭</a>-->
+        <!--<a href="#">三联生活周刊</a>-->
+        <!--<a href="#">光明网</a>-->
+        <!--<a href="#">更多（123）</a>-->
+        <!--<a href="#">申请</a>-->
+    </div>
+</div>
+<div class="fans_more">
+    <img class="up" src="https://www.huakewang.com/2017_data/images/index_12.png">
+    <img class="down" src="https://www.huakewang.com/2017_data/images/index_91.png">
+</div>
+
+<p class="footer_copy_img">
+    找靠谱的设计师
+</p>
+<p class="copyright">
+    Copyright © 2014 huakewang.com 浙ICP备10012792号-4
+</p>
+<p class="copyright">
+    <span id="cnzz_stat_icon_5496624">
+		<a href="https://www.cnzz.com/stat/website.php?web_id=5496624" target="_blank" title="站长统计">
+			<img border="0" hspace="0" vspace="0" src="https://icon.cnzz.com/img/pic.gif">
+		</a>
+	</span>
+</p>

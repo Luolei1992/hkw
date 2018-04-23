@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font/font.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/social.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.left').load('PersonalNav.html', function() {
+
+            }); //加载已登录导航
+        })
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        
+        .fpsqB .yun-kehu span {
+            width: auto;
+        }
+        
+        .fpsqM input {
+            padding-left: 10px;
+        }
+        
+        .preview .img {
+            width: 512px;
+            height: 240px;
+        }
+        
+        .fpsqM .preview span,
+        .fpsqM .preview a {
+            /* background-color: #03A5EE; */
+            border: 1px solid #555;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+            padding: 5px 20px;
+            letter-spacing: 2px;
+            color: #555;
+            outline: none;
+            margin-left: 30px;
+            cursor: pointer;
+            vertical-align: super;
+        }
+    </style>
+</head>
+
+<body style="" class="personal-10">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal10">
+            <div class="fpsqTop">
+                <p>
+                    您的位置：
+                    <a href="javascript:void(0);">个人中心</a> &gt;
+                    <a href="javascript:void(0);">发票申请</a> &gt;
+                    <a href="javascript:void(0);">发票详情</a>
+                </p>
+            </div>
+            <div class="fpsqM">
+                <h3>《<span class="project_name"></span>》的发票详情：</h3>
+                <p>公司抬头：<span class="title"></span></p>
+                <p>发票内容：<span class="content"></span></p>
+                <p>发票金额：<span class="total_amount"></span></p>
+                <p>发票类型：<span class="type"></span></p>
+                <p>申请时间：<span class="add_time"></span></p>
+                <div id="electronic-invoice">
+                    <p>发票预览：</p>
+                    <div class="preview">
+                        <img class="img" src="" alt="">
+                        <span id="previewBigImg">查看大图</span>
+                        <!-- <span id="previewDownload">下载</span> -->
+                        <a id="previewDownload" href="" download="invoice">下载</a>
+                    </div>
+                </div>
+                <div id="paper-invoice">
+                    <p>快递单号：<span class="send_code"></span></p>
+                    <p>收件人：<span class="rcv_name"></span></p>
+                    <p>联系电话：<span class="rcv_phone"></span></p>
+                    <p>收件地址：<span class="rcv_address"></span></p>
+                </div>
+            </div>
+            <div style="width:1px;height:1px; clear:both;"></div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+</body>
+<script type="text/javascript" src="js/personal/config.js"></script>
+<script type="text/javascript">
+    $(function() {
+        ajaxgetInvoiceInfo();
+    });
+
+    /*
+     * ajax向后端获取数据
+     */
+    function ajaxgetInvoiceInfo() {
+        $.ajax({
+            url: CONFIG.getUrl() + CONFIG.getQuotePath() + "get_invoice_info ",
+            type: "POST",
+            dataType: "JSON",
+            data: {
+                user_id: getCookie("user_id"),
+                project_id: getLocationParam("id")
+            },
+            success: function(res) {
+                if (res.success) {
+                    renderData(res.data);
+                }
+            }
+        });
+    }
+
+    //渲染数据到页面
+    function renderData(data) {
+        selectTtype(data.type);
+        renderHTML(".project_name", data.project_name);
+        renderHTML(".title", data.title);
+        renderHTML(".content", data.content);
+        renderHTML(".total_amount", data.total_amount);
+        renderHTML(".type", data.type);
+        renderHTML(".add_time", data.add_time);
+        renderHTML(".send_code", data.send_code);
+        renderHTML(".rcv_name", data.rcv_name);
+        renderHTML(".rcv_phone", data.rcv_phone);
+        renderHTML(".rcv_address", data.rcv_address);
+        var imgSrc = data.appendixs[0].path;
+        $(".preview .img").attr("src", imgSrc);
+        $("#previewDownload").attr("href", imgSrc);
+    }
+    //传递一个class，修改这个DOM元素的HTML
+    function renderHTML(className, data) {
+        if (className == ".type") {
+            data ? $(className).html("纸质发票") : $(className).html("电子发票");
+            return;
+        }
+        if (className == ".add_time") {
+            var time = data ? (data.split(" ")[0].replace('-', '年').replace('-', '月') + "日") : "";
+            $(className).html(time);
+            return;
+        }
+        if (data) {
+            $(className).html(data);
+        } else {
+            $(className).html("无");
+        }
+    }
+    $("#previewBigImg").click(function(e) {
+        e.preventDefault();
+        var src = $(".preview .img").attr("src");
+        window.open(src, '_blank');
+    });
+
+    //根据发票类型，选择显示什么内容。
+    function selectTtype(type) {
+        if (type) {
+            //电子发票
+            $("#electronic-invoice").css("display", "block");
+            $("#paper-invoice").css("display", "none");
+        } else {
+            //纸质发票
+            $("#electronic-invoice").css("display", "none");
+            $("#paper-invoice").css("display", "block");
+        }
+    }
+</script>
+
+</html>

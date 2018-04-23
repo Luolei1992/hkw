@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        个人设置
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/social.css" />
+    <link rel="stylesheet" href="css/font/font.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        .lineBox,
+        .cki-rowbox.lineBox.video {
+            margin-top: 20px;
+        }
+        
+        .cki-rowbox,
+        .chi-tit {
+            margin-bottom: 0;
+        }
+        
+        .perDet-rb {
+            padding: 10px 0px;
+        }
+        
+        .lineBox .boxT,
+        .lineBox.cki-rowbox label {
+            text-align: left;
+            font-size: 14px;
+        }
+        
+        .personalSave {
+            text-align: left;
+        }
+        
+        .lineBox .boxT.right {
+            position: inherit;
+        }
+        
+        .lineBox .boxGroup {
+            width: 210px;
+            margin-right: 50px;
+            display: inline-block;
+        }
+        
+        .lineBox .boxT {
+            display: inline-block;
+        }
+        
+        .lineBox.s4 input {
+            width: 170px;
+        }
+        
+        .js-person-txt {
+            font-size: 14px;
+            line-height: 14px;
+            position: absolute;
+            top: 140px;
+        }
+        
+        .js-person-txt.one {
+            left: 180px;
+        }
+        
+        .js-person-txt.two {
+            left: 436px;
+        }
+    </style>
+</head>
+
+<body style="" class="p11">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal10">
+            <div class="fpsqTop">
+                <p>
+                    您的位置：
+                    <a href="Personal-1.html">个人中心</a> &gt;
+                    <a href="Personal-4.html">我的账户</a> >
+                    <a href="javascript:void(0);">实名认证</a>
+                </p>
+            </div>
+            <div class="left"></div>
+            <div class="right perDet-r" style="">
+                <div class="neirong">
+                    <div class="toWarring">
+                        <h3>实名认证</h3>
+                        <p>根据国家规定，自2017年10月1日起，网上跟贴评论需实名认证！</p>
+                        <p>同时为了保证您的合法权益和资金安全，我们需要您提供身份证信息，请务必上传真实有效的身份证扫描件。</p>
+                        <P>我们会为您保密，并承诺不用于其它用途，该信息仅自己可见。</p>
+                    </div>
+                    <div class="navBar-wrap perDet-rb" id="js-personbase-bul">
+                        <section class="person-section s1 js-personbase-blis cur">
+                            <div class="lineBox s4">
+                                <label class="boxT"><i style="color:red">*</i>真实姓名</label>
+                                <div class="boxGroup">
+                                    <input id="real-name" type="text" placeholder="姓名需要和身份证保持一致">
+                                </div>
+                                <label class="boxT right"><i style="color:red">*</i>身份证号码</label>
+                                <div class="boxGroup">
+                                    <input id="id-card-number" type="text" placeholder="请输入身份证号">
+                                </div>
+                            </div>
+                            <div class="cki-rowbox s1 lineBox">
+                                <label class="avatar"><i style="color:red">*</i>身份证</label>
+                                <div class="iptpic-wrp" style="margin-right: 60px;">
+                                    <i class="icon-add"></i>
+                                    <span class="img"></span>
+                                    <span class="upld">点击上传图片</span>
+                                    <input type="file" class="identity js-person-upbtn" accept="image/*">
+                                    <div class="js-person-up" id="id_card_pic_f">
+                                        <img src="" alt="" width="100%">
+                                    </div>
+                                    <span class="js-person-reload hid">重新上传</span>
+                                </div>
+                                <span class="js-person-txt one">身份证正面</span>
+                                <div class="iptpic-wrp">
+                                    <i class="icon-add"></i>
+                                    <span class="img"></span>
+                                    <span class="upld">点击上传图片</span>
+                                    <input type="file" class="identity js-person-upbtn" accept="image/*">
+                                    <div class="js-person-up" id="id_card_pic_b">
+                                        <img src="" alt="" width="100%">
+                                    </div>
+                                    <span class="js-person-reload hid">重新上传</span>
+                                </div>
+                                <span class="js-person-txt two">身份证背面</span>
+                            </div>
+                            <div style="margin-bottom: 50px"></div>
+                            <div class=" cki-rowbox s1 lineBox">
+                                <label class="avatar"><i style="color:red">*</i>手持照</label>
+                                <div class="iptpic-wrp">
+                                    <i class="icon-add"></i>
+                                    <span class="img"></span>
+                                    <span class="upld">点击上传图片</span>
+                                    <input type="file" class="identity js-person-upbtn" accept="image/*">
+                                    <div class="js-person-up" id="id_card_pic_h">
+                                        <img src="" alt="" width="100%">
+                                    </div>
+                                    <span class="js-person-reload hid">重新上传</span>
+                                </div>
+                                <div class="cki-show person">
+                                    <p class="person-example">请上传手持身份证的半身照,不符合规范的无法通过审核（<span class="show blue" id="js-person-exu">查看图例</span>）</p>
+                                    <div class="example animate-fadeInTop" id="js-person-exl">
+                                        <div>
+                                            <img src="images/personal/head-example.jpg" alt="">
+                                            <p>
+                                                <h3>头像图例</h3><br>背景要求无杂色，浅灰底，建议灰色<span id="e5e5e5br"></span>人物最好着正装，与背景对比明显<br>人物角度正面到侧方15度角内，头像居中清晰</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="lineBox s4">
+								<label class="boxT"><i style="color:red">*</i>身份证号</label>
+								<div class="boxGroup">
+									<input type="text" placeholder="请输入身份证号">
+								</div>
+							</div> -->
+
+                            <!--<div class=" cki-rowbox s1 lineBox video" id="js-person-video">-->
+                            <!--<label for="" class="avatar">多媒体介绍</label>-->
+                            <!--<div class="iptpic-wrp js-person-video" >-->
+                            <!--<i class="icon-add"></i>-->
+                            <!--<span class="img"></span>-->
+                            <!--<span class="upld">点击上传图片/视频</span>-->
+                            <!--<span class="js-person-reload hid">重新上传</span>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                        </section>
+                        <div style="margin-bottom: 60px"></div>
+                        <div class="personalSave">
+                            <a href="javascript:;" class="perR" id="ajaxSave">提交</a>
+                            <!--<span>实名认证审核中···</span>-->
+                            <span id="saveTxt"></span>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 50px;"></div>
+
+            </div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/personal/config.js"></script>
+    <script type="text/javascript" src="js/personal/layer/layer.js"></script>
+    <script>
+        window.FileAPI = {
+            staticPath: 'js/personal/'
+        };
+    </script>
+    <script type="text/javascript" src="js/personal/FileAPI.min.js"></script>
+    <script type="text/javascript" src="js/personal/personal-11.js"></script>
+    <script>
+        $(function() {
+            //		var pin =['工业设计','环艺设计','装潢设计','展示设计','服饰设计','平面设计','网站设计','设计','广告设计','UI设计'];
+            //		var btnCl = $('.icon-close');
+            //		$('#btn-sj').on('click',function() {
+            //			foo.pinLY(pin);
+            //		});
+            //		foo.chaIner();
+            //		bar.pinC();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/fonts/iconfont.css">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/social.css" />
+    <!--[if lte IE 9]>
+        <script src="https://cdn.bootcss.com/es5-shim/4.5.9/es5-shim.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('div.left').load('PersonalNav.html', function() {
+                $(document).find('div.left div.yidenglu-box ul li:eq(2)').css({
+                    'background': '#f1f1f1'
+                });
+            }); //加载已登录导航
+            $('.Wrap').css({
+                'display': 'none'
+            }); //Wrap隐藏
+            $('.Wrap:eq(0)').css({
+                'display': 'block'
+            }); //Wrap第一块显示
+        });
+    </script>
+
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        
+        .personal .neirong-top .tab.cur span {
+            border-bottom: 2px solid #0b83d8;
+        }
+        #main-body.personal div.right div.neirong div.divWrap ul.ulBtPub li.li1 {
+            text-align: left;
+        }
+        
+        #main-body.personal div.right div.neirong div.divWrap ul.ulBtPub li.li2 {
+            text-align: left;
+        }
+        
+        #main-body.personal div.right div.neirong div.divWrap .span-right.text b.no-red {
+            color: #333;
+        }
+        
+        div.moreWarring .ma.ma {
+            margin: 0 14px 10px 30px;
+            width: 80px;
+            font-size: 16px;
+        }
+        
+        div.moreWarringW2.moreWarring button.demand {
+            float: left;
+        }
+        
+        div.moreWarringW2.moreWarring button.moreWarringCancle.demand {
+            margin-left: 0;
+        }
+        
+        div.moreWarringW2.demand {
+            width: 400px;
+        }
+        
+        .diyTips .layui-layer-content {
+            background-color: #f3f3f3!important;
+            color: #000!important;
+        }
+        
+        .diyTips .layui-layer-TipsG.layui-layer-TipsR {
+            border-bottom-color: #f3f3f3!important;
+        }
+        
+        .moreWarringW2.moreWarring {
+            height: 270px;
+        }
+
+        .tempNullPng {
+            width: 160px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .neirong-top .tab .num{
+            display: initial!important;
+            border-bottom: none!important;
+        } 
+        .PersonalVal2 {
+            width: 80px !important;
+            position: relative;
+            top: -11px;
+            margin-left: 30px;
+            height: 24px;
+            text-transform: uppercase;
+        }
+        /*#new-pic-val2 {*/
+            /*width: 80px !important;*/
+            /*position: relative;*/
+            /*top: -11px;*/
+            /*margin-left: 30px;*/
+            /*height: 24px;*/
+        /*}*/
+        p.new-pic span.code {
+            width: 105px;
+            height: 32px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            top: 0px;
+        }
+        p.new-pic span.code img {
+            position: relative;
+            left: -8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeader">
+            画客网致力于打造一个精确、快捷的设计服务对接平台。来画客网，遇到靠谱的好项目。
+            <a href="Personal-8.html">设计师入驻</a>
+        </div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal">
+            <div class="left"></div>
+            <div class="right ">
+                <div class="neirong">
+                    <div class="neirong-top">
+                        <div class="wddt tab cur"><span>作为服务方<span class="num"></span></span></div>
+                        <div class="xttz tab "><span>作为需求方<span class="num"></span></span></div>
+                    </div>
+                    <div class="neirong-b">
+                        <input type="text" placeholder="输入项目名称进行搜索"><i></i>
+                        <div class="sele1 selePub">
+                            <span>类型：</span>
+                            <select name="" id="orderType">
+                                <option value="">全部</option>
+                                <option value="1">报价订单</option>
+                                <option value="2">服务订单</option>
+                            </select>
+                        </div>
+                        <div class="sele2 selePub">
+                            <span>进度：</span>
+                            <select name="" id="progress">
+                                <option value="">全部</option>
+                                <option value="2">进行中</option>
+                                <option value="5">已结束</option>
+                            </select>
+                        </div>
+                        <div class="sele4 selePub">
+                            <span>时间：</span>
+                            <select name="" id="publishTime">
+                                <option value="">全部</option>
+                                <option value="7">近一周</option>
+                                <option value="30">近一个月</option>
+                                <option value="90">近三个月</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="Wrap" id="viewPersona2"></div>
+                    <script type="text/template" id="templatePersona2">
+                        {{~it.item_list:val:eq}}
+                        <div class="divWrap">
+                            <a href="projectExtend.html?tag=1&id={{=val.project_id}}" target="_blank">
+                                <span class="span-left">
+                                    {{= val.project_name ? "《"+val.project_name+"》 —— " : "" }}
+                                    {{= val.type == "2" ? "服务订单" : "报价订单" }}</span>
+                                </a> 
+                            {{var time =val.out_time?(val.out_time.split(" ")[0].replace('-','年').replace('-','月')+"日"):"";}}
+                            <span class="span-right span-right-time">{{= time ? "截止时间："+time : ""}}</span>
+                            <div style="clear:both;"></div>
+                            {{? val.type == "1"}}
+                            <ul class="ulBt ulBtPub">
+                                <li class="li1">报价单名称</li>
+                                <li class="li2">组成部分</li>
+                                <li class="li3">总计</li>
+                            </ul>
+                            {{~val.content:val2:eq2}}
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">{{= val2.name ? val2.name : "" }}</li>
+                                <li class="li2">共<span>{{= val2.num ? val2.num : "" }}</span>部分</li>
+                                <li class="li3">{{= val2.total_price ? val2.total_price : "" }}</li>
+                            </ul>
+                            {{~}} 
+                            {{?}} 
+                            {{? val.type == "2"}}
+                            <ul class="ulBt ulBtPub server">
+                                <li class="li1">服务类型</li>
+                                <li class="li2">数量</li>
+                                <li class="li3">合计</li>
+                            </ul>
+                            {{~val.content:val3:eq3}}
+                            <ul class="ulBt-a ulBtPub server">
+                                <li class="li1">{{= val3.name ? val3.name : "" }}</li>
+                                <li class="li2">{{= val3.num ? val3.num : "" }}</li>
+                                <li class="li3">{{= val3.total_price ? val3.total_price : "" }}</li>
+                            </ul>
+                            {{~}} 
+                            {{?}} 
+                            {{? val.type == "1"}} 
+                            {{ var arrStr = ""; }} 
+                            {{ var okNum = 0; }} 
+                            {{ var okPrice = 0; }} 
+                            {{ for(var i = 0; i< val.pay_stages.length; i++ ){ }} 
+                            {{ arrStr +=val.pay_stages[i].percent + "%+"; }} 
+                            {{ val.pay_stages[i].isFinished=="1" ? okNum++ : ""; }} 
+                            {{ val.pay_stages[i].isFinished=="1" ? okPrice +=parseFloat(val.pay_stages[i].pay_amount) : ""; }} 
+                            {{ } }} 
+                            {{ arrStr=arrStr.substring(0,arrStr.length-1); }} 
+                            <span class="span-left text">共{{= val.pay_stages ? val.pay_stages.length : "" }}次付款（{{= val.pay_stages ? arrStr : "" }}）：<b>已收款{{=okNum}}次，共{{=okPrice}}元</b></span>
+                                {{? }}
+                                <span class="span-right text">项目总计：<b>&yen;{{=val.price_after_discount ? val.price_after_discount : (val.price_before_discount ? val.price_before_discount : "") }}元</b><b class="no-red"> {{=val.tax_after_discount ? "(含税金：&yen;"+val.tax_after_discount+"元)" : ( parseFloat( val.tax_before_discount )? val.tax_before_discount : "(无税金)")}}</b></span>
+                                <div style="clear:both;"></div>
+                                <div class="auto" style="clear:both;width:95%;border-top:1px solid #f0f0f0; "></div>
+                                {{? val.type == "1" && (val.stage_id != "5" && val.stage_id != "4") }}
+                                <span class="span-1">作业中</span>
+                                <span class="span-2"> {{= val.error_message ? "("+val.error_message+")" : "" }}</span>
+                                <a href="projectExtend.html?tag=1&id={{=val.project_id}}&custom={{=val.user_id_to}}" target="_blank"><span class="span-3">查看订单详情</span></a>
+                                <a href="javascript:void(0);"><span data-idx="0" data-orderId="{{=val.project_id}}" class="span-4 moreWarringT">{{= val.today_remind_count != "3" ? "提醒验收" : "已提醒" }}</span></a>
+                                <div class="moreWarringW1 moreWarring">
+                                    <p>您已成功提醒对方！</p>
+                                    <p>一天最多只能提醒三次！</p>
+                                </div>
+                                {{?}} 
+                                {{? val.stage_id == "5" || val.stage_id == "4" }}
+                                <span class="span-1">项目完成</span>
+                                <span class="span-2"></span>
+                                <a href="projectExtend.html?tag=1&id={{=val.project_id}}&custom={{=val.user_id_to}}" target="_blank"><span class="span-3">查看订单详情</span></a>
+                                <a href="javascript:void(0);">
+                                    <span class="span-4 moreWarringP" style="{{= val.svr_appraise_score ? 'border: 0px none;' : ''}}">{{= val.svr_appraise_score ? "查看评价" : "评价"}}</span>
+                                </a>
+                                <div class="clearfix moreWarringW2 moreWarring">
+                                    <span class="moreWarringW2Sp1">评分：</span>
+                                    <ul class="startComment" data-rating="{{= val.svr_appraise_score ? val.svr_appraise_score : 0}}">
+                                        <li class="iconfont11 icon-wujiaoxingkong"></li>
+                                        <li class="iconfont11 icon-wujiaoxingkong"></li>
+                                        <li class="iconfont11 icon-wujiaoxingkong"></li>
+                                        <li class="iconfont11 icon-wujiaoxingkong"></li>
+                                        <li class="iconfont11 icon-wujiaoxingkong"></li>
+                                    </ul>
+                                    <br>
+                                    <span class="moreWarringW2Sp2">评价：</span>
+                                    <textarea placeholder="{{= val.svr_appraise_txt ? val.svr_appraise_txt : ''}}"></textarea><br>
+                                    <button class="moreWarringCancle">取消</button>
+                                    <button class="moreWarringSure" data-orderId="{{=val.project_id}}">确定</button>
+                                    <i class="iconfont11 icon-tubiao06"></i>
+                                </div>
+                                {{? }} 
+                                {{? val.type == "2" && (val.stage_id != "5" && val.stage_id != "4") }}
+                                <span class="span-1 perTishiWrap">已付款 <i class="perTishi"><p class="perTishiWorlds">款项已托管到画客网，待对方成功验收您的成果，系统会将款项全额转入您的账户</p></i></span> 
+                                {{ var time_least = val.payInfo ? val.payInfo.time_least.substring(0,5) : ""; }}
+                                <span class="span-2">{{= time_least ? "（已到截止时间，若您在"+time_least+"内未处理，系统会自动确认验收）" : ""}}</span>
+                                <a href="projectExtend2.html?tag=1&id={{=val.project_id}}&custom={{=val.user_id_to}}" target="_blank"><span class="span-3">查看订单详情</span></a>
+                                <a href="javascript:void(0);"><span data-idx="0" data-orderId="{{=val.project_id}}" class="span-4 moreWarringT">{{= val.today_remind_count != "3" ? "提醒验收" : "已提醒" }}</span></a>
+                                <div class="moreWarringW1 moreWarring">
+                                    <p>您已成功提醒对方！</p>
+                                    <p>一天最多只能提醒三次！</p>
+                                </div>
+                                {{? }}
+                                <div style="clear:both;"></div>
+                        </div>
+                        {{~}}
+                    </script>
+
+                    <div class="Wrap" id="viewPersona2Demand"></div>
+                    <script type="text/template" id="templatePersona2Demand">
+                        {{~it.item_list:val:eq}} 
+                        {{ val.user_phone = $(".phonenum").eq(0).html(); }}
+                        <div class="divWrap">
+                            <a href="projectExtend.html?tag=1&id={{=val.project_id}}" target="_blank"><span class="span-left">{{= val.project_name ? "《"+val.project_name+"》 —— " : "" }}{{= val.type == "2" ? "服务订单" : "报价订单" }}</span></a> {{var time =val.out_time?(val.out_time.split(" ")[0].replace('-','年').replace('-','月')+"日"):"";}}
+                            <span class="span-right span-right-time">{{= time ? "截止时间："+time : ""}}</span>
+                            <div style="clear:both;"></div>
+                            {{? val.type == "1"}}
+                            <ul class="ulBt ulBtPub">
+                                <li class="li1">报价单名称</li>
+                                <li class="li2">组成部分</li>
+                                <li class="li3">总计</li>
+                            </ul>
+                            {{~val.content:val2:eq2}}
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">{{= val2.name ? val2.name : "" }}</li>
+                                <li class="li2">共<span>{{= val2.num ? val2.num : "" }}</span>部分</li>
+                                <li class="li3">{{= val2.total_price ? val2.total_price : "" }}</li>
+                            </ul>
+                            {{~}} 
+                            {{?}} 
+                            {{? val.type == "2"}}
+                            <ul class="ulBt ulBtPub server">
+                                <li class="li1">服务类型</li>
+                                <li class="li2">数量</li>
+                                <li class="li3">合计</li>
+                            </ul>
+                            {{? val.content.length}}
+                            {{~val.content:val3:eq3}}
+                            <ul class="ulBt-a ulBtPub server">
+                                <li class="li1">{{= val3.name ? val3.name : "" }}</li>
+                                <li class="li2">{{= val3.num ? val3.num : "" }}</li>
+                                <li class="li3">{{= val3.total_price ? val3.total_price : "" }}</li>
+                            </ul>
+                            {{~}}
+                            {{??}} 
+                            <ul class="ulBt-a ulBtPub server">
+                                <li class="li1">自定义服务</li>
+                                <li class="li2">1</li>
+                                <li class="li3">{{=val.price_after_discount ? val.price_after_discount : (val.price_before_discount ? val.price_before_discount : "") }}</li>
+                            </ul>
+                            {{?}}
+                            {{?}} 
+                            {{? val.type == "1"}} 
+                            {{ var arrStr = ""; }} 
+                            {{ var okNum = 0; }} 
+                            {{ var okPrice = 0; }} 
+                            {{ for(var i = 0; i < val.pay_stages.length; i++ ){ }} 
+                            {{ arrStr +=val.pay_stages[i].percent + "%+"; }} 
+                            {{ val.pay_stages[i].isFinished=="1" ? okNum++ : ""; }} 
+                            {{ val.pay_stages[i].isFinished=="1" ? okPrice +=parseFloat(val.pay_stages[i].pay_amount) : ""; }} 
+                            {{ } }} 
+                            {{ arrStr=arrStr.substring(0,arrStr.length-1); }} 
+                            <span class="span-left text">共{{= val.pay_stages ? val.pay_stages.length : "" }}次付款（{{= val.pay_stages ? arrStr : "" }}）：<b>已收款{{=okNum}}次，共{{=okPrice}}元</b></span>
+                            {{? }}
+                                <span class="span-right text">项目总计：<b>&yen;{{=val.price_after_discount ? val.price_after_discount : (val.price_before_discount ? val.price_before_discount : "") }}元</b><b class="no-red"> {{=val.tax_after_discount ? "(含税金：&yen;"+val.tax_after_discount+"元)" : ( parseFloat(val.tax_before_discount )? val.tax_before_discount : "(无税金)")}}</b></span>
+                                <div style="clear:both;"></div>
+                                <div class="auto" style="clear:both;width:95%;border-top:1px solid #f0f0f0; "></div>
+                                {{? val.type == "1" && (val.stage_id != "5" && val.stage_id != "4") }}
+                                <span class="span-1">作业中</span>
+                                <span class="span-2"> {{= val.error_message ? "("+val.error_message+")" : "" }}</span>
+                                <a href="projectExtend.html?tag=2&id={{=val.project_id}}&custom={{=val.user_id_from}}" target="_blank"><span class="span-3">查看订单详情</span></a>
+                                <a href="javascript:void(0);"><span class="span-4 moreWarringP">确认验收</span></a>
+                                <div class="clearfix moreWarringW2 moreWarring demand">
+                                    <p class="pubp">请确认是否收到设计师的提交成果！</p>
+                                    {{ var percent,pay_amount; }} 
+                                    {{? val.pay_stages.length > 0 }} 
+                                    {{ percent = val.pay_stages[val.pay_stages.length-1].percent; }} 
+                                    {{ pay_amount = val.pay_stages[val.pay_stages.length-1].pay_amount; }} 
+                                    {{?}}
+                                    <p class="pubp">按约定，您将支付{{= percent ? percent : "" }}%的尾款，共{{= pay_amount ? pay_amount : ""}}元！</p>
+                                    <p class="pubp">付款后，资金将直接从您的账户转到设计师的账户！</p>
+                                    <span class="pubp validate">验证手机号：{{=val.user_phone ? val.user_phone : ""}}</span><br>
+                                    <!--<p class="new-pic">-->
+                                        <!--<input id="PersonalVal2" class="PersonalVal2" type="text">-->
+                                        <!--<span class="code">-->
+                                            <!--<img id="codePouup" src="https://www.huakewang.com/index.php/verifycode/index/2" alt="">-->
+                                        <!--</span>-->
+                                    <!--</p>-->
+                                    <!-- <span  class="pubp">手机号码：</span><input type="phone" class="phone"><br> -->
+                                    <div><input type="text" class="ma ma"><a class="onSMSCode" data-phone="{{=val.user_phone ? val.user_phone : " "}}">获取验证码</a></div>
+                                    <button class="moreValidateSure btn demand" data-orderId="{{=val.project_id}}">确定</button>
+                                    <button class="moreWarringCancle btn demand">取消</button>
+                                </div>
+                                {{?}} 
+                                {{? val.stage_id == "5" || val.stage_id == "4" }}
+                                <span class="span-1">项目完成</span>
+                                <span class="span-2"></span>
+                                <a href="projectExtend.html?tag=2&id={{=val.project_id}}&custom={{=val.user_id_from}}" target="_blank"><span class="span-3">查看订单详情</span></a>
+                                <a href="javascript:void(0);">
+                                    <span class="span-4 moreWarringP" style="{{= val.clt_appraise_score ? 'border: 0px none;' : '' }}">{{= val.clt_appraise_score ? "查看评价" : "评价"}}</span>
+                                </a>
+                                <div class="clearfix moreWarringW2 moreWarring">
+                                    <span class="moreWarringW2Sp1">评分：</span>
+                                    <ul class="startComment" data-rating="{{= val.clt_appraise_score ? val.clt_appraise_score : 0}}">
+                                        <li class="iconfont11 icon-wujiaoxingkong"></li>
+                                        <li class="iconfont11 icon-wujiaoxingkong"></li>
+                                        <li class="iconfont11 icon-wujiaoxingkong"></li>
+                                        <li class="iconfont11 icon-wujiaoxingkong"></li>
+                                        <li class="iconfont11 icon-wujiaoxingkong"></li>
+                                    </ul><br>
+                                    <span class="moreWarringW2Sp2">评价：</span>
+                                    <textarea placeholder="{{= val.clt_appraise_txt ? val.clt_appraise_txt : ''}}"></textarea><br>
+                                    <button class="moreWarringCancle">取消</button>
+                                    <button class="moreWarringSure" data-orderId="{{=val.project_id}}">确定</button>
+                                    <i class="iconfont11 icon-tubiao06"></i>
+                                </div>
+                                {{? }} 
+                                {{? val.type == "2" && (val.stage_id != "5" && val.stage_id != "4") }}
+                                <span class="span-1 perTishiWrap">已付款 <i class="perTishi"><p class="perTishiWorlds">款项已托管到画客网，待对方成功验收您的成果，系统会将款项全额转入您的账户</p></i></span> 
+                                {{ var time_least = val.payInfo ? val.payInfo.time_least.substring(0,5) : ""; }}
+                                <span class="span-2">{{= time_least ? "（已到截止时间，若您在"+time_least+"内未处理，系统会自动确认验收）" : ""}}</span>
+                                <a href="projectExtend2.html?tag=2&id={{=val.project_id}}&custom={{=val.user_id_from}}" target="_blank"><span class="span-3">查看订单详情</span></a>
+                                <a href="javascript:void(0);"><span class="span-4 moreWarringP">确认验收</span></a>
+                                <div class="clearfix moreWarringW2 moreWarring demand">
+                                    <p class="pubp">请确认是否收到设计师的提交成果！</p>
+                                    <p class="pubp">付款后，资金将直接从您的账户转到设计师的账户！</p>
+                                    <span class="pubp validate">验证手机号：{{=val.user_phone ? val.user_phone : ""}}</span><br>
+                                    <p class="new-pic">
+                                        <input id="PersonalVal2" class="PersonalVal2" type="text">
+                                        <span class="code">
+                                            <img id="codePersonal2" src="https://www.huakewang.com/index.php/verifycode/index/2" alt="">
+                                        </span>
+                                    </p>
+                                    <!-- <span  class="pubp">手机号码：</span><input type="phone" class="phone"><br> -->
+                                    <div><input type="text" class="ma ma"><a class="onSMSCode" data-phone="{{=val.user_phone ? val.user_phone : " "}}">获取验证码</a></div>
+                                    <button class="moreValidateSure btn demand" data-orderId="{{=val.project_id}}">确定</button>
+                                    <button class="moreWarringCancle btn demand">取消</button>
+                                </div>
+                                {{? }}
+                                <div style="clear:both;"></div>
+                        </div>
+                        {{~}}
+                    </script>
+
+                </div>
+            </div>
+
+            <div style="width:1px;height:1px; clear:both;"></div>
+            <div id="kkpager"></div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <script type="text/javascript" src="js/plugs/jq.page.js"></script>
+    <script type="text/javascript" src="js/personal/layer/layer.js"></script>
+    <script type="text/javascript" src="js/personal/config.js"></script>
+    <script type="text/javascript" src="js/plugs/doT.min.js"></script>
+    <script type="text/javascript" src="js/personal/common-input-valid.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/social.js"></script>
+    <script type="text/javascript" src="js/personal/personal-2.js"></script>
+    <script>
+        $(function() {
+            //点击评价
+            $("body").on("click", ".moreWarringP", function() {
+                var $_this = $(this);
+                var $_sibling = $(this).parent().next();
+                $_sibling.css({
+                    "display": "block"
+                });
+                $_sibling.children(".moreWarringCancle, .iconfont11.icon-tubiao06").click(function() {
+                    $(this).parent().css("display", "none")
+                });
+
+                $_sibling.children(".moreWarringSure").off().click(function() {
+                    var orderId = $(this).attr('data-orderId');
+                    var rating = $(this).parent().find('.startComment').attr('data-rating');
+                    var text = $(this).parent().find('textarea').val();
+                    if (rating == 0) {
+                        layer.msg("请选择评分！", {
+                            time: 1000
+                        });
+                    } else if (text.length == 0) {
+                        layer.msg("请输入评价！", {
+                            time: 1000
+                        });
+                    } else {
+                        $(this).parent().parent().children(".times").css("display", "none");
+                        $(this).parent().css("display", "none");
+                        $_this.css("border", "0 none").html("查看评价");
+                        //向后端发送ajax，提交评分和评价。
+                        ajaxSendComment(orderId, rating, text);
+                    }
+                });
+                if ($_this.html() == "查看评价") {
+                    $_sibling.children("textarea").attr("readonly", "true").css({
+                        "outline": "none"
+                    });
+                    // $_sibling.append('<i class="iconfont11 icon-tubiao06"></i>').children("button").remove();
+                    $_sibling.children("button").remove();
+                    $_sibling.children("i").click(function() {
+                        $_sibling.css("display", "none");
+                    });
+                    $("body").off("mouseenter", ".startComment>li");
+                    $("body").off("click", ".startComment>li");
+                    $("body").off("mouseleave", ".startComment");
+                    //显示星级评分
+                    var $startComment = $(this).parent().next().find('.startComment');
+                    var rating = $startComment.attr('data-rating');
+                    if (rating >= 1) {
+                        $startComment.find('li').eq(rating - 1).addClass("icon-wujiaoxingman").removeClass("icon-wujiaoxingkong").prevAll().addClass("icon-wujiaoxingman").removeClass("icon-wujiaoxingkong");
+                        $startComment.find('li').eq(rating - 1).nextAll().addClass("icon-wujiaoxingkong").removeClass("icon-wujiaoxingman");
+                    }
+                } else if ($_this.html() == "评价") {
+                    start(true);
+                    //评分五角星
+                    function start(flag) {
+                        if (flag == true) {
+                            //1. 给所有的li注册mouseenter事件
+                            $("body").on("mouseenter", ".startComment>li", function() {
+                                //2. 让当前li和前面所有的li变成实心,让后面所有的兄弟变成空心
+                                $(this).addClass("icon-wujiaoxingman").removeClass("icon-wujiaoxingkong").prevAll().addClass("icon-wujiaoxingman").removeClass("icon-wujiaoxingkong");
+                                $(this).nextAll().addClass("icon-wujiaoxingkong").removeClass("icon-wujiaoxingman");
+                            });
+                            //2. 离开ul的时候，把所有的li变成空心
+                            $("body").on("mouseleave", ".startComment", function() {
+                                $(this).children().addClass("icon-wujiaoxingkong").removeClass("icon-wujiaoxingman");;
+                                //4. 找到我点击的那个li让点击的那个五角星以及前面的兄弟变成实心就可以。
+                                $(".startComment>li.current").addClass("icon-wujiaoxingman").removeClass("icon-wujiaoxingkong").prevAll().addClass("icon-wujiaoxingman").removeClass("icon-wujiaoxingkong");
+                            });
+                            //3. 给所有的li注册点击事件，点击的时候加上类名
+                            $("body").on("click", ".startComment>li", function() {
+                                $(this).addClass("current").siblings().removeClass("current");
+                                var rating = $(this).index() + 1;
+                                $(this).parent().attr('data-rating', rating);
+                            });
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

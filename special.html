@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>画客网,网画客</title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css"/>
+    <link rel="stylesheet" href="css/client/dialog.css"/>
+    <link rel="stylesheet" type="text/css" href="css/fastDesign.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var _cookie = $.cookie('user_id');
+            $('.footer_on').load('bottom.html');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+
+        .fn-right {
+            margin-top: 3px;
+            float: right;
+        }
+
+        #towheaderWrap {
+            padding: 20px 0 0 0;
+        }
+
+        .introductionWrap .out-box {
+            width: 220px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+        .hkw-work-list li {
+            width: 286px;
+            height: 410px;
+            margin: 8px 0;
+            padding:0;
+            /*-webkit-box-shadow: 0 0 0 0;*/
+            /*-moz-box-shadow: 0 0 0 0;*/
+            /*box-shadow: 0 0 0 0;*/
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .hkw-work-list li:hover img {
+            transform:scale(1);
+        }
+        .hkw-work-list li:hover {
+            -webkit-box-shadow: 0 0 10px 3px #cccccc;
+            -moz-box-shadow: 0 0 10px 3px #cccccc;
+            box-shadow: 0 0 10px 3px #cccccc;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+
+<body style="">
+<div class="containers">
+    <!-- 头部 start -->
+    <div id="header" class="header-neiye"></div>
+    <!-- 头部 end -->
+    <div id="mainSpeed">
+        <div class="mainSpeedWrap clearfix">
+            <div class="mainSpeedMid">
+
+            </div>
+        </div>
+    </div>
+    <!--分页开始-->
+    <div id="kkpager"></div>
+    <!--分页结束-->
+    <!-- 瀑布流开始-->
+
+    <!-- 瀑布流结束-->
+    <!--底部开始-->
+    <div class="footer_on"></div>
+    <!--底部结束-->
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+<script id="pages" type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+<script type="text/javascript" src="js/data/speedUpXhr.js"></script>
+<script type="text/javascript">
+    var $workListMasonry = $('.pblUl').masonry({
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 100
+    });
+</script>
+</body>
+
+</html>

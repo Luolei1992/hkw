@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网-上传作品
+    </title>
+    <meta content="中国设计网,设计师,设计之家,设计,设计公司,设计师招聘,高级设计师,设计师简历,设计网,设计中国,画客网" name="keywords">
+    <meta content="中国设计网站、设计师之家-画客网：汇集中国高级设计师和设计公司，提供本地信息传播和互动的设计网平台；在画客，您就是设计大咖！找平面设计、字体设计、标志设计、室内设计、网页设计、包装设计、服装设计人才；选界面设计师、交互设计师、UI设计师、网页设计师，就来画客网！" name="description">
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/social.css" />
+    <link rel="stylesheet" href="css/font/font.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $(".but_2").click(function() {
+                $(".div_2_c_but1").hide();
+                $(".div_2_c_but2").show();
+                $(".but_1").css({
+                    "background": "#fbfbfb",
+                    "border": "none",
+                    "margin-top": "5px"
+                });
+                $(".but_2").css({
+                    "background": "#ffffff",
+                    "border": "1px solid #d2d2d2",
+                    "margin-top": "5px",
+                    "border-top-left-radius": "5px",
+                    "border-top-right-radius": "5px",
+                    "margin-top": "6px",
+                    "border-bottom": "1px solid #ffffff"
+                });
+            });
+            $(".but_1").click(function() {
+                $(".div_2_c_but2").hide();
+                $(".div_2_c_but1").show();
+                $(".but_2").css({
+                    "background": "#fbfbfb",
+                    "border": "none",
+                    "margin-top": "5px"
+                });
+                $(".but_1").css({
+                    "background": "#ffffff",
+                    "border": "1px solid #d2d2d2",
+                    "margin-top": "5px",
+                    "border-top-left-radius": "5px",
+                    "border-top-right-radius": "5px",
+                    "margin-top": "6px",
+                    "border-bottom": "1px solid #ffffff"
+                });
+            });
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: block;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body.publishedWork .div_2_c .div_2_c_1 {
+            background: #fff;
+            height: 120px;
+            margin: 15px auto 0;
+            width: 700px;
+        }
+        
+        #main-body.publishedWork .div_2_c .div_2_c_1 {
+            background: #fff;
+            height: 120px;
+            margin: 15px auto 0;
+            width: 700px;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <header id="topHeader" class="topHeader-l publi">
+            <p class="p_1">与11,307位设计师，一起分享快乐</p>
+            <p class="p_2">画客网温馨提示：上传前，请您先进行“站内搜索”，避免重复上传。我们将尽快进行审核，感谢分享。查看<a href="##" class="link">审核标准&gt;&gt;</a></p>
+        </header>
+        <form action="">
+            <div class="publish-work">
+                <div class="publish-left">
+                    <div class="publish-row margin-bottom"><label for="">标题</label>
+                        <div class="marginleft"><input type="text" placeholder="必填，最多100个汉字"></div>
+                    </div>
+                    <div class="publish-row">
+                        <label for="describe">描述</label>
+                        <div class="marginleft"><textarea name="" id="describe" cols="30" rows="10" placeholder="输入对作品的描写"></textarea></div>
+                    </div>
+                    <div class="publish-row">
+                        <label for="">图片</label>
+                        <div class="marginleft">
+                            <div class="publish-pics-wrp">
+                                <div class="pic-header">
+                                    <ul id="js-public-aul">
+                                        <li class="cur js-publis-alis">本地上传</li>
+                                        <li class="js-publis-alis">上传视频</li>
+                                        <li class="js-publis-alis">网络获取</li>
+                                    </ul>
+                                </div>
+                                <div class="publish-pics-main" id="js-publish-bul">
+                                    <div class="publish-pics local js-publish-blis cur">
+                                        <div class="picupload">
+                                            <div class="upload-cover">
+                                                <input type="file" class="js-upload-pic"><span>选择图片</span>
+                                            </div>
+                                            <div class="textwrp">
+                                                <p>单张图片10M以内，RGB模式，支持jpg/png格式，长不超过8000，宽不超过2000。最多允许上传100张图片，支持批量上传</p>
+                                            </div>
+                                            <div class="pics-show">
+                                                <input type="hidden" name="cover" id="hid-cover">
+                                                <ul>
+                                                    <li class="div_2_c_2 js-upload-lis">
+                                                        <div class="div_2_c_1">
+                                                            <img class="img_1" src="images/sc_t.jpg" />
+                                                            <img class="img_2" src="images/sc_b.jpg" />
+                                                            <img class="img_3" src="images/sc_d.jpg" />
+                                                            <input class="input_6" type="radio" name="fengmian" />
+                                                            <span class="sp_fb">封面</span>
+                                                            <div class="div_2_c_1_1"></div>
+                                                            <div class="div_2_c_1_2"><textarea style="width:100%;height:100%;text-indent:15px;border:none;resize:none;"></textarea></div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="publish-pics js-publish-blis js-publish-videow">
+                                        <input type="text" placeholder="请填写视频的网页地址，仅支持优酷" class="js-ipt-web"><span class="u-sure js-publish-video">确定</span>
+                                        <p class="demo">例如：http://v.youku.com/v_show/id_XMTYwMDIxNDI2MA==.html</p>
+                                        <!-- <div class="js-vide">
+											<i class="icon-play" title="点击播放"></i>
+											<span class="web">http://v.youku.com/v_show/id_XMTYwMDIxNDI2MA==.html</span>
+											<span class="fl-rt"><span class="info">视频已导入！</span><i class="icon-close" title="取消"></i></span>
+										</div> -->
+                                    </div>
+                                    <div class="publish-pics js-publish-blis">
+                                        <input type="text" placeholder="请填写采集的网址" class="js-ipt-web"><span class="u-sure">确定</span>
+                                        <p class="demo">请输入采集的作品网址，格式："http://www.huakewang.com/test.html"</p>
+                                    </div>
+                                    <div class="u-pic"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publish-category publish-row">
+                        <label for="">类别</label>
+                        <div class="marginleft clearfix">
+                            <div class="uls">
+                                <input type="hidden">
+                                <ul>
+                                    <li class="lis">平面设计 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">交互设计 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">三维艺术 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">网页设计 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">艺术绘画 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">工业设计 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">动画/影视 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">摄影艺术 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">其他　　 <i class="icon-arrownxt"></i></li>
+                                </ul>
+                            </div>
+                            <div class="uls">
+                                <input type="hidden">
+                                <ul>
+                                    <li class="lis">平面设计 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">交互设计 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">三维艺术 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">网页设计 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">艺术绘画 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">工业设计 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">动画/影视 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">摄影艺术 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">其他　　 <i class="icon-arrownxt"></i></li>
+                                </ul>
+                            </div>
+                            <div class="uls">
+                                <input type="hidden">
+                                <ul>
+                                    <li class="lis cur nonec">平面设计 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis nonec">交互设计 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">三维艺术 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">网页设计 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">艺术绘画 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">工业设计 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">动画/影视 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">摄影艺术 <i class="icon-arrownxt"></i></li>
+                                    <li class="lis">其他　　 <i class="icon-arrownxt"></i></li>
+                                </ul>
+                            </div>
+                            <!-- 下一级没有作品，添加 nonec 类名   小箭头消失 -->
+
+                        </div>
+                    </div>
+                    <div class="publish-row margin-bottom">
+                        <label for="">关键词</label>
+                        <div class="marginleft"><input type="text"></div>
+                    </div>
+                    <div class="publish-row publish-publish">
+                        <div class="marginleft">
+                            <p class="small">
+                                <small>点击‘发布’，即表示您已阅读并接受<a href=""><span class="orange">版权声明</span></a>和<a href=""><span class="orange">使用协议</span></a></small>
+                            </p>
+                            <a href="#" class="publish">发布</a>
+                            <a href="#" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="publish-right">
+                    <label for="">封面</label>
+                    <div class="upload-cover">
+                        <input type="file" class="js-upload-pic2" title="点击上传封面"><span>选择图片</span>
+                    </div>
+                    <div class="cover js-publish-cover">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+        var apd = $('<li class="div_2_c_2 js-upload-lis"><div class="div_2_c_1">            <img class="img_1" src="images/sc_t.jpg" />            <img class="img_2" src="images/sc_b.jpg" />            <img class="img_3" src="images/sc_d.jpg" />            <input class="input_6" type="radio" name="fengmian" />            <span class="sp_fb">封面</span>            <div class="div_2_c_1_1"></div>            <div class="div_2_c_1_2"><textarea style="width:100%;height:100%;text-indent:15px;border:none;resize:none;"></textarea></div>            </div>            </li>');
+        new mixed.uploadpic({
+            apd: apd
+        });
+    </script>
+</body>
+
+</html>

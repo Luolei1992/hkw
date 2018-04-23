@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>设计素材，为设计提供方便</title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/fenye.css">
+    <link rel="stylesheet" type="text/css" href="css/client/dialog.css">
+    <link rel="stylesheet" type="text/css" href="css/fastDesign.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            $('.footer_on').load('bottom.html');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        .headnav4>a {
+            color: #2FA4FF !important;
+        }
+        #nav .new {
+            background: url(images/xltpb1.png) !important;
+        }
+        .enjoyFileList:hover img,
+        .enjoyFileLists:hover img {
+            -webkit-transform: scale(1.02);
+            -moz-transform: scale(1.02);
+            -ms-transform: scale(1.02);
+            -o-transform: scale(1.02);
+            transform: scale(1.02);
+        }
+        .rzwrap {
+             display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99998;
+            background-color: rgba(0, 0, 0, 0.5);
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+        }
+        .rzwraps {
+            font-size: 14px;
+            position: fixed;
+            width: 370px;
+            background-color: #fff;
+            left: 50%;
+            top: 30%;
+            margin-left: -185px;
+            z-index: 99999;
+            padding: 30px 20px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+        .rzwraps p {
+            line-height: 30px;
+        }
+        .rzwraps a {
+            color: #fff;
+            padding: 6px 12px;
+            background-color: #2FA4FF;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="containers">
+    <!-- 头部 start -->
+    <div id="header" class="header-neiye"></div>
+    <!--设计提速主体部分-->
+    <div id="mainSpeed">
+        <div class="mainSpeedWrap">
+            <div class="mainSpeedTop">
+                <a href="resources.html" class="resourcesLink">发布资源</a>
+                <div class="navWrap nav-lei clearfix">
+                    <span>分类</span>
+                    <ul class="nav-leis clearfix">
+                        <!--<li data-navid="148" class="activeColorBlue">全部</li>-->
+                        <!--<li data-navid="242">平面设计</li>-->
+                        <!--<li data-navid="244">交互设计</li>-->
+                        <!--<li data-navid="246">三维艺术</li>-->
+                        <!--<li data-navid="243">网页设计</li>-->
+                        <!--<li data-navid="241">艺术绘画</li>-->
+                        <!--<li data-navid="245">工业设计</li>-->
+                        <!--<li data-navid="247">动画/影视</li>-->
+                        <!--<li data-navid="248">摄影艺术</li>-->
+                        <!--<li data-navid="386">产品设计</li>-->
+                    </ul>
+                </div>
+                <div class="navWrap nav-key clearfix">
+                    <span>子类</span>
+                    <ul class="nav-keys clearfix">
+                        <!--<li data-navid="278">标志/logo</li>-->
+                        <!--<li data-navid="279">字体设计</li>-->
+                        <!--<li data-navid="280">折页/海报/画册</li>-->
+                        <!--<li data-navid="281">包装设计</li>-->
+                        <!--<li data-navid="275">名片/VI</li>-->
+                        <!--<li data-navid="277">其他</li>-->
+                        <!--<li data-navid="276">品牌策划</li>-->
+                    </ul>
+                </div>
+                <div class="navWrap nav-son clearfix">
+                    <span>行业</span>
+                    <ul class="nav-sons clearfix">
+                        <!--<li data-navid="36">政府</li>-->
+                        <!--<li data-navid="28">医疗/教育</li>-->
+                        <!--<li data-navid="36">工业化工</li>-->
+                        <!--<li data-navid="34">建筑房产</li>-->
+                        <!--<li data-navid="24">互联网科技</li>-->
+                        <!--<li data-navid="25">节能环保</li>-->
+                        <!--<li data-navid="32">工业设计</li>-->
+                        <!--<li data-navid="27">动画/影视</li>-->
+                        <!--<li data-navid="29">摄影艺术</li>-->
+                        <!--<li data-navid="26">产品设计</li>-->
+                    </ul>
+                </div>
+                <div class="navWrap nav-select clearfix">
+                    <div class="nav-select-l fl">
+                        <span>已筛选项：</span>
+                        <ul class="nav-tmps clearfix">
+
+                        </ul>
+                    </div>
+                    <div class="nav-select-r fr">
+                        <span>排序方式：</span>
+                        <ul class="nav-stats clearfix">
+                            <li class="activeColorBlue" data-order="add_time">最新上传</li>
+                            <li data-order="download_count">热门下载</li>
+                            <li data-order="favorite_count">综合排序</li>
+                        </ul>
+                    </div>
+                    <div class="nav-select-b fl">
+                        <p>共<i style="color: red;"></i>条结果</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mainSpeedMid">
+                <!--作品推荐-->
+                <div class="mainSpeedMidTj">
+                    <h3>精品推荐</h3>
+                    <ul class="clearfix">
+
+                    </ul>
+                </div>
+                <!--平面设计-->
+                <div class="mainSpeedMidPm">
+                    <h3>广告设计</h3>
+                    <ul class="clearfix">
+
+                    </ul>
+                </div>
+                <!--交互设计-->
+                <div class="mainSpeedMidJh">
+                    <h3>界面设计</h3>
+                    <ul class="clearfix">
+
+                    </ul>
+                </div>
+                <div class="mainSpeedMidCl">
+                    <h3>策略提案</h3>
+                    <ul class="clearfix">
+
+                    </ul>
+                </div>
+                <div class="mainSpeedMidTu">
+                    <h3>智能贴图</h3>
+                    <ul class="clearfix">
+
+                    </ul>
+                </div>
+            </div>
+            <!--分页开始-->
+            <div id="kkpager"></div>
+            <!--分页结束-->
+        </div>
+    </div>
+    <!--提醒认证-->
+    <div class="rzwrap"></div>
+    <div class="rzwraps">
+        <p>非认证设计师，无权浏览该页面</p>
+        <p>认证后才能浏览和下载网站资源</p>
+        <a href="selfpage.html">前往认证 >></a>
+    </div>
+    <!--底部开始-->
+    <div class="footer_on"></div>
+</div>
+</body>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/plugs/jq.page.js"></script>
+<script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+<script type="text/javascript" src="js/data/speedUpXhr.js"></script>
+</html>

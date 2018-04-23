@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>设计师入驻</title>
+    <meta content="中国设计网,设计师,设计之家,设计,设计公司,设计师招聘,高级设计师,设计师简历,设计网,设计中国,画客网" name="keywords">
+    <meta content="中国设计网站、设计师之家-画客网：汇集中国高级设计师和设计公司，提供本地信息传播和互动的设计网平台；在画客，您就是设计大咖！找平面设计、字体设计、标志设计、室内设计、网页设计、包装设计、服装设计人才；选界面设计师、交互设计师、UI设计师、网页设计师，就来画客网！" name="description">
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/font/font.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+            } else {
+
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+
+            }
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="" class="checkin">
+    <!-- 头部 start -->
+    <div id="header" class="header-neiye"></div>
+    <!-- 头部 end -->
+    <div class="container">
+        <div class="content clearfix">
+            <div class="cki-lt">
+                <header class="cki-head">
+                    <div class="cki-head-tp">
+                        <h3 class="ds">设计师入驻</h3>
+                        <p class="txt1">链接中国7511万企业和1700万设计师，助力梦想，传递设计价值！</p>
+                        <p class="txt2">画客网是一个精确、便捷对接优秀设计师的互联网平台。目前开通杭州、上海、北京、 等一线城市
+                            <a href="">了解更多</a></p>
+                    </div>
+                    <div class="cki-head-bt clearfix">
+                        <ul>
+                            <li class="cur"><i class="icon-right"></i><span>1</span>身份证明</li>
+                            <li><i class="icon-right"></i><span>2</span>提交资料</li>
+                            <li><i class="icon-right"></i><span>3</span>入住审核</li>
+                        </ul>
+                    </div>
+                </header>
+                <section class="ckis1 cki js-person-enter cur">
+                    <div class="cki-tit">
+                        <p>身份证明</p>
+                    </div>
+                    <div class=" cki-rowbox s1 js-star">
+                        <label for="" class="star">真实姓名</label>
+                        <span class="sublabel">(仅个人可见)</span>
+                        <div class="js-ipt-wrp">
+                            <input type="text" placeholder="真实姓名，需与身份证一致" class="iptcki js-person-ipt" data-msg="申请人不能为空" data-check="请填写2-12个字" data-tips="请填写真实姓名，12个字以内" maxlength="12" data-type='1' data-pattern='twoword'>
+                        </div>
+                    </div>
+                    <div class=" cki-rowbox s2 js-star">
+                        <label for="" class="star">身份证</label>
+                        <div class="iptpic-wrp">
+                            <i class="icon-add"></i>
+                            <span class="img"></span>
+                            <span class="upld">点击上传图片</span>
+                            <input type="file" class="identity js-person-upbtn" accept="image/*">
+                            <div class="js-person-up">
+                            </div>
+                            <span class="js-person-reload hid">重新上传</span>
+                        </div>
+                        <div class="cki-show">
+                            <p>请上传手持身份证的半身照 不合规范会审核不通过（<span class="show" id="js-person-exampu">查看图例</span>）</p>
+                            <p></p>
+                            <div class="example animate-fadeInTop" id="js-person-exampl">
+                                <div>
+                                    <img src="images/personal/identity.jpg" alt="">
+                                    <ol>
+                                        <li>请上传本人手持身份证正面头部照片和上半身照片</li>
+                                        <li>照片为免冠、未化妆的数码照片原始图片，请勿用任何软件编辑修改</li>
+                                        <li>必须看清证件信息，且证件信息不能被遮挡，持证人五官清晰可见</li>
+                                        <li>仅支持.jpg. bmp. png. gif的图片格式。建议图片大小不超过3M</li>
+                                        <li>您提供的照片信息画客网将予以保护，不会用于其他用途。</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" cki-rowbox s3 js-star">
+                        <label for="" class="star">身份证号码</label>
+                        <div class="js-ipt-wrp">
+                            <input type="text" class="iptcki js-person-ipt" placeholder="请填写身份证号码" data-msg="身份证号码不能为空" data-check="身份证号码不正确" data-tips="请填写上传身份证图片中对应的身份证号码" data-pattern="identity" maxlength="18">
+                        </div>
+                    </div>
+                    <div class=" cki-rowbox s4">
+                        <label for="">专业证书</label>
+                        <p></p>
+                        <div class="ul">
+                            <ul id="js-bc-aul">
+                                <li class="js-bc-alis cur">最高学历证书</li>
+                                <li class="js-bc-alis">所获荣誉证书</li>
+                                <li class="js-bc-alis">其它证书</li>
+                                <li class="js-bc-alis">本人微博认证号</li>
+                            </ul>
+                        </div>
+                        <div class="lis">
+                            <ul class="clearfix" id="js-bc-bul">
+                                <li class="js-bc-blis cur">
+                                    <div class="clearfix">
+                                        <div class="iptpic-wrp">
+                                            <i class="icon-add"></i>
+                                            <span class="img"></span>
+                                            <span class="upld">点击上传图片</span>
+                                            <input type="file" class="identity js-person-upbtn" accept="image/*">
+                                            <div class="js-person-up">
+                                            </div>
+                                            <span class="js-person-reload hid">重新上传</span>
+                                        </div>
+                                        <p class="detail">请提交有效期内的资格证照片，需确保头像和文字清晰文件小于2M，支持JPG/PNG/BMP等格式图片</p>
+                                    </div>
+                                    <div class="js-ipt-wrp">
+                                        <input type="text" placeholder="请输入证书名称，如：平面设计资格证。（10字内，会标注在老师主页）" data-msg="请输入证书名称" data-tips="请输入证书名称" data-check="请输入证书名称" maxlength="10" data-max="10" data-min="1" data-pattern="single" class="iptcki js-person-ipt">
+                                    </div>
+                                </li>
+                                <li class="js-bc-blis">
+                                    <div class="clearfix">
+                                        <div class="iptpic-wrp">
+                                            <i class="icon-add"></i>
+                                            <span class="img"></span>
+                                            <span class="upld">点击上传图片</span>
+                                            <input type="file" class="identity js-person-upbtn" accept="image/*">
+                                            <div class="js-person-up">
+                                            </div>
+                                            <span class="js-person-reload hid">重新上传</span>
+                                        </div>
+                                        <p class="detail">请提交大学本科以上学历水平证件照片，如学生证、毕业证等（需包含照片、姓名、专业、官方印章等有效信息）<br>文件小于2M，支持JPG/PNG/BMP等格式图片</p>
+                                    </div>
+                                    <div class="js-ipt-wrp">
+                                        <input type="text" placeholder="请输入证书名称，如：绘画艺术硕士学位。（10字内，会标注在老师主页）" data-msg="请输入证书名称" data-tips="请输入证书名称" data-check="请输入证书名称" maxlength="10" data-max="10" data-min="1" data-prefix="ltrim" class="js-person-ipt iptcki" data-pattern="single">
+                                    </div>
+                                </li>
+                                <li class="js-bc-blis">
+                                    <div class="clearfix">
+                                        <div class="iptpic-wrp">
+                                            <i class="icon-add"></i>
+                                            <span class="img"></span>
+                                            <span class="upld">点击上传图片</span>
+                                            <input type="file" class="identity js-person-upbtn" accept="image/*">
+                                            <div class="js-person-up">
+                                            </div>
+                                            <span class="js-person-reload hid">重新上传</span>
+                                        </div>
+                                        <p class="detail">请提交设计能力或专业能力证明，如职称证书、考级证书等（需包含官方印章等有效信息）<br>文件小于2M，支持JPG/PNG/BMP等格式图片</p>
+                                    </div>
+                                    <div class="js-ipt-wrp">
+                                        <input type="text" placeholder="请输入证书名称。（10字内，会标注在设计师主页）" data-msg="请输入证书名称" data-tips="请输入证书名称" data-check="请输入证书名称" maxlength="10" data-max="10" data-min="1" data-prefix="ltrim" class="iptcki js-person-ipt" data-pattern="single">
+                                    </div>
+                                </li>
+                                <li class="js-bc-blis">
+                                    <div class="js-ipt-wrp clearfix n4">
+                                        <input class="iptcki js-person-ipt iptcki-tp" type="text" placeholder="请填写您的新浪微博认证账号" data-msg="请填写您的新浪微博认证账号" data-tips="请填写您的新浪微博认证账号" data-check="请填写您的新浪微博认证账号" maxlength="20" data-max="20" data-min="1" data-prefix="ltrim" data-pattern="single">
+                                    </div>
+                                    <div class="clearfix">
+
+                                        <div class="iptpic-wrp">
+                                            <i class="icon-add"></i>
+                                            <span class="img"></span>
+                                            <span class="upld">点击上传图片</span>
+                                            <input type="file" class="identity js-person-upbtn" accept="image/*">
+                                            <div class="js-person-up">
+                                            </div>
+                                            <span class="js-person-reload hid">重新上传</span>
+                                        </div>
+                                        <p class="detail">请提交微博认证账号截图（查看图例)<br>文件小于2M，支持JPG/PNG/BMP等格式图片</p>
+                                    </div>
+                                    <div class="js-ipt-wrp clearfix">
+                                        <input type="text" placeholder="请输入证书名称。（10字内，会标注在设计师主页）" data-msg="请输入证书名称" data-tips="请输入证书名称" data-check="请输入证书名称" maxlength="10" data-max="10" data-min="1" data-prefix="ltrim" class="iptcki js-person-ipt" data-pattern='single'>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <p class="nxt">提交，下一步</a>
+                    </div>
+                </section>
+                <section class="ckis2 cki js-person-enter">
+                    <div class="cki-tit">
+                        <p>个人信息</p>
+                    </div>
+                    <div class=" cki-rowbox s1">
+                        <label for="" class="">头像</label>
+                        <div class="iptpic-wrp">
+                            <i class="icon-add"></i>
+                            <span class="img"></span>
+                            <span class="upld">点击上传图片</span>
+                            <input type="file" class="identity js-person-upbtn" accept="image/*">
+                            <div class="js-person-up">
+                            </div>
+                            <span class="js-person-reload hid">重新上传</span>
+                        </div>
+                        <div class="cki-show">
+                            <p>请上传手持身份证的半身照 不合规范会审核不通过（<span class="show" id="js-person-exu">查看图例</span>）</p>
+                            <p></p>
+                            <div class="example animate-fadeInTop" id="js-person-exl">
+                                <div>
+                                    <img src="images/personal/head-example.jpg" alt="">
+                                    <p>
+                                        <h3>头像图例</h3><br>背景要求无杂色，浅灰底，建议灰色<span id="e5e5e5br"></span>人物最好着正装，与背景对比明显<br>人物角度正面到侧方15度角内，头像居中清晰</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" cki-rowbox s2">
+                        <label for="">性别</label>
+                        <div class="ul" id="js-person-sex">
+                            <input type="hidden" id='js-sex' name="sex">
+                            <li class="man js-person-sex" data-class='js-man' data-num='1'><i class="icon-man"></i><span>男</span></li>
+                            <li class="woman js-person-sex" data-class='js-woman' data-num='2'><i class="icon-woman"></i><span>女</span></li>
+                        </div>
+                    </div>
+                    <div class=" cki-rowbox s3 lineBox">
+                        <label>工作年份</label>
+                        <div class="boxGroup" id="dd">
+                            <div class="chooseWrap">
+                                <span class="chosetxt">选择工作年份</span>
+                                <ul class="dropdown">
+                                    <li>1990</li>
+                                    <li>1991</li>
+                                    <li>1992</li>
+                                    <li>1993</li>
+                                    <li>1994</li>
+                                    <li>1995</li>
+                                    <li>1996</li>
+                                    <li>1997</li>
+                                    <li>1998</li>
+                                    <li>1999</li>
+                                    <li>2000</li>
+                                    <li>2001</li>
+                                    <li>2002</li>
+                                    <li>2003</li>
+                                    <li>2004</li>
+                                    <li>2005</li>
+                                    <li>2006</li>
+                                    <li>2007</li>
+                                    <li>2008</li>
+                                    <li>2009</li>
+                                    <li>2010</li>
+                                    <li>2011</li>
+                                    <li>2012</li>
+                                    <li>2013</li>
+                                    <li>2014</li>
+                                    <li>2015</li>
+                                    <li>2016</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" cki-rowbox s4 lineBox js-star">
+                        <label class="star">设计领域</label>
+                        <div class="boxGroup">
+                            <span class="tag-add" id="btn-sj">
+								<input type="text" class="hidput">
+								<span class="addBtn">添加<i class="icon-add"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="lineBox cki-rowbox">
+                        <label class="boxT">擅长及亮点</label>
+                        <div class="boxGroup" id="addBox-sj">
+                            <span class="tag-add" id="btn-sj2">
+								<input type="text" class="hidput">
+								<span class="addBtn" id="btn-sjI">添加
+								<i class="icon-add"></i></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class=" cki-rowbox s5">
+                        <label for="">个人简介</label>
+                        <div>
+                            <textarea id="cp_summary" class="check-sensitive" placeholder="如：我是一名设计师，崇尚个性、自由，一直喜爱简约的设计风格，喜欢他简约却不糊弄的设计方法，简约而不简单，精致而时尚，设计这门艺术我喜欢。将显示在设计师主页上，建议体现更多个人设计风格。" data-msg="个人简介不能为空" data-tips="将显示在老师主页上，请尽可能体现出个人的教学方向和经验优势。50个字以内" data-max="50" data-min="10"
+                                data-prefix="ltrim" name="goal"></textarea>
+                        </div>
+                    </div>
+                    <!-- 					<div class=" cki-rowbox s6 js-star">
+						<label for="" class="star">设计案例</label>
+						<p class="des">请上传3个及以上作品，入驻后可在作品管理上传其他作品</p>
+						<div class="iptpic-wrp">
+							<i class="icon-add"></i>
+							<span class="img"></span>
+							<span class="upld">点击上传图片</span>
+							<input type="file" class="identity js-person-up-sj" accept="image/*">
+						</div>
+						<div class="clear">
+							<ul class="js-person-upbtn-sj clearfix">
+							</ul>
+						</div>				
+					</div> -->
+                    <div class=" cki-rowbox s7 lineBox js-star">
+                        <p class="des">请仅可能精确你的位置信息，高效率近距离项目合作</p>
+                        <label class="star">所在区域</label>
+                        <div class="" id="dd2">
+                            <div class="chooseWrap">
+                                <input type="text" class="chosetxt iptcki" placeholder="选择工作的地点" id="inputP">
+                                <ul class="dropdown" id="dropdownP">
+                                    <li>杭州</li>
+                                    <li>北京</li>
+                                    <li>上海</li>
+                                    <li>深圳</li>
+                                    <li>广州</li>
+                                    <li>苏州</li>
+                                    <li>天津</li>
+                                    <li>成都</li>
+                                    <li>长沙</li>
+                                    <li>武汉</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="personal">
+                            <li class="li3">
+                                <div class="li-Div">
+                                    <input type="text" / class="cityInput iptcki" id="input-TS">
+                                    <i class="icon-localB">&#xe641;</i>
+                                </div>
+
+                            </li>
+                            <div class="js-person-local" id="js-person-locals">
+                                <ul>
+                                    <label for="">你要找要找的是不是</label>
+                                    <li class="js-person-locals">
+                                        <div>
+                                            <i class="icon-localS"></i>
+                                            <p class="position1">1杭州滨江区</p>
+                                            <p class="position2">拓森科技园</p>
+                                        </div>
+                                    </li>
+                                    <li class="js-person-locals">
+                                        <div>
+                                            <i class="icon-localS"></i>
+                                            <p class="position1">2杭州滨江区</p>
+                                            <p class="position2">拓森科技园</p>
+                                        </div>
+                                    </li>
+                                    <li class="js-person-locals">
+                                        <div>
+                                            <i class="icon-localS"></i>
+                                            <p class="position1">3杭州滨江区</p>
+                                            <p class="position2">拓森科技园</p>
+                                        </div>
+                                    </li>
+                                    <li class="js-person-locals">
+                                        <div>
+                                            <i class="icon-localS"></i>
+                                            <p class="position1">4杭州滨江区</p>
+                                            <p class="position2">拓森科技园</p>
+                                        </div>
+                                    </li>
+                                    <li class="js-person-locals">
+                                        <div>
+                                            <i class="icon-localS"></i>
+                                            <p class="position1">杭州滨江区</p>
+                                            <p class="position2">拓森科技园</p>
+                                        </div>
+                                    </li>
+                                    <li class="js-person-locals">
+                                        <div>
+                                            <i class="icon-localS"></i>
+                                            <p class="position1">杭州滨江区</p>
+                                            <p class="position2">拓森科技园</p>
+                                        </div>
+                                    </li>
+                                    <li class="js-person-locals">
+                                        <div>
+                                            <i class="icon-localS"></i>
+                                            <p class="position1">杭州滨江区</p>
+                                            <p class="position2">拓森科技园</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cki-tit">
+                        <p>联系方式</p>
+                    </div>
+                    <div class=" cki-rowbox s8 js-star">
+                        <label for="" class="star">手机号</label>
+                        <div class="js-ipt-wrp">
+                            <input id="moblie" class="js-person-ipt iptcki" type="text" placeholder="请填写手机号码" data-msg="请输入正确的手机号码，并验证手机" data-tips="请填写手机号码" data-check="请输入正确的手机号" class="iptcki" data-pattern="phone" maxlength="11"><span class="js-verify">验证手机</span>
+                        </div>
+                    </div>
+                    <div class=" cki-rowbox s9">
+                        <label for="">QQ号</label>
+                        <div class="js-ipt-wrp">
+                            <input class="js-person-ipt iptcki" type="text" placeholder="请填写QQ号码" data-msg="请输入正确的QQ号码" data-tips="请填写QQ号码" data-check="请输入正确的qq号" class="iptcki" data-pattern="qq">
+                        </div>
+                    </div>
+                    <div class=" cki-rowbox s10">
+                        <div class="js-ipt-wrp">
+                            <label for="">微信号</label><input class="js-person-ipt iptcki" type="text" placeholder="请填写微信号" data-msg="请输入微信号" data-tips="请填写微信号" data-check="请填写微信号" class="iptcki" data-pattern='wechat'>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <span class="nxt">提交资料</span>
+                    </div>
+                </section>
+                <section class="ckis3 cki js-person-enter">
+                    <div class="cki-fn">
+                        <p class="cki-intr">您好，我们已经收到您的入住申请，将在1-2个工作日内完成审核。</p>
+                        <div class="mar-l">
+                            <span class="avaWrp" data-sex='man'>
+								<img src="images/avatar-twhs.png" alt="">
+								<i class="icon-sex icon-sex-m"></i><!-- 男的设置class icon-sex-m; 女的设置icon-sex-w； 位置设置icon-sex-n -->
+							</span>
+                            <h3>Mia Zhang</h3>
+                            <div class="detailBox">
+                                <span><i class="icon-home"></i>南岸晶都</span>
+                                <span><i class="icon-work"></i>拓森科技园</span>
+                                <span><i class="icon-champ"></i>12年</span></div>
+                            <div class="pinBox"><i class="icon-lighting"></i>
+                                <span class="pin-g">交互设计师</span>
+                                <span class="pin-g">界面设计师</span>
+                                <span class="pin-g">网页设计师</span>
+                                <span class="pin-g">极简主义</span>
+                                <span class="pin-g">现实派</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- sidebar -->
+            <sidebar class="cki-rt">
+                <div class="ckirt-box ckirt-s1">
+                    <h3 class="title">常见问题</h3>
+                    <ul>
+                        <li>
+                            <a href="##">设计师应该怎样入驻和使用腾讯课堂</a>
+                        </li>
+                        <li>
+                            <a href="##">平台目前支持哪些设计师入驻</a>
+                        </li>
+                        <li>
+                            <a href="##">设计师入驻指南</a>
+                        </li>
+                        <li>
+                            <a href="##">入驻合约是否支持纸质</a>
+                        </li>
+                        <li>
+                            <a href="##"> 入驻常见问题 </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ckirt-box ckirt-s2 clearfix">
+                    <ul>
+                        <li>
+                            <a href="##">
+                                <i class="icon-qq"></i>
+                                <p class="tem">在线客服</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="##">
+                                <i class="icon-twocode"></i>
+                                <p>微信服务平台</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ckirt-box ckirt-s3">
+                    <h3>入驻设计师</h3>
+                    <p class="change"><i class="icon-change"></i><a href="">换一换</a></p>
+                    <ul>
+                        <li class="clearfix">
+                            <div>
+                                <img src="images/personal/avtar1.jpg" alt="" class="avar">
+                                <p class="name">张飞</p>
+                                <p class="hobby">拯救世界，热爱和平 <span class="yea">2</span>年</p>
+                                <b class="focus">关注</b>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div>
+                                <img src="images/personal/avtar2.jpg" alt="" class="avar">
+                                <p class="name">关羽</p>
+                                <p class="hobby">拯救世界，热爱和平 <span class="yea">2</span>年</p>
+                                <b class="focus">关注</b>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div>
+                                <img src="images/personal/avtar3.jpeg" alt="" class="avar">
+                                <p class="name">吕布</p>
+                                <p class="hobby">拯救世界，热爱和平 <span class="yea">2</span>年</p>
+                                <b class="focus">关注</b>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div>
+                                <img src="images/personal/avtar1.jpg" alt="" class="avar">
+                                <p class="name">刘备</p>
+                                <p class="hobby">拯救世界，热爱和平 <span class="yea">2</span>年</p>
+                                <b class="focus">关注</b>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </sidebar>
+        </div>
+    </div>
+    <!--底部开始-->
+    <div class="footer_on"></div>
+    <!--底部结束-->
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+        $(function() {
+            var pin = ['工业设计', '环艺设计', '装潢设计', '展示设计', '服饰设计', '平面设计', '网站设计', '设计', '广告设计', 'UI设计'];
+            phonenum = $('#moblie').val();
+            mes = $('<div class="js-verify1"><div ><span class="js-head">验证手机</span><i class="icon-closeB"></i></div><p>已向' + phonenum + '发送验证短信</p><p><span>验证码：</span><input class="js-ipt" type="text" placeholder="请输入验证码"><span class="js-send">重新获取<span class="sec">(<b>60</b>s)<span></span></p><span class="js-sure">确定</span><span class="js-close">取消</span></div>');
+            var btnCl = $('.icon-close');
+            $('#btn-sj').on('click', function() {
+                foo.pinLY(pin);
+            });
+            person.send(mes);
+            foo.chaIner();
+        })
+    </script>
+</body>
+
+</html>

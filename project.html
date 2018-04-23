@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="设计服务，设计需求" />
+    <meta name="description" content="提供中国设计行业最新需求信息、服务交易、等市场需求信息。超过11003专业设计师为您服务，企业和用户第一选择，画客网帮助企业一站式解决设计难题！" />
+    <meta name="abstract" content="">
+    <title>
+        设计需求，设计服务，设计客户-画客网，网画客；网罗天下设计英才-中国知名平面网页界面_室内工业珠宝独立设计师排行榜
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/fenye.css">
+    <link rel="stylesheet" href="css/client/dialog.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+            $("#nav .hkw_header_nav_ul a").each(function() {
+                if (location.href.indexOf($(this).attr("href")) > -1) {
+                    $(this).children().css("color", "#0679CA");
+                    $(this).children().children(".nav-back").css({
+                        width: "100% !important",
+                        opacity: "1 !important",
+                        display: "none"
+                    });
+                };
+            });
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #main-body {
+            background-color: #fff;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        .city-bar {
+            margin: 20px auto 0;
+        }
+        
+        .drop-select .drop-select-options li a {
+            text-align: center;
+            text-indent: 0px;
+        }
+        
+        .change-city {
+            text-indent: 0px;
+            text-align: center;
+        }
+        
+        .city-barWrap {
+            top: 2px;
+            left: 10px;
+        }
+        
+        div.biaojiaWrap {
+            position: fixed;
+            z-index: 9999;
+            left: 50%;
+            margin-left: -360px;
+        }
+        
+        .headnav3 {
+            color: #2FA4FF !important;
+        }
+        
+        a.baojia:hover {
+            cursor: pointer;
+        }
+        
+        .designer-select-navUl {
+            height: 56px;
+            line-height: 56px;
+            border-top: 0 none;
+            border-bottom: 1px solid #DCDCDC;
+        }
+        
+        .designer-select-navUl li span.text a.more {
+            top: 15px;
+        }
+        
+        .ca-item {
+            width: 398px;
+        }
+        
+        .ca-container {
+            height: 390px;
+        }
+        
+        .ca-type {
+            background: #fff;
+            padding: 18px 0 15px 20px;
+        }
+        
+        .ca-type span {
+            margin-right: 20px;
+            background-color: #F5F5F5;
+        }
+        
+        .ca-mian-detailed-bottom i {
+            margin-bottom: 18px;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 60px;
+            line-height: 60px;
+            color: #fff;
+        }
+        
+        #main-body {
+            background-color: #F5F5F5;
+        }
+        
+        .js-city-more {
+            border: 1px solid #ccc;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div class="biaojiaWrap"></div>
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeader">
+
+        </div>
+        <!-- 头部 end -->
+        <div id="main-body">
+            <div class="main-body-center">
+                <div class="designer-select-nav">
+                    <ul class="designer-select-navUl designer-select-navUl2 auto">
+                        <li><span class="text text1">城市：</span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="all" class="designColor">全部</a></span>
+                        </li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="128">杭州</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="8">北京</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="33">上海</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="34">深圳</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="45">广州</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="19">南京</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="15">重庆</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="13">长沙</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="14">成都</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="129">合肥</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="28">青岛</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="37">苏州</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="134">武汉</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="57">西安</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" data-cityNum="58">厦门</a></span></li>
+                        <li><span class="text"><a href="javascript:void(0);" id="activeCity" data-cityNum="80">郑州</a></span></li>
+                        <li><span class="text js-city-more" style="margin-left: 30px;cursor:pointer;">更多城市</span></li>
+                        <div style="display: none;" class="popup-city"><i class="icon-closeB Btn city-close"></i>
+                            <div class="scall"><a class="Btn" href="https://www.huakewang.com/user/index/152.html">全部</a>
+                            </div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th colspan="2" class="sctilte">请选择所在城市</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="sc-left">主要城市</td>
+                                        <td>
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="cityOrange">A</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="1">鞍山</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="cityOrange">L</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="2">兰州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="3">廊坊</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="4">临沂</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="5">洛阳</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="6">连云港</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="7">柳州</a></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange">B</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="9">包头</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="10">保定</a>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td class="cityOrange">M</td>
+                                                            <td><a href="javascript:void(0);" data-cityNum="11">绵阳</a></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange">C</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="12">长春</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="16">常州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="17">常德</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="18">常熟</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="cityOrange">N</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="20">宁波</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="21">南昌</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="22">南通</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="23">南宁</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange">D</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="24">大连</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="25">东莞</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="26">丹东</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="27">大庆</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="cityOrange">Q</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="29">泉州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="30">秦皇岛</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="31">清远</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange">E</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="32">鄂尔多斯</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="cityOrange">S</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="35">沈阳</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="36">石家庄</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="38">三亚</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="39">绍兴</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange">F</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="40">福州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="41">佛山</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="42">抚顺</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="cityOrange"></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="43">汕头</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="44">顺德</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange">G</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="46">贵阳</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="47">赣州</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="cityOrange">T</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="48">天津</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="49">太原</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="50">台州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="51">唐山</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="52">泰州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="53">铁岭</a></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange">H</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="127">哈尔滨</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="130">海口</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="131">呼和浩特</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="132">惠州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="133">衡阳</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="cityOrange">W</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="135">无锡</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="136">温州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="137">乌鲁木齐</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="138">芜湖</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="139">潍坊</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="140">威海</a></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange"></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="54">淮安</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="55">湖州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="56">邯郸</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="cityOrange">X</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="59">徐州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="60">襄阳</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="61">湘潭</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="62">咸阳</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange">J</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="63">济南</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="64">嘉兴</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="65">金华</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="66">吉林</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="67">江门</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="68">荆州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="69">江阴</a></td>
+                                                        <td class="cityOrange">Y</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="70">烟台</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="71">扬州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="72">宜昌</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="73">盐城</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="74">义乌</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="75">营口</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="76">银川</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange"></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="77">济宁</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="78">九江</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="cityOrange">Z</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="79">漳州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="80">郑州</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="81">中山</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="82">珠海</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="83">镇江</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="84">株洲</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="85">湛江</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange">K</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="86">昆明</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="87">昆山</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="cityOrange"></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="88">肇庆</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="89">张家港</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="90">淄博</a></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sc-left">所有省份</td>
+                                        <td>
+                                            <table class="province">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="cityOrange">A-G</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="91">安徽省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="92">澳门</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="93">福建省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="94">甘肃省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="95">广东省(除深圳)</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="96">广西</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="97">贵州省</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange">H-J</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="98">海南省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="99">河北省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="100">河南省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="101">黑龙江省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="102">湖北省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="103">湖南省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="104">吉林省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="105">江苏省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="106">江西省</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange">L-S</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="107">辽宁省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="108">内蒙古</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="109">宁夏</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="110">青海省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="111">山东省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="112">山西省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="113">陕西省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="114">四川省</a></td>
+                                                        <td colspan="1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cityOrange">T-Z</td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="115">台湾</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="116">西藏</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="117">香港</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="118">新疆</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="119">云南省</a></td>
+                                                        <td><a href="javascript:void(0);" data-cityNum="120">浙江省</a></td>
+                                                        <td colspan="3"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="sc-left">其他国家</td>
+                                        <td class="other-country"><a href="javascript:void(0);" data-cityNum="121">美国</a><a href="javascript:void(0);" data-cityNum="122">英国</a><a href="javascript:void(0);" data-cityNum="123">俄罗斯</a><a href="javascript:void(0);" data-cityNum="124">丹麦</a>
+                                            <a href="javascript:void(0);" data-cityNum="125">印度</a><a href="javascript:void(0);" data-cityNum="126">意大利</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </ul>
+                </div>
+
+                <div class="city-bar">
+                    <div class="zjjl">
+                        <div class="zjjl-select">
+                            <a href="javascript:void(0)" class="change-select">
+                                <i class="zjjl-show">最近距离</i>
+                                <i class="xltb"></i>
+                            </a>
+                            <ul class="drop-select-options huoqv fn-hide" id="designWay">
+                                <li class="current">
+                                    <a href="javascript:void(0);" class="designNew" data-search="add_time">最新加入</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="designClose" data-search="distance">最近距离</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="designFavorite" data-search="love_count">最多喜欢</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="city-barWrap">
+                        <div class="drop-select">
+                            <a href="javascript:void(0)" class="change-city">
+                                <i class="city-show">杭州</i>
+                                <i class="xltb"></i>
+                            </a>
+                            <ul class="drop-select-options huoqv fn-hide" style="">
+                                <li class="current"><a href="project.html?lng=116.395645&lat=39.929986">北京</a></li>
+                                <li><a href="project.html?lng=121.487899&lat=31.249162">上海</a></li>
+                                <li><a href="project.html?lng=114.025974&lat=22.546054">深圳</a></li>
+                                <li><a href="project.html?lng=120.219375&lat=30.259244">杭州</a></li>
+                                <li><a href="project.html?lng=113.30765&lat=23.120049">广州</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="cityInput drop-select" style="width:200px; border-right: 1px solid #fff;">
+                            <input type="text" placeholder="" />
+                            <ul class="headHistoryWrap drop-select-options fn-hide dz" style="background:#fff; margin-top:15px; width:200px">
+                                <li class="headHistoryAddress">
+                                    <p>历史地址：</p>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                        <a href="javascript:;" class="view-recently">
+                        搜索附近
+                    </a>
+                    </div>
+                    <div class="ditu" onclick="alertMapShow();">
+                        <img src="images/mapclk.png" />
+                    </div>
+                    <div style="clear:both;"></div>
+                    <!--百度地图-->
+                    <div class="mapWrap">
+                        <div class="alertDom">
+                            <span>提示:</span>
+                            <i></i>
+                            <p></p>
+                            <a class="alertDomSure" href="javascript:void(0);">确定搜索</a>
+                        </div>
+                        <div class="mapWrapTop clearfix">
+                            <div class="mapWrapTopLeft">
+                                <span class="currentCity">当前城市：</span>
+                                <span class="currentCityChange" id="cur_city_spn">杭州</span>
+                                <span class="changeCurrentCity">切换城市 <i></i></span>
+                            </div>
+                            <div class="mapWrapTopRight">
+                                <input type="text" class="baiduFindCity">
+                                <button class="citySearch">查询地址</button>
+                            </div>
+                            <div class="alertMapClose"></div>
+                        </div>
+                        <div id="allmap">
+
+                        </div>
+                        <div id="r-result">
+                            <div id="result"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- box start -->
+                <div class="container-main fn-clear" style="">
+                    <!-- box start -->
+                    <div id="ba-container" class="ca-container project-ca-container">
+                        <div class="ca-wrapper project-ca-wrapper" id="caProWrap">
+                            <!--需求-->
+                        </div>
+                    </div>
+                    <!-- box end -->
+                </div>
+                <!-- box end -->
+            </div>
+            <!--分页开始-->
+            <div id="kkpager"></div>
+            <!--分页结束-->
+        </div>
+        <div class="superbox"></div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="js/data/pubXhr.js"></script>
+    <script type="text/javascript" src="js/map/map.js"></script>
+    <script type="text/javascript" src="js/data/projectXhr.js"></script>
+    <script id="pages" type="text/javascript" src="js/plugs/jq.page.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/social.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                // $('#main-body-bottom').load('footer.html');	//加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.left').load('PersonalNav.html', function() {
+                $(document).find('div.left div.yidenglu-box ul li:eq(8)').css({
+                    'background': '#f1f1f1'
+                }); //	li:eq(5)背景颜色为f1f1f1
+            }); //加载已登录导航
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        
+        .borderRed {
+            border: 1px solid red !important;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeader">
+            画客网致力于打造一个精确、快捷的设计服务对接平台。来画客网，遇到靠谱的好项目.　　<a href="Personal-8.html">设计师入驻</a>
+        </div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal">
+            <div class="left"></div>
+            <div class="right " style="">
+                <div class="linkPerson">
+                    <div class="linkPersonT clearfix">
+                        <button class="fr newlLinkPerson">新建联系人</button>
+                    </div>
+                    <div class="newPerson">
+                        <form action="javascript:;" id="signupForm">
+                            <p>
+                                <label for="username"><i style="color:red;">*</i>联系人：</label>
+                                <input id="username" type="text" placeholder="请输入联系人">
+                            </p>
+                            <p>
+                                <label for="companyName">企业名称：</label>
+                                <input id="companyName" type="text" placeholder="请与章上的保持一致">
+                            </p>
+                            <p>
+                                <label for="phone"><i style="color:red;">*</i>手机号码：</label>
+                                <input id="phone" type="text" placeholder="请输入手机号码">
+                            </p>
+                            <p>
+                                <label for="email"><i style="color:red;">*</i>邮箱：</label>
+                                <input id="email" type="text" placeholder="请输入邮箱">
+                            </p>
+                            <p class="btn">
+                                <input type="button" class="new_person1" value="取消">
+                                <input type="submit" class="new_person2" value="确定">
+                            </p>
+                        </form>
+                    </div>
+                    <div class="linkPersonM" id="linkPersonM">
+
+                        <!--<ul>-->
+                        <!--<li>-->
+                        <!--<input type="text" name="user" value="张三" disabled="true">-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<input type="text" name="user" value="13782626565" disabled="true">-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<input type="text" name="user" value="13526263636@qq.com" disabled="true">-->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--<input type="text" name="user" value="杭州极影科技有限公司" disabled="true">-->
+                        <!--</li>-->
+                        <!---->
+                        <!--</ul>-->
+                    </div>
+                    <script id="linkPersonMtmpl" type="text/x-dot-template">
+                        <ul>
+                            <li>联系人</li>
+                            <li>手机号</li>
+                            <li>邮箱</li>
+                            <li>企业名称</li>
+                            <li>操作</li>
+                        </ul>
+                        {{for(var i = 0;i
+                        < it.length;i++){}} <ul id="{{=it[i].id}}">
+                            <li>
+                                <input type="text" name="linkName" value="{{=it[i].yunLinkName}}" disabled="true">
+                            </li>
+                            <li>
+                                <input type="text" name="linkPhone" value="{{=it[i].yunLinkPhone}}" disabled="true">
+                            </li>
+                            <li>
+                                <input type="text" name="linkEmail" value="{{=it[i].yunLinkEmail}}" disabled="true">
+                            </li>
+                            <li>
+                                <input type="text" name="linkCompany" value="{{=it[i].yunLinkCompany}}" disabled="true">
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">编辑 / </a><a data-customerId="{{=it.customer_id}}" href="javascript:void(0);">删除</a>
+                            </li>
+                            </ul>
+                            {{}}}
+                    </script>
+                </div>
+            </div>
+
+            <div style="width:1px;height:1px; clear:both;"></div>
+            <!-- <div id="main-body-bottom" class="auto" style=" margin: 65px auto 150px auto;"></div> -->
+            <div id="kkpager"></div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/social.js"></script>
+    <script type="text/javascript" src="js/data/doT.js"></script>
+    <script src="js/data/mock.js"></script>
+    <script src="js/data/mockdata.js"></script>
+    <script type="text/javascript" src="js/personal/config.js"></script>
+    <script type="text/javascript" src="js/personal/layer/layer.js"></script>
+    <script type="text/javascript" src="js/plugs/jq.page.js"></script>
+    <script src="js/data/yunPersonal7xhr.js"></script>
+</body>
+
+</html>

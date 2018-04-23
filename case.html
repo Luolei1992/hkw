@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font/font.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+            } else {
+
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.zjxd').css({
+                'display': 'none'
+            }); //直接下单隐藏
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye" style=""></div>
+        <div id="topHeader" class="appointment" style="border-bottom:1px solid #ccc;margin-bottom:30px;">原创作品数：17603（每一个作品都能联系到作者）　　今日新增：60</div>
+        <div class="superbox"></div>
+        <!-- 头部 end -->
+        <div id="main-body" class="payment-main-body" style="background:pink;">
+            <div class="paymentMain">
+                <div class="clear" style="height:1px;"></div>
+                <div class="paymentMainDiv">
+                    <textarea class="texa" placeholder="项目概述："></textarea>
+
+                    <input type="button" class="button" />
+                    <input type="file" class="file">
+                    <div class='clear'></div>
+                </div>
+                <div class="fujian">
+                    <span>附件</span>
+                </div>
+                <div class="fsyj">
+                    <ul>
+                        <li class="cur">发送合作意向</li>
+                        <li>直接下单</li>
+                    </ul>
+                </div>
+                <div class="paymentMainDiv hzyx">
+                    <div class="sjsxx" style="padding:10px 0;border-bottom:1px solid #ccc;">
+                        <span class="xmys">项目预算：</span>
+                        <div class="xljt"></div>
+                        <div class="inputWrap">
+                            <select name="menu3" class="select">
+								<option value="val" selected>￥2000-5000</option>
+								<option value="val">￥2000-5000</option>
+								<option value="val">￥2000-5000</option>
+								<option value="val">￥2000-5000</option>
+								<option value="val">￥2000-5000</option>
+								<option value="val">￥2000-5000</option>
+							</select>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="sjsxx" style="margin-top:0px; padding:10px 0; ">
+                        <span class="text" style="font-size:14px;">项目位置:</span>
+                        <input class="sousuo" type="text" id="sousuo" placeholder="默认加载当前位置 输入显示历史位置 输入关键词开始搜素" />
+                        <ul class="drop-select-options fn-hide dz payment">
+                            <li class="li1">
+                                <span>我的历史位置:</span>
+                            </li>
+                            <li>
+                                <i class="wzbj icon-localS"></i>
+                                <p class="text1">托森科技园</p>
+                                <p class="text2">杭州市滨江区</p>
+                            </li>
+                            <li>
+                                <i class="wzbj icon-localS"></i>
+                                <p class="text1">托森科技园</p>
+                                <p class="text2">杭州市滨江区</p>
+                            </li>
+                            <li>
+                                <i class="wzbj icon-localS"></i>
+                                <p class="text1">托森科技园</p>
+                                <p class="text2">杭州市滨江区</p>
+                            </li>
+                            <li>
+                                <i class="wzbj icon-localS"></i>
+                                <p class="text1">托森科技园</p>
+                                <p class="text2">杭州市滨江区</p>
+                            </li>
+                            <li>
+                                <i class="wzbj icon-localS"></i>
+                                <p class="text1">托森科技园</p>
+                                <p class="text2">杭州市滨江区</p>
+                            </li>
+
+                        </ul>
+                        <div class="xl" style=""></div>
+                        <div class="ditu">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="paymentMainDiv hzyx" style="background:transparent; border:none;margin-top:10px;">
+                    <div class="tsfb">
+                        <input class="checkbox" type="checkbox" />
+                        <span>同时发布到需求中心</span>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="paymentMainDiv hzyx" style="border:1px solid red; background:#fcf8ef; height:40px;text-align:center;">
+                    <span class="fkcg" style="line-height:40px;">发送需求后等待设计师报价</span>
+                </div>
+                <div class="paymentMainDiv hzyx" style="background:transparent;border:none;">
+                    <div class="hkw-btn_1" style="margin-bottom:400px;">
+                        <a href="" style="width:235px;height:45px;border-radius:5px;font-size:24px; line-height:45px;margin-top:40px;">确认发送</a>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="clear" style="height:1px;"></div>
+                </div>
+                <div class="paymentMainDiv zjxd">
+                    <div class="sjsxx" style="padding:10px 0; background:#f7f7f7;">
+                        <span class="dybf">第一部分</span>
+                        <input class="input" type="text" placeholder="请尽可能写清楚内容，文件格式，数量等。以免造成不必要的麻烦！" />
+                        <input class="input" style="width:420px;" type="text" placeholder="提交产物" />
+                        <img class="jiah" src="images/jiah.png" />
+                    </div>
+                    <div class="sjsxx">
+                        <ul class="xhnr">
+                            <li class="li1">序号</li>
+                            <li class="li2">内容</li>
+                            <li class="li3">内容和成果描述</li>
+                            <li class="li4">单位</li>
+                            <li class="li5">单价</li>
+                            <li class="li6">数量</li>
+                            <li class="li7">税率（3%普增）</li>
+                            <li class="li8">合计</li>
+                            <div class="clear"></div>
+                        </ul>
+                        <ul class="xhnr yinying">
+                            <li class="li1">
+                                <span class="yuan">1</span>
+                            </li>
+                            <li class="li2">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li3">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li4">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li5">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li6">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li7">
+                                <span>0.00</span>
+                            </li>
+                            <li class="li8">
+                                <span>136.00</span>
+                            </li>
+                            <div class="clear"></div>
+                        </ul>
+                        <ul class="xhnr yinying " style="">
+                            <li class="li1">
+                                <span class="yuan">2</span>
+                            </li>
+                            <li class="li2">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li3">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li4">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li5">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li6">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li7">
+                                <span>0.00</span>
+                            </li>
+                            <li class="li8">
+                                <span>136.00</span>
+                            </li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                    <div class="sjsxx" style="padding:10px 0; background:#f7f7f7;">
+                        <span class="dybf">第二部分</span>
+                        <input class="input" type="text" placeholder="请尽可能写清楚内容，文件格式，数量等。以免造成不必要的麻烦！" />
+                        <input class="input" style="width:420px;" type="text" placeholder="提交产物" />
+                        <img class="jiah" src="images/jiah.png" />
+                    </div>
+                    <div class="sjsxx">
+                        <ul class="xhnr">
+                            <li class="li1">序号</li>
+                            <li class="li2">内容</li>
+                            <li class="li3">内容和成果描述</li>
+                            <li class="li4">单位</li>
+                            <li class="li5">单价</li>
+                            <li class="li6">数量</li>
+                            <li class="li7">税率（3%普增）</li>
+                            <li class="li8">合计</li>
+                            <div class="clear"></div>
+                        </ul>
+                        <ul class="xhnr yinying">
+                            <li class="li1">
+                                <span class="yuan">3</span>
+                            </li>
+                            <li class="li2">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li3">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li4">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li5">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li6">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li7">
+                                <span>0.00</span>
+                            </li>
+                            <li class="li8">
+                                <span>136.00</span>
+                            </li>
+                            <div class="clear"></div>
+                        </ul>
+                        <ul class="xhnr yinying ">
+                            <li class="li1">
+                                <span class="yuan">4</span>
+                            </li>
+                            <li class="li2">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li3">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li4">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li5">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li6">
+                                <input type="text" class="text" />
+                            </li>
+                            <li class="li7">
+                                <span>0.00</span>
+                            </li>
+                            <li class="li8">
+                                <span>136.00</span>
+                            </li>
+                            <div class="clear"></div>
+                        </ul>
+                        <div class="row" style="margin-top:10px;">
+                            <div class="rowLeft">项目总计</div>
+                            <div class="rowRight">￥33053.00元</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div style="width:98%;margin:20px auto 10px auto;">
+                            <input class="lybz" type="text" placeholder="留言备注：">
+                        </div>
+                    </div>
+                </div>
+                <div class="paymentMainDiv zjxd">
+                    <div class="sjsxx">
+                        <div class="row" style="margin-top:10px;border-bottom:1px solid #ccc;">
+                            <div class="rowLeft">到款方式</div>
+                            <div class="rowRight" style="font-size:14px;color:#555;">20%：80%</div>
+                            <div class="clear"></div>
+                        </div>
+                        <ul class="xhnr dkfs">
+                            <li class="li1">序号</li>
+                            <li class="li2">百分比</li>
+                            <li class="li3">付款节点</li>
+                            <li class="li4">描述</li>
+                            <li class="li5">合计</li>
+                            <div class="clear"></div>
+                        </ul>
+                        <ul class="xhnr dkfs yinying ">
+                            <li class="li1">
+                                <span class="yuan">1</span>
+                            </li>
+                            <li class="li2">
+                                <input class="text" type="text" placeholder="20%">
+                            </li>
+                            <li class="li3">
+                                <input class="text" type="text" placeholder="确认接收订单">
+                            </li>
+                            <li class="li4">
+                                <input class="text" type="text" placeholder="预付款">
+                            </li>
+                            <li class="li5">136.00</li>
+                            <div class="clear"></div>
+                        </ul>
+                        <ul class="xhnr dkfs yinying ">
+                            <li class="li1">
+                                <span class="yuan">2</span>
+                            </li>
+                            <li class="li2">
+                                <input class="text" type="text" placeholder="80%">
+                            </li>
+                            <li class="li3">
+                                <input class="text" type="text" placeholder="第一部分">
+                            </li>
+                            <li class="li4">
+                                <input class="text" type="text" placeholder="尾款">
+                            </li>
+                            <li class="li5">136.00</li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="paymentMainDiv zjxd" style="background:transparent;border:none;">
+                    <div class="hkw-btn_1" style="margin-bottom:400px;">
+                        <a href="check.html" style="width:235px;height:45px;border-radius:5px;font-size:24px; line-height:45px;margin-top:40px;">确认下单</a>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="clear" style="height:1px;"></div>
+                </div>
+            </div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+</body>
+
+</html>

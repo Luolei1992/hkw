@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网注册
+    </title>
+    <meta content="中国设计网,设计师,设计之家,设计,设计公司,设计师招聘,高级设计师,设计师简历,设计网,设计中国,画客网" name="keywords">
+    <meta content="中国设计网站、设计师之家-画客网：汇集中国高级设计师和设计公司，提供本地信息传播和互动的设计网平台；在画客，您就是设计大咖！找平面设计、字体设计、标志设计、室内设计、网页设计、包装设计、服装设计人才；选界面设计师、交互设计师、UI设计师、网页设计师，就来画客网！" name="description">
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font/font.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+
+            } else {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.WrapZc:eq(0)').css({
+                'display': 'none'
+            });
+            $('#header.header-neiye').load('head.html'); //加载nav
+            $('.footer_on').load('bottom.html');
+            $('#main-body div.register_main div.left div.zctop div.zctop-left').click(function() {
+                $(this).parent().find('div.zctop-right').css({
+                    'color': '#9d9d9d',
+                    'background': '#fff'
+                });
+                $(this).css({
+                    'color': '#424242',
+                    'background': '#f0f0f0'
+                });
+                $('div.WrapZc:eq(0)').css({
+                    'display': 'block'
+                });
+                $('div.WrapZc:eq(1)').css({
+                    'display': 'none'
+                });
+            });
+            $('#main-body div.register_main div.left div.zctop div.zctop-right').click(function() {
+                $(this).parent().find('div.zctop-left').css({
+                    'color': '#9d9d9d',
+                    'background': '#fff'
+                });
+                $(this).css({
+                    'color': '#424242',
+                    'background': '#f0f0f0'
+                });
+                $('div.WrapZc:eq(0)').css({
+                    'display': 'none'
+                });
+                $('div.WrapZc:eq(1)').css({
+                    'display': 'block'
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body style="background:#198ede;">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="main-body" style="">
+            <div class="register ps animate-fadeInDown">
+                <header class="top">
+                    <h3 class="title">欢迎注册画客网</h3>
+                    <div class="top-right">
+                        <dl>
+                            <dt>登录</dt>
+                            <dt>注册</dt>
+                        </dl>
+                    </div>
+                </header>
+                <div class="mian">
+                    <form action="">
+                        <ul>
+                            <li class="stp stp1 cur">
+                                <ul>
+                                    <li class="iptbox js-login-ipt">
+                                        <i class="icon-tel"></i><input type="tel" autofocus placeholder="请输入手机号码" maxlength="13">
+                                    </li>
+                                    <li class="iptbox js-login-ipt"><i class="icon-save"></i>
+                                        <input type="text" placeholder="请输入验证码" maxlength="4">
+                                        <span class="verify js-verify">MNGJ</span></li>
+                                </ul>
+                            </li>
+                            <li class="stp stp2 iptbox js-login-ipt">
+                                <i class="icon-save"></i>
+                                <input type="text" placeholder="请输入验证码">
+                                <div class="code">
+                                    <svg width='102' height='30'>
+										<path stroke-width="2" stroke="#0096ff" d="M13 2L89 2A40 20 0 0 1 89 28L13 28 A40 20 0 0 1 13 2" fill="transparent"/>
+									</svg>
+                                    <span class="js-sendcode">获取验证码</span>
+                                </div>
+                            </li>
+                            <li class="stp stp3 iptbox js-login-ipt">
+                                <i class="icon-lock"></i>
+                                <input type="password" placeholder="设置密码">
+                                <i class="icon-hidden js-change-icon"></i>
+                            </li>
+                        </ul>
+                        <div class="nextstp">
+                            <p>下一步</p>
+                        </div>
+                        <p class="hiddentxt js-hdtxt">点击“注册并登录”表示同意并遵守<a href="##" class="info1 txt-blue"> 版权声明 </a>和<a href="##" class="info2 txt-blue"> 使用协议 </a></p>
+                    </form>
+
+                    <footer class="friend-link">
+                        <ul>
+                            <li class="link js-link link-wechat">
+                                <a href="bind.html"><i class="icon-wechat2"></i>&nbsp;&nbsp;微信</a>
+                            </li>
+                            <li class="link js-link link-qq">
+                                <a href="bind.html"><i class="icon-qq2"></i>&nbsp;&nbsp;QQ</a>
+                            </li>
+                            <li class="link js-link link-sina">
+                                <a href="bind.html"><i class="icon-sina"></i>&nbsp;&nbsp;微博</a>
+                            </li>
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/social.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="bj_div"></div>
+        <div id="main-body">
+            <div class="newmoreWrap">
+                <p class="text">UI中国人物专访-gsmike（大礼包）</p>
+                <ul class="div_b_ul">
+                    <li class="div_b_li_1"><img src="images/zpxx_1.jpg" />8333</li>
+                    <li class="div_b_li_2"><img src="images/zpxx_2.jpg" />31</li>
+                    <li class="div_b_li_3"><img src="images/zpxx_3.jpg" />44</li>
+                </ul>
+                <p class="p_2">发布时间：2015-08-17</p>
+                <p class="p_3">经常看到"膜拜大神"的回复，却难得看到用行动去膜拜。在一切扯犊子开始之前，先做点什么，但不包括，把教程下载到硬盘存起来，收藏各种大神作品、添加一大堆教程、资料、素材、作品网站......这些并称设计三大【后会无期】行为。</p>
+                <div class="div_b_a"><img class="div_b_img2" src="images/3.jpg" /></div>
+                <p class="p_4">文章来源：优设网</p>
+                <p class="p_5">标签：logo 界面 品面设计</p>
+                <p class="p_6">【画客网 原创文章 投稿邮箱：88098417@qq.com】</p>
+                <div class="dianzanImg"></div>
+            </div>
+            <div id="zuijifangke" style="width:90%">
+                <ul class="ulslidetb" style="margin-left:0px; ">
+                    <li>
+                        <img class="img-1" src="images/100.jpg" />
+                    </li>
+                    <li>
+                        <img class="img-1" src="images/100.jpg" />
+                    </li>
+                    <li>
+                        <img class="img-1" src="images/100.jpg" />
+                    </li>
+                    <li>
+                        <img class="img-1" src="images/100.jpg" />
+                    </li>
+                    <li>
+                        <img class="img-1" src="images/100.jpg" />
+                    </li>
+                    <li>
+                        <img class="img-1" src="images/100.jpg" />
+                    </li>
+                </ul>
+                <div class="fxhf">
+                    <input class="input_1" type="button" value="" />
+                    <input class="input_2" type="button" value="" />
+                    <span class="sp_1">8</span>
+                </div>
+            </div>
+            <div class="Tbodymodules">
+                <div class="TbodymodulesTop">
+                    <textarea style="resize:none;" placeholder="说点什么吧？"></textarea>
+                    <div id="div_bk">
+                        <img src="images/mrtp.jpg" />
+                        <input class="input_1" type="button" value="" />
+                        <input class="input_2" type="button" value="发布" />
+                    </div>
+                </div>
+                <div class="textWrap">
+                    <div class="imgWrap">
+                        <a href="#"><img src="images/ybtp.jpg" /></a>
+                    </div>
+                    <div class="divText">
+                        <p>
+                            <span><a href="#">非有斋</a></span>
+                        </p>
+                        <span>网友自己参与编辑的个人生活指南，涉及到生活当中的方方面面，涵盖面非常广，具有较强的独创性！网友们可以随意分享自己的生活经验，还可以以此获取报酬，更好的促进了网友参与的积极性，为其他用户切实更好的促进了网友参与的积极性，为其他用户切实解决了很多人难以解决的问题！网友自己参与编辑的个人生活指南，涉及到生活当中的方方面面，涵盖面非常广，具有较强的独创性！网友们可以随意分享自己的生活经验，还可以以此获取报酬，更好的促进了网友参与的积极性，为其他用户切实更好的促进了网友参与的积极性，为其他用户切实解决了很多人难以解决的问题！</span>
+                        <p class="time">
+                            <span>2015-8-26</span>
+                        </p>
+                        <div class="inputWrap">
+                            <input class="input_1" type="button" value="" />
+                            <input class="input_2" type="button" value="" />
+                            <span class="sp_1">22</span>
+                            <span class="sp_2">18</span>
+                        </div>
+                        <div class="huifu">
+                            <textarea></textarea>
+                            <div class="fabiao">发表</div>
+                        </div>
+                    </div>
+                    <div style="clear:both; height:1px;"></div>
+                </div>
+                <div class="textWrap">
+                    <div class="imgWrap">
+                        <a href="#"><img src="images/ybtp.jpg" /></a>
+                    </div>
+                    <div class="divText">
+                        <p>
+                            <span><a href="#">非有斋</a></span>
+                        </p>
+                        <span>网友自己参与编辑的个人生活指南，涉及到生活当中的方方面面，涵盖面非常广，具有较强的独创性！网友们可以随意分享自己的生活经验，还可以以此获取报酬，更好的促进了网友参与的积极性，为其他用户切实更好的促进了网友参与的积极性，为其他用户切实解决了很多人难以解决的问题！网友自己参与编辑的个人生活指南，涉及到生活当中的方方面面，涵盖面非常广，具有较强的独创性！网友们可以随意分享自己的生活经验，还可以以此获取报酬，更好的促进了网友参与的积极性，为其他用户切实更好的促进了网友参与的积极性，为其他用户切实解决了很多人难以解决的问题！</span>
+                        <p class="time">
+                            <span>2015-8-26</span>
+                        </p>
+                        <div class="inputWrap">
+                            <input class="input_1" type="button" value="" />
+                            <input class="input_2" type="button" value="" />
+                            <span class="sp_1">22</span>
+                            <span class="sp_2">18</span>
+                        </div>
+                        <div class="huifu">
+                            <textarea></textarea>
+                            <div class="fabiao">发表</div>
+                        </div>
+                    </div>
+                    <div style="clear:both; height:1px;"></div>
+                </div>
+                <div class="textWrap">
+                    <div class="imgWrap">
+                        <a href="#"><img src="images/ybtp.jpg" /></a>
+                    </div>
+                    <div class="divText">
+                        <p>
+                            <span><a href="#">非有斋</a></span>
+                        </p>
+                        <span>网友自己参与编辑的个人生活指南，涉及到生活当中的方方面面，涵盖面非常广，具有较强的独创性！网友们可以随意分享自己的生活经验，还可以以此获取报酬，更好的促进了网友参与的积极性，为其他用户切实更好的促进了网友参与的积极性，为其他用户切实解决了很多人难以解决的问题！网友自己参与编辑的个人生活指南，涉及到生活当中的方方面面，涵盖面非常广，具有较强的独创性！网友们可以随意分享自己的生活经验，还可以以此获取报酬，更好的促进了网友参与的积极性，为其他用户切实更好的促进了网友参与的积极性，为其他用户切实解决了很多人难以解决的问题！</span>
+                        <p class="time">
+                            <span>2015-8-26</span>
+                        </p>
+                        <div class="inputWrap">
+                            <input class="input_1" type="button" value="" />
+                            <input class="input_2" type="button" value="" />
+                            <span class="sp_1">22</span>
+                            <span class="sp_2">18</span>
+                        </div>
+                        <div class="huifu">
+                            <textarea></textarea>
+                            <div class="fabiao">发表</div>
+                        </div>
+                    </div>
+                    <div style="clear:both; height:1px;"></div>
+                </div>
+                <div class="textWrap">
+                    <div class="imgWrap">
+                        <a href="#"><img src="images/ybtp.jpg" /></a>
+                    </div>
+                    <div class="divText">
+                        <p>
+                            <span><a href="#">非有斋</a></span>
+                        </p>
+                        <span>网友自己参与编辑的个人生活指南，涉及到生活当中的方方面面，涵盖面非常广，具有较强的独创性！网友们可以随意分享自己的生活经验，还可以以此获取报酬，更好的促进了网友参与的积极性，为其他用户切实更好的促进了网友参与的积极性，为其他用户切实解决了很多人难以解决的问题！网友自己参与编辑的个人生活指南，涉及到生活当中的方方面面，涵盖面非常广，具有较强的独创性！网友们可以随意分享自己的生活经验，还可以以此获取报酬，更好的促进了网友参与的积极性，为其他用户切实更好的促进了网友参与的积极性，为其他用户切实解决了很多人难以解决的问题！</span>
+                        <p class="time">
+                            <span>2015-8-26</span>
+                        </p>
+                        <div class="inputWrap">
+                            <input class="input_1" type="button" value="" />
+                            <input class="input_2" type="button" value="" />
+                            <span class="sp_1">22</span>
+                            <span class="sp_2">18</span>
+                        </div>
+                        <div class="huifu">
+                            <textarea></textarea>
+                            <div class="fabiao">发表</div>
+                        </div>
+                    </div>
+                    <div style="clear:both; height:1px;"></div>
+                </div>
+                <div class="textWrap">
+                    <div class="imgWrap">
+                        <a href="#"><img src="images/ybtp.jpg" /></a>
+                    </div>
+                    <div class="divText">
+                        <p>
+                            <span><a href="#">非有斋</a></span>
+                        </p>
+                        <span>网友自己参与编辑的个人生活指南，涉及到生活当中的方方面面，涵盖面非常广，具有较强的独创性！网友们可以随意分享自己的生活经验，还可以以此获取报酬，更好的促进了网友参与的积极性，为其他用户切实更好的促进了网友参与的积极性，为其他用户切实解决了很多人难以解决的问题！网友自己参与编辑的个人生活指南，涉及到生活当中的方方面面，涵盖面非常广，具有较强的独创性！网友们可以随意分享自己的生活经验，还可以以此获取报酬，更好的促进了网友参与的积极性，为其他用户切实更好的促进了网友参与的积极性，为其他用户切实解决了很多人难以解决的问题！</span>
+                        <p class="time">
+                            <span>2015-8-26</span>
+                        </p>
+                        <div class="inputWrap">
+                            <input class="input_1" type="button" value="" />
+                            <input class="input_2" type="button" value="" />
+                            <span class="sp_1">22</span>
+                            <span class="sp_2">18</span>
+                        </div>
+                        <div class="huifu">
+                            <textarea></textarea>
+                            <div class="fabiao">发表</div>
+                        </div>
+                    </div>
+                    <div style="clear:both; height:1px;"></div>
+                </div>
+                <div class="textWrap">
+                    <div class="imgWrap">
+                        <a href="#"><img src="images/ybtp.jpg" /></a>
+                    </div>
+                    <div class="divText">
+                        <p>
+                            <span><a href="#">非有斋</a></span>
+                        </p>
+                        <span>网友自己参与编辑的个人生活指南，涉及到生活当中的方方面面，涵盖面非常广，具有较强的独创性！网友们可以随意分享自己的生活经验，还可以以此获取报酬，更好的促进了网友参与的积极性，为其他用户切实更好的促进了网友参与的积极性，为其他用户切实解决了很多人难以解决的问题！网友自己参与编辑的个人生活指南，涉及到生活当中的方方面面，涵盖面非常广，具有较强的独创性！网友们可以随意分享自己的生活经验，还可以以此获取报酬，更好的促进了网友参与的积极性，为其他用户切实更好的促进了网友参与的积极性，为其他用户切实解决了很多人难以解决的问题！</span>
+                        <p class="time">
+                            <span>2015-8-26</span>
+                        </p>
+                        <div class="inputWrap">
+                            <input class="input_1" type="button" value="" />
+                            <input class="input_2" type="button" value="" />
+                            <span class="sp_1">22</span>
+                            <span class="sp_2">18</span>
+                        </div>
+                        <div class="huifu">
+                            <textarea></textarea>
+                            <div class="fabiao">发表</div>
+                        </div>
+                    </div>
+                    <div style="clear:both; height:1px;"></div>
+                </div>
+
+            </div>
+
+            <div id="main-body-bottom" class="auto" style=" margin: 65px auto 150px auto;"></div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,468 @@
+.banner {
+    width: 100%;
+    height: 470px;
+    background-color: #e1e1e1;
+    padding-top: 25px;
+}
+
+.banner-bg {
+    width: 1190px;
+    height: 420px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 4.8px 1.2px rgba(11, 2, 5, 0.22);
+}
+
+.container-main-background {
+    background-color: #f5f5f5;
+}
+
+.container-main {
+    width: 1190px;
+    /*width: 991.667px;*/
+    margin: 0 auto;
+}
+
+.container-main .hkw-work-link {
+    text-align: left;
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    padding-left: 40px;
+    /*width: 120%;*/
+}
+
+.container-main .hkw-work-link .hkw-link-pub {
+    color: #404040;
+    display: inline-block;
+    width: 120px;
+    padding-bottom: 30px;
+}
+
+.container-main .hkw-work-link .triangle {
+    display: inline-block;
+    width: 17px;
+    height: 11px;
+    background: url("../images/xltb.png") no-repeat;
+    background-size: 12px 7px;
+    position: relative;
+    right: -7px;
+    bottom: -3px;
+}
+
+.container-main .hkw-work-link .hkw-work-select {
+    position: absolute;
+    width: 88px;
+    height: 288px;
+    /*right: 421px;*/
+    left: 275px;
+    top: 50px;
+    overflow: hidden;
+    z-index: 9999;
+    border: 1px solid #C7C7C7;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    display: none;
+}
+
+.container-main .hkw-work-link .hkw-work-select a {
+    display: block;
+    float: left;
+    height: 32px;
+    width: 100%;
+    text-align: center;
+    line-height: 32px;
+}
+
+.hkw-work-link .number {
+    float: right;
+}
+
+.hkw-work-link .number:last-child {
+    margin-right: 30px;
+}
+
+.container-main ul {
+    margin-left: 0;
+    width: 120%;
+}
+
+.container-main li {
+    background-color: #fff;
+    box-shadow: 0 0 3px 0 #cccccc;
+    float: left;
+    /*height: 340px;*/
+    margin: 2px 11px 10px 1px;
+    padding: 10px 0px 12px 0;
+    position: relative;
+    width: 289px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.iInspir-block {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #ececec;
+    bottom: -1px;
+    left: -1px;
+    position: absolute;
+    right: 5px;
+    top: -2px;
+    z-index: -1;
+    margin-right: -6px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.hkw-work-h3 {
+    position: relative;
+    font-size: 14px;
+    padding: 10px 12px 0 12px;
+}
+
+
+/*Ñ©ÌúÁúC3-XR³¡¾°ºÏ³É*/
+
+.hkw-view {
+    background-color: #fff;
+    width: 369px;
+    height: 126px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    font-size: 14px;
+    padding-left: 20px;
+    display: none;
+}
+
+.hkw-view h4 {
+    padding: 13px 0;
+}
+
+.hkw-view p {
+    font-size: 12px;
+    width: 243px;
+}
+
+.hkw-view-item {
+    font-size: 12px;
+    padding: 0 6px;
+}
+
+.hkw-eye-icon,
+.hkw-comment-icon,
+.hkw-collection-icon {
+    background: transparent url("../images/icon.png") no-repeat scroll 0 0;
+    display: inline-block;
+    float: left;
+    height: 16px;
+    margin-right: 3px;
+    position: relative;
+    top: 2px;
+    vertical-align: middle;
+    width: 17px;
+}
+
+.hkw-eye-icon {
+    background-position: 0 -33px;
+    height: 9px;
+    top: 4px;
+    width: 13px;
+}
+
+.hkw-comment-icon {
+    background-position: 0 -43px;
+    height: 9px;
+    top: 4px;
+    width: 9px;
+}
+
+.hkw-collection-icon {
+    background-position: 0 -55px;
+    height: 9px;
+    top: 4px;
+    width: 11px;
+}
+
+.hkw-work-h3 h3 {
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #B0B0B0;
+}
+
+.hkw-person {
+    position: absolute;
+    bottom: -13px;
+    left: -1px;
+    background-color: #fff;
+    border: 1px solid #47A7F5;
+    border-radius: 5px;
+    width: 100%;
+    display: none;
+}
+
+.hkw-person-t {
+    padding: 10px 12px 10px 70px;
+}
+
+.hkw-person-t img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    border-radius: 50%;
+}
+
+.hkw-person-m {
+    height: 164px;
+    overflow: hidden;
+    padding-left: 8px;
+}
+
+.hkw-person-m div {
+    float: left;
+    width: 118px;
+    height: 75px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.hkw-person-b {
+    height: 50px;
+    padding-left: 2px;
+}
+
+.hkw-person-b div {
+    position: relative;
+    float: left;
+    width: 40px;
+    height: 36px;
+    border: 1px solid #E8E8E8;
+    border-radius: 18px;
+    padding-left: 35px;
+    margin: 7px 8px 5px 8px;
+}
+
+.hkw-person-b i {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    top: 5px;
+    width: 20px;
+    height: 25px;
+}
+
+.hkw-person-b span {
+    line-height: 36px;
+}
+
+.hkw-person-b .hkw-tell .tell {
+    background: url("../images/tell.png");
+    -webkit-background-size: 23px 25px;
+    background-size: 23px 25px;
+}
+
+.hkw-person-b .hkw-tell:hover {
+    border: 1px solid #3BBDE9;
+}
+
+.hkw-person-b .hkw-jian .jian {
+    background: url("../images/jian.png");
+    -webkit-background-size: 23px 25px;
+    background-size: 23px 25px;
+}
+
+.hkw-person-b .hkw-jian:hover {
+    border: 1px solid #D382C6;
+}
+
+.hkw-person-b .hkw-xia .xia {
+    background: url("../images/xia.png");
+    -webkit-background-size: 23px 25px;
+    background-size: 23px 25px;
+}
+
+.hkw-person-b .hkw-xia:hover {
+    border: 1px solid #FFB881;
+}
+
+.hkw-work-bottom .hkw-person-m li a {
+    display: block;
+}
+
+.hkw-work-bottom .hkw-person-m li img {
+    display: block;
+    width: 118px;
+    height: 84px;
+    border-radius: 0;
+}
+
+.h_a {
+    /*height: 185px;*/
+}
+
+.thumb-a {
+    margin: 0 0 0 0px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 270px;
+    height: 195px;
+    z-index: 0;
+    left: 10px;
+}
+
+.hkw-work-bottom {
+    color: #5a5a5a;
+    padding: 14px 0 0px 7px;
+    position: relative;
+}
+
+.hkw-work-bottom img.hkw-bottom-per {
+    margin-left: 5px;
+    margin-right: 5px;
+    vertical-align: top;
+    border-radius: 50%;
+}
+
+.hkw-work-bottom a {
+    font-size: 14px;
+}
+
+.fn-left,
+.fn-right {
+    display: inline;
+}
+
+.fn-left {
+    float: left;
+}
+
+.fn-right {
+    float: right;
+}
+
+.fn-left a,
+.fn-right a {
+    display: block;
+    width: 130px;
+    height: 33px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #DCDCDC;
+    text-align: center;
+    line-height: 33px;
+    border-radius: 16px;
+    font-size: 14px;
+}
+
+.hkw-work-bar-item {
+    color: #9b9b9b;
+    float: left;
+    margin-right: 12px;
+	margin-top: 1px;
+}
+
+.hkw-join-name {
+    font-size: 12px;
+    max-width: 80px;
+    display: inline-block;
+    padding-left: -2px;
+    margin-top: 1px;
+}
+
+.hkw-join-icon {
+    display: inline-block;
+    height: 17px;
+    width: 13px;
+    background: url("../images/activity.png") -3px -37px no-repeat;
+    vertical-align: top;
+}
+
+.hkw-join-text {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 12px;
+    max-width: 85px;
+}
+
+li img {
+    transition: all .3s ease;
+}
+
+.container-main li:hover .scale {
+    transform: scale(1.05);
+}
+
+.container-main .cur {
+    border: 1px solid transparent;
+}
+
+.container-main .cur:hover {
+    border: 1px solid #0298db;
+}
+
+
+/*Ñ©ÌúÁúC3-XR³¡¾°ºÏ³É*/
+
+.hkw-view {
+    background-color: #fff;
+    width: 269px;
+    height: 126px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    font-size: 14px;
+    padding-left: 20px;
+    display: none;
+}
+
+.hkw-view h4 {
+    padding: 13px 0;
+}
+
+.hkw-view-item {
+    font-size: 12px;
+    padding: 0 6px;
+}
+
+.hkw-view-slide div {
+    float: left;
+    font-weight: 100;
+}
+
+
+/*顶部轮播*/
+
+#flexslider {
+    background-image: url(../images/banner-bg.png);
+    text-align: center;
+    padding: 30px 0;
+}
+
+#flexslider ul.slides {
+    width: auto;
+}
+
+#flexslider ul.slides li {
+    width: auto;
+}
+
+#flexslider ul.slides li img {
+    width: auto;
+}
+
+
+/*作品库导航页面的左右箭头*/
+
+#flexslider span.flexslider-left {
+    background: url("../images/arrow001.png");
+    left: 150px;
+}
+
+#flexslider span.flexslider-right {
+    background: url("../images/arrow001.png") no-repeat 0 -75px;
+    right: 150px;
+}

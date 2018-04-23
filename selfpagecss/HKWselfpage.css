@@ -1,0 +1,1947 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p{
+    color: #68696b;font-size: 14px;
+}
+.inopacity{
+    width: 100%;height: 100%;
+    display: block;
+    position: fixed;
+    z-index: -1;
+    background: #fff;
+    animation: show 4s 1;
+}
+@keyframes show {
+    0%{opacity: 1;z-index: 1000}
+    20%{opacity: 1;z-index: 1000}
+    100%{opacity: 0;z-index: 1000}
+    100%{opacity: 0;z-index: -1}
+}
+
+.sectionH5{min-width: 1173px;}
+.topheader{
+    width: 100%;
+    height: 69px;
+    background: url("../image/topheaderself.png") repeat;
+    position: relative;
+    z-index: 1000;
+}
+.topheader .addenterline{
+    width: 1173px;
+    height: 69px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.topheader .addenterline .addfinshed{
+    width: 730px;
+    height: 69px;
+    float: left;
+    padding-left:6px;
+    font-size: 14px;
+    color:#fff;
+    line-height: 69px;
+    letter-spacing:1px;
+    position: relative;
+}
+.topheader .addenterline .addfinshed .addfinshedcontrol{
+    width: 730px;
+    height: 69px;
+    padding-left:6px;
+    font-size: 14px;
+    color:#fff;
+    line-height: 69px;
+    letter-spacing:1px;
+    position: absolute;
+    top:1px;
+    left: 125px;
+}
+.topheader .addenterline .addfinshed .controlwidth .controlcontent{
+    width: 730px;
+    height: 69px;
+    font-size: 14px;
+    color:#fff;
+    line-height: 69px;
+    letter-spacing:1px;
+}
+.topheader .addenterline .addfinshed .controlwidth{
+    height: 69px;
+    padding-left:6px;
+    font-size: 14px;
+    color:#fff;
+    line-height: 69px;
+    letter-spacing:1px;
+    position: absolute;
+    top:1px;
+    left: 125px;
+    overflow: hidden;
+    transition-property:width;
+    transition-duration:1.5s;
+    transition-timing-function: linear;
+    width: 0;
+}
+.topheader .addenterline .addfinshed .controlcontent a{
+    opacity: 1;
+}
+.topheader .addenterline .addfinshed a{
+    color:#fff;
+    padding:0 2px;
+    opacity: 0.4;
+    transition: opacity 0.5s;
+}
+.topheader .addenterline .addfinshed a:visited{
+     color:#fff;
+ }
+.topheader .addenterline .addsending{
+    min-width: 255px;
+    height: 69px;
+    float: right;
+}
+.topheader .addenterline .addfinshed .penicon{
+    width: 15px;height: 15px;display: inline-block;
+    background: url("../image/penicon.png");
+}
+.topheader .addenterline .addfinshed .onpageid:hover{
+    opacity: 1;
+}
+.topheader .addenterline .addsending .addsendbutton{
+    width:112px;
+    height:38px;
+    border-radius: 19px;
+    border: 1px solid #0bacf5;
+    background: #8cdbff;
+    display: inline-block;
+    text-align: center;
+    margin-top: 16px;
+    float: right;
+    color: #0bacf5;
+    line-height: 38px;
+}
+.topheader .addenterline .addsending .addsendbutton:hover{
+    color:#fff;
+    background: #0bacf5;
+    border: 1px solid #8cdbff;
+}
+.topheader .addenterline .addsending .addsendalert{
+    display: inline-block;
+    text-align: center;
+    margin-top: 19px;
+    float: right;
+    color: #fff;
+    font-size: 12px;
+    line-height: 38px;
+    margin-right: 10px;
+}
+.center{
+    width: 100%;
+    background: #f5f5f5;padding-bottom:40px
+}
+.center .centerbyself{
+    width: 100%;
+    height: 300px;
+    position: relative;
+    top:0;left: 0;
+    z-index: 0;
+}
+.center .centerbyself .centersendbyself{
+    width: 100%;
+    height: 100%;
+}
+.center .centerFirst{
+    position: relative;
+    width: 1175px;
+    margin: -404px auto 0 ;
+    background-color: rgba(0,0,0,0);
+    z-index: 100;
+    border:1px solid rgba(0,0,0,0);
+    overflow: hidden;
+}
+.center .centerFirst .cfout{
+    float: left;
+    height: 180px;
+    top:-76px;
+    right: 0;
+    width: 1173px;
+    background: rgba(0,0,0,0);
+    overflow: hidden;
+}
+.center .centerFirst .cfout .cfoutdiv{
+    height: 56px;
+    float: right;
+    width: 500px;
+    background: rgba(0,0,0,0);
+    margin-top: 105px;
+}
+.center .centerFirst .cfout .cfoutdiv .cfosendimage{
+    height: 40px;
+    width: 150px;
+    float: right;
+}
+
+.center .centerFirst .cfout .cfoutdiv .cfosendimage .cfoalter{
+    opacity: 0;
+    width: 196px;
+    height:36px;
+    float: left;
+    background: #fff;
+    margin-left:-233px;
+    position: relative;
+    color:#333;
+    padding: 10px;
+    font-size: 12px;
+}
+.center .centerFirst .cfout .cfoutdiv .cfoalter .cfoalterout{
+    position: absolute;
+    border-left:12px solid #fff;
+    border-bottom:12px solid #fff;
+    border-top:12px solid rgba(0,0,0,0);
+    border-right:12px solid rgba(0,0,0,0);
+    top:25px;
+    right:-12px;
+}
+.center .centerFirst .cfout .cfoutdiv .cfosendimagebutton{
+    height: 34px;
+    border:1px solid #777;
+    border-radius: 4px;
+    width: 138px;
+    line-height: 34px;
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    float: right;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-right: 10px;
+    position: relative;
+}
+#cfosendimageinput{
+    position: absolute;
+    width: 138px;    height: 34px;
+    top:0;left: 0;cursor: pointer;
+}
+.center .centerFirst .cfout  .cfoutdiv .cfolookaround{
+    height: 34px;
+    border:1px solid #777;
+    border-radius: 4px;
+    width: 138px;
+    line-height: 34px;
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    float: right;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+.center .centerFirst .cfout .cfoutdiv .cfosendimagebutton:hover .cfosendcamrea{
+    background: url(../image/cameraBlueicon.png);
+}
+
+.center .centerFirst .cfout .cfoutdiv .cfolookaround:hover{
+    background: rgba(255,255,255,0.2);
+    color: #0091d3;
+    opacity: 0.9;
+    border-color: #0091d3;
+}
+.center .centerFirst .cfout .cfoutdiv .cfosendimagebutton:hover{
+    background: rgba(255,255,255,0.2);
+    color: #0091d3;
+    opacity: 0.9;
+    border-color: #0091d3;
+
+}
+
+
+.center .centerFirst .cfout .cfoutdiv .cfosendimagebutton .cfosendcamrea{
+    width: 20px;height: 17px;
+    display: inline-block;
+    float: left;
+    background: url(../image/cameraicon.png);
+    margin:9px -10px 0 15px;
+}
+.center .centerFirst .cfout .cfoutdiv .cfosendimagebutton .cfosendeye{
+    width: 20px;height: 17px;
+    display: inline-block;
+    float: left;
+    background: url(../image/cameraicon.png);
+    margin:9px -10px 0 15px;
+}
+
+.center .centerFirst .cfbody{
+    width: 1173px;
+    overflow: hidden;
+    background: white;
+    border:1px solid #dce0e0;
+    float: left;
+}
+.center .centerFirst .cfbody .touxiang{
+    float: left;position: relative;
+}
+.center .centerFirst .cfbody .cfbheadimage{
+    position: absolute;
+    top:32px;left:30px;
+    width: 250px;height: 250px;
+    display: block;
+}
+.center .centerFirst .cfbody .cfbheadimagehad {
+    position: absolute;
+    top: 222.5px;
+    left: 40px;
+    width: 55px;
+    height: 50px;
+    display: block;
+    z-index: -1;
+    border: 1px dashed #aaa;
+    opacity: 0;
+    background: url("../image/touxiangC.png") 2px 0px rgba(255, 255, 255, 0.5);
+    transition: opacity 1s;
+}
+
+.center .centerFirst .cfbody .touxiang:hover .cfbheadimagehad{
+    z-index: 100;
+    opacity: 1;
+}
+
+.center .centerFirst .cfbody .cfbform{
+    width: 1173px;
+    top:0;left: 0;
+    overflow: hidden;
+    float: left;
+}
+.center .centerFirst .cfbody .cfbform .cfbform_box_baseInf{
+    padding-left:300px ;
+    width: 790px;
+    float: left;
+    background: #fff;
+    top:0;left: 0;overflow: hidden;
+    min-height: 120px;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show{
+    width: 790px;
+    height: 120px;
+    background: #fff;
+    transition: opacity 1s;
+    opacity: 1;display: block;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowleft{
+    width: 690px;
+    float: left;
+    height: 120px;
+    background: #fff;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowleft .nicheng{
+    font-size: 16px ;font-weight: bold;
+    line-height: 20px;
+    float: left;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowleft .showskill {
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    /*background:linear-gradient(left, #eef3f6, #0bacf5);*/
+    background: url('../image/skill.png') bottom left no-repeat #eef3f6;
+    color: #666;
+    text-align: center;
+    padding: 0 12px 0 12px;
+    margin: 2px 2px;
+    float: left;
+    cursor: default;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowleft .sendckeckbutton.notcheck{
+    height: 20px;float: left;margin-left: 10px;
+    padding: 0 8px;
+    border: 1px solid #999999;border-radius: 10px;
+    font-size: 14px;font-weight: normal;line-height: 20px;
+    text-align: center;color:#999999;
+    background: #fff;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowleft .sendckeckbutton.incheck{
+    height: 20px;float: left;margin-left: 10px;    padding: 0 8px;
+    border: 1px solid #0bacf5;border-radius: 10px;
+    font-size: 14px;font-weight: normal;
+    text-align: center;color:#fff;
+    background: #0bacf5;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowright{
+    width: 100px;
+    float: left;
+    height: 120px;
+    background: #fff;
+    overflow: hidden;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowleft .zidingyibiaoqian{
+   height: 22px;line-height: 22px;
+    font-size: 12px;background:#eef3f6;color: #656668;text-align: center;
+    padding: 0 12px 0 16px;border-radius: 22px;margin: 2px 2px;
+    float: left;
+    box-shadow: 1px 0 0 #0bacf5;
+}
+
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowleft .zidingyibiaoqian i{
+    height: 22px;line-height: 22px;
+    font-size: 12px;color:#f33919;text-align: center;
+    font-style: normal;display: block;opacity: 0;float: right;margin: 0 -4px 0 2px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowleft .zidingyibiaoqian:hover i{
+   opacity: 1;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowleft  .zdybqaddclick:hover{
+    background-color: #555;color:#fff;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowleft  .zidingyibiaoqian a{
+    cursor: default;
+}
+
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowright .editor{
+    width: 50px;
+    float: right;
+    height: 14px;
+    background: #fff;
+    font-size: 14px;
+    color:#30bb42;
+    line-height: 14px;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowright .addeditor{
+    width: 50px;
+    float: right;
+    height: 14px;
+    background: #fff;
+    font-size: 14px;
+    color:#30bb42;
+    line-height: 14px;
+    margin-top: 5px;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowright .editor .bj{
+    padding: 7px;
+    display: inline-block;
+    background:url(../image/bianji.png);
+    float: left;
+}
+
+.center .centerFirst .cfbody .cfbform .cfbfbb_show .littleshowright .addeditor .tj{
+    padding: 8px;
+    margin-top: -1px;
+    margin-left: -1px;
+    display: inline-block;
+    background:url(../image/tianjia.png);
+    float: left;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write{
+    width: 790px;
+    background: #fff;
+    /*overflow: hidden;*/
+    float: left;
+    border-radius: 5px;
+    min-Height:0;
+    position: absolute;
+    opacity: 0;
+    margin-bottom:10px;
+}
+
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .closebianjitianjia{
+    padding: 8px;
+    background:url(../image/tianjia.png);
+    float: right;
+    transform-origin:center;
+    transform: rotate(45deg);
+    transition: all 0.8s;
+    transition-timing-function: linear;
+    margin: 8px;
+    display: none;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .closebianjitianjia_other{
+    padding: 8px;
+    background:url(../image/tianjia.png);
+    float: right;
+    transform-origin:center;
+    transition-timing-function: linear;
+    transform: rotate(45deg);
+    transition: all 0.8s;
+    margin:0 8px 0;
+    display: none;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_writetitle{
+    width: 485px;
+    background: #fff;
+    overflow: hidden;
+    float: left;
+    height: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv{
+    position: relative;
+    /*overflow: hidden;*/
+    width: 515px;
+    top:0;left:0;
+    float: left;border-radius:5px;
+    transition: all 1s;
+    height: 0;display: none;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv .imgtopshow{
+    width: 264px;height: 194px;
+    float: left;border: 1px solid red;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv .imgtopshow img{
+    width: 100%;height: 100%;
+}
+.center .centerFirst .cfbody .cfbform .workshow_list{
+    position: relative;
+    overflow: hidden;
+    width: 1133px;
+    top:20px;left:0;
+    float: left;border-radius:5px;
+    padding: 0 10px 0 30px;
+    transition: all 1s;
+    min-height: 235px;display: block;
+}
+.center .centerFirst .cfbody .cfbform .workshow_list p{text-align: center;}
+.center .centerFirst .cfbody .cfbform  .workshow_list .workshow_inlist{
+    width: 272px;height: 225px;
+    float: left;display: inline-block;margin: 0 2px 10px;
+}
+
+.center .centerFirst .cfbody .cfbform  .workshow_list .workshow_inlistadd{
+    width: 272px;height: 225px;
+    float: left;display: inline-block;margin: 0 2px 10px;
+}
+.center .centerFirst .cfbody .cfbform  .workshow_list .workshow_inlist div{
+    border: 1px solid #e1e1e1;
+}
+.center .centerFirst .cfbody .cfbform  .workshow_list .workshow_inlist div:hover .workshow_contron{
+    bottom: 10px;
+}
+.center .centerFirst .cfbody .cfbform  .workshow_list .workshow_inlist .workshow_contron{
+    position: absolute;width: 265px;height: 32px;
+    bottom: -32px;left: 0;
+    padding-left:4px ;
+    transition: all 0.8s;
+}
+.center .centerFirst .cfbody .cfbform  .workshow_list .workshow_inlist .workshow_contron i{
+    width: 14px;height:14px;font-style: normal;
+    display: inline-block;
+}
+.center .centerFirst .cfbody .cfbform  .workshow_list .workshow_inlist .workshow_contron li{
+    display: inline-block;float: left;
+    line-height: 32px;
+    background: #fff;border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 4px;margin: 0 1px;
+    cursor: pointer;
+}
+.center .centerFirst .cfbody .cfbform  .workshow_list img{
+    width: 270px;height: 192px;
+    float: left;display: inline-block;
+}
+
+
+
+.center .centerFirst .cfbody .cfbform  .workshow_list  .workshow_inlist .dis_0{
+    height: 26px;width: 90px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 13px;
+    border: 1px solid #0bacf5;
+    position: absolute;
+    top:10px;color: #0bacf5;
+    left:10px;
+}
+.center .centerFirst .cfbody .cfbform  .workshow_list  .workshow_inlist a{
+    line-height: 26px;text-align: center;display: inline-block;
+    width:100%;font-weight: 600;font-size: 14px;
+}
+.center .centerFirst .cfbody .cfbform  .workshow_list  .workshow_inlist .dis_1{
+    height: 26px;width: 80px;
+    background: rgba(11,127,245,0.7);
+    border-radius: 13px;
+    border: 1px solid #dddddd;
+    position: absolute;
+    top:10px;color: #fff;
+    left:10px;
+}
+.center .centerFirst .cfbody .cfbform  .workshow_list  .workshow_inlist .dis_2{
+    height: 26px;width: 80px;
+    background: rgba(245, 164, 33, 0.95);
+    border-radius: 13px;
+    border: 1px solid #ff193c;
+    position: absolute;
+    top:10px;color: #ff053b;
+    left:10px;
+    font-weight: 200;
+}
+.center .centerFirst .cfbody .cfbform  .workshow_list  .workshow_inlist .dis_3{
+    height: 26px;width: 80px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 13px;
+    border: 1px solid #ddd;
+    position: absolute;
+    top:10px;color: #aaa;
+    left:10px;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv.heightchangediv_early{
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    width: 1030px;
+    margin-left: 55px;
+    top:0;left:0;
+    float: left;border-radius:5px;
+    transition: all 0.5s;
+    height: 0;display: block;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv_early .chooseskill{
+    width: 990px;
+    margin: 0 auto;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv_early .chooseskill li{
+    width: 492px;
+    margin: 0 0 10px 0;
+    float: left;
+    background: #f5f5f5;
+    height: 65px;
+    display: block;
+    overflow: hidden;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv_early .chooseskill .ck_logo{
+    height: 40px;width: 40px;
+    border-radius: 50%;
+    background: url("../image/navLogo-select.png") no-repeat  #fff;
+    display: block;float: left;
+    margin: 12px 0 0 15px;
+    transition: all 0.5s;
+    opacity: 0.3;
+    border: 1px solid rgba(0,0,0,0);
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv_early .chooseskill li:hover .ck_logo{
+    background: url("../image/navLogo-selectBlue.png") no-repeat #e5e5ea;
+    opacity: 0.9;
+    border: 1px solid #0bacf5;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv_early .chooseskill li .ck_logo.inchoose{
+    background: url("../image/navLogo-selectBlue.png") no-repeat #e5e5ea;
+    opacity: 0.9;
+    border: 1px solid #0bacf5;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .opacityBlack{
+     width: 100%;height: 100%;position: absolute;display: none;
+     background: rgba(0,0,0,0);z-index: 1000;padding-top: 20px;
+     opacity:1;
+     box-sizing:border-box;
+     border:1px dashed rgba(0,0,0,0.5);
+     transition: all 1s;
+     border-radius:5px;
+ }
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .opacityBlack_other{
+    width: 100%;position: absolute;display: none;
+    background: rgba(0,0,0,0);z-index: 1000;
+    opacity:1;box-sizing:border-box;
+    border:1px dashed rgba(0,0,0,0.5);
+    transition: all 1s;
+    border-radius:5px;  top: -150px;height: 550px;padding-top: 0;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv_early .chooseskill .ck_title{
+     width: 80px;
+     float: left;
+     height:20px ;
+     display: block;
+     font-size: 14px;
+     color: #5d5d5d;
+     font-weight: bold;margin:10px 0 5px 10px;
+ }
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv_early .chooseskill .ck_skillchoose{
+    width: 400px;
+    float: left;
+    height: 20px;
+    display: block;
+    margin-left: 0;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv_early .chooseskill .ck_skillchoose span{
+    float: left;
+    height: 20px;
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 12px;
+    color: #9a9a9a;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv_early .chooseskill .ck_skillchoose span.inchoose{color: #0bacf5}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .heightchangediv_early .chooseskill .ck_skillchoose span:hover{color: #0bacf5}
+
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm{
+    width: 485px;
+    background: #fff;
+    float: left;
+    padding: 15px;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm p{
+    font-size: 14px;
+    color: #a7a7a7;
+    text-align: center;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskill{
+    width: 100%;
+    overflow: hidden;
+    min-height: 30px;
+    margin-top: 40px;
+    margin-bottom: 18px;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskillselect{
+    width: 100%;
+    position: relative;
+    height: 50px;
+
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskillselect .addskillinput{
+    width: 70%;
+    position: relative;
+    height: 48px;
+    border: 1px solid #999999;
+    outline: none;
+    padding:0 20px;
+    border-radius: 3px;
+    top:0;
+    left: 0;
+    font-size: 14.5px;
+    color: #777;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskillselect .addskillbutton{
+    width: 20%;
+    position: relative;
+    height: 50px;
+    border: none;
+    padding:0 20px;
+    background: #0bacf5;
+    color: #fff;
+    font-size: 16px;
+    line-height: 46px;
+    border-radius: 3px;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskillselect .skillalert{
+    border-radius: 3px;
+    position: absolute;
+    top:65px;
+    width: 483px;
+    border: 1px solid #999999;
+    max-height: 104px;
+    overflow-y: scroll;
+    overflow-x:hidden ;
+    display: block;
+    background: #fff;
+    min-height: 52px;
+    opacity: 0;
+    z-index: -1;
+    transition: all 1s;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskillselect .skillalert .textp{
+    height: 52px;
+    text-align: center;
+    color: #777;
+    line-height: 52px;
+    font-size: 16px;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskillselect .skillalert::-webkit-scrollbar {
+    width:5px;
+    height:10px;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskillselect .skillalert::-webkit-scrollbar-thumb{
+    border-radius: 3px;
+    background-color: #0bacf5;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskillselect .skillalert::-webkit-scrollbar-button{
+    background-color: #FF66D5;
+    height: 0px;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskillselect .skillalert::-webkit-scrollbar-track{
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
+
+}
+
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskillselect .skillalert dd{
+     padding: 0 20px;
+     width: 443px;
+     height: 26px;
+     font-size: 14px;
+     line-height: 26px;
+     color: #777777;
+     cursor: pointer;
+ }
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskillselect .skillalert dd:hover{
+    background: #eee;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskill .inskill{
+    height: 26px;margin-bottom: 4px;float: left;margin-right: 10px;border-radius: 13px;background: #0bacf5;color: #fff;display: inline-block;
+    padding: 0 6px 0 10px;line-height: 26px;font-size: 14px;
+}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskill .inskill i{float: right;font-size:20px;display: inline-block;
+font-style: normal;opacity: 0.5;transition: all 0.5s;cursor: pointer;}
+.center .centerFirst .cfbody .cfbform .cfbfbb_write .baseInfForm .addskill .inskill i:hover{opacity: 1;color: #777;}
+.center .centerFirst .cfbody .cfbform label{
+    display: block;
+    float: left;
+}
+.center .centerFirst .cfbody .cfbform .displayinput{display: none;}
+.center .centerFirst .cfbody .cfbform .cfbf_intokind{
+     font-size: 14px;
+ }
+.righttopred{
+    width: 10px;
+    height: 10px;display: inline-block;
+    background: url("../image/important.png") no-repeat;
+    position: relative;top:-2px;
+}
+.center .centerFirst .cfbody .cfbform .fontweight{
+     color:#333;
+     font-size: 14px;
+     font-weight: bold;
+     padding: 14px 0;
+ }
+.center .centerFirst .cfbody .cfbform .fontnoweight{
+    color:#333;
+    font-size: 14px;
+    padding: 14px 0;
+    min-width: 100px;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials{
+    width: 562px;
+    height: 230px;
+    border: 1px solid #e1e1e1;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+.center .centerFirst .cfbody .cfbform .workshow_industry ul{
+    float: left;width: 170px;
+    border: 1px solid #e1e1e1;
+    height: 218px;padding: 5px;display: inline-block;
+}
+.center .centerFirst .cfbody .cfbform .workshow_industry ul li{
+    float: left;width: 170px;line-height: 20px;font-size: 14px;
+    height: 20px;display: inline-block;color: #555;
+    border: 1px solid rgba(0,0,0,0);
+}
+.center .centerFirst .cfbody .cfbform .workshow_industry ul li:hover{
+    background: #eee;
+    cursor: pointer;
+}
+.center .centerFirst .cfbody .cfbform .workshow_industry ul li.bluebg{
+    background: #8cdbff;
+    cursor: pointer;
+}
+.center .centerFirst .cfbody .cfbform .workshow_industry ul li.bluebg:hover{
+    background: #8cdbff;
+    cursor: pointer;
+    border: 1px solid #0bacf5;
+}
+.center .centerFirst .cfbody .cfbform .workshow_industry{
+    width: 564px;
+    height: 225px;
+    float: left;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_detials_alert{
+    background: #fff;z-index: 1000;width: 400px;
+    height: 200px;position: absolute;left: 80px;top:15px;border: 1px solid #f53e17;
+    display: none;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_detials_alert .wda_header{
+   width: 390px;padding-left: 10px;color: #555;height: 30px;
+    text-align: left;font-size: 16px;line-height: 30px;font-weight: bold;
+    background: #ff842d;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_detials_alert .wda_content{
+    width: 375px;padding-left: 25px;color: #555;height: 130px;
+    text-align: left;font-size: 14px;
+    padding-top: 10px;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_detials_alert .wda_click{
+    width: 380px;padding-left: 20px;color: #555;height: 30px;
+    text-align: left;font-size: 14px;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_detials_top{
+    width: 562px;
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+    top:0;left: 0;
+    height: 44px;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_detials_top dl{
+    margin-left: 50px;
+
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_detials_top dd{display: inline-block;float: left;margin-top: 9px;
+    margin-left: 70px;   font-size: 14px;height: 36px;
+    /*background: url("../image/backgroundline.png") no-repeat 0 0 #fff;*/
+    background: rgba(0,0,0,0);
+    padding: 0 32px;
+    line-height: 30px;
+    color: #333;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_sendlocalhost{
+    position: absolute;
+    background: #fff;
+    width: 562px;
+    height: 185px;
+    top:45px;
+    left:0;
+    display: none;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imginput{
+height: 70px;width: 562px;  overflow: hidden;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow{
+    height: 102px;width: 562px;  overflow: hidden;
+}
+
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imginput label{
+    margin-top: 15px;margin-left: 20px;
+width: 100px;height: 40px;background: #f15849;color: #fff;
+    font-size: 14px;text-align: center;;line-height: 40px;
+    /*transition: opacity 0.5s;opacity: 0.8;*/
+    cursor: pointer;
+    position: relative;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imginput div{
+    margin-top: 15px;margin-left: 20px;
+    width: 405px;height: 40px;color: #aaa;
+    font-size: 14px;text-align: left;line-height: 18px;
+    display: inline-block;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imglist{
+    width: 400px;position: absolute;bottom:13px;right: 20px;
+    background: #fff;
+    height: 100px;overflow: hidden;
+    border: 1px solid #e1e1e1;
+    display: none;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .videolist{
+    width: 400px;position: absolute;bottom:13px;right: 20px;
+    background: #fff;
+    height: 100px;overflow: hidden;
+    border: 1px solid #e1e1e1;
+    display: none;z-index: 200;
+}
+
+#imgshow_list{
+    width: 400px;
+    height: 100px;
+    overflow-x:hidden ;overflow-y: auto;
+    padding-top:3px;
+}
+#imgshow_list::-webkit-scrollbar {
+    width:5px;
+    height:10px;
+}
+#imgshow_list::-webkit-scrollbar-thumb{
+    border-radius: 3px;
+    background-color: #0bacf5;
+}
+#imgshow_list::-webkit-scrollbar-button{
+    background-color: #FF66D5;
+    height: 0px;
+}
+#imgshow_list::-webkit-scrollbar-track{
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
+
+}
+#imgshow_list li{
+    width: 400px;
+    height: 25px;
+    background: #fff;
+    margin-left:5px;
+}
+
+#imgshow_list li img{
+    width: 20px;
+    height: 23px;
+    border: 1px solid #eee;
+    background: #fff;
+    display: inline-block;
+    cursor: pointer;
+    margin-right:8px;
+}
+
+#imgshow_list li a{
+    height: 25px;line-height: 25px;display: inline-block;white-space: nowrap;overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#imgshow_list li a:nth-child(2){
+    width: 155px;
+    background: #fff;
+    cursor: pointer;
+}
+#imgshow_list li a:nth-child(2):hover{
+    width: 155px;
+    background: #fff;
+    color:#0bacf5;
+}
+
+#imgshow_list li a:nth-child(3){
+    width: 120px;
+    background: #fff;
+    cursor: default;
+}
+#imgshow_list li a:nth-child(4){
+    font-size: 12px;
+    color:#333;
+    border-radius: 4px;
+    margin: 3px 0 2px 0;
+    height: 20px;
+    width: 40px;
+    background: #8cdbff;
+    cursor: pointer;
+    line-height: 20px
+}
+#imgshow_list li a:nth-child(4) i{
+    display: inline-block;width:0px;height: 0px;
+    margin-left:2px ;
+    border-bottom: 5px solid #666;
+    border-top: 5px solid rgba(0,0,0,0);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-right: 5px solid rgba(0,0,0,0);
+    position: relative;top:-1.5px;
+}
+#imgshow_list li a:nth-child(5){
+    font-size: 12px;
+    color:#333;
+    border-radius: 4px;
+    margin: 3px 0 2px 0;
+    height: 20px;
+    width: 40px;
+    background: #8cdbff;
+    cursor: pointer;
+    line-height: 20px
+}
+#imgshow_list li a:nth-child(5) i{
+    display: inline-block;width:0px;height: 0px;
+    margin-left:2px ;
+    border-top: 5px solid #666;
+    border-bottom: 5px solid rgba(0,0,0,0);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-right: 5px solid rgba(0,0,0,0);
+    position: relative;top:3.5px;
+}
+
+/**/
+#videoshow_list{
+    width: 400px;
+    height: 100px;
+    overflow-x:hidden ;overflow-y: auto;
+}#videoshow_list::-webkit-scrollbar {
+     width:5px;
+     height:10px;
+ }
+#videoshow_list::-webkit-scrollbar-thumb{
+    border-radius: 3px;
+    background-color: #0bacf5;
+}
+#videoshow_list::-webkit-scrollbar-button{
+    background-color: #FF66D5;
+    height: 0px;
+}
+#videoshow_list::-webkit-scrollbar-track{
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
+
+}
+
+#videoshow_list li{
+    width: 400px;
+    height: 25px;
+    background: #fff;
+}
+
+#videoshow_list li img{
+    width: 20px;
+    height: 23px;
+    border: 1px solid #eee;
+    background: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+#videoshow_list li a{
+    height: 25px;line-height: 25px;display: inline-block;white-space: nowrap;overflow: hidden;
+    text-overflow: ellipsis;
+}
+#videoshow_list li a:nth-child(3){
+    width: 155px;
+    background: #fff;
+    cursor: pointer;
+}
+#videoshow_list li a:nth-child(3):hover{
+    width: 155px;
+    background: #fff;
+    color:#0bacf5;
+}
+
+#videoshow_list li a:nth-child(4){
+    width: 120px;
+    background: #fff;
+    cursor: default;
+}
+#videoshow_list li a:nth-child(5){
+    font-size: 12px;
+    color:#333;
+    border-radius: 4px;
+    margin: 3px 0 2px 0;
+    height: 20px;
+    width: 40px;
+    background: #8cdbff;
+    cursor: pointer;
+    line-height: 20px
+}
+#videoshow_list li a:nth-child(5) i{
+    display: inline-block;width:0px;height: 0px;
+    margin-left:2px ;
+    border-bottom: 5px solid #666;
+    border-top: 5px solid rgba(0,0,0,0);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-right: 5px solid rgba(0,0,0,0);
+    position: relative;top:-1.5px;
+}
+#videoshow_list li a:nth-child(6){
+    font-size: 12px;
+    color:#333;
+    border-radius: 4px;
+    margin: 3px 0 2px 0;
+    height: 20px;
+    width: 40px;
+    background: #8cdbff;
+    cursor: pointer;
+    line-height: 20px
+}
+#videoshow_list li a:nth-child(6) i{
+    display: inline-block;width:0px;height: 0px;
+    margin-left:2px ;
+    border-top: 5px solid #666;
+    border-bottom: 5px solid rgba(0,0,0,0);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-right: 5px solid rgba(0,0,0,0);
+    position: relative;top:3.5px;
+}
+
+
+
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imginput label:hover{
+    /*opacity: 1;*/
+ }
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgclick{
+     height: 100px;width:100px;border: 1px solid rgba(0,0,0,0);overflow: hidden;
+     float: left;margin-left: 20px;display: inline-block;
+ }
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgclick a{  display: inline-block;font-size: 14px;border-radius: 50%;
+    color: #8cdbff;font-weight: bold;background: #eee;line-height: 20px;
+    width: 20px;height: 20px;text-align: center;
+    border: 1px solid rgba(0,0,0,0);
+    margin-right: 12px;
+}
+
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgclick .imgclick_a:hover{
+    border: 1px solid #0bacf5;background: #8cdbff;color: #0bacf5;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgclick p{
+    white-space: nowrap;overflow: hidden;
+    width: 100%;text-overflow: ellipsis;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgclick p:hover{
+    color:#0bacf5;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgclick p:nth-child(2):hover{
+    cursor: pointer;
+}
+
+
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgshow{
+    height: 100px;width:100px;border: 1px solid #e1e1e1;overflow: hidden;
+    float: left;margin-left: 20px;display: inline-block;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgshow .videoshow_img{
+    position: absolute;width: 100px;height: 100px;cursor: pointer;z-index: 100;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgshow .imgshow_real{
+    position: fixed;z-index: 1000;display: none;
+    width: 100%;height: 100%;
+    background: rgba(0,0,0,0.5);top:0;left: 0;overflow: hidden;
+
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgshow .videoshow_real{
+    position: fixed;z-index: 1000;display: none;
+    width: 100%;height: 101%;
+    background: rgba(0,0,0,0.5);top:0;left: 0;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgtext{
+    height: 100px;width:275px;border: 1px solid #e1e1e1;overflow: hidden;
+    float: left;margin-left: 20px;display: inline-block;color: #777;font-family: Arial;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgtext textarea{
+    height: 90px;width:255px;outline: none;border: none;
+    padding: 5px 10px ;
+}
+.center .centerFirst .cfbody .cfbform .workshow_detials .workshow_imgshow .imgshow .imgshow_small{
+    display: block;margin: auto;vertical-align:middle;width: 100%;height: 100%;cursor: pointer;
+}
+#showreal_img{
+    transform:translateX(-50%) translateY(-50%);
+}
+#showreal_video{
+    transform:translateX(-50%) translateY(-50%);
+}
+
+.center .centerFirst .cfbody .cfbform .fontless{
+    color:#333;
+    font-size: 14px;
+    float: right;
+    margin-top: 25px;
+}
+.center .centerFirst .cfbody .cfbform .fontless .chakanfanli{
+    color:#999;
+    font-size: 12px;
+    text-decoration: underline;
+}
+.center .centerFirst .cfbody .cfbform .labelhalf{
+    width: 50%;
+    float: left;
+    display: inline-block;
+}
+
+.center .centerFirst .cfbody .cfbform .inputhalfleft{
+    width: 210px;
+    height: 46px;
+    border:1px solid #dce0e0 ;
+    border-radius: 3px;
+    outline:none;
+    padding-left: 16px;
+    margin:0 0 10px;
+    float: left;
+}
+.center .centerFirst .cfbody .cfbform .inlocalMap{
+    width: 180px;
+    height: 46px;
+    outline:none;
+    padding:0 10px 0 16px;
+    float: left;
+    border: none;
+    color: #777;
+}
+
+.center .centerFirst .cfbody .cfbform  .inlocalIcon{
+    width: 18px;
+    height: 26px;
+    float: left;
+    margin: 9px 0 0 8px;
+    display: block;
+    opacity: 0.7;
+}
+.center .centerFirst .cfbody .cfbform  .inlocalIcon:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.center .centerFirst .cfbody .cfbform .laberhalfright{
+    width: 240px;
+    height: 46px;
+    border:1px solid #dce0e0 ;
+    border-radius: 3px;
+    outline:none;
+    margin:0 0 10px 14px;
+    float: right;
+}
+.center .centerFirst .cfbody .cfbform .inputhalfright{
+    width: 224px;
+    height: 46px;
+    border:1px solid #dce0e0 ;
+    border-radius: 3px;
+    outline:none;
+    padding-left: 16px;
+}
+.center .centerFirst .cfbody .cfbform  .alterbeforesave{
+    color:#7c7c7c;font-size: 12px;
+    float: left;margin-bottom: 40px;
+    width: 100%;
+    display: block;
+}
+.center .centerFirst .cfbody .cfbform  .checkreturn{
+    width: 483px;
+    padding: 5px 0;
+    color:#7c7c7c;font-size: 12px;
+    position:absolute;
+    bottom: 7px;
+    height: 20px;
+    border:1px solid #dce0e0;
+    border-radius: 3px;
+    background: #fff;
+    opacity: 0;
+    margin:0 15px ;
+    text-align: center;
+    line-height: 20px;
+    transition: opacity 0.5s;
+}
+.center .centerFirst .cfbody .cfbform  .checkreturn_other{
+    width: 483px;
+    padding: 5px 0;
+    color:#7c7c7c;font-size: 12px;
+    position:absolute;
+    bottom: 7px;
+    height: 20px;
+    border:1px solid #dce0e0;
+    border-radius: 3px;
+    background: #fff;
+    opacity: 0;
+    margin:0 272px ;
+    text-align: center;
+    line-height: 20px;
+    transition: opacity 0.5s;
+}
+
+
+.center .centerFirst .cfbody .cfbform .boxbottonchoose .buttonchoose{
+    float: left;
+    height: 46px;
+    width: 50%;
+}
+.center .buttonchoose .clearbuttonchoose{
+    float: left;
+    height: 46px;
+    width: 64px;
+    text-align: center;
+    line-height: 46px;
+    font-size: 14px;
+    color: #0bacf5;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+.center .buttonchoose .clearbuttonchoose:hover{
+    border: 1px solid #0bacf5;
+}
+.center .centerFirst .cfbody .cfbform .boxbottonchoose .buttonchooseright{
+    margin-right: 20px;
+    float: right;
+    height: 46px;
+    width: 64px;
+}
+.center .buttonchoose .savebuttonchoose{
+    height: 46px;
+    width: 64px;
+    text-align: center;
+    line-height: 46px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    border: none !important;
+    background: #0bacf5;
+    border-radius: 3px;
+    outline: none;
+}
+
+.center .centerFirst .cfbody .cfbform .boxbottonchoose{
+    float: left;height: 46px;
+    width: 100%;
+}
+.center .centerFirst .cfbody .cfbform .textselect{
+    position: relative;
+    width: 483px;
+    height: 46px;
+    border:1px solid #dce0e0 ;
+    border-radius: 3px;
+    outline:none;
+    margin:0 0 10px;
+    line-height:46px;
+    float: left;
+    background: #fff;
+}
+
+.center .centerFirst .cfbody .textselect .textselectul{
+    position: absolute;
+    height: 46px;
+    width: 483px;
+    border:1px solid #dce0e0;
+    border-radius: 3px;
+    outline:none;
+    margin:0 0 10px;
+    line-height:46px;
+    top:-1px;left:-1px;
+    background: #fff;
+    overflow: hidden;
+    float: left;
+}
+.center .centerFirst .cfbody .textselect .textselectul1{
+    position: absolute;
+    height: 46px;
+    width: 483px;
+    border:1px solid #dce0e0;
+    border-radius: 3px;
+    outline:none;
+    margin:0 0 10px;
+    line-height:46px;
+    top:-1px;left:-1px;
+    background: #fff;
+    float: left;
+    overflow: hidden;
+    z-index: 400;
+}
+
+.center .centerFirst .cfbody .textselect .textselectul2{
+    position: relative;
+    height: 138px;    width: 483px;
+    border-radius: 3px;    outline:none;
+    margin:0 0 10px;    line-height:46px;
+    top:0px;left:-1px;    background: #fff;
+    float: left;    overflow-y: auto;
+    overflow-x: hidden;    z-index: 300;
+}
+
+.center .centerFirst .cfbody .cfbform .textselect .wait{
+    font-size: 14px;
+    width: 467px;
+    height: 46px;
+    outline:none;
+    padding-left: 16px;
+    color: #777;
+    background: #fff;
+    z-index: 200;
+    display: block;
+}
+.center .centerFirst .cfbody .cfbform .textselect dd{
+    font-size: 14px;
+    width: 467px;
+    height: 46px;
+    border-radius: 3px;
+    outline:none;
+    padding-left: 16px;
+}
+.center .centerFirst .cfbody .cfbform .textselect dd.wait:hover{
+    color: #777;
+    background: #fff;
+}
+.center .centerFirst .cfbody .cfbform .textselect dd:hover{
+    color:white;
+    background: #0bacf5;
+    cursor: pointer;
+}
+.center .centerFirst .cfbody .cfbform .textselecthalf{
+    position: relative;
+    width: 226px;
+    height: 46px;
+    border:1px solid #dce0e0 ;
+    border-radius: 3px;
+    outline:none;
+    margin:0 0 10px;
+    line-height:46px;
+    float: left;
+    font-size: 14px;
+}
+
+
+.center .centerFirst .cfbody .textselecthalf .textselectul1{
+    position: absolute;
+    height: 46px;
+    width: 226px;
+    border:1px solid #dce0e0;
+    border-radius: 3px;
+    outline:none;
+    margin:0 0 10px;
+    line-height:46px;
+    top:-1px;left:-1px;
+    background: #fff;
+    float: left;
+    overflow: hidden;
+}
+
+.center .centerFirst .cfbody .textselecthalf .textselectul2{
+    position: absolute;    height: 138px;    width: 226px;    border-radius: 3px;
+    outline:none;    margin:0 0 10px;
+    line-height:46px;    left:-1px;    background: #fff;
+    float: left;    overflow-y: scroll;    overflow-x: hidden;
+}
+.center .centerFirst .cfbody .textselecthalf .textselectul2::-webkit-scrollbar {
+     width:5px;
+     height:5px;
+}
+.center .centerFirst .cfbody .textselecthalf .textselectul2::-webkit-scrollbar-thumb{
+    border-radius: 3px;
+    background-color: #0bacf5;
+}
+.center .centerFirst .cfbody .textselecthalf .textselectul2::-webkit-scrollbar-button{
+    background-color: #FF66D5;
+    height: 0px;
+}
+.center .centerFirst .cfbody .textselecthalf .textselectul2::-webkit-scrollbar-track{
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
+
+}
+
+
+.center .centerFirst .cfbody .textselecthalf .textMoreWordLocation{
+overflow-y: hidden; overflow-x: scroll;
+}
+.center .centerFirst .cfbody .textselecthalf .textMoreWordLocation::-webkit-scrollbar {
+    width:5px;
+    height:5px;
+}
+.center .centerFirst .cfbody .textselecthalf .textMoreWordLocation::-webkit-scrollbar-thumb{
+    border-radius: 3px;
+    background-color: #0bacf5;
+}
+.center .centerFirst .cfbody .textselecthalf .textMoreWordLocation::-webkit-scrollbar-button{
+    border-radius: 3px;
+    background-color: #0bacf5;
+}
+.center .centerFirst .cfbody .textselecthalf .textMoreWordLocation::-webkit-scrollbar-track{
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
+
+}
+
+
+.center .centerFirst .cfbody .cfbform .textselecthalf .wait{
+    position: relative;
+    font-size: 14px;
+    width: 210px;
+    height: 46px;
+    outline:none;
+    padding-left: 16px;
+    color: #777;
+    background: #fff;
+    display: block;
+}
+.center .centerFirst .cfbody .cfbform .textselecthalf .wait span{
+    padding: 0 4px;
+    display: inline-block;
+}
+.center .centerFirst .cfbody .cfbform .textselecthalf .wait span:nth-child(3){
+    padding-right: 33px;
+}
+.center .centerFirst .cfbody .cfbform .textselecthalf .wait span:hover{
+    text-decoration: underline;
+}
+.center .centerFirst .cfbody .cfbform .textselecthalf dd{
+    font-size: 14px;
+    width: 210px;
+    height: 46px;
+    outline:none;
+    padding-left: 16px;
+}
+.center .centerFirst .cfbody .cfbform .textselecthalf dd.wait:hover{
+    color: #777;
+    background: #fff;
+}
+.center .centerFirst .cfbody .cfbform .textselecthalf dd:hover{
+    color:white;
+    background: #0bacf5;
+    cursor: pointer;
+}
+
+.center .centerFirst .cfbody .cfbform .textinput{
+    width: 467px;
+    height: 46px;
+    border:1px solid #dce0e0 ;
+    border-radius: 3px;
+    outline:none;
+    padding-left: 16px;
+    margin:0 0 10px;
+    color: #777;
+}
+
+.center .centerFirst .cfbody .cfbform .textinputlong{
+    width: 560px;
+    height: 46px;
+    border:1px solid #dce0e0 ;
+    border-radius: 3px;
+    outline:none;
+    padding-left: 16px;
+    margin:0 0 10px;
+}
+.center .centerFirst .cfbody .cfbform .textarea{
+    min-height: 200px;
+    max-width: 451px;
+    min-width: 451px;
+    max-height: 200px;
+    border:1px solid #dce0e0 ;
+    border-radius: 3px;
+    outline:none;
+    padding:10px 16px;
+    margin:0 0 10px;
+    z-index: 10;color: #777;
+    background: #fff;
+}
+.center .centerFirst .cfbody .cfbform .workshow_textarea{
+    height: 120px;width: 560px;float: left;
+    border:1px solid #dce0e0 ;
+    border-radius: 3px;
+    outline:none;font-family: Arial;
+    z-index: 10;
+    background: #fff;
+    padding-left: 16px;
+    padding-top:10px;
+    margin: 0 0 10px;
+    font-size: 14px;
+}
+.center .centerFirst .cfbody .cfbform .textarea::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+   font-family: "Adobe Arabic";color:#999;
+}
+
+.center .centerFirst .cfbody .cfbform .aboutself_fanli{
+    position: absolute;
+    height: 70%;margin-top:0; color:#999;
+    font-size: 14px;font-weight:normal;padding-left: 16px;
+    transition: opacity 1s;
+    opacity: 0;
+    top:30px;
+    display: none;
+}
+.center .centerFirst .cfbody .cfbform .aboutself_fanli p{
+    text-align: left !important;
+}
+
+.center .centerFirst .cfbody .cfbform .workshow_fanli{
+    position: absolute;
+    height: 70%;margin-top:8px; color:#999;
+    font-size: 14px;font-weight:normal;padding-left: 16px;
+    transition: opacity 1s;
+    opacity: 0.7;
+    display: block;
+}
+
+.center .centerFirst .cfbody .cfbform .checkradio{
+    background: #fff;
+    border:1px solid #dce0e0;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    padding: 3px;
+    top:6px;
+}
+.center .centerFirst .cfbody .cfbform .checkradio .incheckradio{
+    width: 12px;height: 12px;
+    border-radius: 50%;
+    background: #0bacf5;
+    display: block;
+}
+.center .centerFirst .cfbody .cfbform .checkradio .outcheckradio{
+    width: 12px;height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    display: block;
+}
+.center .centerFirst .cfbody .cfbform .cfbf_intocheck:hover .outcheckradio{
+    width: 12px;height: 12px;
+    border-radius: 50%;
+    background: #0bacf5;
+    display: block;
+}
+.center .centerFirst .cfbody .cfbform .cfbf_intocheck{
+    width: 240px;
+    float: left;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+    border:1px solid #fff;
+    line-height: 36px;
+    border-radius:3px ;
+}
+.center .centerFirst .cfbody .cfbform .cfbf_intocheck:hover{
+    border: 1px solid #0bacf5;
+}
+
+
+
+#alterbox{
+    display: none;
+    position: fixed;
+    width:100%;height: 100%;
+    background: rgba(0,0,0,0.5);z-index: 1000;top:0;left: 0;
+    font-size: 16px;
+    text-align: center;
+}
+.alterbox{
+    position: absolute;top:50%;
+    left: 50%;padding: 10px;
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 300px;
+    min-height: 100px;
+    background: #fff;
+    border: 2px solid red;
+}
+
+.alterbox .textinput{
+    width: 90%;margin: 5px 10% 5px 0;
+    outline: none;
+    font-size: 16px;
+    line-height: 20px;height: 20px;
+
+}
+.alterbox  .deletecheck{
+    width: 40px;
+    height: 20px;
+    border: 1px solid red;display: inline-block;
+    position: relative;
+    color: red;
+    text-align: center;line-height: 20px;
+    background: #f1f1f1;
+    cursor: pointer;
+    left: 0%;
+    top:4px;
+    transform: translateX(-200%);
+}
+.alterbox  .deletemiss{
+    width: 40px;
+    height: 20px;
+    position: relative;
+    top:4px;
+    border: 1px solid #5d5d5d;display: inline-block;
+    color:#5d5d5d;
+    text-align: center;line-height: 20px;
+    background: #f1f1f1;
+    cursor: pointer;
+    transform: translateX(200%);
+    left: 0%;
+}
+
+.mapWrap {
+    background-color: #fff;
+    border: 1px solid #d0d0d2;
+    width: 1000px;
+    height: 516px;
+    overflow: hidden;
+    position: fixed !important;
+    left: 50%;
+    top: 50%;
+    margin-left: -9500px;
+    margin-top: -250px;
+    z-index: 9999 !important;
+    /*-webkit-transform: scale(0);*/
+    /*-moz-transform: scale(0);*/
+    /*-ms-transform: scale(0);*/
+    /*-o-transform: scale(0);*/
+    /*transform: scale(0);*/
+    /*display: none;*/
+}
+
+.mapWrapBig {
+    /*-webkit-transition: all 0.3s;*/
+    /*-moz-transition: all 0.3s;*/
+    /*-ms-transition: all 0.3s ;*/
+    /*-o-transition: all 0.3s;*/
+    /*transition: all 0.3s;*/
+    /*-webkit-transform: scale(1);*/
+    /*-moz-transform: scale(1);*/
+    /*-ms-transform: scale(1);*/
+    /*-o-transform: scale(1);*/
+    /*transform: scale(1);*/
+    margin-left: -500px;
+    display: block;
+}
+
+#allmap {
+    height: 470px;
+    width: 1000px;
+}
+
+#r-result {
+    width: 260px;
+    height: 450px;
+    position: absolute;
+    left: 0;
+    top: 44px;
+    display: none;
+    overflow-x: hidden;
+}
+
+.BMap_CityListCtrl .citylist_popup_main {
+    width: 400px !important;
+}
+
+.mapWrapTopLeft {
+    text-align: left;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ececec;
+    margin: 2px 0 2px 10px;
+    padding-left: 3px;
+    float: left;
+    width: 400px;
+    font-size: 14px;
+}
+
+.currentCityChange {
+    color: #0f96dc;
+}
+
+.changeCurrentCity {
+    float: right;
+    margin-right: 20px;
+}
+
+.changeCurrentCity i {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: url("../images/slidd.png") no-repeat;
+    position: relative;
+    top: 2px;
+}
+
+.mapWrapTopRight {
+    height: 40px;
+    line-height: 40px;
+    margin-top: 2px;
+    float: right;
+    margin-right: 44px;
+}
+
+.baiduFindCity {
+    height: 30px;
+    line-height: 30px;
+    width: 200px;
+    padding: 0 10px;
+    border: 1px solid #dddddd;
+}
+
+.mapWrapTopRight .citySearch,
+.mapWrapTopRight .imdsearh {
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #dddddd;
+    padding: 0 10px;
+    line-height: 30px;
+}
+
+
+
+
+
+.alertDom {
+    width: auto;
+    height: 90px;
+    padding-top: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -45px;
+    margin-left: -60px;
+    background-color: #fff;
+    border: 1px solid #868484;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    font-size: 14px;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    z-index:1000;
+}
+.drop-select-options {
+    max-height:280px;
+    overflow:hidden;
+}
+.alertDom_lg {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.alertDom i,.alertMapClose {
+    background: url("../yunimg/alertClose.png") no-repeat;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    -webkit-background-size: 20px 20px;
+    background-size: 20px 20px;
+}
+.alertDom span {
+    display: block;
+    margin: 5px 0 0 15px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.alertDom p {
+    margin: 10px 10px 0 10px;
+}
+.alertDomSure {
+    float: right;
+    height: 26px;
+    line-height:26px;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0 6px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #03a5ee;
+    color: #fff;
+    outline:none;
+}
+
+
+
+
+
+
+
+
+#workshow_img{
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    opacity: 0;
+    margin: 0;
+}
+#workshow_video{
+    width:350px;
+    height:40px;
+    border:none;
+    border-bottom: 1px solid #aaa;
+    outline:none;
+}
+
+
+#workshow_video_url_add{
+    display: inline;
+    margin: 0;
+    height:40px;
+    color:#fff;
+    background: #777;
+    border:1px solid #111;
+    border-radius: 3px;
+}
+#workshow_video_url_add:hover{
+    color:#03a5ee;
+    border:1px solid #03a5ee;
+    background: #fff;
+}
+.phonenum,.qqnum {
+    font-size:12px !important;
+}
+.logined-con .person-wrp h3 {
+    font-weight:normal !important;
+}
+
+
+
+
+
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>画客网</title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+            } else {
+
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+
+            }
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        .city-bar {
+            margin: 20px auto 0;
+        }
+        
+        .mapclk {
+            left: 41%;
+        }
+        
+        .city-barWrap {
+            left: 40%;
+        }
+        
+        div.biaojiaWrap {
+            position: fixed;
+            z-index: 9999;
+            left: 50%;
+            margin-left: -360px;
+        }
+        
+        a.baojia:hover {
+            cursor: pointer;
+        }
+        
+        .itemEnrollActive {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containers">
+        <!-- 头部 start -->
+        <div class="biaojiaWrap"></div>
+        <div id="header" class="header-neiye"></div>
+        <div class="activityDetail_headerWrap">
+            <div class="designer-select-nav2 activityDetail_topMargin">
+                <div class="activityDetail_nav_leftPic">
+                    <img src="" width="707" height="398" alt="封面图片">
+                </div>
+                <div class="activityDetail_nav_rightBox">
+                    <div class="activityDetail_navTop_wrap">
+                        <p class="title"></p>
+                        <div class="item-innerwrap" id="activityDetail_navRight_itemInnerwrap">
+                            <div class="itemNotice">
+                                <i class="activity_clock"></i>
+                                <span class="activity_clock_time"></span>
+                            </div>
+                            <div class="itemNotice">
+                                <i class="activity_local"></i>
+                                <span class="activity_location"></span>
+                            </div>
+                            <div class="itemNotice ">
+                                <i class="activity_sponsor"></i>
+                                <span>主办方：<span class="mainProject"></span></span>
+                            </div>
+                            <span class="itemEnroll1" id="activityDetail_navRight_enroll">已报名<span class="itemNumber">0</span>人/ 限<span class="itemNumberLimt">0</span>人</span>
+                        </div>
+                    </div>
+                    <div id="activityDetail_nav_wrap">
+                        <div id="activityDeatil_nav_springWrap">
+                            <div class="activityDetail_nav_springContainer" id="activityDetail_nav_springContainer">
+                                <!--<a href="#"><span class="activityDetail_nav_spring"><img src="images/activity_avatar2.png" alt="pic"></span></a>-->
+                                <!--<a href="#"><span class="activityDetail_nav_spring"><img src="images/activity_avatar_blank.png" alt="pic"></span></a>-->
+                                <!--报名人员列表-->
+                            </div>
+                        </div>
+                        <div class="activityDetail_nav_springBtn" id="activityDetail_navSpring_btn1">
+                            <img src="images/activity_avatar_pre.png" alt="pic">
+                        </div>
+                        <div class="activityDetail_nav_springBtn" id="activityDetail_navSpring_btn2">
+                            <img src="images/activity_avatar_next.png" alt="pic">
+                        </div>
+                    </div>
+                    <p class="itemTitle2" id="activityDetail_nav_money">&yen;30000<span>/人</span></p>
+                    <div class="itemEnroll2 itemEnrollActive" id="activityDetail_nav_enroll">
+                        <a href="javascript:;">我要报名</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 头部 end -->
+        <div class="container-main">
+            <!-- box start -->
+            <div class="ca-container activity-container">
+                <div class="activityDetail-body-share">
+                    <div class="activityDetail-body-shareWrap2">
+                        <p class="activityDetail-introduction">活动介绍</p>
+                        <p class="activityDetail-share">分享至:</p>
+                        <div id="activityDetail-shareSpring">
+                            <a id="shareSpring1" href="#"></a>
+                            <a id="shareSpring2" href="#"></a>
+                            <a id="shareSpring3" href="#"></a>
+                            <a id="shareSpring4" href="#"></a>
+                            <a id="shareSpring5" href="#"></a>
+                            <a id="shareSpring6" href="#"></a>
+                        </div>
+                    </div>
+                    <div style="clear: both;margin-top: 60px"> </div>
+                    <div class="activityDetail-bodyPre-blank">
+
+                    </div>
+                </div>
+                <div style="clear: both; height: 30px;"></div>
+                <!-- bodypre end -->
+                <div class="activityDetail-bodyAfter-active">
+                    <div class="activityDetail-bodyAfter-preWrap">
+                        <p class="activityDetail-introduction">相关活动</p>
+                        <p class="activityDetail-share" id="activityDetail-bodyAfter-share"><a href="javascript:;">更多活动</a></p>
+                    </div>
+                    <div class="activitywrap activityDetail-bodyAfter-afterWrap">
+                        <!--推荐活动-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both; margin-bottom: 485px;"></div>
+    <!--底部开始-->
+    <div class="footer_on"></div>
+    <!--底部结束-->
+    </div>
+    <script type="text/javascript" src="js/data/searchResultXhr.js"></script>
+</body>
+
+</html>

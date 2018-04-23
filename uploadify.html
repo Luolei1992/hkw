@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQuery File Upload Example</title>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/client/jauery.uploadify.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/client/uploadify.css">
+
+</head>
+<style>
+    .uploadMid {
+        width: 200px;
+        height: 500px;
+        background-color: red;
+        margin:0 auto;
+    }
+    .videoWrap {
+        height: 381px;
+        overflow: hidden;
+        margin-bottom:100px;
+    }
+</style>
+
+<body>
+<div class="uploadMid">
+    <div style="float: right; margin: 35px 42px; height: 40px;">
+        <input id="image_upload" name="image_upload" type="file" multiple="true">
+    </div>
+    <div class="div_1">
+        <img id="thumbnail_path_src" alt="" src="" width="270" >
+        <input style="display:block;" name="path" id="thumbnail_path" value="">
+        <div style="display:block;" id="thumbnail_path_file_queue"></div>
+        <a href="">下载</a>
+    </div>
+</div>
+
+<!--<div class="videoWrap">-->
+    <!--<div class="js-publish-video-u">-->
+        <!--<div class="js-mask"></div>-->
+        <!--<div class="js-video">-->
+            <!--<div class="header">-->
+                <!--<span>视频预览</span>-->
+                <!--<i class="icon-closeB iconfont11 icon-guanbi"></i>-->
+            <!--</div> &lt;!&ndash;http://v.youku.com/v_show/id_XMjk0MDQ1MjEwMA==.html?spm=a2hww.20023042.m_223465.5~5~5~5~5~5~A&ndash;&gt;-->
+            <!--<div class="js-video-main">-->
+                <!--<embed src="http://player.youku.com/player.php/sid/XMjk0MDQ1MjEwMA==/v.swf" allowFullScreen="true" quality="high" width="600" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<script>
+
+    $(function() {
+        $('#image_upload').uploadify({
+            'formData' : {
+                'timestamp' : '1496304759',
+                'token'     : 'da912504148eef31b87951615a8c80d8',
+            },
+            'fileTypeExts' : '*.*',
+            'method'   : 'post',
+            'multi'    : false,
+            'fileSizeLimit' : '10MB',//B, KB, MB, or GB
+            'uploadLimit' : 999,
+            'removeCompleted' : true,
+            'width':121,
+            'height':42,
+            'buttonImage':'images/add_upload.png',
+            'queueID'  : 'thumbnail_path_file_queue',
+            'buttonText' : '选择文件',
+            'swf'      : 'http://www.huakewang.com/js/default/uploadify/flash/uploadify.swf',
+            'uploader' : 'http://www.huakewang.com/upload/uploadFile',
+            'onUploadSuccess' : function(file, data, response) {
+                json = eval("(" + data + ")");
+                console.log(file);
+                if (json.success) {
+                    $("#thumbnail_path_src").attr("src", json.data.file_path + "!540x720");  //图片预览
+                    $("#thumbnail_path").val(json.data.file_path);   //图片上传后的路径
+                    $(".div_1 a").attr("href","http://www.huakewang.com/"+json.data.file_path)
+                    console.log(json.data.file_path);
+                } else {
+                    var d = dialog({
+                        fixed:true,
+                        title: '提示',
+                        content: json.message
+                    });
+                    d.show();
+                    setTimeout(function () {
+                        d.close().remove();
+                    }, 2000);
+                    return false;
+                };
+                return false;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

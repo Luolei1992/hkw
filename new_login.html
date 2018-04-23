@@ -1,0 +1,425 @@
+<script>
+    var tempNum = 10;
+    $(function() {
+        $(".new_login_wrap").click(function() {
+            closed_login();
+        });
+        $(document).on("click", ".new_login_gb", function() {
+            closed_login();
+        });
+        //登录窗口信息验证
+        $('#new_login input').keyup(function() {
+            var $parent = $(this).parent();
+            $parent.find(".formtips").remove();
+            //验证码
+            if ($(this).is('.qsryzm')) {
+                if (this.value == "" || (this.value != "" && !/^[a-zA-Z0-9]{4}$/.test(this.value))) {
+                    $(this).addClass("borderRed");
+                } else {
+                    $(this).removeClass("borderRed");
+                }
+            };
+            //密码
+            if ($(this).is('.password')) {
+                if (this.value == "" || (this.value != "" && !/^[a-zA-Z0-9]{6,18}$/.test(this.value))) {
+                    $(this).addClass("borderRed");
+                } else {
+                    $(this).removeClass("borderRed");
+                }
+            };
+            //验证手机号
+            if ($(this).is('.phone')) {
+                if (this.value == "" || (this.value != "" && !/^((\(\d{2,3}\))|(\d{3}\-))?(13|14|15|16|17|18|19)\d{9}$/.test(this.value))) {
+                    $(this).addClass("borderRed");
+                } else {
+                    $(this).removeClass("borderRed");
+                };
+            };
+
+        }).blur(function() {
+            $(this).triggerHandler("keyup");
+        });
+
+    });
+    //获取验证码（ http://www.huakewang.com/index.php/verifycode/index/2 ）
+    $(".yzm").click(function() {
+        yxms();
+    });
+
+    function yxms() {
+        tempNum++;
+        $('.yzm img').attr('src', 'images/loading.gif');
+        setTimeout(function() {
+            $('.yzm img').attr('src', 'https://www.huakewang.com/index.php/verifycode/index/' + tempNum);
+        }, 500);
+    };
+    $("#new_login .alertClose").click(function() {
+        $(this).parent().css("display", "none");
+    });
+    /*
+     *ajax验证图形验证码
+     */
+    // function denglu_login_click(then) {
+    //     $.ajax({
+    //         url: "https://www.huakewang.com/verifycode/check",
+    //         type: "POST",
+    //         dataType: "JSON",
+    //         data: {
+    //             secode: $(".qsryzm").val().toUpperCase()
+    //         },
+    //         success: function(res) {
+    //             if (res.success) {
+    //                 denglu_login_click0(then);
+    //             } else {
+    //                 alertUploadMsg("图形验证码错误");
+    //                 yxms();
+    //             }
+    //         }
+    //     });
+    // }
+
+    function denglu_login_click0(then) {
+        //登录窗最终验证
+        var user_login = {
+            "nick_name": $(".new_login_input1").val(),
+            "password": $(".new_login_input2").val(),
+            "yzm": $(".qsryzm").val(),
+            "code":$(".qsryzm").val().toUpperCase(),
+            "keepLoading": $(".new_login_input4").prop("checked")
+        };
+        $("#new_login input[required]").trigger('keyup');
+        var numError = $(then).parents("#new_login").find('.borderRed').length;
+        if (numError) {
+            return false;
+        } else {
+            $.ajax({
+                url: urlLocalhost + newhuakwang + "login",
+                type: "post",
+                dataType: "json",
+                data: {
+                    username: user_login.nick_name,
+                    password: user_login.password,
+                    code:user_login.code
+                },
+                success: function(data) {
+                    //登录成功[返回头像地址，用户姓名，手机号码，qq..]
+                    if (data.success) {
+                        // 设置环信id到cookie里
+                        // setCookie("hxid", data.data.hxid);
+                        // setCookie("as", data.data.is_auth);
+                        alertUploadMsg("登录成功！");
+                        setTimeout(function() {
+                            $("#new_login,.new_login_wrap,.but-dl.wdlu").css("display", "none");
+                            $(".yidenglu").css("display", "block");
+                            window.location.reload();
+                        }, 2000);
+                    } else {
+                        alertUploadMsg(data.message);
+                        yxms();
+                        $(".new_login_input2").val('');
+                    }
+                },
+                error: function() {
+                    //登陆失败[返回验证码错误，还是密码错误]
+                    alertUploadMsg('网络错误，请重新登录！');
+                }
+            })
+        }
+    }
+</script>
+<script src="js/plugs/jquery.cookie.js"></script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        /* font-family: 'Microsoft YaHei'; */
+    }
+    
+    .new_login.auto {
+        margin: 50px auto 0 auto;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)
+    }
+    
+    a.wjmm {
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+        position: relative;
+        top: -7px;
+        right: -180px;
+    }
+    .new_login {
+        border-radius: 10px;
+        width: 440px;
+        background: #fff;
+        border: 1px solid #ccc;
+    }
+    
+    .new_login .new_login_gb {
+        position: absolute;
+        margin: 22px 0 0 405px;
+        cursor: pointer;
+    }
+    
+    .new_login .new_login_p1 {
+        font-size: 36px;
+        margin: 65px auto 0 auto;
+        width: 340px;
+    }
+    
+    .new_login .new_login_p2 {
+        font-size: 18px;
+        float: left;
+        margin: -28px 0 0 200px;
+        position: absolute;
+    }
+    
+    .new_login .new_login_p2 a {
+        text-decoration: none;
+    }
+    
+    .new_login .new_login_p2 a span {
+        color: #ff4200;
+    }
+    
+    .new_login .new_login_p3 {
+        font-size: 12px;
+        color: #929292;
+        margin: 30px 0 0 50px;
+    }
+    
+    .new_login .new_login_input1 {
+        width: 340px;
+        height: 40px;
+        border: 1px solid #dae2e5;
+        line-height: 40px;
+        text-indent: 15px;
+        font-size: 13px;
+        margin: 50px 0 0 50px;
+        border-radius: 2px;
+    }
+    
+    .qsryzm {
+        border: 1px solid #dae2e5;
+        font-size: 13px;
+        height: 40px;
+        line-height: 40px;
+        margin: 10px 0 0 50px;
+        text-indent: 15px;
+        width: 210px;
+        border-radius: 2px;
+    }
+    
+    .yzm {
+        color: #1e2018;
+        font-weight: bold;
+        background: #f3fbff;
+        height: 40px;
+        border: 1px solid #dae2e5;
+        line-height: 40px;
+        margin: -42px 0 0 270px;
+        width: 120px;
+        text-align: center;
+        border-radius: 2px;
+    }
+    
+    .yzm img {
+        vertical-align: middle;
+    }
+    
+    .yzm:hover {
+        cursor: pointer;
+    }
+    
+    .new_login .new_login_input2 {
+        width: 340px;
+        height: 40px;
+        border: 1px solid #dae2e5;
+        line-height: 40px;
+        text-indent: 15px;
+        font-size: 13px;
+        margin: 10px 0 0 50px;
+        border-radius: 2px;
+    }
+    
+    .new_login .new_login_input3 {
+        margin: 20px 0 0 50px;
+        width: 340px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        background: #0093d5;
+        border: none;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+    }
+    
+    .new_login .new_login_input3:hover {
+        cursor: pointer;
+    }
+    
+    .new_login .new_login_input4 {
+        top: -5px;
+        left: 30px;
+        position: relative;
+    }
+    
+    .new_login label {
+        left: 30px;
+        font-size: 14px;
+        position: relative;
+        top: -7px;
+        color: #929292;
+    }
+    
+    .new_login .new_login_span1 {}
+    
+    .new_login hr {
+        background: #ccc;
+        margin: 20px 0 0 0;
+    }
+    
+    .new_login #new_sinal {
+        width: 160px;
+        height: 40px;
+        background: #d73b22;
+        display: block;
+        color: #fff;
+        margin: 20px 0 0 50px;
+        line-height: 40px;
+        text-indent: 60px;
+        text-decoration: none;
+        font-size: 12px;
+    }
+    
+    .new_login #new_qql {
+        float: left;
+        position: absolute;
+        width: 160px;
+        height: 40px;
+        background: #3fb0d8;
+        display: block;
+        color: #fff;
+        margin: -40px 0 0 230px;
+        line-height: 40px;
+        text-indent: 60px;
+        text-decoration: none;
+        font-size: 12px;
+    }
+    
+    .new_login #new_sinal img {
+        position: absolute;
+        margin: 7px 0 0 -40px;
+    }
+    
+    .new_login #new_qql img {
+        position: absolute;
+        margin: 7px 0 0 -40px;
+    }
+    
+    div.qth {
+        background: url("images/qih.jpg") no-repeat scroll 0 0;
+        height: 14px;
+        margin: 45px auto 0 auto;
+        width: 340px;
+        background-position: 50%;
+    }
+    
+    div.zhwrap {
+        height: 25px;
+        margin: 30px 0 45px 90px;
+    }
+    
+    div.zhwrap a {
+        color: #555;
+    }
+    
+    span.sp_1 {
+        background: url("images/spwx.jpg") no-repeat scroll 0 0;
+        display: block;
+        float: left;
+        height: 21px;
+        width: 21px;
+    }
+    
+    div.zhwrap div {
+        float: left;
+        margin-right: 50px;
+    }
+    
+    div.zhwrap span.sp_1 {
+        background: url("images/spwx.jpg") no-repeat scroll 0 0;
+        display: block;
+        float: left;
+        height: 21px;
+        width: 21px;
+    }
+    
+    div.zhwrap div.qq span.sp_1 {
+        background: url("images/spqq.jpg") no-repeat scroll 0 0;
+    }
+    
+    div.zhwrap div.wb span.sp_1 {
+        background: url("images/spwb.jpg") no-repeat scroll 0 0;
+    }
+    
+    .new_login_wrap {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99998;
+        background-color: rgba(0, 0, 0, 0.5);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+    }
+    
+    #new_login {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        margin-left: -220px;
+        margin-top: -283px;
+        z-index: 99999;
+    }
+</style>
+<div class="new_login_wrap"></div>
+<div id="new_login" class="new_login auto">
+    <img class="new_login_gb" src="images/new_login_gb.jpg" />
+    <p class="new_login_p1">会员登录</p>
+    <p class="new_login_p2">　还没有账号<a href="register.html"><span> 立即注册</span></a></p>
+    <p>
+        <input class="new_login_input1 phone" type="text" placeholder="请输入手机号" required>
+    </p>
+    <p>
+        <input class="new_login_input2 password" type="password" placeholder="请输入密码" required>
+    </p>
+    <p>
+        <input class="qsryzm" style="text-transform: uppercase;" placeholder="请输入验证码" type="text" required maxlength="4">
+    </p>
+    <div class="yzm"><img src="https://www.huakewang.com/index.php/verifycode/index/2" alt=""></div>
+    <input onclick="javascript:denglu_login_click0(this)" class="new_login_input3 new_login_but" type="button" value="立 即 登 录" />
+    <div style="clear:both; width:1px; margin:10px 0;"></div>
+    <div style="width:340px; margin:20px auto 0 auto;position:relative;">
+        <input class="new_login_input4" type="checkbox" checked="checked" />
+        <label for="bcdl">保持登录</label>
+        <a href="forget-pass.html" class="wjmm">
+            <span class="new_login_span1">忘记密码?</span>
+        </a>
+    </div>
+    <div class="qth"></div>
+    <div class="zhwrap">
+        <a href="https://www.huakewang.com/wxopenapi/auth_redirect">
+            <div class="wx"><span class="sp_1"></span>&nbsp;&nbsp;微信</div>
+        </a>
+        <a href="https://www.huakewang.com/main/qq_oauth.html">
+            <div class="qq"><span class="sp_1"></span>&nbsp;&nbsp;QQ</div>
+        </a>
+        <a href="https://www.huakewang.com/main/sina_oauth.html">
+            <div class="wb"><span class="sp_1"></span>&nbsp;&nbsp;微博</div>
+        </a>
+    </div>
+</div>

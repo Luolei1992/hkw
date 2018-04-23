@@ -1,0 +1,2427 @@
+/*云报价开始*/
+/*body {*/
+    /*!*连续点击不会选中文字*!*/
+    /*-webkit-touch-callout: none;*/
+    /*-webkit-user-select: none;*/
+    /*-khtml-user-select: none;*/
+    /*-moz-user-select: none;*/
+    /*-ms-user-select: none;*/
+    /*user-select: none;*/
+/*}*/
+.yun-banner {
+    background: url("../yunimg/yun-banner.png");
+}
+
+.yun-banner-center {
+    width: 1195px;
+    height: 817px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.yun-banner-center .yun-banner-t h2 {
+    font-size: 44px;
+    color: #fff;
+    padding: 55px 0 25px 0;
+}
+
+.yun-banner-center .yun-banner-t .yun-banner-p {
+    color: #DAD8D9;
+    line-height: 22px;
+    letter-spacing: 1px;
+}
+
+.yun-banner-support {
+    margin-top: 23px;
+}
+
+.yun-banner-center .yun-banner-ul li {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    padding-left: 24px;
+}
+
+.yun-banner-center .yun-banner-ul .yun-banner-lis {
+    color: #B0AEAF;
+    font-size: 12px;
+    padding-left: 0;
+}
+
+.yun-banner-center .yun-banner-ul i {
+    display: inline-block;
+    width: 15px;
+    height: 13px;
+    background: url("../yunimg/yun-sure.png") no-repeat 0 0;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.yun-banner-center .yun-btn {
+    margin-top: 38px;
+}
+
+.yun-banner-center .yun-btn a {
+    color: #fff;
+    display: inline-block;
+    width: 164px;
+    height: 32px;
+    border: 1px solid #97A0A5;
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 14px;
+}
+
+.yun-banner-center .yun-btn a:hover {
+    border: 1px solid #00B3EA;
+    color: #00B3EA;
+}
+
+.yun-banner-center .yun-btn p {
+    display: inline-block;
+    text-align: left;
+    color: #B0AEAF;
+    position: relative;
+    left: 25px;
+    top: 7px;
+    font-size: 12px;
+}
+
+.yun-banner-b {
+    margin-top: 16px;
+    overflow: hidden;
+    height: 465px;
+}
+
+.yun-banner-b .yun-banner-l {
+    position: relative;
+    margin-left: 133px;
+}
+
+.yun-banner-b .yun-phone {
+    background: url("../yunimg/yunphone2.png") no-repeat;
+    height: 382px;
+    position: relative;
+    margin-top: 20px;
+}
+.yun-banner-b .yun-phone .yunGetMsgPhone {
+    position: absolute;
+    left: 48px;
+    top: 186px;
+    width: 192px;
+    text-align: left;
+    line-height: 18px;
+}
+.yun-banner-b .yun-phone .yunGetMsgEmail {
+    position: absolute;
+    left: 36px;
+    top: 169px;
+    width: 248px;
+    text-align: left;
+    line-height: 17px;
+}
+.yun-banner-b .yun-phone .yunGetMsgPub a {
+    color: #657BBF;
+}
+.yun-banner-b .yun-phone .yunGetMsgPub .yunname,
+.yun-banner-b .yun-phone .yunGetMsgPub .yunemail,
+.yun-banner-b .yun-phone .yunGetMsgPub .yunGender {
+    font-weight:800;
+}
+.yun-banner-b .yun-phone .yunGetMsgPub.hide {
+    display: none;
+}
+.yun-banner-b .yun-phone img {
+    position: absolute;
+    left: 27px;
+    top: 72px;
+}
+
+.yun-banner-b .yun-phone-select {
+    padding: 14px 0 0 20px;
+}
+
+.yun-banner-b .yun-phone-select i {
+    display: block;
+    float: left;
+    height: 32px;
+    width: 118px;
+    text-align: center;
+    line-height: 32px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    font-size: 12px;
+    position: absolute;
+    top: 8px;
+}
+
+.yun-banner-b .yun-phone-select span {
+    display: block;
+    float: left;
+    height: 40px;
+    width: 118px;
+    margin-left: 8px;
+    position: relative;
+}
+
+.yun-banner-b .yun-banner-middle {
+    height: 450px;
+    width: 37px;
+    background: url("../yunimg/yun-line.png");
+    position: absolute;
+    left: 446px;
+    top: -12px;
+}
+
+.yun-banner-b {
+    position: relative;
+    top: 0;
+}
+
+.yun-banner-b .yun-banner-r {
+    position: absolute;
+    right: 150px;
+    top: 0;
+}
+
+.yun-banner-r h4 {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 1px;
+    padding-top: 32px;
+}
+
+.yun-banner-r span.yun-arrow {
+    display: block;
+    width: 30px;
+    height: 24px;
+    background: url("../yunimg/yun-arrow.png") no-repeat;
+    background-size: 24px 24px;
+    margin-left: 135px;
+}
+
+.yun-banner-r form dt,
+.yun-banner-r form dd {
+    display: inline-block;
+}
+
+.yun-banner-r form {
+    font-size: 14px;
+    color: #fff;
+}
+
+.yun-banner-r form dt {
+    position: relative;
+    left: 40px;
+    top: 1px;
+}
+
+.yun-banner-r form input[type="text"],
+.yun-banner-r form input[type="username"],
+.yun-banner-r form input[type="email"] {
+    width: 245px;
+    height: 40px;
+    line-height:40px;
+    border: 1px solid #646265;
+    background-color: transparent;
+    padding-left: 50px;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 18px;
+}
+
+.yun-banner-r form input[type="username"] {
+    margin-left: 42px;
+}
+
+.yun-banner-r form input[type="radio"] {
+    position: relative;
+    top: 2px;
+    margin: 0 5px 0 15px;
+}
+
+.yun-banner-r form .username {
+    position: relative;
+    left: 81px;
+}
+
+.yun-banner-r form .address {
+    position: absolute;
+    right: -55px;
+    top: 29px;
+}
+
+.yun-banner-r form .call span {
+    position: relative;
+    top: 19px;
+    left: -48px;
+}
+
+.yun-banner-r form .call label {
+    position: relative;
+    top: 19px;
+    left: -40px;
+}
+
+.yun-banner-r form input[type="button"] {
+    height: 34px;
+    line-height:34px;
+    width: 297px;
+    background-color: #00B8EE;
+    color: #fff;
+    outline: none;
+    border: 0 none;
+    margin: 18px 0 0 0px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    font-size: 12px;
+}
+
+.cmxform p {
+    position: relative;
+}
+
+/*.cmxform .address {
+    position: absolute;
+    top:10px;
+    right:10px;
+}*/
+.cmxform .pub {
+    position: absolute;
+    left: 12px;
+    top: 29px;
+}
+
+.yun-banner-r .old {
+    margin: 14px 0 0 25px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.yun-banner-r .old i {
+    color: #FB5E01;
+}
+
+.yun-kehu .yun-kehu-btn input {
+    width: 100px;
+    height: 34px;
+    line-height:34px;
+    background-color: #01B1EE;
+    border: 0;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 2px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    margin-top: 50px;
+}
+
+/*云报价流程*/
+.main-body-center .main-step {
+    height: 344px;
+    padding-top: 50px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 52px;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+.main-body-center .main-step h4 {
+    font-size: 22px;
+    color: #000;
+    padding-bottom: 70px;
+}
+
+.main-body-center .main-step .main-step-list {
+    padding: 41px 0 2px 0;
+    background: url("../yunimg/yun-step.png") no-repeat 90px 0;
+}
+
+.main-body-center .main-step-pub {
+    padding-top: 50px;
+    float: left;
+}
+
+.main-body-center .main-step-pub a {
+    display: block;
+    color: #000;
+    font-size: 12px;
+    padding-bottom: 13px;
+}
+
+.main-body-center .main-step-pub p {
+    color: #CBCBCB;
+    line-height: 16px;
+}
+
+.main-body-center .main-step1 {
+    margin-left: 55px;
+}
+
+.main-body-center .main-step2 {
+    margin-left: 98px;
+}
+
+.main-body-center .main-step3,
+.main-body-center .main-step4 {
+    margin-left: 106px;
+}
+
+.main-body-center .main-step5 {
+    margin-left: 122px;
+}
+
+/*特色功能*/
+.main-body-center .yun-service {
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.main-body-center .yun-service h4 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #000;
+}
+
+.main-body-center .yun-service p.target {
+    margin-bottom: 55px;
+}
+
+.main-body-center .yun-target-t {
+    width: 1002px;
+    margin-left: 115px;
+    overflow: hidden;
+}
+.main-body-center .yun-target-t .yun-target-lis{
+    height: 80px;
+}
+.main-body-center .yun-target-t li {
+    float: left;
+    width: 301px;
+    padding: 0 115px 0 85px;
+    text-align: left;
+    margin-bottom: 44px;
+}
+.main-body-center .yun-target-t li.yun-target-lis1 {
+    background: url("../images/icon-01a.png") no-repeat;
+}
+.main-body-center .yun-target-t li.yun-target-lis2 {
+    background: url("../images/icon-02a.png") no-repeat;
+}
+.main-body-center .yun-target-t li.yun-target-lis3 {
+    background: url("../images/icon-03a.png") no-repeat;
+}
+.main-body-center .yun-target-t li.yun-target-lis4 {
+    background: url("../images/icon-04a.png") no-repeat;
+}
+.main-body-center .yun-target-t li.yun-target-lis5 {
+    background: url("../images/icon-05a.png") no-repeat;
+}
+.main-body-center .yun-target-t li.yun-target-lis6 {
+    background: url("../images/icon-06a.png") no-repeat;
+}
+
+.main-body-center .yun-target-t .yun-target-lis h5 {
+    font-size: 18px;
+    color: #000;
+    padding-bottom: 10px;
+}
+
+.main-body-center .yun-target-t .yun-target-lis p {
+    color: #9E9E9C;
+}
+
+.yun-target-line {
+    height: 1px;
+    width: 1195px;
+    background-color: #EBEBEB;
+    margin-bottom: 38px;
+}
+
+.main-body-center .yun-suggest {
+    color: #000;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.main-body-center .yun-suggest h4 {
+    margin-bottom: 38px;
+    font-size: 22px;
+    color: #000;
+    text-align: center;
+}
+
+.main-body-center .yun-suggest p {
+    padding-left: 200px;
+    margin-bottom: 30px;
+}
+
+.main-body-center .yun-suggest span {
+    display: inline-block;
+}
+
+.main-body-center .yun-suggest .sp1 {
+    margin-left: 356px;
+}
+
+.main-body-center .yun-suggest .sp2 {
+    margin-left: 440px;
+}
+
+.yun-thank {
+    text-align: center;
+}
+
+.yun-thank h4 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #000;
+}
+
+.yun-thank p {
+    letter-spacing: 1px;
+    line-height: 20px;
+    color: #9E9E9C;
+    font-size: 14px;
+}
+
+.yun-thank > p a {
+    color: #FF0000;
+}
+
+.yun-excel {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.yun-excel form > div {
+    /*overflow: hidden;*/
+    position: relative;
+    padding-top: 12px;
+    padding-bottom: 1px;
+}
+
+.yun-excel form dt,
+.yun-excel form dd {
+    display: inline-block;
+}
+
+.yun-excel form dt {
+    position: absolute;
+    top: 24px;
+    left: 78px;
+    letter-spacing: 1px;
+    z-index: 5;
+}
+
+.yun-excel form dd input {
+    width: 420px;
+    height: 40px;
+    line-height:40px;
+    border: 1px solid #DCDCDC;
+    padding: 0 26px 0 90px;
+    margin-left: 15px;
+}
+
+.yun-excel form dd input.yun-last {
+    padding-left: 126px;
+    width: 385px;
+}
+
+.yun-excel form dd i {
+    width: 32px;
+    height: 32px;
+    display: block;
+    background: url("../images/must.png") no-repeat;
+    position: absolute;
+    right: 38px;
+    top: 18px;
+}
+
+.yun-excel .yun-pub-dt {
+    left: 635px;
+}
+
+.yun-excel form i.yun-must {
+    left: 562px;
+}
+
+.yun-excel form dd span {
+    width: 16px;
+    height: 8px;
+    display: block;
+    background: url("../images/xltp1.png") no-repeat;
+    position: absolute;
+    right: 50px;
+    top: 30px;
+}
+
+.yun-excel form dd span.yun-sp {
+    left: 526px;
+    top: 16px;
+}
+
+.yun-excel form textarea {
+    outline-style: none;
+    width: 1096px;
+    resize: none;
+    padding:7px 18px;
+    border: 1px solid #DCDCDC;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size:14px;
+    font-family: 'Microsoft YaHei', Verdana, Arial, Helvetica, sans-serif;
+}
+
+.yun-excel form .yun-area {
+    margin: 0 0px 25px 14px;
+    position: relative;
+}
+
+.yun-excel form .yun-area .yun-com {
+    position: absolute;
+    top: 17px;
+    left: 58px;
+}
+
+.yun-excel form input[type="button"] {
+    height: 55px;
+    line-height:55px;
+    width: 460px;
+    color: #fff;
+    text-align: center;
+    line-height: 55px;
+    background-color: #008AFF;
+    border: 0 none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    margin-bottom: 45px;
+    cursor: pointer;
+}
+
+.yun-excel form dd#yun-industry {
+    position: relative;
+}
+
+.yun-excel .yun-industry {
+    border: 1px solid #DCDCDC;
+    border-top: 0 none;
+    margin-left: 15px;
+    position: absolute;
+    top: 41px;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+    display: none;
+    overflow: auto;
+    max-height:246px;
+    overflow-x: hidden;
+    width: 536px;
+}
+
+.yun-excel .yun-industry li {
+    width: 516px;
+    height: 40px;
+    text-align: left;
+    padding-left: 20px;
+    letter-spacing: 1px;
+    line-height: 40px;
+    border-top: 1px solid #DCDCDC;
+    background-color: #f5f5f5;
+}
+
+.yun-excel .yun-industry li:hover {
+    background-color: #DCDCDC;
+}
+
+/*云报价流程第一步1*/
+.yun-tab {
+    overflow: hidden;
+    height: 43px;
+    margin: 26px 0 22px 45px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+
+.yun-tab ul li {
+    float: left;
+    height: 43px;
+    line-height: 43px;
+    width: 280px;
+    text-align: center;
+    color: #B2B2B2;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background-color: #fff;
+}
+
+.yun-tab .yun-tab-li1 {
+    background-color: #009BE5;
+    color: #fff;
+}
+
+.yun-tab .yun-tab-li4 {
+    -webkit-border-radius:0 5px 5px 0;
+    -moz-border-radius:0 5px 5px 0;
+    border-radius:0 5px 5px 0;
+}
+
+.yun-step-form {
+    width: 1190px;
+    background-color: #fff;
+    margin: 0 0 44px 0px;
+    padding: 0px 0 70px 0;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #000;
+    position: relative;
+}
+
+.yun-step-form .yun-step1-form .yun-selectPerson {
+    text-decoration: underline;
+    color: #00BBFF;
+    position: absolute;
+    right: 306px;
+    top: 22px;
+}
+
+.yun-step-form .yun-step1-form i {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    background: url("../images/must.png") no-repeat 11px 9px;
+}
+
+.yun-step-form .yun-step1-form input {
+    width: 288px;
+    height: 34px;
+    line-height:34px;
+    border: 1px solid #DCDCDC;
+    padding-left: 10px;
+    margin: 14px 0 0 12px;
+}
+
+.yun-step-form .yun-step-lab0 {
+    position: relative;
+    left: -48px;
+}
+
+.yun-step-form .yun-step-lab1 {
+    position: relative;
+    left: -38px;
+}
+
+.yun-step-form .yun-step-lab2 {
+    position: relative;
+    left: -47px;
+}
+
+.yun-step-form .yun-step-lab3 {
+    position: relative;
+    left: -40px;
+}
+
+.yun-step-form input[type=submit],
+.yun-step-form input[type=button] {
+    width: 75px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    padding-left: 0;
+    color: #fff;
+    height: 40px;
+    line-height:40px;
+    border: 1px solid #DCDCDC;
+    margin: 14px 10px 0 12px;
+    font-size: 14px;
+}
+
+.yun-step-form input[type=submit].yun-save {
+    background-color: #00B4FF;
+    cursor: pointer;
+}
+
+.yun-step-form input[type=submit]:hover,
+.yun-step-form input[type=button].canMsg:hover{
+    background-color: #00B4FF;
+}
+
+.yun-wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+.yun-kehu {
+    width: 872px;
+    background-color: #fff;
+    position: fixed;
+    z-index:10000;
+    top: 50%;
+    left: 50%;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    padding-bottom:20px;
+}
+.yun-kehu h4 {
+    font-size: 18px;
+    padding: 22px 0 17px 0;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.yun-kehu dt {
+    background-color: #DCDCDC;
+    height: 44px;
+    line-height: 44px;
+}
+
+.yun-kehu dl {
+    width: 25%;
+    float: left;
+    position: relative;
+}
+.yun-kehu .yun-person input[type=radio] {
+    position: relative;
+    top: -18px;
+    left: 0px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height:16px;
+}
+
+#caoGaoWrap .yunDraftUl {
+    padding-right:0;
+}
+
+.yun-kehu dd {
+    border-bottom: 1px solid #BFBFBF;
+    height: 53px;
+    line-height: 53px;
+}
+
+.main-body-center h3 {
+    font-size: 18px;
+    font-weight: 800;
+    padding: 60px 0 40px 0;
+    position: relative;
+}
+
+.yun-pro input#companyCall {
+    height: 40px;
+    line-height:40px;
+    width: 675px;
+    border: 1px solid #DCDCDC;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    margin: 14px 0 0 7px;
+    padding: 0 10px;
+}
+
+.yun-pro .yun-needFj {
+    background-color: #fff;
+    line-height:0;
+}
+
+.yun-pro .yun-needFj i {
+    font-size: 12px;
+    padding-top:10px;
+    margin-left:4px;
+    height: 18px;
+    display: block;
+}
+.yun-pro .yun-needFj.a-upload {
+    color: #a0a0a0;
+    cursor: pointer;
+    display: inline-block;
+    overflow: visible;
+    text-align: center;
+    width: 62px;
+    height: 80px;
+    position: relative;
+    left: -290px;
+    border:0 none;
+}
+.yun-pro .yun-needFj .uploadImg {
+    width: 800px;
+    position: absolute;
+    top: 0;
+    left:77px;
+    text-align: left;
+}
+.yun-pro .yun-needFj .uploadImg .uploadImgWrap .uploadImgClose {
+    background: url("../yunimg/uploadImgClose.png") no-repeat;
+    background-size:15px 15px;
+    width:15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    right:0;
+    top:0;
+    display: none;
+}
+.yun-pro .yun-needFj .uploadImg .uploadImgWrap {
+    display: inline-block;
+    margin-left:10px;
+    position: relative;
+    text-align: center;
+}
+
+.yun-pro .yun-needFj .uploadImg .uploadImgWrap:hover .uploadImgClose {
+    display: block;
+}
+.yun-pro .yun-needFj .uploadImg .uploadImgExp {
+    text-overflow: ellipsis;
+    white-space : nowrap;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    width: 84px;
+}
+
+.yun-pro textarea {
+    width: 674px;
+    max-width: 674px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    border: 1px solid #E5E5E5;
+    margin: 20px 0 20px 65px;
+    padding: 10px;
+    background-color: #fff;
+}
+.a-upload input {
+    z-index:1000;
+    font-size:60px;
+}
+
+.yun-pro .xqgs {
+    position: absolute;
+    top: 16px;
+    left: 0px;
+}
+
+.yun-pro .yun-jz {
+    margin: 25px 0 20px -350px;
+}
+
+.yun-pro .yun-jz span {
+    margin-right: 9px;
+}
+
+.iDate > input {
+    background-color: #F7F7F7;
+}
+
+.yun-price .yun-mainPrice {
+    width: 1100px;
+    margin: 0 auto;
+    border: 1px solid #E2E2E2;
+    position: relative;
+    padding: 0 8px;
+}
+
+.yun-price .yun-mainPrice .yun-template {
+    color: #31BDFF;
+    width: 14px;
+    height: 15px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    background: url(../images/delate.png) no-repeat;
+}
+
+.deleteSure {
+    font-size:14px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 214px;
+    height: 88px;
+    padding-top: 14px;
+    background-color: #fff;
+    border:1px solid #999;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.deleteSure .deleteBtnS {
+    background-color: #00B4FF;
+}
+.yun-price .yun-mainPrice .yun-mainPrice-t input {
+    width: 528px;
+    height: 46px;
+    line-height:46px;
+    border: 1px solid #E5E5E5;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    font-size: 14px;
+}
+
+.yun-price .yun-mainPrice .yun-mainPrice-t span {
+    width: 52px;
+    height: 2px;
+    background-color: #313131;
+    display: inline-block;
+    vertical-align: super;
+}
+
+.yun-price .yun-mainPrice .yun-mainPrice-t i {
+    font-size: 22px;
+}
+
+.yun-price .yun-mainPrice input {
+    height: 32px;
+    line-height:32px;
+    border: 1px solid #D2D2D2;
+    padding: 0 5px;
+}
+
+.yun-price .yun-mainPrice .yun-details {
+    width: 528px;
+    /*margin-right:5px;*/
+}
+
+.yun-price .yun-mainPrice .yun-submitResult {
+    width: 400px;
+}
+
+/*项目报价单开始*/
+#yunPriceForm form {
+    margin-bottom: 50px;
+}
+
+.yun-price .yunSubmitWrap {
+    display: none;
+}
+
+.yun-price .yun-mainPrice .yun-templateFst .yun-firstPart-T {
+    height: 55px;
+    line-height: 55px;
+    background-color: #F7F7F7;
+}
+
+.yun-price .yun-mainPrice .yun-templateFst i.yunPubPart {
+    width: 35px;
+    height: 30px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.yun-price .yun-mainPrice .yun-templateFst i.yunPubPart:hover {
+    color: #31BDFF;
+}
+
+.yun-price .yun-templateFst .yunFirstOl li,
+.yun-price .yun-templateFst .yunFirstUl li {
+    float: left;
+}
+
+.yun-price .yun-templateFst .yunFirstOl,
+.yun-price .yun-templateFst .yunFirstUl {
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    border-bottom: 1px solid #F3F3F3;
+}
+
+.yun-price .yun-templateFst .yunFirstUl:hover {
+    background-color: #E8F2F4;
+}
+
+.yun-price .yun-templateFst .yunFirstOl li {
+    margin: 0 13px;
+}
+
+.yun-price .yun-templateFst .yunFirstOl .yunFirstOl1 {
+    width: 36px;
+}
+
+.yun-price .yun-templateFst .yunFirstUl li .yun-order {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    padding:0;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    border: 1px solid #C9C9C9;
+    outline:none;
+    margin: 0 10px;
+    background-color: #fff;
+}
+
+.yun-price .yun-templateFst .yunFirstUl li.yunIconRight {
+    position: absolute;
+    right: 0;
+    top: 14px;
+    margin-right: 8px;
+    display: none;
+    cursor: pointer;
+}
+
+.yun-price .yun-templateFst .yunFirstUl li.yunIconRight i {
+    background: url("../yunimg/yunBg.png") -35px 0;
+    width: 36px;
+    height: 36px;
+    display: block;
+    float: left;
+    margin: 0 2px;
+}
+
+.yun-price .yun-templateFst .yunFirstUl li.yunIconRight .yunU {
+    background: url("../yunimg/yunBg.png") -71px 0;
+}
+
+.yun-price .yun-templateFst .yunFirstUl li.yunIconRight .yunC {
+    background: url("../yunimg/yunBg.png") -107px 0;
+}
+
+.yun-price .yun-templateFst .yunFirstUl li.yunIconRight .yunP {
+    background: url("../yunimg/yunBg.png") -143px 0;
+}
+
+.yun-price .yun-templateFst .yunFirstUl li span {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+}
+
+.yun-price .yun-templateFst .yunFirstUl input {
+    margin: 0 8px;
+    text-align: center;
+}
+
+.yun-price .yun-templateFst .yunFirstOl .yunFirstOl2,
+.yun-price .yun-templateFst .yunFirstUl input.yun-inputContent {
+    width: 108px;
+}
+
+.yun-price .yun-templateFst .yunFirstOl .yunFirstOl3,
+.yun-price .yun-templateFst .yunFirstUl input.yun-inputDetails {
+    width: 340px;
+}
+
+.yun-price .yun-templateFst .yunFirstOl .yunFirstOl4,
+.yun-price .yun-templateFst .yunFirstUl input.yun-inputUnit {
+    width: 70px;
+}
+
+.yun-price .yun-templateFst .yunFirstOl .yunFirstOl5,
+.yun-price .yun-templateFst .yunFirstOl .yunFirstOl6,
+.yun-price .yun-templateFst .yunFirstUl input.yun-inputPrice,
+.yun-price .yun-templateFst .yunFirstUl input.yun-inputNum {
+    width: 96px;
+}
+
+.yun-price .yun-templateFst .yunFirstOl .yunFirstOl3 {
+    margin-right: 17px;
+}
+
+.yun-price .yun-templateFst .yunFirstOl .yunFirstOl7,
+.yun-price .yun-templateFst .yunFirstUl .yun-rate {
+    width: 100px;
+    margin: 0;
+}
+.yun-price .yun-templateFst .yunFirstUl .yun-rate,
+.yun-price .yun-templateFst .yunFirstUl .yun-total {
+    background-color: transparent;
+    border:0 none;
+    padding:0;
+}
+.yun-price .yun-templateFst .yunFirstOl .yunFirstOl7 select{
+    width: 98px;
+}
+
+.yun-price .yun-templateFst .yunFirstOl .yunFirstOl8,
+.yun-price .yun-templateFst .yunFirstUl .yun-total {
+    width: 80px;
+    margin: 0;
+}
+
+.yun-price .yunMsg {
+    width: 14px;
+    height: 14px;
+    display: block;
+    background: url("../yunimg/yunBg.png") -20px -30px;
+    position: absolute;
+    top: 22px;
+    right: 346px;
+}
+
+.yun-price .yunMsgDetail {
+    width: 186px;
+    height: 38px;
+    border: 1px solid #A0A0A0;
+    padding: 3px 8px;
+    position: absolute;
+    top: -35px;
+    right: 256px;
+    background-color: #EEEEEE;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    display: none;
+}
+
+.yun-price .yunMsgDetail::after {
+    content: " ";
+    position: absolute;
+    right: 90px;
+    top: 40px;
+    width: 10px;
+    height: 10px;
+    border: #A0A0A0 solid 1px;
+    border-left: 0;
+    border-bottom: 0;
+    -webkit-transform: rotate(-225deg);
+    -ms-transform: rotate(-225deg);
+    transform: rotate(-225deg);
+    z-index: 1000
+}
+
+.yun-price .yunMsgDetail::before {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #EEEEEE;
+    z-index: 999;
+    top: 44px;
+    right: 88px;
+}
+
+.yun-price .yunMsgDetail p {
+    line-height: 18px;
+}
+
+.yun-price .yun-moneyTotal {
+    padding: 15px 15px 10px 0;
+}
+
+.yun-price .yun-totalColor {
+    color: red;
+    font-size: 14px;
+
+}
+
+.yun-price .yun-remark textarea {
+    width: 1042px;
+    max-width: 1042px;
+    padding: 10px 15px;
+    /*background-color: #F7F7F7;*/
+    max-height: 100px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    line-height: 18px;
+    margin: 25px auto 20px;
+    border: 1px solid #D2D2D2;
+}
+
+.yun-price .yun-addPrice {
+    width: 1114px;
+    height: 62px;
+    background-color: #F7F7F7;
+    border: 1px solid #E5E5E5;
+    margin: 0 auto;
+    line-height: 62px;
+    font-size: 14px;
+    color: #000;
+    cursor: pointer;
+}
+
+.yun-price .yun-addPrice span {
+    color: #D1D1D1;
+}
+.yun-payWay .yun-payFor {
+    padding-top:15px;
+}
+.yun-payWay .yun-payFor span {
+    font-weight: 500;
+}
+
+.yun-payWay .yun-payFor .payTwice {
+
+}
+
+.yun-payWay .yun-payFor .payTotal,
+.yun-payWay .yun-payFor .payCouponTotal {
+    font-size: 14px;
+    margin-right:10px;
+    display: none;
+}
+#payWarring {
+    color: red;
+    text-align: left;
+    display:none;
+    margin-left:10px;
+    position: relative;
+    top:-2px;
+}
+.yun-payWay .yun-payFor .payTotal i,
+.yun-payWay .yun-payFor .payCouponTotal i {
+    color: red;
+}
+
+.payPriceTotal {
+    padding-left:10px;
+}
+.yunCoupon {
+    text-align: left;
+    padding-left:10px;
+    margin: 15px 0px 10px;
+}
+.yunCoupon input[type=checkbox] {
+    vertical-align: middle;
+    margin-right:5px;
+}
+
+.yunCoupon input[type=text] {
+    height: 22px;
+    line-height:22px;
+    width: 72px;
+}
+.yunCoupon select {
+    height: 22px;
+    border-color: #D2D2D2;
+}
+
+.yun-payWay .yun-fuT {
+    height: 30px !important;
+    line-height: 30px !important;
+    background-color: #F7F7F7;
+}
+
+.yun-payWay .yun-fuT li {
+    height: 30px !important;
+    margin: 0 !important;
+}
+
+.yun-payWay .yun-fuM li {
+    padding: 0 5px;
+}
+
+.yun-payWay input {
+    text-align: center !important;
+}
+
+.yun-payWay .yun-payWay1 {
+    width: 70px;
+}
+
+.yun-payWay .yun-payWay2 {
+    width: 85px;
+}
+
+.yun-payWay .yun-payWay3,
+.yun-payWay .yun-payWay4 {
+    width: 338px;
+}
+
+.yun-payWay .yun-payWay5 {
+    width: 175px;
+}
+
+.yun-payWay .yun-payPercent {
+    width: 50px;
+}
+
+.yun-payWay .yun-payNode {
+    width: 300px;
+}
+
+.yun-payWay .yun-payDes {
+    width: 298px;
+}
+.yun-payWay .payWayWarring {
+    position: relative;
+    top: -25px;
+    color: red;
+}
+/*#yunPayForm {*/
+    /*display: none;*/
+/*}*/
+
+.yun-payWay .yun-payTotal {
+    width: 65px;
+    border:0 none !important;
+    background-color: transparent;
+    margin:0 !important;
+    padding:0 !important;
+}
+.yun-payDiscountPic {
+    width: 110px;
+    background-color: transparent;
+    border:0 none !important;
+    margin: 0 !important;
+    padding:0 !important;
+}
+.yun-price .yun-templateFst .yunFirstUl.yun-fuM li:nth-child(5) {
+    margin-left:15px;
+}
+.yun-progress {
+    width: 100%;
+    height: 477px;
+    background: url("../yunimg/yun-top.png") no-repeat;
+    margin-bottom: -238px;
+}
+
+.yun-progress .yunProgressTop {
+    height: 70px;
+    background-color: #1AAAEC;
+    line-height: 70px;
+}
+
+.yun-progress .yunProgressTop .yunProgressMain {
+    width: 1195px;
+    height: 70px;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.yun-progress .yunProgressTop .yunProgressMain .yun-compete {
+    display: inline-block;
+    float: left;
+    margin-right: 50px;
+    margin-left: 30px;
+}
+
+.yun-progress .yunProgressTop .yunProgressMain ul {
+    display: inline-block;
+}
+
+.yun-progress .yunProgressTop .yunProgressMain ul li i {
+    background: url("../yunimg/yunPen.png") 0 -30px;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.yun-progress .yunProgressTop .yunProgressMain ul li {
+    float: left;
+    width:134px;
+    text-align: center;
+    color: #5EC3F2;
+}
+.yun-progress .yunProgressTop .yunProgressMain ul li span {
+    color: #fff;
+    opacity:0.3;
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s ;
+    -o-transition: all 0.6s;
+    transition: all 0.6s;
+}
+.yun-progress .yunProgressTop .yunProgressMain ul li:hover span {
+    opacity:1 !important;
+}
+.yun-progress .yunProgressTop .yunProgressMain ul li span.yunOpacity {
+    opacity:1 ;
+}
+/*.yun-progress .yunProgressTop .yunProgressMain ul li:after {
+    content: '';
+    display: block;
+    background-color: rgba(255,255,255,0.3);
+    position: absolute;
+    width: 134px;
+    height: 70px;
+}*/
+.yun-progress .yunProgressTop .yunProgressMain .yunProgressEnd {
+    height: 40px;
+    width: 114px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+    border: 0 none;
+    background-color: #73D2FE;
+    margin-top: 17px;
+    margin-right:5px;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    /*opacity:0.3;*/
+}
+.yun-progress .yunProgressTop .yunProgressMain .yunProgressEnd.yunOpacity {
+    opacity:1;
+}
+.yun-reEdit {
+    height: 16px;
+    width: 30px;
+    background: url("../yunimg/yunBg.png") -20px -47px;
+    font-size: 14px;
+    padding-left: 18px;
+    position: absolute;
+    top: 62px;
+    right: 46px;
+    color: #38BFFF;
+}
+
+.yun-kehuMessageUl {
+    width: 270px;
+    margin: 0 auto;
+    word-break: break-all;
+    text-align: left;
+    font-size: 14px;
+}
+
+.yun-kehuMessageUl li {
+    height: 35px;
+}
+
+.yun-messageShow {
+    width: 1112px;
+    border: 1px solid #E5E5E5;
+    padding: 10px 10px 0px 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.yun-messageShow > div {
+    margin-bottom: 10px;
+}
+
+.yun-messageShow .yun-messageShowName p {
+    display: inline-block;
+}
+
+.yun-messageShow .yun-messageShowName .yun-messageShowL {
+    height: 100px;
+}
+
+.yun-messageShow .yun-pubLeft {
+    /*margin-left: 68px;*/
+    display: inline-block;
+}
+
+.yun-messageShow .yun-pusPosition {
+    display: inline-block;
+    vertical-align: top;
+}
+pre.yun-messageShowSummaryR {
+    white-space: pre-wrap;
+    -ms-word-break:break-all;
+    word-break:break-all;
+    width:1020px;
+    margin-left:68px;
+}
+.yun-messageShowSummaryL {
+    position: absolute;
+}
+.yun-messageShowSummary {
+    position: relative;
+}
+.yun-messageShow .yun-DataLeft {
+    display: inline-block;
+}
+
+.yun-messageShow .yun-AddLeft {
+    margin-left: 60px;
+}
+.yun-messageShow .yun-AddLeft .yunFujianWrap {
+    width:340px;
+    display: inline-block;
+    margin:10px 0;
+}
+.yun-messageShow .yun-AddLeft .yunFujianWrap p {
+    margin-left: 64px;
+    margin-top: 2px;
+    width:240px;
+    color: #9E9E9E;
+    text-overflow :ellipsis;
+    white-space : nowrap;
+    overflow : hidden;
+}
+.yun-messageShow .yun-AddLeft .yunFujianWrap span {
+    display: inline-block;
+    padding: 10px 19px 0 14px;
+    color: #9E9E9E;
+}
+.yun-messageShowAdd {
+    position: relative;
+}
+
+.yun-messageShowAddL {
+    top: 8px;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 1110px;
+}
+
+table td, table th {
+    height: 36px;
+}
+
+table th {
+    background-color: #FFFF99;
+}
+
+table tr th:nth-child(1) {
+    width: 34px;
+}
+
+.yun-tableObj tr th:nth-child(2) {
+    width: 678px;
+}
+
+/*.yun-tableObj tr th:nth-child(3) {*/
+    /*width: 36px;*/
+/*}*/
+
+.yun-tableObj tr th:nth-child(4) {
+    width: 158px;
+}
+
+.yun-tableObj tr th:nth-child(5) {
+    width: 106px;
+}
+
+.yun-tableObjPic tr th:nth-child(2) {
+    width: 100px;
+}
+
+.yun-tableObjPic tr th:nth-child(3) {
+    width: 572px;
+}
+
+.yun-tableObjPic tr th:nth-child(4) {
+    width: 46px;
+}
+
+.yun-tableObjPic tr th:nth-child(5) {
+    width: 100px;
+}
+
+.yun-tableObjPic tr th:nth-child(6) {
+    width: 70px;
+}
+
+.yun-tableObjPic tr th:nth-child(7) {
+    width: 88px;
+}
+
+.yun-tableObj tr:nth-last-child(1) td:nth-last-child(1),
+.yun-fruit {
+    color: #38BFFF;
+}
+
+.yun-tablePay tr:nth-last-child(1) td:nth-last-child(1),
+.yun-tableObjPic tr:nth-last-child(2) td:nth-last-child(1) {
+    color: red;
+}
+
+.yun-price h4 {
+    margin: 10px 0 10px 40px;
+    text-align: left;
+    font-size:18px;
+}
+
+/*添加报价单,选择模板*/
+.yun-tempPriceWrap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: none;
+}
+
+.yun_tempPrice {
+    width: 1076px;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index:10000;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #fff;
+    display: none;
+}
+
+.yun_tempPrice h3 {
+    font-size: 14px;
+}
+
+.yun_tempPrice li {
+    float: left;
+}
+
+.yun_tempPrice .yun_tempHistory li {
+    height: 32px;
+    margin-left:20px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.yun_tempPrice .yun_tempHistory li:hover {
+    /*background-color: #03A5EE;*/
+    color: #03A5EE;
+    /*border: 1px solid transparent;*/
+}
+
+.yun_tempPrice .yun_tempHistory span {
+    height: 32px;
+    border: 1px solid #DCDCDC;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    line-height: 32px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    padding: 0 10px;
+    color: #21ABEA;
+    cursor: pointer;
+
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+#historyTemp {
+    padding-left:22px;
+    padding-right:80px;
+    height:auto;
+}
+.historyTempWrap {
+    height:32px;
+    overflow: hidden;
+}
+.historyAllList {
+    font-size:12px;
+    position: relative;
+    display: none;
+}
+.historyAllList i {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top:0px;
+    right:-20px;
+    display: block;
+    background: url("../images/slidd.png") no-repeat;
+}
+.historyAllList:hover {
+    color: #21ABEA;
+}
+.historyAllList:hover i {
+    background: url("../images/slidb.png") no-repeat;
+}
+.yun_tempPrice .yun_tempHistory span:hover {
+    background-color: #03A5EE;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.yun_tempOfficial > ul {
+    padding-left: 34px;
+    margin-top: 9px;
+}
+
+.yun_tempOfficial > ul > li {
+    width: 492px;
+    background-color: #F5F5F5;
+    margin: 3px 6px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px 10px;
+}
+
+.yun_tempOfficial > ul > li i {
+    width: 45px;
+    height: 45px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    display: block;
+    float: left;
+    margin-right: 15px;
+}
+
+.yun_tempOfficial > ul > li h4 {
+    padding: 4px 0;
+    font-weight: 700;
+    color: #000;
+}
+
+.yun_tempOfficial > ul > li > ul > li {
+    padding: 2px 10px 2px 0;
+    cursor: pointer;
+}
+
+.yun_tempOfficial > ul > li > ul > li:hover {
+    color: #21ABEA;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon0 {
+    background: #E5E5EA url("../images/navLogo-select.png") no-repeat 9px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon0:hover {
+    background: #E5E5EA url("../images/navLogo-selectBlue.png") no-repeat 9px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon1 {
+    background: #E5E5EA url("../images/navLogo-select.png") no-repeat -577px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon1:hover {
+    background: #E5E5EA url("../images/navLogo-selectBlue.png") no-repeat -577px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon2 {
+    background: #E5E5EA url("../images/navLogo-select.png") no-repeat -138px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon2:hover {
+    background: #E5E5EA url("../images/navLogo-selectBlue.png") no-repeat -138px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon3 {
+    background: #E5E5EA url("../images/navLogo-select.png") no-repeat -726px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon3:hover {
+    background: #E5E5EA url("../images/navLogo-selectBlue.png") no-repeat -726px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon4 {
+    background: #E5E5EA url("../images/navLogo-select.png") no-repeat -287px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon4:hover {
+    background: #E5E5EA url("../images/navLogo-selectBlue.png") no-repeat -287px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon5 {
+    background: #E5E5EA url("../images/navLogo-select.png") no-repeat -872px 3px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon5:hover {
+    background: #E5E5EA url("../images/navLogo-selectBlue.png") no-repeat -872px 3px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon6 {
+    background: #E5E5EA url("../images/navLogo-select.png") no-repeat -435px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon6:hover {
+    background: #E5E5EA url("../images/navLogo-selectBlue.png") no-repeat -435px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon7 {
+    background: #E5E5EA url("../images/navLogo-select.png") no-repeat -1019px 2px;
+}
+
+.yun_tempOfficial > ul > li i.bg-icon7:hover {
+    background: #E5E5EA url("../images/navLogo-selectBlue.png") no-repeat -1019px 2px;
+}
+
+.yun_tempPrice > input {
+    height: 40px;
+    padding: 0px 25px;
+    background-color: #03A5EE;
+    margin: 15px 30px 0 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #fff;
+    line-height: 40px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    border: 1px solid #DCDBD4;
+    width: 110px;
+
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+ .yun_tempPrice input.btn_1 {
+    margin-left: 396px;
+}
+
+ .yun_tempPrice input.btn_2 {
+    background-color: #fff;
+    color: #000;
+}
+
+.yun_tempPrice > input:hover {
+    background-color: #03A5EE;
+    color: #fff;
+    -webkit-box-shadow: 0px 1px 10px #0084E1;
+    -moz-box-shadow: 0px 1px 10px #0084E1;
+    box-shadow: 0px 1px 10px #0084E1;
+    border: 1px solid transparent;
+}
+
+.alertMessage {
+    width: 120px;
+    height: 70px;
+    padding-top: 5px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-top: -35px;
+    margin-left: -60px;
+    background-color: #fff;
+    border: 1px solid #868484;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    font-size: 14px;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+}
+
+.alertMessage_lg {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.alertMessage i {
+    background: url("../yunimg/alertClose.png") no-repeat;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    -webkit-background-size: 15px 15px;
+    background-size: 15px 15px;
+}
+
+.alertMessage span {
+    display: block;
+    margin: 5px 0 0 15px;
+    font-weight: 700;
+}
+
+.alertMessage p {
+    margin: 10px 0 0 15px;
+}
+
+/*点击更改背景和字体颜色*/
+.yun_tempClick {
+    color: #03A5EE;
+}
+
+.yun_tempClickDif {
+    color: #21ABEA;
+}
+
+.yunPubHide {
+    display: none;
+}
+.yunPubShow {
+    display: block;
+}
+
+.ExtendMainBody .ExtendMainBodyWrap .yun-step-form {
+    width: 1114px !important;
+    padding:0 !important;
+    margin:0 0 20px 0;
+}
+.yunProgressMainT {
+    margin-left:20px;
+    position: relative;
+    letter-spacing:1px;
+}
+.yunProgressMainT p {
+    position: absolute;
+    top:-45px;
+    left:150px;
+    width: 350px;
+    display: none;
+}
+.yunProgressMainT .span-1-i {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background: url(../yunimg/yunBg.png) -20px -30px;
+}
+.yunProgressMainT .span-1-i:hover p {
+    display: block;
+}
+.yunBtnWrapOne {
+    float: right;
+}
+.yunBtnWrapOne button {
+    background-color: #fff;
+    border: 1px solid #CCCCCC;
+    outline: none;
+    padding: 8px 0px;
+    width: 80px;
+    margin-left: 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+/*表单验证样式*/
+.borderRed {
+    border:1px solid red !important;
+}
+.borderSilver {
+    border:1px solid #DCDCDC !important;
+}
+/*报价单新增数量添加减少按钮*/
+.yunChangeNumber {
+    font-size:22px;
+    display: inline-block;
+    width: 24px;
+    height:32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #F5F5F5;
+    position: absolute;
+    top:15px;
+}
+.yunReduceNumber {
+    left:9px;
+}
+.yunPlusNumber {
+    left:91px;
+    font-size:18px;
+}
+.yunPlusNumberWrap {
+    position: relative;
+}
+/*付款方式新增*/
+.yunPayNumber {
+    font-size:22px;
+    display: inline-block;
+    width: 14px;
+    height:32px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #F5F5F5;
+    position: absolute;
+    top:15px;
+}
+.yunPayReduceNumber {
+    left:14px;
+}
+.yunPayPlusNumber {
+    left:60px;
+    font-size:18px;
+}
+.yunYHZK {
+    display: none;
+    margin-left:10px;
+}
+.payCouponTotal,
+.payCouponTotalP {
+    display: none;
+}
+
+.yun-tablePayTotal {
+    width: 220px;
+}
+.payTotal select {
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    border:0 none;
+    color: red;
+    font-size:16px;
+}
+.yun-kehuScroll {
+    max-height: 314px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+#yunLinkName span{
+    display: inline-block;
+    width:70px;
+    padding-left:5px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    white-space: nowrap;
+}
+#yun-kehu-btn input {
+    width: 160px;
+}
+.yunDraft {
+    position: absolute;
+    left:20px;
+    top:20px;
+}
+.yunDraft a {
+    display: block;
+    padding:0 20px 0 50px;
+    height: 40px;
+    line-height:40px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+    background-color: #00A5E7;
+    color: #fff;
+    position: relative;
+    font-size:14px;
+}
+.caoGaoIcon {
+    background: url("../images/caoGaoIcon.png") no-repeat;
+    height: 27px;
+    width:25px;
+    display: inline-block;
+    position: absolute;
+    left:20px;
+    top:8px;
+}
+.warringDian {
+    display: block;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    width:5px;
+    height: 5px;
+    background-color: red;
+    position: absolute;
+    right: 2px;
+    top:1px;
+}
+.warringNum {
+    position: relative;
+    display: none;
+}
+.caoGaoList {
+    position: absolute;
+    top:75px;
+    left:20px;
+    width:450px;
+    border:1px solid #CCCCCC;
+    background-color: #fff;
+    display: none;
+}
+.yunDraftUl {
+    padding:0 10px;
+    height: 36px;
+    line-height:36px;
+    border-bottom: 1px solid #CCCCCC;
+}
+.yunDraftUl li {
+    float: left;
+    width:33.33%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    white-space: nowrap;
+}
+.yunDraftUlFst {
+    height: 30px;
+    line-height:30px;
+    background-color: #CCCCCC;
+}
+#caoGaoWrap {
+    overflow: auto;
+    overflow-x: hidden;
+    max-height:215px;
+}
+div.ExtendMainTop ul.MainTopUl.timer li.MainTopUl1,
+div.ExtendMainTop ul.MainTopUl.timer li.MainTopUl2,
+div.ExtendMainTop ul.MainTopUl.timer li.MainTopUl3,
+div.ExtendMainTop ul.MainTopUl.timer li.MainTopUl4{
+    max-height: 130px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.oneByOneT {
+    display: none;
+}
+#moreWarringW3.moreWarring {
+    width: 410px;
+    height: 242px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #6c6c6c;
+    position: absolute;
+    z-index: 1000;
+    color: #000;
+    left: 50%;
+    top: 50%;
+    padding: 20px;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-box-shadow: 0px 4px 50px #999;
+    -moz-box-shadow: 0px 4px 50px #999;
+    box-shadow: 0px 4px 50px #999;
+}
+#moreWarringW3.moreWarring .pubp {
+    display: block;
+    line-height:22px;
+}
+i.YsPhone {
+    font-weight:800;
+    word-spacing:1px;
+}
+div.moreWarring .ma {
+    margin-left:30px;
+    width:88px;
+}
+#moreWarringW3 button {
+    padding: 8px 40px;
+    margin: 5px 31px;
+    border:1px solid #ccc;
+    outline:none;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+#moreWarringW3 button:hover {
+    background-color: #08A1EF;
+    color: #fff;
+    border:1px solid #08A1EF;
+}
+.alertWarringYs {
+    border:1px solid #CCCCCC;
+    width: 250px;
+    height: 76px;
+    padding: 16px 5px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-left:-125px;
+    margin-top:-38px;
+    z-index:1000;
+    display: none;
+}
+.alertWarringYs button {
+    padding: 6px 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 16px;
+}
+.alertWarringYs button:hover {
+    background-color: #08A1EF;
+    color: #fff;
+    border:1px solid #08A1EF;
+}
+#yun_allFile_upload {
+    opacity:0;
+    width: 62px;
+    height: 62px;
+    position: absolute;
+    top: 16px;
+    left: 0px;
+}
+.yun-excel input {
+    font-size:14px;
+}
+/*发送完成生成二维码*/
+.endAllSendBg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left:0;
+    background-color: rgba(0,0,0,0.5);
+    z-index:99998;
+    display: none;
+}
+.endAllSend {
+    background-color: #fff;
+    position: fixed;
+    left:50%;
+    top: 50%;
+    height: 360px;
+    width: 430px;
+    margin-top:-180px;
+    margin-left:-215px;
+    z-index:99999;
+    padding:30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    display: none;
+}
+.endAllSend p.endAllSendPub {
+    font-size:14px;
+    line-height:18px;
+}
+.endAllSendWrap {
+    margin-top:20px;
+}
+.endAllSendLeft {
+    width: 160px;
+    height: 160px;
+    position: relative;
+}
+.ewmrefalsh {
+    display: block;
+    position: absolute;
+    top: 152px;
+    left: 40px;
+    cursor: pointer;
+    color: #2BA5E8;
+}
+.endAllSendRight {
+    margin-top:45px;
+    font-size:14px;
+}
+.endAllSendButton {
+    margin-top:40px;
+    text-align: center;
+}
+.endAllSendButton button {
+    background-color: #f5f5f5;
+    width:130px;
+    height: 38px;
+    outline:none;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    margin:0 10px;
+    font-size:14px;
+}
+.endAllSendButton button:hover {
+    border:1px solid #2BA5E8;
+    background-color: #2BA5E8;
+    color: #fff;
+}
+.endAllSendButton button:hover a {
+    color: #fff;
+}
+.endAllSendButton button a {
+    width: 130px;
+    height: 38px;
+    display: inline-block;
+    line-height:38px;
+}
+.endAllSendClose {
+    background: url(../images/mapCloseAlert.png) no-repeat;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+}
+.endAllSendGif {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    height: 20px;
+    width: 100px;
+    z-index: 99999;
+    margin-top: -10px;
+    margin-left: -50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+}
+
+/*预览样式*/
+.viewFilePicWrap {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+}
+.viewFilePic {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 10001;
+    background-color: #fff;
+    width: 600px;
+    max-width: 900px;
+    max-height: 500px;
+    margin-left: -300px;
+    margin-top: 15%;
+    display: none;
+    overflow: auto;
+    overflow-x: hidden;
+
+}
+.viewFilePic img {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+

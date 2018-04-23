@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico "  type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/supply.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.footer_on').load('bottom.html');//加载底部
+            $('#header.header-neiye').load('head.html');//加载头部
+            $('div.ewm').css({'display':'none'});//div.ewm隐藏
+            $('div.ewm:eq(0)').css({'display':'block'});//第一个div.ewm显示
+            $('div.sewm').eq(1).css('display','none');//第一个sewm显示
+        });
+    </script>
+    <style>
+        #nav a.but-dl{
+            display:none;
+        }
+        #header.header-neiye div.yidenglu{
+            display:block;
+        }
+        #main-body {
+            width: 1190px;
+            margin: 0 auto;
+        }
+        #topHeader {
+            background-color: #03A5EE;
+            color: #fff;
+        }
+    </style>
+</head>
+<body style="">
+<div class="containers">
+    <!-- 头部 start -->
+    <div id="header" class="header-neiye" style=""></div>
+    <!-- 头部 end -->
+    <div class="success_send">
+        <div class="success_send_message">
+            <p><span></span>约见订单发送成功，等待对方处理！</p>
+        </div>
+        <div class="success_send_btn">
+            <a href="#">查看约见订单</a>
+            <a href="index.html">返回首页</a>
+        </div>
+    </div>
+    <!--底部开始-->
+    <div class="footer_on"></div>
+    <!--底部结束-->
+</div>
+</body>
+</html>

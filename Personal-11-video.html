@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        视频帮助
+    </title>
+    <meta content="中国设计网,设计师,设计之家,设计,设计公司,设计师招聘,高级设计师,设计师简历,设计网,设计中国,画客网" name="keywords">
+    <meta content="中国设计网站、设计师之家-画客网：汇集中国高级设计师和设计公司，提供本地信息传播和互动的设计网平台；在画客，您就是设计大咖！找平面设计、字体设计、标志设计、室内设计、网页设计、包装设计、服装设计人才；选界面设计师、交互设计师、UI设计师、网页设计师，就来画客网！" name="description">
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/social.css" />
+    <link rel="stylesheet" href="css/font/font.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'index.html';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.left').load('PersonalNav.html', function() {
+                $(document).find('div.left div.yidenglu-box ul li:eq(4)').css({
+                    'background': '#f1f1f1'
+                }); //	li:eq(4)背景颜色为f1f1f1
+            }); //加载已登录导航
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="" class="p11">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal">
+            <div class="left"></div>
+            <div class="right perDet-r" style="">
+                <div class="neirong person-final video">
+                    <nav class="neirong-top ">
+                        <p>视频帮助</p>
+                    </nav>
+                    <div class="navBar-wrap perDet-rb">
+                        <section class="person-video">
+                            <div class="navBar-b">
+                                <i class="icon-warning"></i>
+                                <p>希望以下文档对您在上传视频中有帮助，小编正在努力匹配更多视频<br>如有疑问或更好的建议，请发送邮件：2284430641@qq.com</p>
+                            </div>
+                            <div class="sharebox">
+                                <h3 class="tit">优酷、土豆、搜狐等上传方法</h3>
+                                <div class="con">
+                                    <p class="stp">1.点击视频下方，分享按钮，复制分享框中的任意一个</p>
+                                    <div class="video center">
+                                        <img src="images/personal/video/share-youku.png" alt="" title="优酷视频分享">
+                                    </div>
+                                    <p class="stp margintp">2.将复制的文本到'视频网址'框中，点击预览</p>
+                                    <div class="video center"><img src="images/personal/video/share-video.png" alt=""></div>
+                                </div>
+                                <h3 class="tit margintp">秒拍上传方法</h3>
+                                <p class="stp">1.点击进入秒拍单个视频所在的网页，复制网页网址</p>
+                                <div class="video center"><img src="images/personal/video/share-miaopai.png" alt=""></div>
+                                <p class="stp margintp">2.将复制的文本到'视频网址'框中，点击预览</p>
+                                <div class="video center"><img src="images/personal/video/share-video.png" alt=""></div>
+                                <h3 class="tit margintp">单独视频页面</h3>
+                                <p class="stp">1.点击进入秒拍单个视频所在的网页，复制网页网址<br>2.将复制的文本到'视频网址'框中，点击预览</p>
+                                <div class="video center"><img src="images/personal/video/share-only.jpg" alt=""></div>
+
+                            </div>
+                        </section>
+                        <div style="margin-bottom: 60px"></div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 50px;"></div>
+            </div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

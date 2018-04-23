@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/social.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/social.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+            $('div.left').load('PersonalNav.html', function() {
+                $(document).find('div.left div.yidenglu-box ul li:eq(10)').css({
+                    'background': '#f1f1f1'
+                }); //	li:eq(4)背景颜色为f1f1f1
+            }); //加载已登录导航
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        
+        .changePhonePouup #ok-change-phone,
+        .changePhonePouup #ok-change-phone0 {
+            float: right;
+            display: inline-block;
+            background-color: #0D93D1;
+            color: #fff;
+            padding: 8px 0;
+            width: 100px;
+            border: 1px solid #CCCCCC;
+            text-align: center;
+            margin-right: 25px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+        
+        .changePhonePouup {
+            padding-left: 10px;
+        }
+        
+        .changePhonePouup p {
+            margin: 16px 0;
+            font-size: 16px;
+            height: 25px;
+        }
+        
+        .changePhonePouup p span {
+            width: 90px;
+            display: inline-block;
+            text-align: right;
+        }
+        
+        #changeEmailPouup p span {
+            width: 100px;
+        }
+        
+        .changePhonePouup p input {
+            font-size: 16px;
+            height: 20px;
+            padding-left: 10px;
+        }
+        
+        .changePhonePouup p.SMS-code input {
+            width: 80px;
+            margin-right: 10px;
+        }
+        
+        .changePhonePouup p.SMS-code a {
+            color: #0e93d1;
+        }
+        
+        .personalResize .accountT p.disanfang i.weibo_icon {
+            background: url(../images/weibo-icon.png) no-repeat;
+            -webkit-background-size: 20px;
+            background-size: 20px;
+        }
+        
+        #changePassword {
+            cursor: pointer;
+        }
+        #personal6 {
+            width: 80px;
+            position: relative;
+            top: -12px;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeader">
+            画客网致力于打造一个精确、快捷的设计服务对接平台。来画客网，遇到靠谱的好项目.　　<a href="Personal-8.html">设计师入驻</a>
+        </div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal">
+            <div class="left"></div>
+            <div class="right " style="">
+                <div class="neirong personalResize">
+                    <div class="accountT">
+                        <h3>账号设置：</h3>
+                        <p>
+                            <span class="accountSpan">邮箱账号：</span>
+                            <span id="emailHTML"></span>
+                            <a id="emailBind2" href="javascript:void (0);">绑定</a>
+                        </p>
+                        <p>
+                            <span class="accountSpan">手机账号：</span>
+                            <span id="phoneHTML"></span>
+                            <a id="phoneBind2" href="javascript:void(0);">绑定</a>
+                            <!-- <p class="p_pW">可以直接用该手机号登陆当前账户</p> -->
+                        </p>
+                        <p>
+                            <span class="accountSpan">第三方账号：</span>
+                            <span>绑定后可使用以下账号直接登录当前账户</span>
+                        </p>
+                        <p class="disanfang">
+                            <i class="weixin_icon"></i><span class="wx"><span class="title" style="margin-right:0px;">微信</span> / <a target="_blank" href="#">绑定</a></span>
+                            <!--<i class="weibo_icon"></i><span>斋饭 / <a href="http://www.huakewang.com/main/sina_oauth.html">解绑</a></span>-->
+                            <i class="weibo_icon"></i><span class="wb"><span class="title" style="margin-right:0px;">新浪</span> / <a target="_blank" href="#">绑定</a></span>
+                            <i class="qq_icon"></i><span class="qq"><span class="title" style="margin-right:0px;">QQ</span> / <a target="_blank" href="#">绑定</a></span>
+                        </p>
+                        <p>
+                            <span class="accountSpan">密码设置：</span>
+                            <span class="password" id="changePassword">修改密码</span>
+                        </p>
+                        <div class="confirms emailBind bindPub">
+                            <p>
+                                <span>邮箱地址：</span>
+                                <input type="email">
+                            </p>
+                            <p>
+                                <span></span>
+                                <input type="text" class="yzm">
+                                <a href="javascript:void(0);">发送验证码</a>
+                            </p>
+                            <button class="btnC">取消</button>
+                            <button class="btnS">确定</button>
+                        </div>
+                        <div class="confirms phoneBind bindPub">
+                            <p class="fstP">
+                                <span>原手机号：</span>
+                                <i>132****5656</i>
+                            </p>
+                            <p>
+                                <span>验证码：</span>
+                                <input type="text" class="yzm">
+                                <a href="javascript:void(0);">发送验证码</a>
+                            </p>
+                            <button class="btnC">取消</button>
+                            <button class="btnS">下一步</button>
+                        </div>
+                        <div class="confirms changePassword bindPub">
+                            <p>
+                                <span>当前密码：</span>
+                                <input class="old_password" type="password">
+                            </p>
+                            <p>
+                                <span>新密码：</span>
+                                <input class="new_password" type="password">
+                            </p>
+                            <p>
+                                <span>确认密码：</span>
+                                <input class="confirm_password" type="password">
+                            </p>
+                            <button class="btnC">取消</button>
+                            <button id="changePasswordConfirms" class="btnS">确认</button>
+                        </div>
+                    </div>
+                    <div class="accountM" id="noticeSetList">
+                        <h3>通知设置：</h3>
+                        <ul class="clearfix">
+                            <li><input class="user" type="checkbox"><span>有人收藏了我</span></li>
+                            <li><input class="gustbook" type="checkbox"><span>有人给我留言</span></li>
+                            <li><input class="comment" type="checkbox"><span>有人评论了我的作品</span></li>
+                            <li><input class="work" type="checkbox"><span>有人收藏了我的作品</span></li>
+                            <li><input class="project" type="checkbox"><span>有人收藏了我的需求</span></li>
+                            <li><input class="visit_home_page" type="checkbox"><span>有人访问了我的主页</span></li>
+                        </ul>
+                    </div>
+                    <div class="accountB" id="privacySetList">
+                        <h3>隐私设置：</h3>
+                        <ul class="clearfix">
+                            <li><input class="show_love_users" type="checkbox"><span>隐藏我喜欢的设计师</span></li>
+                            <li><input class="show_love_works" type="checkbox"><span>隐藏我喜欢的作品</span></li>
+                            <li><input class="show_my_home" type="checkbox"><span>关闭个人主页</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="width:1px;height:1px; clear:both;padding-top: 30px"></div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <script>
+        $(function() {
+            $("body").on("click", ".confirms .btnC", function() {
+                $(this).parent().css("display", "none");
+            });
+            $("body").on("click", "#emailBind", function() {
+                $(".emailBind").css("display", "block");
+            });
+            $("body").on("click", "#phoneBind", function() {
+                $(".phoneBind").css("display", "block").find(".btnS").click(function() {
+                    var $clone = $(".phoneBind").clone();
+                    $clone.find(".fstP").html('<span>新手机号：</span> <input type="phone" placeholder="请输入新的手机号码">')
+                    $(".accountT").append($clone);
+                });
+            });
+            $("body").on("click", "#changePassword", function() {
+                $(".changePassword").css("display", "block");
+            });
+            //地址管理
+            // $("body").on("click",".clearLocal",function () {
+            //     $(this).prev().find(".wzLocal").val("");
+            //     var arr = ["选择省份","选择城市","选择区域"];
+            //     var sele = $(this).parent().parent().find("select");
+            //     sele.each(function (idx) {
+            //         sele.eq(idx).val(arr[idx]);
+            //     });
+            // });
+            // $("body").on("click",".localDelete",function () {
+            //     $(this).parents(".cityLocal").css("display","none");
+            // });
+            // $("body").on("click",".hkw-btn_1 a",function () {
+            //     var strLi = '<li class="cityLocal"><ul class="cityWrapUl"><i class="icon-localHome"></i> <span class="loclaName">其它</span><select class="xzOne"><option>选择省份</option><option>浙江省</option><option>陕西省</option><option>山西省</option><option>江苏省</option></select><select><option>选择城市</option> <option>杭州市</option> <option>杭州市</option> <option>杭州市</option> <option>杭州市</option></select><select> <option>选择区域</option> <option>西湖区</option> <option>西湖区</option> <option>西湖区</option> <option>西湖区</option></select><li class="li3 cityWrapUlLi"> <div class="li-Div"> <input class="wzLocal" type="text"/> </div> <span class="localDelete">删除</span> <div class=" tuosen"> <ul class="tuosenUl"><li class="tuosenUlLi tuosenUlLi1"><span class="text">你要找的是不是</span></li><li class="tuosenUlLi"><i class="dizhi"></i><span class="text">托森科技园</span><span class="text2">杭州市滨江区</span></li><li class="tuosenUlLi"><i class="dizhi"></i><span class="text">托森科技园</span><span class="text2">杭州市滨江区</span></li><li class="tuosenUlLi"><i class="dizhi"></i><span class="text">托森科技园</span><span class="text2">杭州市滨江区</span></li><li class="tuosenUlLi"><i class="dizhi"></i><span class="text">托森科技园</span><span class="text2">杭州市滨江区</span></li><li class="tuosenUlLi"><i class="dizhi"></i><span class="text">托森科技园</span><span class="text2">杭州市滨江区</span></li></ul> </div> <i class="icon-localLocal"></i></li><div class="clear"></div></ul></li>';
+            //     $(this).parent().prev().append(strLi);
+            // });
+        });
+    </script>
+    <div class="changePhonePouup" id="changePhonePouup" style="display:none;">
+        <p class="new-phone">
+            <span>新手机号：</span>
+            <input id="new-phone-val" type="text">
+        </p>
+        <p class="new-pic">
+            <span></span>
+            <input id="personal6" type="text" style="    text-transform: uppercase;">
+            <span class="code">
+                <img id="codePersonal6" src="https://www.huakewang.com/index.php/verifycode/index/2" alt="">
+            </span>
+        </p>
+        <p class="SMS-code">
+            <span>验证码：</span>
+            <input id="SMS-code-val" type="text">
+            <a id="SMS-code-txt" href="javascript:;">获取验证码</a>
+        </p>
+        <a id="ok-change-phone" href="javascript:;">确定</a>
+    </div>
+    <div class="changePhonePouup" id="changeEmailPouup" style="display:none;">
+        <p class="new-phone">
+            <span>新邮箱账号：</span>
+            <input id="new-phone-val0" type="text">
+        </p>
+        <p class="SMS-code">
+            <span>验证码：</span>
+            <input id="SMS-code-val0" type="text">
+            <a id="SMS-code-txt0" href="javascript:;">获取验证码</a>
+        </p>
+        <a id="ok-change-phone0" href="javascript:;">确定</a>
+    </div>
+</body>
+<script type="text/javascript" src="js/personal/config.js"></script>
+<script type="text/javascript" src="js/personal/layer/layer.js"></script>
+<script type="text/javascript" src="js/personal/personal-6.js"></script>
+
+</html>

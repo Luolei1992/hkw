@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/social.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/social.js"></script>
+    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+    <!--[if lte IE 9]>
+        <script src="https://cdn.bootcss.com/es5-shim/4.5.9/es5-shim.min.js"></script>
+    <![endif]-->
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.left').load('PersonalNav.html', function() {
+                $(document).find('div.left div.yidenglu-box ul li:eq(7)').css({
+                    'background': '#f1f1f1'
+                });
+            }); //加载已登录导航
+            $('.Wrap').css({
+                'display': 'none'
+            });
+            $('.Wrap:eq(0)').css({
+                'display': 'block'
+            });
+            $('span.textWrap:eq(0)').css({
+                'border-bottom': '2px solid #0b83d8'
+            });
+            $('span.textWrap').click(function() {
+                $('span.textWrap').css({
+                    'border-bottom': 'none'
+                });
+                $(this).css({
+                    'border-bottom': '2px solid #0b83d8'
+                });
+                var indexL = $('span.textWrap').index(this);
+                $('.Wrap').css({
+                    'display': 'none'
+                });
+                $('.Wrap:eq(' + indexL + ')').css({
+                    'display': 'block'
+                });
+                // if (indexL == 2) {
+                // 	waterfall();
+                // }
+                switch (indexL) {
+                    case 0:
+                        // kkpager.selectPage(1); 
+                        ajaxUserList("user");
+                        break;
+                    case 1:
+                        // kkpager.selectPage(1); 
+                        ajaxUserList("project");
+                        break;
+                    case 2:
+                        // kkpager.selectPage(1); 
+                        ajaxUserList("works");
+                        break;
+                }
+            });
+        });
+    </script>
+
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        .ca-list {
+            padding: 0 14px;
+        }
+        
+        div.ca-container.project-ca-container.personal-ca-container .ca-inntro {
+            height: 40px;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        
+        .hkw-work-list li {
+            width: 285px;
+            height: auto;
+        }
+        
+        .container-main {
+            width: 860px;
+        }
+        
+        .ca-container {
+            height: 382px;
+            width: 860px;
+        }
+        
+        .ca-item {
+            width: 280px;
+        }
+        
+        .ca-item-main {
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+        
+        #main-body.personal div.right div.neirong {
+            width: 100%;
+        }
+        
+        div.ca-container.designer-ca-container.personal-ca-container div.ca-item {
+            width: 280px;
+        }
+        
+        .ca-item-photo img {
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            height: 90px;
+            left: 55%;
+            margin-left: -60px;
+            top: -50px;
+            width: 90px;
+        }
+        
+        .ca-star-icon,
+        .ca-location-icon,
+        .hkw-join-icon,
+        .hkw-eye-icon,
+        .hkw-comment-icon,
+        .hkw-collection-icon,
+        .hkw-dun-icon {
+            margin-right: 0;
+        }
+        
+        .ca-type span {
+            padding: 0 12px;
+            width: auto;
+        }
+        
+        .ca-inntro {
+            height: 60px;
+        }
+        
+        .ca-inntro.c-6 {
+            text-overflow: -o-ellipsis-lastline;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+        
+        .ca-mian-detailed-bottom-item {
+            margin: 0 10px;
+        }
+        
+        .ca-mian-detailed-bottom {
+            padding: 37px 0;
+        }
+        
+        #main-body.personal div.right div.neirong p.text {
+            text-indent: 0;
+        }
+        
+        .ca-mian-detailed p {
+            font-size: 12px;
+        }
+        
+        .di-bottom {
+            height: 96px;
+        }
+        
+        .ca-mian-detailed-bottom p.text1 {
+            margin-top: 0px;
+        }
+        
+        .ca-mian-detailed-bottom.ca-mian-detailed-bottom-L {
+            padding-left: 0;
+        }
+        
+        div.ca-container.designer-ca-container.personal-ca-container .ca-mian-detailed-bottom-item,
+        div.ca-container.project-ca-container.personal-ca-container .ca-mian-detailed-bottom-item {
+            margin: 0 10px;
+        }
+        
+        div.ca-container.designer-ca-container.personal-ca-container .big-blue,
+        div.ca-container.designer-ca-container.personal-ca-container .big-orange,
+        div.ca-container.designer-ca-container.personal-ca-container .big-red,
+        div.ca-container.project-ca-container.personal-ca-container .big-blue,
+        div.ca-container.project-ca-container.personal-ca-container .big-orange,
+        div.ca-container.project-ca-container.personal-ca-container .big-red {
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            height: 70px;
+            width: 70px;
+        }
+        
+        div.ca-container.designer-ca-container.personal-ca-container .ca-mian-detailed-bottom-item,
+        div.ca-container.project-ca-container.personal-ca-container .ca-mian-detailed-bottom-item {
+            font-size: 12px;
+            line-height: 22px;
+        }
+        
+        .hkw-work-list li {
+            width: 272px;
+            height: auto;
+        }
+        
+        .thumb-a {
+            width: 258px;
+            left: 7px;
+        }
+        
+        .hkw-work-bottom {
+            padding: 9px 0 0 8px;
+        }
+        
+        .hkw-work-bottom img {
+            border-radius: 50%;
+            vertical-align: top;
+        }
+        
+        .pblUl li:hover .maxImgWidth {
+            transform: scale(1.05);
+        }
+        
+        .caption h4 .sc {
+            margin-right: 10px;
+        }
+        
+        .hkw-work-img .caption {
+            bottom: 0;
+        }
+        
+        .hkw-work-list .iInspir-block {
+            z-index: 0;
+        }
+        
+        .tempNullPng {
+            width: 160px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .tempNullPng.mini {
+            width: 110px;
+            margin-top: 50px;
+        }
+        /*.ca-item.ca-item-select.ca-item-1:hover .fn-hide {
+		    display: block;
+		}*/
+        
+        .ca-item-main .fn-hide {
+            display: block;
+        }
+        
+        .ca-item.ca-item-select.ca-item-1 {
+            overflow: hidden;
+        }
+        
+        .ca-item.ca-item-select.ca-item-1:hover .fn-hide {
+            bottom: 0;
+        }
+        
+        .ca-item.ca-item-select.ca-item-1 .fn-hide {
+            bottom: -174px;
+            transition: bottom 0.2s;
+            -moz-transition: bottom 0.2s;
+            /* Firefox 4 */
+            -webkit-transition: bottom 0.2s;
+            /* Safari 和 Chrome */
+            -o-transition: bottom 0.2s;
+            /* Opera */
+        }
+        
+        #view5Project .ca-item-main h3 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 0 5%;
+        }
+        
+        #view5Work .fn-hide h4 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        #view5Work .fn-hide p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            padding: 2px 0 0 10px;
+        }
+        
+        .ca-type span {
+            margin-bottom: 5px;
+        }
+        
+        .ca-type {
+            padding-bottom: 3px;
+        }
+        
+        #mixdb .ca-inntro {
+            overflow: hidden;
+            max-height: 6em;
+        }
+        
+        #view5Work .hkw-work-bottom a {
+            width: 140px;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeader">
+            画客网致力于打造一个精确、快捷的设计服务对接平台。来画客网，遇到靠谱的好项目.　　<a href="Personal-8.html">设计师入驻</a>
+        </div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal">
+            <div class="left"></div>
+            <div class="right " style="">
+                <div class="neirong">
+                    <div class="neirong-top">
+                        <div class="divxuanxiang"><span class="textWrap">设计师</span></div>
+                        <div class="divxuanxiang"><span class="textWrap">需求</span></div>
+                        <div class="divxuanxiang"><span class="textWrap">作品</span></div>
+                    </div>
+                    <!-- box start -->
+                    <!--设计师开始-->
+                    <div class="Wrap" style="">
+                        <div id="ca-container " class="ca-container designer-ca-container personal-ca-container">
+                            <div id="mixdb" class="user-tempNull2 ca-wrapper clearfix">
+
+                                <!-- box start -->
+                                <!-- box end -->
+                                <!-- box start -->
+                                <!-- <div style="clear:both;"></div> -->
+                                <!-- box end -->
+                            </div>
+                            <script type="text/template" id="template5User">
+                                {{~it:val:eq}} {{ var val = val.user_info; }}
+                                <div class="ca-item ca-item-select ca-item-1">
+                                    <div class="ca-item-main">
+                                        <div class="ca-item-photo">
+                                            <a href="detailed.html?id={{=val.id}}" target=_blank><img src="{{= val.path ? val.path : 'http://huakewang.b0.upaiyun.com/2017/05/08/20170508203107104388.jpeg!138x138'}}" /></a>
+                                        </div>
+                                        <h3>
+                                            {{=val.nick_name ? val.nick_name : ""}}
+                                        </h3>
+                                        <p>
+                                            {{=val.sex ? val.sex : ""}}<span class="shugang">|</span>{{=val.experience ? val.experience : ""}}经验<span class="shugang">|</span>{{=val.works_count ? val.works_count : ""}} 件作品
+                                        </p>
+                                        <p>
+                                            <span class="imgGZ1"></span><i class="text">{{=val.hits_count ? val.hits_count : 0}}</i>
+                                            <span class="imgGZ2"></span><i class="text">{{=val.love_count ? val.love_count : 0}}</i>
+                                            <span class="imgGZ3"></span><i class="text">{{=val.guestbook_count ? val.guestbook_count : 0}}</i>
+                                        </p>
+                                        <div class="ca-info">
+                                            <div class="ca-star">
+                                                <span class="ca-star-icon">
+													</span>
+                                                <span class="ca-star-icon">
+													</span>
+                                                <span class="ca-star-icon">
+													</span>
+                                                <span class="ca-star-icon">
+													</span>
+                                                <span class="ca-star-icon">
+													</span> {{=val.evaluate_val ? val.evaluate_val : 0}}
+                                            </div>
+                                            <div class="ca-location">
+                                                <span class="ca-location-icon">
+													</span> {{=val.txt_address ? val.txt_address : ""}}
+                                            </div>
+                                        </div>
+                                        <div class="ca-main">
+                                            <div class="ca-inntro">
+                                                {{=val.content ? "简介："+val.content : ""}}
+                                            </div>
+                                            <div class="ca-list">
+                                                <ul>
+                                                    {{~val.userPageItemList:val2:eq2}}
+                                                    <li class="thumb h150">
+                                                        <a href="introduction.html?id={{=val2.id}}" target="_blank">
+                                                            <img src="{{=val2.path_thumb ? val2.path_thumb : 'http://huakewang.b0.upaiyun.com/2017/05/08/20170508203107104388.jpeg!138x138'}}" alt="{{=val2.keyword ? val2.keyword : ''}}" /></a>
+                                                    </li>
+                                                    {{~}} {{? val.userPageItemList.length == 0}}
+                                                    <img src="image/tempNull2.png" alt="无数据" class="tempNullPng mini"> {{?}}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ca-mian-detailed fn-hide">
+                                            <div class="ca-mian-detailed-bottom ca-mian-detailed-bottom-L  fn-clear">
+                                                <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-blue big-pub"></i>对话</div>
+                                                <div class="ca-mian-detailed-bottom-item fn-left"><a class="fn-yx" href="appointment.html?id={{=val.id}}" target=_blank><i class="big-red big-pub"></i>约见</a></div>
+                                                <div class="ca-mian-detailed-bottom-item fn-left"><a class="fn-yx" href="detailed.html?tag=2&id={{=val.id}}" target=_blank><i class="big-orange big-pub"></i>下单</a></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{~}}
+                            </script>
+                        </div>
+                    </div>
+                    <!--设计师结束-->
+                    <!-- box end -->
+                    <!--需求开始-->
+                    <div class="Wrap" style="">
+                        <div class="container-main fn-clear" style="">
+                            <!-- box start -->
+                            <div id="ba-container" class="ca-container project-ca-container">
+                                <div class="ca-wrapper project-tempNull2" id="view5Project"></div>
+                                <!-- box start -->
+                                <script type="text/template" id="template5Project">
+                                    {{~it:val:eq}} {{ var val = val.project_info; }}
+                                    <div class="ca-item ca-item-select ca-item-1">
+                                        <div class="ca-item-main">
+                                            <div class="ca-item-photo">
+                                                <a href="ProjectDetails.html?id={{=val.id}}" target=_blank>
+                                                    <img src="{{=val.user_path_thumb ? val.user_path_thumb : 'image/bigAvator1.png'}}" />
+                                                </a>
+                                            </div>
+                                            <h3>
+                                                {{=val.direction ? "找:"+val.direction : ""}}
+                                            </h3>
+                                            <p>
+                                                {{=val.nick_name ? val.nick_name : ""}}<span class="shugang">|</span>{{=val.company ? val.company : ""}}<span class="shugang">|</span> {{=val.job_name ? val.job_name : ""}}
+                                            </p>
+                                            <p><em class="c-1">
+                                                预算: ￥{{=val.budget_price ? val.budget_price : ""}}</em>
+                                            </p>
+                                            <div class="ca-info">
+                                                <div class="ca-18">
+                                                    &nbsp;&nbsp;&nbsp;
+                                                    <span class="ca-star-icon"></span>
+                                                    <span class="ca-star-icon"></span>
+                                                    <span class="ca-star-icon"></span>
+                                                    <span class="ca-star-icon"></span>
+                                                    <span class="ca-star-icon"></span>
+                                                    <span>{{=val.credit_val ? val.credit_val : ""}}</span>
+
+                                                </div>
+                                                <div class="ca-location">
+                                                    <span class="ca-location-icon">
+											</span> {{=val.txt_address ? val.txt_address : ""}}
+                                                </div>
+                                            </div>
+                                            <div class="ca-main">
+                                                <div class="ca-type">
+                                                    {{~val.keyword:val2:eq2}}
+                                                    <span>{{=val2 ? val2 : ""}}</span> {{~}}
+                                                </div>
+                                                <div class="ca-inntro c-6">{{=val.content ? val.content : ""}}</div>
+                                            </div>
+                                            <div class="ca-mian-detailed fn-hide">
+                                                <div class="ca-mian-detailed-bottom fn-clear">
+                                                    <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-blue"></i>对话
+                                                    </div>
+                                                    <a href="appointment.html?id={{=val.id ? val.id : ''}}" target=_blank>
+                                                        <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-red"></i>约见
+                                                        </div>
+                                                    </a>
+                                                    <a class="baojia" target=_blank href="yunStep.html?id={{=val.id ? val.id : ''}}">
+                                                        <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-orange"></i>报价
+                                                        </div>
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{~}}
+                                    <!-- box end -->
+                                </script>
+                            </div>
+                            <!-- box end -->
+                        </div>
+                    </div>
+                    <!--需求结束-->
+                    <!--作品开始-->
+                    <div class="Wrap">
+                        <!-- box start -->
+                        <div class="hkw-work-list fn-clear pbl" style="margin-top:20px;">
+                            <ul class="pblUl clearfix works-tempNull2" id="view5Work"></ul>
+                            <script type="text/template" id="template5Work">
+                                {{~it:val:eq}} {{ var val = val.works_info; }}
+                                <li>
+                                    <div class="iInspir-block"></div>
+                                    <div class="hkw-work-img thumb-a h_a">
+                                        <a href="introduction.html?id={{=val.id}}" target=_blank><img class="delay maxImgWidth" src="{{=val.path_thumb ? val.path_thumb : 'images/17.jpg'}}" style="" /></a>
+                                        <div class="caption fn-hide">
+                                            <h4>
+                                                {{=val.title ? val.title : ""}}
+                                                <a href="javascript:void(0)" class="sc deleteWroks" data-id="{{=val.id ? val.id : 0}}">
+                                                已收藏
+                                            </a>
+                                            </h4>
+                                            <p>{{=val.abstract ? val.abstract : ""}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="hkw-work-bottom">
+                                        <a href="detailed.html?id={{=it[eq]}}" target=_blank><img src="{{=val.user_path_thumb ? val.user_path_thumb : 'images/selec.jpeg'}}" width="16" height="16" /> {{=val.nick_name ? val.nick_name : ""}}</a>
+                                        <div class="hkw-work-bar fn-right">
+                                            <div class="hkw-work-bar-item">
+                                                <span class="hkw-join-icon">
+									</span> {{=val.hits ? val.hits : ""}}
+                                            </div>
+                                            <div class="hkw-work-bar-item">
+                                                <span class="hkw-comment-icon">
+									</span> {{=val.comment_count ? val.comment_count : ""}}
+                                            </div>
+                                            <div class="hkw-work-bar-item">
+                                                <span class="hkw-collection-icon">
+									</span> {{=val.love_count ? val.love_count : ""}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                {{~}}
+                            </script>
+                            <!-- <div style="clear:both;"></div> -->
+
+                        </div>
+                        <!-- box end -->
+                    </div>
+                    <!--作品结束-->
+
+                </div>
+            </div>
+            <div style="width:1px;height:1px; clear:both;"></div>
+            <!-- <div id="main-body-bottom" class="auto" style=" margin: 65px auto 150px auto;"></div> -->
+            <div id="kkpager"></div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <script type="text/javascript">
+        /**
+         * 调用index.js文件，初始化瀑布流和图片延时加载
+         * @param
+         * @return {[type]}
+         */
+        $(function() {
+            // $('.maxImgWidth').width(240);
+
+        });
+    </script>
+    <script>
+        function waterfall(parent, li) {
+            var $aLi = $('ul.pblUl>li'); //获取li
+            var LiW = $('ul.pblUl>li').eq(0).width() + 27; //获取li的宽度
+            // $('ul.pblUl').css({
+            // 	'width': LiW * 4
+            // });
+            var LiHArr = []; //用于存储 没列中所有块相加的高度
+
+            $('ul.pblUl').each(function() {
+                $(this).children('li').each(function(index, value) {
+                    var LiH = $(this).parent().children('li').eq(index).height();
+                    if (index < 3) {
+                        LiHArr[index] = LiH;
+                    } else {
+                        var minH = Math.min.apply(null, LiHArr);
+                        var minHIndex = $.inArray(minH, LiHArr);
+                        $(value).finish().css({
+                            'position': 'absolute',
+                            'top': minH + 35,
+                            'left': $(this).parent().children('li').eq(minHIndex).position().left
+                        });
+                        //数组 最小高元素的高 + 添加上的aLi[i]块框高
+                        LiHArr[minHIndex] += $(this).parent().children('li').eq(index).height() + 35;
+                        var maxH = Math.max.apply(null, LiHArr);
+                        var maxHIndex = $.inArray(maxH, LiHArr);
+                        $(this).parent().finish().css({
+                            'height': maxH,
+                            'margin-bottom': '80px'
+                        });
+                    }
+                });
+            });
+        }
+
+        function hoverWork() {
+            $('.hkw-work-list li').hover(function() { //热爱设计到狂热边框显示
+                //	$(this).children('.iInspir-block').finish().fadeIn(100).animate({'opacity':'1'},500);
+                $(this).find('div.caption').finish().slideDown(100);
+                $(this).children('.iInspir-block').css({
+                    'border': '1px solid #03a5ee'
+                });
+            }, function() {
+                //	$(this).children('.iInspir-block').finish().fadeOut(100).animate({'opacity':'0'});
+                $(this).find('div.caption').finish().slideUp(100);
+                $(this).children('.iInspir-block').css({
+                    'border': '1px solid transparent'
+                });
+            });
+        }
+    </script>
+</body>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/plugs/jq.page.js"></script>
+<script type="text/javascript" src="js/personal/config.js"></script>
+<script type="text/javascript" src="js/plugs/doT.min.js"></script>
+<!-- <script src="https://cdn.bootcss.com/dot/2.0.0-beta.0/doT.min.js"></script> -->
+<script type="text/javascript" src="js/personal/layer/layer.js"></script>
+<script type="text/javascript" src="js/personal/personal-5.js"></script>
+
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        云报价-报价单详情-画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/yun.css" />
+
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+            $('.loginWrap').load('new_login.html'); //加载底部
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: block;
+        }
+        
+        .city-barWrap {
+            top: 2px;
+            left: 10px;
+        }
+        
+        .ca-inntro {
+            height: 25px;
+            padding-left: 24px;
+            line-height: 25px;
+        }
+        
+        .containers {
+            background-color: #ccc;
+        }
+        
+        #main-body {
+            overflow: hidden;
+        }
+        /*表单验证css*/
+        
+        .signupFormPub .onError {
+            margin-left: 10px;
+            width: auto;
+            display: inline;
+        }
+        
+        #newsletter_topics .onError {
+            display: none;
+            margin-left: 103px;
+        }
+        
+        .signupFormPub .onError {
+            position: absolute;
+            top: 50px;
+            left: 500px;
+            display: block;
+            border: 1px solid red;
+            padding: 5px 5px;
+            border-radius: 5px;
+            background-color: #fff;
+            color: red;
+            z-index: 10000;
+        }
+        
+        #yunProForm>label {
+            position: relative;
+        }
+        
+        #yunProForm .onError {
+            top: 40px;
+            left: 80px;
+        }
+        
+        .signupFormPub .onError::after {
+            content: " ";
+            position: absolute;
+            left: 10px;
+            top: -6px;
+            width: 10px;
+            height: 10px;
+            border: red solid 1px;
+            border-left: 0;
+            border-bottom: 0;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            z-index: 1000;
+            background: #F8FDEF;
+        }
+        
+        .yun-pro .companyCallWrap {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .yun-pro #yunProForm .companyCallWrap .onError {
+            top: 56px;
+        }
+        
+        .upload-link {
+            color: #36c;
+            display: inline-block;
+            *zoom: 1;
+            *display: inline;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 2px;
+            text-decoration: none;
+        }
+        
+        .upload-link__txt {
+            z-index: 1;
+            position: relative;
+        }
+        
+        .upload-link input {
+            top: -10px;
+            z-index: 2;
+            position: absolute;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            font-size: 66px;
+        }
+        
+        .uploadFileWrap {
+            position: relative;
+            width: 718px;
+            margin: 0 auto;
+        }
+        
+        ul#uploadView li {
+            margin-top: -10px;
+        }
+        
+        #SWFUpload_0 {
+            left: 42px;
+        }
+        
+        .yun-progress {
+            margin-bottom: -355px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="main-body">
+            <!--顶部导航-->
+            <div class="yun-progress">
+            </div>
+            <div class="main-body-center">
+                <div class="yun-step-form">
+                    <!--保存后的客户信息-->
+                    <div id="proMsgListRe" class="yun-kehuMessage yunShowMessage">
+                        <h3>客户信息</h3>
+                        <ul class="yun-kehuMessageUl">
+                            <li>联系人：<span class="numShow"></span></li>
+                            <li>企业名称：<span class="numShow"></span></li>
+                            <li>手机号：<span class="numShow"></span></li>
+                            <li>邮箱：<span class="numShow"></span></li>
+                        </ul>
+                    </div>
+
+                    <!--保存后的项目信息-->
+                    <div id="proMsgEditRe" class="yun-pro yunShowPro">
+                        <h3>项目信息</h3>
+                        <div class="yun-messageShow">
+                            <div class="yun-messageShowName">
+                                <p class="yun-messageShowNameL yun-pusPosition">项目名称：</p>
+                                <p class="yun-messageShowNameR yun-pubLeft numShow"></p>
+                            </div>
+                            <div class="yun-messageShowSummary">
+                                <p class="yun-messageShowSummaryL yun-pusPosition">项目概述：</p>
+                                <pre class="yun-messageShowSummaryR yun-pubLeft numShow">
+                            </pre>
+                            </div>
+                            <div class="yun-messageShowData">
+                                <p class="yun-messageShowDataL yun-pusPosition">项目截止日期：</p>
+                                <p class="yun-messageShowDataR yun-DataLeft numShow"></p>
+                            </div>
+                            <div class="yun-messageShowAdd">
+                                <p class="yun-messageShowAddL yun-pusPosition">附件：</p>
+                                <div class="yun-messageShowAddR yun-AddLeft">
+                                    <!--保存后的文件-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--保存后的项目报价单-->
+                    <div id="tipMsgEditRe" class="yun-price yunShowPrice">
+                        <h3>项目报价单</h3>
+                        <table class="yun-tableObj" border="2">
+
+                        </table>
+                        <div class="priceTableWrap">
+
+                        </div>
+                    </div>
+
+                    <!--保存后的付款方式-->
+                    <div id="payMsgEditRe" class="yun-payWay yun-price yunShowPayWay">
+                        <h3>付款方式<i style="font-size:14px;">(单位:<span style="color: #38BFFF;">元</span>)</i></h3>
+                        <table class="yun-tablePay" border="2">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+        <!--登录-->
+        <div class="loginWrap"></div>
+    </div>
+    <script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/yunPro/yun.js"></script>
+    <script type="text/javascript" src="js/yunPro/yun_validate.js"></script>
+    <script type="text/javascript" src="js/data/yunShowDisabledXhr.js"></script>
+    <script type="text/javascript" src="js/plugs/jquery.cookie.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/social.css" />
+    <link rel="stylesheet" href="css/supply.css">
+    <link rel="stylesheet" href="css/data.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/plugs/moment.js"></script>
+    <script type="text/javascript" src="js/plugs/bootstrap-datetimepicker.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+            } else {
+
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.ewm').css({
+                'display': 'none'
+            }); //div.ewm隐藏
+            $('div.ewm:eq(0)').css({
+                'display': 'block'
+            }); //第一个div.ewm显示
+            $('div.sewm').eq(1).css('display', 'none'); //第一个sewm显示
+            //            日期选择
+            if ($(".iDate.full").length > 0) {
+                $(".iDate.full").datetimepicker({
+                    locale: "zh-cn",
+                    format: "YYYY-MM-DD a hh:mm",
+                    dayViewHeaderFormat: "YYYY年 MMMM"
+                });
+            }
+            if ($(".iDate.date").length > 0) {
+                $(".iDate.date").datetimepicker({
+                    locale: "zh-cn",
+                    format: "YYYY-MM-DD",
+                    dayViewHeaderFormat: "YYYY年 MMMM"
+                });
+            }
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1190px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye" style=""></div>
+        <div id="topHeader" class="appointment">原创作品数：17603（每一个作品都能联系到作者）　　今日新增：60</div>
+        <div class="superbox"></div>
+        <!-- 头部 end -->
+        <div class="bg-main-body">
+            <div id="main-body" class="payment-main-body" style="background:pink;">
+                <div class="paymentMain " style="position:relative;">
+                    <div class="clear" style="height:1px;width:1px;"></div>
+                    <div class="paymentMainDiv">
+                        <div class="clear" style="height:1px;width:1px;"></div>
+                        <div class="sjsxx" style="margin-top:20px;border-bottom:1px solid #ccc;">
+                            <div class="sjsxxLeft">
+                                <img src="images/touxiang1.jpg" />
+                            </div>
+                            <div class="sjsxxRight">
+                                <p class="text" style="margin-top:10px;">MiaZhang　|　女　|　10年经验　|　20件作品　</p>
+                                <p class="text" style="margin-top:5px;">
+                                    <span class="icon"></span>
+                                    <span class="icon"></span>
+                                    <span class="icon"></span>
+                                    <span class="icon"></span>
+                                    <span class="icon"></span>
+                                    <span class="text">5.0　　</span>
+                                    <img src="images/dwtb.jpg">
+                                    <span class="text">杭州市-滨江区</span>
+                                </p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="sjsxx" style="margin-top:20px; padding:10px 0; ">
+                            <span class="text" style="margin-left:10px;">服务地址　|　</span>
+                            <input class="sousuo" type="text" placeholder="默认加载当前位置 输入显示历史位置 输入关键词开始搜素" />
+                            <ul class="drop-select-options fn-hide dz payment" style="background:#fff; margin-top:15px; width:230px">
+                                <li class="li1">
+                                    <span>我的历史位置:</span>
+                                </li>
+                                <li>
+                                    <i class="wzbj"></i>
+                                    <p class="text1">托森科技园</p>
+                                    <p class="text2">杭州市滨江区</p>
+                                </li>
+                                <li>
+                                    <i class="wzbj"></i>
+                                    <p class="text1">托森科技园</p>
+                                    <p class="text2">杭州市滨江区</p>
+                                </li>
+                                <li>
+                                    <i class="wzbj"></i>
+                                    <p class="text1">托森科技园</p>
+                                    <p class="text2">杭州市滨江区</p>
+                                </li>
+                                <li>
+                                    <i class="wzbj"></i>
+                                    <p class="text1">托森科技园</p>
+                                    <p class="text2">杭州市滨江区</p>
+                                </li>
+                                <li>
+                                    <i class="wzbj"></i>
+                                    <p class="text1">托森科技园</p>
+                                    <p class="text2">杭州市滨江区</p>
+                                </li>
+                            </ul>
+                            <div class="xl"></div>
+                            <div class="ditu">
+
+                            </div>
+                        </div>
+                        <div class="sjsxx" style="padding:15px 0; border:1px solid #ccc;border-left:none;border-right:none;">
+                            <span style="margin-left:10px;">上门时间　|　
+                                <div class="iDate full">
+                                    <input type="text">
+                                    <button type="button" class="addOn"></button>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="sjsxx" style="margin-bottom:10px;">
+                            <input class="lybz" type="text" placeholder="如需特殊情况请留言" />
+                        </div>
+                        <div class="clear" style="width:1px;height:1px; margin-top:10px;"></div>
+                    </div>
+
+                    <div class="meetSend">
+                        <a href="success_senddel.html" class="linkYue">
+                            <input type="button" value="发送约见">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<form action="javascript:;" class="signupFormPub yunMainPriceForm" id="yunMainPriceForm">
+    <div class="yun-mainPrice clearfix">
+        <a href="javascript:;" class="yun-template"></a>
+        <div class="yun-mainPrice-t">
+            <input required type="text" placeholder="报价单名称">
+            <span></span>
+            <i>报价详单</i>
+        </div>
+        <div class="yun-templateFst yun_templateFst">
+            <div class="yun-part clearfix  yun_partLis">
+                <div class="yun-firstPart-T">
+                    <span class="yun-partOrder" style="padding-left:5px;">第<span class="yun-partOrderLis">1</span>部分</span>
+                    <input class="yun-details" type="text" placeholder="请尽可能写清楚内容，文件格式，数量等，以免造成不必要的麻烦！">
+                    <input class="yun-submitResult" type="text" placeholder="提交产物">
+                    <i class="yunPubPart yunPlusPart">添加</i>
+                    <i class="yunPubPart yunReducePart">删除</i>
+                </div>
+                <ol class="yunFirstOl clearfix">
+                    <li class="yunFirstOl1">序号</li>
+                    <li class="yunFirstOl2">内容</li>
+                    <li class="yunFirstOl3">内容和成果描述</li>
+                    <li class="yunFirstOl4">单位</li>
+                    <li class="yunFirstOl5">单价</li> <li class="yunFirstOl6">数量</li>
+                    <li class="yunFirstOl7">
+                        <select name="">
+                            <option>要发票(税6%)</option>
+                            <option>不要发票</option>
+                        </select>
+                    </li>
+                    <li class="yunFirstOl8">合计</li>
+                </ol>
+                <ul class="yunFirstUl clearfix">
+                    <li>
+                        <input class="yun-order" value="1" disabled>
+                    </li>
+                    <li>
+                        <input class="yun-inputContent" type="text">
+                    </li>
+                    <li>
+                        <input class="yun-inputDetails" type="text">
+                    </li>
+                    <li>
+                        <input class="yun-inputUnit" type="text">
+                    </li>
+                    <li>
+                        <input class="yun-inputPrice" onkeyup="clearNoNum(this)" type="text">
+                    </li>
+                    <li class="yunPlusNumberWrap">
+                        <input class="yun-inputNum" onkeyup="clearNoNumInt(this)" type="text" value="1">
+                        <i class="yunChangeNumber yunReduceNumber">-</i>
+                        <i class="yunChangeNumber yunPlusNumber">+</i>
+                    </li>
+                    <li>
+                        <input class="yun-rate" value="0.00" disabled>
+                    </li>
+                    <li>
+                        <input class="yun-total" value="0.00" disabled>
+                    </li>
+                    <li class="yunIconRight">
+                        <i class="yunD" title="下移"></i>
+                        <i class="yunU" title="上移"></i>
+                        <i class="yunC" title="删除"></i>
+                        <i class="yunP" title="添加"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="yun-moneyTotal clearfix">
+                <span class="fr yun-totalColor">￥<i>0.00</i>元</span>
+                <span class="fr">项目总计 : &nbsp;</span>
+            </div>
+            <div class="yun-remark">
+                <textarea name="mark" rows="1" style="height:18px;" autoHeight="true" placeholder="留言备注: 对本次报价的额外说明，建议填写双方达成一致的内容"></textarea>
+            </div>
+        </div>
+    </div>
+</form>

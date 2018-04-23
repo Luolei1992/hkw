@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        测试用的
+    </title>
+    <meta content="中国设计网,设计师,设计之家,设计,设计公司,设计师招聘,高级设计师,设计师简历,设计网,设计中国,画客网" name="keywords">
+    <meta content="中国设计网站、设计师之家-画客网：汇集中国高级设计师和设计公司，提供本地信息传播和互动的设计网平台；在画客，您就是设计大咖！找平面设计、字体设计、标志设计、室内设计、网页设计、包装设计、服装设计人才；选界面设计师、交互设计师、UI设计师、网页设计师，就来画客网！" name="description">
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font/font.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+            } else {
+
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.left').load('PersonalNav.html', function() {
+                $(document).find('div.left div.yidenglu-box ul li:eq(4)').css({
+                    'background': '#f1f1f1'
+                }); //	li:eq(4)背景颜色为f1f1f1
+            }); //加载已登录导航
+            $('.footer_on').load('bottom.html'); //加载底部		
+        });
+    </script>
+    <style>
+        .main {
+            height: 1000px;
+            width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body style="" class="p11">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div class="main">
+            <div class="popup-city animate-zoomOut"><i class="icon-closeB Btn city-close"></i>
+                <div class="scall"><a class="Btn" href="https://www.huakewang.com/user/index/152.html">全部</a></div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th colspan="2" class="sctilte">请选择所在城市</th>
+                        </tr>
+                        <tr>
+                            <td class="sc-left">主要城市</td>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="cityOrange">A</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E9%9E%8D%E5%B1%B1.html">鞍山</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="cityOrange">L</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%85%B0%E5%B7%9E.html">兰州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%BB%8A%E5%9D%8A.html">廊坊</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E4%B8%B4%E6%B2%82.html">临沂</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B4%9B%E9%98%B3.html">洛阳</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E8%BF%9E%E4%BA%91%E6%B8%AF.html">连云港</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%9F%B3%E5%B7%9E.html">柳州</a></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange">B</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%8C%97%E4%BA%AC.html">北京</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%8C%85%E5%A4%B4.html">包头</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E4%BF%9D%E5%AE%9A.html">保定</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="cityOrange">M</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E7%BB%B5%E9%98%B3.html">绵阳</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange">C</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E9%95%BF%E6%98%A5.html">长春</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E9%95%BF%E6%B2%99.html">长沙</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%88%90%E9%83%BD.html">成都</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E9%87%8D%E5%BA%86.html">重庆</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%B8%B8%E5%B7%9E.html">常州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%B8%B8%E5%BE%B7.html">常德</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%B8%B8%E7%86%9F.html">常熟</a></td>
+                                            <td class="cityOrange">N</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%8D%97%E4%BA%AC.html">南京</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%AE%81%E6%B3%A2.html">宁波</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%8D%97%E6%98%8C.html">南昌</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%8D%97%E9%80%9A.html">南通</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%8D%97%E5%AE%81.html">南宁</a></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange">D</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%A4%A7%E8%BF%9E.html">大连</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E4%B8%9C%E8%8E%9E.html">东莞</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E4%B8%B9%E4%B8%9C.html">丹东</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%A4%A7%E5%BA%86.html">大庆</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="cityOrange">Q</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E9%9D%92%E5%B2%9B.html">青岛</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B3%89%E5%B7%9E.html">泉州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E7%A7%A6%E7%9A%87%E5%B2%9B.html">秦皇岛</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B8%85%E8%BF%9C.html">清远</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange">E</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E9%84%82%E5%B0%94%E5%A4%9A%E6%96%AF.html">鄂尔多斯</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="cityOrange">S</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E4%B8%8A%E6%B5%B7.html">上海</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B7%B1%E5%9C%B3.html">深圳</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B2%88%E9%98%B3.html">沈阳</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E7%9F%B3%E5%AE%B6%E5%BA%84.html">石家庄</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E8%8B%8F%E5%B7%9E.html">苏州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E4%B8%89%E4%BA%9A.html">三亚</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E7%BB%8D%E5%85%B4.html">绍兴</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange">F</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E7%A6%8F%E5%B7%9E.html">福州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E4%BD%9B%E5%B1%B1.html">佛山</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%8A%9A%E9%A1%BA.html">抚顺</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="cityOrange"> </td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%B1%95%E5%A4%B4.html">汕头</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E9%A1%BA%E5%BE%B7.html">顺德</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange">G</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%B9%BF%E5%B7%9E.html">广州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E8%B4%B5%E9%98%B3.html">贵阳</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E8%B5%A3%E5%B7%9E.html">赣州</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="cityOrange">T</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%A4%A9%E6%B4%A5.html">天津</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%A4%AA%E5%8E%9F.html">太原</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%8F%B0%E5%B7%9E.html">台州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%94%90%E5%B1%B1.html">唐山</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B3%B0%E5%B7%9E.html">泰州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E9%93%81%E5%B2%AD.html">铁岭</a></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange">H</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%93%88%E5%B0%94%E6%BB%A8.html">哈尔滨</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%9D%AD%E5%B7%9E.html">杭州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%90%88%E8%82%A5.html">合肥</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B5%B7%E5%8F%A3.html">海口</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%91%BC%E5%92%8C%E6%B5%A9%E7%89%B9.html">呼和浩特</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%83%A0%E5%B7%9E.html">惠州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E8%A1%A1%E9%98%B3.html">衡阳</a></td>
+                                            <td class="cityOrange">W</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%AD%A6%E6%B1%89.html">武汉</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%97%A0%E9%94%A1.html">无锡</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B8%A9%E5%B7%9E.html">温州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90.html">乌鲁木齐</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E8%8A%9C%E6%B9%96.html">芜湖</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%BD%8D%E5%9D%8A.html">潍坊</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%A8%81%E6%B5%B7.html">威海</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange"> </td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%B7%AE%E5%AE%89.html">淮安</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B9%96%E5%B7%9E.html">湖州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E9%82%AF%E9%83%B8.html">邯郸</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="cityOrange">X</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E8%A5%BF%E5%AE%89.html">西安</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%8E%A6%E9%97%A8.html">厦门</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%BE%90%E5%B7%9E.html">徐州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E8%A5%84%E9%98%B3.html">襄阳</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B9%98%E6%BD%AD.html">湘潭</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%92%B8%E9%98%B3.html">咸阳</a></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange">J</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%B5%8E%E5%8D%97.html">济南</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%98%89%E5%85%B4.html">嘉兴</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E9%87%91%E5%8D%8E.html">金华</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%90%89%E6%9E%97.html">吉林</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B1%9F%E9%97%A8.html">江门</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E8%8D%86%E5%B7%9E.html">荆州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B1%9F%E9%98%B4.html">江阴</a></td>
+                                            <td class="cityOrange">Y</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E7%83%9F%E5%8F%B0.html">烟台</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%89%AC%E5%B7%9E.html">扬州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%AE%9C%E6%98%8C.html">宜昌</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E7%9B%90%E5%9F%8E.html">盐城</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E4%B9%89%E4%B9%8C.html">义乌</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E8%90%A5%E5%8F%A3.html">营口</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E9%93%B6%E5%B7%9D.html">银川</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange"> </td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%B5%8E%E5%AE%81.html">济宁</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E4%B9%9D%E6%B1%9F.html">九江</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="cityOrange">Z</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%BC%B3%E5%B7%9E.html">漳州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E9%83%91%E5%B7%9E.html">郑州</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E4%B8%AD%E5%B1%B1.html">中山</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E7%8F%A0%E6%B5%B7.html">珠海</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E9%95%87%E6%B1%9F.html">镇江</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%A0%AA%E6%B4%B2.html">株洲</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B9%9B%E6%B1%9F.html">湛江</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange">K</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%98%86%E6%98%8E.html">昆明</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%98%86%E5%B1%B1.html">昆山</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="cityOrange"> </td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E8%82%87%E5%BA%86.html">肇庆</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%BC%A0%E5%AE%B6%E6%B8%AF.html">张家港</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B7%84%E5%8D%9A.html">淄博</a></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sc-left">所有省份</td>
+                            <td>
+                                <table class="province">
+                                    <tbody>
+                                        <tr>
+                                            <td class="cityOrange">A-G</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%AE%89%E5%BE%BD.html">安徽省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%BE%B3%E9%97%A8.html">澳门</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E7%A6%8F%E5%BB%BA.html">福建省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E7%94%98%E8%82%83.html">甘肃省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%B9%BF%E4%B8%9C.html">广东省(除深圳)</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%B9%BF%E8%A5%BF.html">广西</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E8%B4%B5%E5%B7%9E.html">贵州省</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange">H-J</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%B5%B7%E5%8D%97.html">海南省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%B2%B3%E5%8C%97.html">河北省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%B2%B3%E5%8D%97.html">河南省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E9%BB%91%E9%BE%99%E6%B1%9F.html">黑龙江省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%B9%96%E5%8C%97.html">湖北省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%B9%96%E5%8D%97.html">湖南省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%90%89%E6%9E%97.html">吉林省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%B1%9F%E8%8B%8F.html">江苏省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E6%B1%9F%E8%A5%BF.html">江西省</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange">L-S</td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E8%BE%BD%E5%AE%81.html">辽宁省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%86%85%E8%92%99%E5%8F%A4.html">内蒙古</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%AE%81%E5%A4%8F.html">宁夏</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E9%9D%92%E6%B5%B7.html">青海省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%B1%B1%E4%B8%9C.html">山东省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%B1%B1%E8%A5%BF.html">山西省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E9%99%95%E8%A5%BF.html">陕西省</a></td>
+                                            <td><a href="https://www.huakewang.com/user/index/152/1/all/%E5%9B%9B%E5%B7%9D.html">四川省</a></td>
+                                            <td colspan="1"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cityOrange">T-Z</td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E5%8F%B0%E6%B9%BE.html">台湾</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E8%A5%BF%E8%97%8F.html">西藏</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E9%A6%99%E6%B8%AF.html">香港</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%96%B0%E7%96%86.html">新疆</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E4%BA%91%E5%8D%97.html">云南省</a></td>
+                                            <td><a href="http://www.huakewang.com/user/index/152/1/all/%E6%B5%99%E6%B1%9F.html">浙江省</a></td>
+                                            <td colspan="3"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sc-left">其他国家</td>
+                            <td class="other-country"><a href="http://www.huakewang.com/user/index/152/1/all/%E7%BE%8E%E5%9B%BD.html">美国</a><a href="http://www.huakewang.com/user/index/152/1/all/%E8%8B%B1%E5%9B%BD.html">英国</a><a href="http://www.huakewang.com/user/index/152/1/all/%E4%BF%84%E7%BD%97%E6%96%AF.html">俄罗斯</a>
+                                <a href="http://www.huakewang.com/user/index/152/1/all/%E4%B8%B9%E9%BA%A6.html">丹麦</a><a href="http://www.huakewang.com/user/index/152/1/all/%E5%8D%B0%E5%BA%A6.html">印度</a><a href="http://www.huakewang.com/user/index/152/1/all/%E6%84%8F%E5%A4%A7%E5%88%A9.html">意大利</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+        $('.city-close').click(function(event) {
+            $('.popup-city').addClass('animate-zoomIn');
+            setTimeout(function() {
+                $('.popup-city').remove();
+            }, 300)
+        });
+    </script>
+</body>
+
+</html>

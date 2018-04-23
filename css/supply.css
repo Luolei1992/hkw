@@ -1,0 +1,320 @@
+/*约见页面补充样式*/
+.waringColor {
+    color: red;
+}
+.meetTip .wxts {
+    display: inline-block;
+}
+.meetTip,.yueDing,.wxts {
+    padding-left:23px;
+}
+.meetTip {
+    margin:20px 0 15px 0;
+    position: relative;
+}
+.yueDing {
+    display: none;
+}
+.meetTip .seeYou {
+    width: 100px;
+    height: 38px;
+    padding-left:10px;
+    border: 1px solid #ccc;
+}
+.meetTip ul {
+    width: 110px;
+    border:1px solid #ccc;
+    margin-left:83px;
+    background-color: #fff;
+    display: none;
+    z-index: 999;
+    position: absolute;
+    top: 39px;
+}
+.meetTip ul li {
+    height: 25px;
+    line-height:25px;
+    padding-left: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.meetTip ul li:hover {
+    background-color: #03A5EE;
+    color: #fff;
+}
+.meetTip ul li.srje {
+    border-bottom:0;
+}
+.meetTip .seeAfter {
+    background: url("../images/yuejiansanjiao.png") no-repeat;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left:198px;
+    top:10px;
+    background-size: 20px 20px;
+}
+.meetSend {
+    text-align: center;
+}
+.meetSend input {
+    height: 40px;
+    padding:0px 25px;
+    background-color: #33C8FF;
+    margin:20px auto 40px;
+    font-size:14px;
+    letter-spacing:1px;
+    border:1px solid #33C8FF;
+    color: #fff;
+    line-height:40px;
+    border-radius: 5px;
+}
+.meetSend input:hover {
+    background-color: #03A5EE;
+}
+.fkfsWrap {
+    position: fixed;
+    z-index:1000;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    display: none;
+}
+.paymentMainDiv.fkfs {
+    width: 725px;
+    height: 370px;
+    z-index:1001;
+    display: none;
+    position: fixed;
+    top:50%;
+    left: 50%;
+    margin-top:-185px;
+    margin-left:-312px;
+}
+div.paymentMainDiv div.ewm div.ewmLeft {
+    float: left;
+    margin: 30px 0 0 30px;
+}
+.ewm .shuXian {
+    float: left;
+    height:245px;
+    width: 1px;
+    background-color: #ccc;
+    margin:10px 0 0 20px;
+}
+div.paymentMainDiv div.ewm {
+    padding-top: 25px;
+}
+.yuejianClose {
+    width:20px;
+    height: 20px;
+    background: url("../images/yuejianClose.png") no-repeat;
+    background-size: 20px 20px;
+    position: absolute;
+    top:10px;
+    right:10px;
+}
+.ewm .TzLink {
+    color: #1BA9EB;
+    margin-top:20px;
+    font-size:14px;
+    display: block;
+}
+.text {
+    font-size:14px;
+}
+div.paymentMainDiv div.ewm div.dqye {
+    float: left;
+     width: auto;
+     height: auto;
+     margin: 22px 0 0 20px;
+    position: relative;
+}
+div.paymentMainDiv div.ewm div.dqye p {
+    color: red;
+}
+div.paymentMainDiv div.ewm div.dqye span.qrzf {
+    margin-top:40px;
+}
+div.smrq div.wccz p.text {
+    width:auto;
+}
+div.smrq div.wccz p.blueColor {
+    color: #08A1EF;
+    padding-top:8px;
+}
+div.wccz {
+    padding-top:16px;
+}
+.smTop {
+    font-weight:800;
+}
+.sfyz {
+    font-weight: 800;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #ccc;
+    padding-left: 20px;
+    font-size: 18px;
+}
+.qrzfYm {
+    height:330px !important;
+    width: 460px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    left: 50%;
+    margin-left: -230px;
+    z-index: 400;
+    display: none;
+}
+.fkfsForm {
+    font-size:14px;
+    padding:20px 0 0 30px;
+}
+.fkfsForm div input {
+    height: 32px;
+    margin-bottom:20px;
+    padding: 0 10px;
+}
+.fkfsForm div .fkfsPub {
+    width: 290px;
+}
+.fkfsForm div .fkfsYzm {
+    margin-left:88px;
+    width:170px;
+}
+.fkfsForm div i {
+    color: #08A1EF;
+    margin-left:24px;
+}
+.fkfsForm .fkfsBtn {
+    padding:10px 30px;
+    background-color: #ccc;
+    border-radius: 5px;
+    border:1px solid #ccc;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size:14px;
+}
+.fkfsForm .fkfsBtn:hover {
+    background-color: #03A5EE;
+}
+.fkfsForm .fkfsRequire {
+    margin-left:88px;
+    margin-top:25px;
+}
+.fkfsForm .fkfsSure {
+    margin-left:90px;
+    background-color: #03A5EE;
+}
+.success_send {
+    width: 400px;
+    height: 200px;
+    position: fixed;
+    top:50%;
+    left:50%;
+    margin-left:-200px;
+    margin-top:-100px;
+    text-align: center;
+    background-color: #fff;
+    border:1px solid #CCCCCC;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    z-index:1000;
+    display: none;
+}
+.success_send_wrap {
+    width:100%;
+    height:100%;
+    position: fixed;
+    z-index:999;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+}
+.success_send_show{
+    display: block;
+}
+.success_send .success_send_message p {
+    font-size:18px;
+    margin: 48px auto 40px;
+}
+.success_send .success_send_message p span {
+    width: 31px;
+    height: 31px;
+    display: inline-block;
+    margin-right:10px;
+    vertical-align: middle;
+    background: url("../images/success_send.png") no-repeat;
+}
+.success_send .success_send_btn a {
+    width: 150px;
+    padding:10px 0;
+    display: inline-block;
+    border: 1px solid #A5A5A5;
+    font-size: 14px;
+    background: #fff;
+    letter-spacing: 1px;
+    margin:0 20px;
+    border-radius: 5px;
+}
+.success_send .success_send_btn a:hover {
+    background-color: #03A5EE;
+    color: #fff;
+}
+div.paymentMainDiv div.sjsxx input.sousuo {
+    margin-right:170px;
+}
+textarea.lybz {
+    padding:10px;
+    width: 1098px;
+    resize: none;
+}
+
+#main-body.personal div.right div.neirong .fkfsWrap  .paymentMainDiv li span {
+    display: inline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

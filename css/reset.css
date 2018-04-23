@@ -1,0 +1,168 @@
+@charset "utf-8";
+/* css reset www.admin10000.com */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+.containers #header {
+}
+
+body {
+    /*background: #f5f5f5;*/
+    color: #555;
+    font-family: 'Microsoft YaHei', Verdana, Arial, Helvetica, sans-serif;
+}
+
+td,
+th,
+caption {
+    font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+i,
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+a {
+    color: #555;
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus,
+input[type=button],
+input[type=submit] {
+    outline: none;
+}
+
+img {
+    border: none;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+input,
+textarea,
+select,
+button {
+    font-size: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/********引入字体图标库**********/
+
+@font-face {font-family: 'hkfont';
+    src: url('./font/iconfont.eot'); /* IE9*/
+    src: url('./font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('./font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('./font/iconfont.svg#hkfont') format('svg'); /* iOS 4.1- */
+}
+.hkfont{
+    font-family:"hkfont" !important;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/********引入新的字体图标库开始**********/
+
+@font-face {font-family: 'iconfontNew';
+    src: url('./fontNew/iconfont.eot'); /* IE9*/
+    src: url('./fontNew/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./fontNew/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('./fontNew/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('./fontNew/iconfont.svg#hkfont') format('svg'); /* iOS 4.1- */
+}
+.iconfontNew{
+    font-family:"iconfontNew" !important;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+/********引入新的字体图标库结束**********/
+/*********清除浮动*********/
+
+.clearfix:after{ 
+    content: "."; 
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+    font-size:0;
+} 
+.clearfix{ 
+    *zoom:1;
+}
+
+.ellipsis{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.ellipsis-lines{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}

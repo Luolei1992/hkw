@@ -1,0 +1,475 @@
+<link rel="stylesheet" href="css/fonts/iconfont.css">
+<link rel="stylesheet" type="text/css" href="css/fastDesign.css">
+<script type="text/javascript">
+    var urlLocalhost = "https://www.huakewang.com/";
+    var newhuakwang = "hkw_newapi/";
+    $(function() {
+        $('#header div#nav div.yidenglu').mouseenter(function() { //已登录显示
+            //            $('#header.header-neiye div.yidenglu-box').toggle();
+            $('div.pub-wrap.fn-hide:eq(1)').css({
+                'display': 'none'
+            });
+            $('div.pub-wrap.fn-hide:eq(0)').css({
+                'display': 'none'
+            });
+        });
+        $('#header div.yidenglu-box').mouseleave(function() {
+            //            $(this).css('display','none');
+        });
+        var ddd_show = [0, 0, 0, 0];
+        $('#nav a.but-fb').mouseover(function() { //发布框显示
+            ddd_show[0] = 1;
+            ddd_show[1] = 0;
+        });
+        $('#nav a.but-fb').mouseout(function() { //发布框显示
+            ddd_show[0] = 0;
+            ddd_show[1] = 1;
+        });
+        $('div.pub-wrap.fn-hide:eq(0)').on('mouseenter', function() {
+            ddd_show[2] = 1;
+            ddd_show[3] = 0;
+        });
+        $('div.pub-wrap.fn-hide:eq(0)').on('mouseleave', function() {
+            ddd_show[2] = 0;
+            ddd_show[3] = 1;
+        });
+        var pub_wrap_show = setInterval(function() {
+            var ddd_txt = ddd_show.join("_");
+            switch (ddd_txt) {
+                case "1_0_0_1":
+                    {
+                        $('div.pub-wrap.fn-hide:eq(0)').css({
+                            'display': 'block'
+                        });
+                    }
+                    break;
+                case "0_1_0_1":
+                    {
+                        $('div.pub-wrap.fn-hide:eq(0)').css({
+                            'display': 'none'
+                        });
+                    }
+                    break;
+                case "0_1_1_0":
+                    {
+                        $('div.pub-wrap.fn-hide:eq(0)').css({
+                            'display': 'block'
+                        });
+                    }
+                    break;
+                default:
+                    {
+
+                    }
+                    break;
+            }
+        }, 800);
+        $('#nav a.but-dl').mouseover(function() { //发布框显示
+            $('div.pub-wrap.fn-hide:eq(0)').css({
+                'display': 'block'
+            });
+            $('div.pub-wrap.fn-hide:eq(0)').on('mouseout', function() {
+                $('div.pub-wrap.fn-hide:eq(0)').css({
+                    'display': 'none'
+                });
+            });
+        });
+        $('#nav a.but-dl').mouseout(function() {
+            var nav_box = setTimeout(function() {
+                $('div.pub-wrap.fn-hide:eq(0)').css({
+                    'display': 'none'
+                });
+            }, 800);
+
+            $('div.pub-wrap.fn-hide:eq(0)').on('mouseover', function() {
+                clearTimeout(nav_box);
+                $('div.pub-wrap.fn-hide:eq(0)').css({
+                    'display': 'block'
+                });
+            });
+        });
+        //	鼠标移动到头像的时候显示,移开的时候隐藏
+        var par = false;
+        $('div.yidenglu').hover(function() {
+            $('div.logined-con').css({
+                'display': 'block'
+            });
+        }, function() {
+            setTimeout(function() {
+                if (!par) {
+                    $('div.logined-con').css({
+                        'display': 'none'
+                    });
+                }
+            }, 200)
+        });
+        $('div.logined-con').hover(function() {
+            $('div.logined-con').css({
+                'display': 'block'
+            });
+            par = true;
+        }, function() {
+            $('div.logined-con').css({
+                'display': 'none'
+            });
+            par = false;
+        });
+        $(".navLogo-wrap").mouseenter(function() {
+            $(".navLogo-select").css("display", "block");
+        });
+        $(".navLogo-wrap").mouseleave(function() {
+            $(".navLogo-select").css("display", "none");
+        });
+        $(".navLogo-select").mouseenter(function() {
+            $(this).css("display", "block");
+        });
+        $(".navLogo-select").mouseleave(function() {
+            $(this).css("display", "none");
+        });
+        /*设计师多选下拉列表*/
+        $(".navLogo-select-list li a").click(function() {
+            if (!$(this).hasClass("current-style") && ($(".current-style").length < 5)) {
+                $(this).addClass("current-style");
+            } else {
+                $(this).removeClass("current-style");
+            };
+            if ($(".navLogo-select-list li a").hasClass("current-style")) {
+                $(".makesure").css("background-color", "#03A5EE");
+                $(".makesure").click(function() {
+                    var str = '';
+                    $(".current-style").each(function(idx) {
+                        if (idx < $(".current-style").length - 1) {
+                            str += $(this).html() + '、';
+                        } else {
+                            str += $(this).html();
+                        };
+                    });
+                    window.location.href = ("designer.html?p=" + str);
+                })
+            } else {
+                $(".makesure").css("background-color", "#E8E8E8");
+            };
+        });
+        if ($(".navLogo-select .navLogo-select-t ul li.navLogo-select-lis").length > 8) {
+            $(".navLogo-select").css({
+                "overflow-x": "visible",
+                "padding-bottom": "5px"
+            });
+        };
+    });
+    function go_login() {
+        $("#new_login").css("display", "block");
+        $(".new_login_wrap").css({
+            'display': 'block'
+        });
+    };
+    function closed_login() {
+        $("#new_login").css('display', 'none');
+        $(".new_login_wrap").css('display', 'none');
+    };
+</script>
+<style>
+    #isDesigner {
+        width: 16px;
+        height: 18px;
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 75px;
+        z-index: 1000;
+        background: url(images/isRZ.png) no-repeat;
+    }
+    .logined-con .resign {
+        position: absolute;
+        top: 0px;
+        right: 26px;
+        list-style-type: none;
+        color: #555;
+    }
+    .logined-con .s1 .person-wrp {
+        position: relative;
+    }
+    .logined-con .person-wrp .person {
+        text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+    .logined-con img {
+        left: 15px;
+    }
+    .logined-con .s1 .person-wrp {
+        padding-left:95px;
+    }
+</style>
+<div id="nav">
+    <div class="navLogo-select">
+        <div class="navLogo-select-t">
+            <ul class="navLogo-select-ul">
+
+            </ul>
+        </div>
+        <div class="navLogo-select-m">
+            <div class="navLogo-select-line"></div>
+        </div>
+        <div class="navLogo-select-b">
+            <a href="javascript:;" class="makesure">确认搜索</a>
+            <a href="javascript:;" class="cannotfind">找不到,请告诉我们</a>
+        </div>
+    </div>
+    <a class="hkw-header-nav-logo-img" href="https://www.huakewang.com"></a>
+    <ul class="hkw-header-nav-ul hkw_header_nav_ul">
+        <a href="designer.html">
+            <li class="navLogo-wrap headnav1">
+                <i class="navLogo"></i>设计师
+            </li>
+        </a>
+        <a href="works.html">
+            <li class="headnav2">作品库</li>
+        </a>
+        <span class="lis3">|</span>
+        <a href="project.html">
+            <li class="headnav3">项目</li>
+        </a>
+        <a href="javascript:void(0);">
+            <li class="headnav4">设计提速
+                <ul class="headnav4_1 clearfix" style="display:none;">
+                    <li><a href="fastdesign.html" target="_blank">常用资源</a></li>
+                    <li><a href="https://www.huakewang.com/link.html" target="_blank">设计网址</a></li>
+                    <li><a href="https://www.huakewang.com/cool/index/140.html" target="_blank">酷站加油</a></li>
+                    <li><a href="yun.html" target="_blank">云报价</a></li>
+                    <li><a href="javascript:void(0);" target="_blank">画客APP</a></li>
+                </ul>
+            </li>
+            <i class="new"></i>
+        </a>
+    </ul>
+    <!--已登录 -->
+    <a href="MyDetailed.html">
+        <div class="yidenglu" style="margin-top:20px;">
+            <div class="bk">
+                <img>
+            </div>
+            <span class="sp1" style="width: 85px;text-align: center;line-height: 22px;margin-left: -5px;"></span>
+        </div>
+    </a>
+    <div class="logined-con animate-fadeInTop" style="display: none">
+        <div class="arrow-up"></div>
+        <div class="arrow-up-border"></div>
+        <div class="lgd-rowbox s1">
+            <div class="person-wrp">
+                <span id="isDesigner"></span>
+                <a href="#" class="resign">退出</a>
+                <a href="Personal-1.html"><img src="" alt="头像"></a>
+                <a href="Personal-1.html">
+                    <h3></h3>
+                </a>
+                <p class="person"><span></span></p>
+                <p class="phonenum"></p>
+                <p class="qq">&nbsp;&nbsp;QQ:<span class="qqnum"></span></p>
+            </div>
+        </div>
+
+        <div class="lgd-rowbox s2">
+            <ul class="clearfix">
+                <li>
+                    <a href="Personal-4.html">
+                        <p class="num"><b>0</b></p>
+                        <p class="name remain">余额</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="Personal-2.html">
+                        <p class="num"><b>0</b>/<b>0</b></p>
+                        <p class="name order">订单</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="Personal-9.html">
+                        <p class="num"><b>0</b>/<b>0</b></p>
+                        <p class="name offer">报价</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="Personal-8.html">
+                        <p class="num"><b>0</b>/<b>0</b></p>
+                        <p class="name offer">约见</p>
+                    </a>
+                </li>
+            </ul>
+            <div class="check-mes clearfix">
+                <p class="info">设计师入住&nbsp;&nbsp;&nbsp;&rarr;</p>
+                <div class="checked">
+                    <a href="selfpage.html" class="checked-pre">
+                        <p class="wrp">认证</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="lgd-rowbox s3">
+            <ul class="clearfix">
+                <li>
+                    <a href="javascript:;" target="_blank">
+                        <i class="iconfont11 icon-icon"></i>
+                        <p class="item collect">我的主页<span class="detail"></span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="Personal-1.html" target="_blank">
+                        <i class="iconfont11 icon-wode"></i>
+                        <p class="item message">个人中心<span class="detail"></span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="Personal-x.html" target="_blank">
+                        <i class="iconfont11 icon-iconfontdialog"></i>
+                        <!--class:审核中->checking;未通过->unpass;已认证->identity-->
+                        <p class="item login">我的对话 (<span id="head-webim-msg-icon" class="detail unpass"></span>)</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="Personal-5.html" target="_blank">
+                        <i class="iconfont11 icon-xihuan"></i>
+                        <p class="item personal">我的关注<span class="detail"></span></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <a href="checkin.html"></a>
+    </div>
+
+    <!--登录弹出框 end-->
+    <a class="but-fb" href="#"></a>
+    <!--免费发布弹出框 start-->
+    <div class="pub-wrap animate-fadeInTop fn-hide" style=";">
+        <i class="caret">
+        </i>
+        <div class="pub-box">
+            <ul class="hkw-fix">
+                <li>
+                    <a href="publish.html">
+                        <i class="iconfont iconfont1"></i> 发布需求
+                    </a>
+                </li>
+                <li>
+                    <a href="PublishedWork.html">
+                        <i class="iconfont iconfont2"></i> 上传作品
+                    </a>
+                </li>
+                <li>
+                    <a href="yunStep.html">
+                        <i class="iconfont iconfont3"></i> 发送报价
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--免费发布弹出框 end -->
+    <div class="hkw-header-nav-search">
+        <input class="hkw-header-search-input" type="text">
+        <a href="javascript:;">
+            <input class="hkw-header-search-but" type="button" value="">
+        </a>
+    </div>
+    <div style="clear:both;width:1px;"></div>
+</div>
+<div id="HuanXinInit"></div>
+<script type="text/javascript">
+    var urlLocalhost = "https://www.huakewang.com/";
+    var newhuakwang = "hkw_newapi/";
+    if (document.addEventListener && !(navigator.appName == "Microsoft Internet Explorer" && (navigator.appVersion.match(/9./i) == "9." || navigator.appVersion.match(/8./i) == "8."))) {
+        $(function() {
+            $("#HuanXinInit").append('<script src="./js/huanxin/sdk/webim.config.js"><\/script>');
+            $("#HuanXinInit").append('<script src="./js/huanxin/sdk/strophe-1.2.8.min.js"><\/script>');
+            $("#HuanXinInit").append('<script src="./js/huanxin/sdk/websdk-1.4.11.js"><\/script>');
+            if (!~window.location.href.indexOf("Personal-x.html")) {
+                $("#HuanXinInit").append('<script src="./js/huanxin/newHuanXin.js"><\/script>');
+            };
+            if (~window.location.href.indexOf("Personal-x.html")) {
+                $("#HuanXinInit").append('<script src="./demo/javascript/dist/demo-1.4.11.js"><\/script>');
+            };
+        });
+    };
+    $('.resign:first').on('click', function() {
+        $.ajax({
+            url: urlLocalhost+newhuakwang+ "logout",
+            type: "post",
+            dataType: "json",
+            xhrFields:{
+                withCredentials:true
+            },
+            crossDomain: true,
+            data: ''
+        }).done(function (data) {
+            if(data.success){
+                $.cookie('user_id', null, { path: '/', expires: -1 });
+                $.cookie('lat', null, { path: '/', expires: -1 });
+                $.cookie('lng', null, { path: '/', expires: -1 });
+                $.cookie('avatar', null, { path: '/', expires: -1 });
+                $.cookie('nick_name', null, { path: '/', expires: -1 });
+                $.cookie('mobile', null, { path: '/', expires: -1 });
+                $.cookie('hxid', null, { path: '/', expires: -1 });
+                $.cookie('as', null, { path: '/', expires: -1 });
+                window.location.reload();
+            };
+        });
+    });
+    $('.but-fb').hover(function() {
+        $('.pub-wrap').css('display', 'block');
+    });
+    (function() {
+        var _id = $.cookie('user_id');
+        $.ajax({
+            url: urlLocalhost + newhuakwang + "get_self_info/" + _id,
+            type: "post",
+            dataType: "json",
+            data: {
+                user_id: _id
+            }
+        }).done(function(data) {
+            if (data.success) {
+                var _user_data = data.data;
+                var _nick_name = _user_data.nick_name;
+                var _n_n = _nick_name.slice(0, 6);
+                if (_nick_name.length > 6) {
+                    $('span.sp1:first').html(_n_n);
+                    $('.person-wrp:first').find('h3:eq(0)').html(_n_n);
+                } else {
+                    $('span.sp1:first').html(_nick_name);
+                    $('.person-wrp:first').find('h3:eq(0)').html(_nick_name);
+                };
+                var _touxiang_path = _user_data.path ? (_user_data.path.indexOf("upaiyun") != -1 ? _user_data.path + '!138x138' : _user_data.path_thumb) : "./image/bigAvator1.png";
+                var _moblie = _user_data.mobile;
+                $('.bk:first').find('img:eq(0)').attr({
+                    'src': _touxiang_path,
+                    'data-phone': _moblie
+                });
+                $(".collect").parent().attr("href", "MyDetailed.html?id=" + _user_data.id);
+                $('.person-wrp:first').find('img:eq(0)').attr('src', _touxiang_path);
+                $('.person-wrp:first').find('h3:eq(0)').html(_nick_name);
+                $('.person-wrp:first').find('p.phonenum:first').html(_moblie);
+                $('.person-wrp:first').find('span.qqnum:first').html(_user_data.qq);
+                $('.person-wrp:first').find('p.person:first').html(_user_data.job_name + ' <span>' + _user_data.company + '</span>').attr("title",_user_data.jobs[0] +' ' + _user_data.company );
+                $('.lgd-rowbox.s2:first li:eq(0)').find('p.num').html(_user_data.total_financial);
+                $('.lgd-rowbox.s2:first li:eq(1)').find('p.num').html('<b>' + _user_data.working_order_count + '</b>/<b>' + _user_data.order_count + '</b>');
+                $('.lgd-rowbox.s2:first li:eq(2)').find('p.num').html('<b>' + _user_data.working_quote_count + '</b>/<b>' + _user_data.quote_count + '</b>');
+                $('.lgd-rowbox.s2:first li:eq(3)').find('p.num').html('<b>' + _user_data.working_meet_count + '</b>/<b>' + _user_data.meet_count + '</b>');
+                $('.check-mes:first a p.wrp:eq(0)').attr('value', _user_data.is_auth);
+                if (_user_data.is_auth == 1) {
+                    setCookie('as', _user_data.is_auth);
+                    $('.check-mes').css("display","none");
+                    $(".phonenum").addClass("idAuth");
+                    $("#topHeader").css("display","none");
+                }else{
+                    //不是认证设计师，需认证后才能下载查看页面
+                    if(window.location.href.indexOf("fastdesign.html") != -1) {
+                        $(".rzwrap").css("display","block").next().css("display","block");
+                    };
+                    $("#isDesigner").css("display","none");
+                }
+            }
+        });
+    })();
+</script>

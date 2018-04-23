@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font/font.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/social.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.left').load('PersonalNav.html', function() {
+
+            }); //加载已登录导航
+        })
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        
+        .fpsqB .yun-kehu span {
+            width: auto;
+        }
+        
+        .fpsqM input {
+            padding-left: 10px;
+        }
+        
+        #getLinkPerson {
+            cursor: pointer;
+        }
+        
+        #getLinkPerson2 {
+            cursor: pointer;
+        }
+        
+        #customersList ul {
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            font-size: 14px;
+        }
+        
+        #customersList ul li {
+            float: left;
+            height: 44px;
+            line-height: 44px;
+        }
+        
+        #customersList .zero {
+            width: 20%;
+            text-align: left;
+            margin-left: 20px;
+        }
+        
+        #customersList .zero input {
+            cursor: pointer;
+            vertical-align: baseline;
+        }
+        
+        #customersList .one {
+            width: 16%;
+        }
+        
+        #customersList .two {
+            width: 30%;
+        }
+        
+        #customersList .three {
+            width: 30%;
+        }
+        
+        .bottom-page {
+            margin: 0 auto;
+            width: 150px;
+        }
+        
+        .bottom-page .arrow-btn {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+            -moz-user-select: none;
+            /*火狐*/
+            -webkit-user-select: none;
+            /*webkit浏览器*/
+            -ms-user-select: none;
+            /*IE10*/
+            -khtml-user-select: none;
+            /*早期浏览器*/
+            user-select: none;
+        }
+        
+        .bottom-page .page-number {
+            font-size: 14px;
+            vertical-align: text-bottom;
+        }
+        
+        .manage-invoice-new-add.confirm {
+            font-size: 16px;
+            float: right;
+            display: inline-block;
+            background-color: #0D93D1;
+            color: #fff;
+            padding: 8px 0;
+            width: 100px;
+            border: 1px solid #CCCCCC;
+            text-align: center;
+            margin-right: 70px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+        
+        .cityWrap .cityLocal {
+            border-bottom: 0 none;
+        }
+        
+        div.cityWrap {
+            border: 0 none;
+            position: relative;
+            top: -48px;
+            left: -2px;
+        }
+        
+        .addressIpt {
+            width: 330px!important;
+        }
+        
+        div.cityWrap ul.cityWrapUl li.li3 {
+            width: 370px;
+        }
+        
+        .baiduFindCity {
+            border: 1px solid #dddddd!important;
+        }
+        
+        .cashLocation input {
+            top: 0px;
+        }
+        
+        div.cityWrap ul.cityWrapUl li.cityWrapUlLi {
+            border-color: #a9a9a9;
+            height: 26px;
+            top: 8px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            border-radius: 0px;
+        }
+        
+        div.cityWrap ul.cityWrapUl li input {
+            height: 26px;
+            padding-left: 0;
+        }
+        
+        .fpsqB {
+            padding-bottom: 0;
+        }
+        
+        div.cityWrap {
+            margin-bottom: 0;
+        }
+        
+        .fpsqB .tuoSenWrapUl span {
+            width: auto;
+        }
+        
+        .dizhiselec {
+            background: rgba(0, 0, 0, 0) url(images/dwtb.jpg) repeat scroll 0 0!important;
+            display: block!important;
+            float: left!important;
+            height: 14px!important;
+            width: 13px!important;
+        }
+        
+        .cashLocation i {
+            position: static;
+        }
+    </style>
+</head>
+
+<body style="" class="personal-10">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal10">
+            <div class="fpsqTop">
+                <p>
+                    您的位置：
+                    <a href="javascript:void(0);">个人中心</a> >
+                    <a href="javascript:void(0);">发票申请</a> >
+                    <a href="javascript:void(0);">填写发票信息</a>
+                </p>
+            </div>
+            <div class="fpsqT">
+                <h3>选择发票类型：</h3>
+                <input class="invoice-type" value="0" type="radio" name="cash" checked><span>电子发票</span>
+                <input class="invoice-type" value="1" type="radio" name="cash"><span>纸质发票</span>
+            </div>
+            <div class="fpsqM">
+                <h3>填写发票信息：</h3>
+                <p>发票抬头：<input class="invoice-title" type="text"></p>
+                <p>纳税人识别号：<input class="invoice-id_code" type="text"></p>
+                <p>发票内容：设计服务费</p>
+                <p>发票金额：<span class="price"></span>元</p>
+                <p>其他信息（选填）：<a id="zk" href="javascript:void(0);">展开&gt;&gt;</a></p>
+                <div class="cashOtherMsg">
+                    <!-- <p>纳税人识别号： &nbsp;&nbsp;&nbsp;<input type="text" placeholder="填写纳税人识别号"></p> -->
+                    <p>注册地址、电话： <input class="addrPhone" type="text" placeholder="填写注册地址、注册电话"></p>
+                    <p>开户行及账号： &nbsp;&nbsp;&nbsp;<input class="bank" type="text" placeholder="填写开户银行及银行账户"></p>
+                    <span>备注：</span><textarea class="remark" placeholder="填写备注说明"></textarea>
+                    <a id="ck">查看示例</a>
+                    <img src="./images/fapiaodemo.png" alt="">
+                </div>
+
+            </div>
+            <div class="fpsqB">
+                <h3>填写收件信息：</h3>
+                <p>
+                    <span>收件人：</span>
+                    <input id="rcv_name" class="rcv_name" type="text">
+                    <!-- <i id="getLinkPerson">选择联系人</i> -->
+                    <i id="getLinkPerson2">选择联系人</i>
+                </p>
+                <p><span>联系电话：</span><input id="rcv_phone" class="rcv_phone" type="text"></p>
+                <div class="yun-wrapper" style="display: none;">
+                    <div class="yun-kehu">
+                        <h4>选择客户</h4>
+                        <div>
+                            <dl class="yun-person">
+                                <dt>联系人</dt>
+                                <dd><input type="radio" name="user" class="yun-check1"> <span>张三</span></dd>
+                                <dd><input type="radio" name="user" class="yun-check2"> <span>王五</span></dd>
+                                <dd><input type="radio" name="user" class="yun-check2"> <span>李四</span></dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <dl>
+                                <dt>手机号</dt>
+                                <dd><span>13523568974</span></dd>
+                                <dd><span>13546465588</span></dd>
+                                <dd><span>13547795588</span></dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <dl>
+                                <dt>邮箱</dt>
+                                <dd><span>13523568974@qq.com</span></dd>
+                                <dd><span>13546465588@163.com</span></dd>
+                                <dd><span>1354648@163.com</span></dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <dl>
+                                <dt>企业名称</dt>
+                                <dd><span>杭州画客科技有限公司</span></dd>
+                                <dd><span>杭州极影科技有限公司</span></dd>
+                                <dd><span>杭州画客科技有限公司</span></dd>
+                            </dl>
+                        </div>
+                        <div class="yun-kehu-btn" id="yun-kehu-btn">
+                            <input type="button" value="确定">
+                        </div>
+                    </div>
+                </div>
+                <div class="cashLocation">
+                    <span>收货地址：</span>
+                    <div class="cityWrap">
+                        <ul class="ul">
+                            <li class="cityLocal">
+                                <ul class="cityWrapUl">
+                                    <li class="li3 cityWrapUlLi">
+                                        <div class="li-Div">
+                                            <input type="text" id="suggestId" class="addressIpt" placeholder="请填写详细地址">
+                                            <div id="searchResultPanel" style="border:1px solid #C0C0C0;display:none;"></div>
+                                        </div>
+                                        <div class="tuoSenWrap">
+                                            <ul class="tuoSenWrapUl">
+                                                <li class="tuoSenWrapUlLi tuosenWrapUlLi1">
+                                                    <span class="text">选择常用地址</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <i onclick="alertMapShow()" class="icon-localLocal" title="点击选择你的常用地址"></i>
+
+                                    </li>
+                                    <div class="clear"></div>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="javascript:;" id="choseLocation">选择我的地址</a>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="choseLocal">
+                <p>
+                    <input type="radio" name="ra">
+                    <span>浙江省 杭州市 滨江区 长河街道 杭州市长河351</span>
+                </p>
+                <p>
+                    <input type="radio" name="ra">
+                    <span>浙江省 杭州市 拱墅区 （和睦新村） 42幢143单元201室</span>
+                </p>
+                <p>
+                    <input type="radio" name="ra">
+                    <span>浙江省 杭州市 拱墅区 （和睦新村） 42幢143单元201室</span>
+                </p>
+            </div>
+            <div class="cashLastPart">
+                <button id="sublimeInvoice">提交</button>
+                <span><i></i>开票说明</span>
+                <div class="cashLastPartP">
+                    <p>1.您申请的发票，我们最晚会在3个工作日内寄出。暂不支持港、澳、台地区邮寄。</p>
+                    <p>2.我们会以手机短信的形式通知您发票的物流情况，请保持所填的手机号码可正常接受信息。</p>
+                </div>
+            </div>
+
+            <div style="width:1px;height:1px; clear:both;"></div>
+        </div>
+        <!--百度地图-->
+        <div class="mapWrap">
+            <div class="alertDom">
+                <span>提示:</span>
+                <i></i>
+                <p></p>
+                <a class="alertDomSure" href="javascript:void(0);">确定搜索</a>
+            </div>
+            <div class="mapWrapTop clearfix">
+                <div class="mapWrapTopLeft">
+                    <span class="currentCity">当前城市：</span>
+                    <span class="currentCityChange" id="cur_city_spn">杭州</span>
+                    <span class="changeCurrentCity">切换城市 <i></i></span>
+                </div>
+                <div class="mapWrapTopRight">
+                    <input type="text" class="baiduFindCity">
+                    <button class="citySearch">查询地址</button>
+                </div>
+                <div class="alertMapClose"></div>
+            </div>
+            <div id="allmap">
+
+            </div>
+            <div id="r-result">
+                <div id="result"></div>
+            </div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <script>
+        $(function() {
+            $("#zk").click(function() {
+                if ($(this).html() == "展开&gt;&gt;") {
+                    $(this).html("收起&gt;&gt;");
+                    $(".cashOtherMsg").css("display", "block");
+                } else {
+                    $(this).html("展开&gt;&gt;");
+                    $("#ck").next().css("display", "none");
+                    $(".cashOtherMsg").css("display", "none");
+                };
+                $("#ck").click(function() {
+                    $(this).next().css("display", "block")
+                });
+            });
+            $("#getLinkPerson").click(function() {
+                $(this).parent().parent().find(".yun-wrapper").css("display", "block");
+                $("#yun-kehu-btn input").click(function() {
+                    $(this).parent().parent().parent().css("display", "none");
+                });
+                (function() {
+                    // 选择联系人,根据联系人前面的单选是否被选中,把数据添加到页面上
+                    var arr, arrIpt;
+                    $(document).on("click", ".yun-person input", function() {
+                        arr = [];
+                        arrIpt = [];
+                        var num = $(this).parent().index();
+                        $(".yun-wrapper .yun-kehu dl").each(function() {
+                            arr.push($(this).children().eq(num).children("span").html());
+                            return arr;
+                        });
+                        $(".fpsqB p input").each(function() {
+                            arrIpt.push($(this));
+                        });
+                    });
+                    $(document).on("click", "#yun-kehu-btn input", function() {
+                        if (arr == undefined || arr == "") {
+                            $(".yun-wrapper").css("display", "none");
+                        } else {
+                            $(".yun-wrapper").css("display", "none");
+                            $(arrIpt[0]).val(arr[0]);
+                            $(arrIpt[1]).val(arr[1]);
+                        }
+                    });
+                }());
+
+            });
+            $("#choseLocation").click(function() {
+                $(".choseLocal").slideToggle(100);
+            })
+        })
+    </script>
+    <div id="customersList" style="display:none;">
+        <ul>
+            <li class="zero">联系人</li>
+            <li class="one">手机号</li>
+            <li class="two">邮箱</li>
+            <li class="three">企业名称</li>
+        </ul>
+        <form id="viewCustomers"></form>
+        <div class="bottom-page">
+            <span class="arrow-btn arrow-left">&lt;</span>
+            <span class="page-number">
+                    <span class="now">1</span>&nbsp;/&nbsp;<span class="max">1</span>
+            </span>
+            <span class="arrow-btn arrow-right">&gt;</span>
+        </div>
+        <a class="manage-invoice-new-add confirm" href="javascript:;">确认</a>
+    </div>
+    <script type="text/template" id="templateCustomers">
+        {{~it:val:eq}}
+        <ul>
+            <li class="zero">
+                <input type="radio" data-eq="{{=eq}}" name="select" style="margin-top: 12px;" {{=! eq ? "checked" : ""}}>
+                <span>{{= val.yunLinkName ? val.yunLinkName : ''}}</span>
+            </li>
+            <li class="one">
+                <span>{{= val.yunLinkPhone ? val.yunLinkPhone : ''}}</span>
+            </li>
+            <li class="two">
+                <span>{{= val.yunLinkEmail ? val.yunLinkEmail : ''}}</span>
+            </li>
+            <li class="three">
+                <span>{{= val.yunLinkCompany ? val.yunLinkCompany : ''}}</span>
+            </li>
+        </ul>
+        {{~}}
+    </script>
+</body>
+<script type="text/javascript" src="js/personal/config.js"></script>
+<script type="text/javascript" src="js/personal/layer/layer.js"></script>
+<script type="text/javascript" src="js/plugs/doT.min.js"></script>
+<script type="text/javascript" src="js/map/publishmaps.js"></script>
+<script type="text/javascript" src="js/personal/personal-10.js"></script>
+
+</html>

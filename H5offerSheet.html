@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="中国设计网,设计师,设计之家,设计,设计公司,设计师招聘,高级设计师,设计师简历,设计网,设计中国,画客网" name="keywords">
+    <meta content="中国设计网站、设计师之家-画客网：汇集中国高级设计师和设计公司，提供本地信息传播和互动的设计网平台；在画客，您就是设计大咖！找平面设计、字体设计、标志设计、室内设计、网页设计、包装设计、服装设计人才；选界面设计师、交互设计师、UI设计师、网页设计师，就来画客网！" name="description">
+    <link rel="shortcut icon" href="images/logo.ico "  type="image/x-icon">
+    <title>报价确认</title>
+    <link rel="stylesheet" href="./weixinH5/css/reset.css">
+    <link rel="stylesheet" href="./weixinH5/css/H5offerSheet.css">
+    <link rel="stylesheet" href="./weixinH5/js/PhotoSwipe/photoswipe.css">
+    <link rel="stylesheet" href="./weixinH5/js/PhotoSwipe/default-skin/default-skin.css">
+    <style>
+        #Initialization{
+            position:fixed; 
+            left:0; 
+            top:0; 
+            width:100%; 
+            height:100%;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="big title"></h1>
+        <h2>需求描述</h2>
+        <!-- <p class="description">1997年7月参加教育活动。研究生学历，硕士学位，上海市特技校长。1997年7月参加教育活动。研究生学历，硕士学位，上海市特技校长。1997年7月参加教育活动。研究生学历，硕士学位，上海市特技校长。1997年7月参加教育活动。研究生学历，硕士学位，上海市特技校长。1997年7月参加教育活动。研究生学历，硕士学位，上海市特技校长。1997年7月参加教育活动。研究生学历，硕士学位，上海市特技校长。1997年7月参加教育活动。研究生学历，硕士学位，上海市特技校长。</p> -->
+        <p class="description"></p>
+        <h2 class="enclosure">项目附件<span class="right enclosure-sum"></span></h2>
+        <div class="appendixs-box">
+
+        </div>
+        <!-- <h2>周期<span class="right duration">20个工作日</span></h2> -->
+    </header>
+    <div class="header-wavy-line"></div>
+    <article>
+        <div id="project">
+            <!-- <section>
+                <h2>1调研</h2>
+                <div class="line">
+                    <div>PS简单处理照片1</div>
+                    <div>100000.00元</div>
+                </div>
+                <div class="line">
+                    <div>PS简单处理照片2</div>
+                    <div>2000.00元</div>
+                </div>
+            </section>
+            <section>
+                <h2>2调研</h2>
+                <div class="line">
+                    <div>PS简单处理照片3</div>
+                    <div>3000.00元</div>
+                </div>
+                <div class="line">
+                    <div>PS简单处理照片4</div>
+                    <div>4000.00元</div>
+                </div>
+            </section>
+            <section>
+                <h2>3调研</h2>
+                <div class="line">
+                    <div>PS简单处理照片5</div>
+                    <div>5000.00元</div>
+                </div>
+                <div class="line">
+                    <div>PS简单处理照片6</div>
+                    <div>6000.00元</div>
+                </div>
+            </section> -->
+        </div>
+        <div class="tax row">
+            <h2>税率：</h2>
+            <span></span>
+        </div>
+        <div class="remarks row">
+            <h2>说明：</h2>
+            <span></span>
+        </div>
+        <div class="price-div">小计：<span class="price"></span></div>
+    </article>
+    <article>
+		<h2 class="customer">我的客户</h2>
+		<div class="one-row">
+			<span class="name"></span>
+			<span class="contact"></span>
+        </div>
+        <!-- <a style="" id="redirect" href="https://new.huakewang.com/wxapi/wx_auth_redirect?redirect_uri=https%253A%252F%252Fnew.huakewang.com%252F2017_data%252FH5offerSheet.html%253Fid%253D679%2526name%253D%2525E9%252583%252591%2525E5%25259B%2525BD%2525E5%2525BA%252586%2526phone%253D17683993335%2526count%253Dother%2526timestamp%253D1509505174%2523helloworld">跳转重定向</a> -->
+	</article> 
+	<footer>
+		<p class="sum-price">
+			<span class="title">总计：</span>
+			<span class="value total"></span>
+			<span class="title discount-title">优惠后：</span>
+            <span class="value discount"></span>
+            <span class="tax"></span>
+		</p>
+		<p id="submit" class="submit">发送报价并分享</p>
+    </footer>
+    <div id="showLoginPopUp" style="display: none;">
+        <div class="display-none">
+            <p>该报价是发送给：</p>
+            <p>
+                <span class="customer-name"></span>
+                (
+                <span class="customer-phone"></span>)
+            </p>
+            <p>若要查看，请先验证身份：</p>
+            <br/>
+        </div>
+        <p>验证手机号：<span class="verification-phone customer-phone"></span></p>
+        <div class="verification-phone-box" style="margin-bottom: 1rem;">
+            <input type="text" value="" class="verification-code h5offerInput">
+            <!-- <span class="code allow" style="cursor: pointer;">获取验证码</span> -->
+            <span class="code allow codeH5offerSheet">
+                <img class="codePouup" src="https://www.huakewang.com/index.php/verifycode/index/2" alt="">
+            </span>
+        </div>
+        <div class="verification-phone-box">
+            <input type="number" value="" class="verification-code">
+            <span class="code allow h5offerSpan" style="cursor: pointer;">获取验证码</span>
+        </div>
+    </div>
+    <div id="showMask" style="display: none;">
+        <img src="./weixinH5/image/arrow.png" alt="">
+        <div class="ellipse">点击右上角发送给微信好友</div>
+        <div class="know showMaskKnow" style="cursor: pointer;">知道了</div>
+    </div>
+    <div id="rechargePopUp" style="display: none;">
+        <p>请输入充值金额:</p>
+        <input type="number" class="input-recharge-money" data-value="0">
+        <!-- <span class="submit-recharge-money">确认充值(<span class="monry">33元</span>)</span> -->
+    </div>
+    <div id="Initialization"></div>
+
+    <!-- 画廊 start -->
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    
+        <!-- Background of PhotoSwipe. 
+             It's a separate element, as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+    
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+    
+            <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+            <div class="pswp__container">
+                <!-- don't modify these 3 pswp__item elements, data is added later on -->
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+    
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+    
+                <div class="pswp__top-bar">
+    
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+    
+                    <div class="pswp__counter"></div>
+    
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+    
+                    <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+    
+                    <!-- <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> -->
+    
+                    <!-- <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button> -->
+    
+                    <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                    <!-- element will get class pswp__preloader--active when preloader is running -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+    
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+    
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+    
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+    <!-- 画廊 end -->
+</body>
+<script src="./weixinH5/js/zepto.min.js"></script>
+<script src="./weixinH5/js/layer.js"></script>
+<script src="./weixinH5/js/PhotoSwipe/photoswipe.min.js"></script>
+<script src="./weixinH5/js/PhotoSwipe/photoswipe-ui-default.min.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="./weixinH5/js/H5offerSheet.js"></script>
+</html>

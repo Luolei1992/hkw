@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/social.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/social.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.left').load('PersonalNav.html', function() {
+                $(document).find('div.left div.yidenglu-box ul li:eq(9)').css({
+                    'background': '#f1f1f1'
+                });
+            }); //加载已登录导航
+            $('.Wrap').css({
+                'display': 'none'
+            }); //Wrap隐藏
+            $('.Wrap:eq(0)').css({
+                'display': 'block'
+            }); //Wrap第一块显示
+            //发票的全选和反选,多选
+            $("body").on("click", ".allCheck", function() {
+                if ($(this).hasClass("selectedColor")) {
+                    $(this).removeClass("selectedColor");
+                    $(".Wrap .divWrap").find(".divWrapCheckbox").removeClass("selectedColor");
+                } else {
+                    $(this).addClass("selectedColor");
+                    $(".Wrap .divWrap").find(".divWrapCheckbox").addClass("selectedColor")
+                }
+                checkboxMini();
+            });
+            $("body").on("click", ".divWrapCheckbox", function() {
+                if ($(this).hasClass("selectedColor")) {
+                    $(this).removeClass("selectedColor");
+                } else {
+                    $(this).addClass("selectedColor");
+                }
+                checkboxMini();
+            });
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        
+        .divWrap {
+            padding-bottom: 10px;
+        }
+        
+        .personal .neirong-top .tab.cur span {
+            border-bottom: 2px solid #0b83d8;
+        }
+        
+        #main-body.personal div.right div.neirong div.divWrap ul.ulBtPub li.li1 {
+            text-align: left;
+        }
+        
+        #main-body.personal div.right div.neirong div.divWrap ul.ulBtPub li.li2 {
+            text-align: left;
+        }
+        
+        .personal .btnWrapTwo.height {
+            height: 30px;
+        }
+        
+        .personal .divWrapCheckbox {
+            margin-right: 16px;
+        }
+        
+        #main-body.personal div.right div.neirong div.divWrap .span-right.text b.no-red {
+            color: #333;
+        }
+        
+        #main-body.personal div.right div.neirong .neirong-b {
+            float: left;
+            margin-bottom: 0;
+        }
+        
+        .btnWrapTwo.height .fr.red {
+            color: #f00;
+        }
+        
+        .btnWrapTwo.height .fr.end a {
+            color: #1ba9eb;
+        }
+        
+        .forCash .forCashT .selected {
+            display: none;
+        }
+        
+        .allCheck {
+            -moz-user-select: none;
+            /*火狐*/
+            -webkit-user-select: none;
+            /*webkit浏览器*/
+            -ms-user-select: none;
+            /*IE10*/
+            -khtml-user-select: none;
+            /*早期浏览器*/
+            user-select: none;
+        }
+        
+        .sele1.selePub.demand {
+            display: none;
+            margin-bottom: 20px;
+        }
+        
+        .sele1.selePub.demand select {
+            height: 30px;
+            width: 80px;
+        }
+        
+        .right-invoice-header {
+            float: right;
+            font-size: 14px;
+            color: #3399ff;
+            margin-right: 20px;
+            line-height: 40px;
+            cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        .forCashTL.fl {
+            display: none;
+        }
+        
+        .tempNullPng {
+            width: 160px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        
+        #ManageInvoice ul {
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        #ManageInvoice ul li {
+            float: left;
+            height: 44px;
+            line-height: 44px;
+        }
+        
+        #ManageInvoice .zero {
+            width: 10%;
+        }
+        
+        #ManageInvoice .zero input {
+            cursor: pointer;
+        }
+        
+        #ManageInvoice .one {
+            width: 40%;
+        }
+        
+        #ManageInvoice .two {
+            width: 36%;
+        }
+        
+        #ManageInvoice .three {
+            width: 15%;
+        }
+        
+        #ManageInvoice ul li input {
+            text-align: center;
+            height: 22px;
+            background-color: #fff;
+            border: 0 none;
+        }
+        
+        #ManageInvoice ul li.three a:hover {
+            color: #03A5EE;
+        }
+        
+        .manage-invoice-new-add {
+            float: right;
+            display: inline-block;
+            padding: 8px 0;
+            width: 100px;
+            border: 1px solid #CCCCCC;
+            text-align: center;
+            margin-right: 25px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+        
+        .manage-invoice-new-add:hover {
+            background-color: #ddd;
+            color: #2f8ded;
+        }
+        
+        .input-border {
+            border: 1px solid rgb(204, 204, 204)!important;
+        }
+        
+        .display-none {
+            display: none;
+        }
+        
+        .seeApub.ok-invoice {
+            float: right;
+            display: inline-block;
+            background-color: #0D93D1;
+            color: #fff;
+            padding: 8px 0;
+            width: 100px;
+            border: 1px solid #CCCCCC;
+            text-align: center;
+            margin-right: 25px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+        
+        #inputInvoice .select-invoice {
+            cursor: pointer;
+            color: #03A5EE;
+            margin-left: 16px;
+        }
+        
+        #inputInvoice {
+            padding-left: 20px;
+        }
+        
+        #inputInvoice p {
+            margin: 16px 0;
+            font-size: 16px;
+            height: 25px;
+        }
+        
+        #inputInvoice p input {
+            font-size: 16px;
+            height: 20px;
+            padding-left: 10px;
+        }
+        
+        #inputInvoice p input.title,
+        #inputInvoice p input.tax_no {
+            width: 220px;
+        }
+        
+        #inputInvoice p.type span.txt {
+            margin-right: 10px;
+        }
+        
+        #inputInvoice .type input {
+            cursor: pointer;
+            vertical-align: bottom;
+        }
+        
+        .cityWrap .cityLocal {
+            border-bottom: 0 none;
+        }
+        
+        div.cityWrap {
+            border: 0 none;
+            position: relative;
+            top: -48px;
+            left: -2px;
+        }
+        
+        .addressIpt {
+            width: 330px!important;
+        }
+        
+        div.cityWrap ul.cityWrapUl li.li3 {
+            width: 370px;
+        }
+        
+        .baiduFindCity {
+            border: 1px solid #dddddd!important;
+        }
+        
+        .tangram-suggestion-main {
+            display: none!important;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeader">
+            画客网致力于打造一个精确、快捷的设计服务对接平台。来画客网，遇到靠谱的好项目.　　<a href="Personal-8.html">设计师入驻</a>
+        </div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal">
+            <div class="left"></div>
+            <div class="right " style="">
+                <div class="neirong">
+                    <div class="neirong-top">
+                        <div class="wddt tab cur"><span>作为服务方(3)</span></div>
+                        <div class="xttz tab "><span>作为需求方(9)</span></div>
+                    </div>
+                    <div class="sele1 selePub demand">
+                        <span>筛选：</span>
+                        <select name="" id="filterType2">
+                            <option value="">全部</option>
+                            <option selected value="0">未开发票</option>
+                            <option value="1">已索要发票</option>
+                            <option value="2">已开发票</option>
+                        </select>
+                        <span class="right-invoice-header" id="manageInvoiceClick">管理发票信息</span>
+                    </div>
+                    <div class="forCash">
+                        <div class="forCashT clearfix">
+                            <div class="forCashTL fl">
+                                <i class="allCheck"></i>
+                                <span>全选</span>
+                                <span class="selected">（已选<span class="number">6</span>个项目，共<span class="money">13600</span>元）</span>
+                            </div>
+                            <div class="forCashTR fr">
+                                <div class="neirong-b">
+                                    <div class="sele1 selePub serve">
+                                        <span>筛选：</span>
+                                        <select name="" id="filterType">
+                                            <option value="">全部</option>
+                                            <option selected value="0">未开发票</option>
+                                            <option value="1">被索要发票</option>
+                                            <option value="2">已开发票</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- <a href="Personal-13.html" target="_blank"><button>查看开票历史</button></a> -->
+                                <!-- <a href="Personal-10.html" target="_blank"><button>开具发票</button></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Wrap" id="viewPersona3"></div>
+                    <script type="text/template" id="templatePersona3">
+                        {{~it.item_list:val:eq}}
+                        <div class="divWrap">
+                            <!-- <i class="divWrapCheckbox" data-price="{{=val.tax_price}}"></i> -->
+                            <a href="projectExtend.html?tag=1" target="_blank"><span class="span-left">{{= val.company_name ? val.company_name : "" }} —— 《{{=val.create_time ? val.create_time: ""}}》</span></a> {{var time =val.create_time ?(val.create_time.split("
+                            ")[0].replace('-','年').replace('-','月')+"日"):"";}}
+                            <span class="span-right span-right-time">创建时间：{{= time ? time : "" }}</span>
+                            <div style="clear:both;"></div>
+                            <ul class="ulBt ulBtPub">
+                                <li class="li1">报价单名称</li>
+                                <li class="li2">组成部分</li>
+                                <li class="li3">总计</li>
+                            </ul>
+                            {{~val.content:val2:eq2}}
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">{{= val2.name ? val2.name : "" }}</li>
+                                <li class="li2">共<span>{{= val2.num ? val2.num : "" }}</span>部分</li>
+                                <li class="li3">{{= val2.total_price ? val2.total_price : "" }}</li>
+                            </ul>
+                            {{~}}
+                            <span class="span-right text">总计：<b>&yen;{{=val.price_after_discount ? val.price_after_discount : (val.price_before_discount ? val.price_before_discount : "") }}元</b><b class="no-red"> {{=val.tax_after_discount ? "(含税金：&yen;"+val.tax_after_discount+"元)" : ( val.tax_before_discount ? val.tax_before_discount : "(无税金)")}}</b></span>
+                            <div style="clear:both;"></div>
+                            <div class="auto" style="clear:both;width:95%;border-top:1px solid #f0f0f0; "></div>
+                            <div class="btnWrapTwo height">
+                                <a class="seeApub" href="projectExtend.html?tag=1&id={{=val.project_id}}" target="_blank">查看详情</a> {{? val.invoice_status == "0"}}
+                                <a class="seeApub" href="Personal-10.html?tag=1&id={{=val.project_id}}" target="_blank">开具发票</a> {{?}} {{? val.invoice_status == "1"}}
+                                <a class="seeApub" href="Personal-10.html?tag=1&id={{=val.project_id}}" target="_blank">开具发票</a>
+                                <p class="fr red">对方已向您索要发票</p>
+                                {{?}} {{? val.invoice_status == "2"}}
+                                <p class="fr end">发票已开，<a href="Personal-14.html?tag=1&id={{=val.project_id}}" target="_blank">查看&gt;</a></p>
+                                {{?}}
+                            </div>
+                        </div>
+                        {{~}}
+                    </script>
+                    <div class="Wrap" id="viewPersona3Demand"></div>
+                    <script type="text/template" id="templatePersona3Demand">
+                        {{~it.item_list:val:eq}}
+                        <div class="divWrap">
+                            <a href="projectExtend.html?tag=1" target="_blank"><span class="span-left">{{= val.company_name ? val.company_name : "" }} —— 《{{=val.order_name ? val.order_name: ""}}》</span></a> {{var time =val.create_time ?(val.create_time.split("
+                            ")[0].replace('-','年').replace('-','月')+"日"):"";}}
+                            <span class="span-right span-right-time">创建时间：{{= time ? time : "" }}</span>
+                            <div style="clear:both;"></div>
+                            <ul class="ulBt ulBtPub">
+                                <li class="li1">报价单名称</li>
+                                <li class="li2">组成部分</li>
+                                <li class="li3">总计</li>
+                            </ul>
+                            {{~val.content:val2:eq2}}
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">{{= val2.name ? val2.name : "" }}</li>
+                                <li class="li2">共<span>{{= val2.num ? val2.num : "" }}</span>部分</li>
+                                <li class="li3">{{= val2.total_price ? val2.total_price : "" }}</li>
+                            </ul>
+                            {{~}}
+                            <span class="span-right text">总计：<b>&yen;{{=val.price_after_discount ? val.price_after_discount : (val.price_before_discount ? val.price_before_discount : "") }}元</b><b class="no-red"> {{=val.tax_after_discount ? "(含税金：&yen;"+val.tax_after_discount+"元)" : ( val.tax_before_discount ? val.tax_before_discount : "(无税金)")}}</b></span>
+                            <div style="clear:both;"></div>
+                            <div class="auto" style="clear:both;width:95%;border-top:1px solid #f0f0f0; "></div>
+                            <div class="btnWrapTwo height">
+
+                                <a class="seeApub" href="projectExtend.html?tag=1&id={{=val.project_id}}" target="_blank">查看详情</a> {{? val.invoice_status == "0"}}
+                                <a class="seeApub request-invoice" href="javascript:;" data-projectId="{{=val.project_id}}">索要发票</a> {{?}} {{? val.invoice_status == "1"}}
+                                <p class="fr">已索要发票</p>
+                                {{?}} {{? val.invoice_status == "2"}}
+                                <p class="fr end">发票已开，<a href="Personal-14.html?tag=1&id={{=val.project_id}}" target="_blank">查看&gt;</a></p>
+                                {{?}}
+                            </div>
+                        </div>
+                        {{~}}
+                    </script>
+                    <!-- <div class="Wrap">
+                        <div class="divWrap">
+                            <i class="divWrapCheckbox"></i>
+                            <span class="span-left">《三汇企业官网建设》 —— 报价订单</span>
+                            <span class="span-right span-right-time">截止时间：2017年8月5日</span>
+                            <div style="clear:both;"></div>
+                            <ul class="ulBt ulBtPub">
+                                <li class="li1">项目描述</li>
+                                <li class="li2">成果</li>
+                                <li class="li3">总计</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+
+                            <span class="span-right text">总计：<b>&yen;4800元</b></span>
+                            <div style="clear:both;"></div>
+                            <div class="auto" style="clear:both;width:95%;border-top:1px solid #f0f0f0; "></div>
+                            <span class="span-1"></span>
+                            <span class="span-2"></span>
+                            <a href="projectExtend.html" target="_blank"><span class="span-3">查看订单详情</span></a>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div class="divWrap">
+                            <label>
+                                <i class="divWrapCheckbox"></i>
+                                <span class="span-left">《三汇企业官网建设》 —— 报价订单</span>
+                            </label>
+                            <span class="span-right span-right-time">截止时间：2017年8月5日</span>
+                            <div style="clear:both;"></div>
+                            <ul class="ulBt ulBtPub">
+                                <li class="li1">项目描述</li>
+                                <li class="li2">成果</li>
+                                <li class="li3">总计</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+
+                            <span class="span-right text">总计：<b>&yen;4800元</b></span>
+                            <div style="clear:both;"></div>
+                            <div class="auto" style="clear:both;width:95%;border-top:1px solid #f0f0f0; "></div>
+                            <span class="span-1"></span>
+                            <span class="span-2"></span>
+                            <a href="projectExtend.html" target="_blank"><span class="span-3">查看订单详情</span></a>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div class="divWrap">
+                            <label>
+                                <i class="divWrapCheckbox"></i>
+                                <span class="span-left">《三汇企业官网建设》 —— 报价订单</span>
+                            </label>
+                            <span class="span-right span-right-time">截止时间：2017年8月5日</span>
+                            <div style="clear:both;"></div>
+                            <ul class="ulBt ulBtPub">
+                                <li class="li1">项目描述</li>
+                                <li class="li2">成果</li>
+                                <li class="li3">总计</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+
+                            <span class="span-right text">总计：<b>&yen;4800元</b></span>
+                            <div style="clear:both;"></div>
+                            <div class="auto" style="clear:both;width:95%;border-top:1px solid #f0f0f0; "></div>
+                            <span class="span-1"></span>
+                            <span class="span-2"></span>
+                            <a href="projectExtend.html" target="_blank"><span class="span-3">查看订单详情</span></a>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div class="divWrap">
+                            <label>
+                                <i class="divWrapCheckbox"></i>
+                                <span class="span-left">《三汇企业官网建设》 —— 报价订单</span>
+                            </label>
+                            <span class="span-right span-right-time">截止时间：2017年8月5日</span>
+                            <div style="clear:both;"></div>
+                            <ul class="ulBt ulBtPub">
+                                <li class="li1">项目描述</li>
+                                <li class="li2">成果</li>
+                                <li class="li3">总计</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">1　整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整体策划</li>
+                                <li class="li2">整体策划整体策划整整体策划整体策划整整体策划整体策划整整体策划整体策划整</li>
+                                <li class="li3">1200</li>
+                            </ul>
+
+                            <span class="span-right text">总计：<b>&yen;4800元</b></span>
+                            <div style="clear:both;"></div>
+                            <div class="auto" style="clear:both;width:95%;border-top:1px solid #f0f0f0; "></div>
+                            <span class="span-1"></span>
+                            <span class="span-2"></span>
+                            <a href="projectExtend.html" target="_blank"><span class="span-3">查看订单详情</span></a>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div> -->
+                </div>
+
+            </div>
+
+            <div style="width:1px;height:1px; clear:both;"></div>
+            <!-- <div id="main-body-bottom" class="auto" style=" margin: 65px auto 150px auto;"></div>			 -->
+            <div id="kkpager"></div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <div id="ManageInvoice" style="display:none;">
+        <ul>
+            <li class="zero"></li>
+            <li class="one">发票抬头</li>
+            <li class="two">企业税号</li>
+            <li class="three">操作</li>
+        </ul>
+        <form id="viewManageInvoice"></form>
+        <a class="manage-invoice-new-add add" href="javascript:;">新增</a>
+        <a class="manage-invoice-new-add confirm" href="javascript:;">确认</a>
+        <script type="text/template" id="templateManageInvoice">
+            {{~it.item_list:val:eq}}
+            <ul>
+                <li class="zero">
+                    <input type="radio" name="select" style="margin-top: 12px;" {{=! eq ? "checked" : ""}}>
+                </li>
+                <li class="one">
+                    <input type="text" name="company" value="{{= val.title ? val.title : ''}}" disabled="true">
+                </li>
+                <li class="two">
+                    <input type="text" name="taxNumber" value="{{= val.tax_no ? val.tax_no : '' }}" disabled="true">
+                </li>
+                <li class="three">
+                    <a data-id="{{=val.id}}" href="javascript:void(0);">修改 / </a>
+                    <a data-id="{{=val.id}}" href="javascript:void(0);">删除</a>
+                </li>
+            </ul>
+            {{~}}
+        </script>
+    </div>
+    <div id="inputInvoice" style="display:none;">
+        <p class="type">
+            <span>发票类型：</span>
+            <input type="radio" value="0" name="cash" checked>
+            <span class="txt">电子发票</span>
+            <input type="radio" value="1" name="cash">
+            <span class="txt">纸质发票</span>
+        </p>
+        <p class="title">
+            <span>发票抬头：</span>
+            <input type="text" class="title">
+        </p>
+        <p class="id-code">
+            <span>企业税号：</span>
+            <input type="text" class="tax_no">
+            <span class="select-invoice">选择发票信息</span>
+        </p>
+        <p>
+            <span>收货地址：</span>
+        </p>
+        <div class="cityWrap">
+            <ul class="ul">
+                <li class="cityLocal">
+                    <ul class="cityWrapUl">
+                        <li class="li3 cityWrapUlLi">
+                            <div class="li-Div">
+                                <input type="text" onkeyup="baiduShow(this)" id="suggestId" class="addressIpt" placeholder="请填写详细地址">
+                                <div id="searchResultPanel" style="border:1px solid #C0C0C0;border-bottom: none;display:none;">
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tuoSenWrap">
+                                <ul class="tuoSenWrapUl">
+                                    <li class="tuoSenWrapUlLi tuosenWrapUlLi1">
+                                        <span class="text">选择常用地址</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <i onclick="alertMapShow()" class="icon-localLocal" title="点击选择你的常用地址"></i>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <a class="seeApub ok-invoice" data-projectId="" href="javascript:;">确定</a>
+    </div>
+    <!--百度地图-->
+    <div class="mapWrap">
+        <div class="alertDom">
+            <span>提示:</span>
+            <i></i>
+            <p></p>
+            <a class="alertDomSure" href="javascript:void(0);">确定搜索</a>
+        </div>
+        <div class="mapWrapTop clearfix">
+            <div class="mapWrapTopLeft">
+                <span class="currentCity">当前城市：</span>
+                <span class="currentCityChange" id="cur_city_spn">杭州</span>
+                <span class="changeCurrentCity">切换城市 <i></i></span>
+            </div>
+            <div class="mapWrapTopRight">
+                <input type="text" class="baiduFindCity">
+                <button class="citySearch">查询地址</button>
+            </div>
+            <div class="alertMapClose"></div>
+        </div>
+        <div id="allmap">
+
+        </div>
+        <div id="r-result">
+            <div id="result"></div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="js/plugs/jq.page.js"></script>
+<script type="text/javascript" src="js/personal/config.js"></script>
+<script type="text/javascript" src="js/plugs/doT.min.js"></script>
+<script type="text/javascript" src="js/map/publishmaps.js"></script>
+<script type="text/javascript" src="js/personal/layer/layer.js"></script>
+<script type="text/javascript" src="js/personal/personal-3.js"></script>
+<script type="text/javascript">
+    $(function() {
+
+    });
+</script>
+
+</html>

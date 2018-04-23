@@ -1,0 +1,222 @@
+.content-big-title{
+	font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 28px;	
+    margin-bottom: 20px;
+}
+.banner-p{
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+.banner-p .left{
+	float:left;
+	display: inline-block;
+	width: 72px;
+	color: #666!important;
+	font-weight: 700;
+	text-align: right;
+}
+.banner-p .right{
+	color: #666;
+	font-weight: 400;
+    font-size: 14px;
+}
+.filelist ul{
+	display: inline-block;
+	width:800px;
+}
+.filelist a{
+	color: #04a4ee;
+}
+.comments{
+	width: 1190px;
+	margin:0 auto;
+}
+.comments .comments-title{
+	font-family: 'Arial Negreta', 'Arial Normal', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/********评论区的代码*************/
+.card{
+	margin: 0px 100px 30px 0px;
+	border-bottom: 1px solid #dce0e0;
+	color: #333;
+	font-size: 14px;
+}
+.card-title{
+	height:20px;
+	line-height: 20px;
+	margin-bottom: 20px;
+}
+.project-name{
+	margin-right: 10px;
+}
+.rating-tag{
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 0 5px;
+	margin-left: 5px;
+	margin-right: 10px;
+	font-size: 12px;
+}
+.project-price {
+	font-size: 12px;
+}
+.project-price i{
+	color:#ed7266;
+}
+.card-body img{
+	float: left;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.card-body .right-body{
+	margin-left: 70px;
+	margin-bottom: 25px;
+}
+.right-body .name{
+	margin-bottom: 8px;
+	vertical-align: middle;
+}
+.right-body .name i{
+	margin-left: 25px;
+	font-size: 12px;
+	color:#9999b2;
+	vertical-align: top;	
+}
+.card-body-text{
+	font-size: 12px;
+}
+.red-start{
+	display: inline-block;
+	background-image: url(../images/twostart_left.png);
+	background-repeat: round;
+}
+.black-start{
+	display: inline-block;
+	background-image: url(../images/twostart_right.png);
+	background-repeat: round;
+}
+.rating-read{
+	display: inline-block;
+}
+/********评论区的代码结尾*************/
+/********需求页更改用户介绍开始*******/
+.intro-left{
+	width: 300px;
+	/*display: inline-block;*/
+	display: table-cell;
+	vertical-align: middle;
+	position: absolute;
+	top: 56px;
+	right: 0;
+}
+
+.intro-left ul li{
+	display: inline-block;
+	width: 32%;
+	text-align: center;
+	border-right: 1px dotted #ccc;
+	height: 64px;
+}
+.intro-left ul li:last-child{
+	border-right: none;
+}
+.intro-left ul li p:nth-child(1){
+  font-size: 21.268px;
+  font-family: "PingFang";
+  color: #0bacf5;
+  line-height: 1.505;
+    -moz-transform: matrix( 1.88097759556758,0,0,1.88097759556758,0,0);
+  -webkit-transform: matrix( 1.88097759556758,0,0,1.88097759556758,0,0);
+  -ms-transform: matrix( 1.88097759556758,0,0,1.88097759556758,0,0);	
+}
+.intro-left ul li p:nth-child(2){
+  font-size: 14px;
+  font-family: "HiraginoSansGB";
+  color: rgb(182, 182, 182);
+  line-height: 2.667;
+}
+.intro-left ul li p:nth-child(3){
+  font-size: 13.335px;
+  font-family: "HiraginoSansGB";
+  color: rgb(255, 255, 255);
+  line-height: 2.4;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.451);
+  width: 80px;
+  height: 30px;	
+  margin: 5px auto auto;
+  cursor: pointer;
+}
+.intro-left ul li p:nth-child(3) a {
+	color: #fff;
+	display: block;
+}
+.intro-left ul li p:nth-child(3):hover{
+	/*background-color: rgb(255, 147, 0);	*/
+	background-color: rgb(3,165,2380);	
+}
+/********需求页更改用户介绍结束*******/
+.card-body img.isRZ {
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+	width: 16px;
+	height: 18px;
+	position: relative;
+	left:-10px;
+	top:34px;
+}
+.seeAllDiscuss {
+    margin-left: 1000px;
+    margin-bottom: 10px;
+    display: inline-block;
+    color: #0090FA;
+}
+.replyList {
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 275px;
+}
+.yunFujianWrap {
+	width: 260px;
+	display: table;
+	margin: 0 auto 20px;
+	font-size:12px !important;
+	float: left;
+}
+.yunFujianWrap p {
+	margin-left: 15px;
+	margin-top: 2px;
+	width: 180px;
+	color: #9E9E9E;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.yunFujianWrap span {
+	display: inline-block;
+	padding: 10px 19px 0 14px;
+	color: #9E9E9E;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

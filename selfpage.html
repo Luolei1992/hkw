@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="abstract" content="">
+    <title>设计师认证-画客网</title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./css/client/social.css">
+    <link rel="stylesheet" href="./selfpagecss/css.css">
+    <link rel="stylesheet" href="./selfpagecss/HKWselfpage.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/detailed.css">
+    <link rel="stylesheet" href="css/client/dialog.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/md5.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        var urlLocalhost = "https://www.huakewang.com/";
+        var newhuakwang = "hkw_newapi/";
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+
+        .yqljwzWrap .yqljwzWrap1,
+        .yqljwzWrap a {
+            color: #000;
+        }
+
+        .yqljwzWrap p {
+            display: inline-block;
+        }
+
+        .tools ul {
+            list-style: none;
+        }
+
+        .web {
+            width: 380px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            position: relative;
+            top: 6px;
+            margin-right: 8px;
+        }
+
+        .js-vide {
+            margin: 0;
+            padding: 0px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #CCCCCC;
+        }
+
+        .js-publish-video-u {
+            z-index: 9999;
+        }
+
+        .youku.js-ipt-web {
+            width: 406px;
+            margin-left: 14px;
+            height: 38px;
+            margin-top: 14px;
+            font-size: 14px;
+            border: 1px solid #e1e1e1;
+            padding-left: 6px;
+        }
+
+        .js-publish-video {
+            height: 40px;
+            width: 102px;
+            background-color: #F15849;
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            font-size: 16px;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-left: 17px;
+        }
+
+        .pleaseEnterUrl {
+            font-size: 12px !important;
+            margin: 0;
+            text-align: left !important;
+            padding-left: 14px;
+        }
+
+        .js-publish-videow {
+            max-height: 99px;
+            overflow: auto;
+            overflow-x: hidden;
+        }
+
+        .js-publish-video-u .icon-closeB {
+            font-size: 16px;
+        }
+
+        .js-publish-video-u .icon-closeB {
+            font-size: 16px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .saveWorkSubmit {
+            height: 46px;
+            width: 64px;
+            text-align: center;
+            line-height: 46px;
+            font-size: 14px;
+            color: #fff;
+            cursor: pointer;
+            border: none !important;
+            background: #0bacf5;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .worksListUpDate {
+            width: 1173px;
+            /* left: 5px; */
+            top: -23px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 100;
+            background-color: #fff;
+            border: 1px solid #dce0e0;
+            border-top: none;
+        }
+
+        .hkw-work-list .title {
+            font-size: 18.669px;
+            font-family: "HiraginoSansGB";
+            color: rgb(31, 31, 31);
+            line-height: 1.714;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .hkw-work-list li {
+            background-color: #fff;
+            box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+            float: left;
+            height: 212px;
+            margin: 2px 11px 10px 1px;
+            padding: 9px 15px 12px 0;
+            position: relative;
+            width: 260px;
+        }
+
+        .thumb-a {
+            margin: 0 0 0 0px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            width: 260px;
+            z-index: 0;
+            left: 8px;
+        }
+
+        div.hkw-work-list.fn-clear.pbl ul.pblUl li div.thumb-a {
+            height: 180px;
+        }
+
+        .hkw-work-list li:hover img {
+            transform: scale(1.05);
+        }
+
+        .hkw-work-bottom a {
+            width: 130px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .hkw-work-bottom a img {
+            position: relative;
+            top: 1px;
+            margin-right: 4px;
+        }
+
+        .tousu_lahei_img_hover div {
+            display: none;
+        }
+
+        .tousu_lahei_img_hover:hover div {
+            display: block;
+        }
+
+        .tempNullPng {
+            width: 160px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .message a {
+            cursor: pointer;
+        }
+
+        #view0Work .hkw-work-bottom a,
+        #view1Work .hkw-work-bottom a,
+        #view5Work .hkw-work-bottom a {
+            max-width: 130px;
+            width: auto;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .hkw-work-bar.fn-right {
+            max-width: 129px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .hkw-work-list li {
+            width: 272px;
+            height: auto;
+        }
+
+        div.hkw-work-list.fn-clear.pbl #view0Work li div.thumb-a,
+        div.hkw-work-list.fn-clear.pbl #view1Work li div.thumb-a,
+        div.hkw-work-list.fn-clear.pbl #view5Work li div.thumb-a {
+            height: auto;
+        }
+
+        #view0Work .thumb-a,
+        #view1Work .thumb-a,
+        #view5Work .thumb-a {
+            width: 250px;
+            left: 10px;
+        }
+
+        #view0Work .hkw-work-img .caption,
+        #view1Work .hkw-work-img .caption,
+        #view5Work .hkw-work-img .caption {
+            bottom: 0;
+        }
+
+        #view0Work .fn-hide h4,
+        #view1Work .fn-hide h4,
+        #view5Work .fn-hide h4 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        #view0Work .fn-hide p,
+        #view1Work .fn-hide p,
+        #view5Work .fn-hide p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            padding: 2px 0 0 10px;
+        }
+
+        .worksListUpDate .hkw-work-list li {
+            width: 255px;
+            height: 250px;
+        }
+
+        .worksListUpDate .wrap-list {
+            margin-left: 30px;
+        }
+
+        .hkw-work-bottom {
+            padding: 14px 0 0 8px;
+        }
+
+        .maxImgWidth {
+            max-width: 250px;
+            height: 210px;
+        }
+
+        .hkw-work-bottom img {
+            border-radius: 50%;
+            vertical-align: top;
+        }
+
+        .worksListUpDate .wrap-list .hover-li {
+            border-top: 1px solid #ececec;
+        }
+
+        h3 {
+            font-size: 1.17em;
+            font-weight: 800;
+        }
+        .Ojs-upload-avatar .js-avatar-clip{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        tbody tr ,.ui-dialog-header{
+            border-bottom: 0 !important;
+        }
+        tbody tr:nth-child(1){
+            border-bottom: 1px solid #ccc!important;
+            border-top: 0;
+        }
+        tbody tr td{
+            height:auto;
+            border-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--<div class="inopacity"></div>-->
+    <div id="header" class="header-neiye" style="z-index: 50000;">
+
+    </div>
+    <div class="topheader sectionH5">
+        <div class="addenterline">
+            <div class="addfinshed">
+                个人主页完整度：
+                <div class="controlwidth">
+                    <div class="controlcontent">
+                        <span><a href="#touxiang" class="onpageid"><i class="penicon"></i>&nbsp;头像</a>
+                <a>------</a>
+                </span>
+                        <span><a href="#jibenxinxi" class="onpageid"><i class="penicon"></i>&nbsp;基本信息</a>
+                <a>------</a></span>
+                        <span><a href="#guanyuwo" class="onpageid"><i class="penicon"></i>&nbsp;关于我</a>
+                <a>------</a></span>
+                        <span><a href="#shanchangjineng" class="onpageid"><i class="penicon"></i>&nbsp;擅长技能</a>
+                <a>------</a></span>
+                        <span><a href="#zuopinanli" class="onpageid"><i class="penicon"></i>&nbsp;作品案例</a></span>
+                    </div>
+                </div>
+                <div class="addfinshedcontrol">
+                    <span><a href="#checkerror" class="onpageid"><i class="penicon"></i>&nbsp;头像</a>
+                <a>------</a>
+                </span>
+                    <span><a href="#checkerror" class="onpageid"><i class="penicon"></i>&nbsp;基本信息</a>
+                <a>------</a></span>
+                    <span><a href="#nick_name" class="onpageid"><i class="penicon"></i>&nbsp;关于我</a>
+                <a>------</a></span>
+                    <span><a href="#skill_keyword" class="onpageid"><i class="penicon"></i>&nbsp;擅长技能</a>
+                <a>------</a></span>
+                    <span><a href="#add_new_Work" class="onpageid"><i class="penicon"></i>&nbsp;作品案例</a></span>
+                </div>
+
+            </div>
+            <div class="addsending">
+                <a class="addsendbutton">提交审核</a>
+                <a class="addsendalert">已完成:0%</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="center sectionH5">
+        <div class="centerbyself" id="cfosendimageP-box">
+            <img class="centersendbyself" id="cfosendimageP" src="./image/logobg.png" />
+        </div>
+        <div class="centerFirst">
+
+            <div class="cfout">
+                <div class="cfoutdiv">
+                    <a class="cfolookaround"><i class="cfosendeye"></i>预览我的主页</a>
+                    <div class="cfosendimage">
+                        <!--动画效果-->
+                        <a class="cfoalter" id="cfoalter"><i class="cfoalterout"></i>
+                        上传一张图片，展示再这里<br/>
+                        你可以使用自己的作品、喜欢的照片
+                    </a>
+                        <a class="cfosendimagebutton" id="cfosendimagebutton"><i class="cfosendcamrea"></i>上传封面图片
+                        <input id="cfosendimageinput" type="file" name="cfosendimagebutton" style="opacity: 0;">
+                    </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="cfbody">
+                <a id="checkerror" href=""></a>
+                <div class="touxiang" id="topheader_touxiang">
+                    <img src="./image/bigAvator1.jpg" class="cfbheadimage" id="touxiangImage">
+                    <a class="cfbheadimage" id="touxiang"></a>
+                    <input id="touxiangInput" type="file" name="touxiang" style="display: none">
+                </div>
+                <div class="cfbform">
+                    <div class="cfbform_box_baseInf" style="padding-top: 40px">
+                        <!--000000000000000000000000000000000000000000000000000000000000000000000000000000-->
+                        <div class="cfbfbb_show">
+                            <div class="littleshowleft">
+                                <div style="width: 250px;overflow: hidden">
+                                    <div class="nicheng"></div>
+                                    <div class="sendckeckbutton notcheck">未认证</div>
+                                </div>
+                                <div style="width: 100%;overflow: hidden;margin-top: 5px;" id="zdybq">
+                                </div>
+                            </div>
+                            <div class="littleshowright">
+                                <div class="editor"><a><i class="bj"></i>编辑</a></div>
+                            </div>
+                        </div>
+                        <div class="cfbfbb_write" id="jibenxinxi">
+                            <a class="closebianjitianjia"></a>
+                            <div class="heightchangediv" style="height: 800px;">
+                                <form class="baseInfForm" id="bbs_baseInfForm">
+                                    <label class="cfbf_intokind">选择入驻类型<i class="righttopred"> </i></label>
+                                    <br/>
+
+                                    <!--点击事件-->
+                                    <label class="cfbf_intocheck">
+                                    <a class="checkradio"><i class="outcheckradio"></i></a>
+                                    个人
+                                </label>
+                                    <label class="cfbf_intocheck">
+                                    <a class="checkradio"><i class="outcheckradio"></i></a>
+                                    工作室/团队/机构
+                                </label>
+                                    <label><input class="displayinput dpi_intokind" name="cfbf_intocheck" type="text"
+                                              value="" required="required"></label>
+
+
+                                    <label class="fontweight ">姓名<i class="righttopred"> </i></label>
+                                    <label><input class="textinput showname" type="text" name="showname"
+                                              required="required"></label>
+                                    <label class="fontweight">性别<i class="righttopred"> </i></label>
+                                    <div class="textselect" id="form_sexselect">
+                                        <dl class="textselectul sex" style="z-index: 110;">
+                                            <dd class="wait">请选择</dd>
+                                            <dd value="1">男</dd>
+                                            <dd value="2">女</dd>
+
+                                        </dl>
+                                        <label><input class="displayinput dpi_sex" name="sex" type="text"
+                                                  required="required"></label>
+                                    </div>
+
+                                    <label class="fontweight ">职业<i class="righttopred"> </i></label>
+                                    <label><input class="textinput job_work" placeholder="例：UI设计师/网页设计师/工业设计师" type="text"
+                                              name="job_work" required="required"></label>
+
+                                    <label class="fontweight">工作经验<i class="righttopred"> </i></label>
+                                    <div class="textselect" id="form_experienceselect">
+                                        <dl class="textselectul1 experience" style="z-index:100;">
+                                            <dd class="wait">请选择</dd>
+                                            <dl class="textselectul2">
+                                                <dd value="1">1年以下</dd>
+                                                <dd value="2">1-3年</dd>
+                                                <dd value="4">3-5年</dd>
+                                                <dd value="8">5-10年</dd>
+                                                <dd value="10">10年以上</dd>
+                                            </dl>
+                                        </dl>
+                                        <label><input class="displayinput dpi_experience" type="text" name="experience"
+                                                  required="required"/></label>
+                                    </div>
+                                    <div style="float: left;width: 100%;height: 105px">
+                                        <div class="labelhalf">
+                                            <label class="fontweight ">最高学历<i class="righttopred"> </i></label>
+                                            <div class="textselecthalf" id="form_schoolselect">
+                                                <dl class="textselectul1 education" style="z-index: 90;">
+                                                    <dd class="wait" style="z-index: 90;">请选择</dd>
+                                                    <dl class="textselectul2">
+                                                        <dd value="专科">专科</dd>
+                                                        <dd value="本科">本科</dd>
+                                                        <dd value="硕士">硕士</dd>
+                                                        <dd value="博士">博士</dd>
+                                                        <dd value="高中">高中</dd>
+                                                    </dl>
+                                                </dl>
+                                                <label><input class="displayinput dpi_school" type="text" name="education"
+                                                          required="required"/></label>
+                                            </div>
+                                        </div>
+                                        <div class="labelhalf" style="float: left;display: block">
+                                            <label class="fontweight " style="opacity: 1;">院校名称<i class="righttopred"> </i></label>
+                                            <label><input class="inputhalfright universities" type="text"
+                                                      name="universities" required="required"/></label>
+                                        </div>
+                                    </div>
+                                    <div style="float: left;height: 105px;width: 100%;">
+                                        <div class="labelhalf">
+                                            <label class="fontweight area">所在位置<i class="righttopred"> </i></label>
+                                            <div class="textselecthalf" id="form_locationselect">
+                                                <dl class="textselectul1 location" style="z-index: 80;">
+                                                    <dd id="selfpageCity" class="wait" style="z-index: 80;left: -17px;width: 227px;padding-left: 33px;">
+                                                        <span>省</span>-<span>市</span>-<span>县/区</span></dd>
+                                                    <dl class="textselectul2" style="height:184px;"></dl>
+                                                </dl>
+                                                <label><input class="displayinput dpi_location" type="text" name="location"
+                                                          required="required" placeholder="省/市/县"></label>
+                                            </div>
+                                        </div>
+
+                                        <div class="labelhalf">
+                                            <label class="fontweight " style="opacity: 0;">详细位置<i class="righttopred"> </i></label>
+                                            <label class="laberhalfright" id="inlocaladdress">
+                                            <input class="inlocalMap address" type="text" name="address"
+                                                   placeholder="详细地址">
+                                            <span class="inlocalIcon">
+                                        <img onclick="alertMapShow()" id="selfLocation" src="./image/localin.png">
+                                    </span>
+                                        </label>
+                                        </div>
+                                    </div>
+
+
+                                    <p class="alterbeforesave" style="margin-bottom: 10px">请尽可能精确你的位置信息，减少路途带来的沟通成本！</p>
+                                    <!--选择按钮-->
+                                    <div class="boxbottonchoose" id="bbc_baseInfFrom">
+                                        <div class="buttonchoose">
+                                            <label class="buttonchooseright">
+                                            <input type="submit" class="savebuttonchoose saveWorkSubmit"
+                                                   name="buttonchooseright" value="保存">
+                                        </label>
+                                        </div>
+                                        <div class="buttonchoose">
+                                            <a class="clearbuttonchoose">取消</a>
+
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="opacityBlack bothRuturnForm">
+                                    <div style="width: 100%;height: 100%;position: relative;">
+                                        <div class="checkreturn Infreturn">
+                                            <img src="./image/loading.gif" style="text-align: center;width: 20px;height: 20px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--111111111111111111111111111111111111111111111111111111111111111111111111111111-->
+                        <a id="nick_name" style="float: left;display: block;width: 100%"></a>
+                        <div class="cfbfbb_show">
+                            <div class="littleshowleft">
+                                <div style="width: 250px;overflow: hidden">
+                                    <div class="nicheng">关于我</div>
+                                </div>
+                                <p id="signature"></p>
+                                <div style="width: 100%;overflow: hidden" id="guanyuwo_jianjie">
+                                </div>
+                            </div>
+                            <div class="littleshowright">
+                                <div class="editor"><a><i class="bj"></i>编辑</a></div>
+                            </div>
+                        </div>
+                        <div class="cfbfbb_write" id="guanyuwo">
+                            <a class="closebianjitianjia"></a>
+                            <div class="heightchangediv" style="height: 580px;">
+                                <form class="baseInfForm" id="bbs_aboutselfFrom">
+                                    <h3 class=cfbfbb_writetitle>关于我</h3>
+                                    <label class="fontweight">一句话介绍</label>
+                                    <label><input class="textinput onekindword" type="text" name="onekindword"></label>
+
+                                    <label class="fontweight">我的介绍</label>
+                                    <label class="fontless"><a class="chakanfanli" id="chakanfanli">查看范例</a></label>
+                                    <label style="position: relative;overflow: hidden;">
+                                    <textarea id="aboutmyself_textarea" class="textarea" name="aboutmyself"
+                                              placeholder='描述你再专业领域内的经理、成就，充分展示你的实力、个人风格和吸引力 !'></textarea>
+                                    <div class="aboutself_fanli" id="aboutself_fanli">
+                                        <p>【我的介绍】</p>
+                                        <p>综合的自我介绍描述，让别人感受到你的与众不同</p>
+                                        <p>你的职业经历为你带来的擅长经验是什么</p>
+                                        <p>你的教育背景</p>
+                                        <p>有哪些骄傲的获奖成绩</p>
+                                        <p>【我擅长的服务】</p>
+                                        <p>描述你的技能特长</p>
+                                        <p>能提供的</p>
+                                        <p>(30字左右最佳)</p>
+                                    </div>
+                                </label>
+                                    <p class="alterbeforesave">
+                                        <span id="aboutselftextlength" style="float: left;display: none;">
+                                        当前： <i class="textlength" style="font-style: normal;">0</i>
+                                        <i class="textlengthshow" style="font-style: normal;color:#0bacf5;"><30</i>
+                                    </span>
+                                        <span style="float: right;">字数范围:<i
+                                            style="color:#f33919;font-style: normal;">0-500</i></span>
+                                    </p>
+                                    <!--选择按钮-->
+                                    <div class="boxbottonchoose" id="bbc_aboutself">
+                                        <div class="buttonchoose">
+                                            <label class="buttonchooseright"><input type="submit"
+                                                                                class="savebuttonchoose saveWorkSubmit"
+                                                                                name="buttonchooseright"
+                                                                                value="保存"></label>
+                                        </div>
+                                        <div class="buttonchoose">
+                                            <a class="clearbuttonchoose">取消</a>
+
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="opacityBlack bothRuturnForm">
+                                    <div style="width: 100%;height: 100%;position: relative;">
+                                        <div class="checkreturn Infreturn">
+                                            <img src="./image/loading.gif" style="text-align: center;width: 20px;height: 20px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <!--aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+                    <a id="skill_keyword" style="float: left;display: block;width: 100%"></a>
+                    <div style="width: 100%;float: left">
+                        <div class="cfbform_box_baseInf" style="padding-left: 0;width: 100%;">
+                            <div class="cfbfbb_show" style="padding-left: 300px;background: rgba(0,0,0,0)">
+                                <div class="littleshowleft">
+                                    <div class="nicheng" style="width: 515px;overflow: hidden;">
+                                        <div>擅长技能</div>
+                                    </div>
+                                    <div style="width: 100%;overflow: hidden" id="shanchangjineng_show">
+                                    </div>
+                                </div>
+                                <div class="littleshowright">
+                                    <div class="addeditor"><a><i class="tj"></i>&nbsp;添加</a></div>
+                                </div>
+                            </div>
+                            <div class="cfbfbb_write" id="shanchangjineng" style="width: 1090px;background: rgba(0,0,0,0)">
+                                <a class="closebianjitianjia closebianjitianjia_other" style="transform: rotate(45deg)"></a>
+                                <div class="heightchangediv" style="width:1090px;height: 660px ">
+                                    <div class="heightchangediv" style="padding-left: 320px;height: 210px;background: rgba(0,0,0,0);display: block;overflow: visible">
+                                        <form class="baseInfForm" id="bbs_skillfFrom">
+                                            <h3 style="text-align: center;padding: 0 0 10px;background: rgba(0,0,0,0)">擅长技能
+                                                <a class="righttopred"> </a>&nbsp;&nbsp;</h3>
+                                            <p style="">添加属于你的技能，可以为你更精准地匹配项目</p>
+                                            <div class="addskill">
+
+                                            </div>
+                                            <div class="addskillselect">
+                                                <input class="addskillinput selectaddskill" name="selectaddskill" type="text" placeholder="输入你擅长的技能,多个技能请用分号隔开" autocomplete="off">
+                                                <button class="addskillbutton">添加</button>
+                                                <dl class="skillalert" value="eee">
+                                                    <dd class="textp">数据库检索不到的职业技能可以也可以直接添加</dd>
+                                                </dl>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="heightchangediv heightchangediv_early" style="height: 420px;overflow: initial;">
+                                        <div class="chooseskill">
+                                            <ul style="width: 492px;float: left;overflow: hidden;">
+                                                <li>
+                                                    <a class="ck_logo" style="background-position: 8px -1px;"></a>
+                                                    <a class="ck_title">艺术绘画</a>
+                                                    <a class="ck_skillchoose">
+                                                        <span>吉祥物</span>
+                                                        <span>墙绘</span>
+                                                        <span>插画</span>
+                                                        <span>人设</span>
+                                                        <span>漫画</span>
+                                                        <span>表情</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="ck_logo" style="background-position: -140px -1px;"></a>
+                                                    <a class="ck_title">品牌建设</a>
+                                                    <a class="ck_skillchoose">
+                                                        <span>品牌整案</span>
+                                                        <span>名片/卡片</span>
+                                                        <span>包装设计</span>
+                                                        <span>易拉宝</span>
+                                                        <span>封面/画册</span>
+                                                        <span>导视</span>
+                                                        <span>logo</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="ck_logo" style="background-position: -290px -1px;"></a>
+                                                    <a class="ck_title">互联网设计</a>
+                                                    <a class="ck_skillchoose">
+                                                        <span>交互原型</span>
+                                                        <span>界面设计</span>
+                                                        <span>网页设计</span>
+                                                        <span>专题/活动</span>
+                                                        <span>banner</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="ck_logo" style="background-position: -437px 1px;"></a>
+                                                    <a class="ck_title">产品设计</a>
+                                                    <a class="ck_skillchoose">
+                                                        <span>外观设计</span>
+                                                        <span>结构设计</span>
+                                                        <span>珠宝设计</span>
+                                                        <span>工具设计</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul style="width: 492px;float: right;overflow: hidden;">
+                                                <li>
+                                                    <a class="ck_logo" style="background-position: -580px 1px;"></a>
+                                                    <a class="ck_title">空间设计</a>
+                                                    <a class="ck_skillchoose">
+                                                        <span>软装设计</span>
+                                                        <span>工装设计</span>
+                                                        <span>家装设计</span>
+                                                        <span>美陈设计</span>
+                                                        <span>专卖店设计</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="ck_logo" style="background-position: -728px 1px;"></a>
+                                                    <a class="ck_title">虚拟现实</a>
+                                                    <a class="ck_skillchoose">
+                                                        <span>建模、渲染</span>
+                                                        <span>虚拟现实</span>
+                                                        <span>三维特效</span>
+                                                        <span>园林景观</span>
+                                                        <span>雕塑设计</span>
+                                                        <span>360/720全景</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="ck_logo" style="background-position: -874px 2px;"></a>
+                                                    <a class="ck_title">多媒体</a>
+                                                    <a class="ck_skillchoose">
+                                                        <span>影视后期</span>
+                                                        <span>宣传片</span>
+                                                        <span>微电影</span>
+                                                        <span>摄影师</span>
+                                                        <span>flash</span>
+                                                        <span>配音</span>
+                                                        <span>GIF</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="ck_logo" style="background-position: -1021px 1px;"></a>
+                                                    <a class="ck_title">程序开发</a>
+                                                    <a class="ck_skillchoose">
+                                                        <span>Android</span>
+                                                        <span>IOS</span>
+                                                        <span>SEO</span>
+                                                        <span>HTML5</span>
+                                                        <span>微信</span>
+                                                        <span>企业建站</span>
+                                                        <span>前端开发</span>
+                                                        <span>后端开发</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="boxbottonchoose" id="bbc_skill">
+                                            <div class="buttonchoose">
+                                                <label class="buttonchooseright"><input type="submit"
+                                                                                    class="savebuttonchoose saveWorkSubmit"
+                                                                                    name="buttonchooseright" value="保存"></label>
+                                            </div>
+                                            <div class="buttonchoose">
+                                                <a class="clearbuttonchoose">取消</a>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="opacityBlack_other bothRuturnForm">
+                                            <div style="width: 100%;height: 550px;position: relative;top:0;left:0;">
+                                                <div class="checkreturn_other Infreturn">
+                                                    <img src="./image/loading.gif" style="text-align: center;width: 20px;height: 20px;" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--33333333332322222222222222222222222222222222222222222222-->
+                    <a id="add_new_Work" style="float: left;display: block;width: 100%"></a>
+                    <div style="width: 100%;float: left">
+                        <div class="cfbform_box_baseInf" style="padding-left: 0;width: 100%;">
+                            <div class="cfbfbb_show" id="workshowDetails" style="padding-left: 300px;background: rgba(0,0,0,0)">
+                                <div class="littleshowleft">
+                                    <div class="nicheng" style="width: 515px;overflow: hidden;">
+                                        <div class="nicheng">作品案例</div>
+                                        <div class="sendckeckbutton notcheck">未提交审核(0/6)</div>
+                                    </div>
+                                    <div style="width: 100%;overflow: hidden" id="zuopinanli_show">
+                                    </div>
+                                </div>
+                                <div class="littleshowright">
+                                    <div class="addeditor"><a><i class="tj"></i>&nbsp;添加</a></div>
+                                </div>
+                            </div>
+                            <div class="cfbfbb_write" id="zuopinanli" style="width: 1173px;background: rgba(0,0,0,0);">
+                                <a class="closebianjitianjia closebianjitianjia_other" style="transform: rotate(45deg);margin-right: 83px;"></a>
+                                <div class="heightchangediv" style="width:1173px;height: 1140px ">
+                                    <div class="heightchangediv" style="width:1050px;height: 1140px;display:
+                                 block;opacity: 1; margin-left: 40px;">
+                                        <div class="heightchangediv" style="width: 380px;display: block;height: 1140px;">
+                                            <a class="imgtopshow">
+                                                <img src="./image/fengmian.png" id="imgtopshow">
+                                            </a>
+                                            <label> <input type="file" name="imgtopshow" class="displayinput"
+                                                       id="imgtopshow_input"/></label>
+                                        </div>
+                                        <div class="heightchangediv" style="width: 670px;display: block;height: 1140px">
+                                            <form class="baseInfForm" id="bbs_worksFrom" style="width: 640px;">
+                                                <input type="number" value="0" class="displayinput work_id" name="work_id" id="theWork_id">
+                                                <h3 style="width:285px;text-align: center;padding: 0 0 10px;background: rgba(0,0,0,0)">
+                                                    作品案例
+                                                    <a class="righttopred"> </a>
+                                                </h3>
+                                                <p style="width:285px;text-align: center;padding: 0 0 10px;background: rgba(0,0,0,0);">
+                                                    <a class="righttopred"> </a>至少添加<i style="color:orangered;font-style: normal;font-weight: bold">6个作品</i>才能通过审核
+                                                </p>
+                                                <label class="fontnoweight">作品名称<i class="righttopred"> </i></label>
+                                                <label><input class="textinputlong worksname" type="text" name="worksname"
+                                                          placeholder="请输入作品名称（20字以内）" required="required"
+                                                          style="color:#999;"></label>
+                                                <label class="fontnoweight">作品描述（500字以内）<i class="righttopred"> </i></label>
+                                                <label style="position: relative;overflow: hidden;">
+                                                <textarea id="worksshow_textarea" class="workshow_textarea workstext"
+                                                          name="aboutmyself"></textarea>
+                                                <input id="workstext" class="displayinput " type="text" name="workstext"
+                                                       required="required">
+                                                <div class="workshow_fanli" id="workshow_fanli">
+                                                    <p>请描述在项目中担任的角色及产出的成果业绩等</p>
+                                                    <p>如：拉钩APP的IOS负责人，负责整体框架设计</p>
+                                                </div>
+                                            </label>
+                                                <p class="alterbeforesave">
+                                                    <span id="workshowlength" style="float: left;">
+                                                当前： <i class="textlength" style="font-style: normal;">0</i>
+                                                <i class="textlengthshow"
+                                                   style="font-style: normal;color:#0bacf5;">/500</i>
+                                            </span>
+                                                    <span style="float: right;margin-right: 60px;">字数范围:<i
+                                                        style="color:#f33919;font-style: normal;">0-500</i></span>
+                                                </p>
+                                                <label class="fontnoweight">详细（至少需要一个视频或者一张相关内容的图片）<i
+                                                    class="righttopred"> </i></label>
+                                                <div class="workshow_detials" style="overflow: visible;">
+                                                    <div class="workshow_detials_top">
+                                                        <dl id="workshow_detials_dl">
+                                                            <dd style="background: url('./image/backgroundline.png') no-repeat 0 0 #fff;">
+                                                                本地上传
+                                                                <div class="workshow_sendlocalhost" style="display: block;">
+                                                                    <div class="workshow_imginput">
+                                                                        <!--<label class="workshow_img">-->
+                                                                        <!--添加图片-->
+                                                                        <!--<input id="workshow_img" type="file" name="workshow_img" class="workshow_img" multiple="multiple">-->
+                                                                        <!--</label>-->
+                                                                        <div style="width:100px;height: 40px;display:inline-block;margin-bottom: 20px;position:relative;">
+                                                                            <div class="upload-btn-txt-sees"></div>
+                                                                            <input id="batch_image_upload" name="batch_image_upload" style="margin-bottom: 15px;" type="file" multiple="true">
+                                                                            <div id="batch_upload_file_queue" style="width: 680px;"></div>
+                                                                        </div>
+                                                                        <div id="work_images">
+                                                                            单张图片100M以内，RGB模式，支持jpg/png/jpeg/gif格式，最多上传10张图片，支持批量上传
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="workshow_imgshow">
+                                                                        <div class="imgclick">
+                                                                            <p style="width: 80%;display: inline-block;">
+                                                                                请上传图片</p>
+                                                                            <p style="width: 15%;display: inline-block;">
+                                                                                ▤</p>
+                                                                            <a class="imgclick_a">
+                                                                                <</a>
+                                                                                    <a class="imgclick_a">></a>
+                                                                                    <a class="imgclick_a" style="border-radius: 0;margin-right: 0;">x</a>
+                                                                                    <a class="imgclick_a" style="width: 98px;border-radius: 0;margin-right: 0;">设为封面</a>
+                                                                        </div>
+                                                                        <div class="imgshow">
+                                                                            <img class="imgshow_small" id="imgshow" src="./image/noimage.png" value="0">
+                                                                            <div class="imgshow_real show_real">
+
+                                                                                <img src="./image/closebtnBlue.png" style="position: absolute;top:1%;right: 1%;z-index: 500;cursor: pointer;">
+                                                                                <div style="width: 0;height: 0;position: relative;top:50%;left: 50%;">
+                                                                                    <img id="showreal_img" src="./image/noimage.png" style="float: left;">
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="imgtext">
+                                                                            <textarea id="imgtext" placeholder="图片内容简述"></textarea>
+                                                                        </div>
+                                                                        <div class="imglist" style="overflow: visible">
+                                                                            <div id="imghover" style="position: absolute;width: 400px;height: 400px;background: rgba(0,0,0,0.5);z-index: 200;top:-200px;left: 30px;display: none;">
+                                                                                <img src="image/d-1.jpg" id="hoverimg" style="margin: 200px 0 0 200px; transform:translateX(-50%) translateY(-50%);">
+                                                                            </div>
+                                                                            <ul id="imgshow_list"></ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                            <dd>插入视频
+                                                                <div class="workshow_sendlocalhost">
+                                                                    <input placeholder="请输入优酷视频网址..." name="file_path" class="youku js-ipt-web" type="text" />
+                                                                    <span class="u-sure js-publish-video">确定</span>
+
+                                                                    <p class="pleaseEnterUrl">
+                                                                        请输入视频网址，格式："http://http://v.youku.com/v_show/id_XNzE0MDU2MjQ4.html"</p>
+                                                                    <div class="js-publish-videow">
+
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                                <label class="fontnoweight">行业<i class="righttopred"> </i></label>
+                                                <div class="workshow_industry workindustry">
+                                                    <ul value="148">
+                                                        <li value="242">平面设计</li>
+                                                        <li value="244">交互设计</li>
+                                                        <li value="246">三维艺术</li>
+                                                        <li value="243">网页设计</li>
+                                                        <li value="241">艺术绘画</li>
+                                                        <li value="245">工业设计</li>
+                                                        <li value="247">动画/影视</li>
+                                                        <li value="248">摄影艺术</li>
+                                                        <li value="386">产品设计</li>
+                                                    </ul>
+                                                    <ul style="margin: 0 9px"></ul>
+                                                    <ul class="workindustry"></ul>
+                                                    <input class="displayinput" type="text" name="workindustry" required="required">
+                                                </div>
+                                                <label class="fontnoweight">关键词（多个请用分号隔开）<i
+                                                    class="righttopred"> </i></label>
+                                                <label><input class="textinputlong work_keyword" type="text"
+                                                          name="work_keyword" required="required"
+                                                          style="color:#999;"></label>
+                                                <div class="boxbottonchoose" id="bbc_zuopinanli">
+                                                    <div class="buttonchoose">
+                                                        <label class="buttonchooseright">
+                                                        <input type="button" class="saveWorkSubmitId saveWorkSubmit"
+                                                               name="buttonchooseright" value="保存">
+                                                    </label>
+                                                    </div>
+                                                    <div class="buttonchoose">
+                                                        <a class="clearbuttonchoose">取消</a>
+
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="opacityBlack bothRuturnForm" style="width: 1090px">
+                                            <div style="width: 100%;height: 100%;position: relative;">
+                                                <div class="checkreturn Infreturn" style="margin: 0 430px">
+                                                    <img src="./image/loading.gif" style="text-align: center;width: 20px;height: 20px;" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="worksListUpDate">
+            <!-- 我的作品 start -->
+            <div class="wrap-list" style="display:block;">
+                <div class="hkw-work-list fn-clear pbl" style="margin-top:20px;">
+                    <!-- <img id="work_list_loadingImage_ds" src="./image/loading.gif" style="display: block;margin:10px auto;"/> -->
+                    <!-- 案例展示的作品的容器 -->
+                    <ul class="pblUl clearfix" id="view1Work"></ul>
+                    <!-- 案例展示的作品的模板 -->
+                    <script type="text/template" id="template1Work">
+                        {{~it:val:eq}}
+                        <li class="hover-li {{= it[0].diyAnchorPage ? it[0].diyAnchorPage : 'page_1'}}">
+                            <div class="iInspir-block"></div>
+                            <div class="hkw-work-img thumb-a h_a">
+                                <div class="display">
+                                    {{? val.display == "0"}}
+                                    <img class="img" src="image/examine.png" alt=""> {{?}} {{? val.display == "2"}}
+                                    <img class="img" src="image/notPass.png" alt=""> {{?}} {{? val.display == "3"}}
+                                    <img class="img" src="image/punish.png" alt=""> {{?}}
+                                </div>
+                                <a href="introduction.html?id={{=val.id}}" target=_blank><img class="delay maxImgWidth" src="{{=val.path_thumb ? val.path_thumb : 'images/17.jpg'}}" style="" /></a>
+                                <div class="privacy top-hide">
+                                    {{? val.display == "1"}}
+                                    <a href="javascript:void(0)" data-type="important" class="sc important {{= val.is_home_page == '0' ? 'no' : 'yes'}}" data-value="{{=val.is_home_page ? val.is_home_page : 0}}" data-id="{{=val.id ? val.id : 0}}">
+                                    {{= val.is_home_page == "0" ? "主页展示" : "取消主页展示"}}
+                                </a>
+                                    <a href="javascript:void(0)" data-type="hide" class="sc hide {{= val.is_show_out == '0' ? 'yes' : 'no'}}" data-value="{{=val.is_show_out ? val.is_show_out : 0}}" data-id="{{=val.id ? val.id : 0}}">
+                                    {{= val.is_show_out == "0" ? "已隐藏" : "隐藏"}}
+                                </a> {{?}} {{? val.display != "1"}}
+                                    <a href="javascript:void(0)" class="sc delete" data-type="delete" data-value="0" data-id="{{=val.id ? val.id : 0}}">删除</a> {{?}}
+                                    <a href="PublishedWork.html?work_id={{=val.id}}" target="_blank" class="sc modify" data-id="{{=val.id ? val.id : 0}}">修改</a>
+                                </div>
+                                <div class="caption fn-hide">
+                                    <h4>
+                                        {{=val.title ? val.title : ""}}
+                                        <!-- <a href="javascript:void(0)" class="sc deleteWroks" data-islove="{{=val.MyIslove ? val.MyIslove : 0}}" data-id="{{=val.id ? val.id : 0}}">
+                                                        {{= val.MyIslove ? "已收藏" : "收藏"}}
+                                                    </a> -->
+                                    </h4>
+                                    <p>{{=val.abstract ? val.abstract : ""}}</p>
+                                </div>
+                            </div>
+                            <div class="hkw-work-bottom">
+                                <a href="detailed.html?id={{=val.uid}}" target=_blank><img src="{{=val.user_path ? val.user_path : 'images/pho1.png'}}" width="16" height="16" /> {{=val.nick_name ? val.nick_name : ""}}</a>
+                                <div class="hkw-work-bar fn-right">
+                                    <div class="hkw-work-bar-item">
+                                        <span class="hkw-join-icon">
+                                                </span> {{=val.hits ? val.hits : ""}}
+                                    </div>
+                                    <div class="hkw-work-bar-item">
+                                        <span class="hkw-comment-icon">
+                                                </span> {{=val.comment_count ? val.comment_count : ""}}
+                                    </div>
+                                    <div class="hkw-work-bar-item">
+                                        <span class="hkw-collection-icon">
+                                                </span> {{=val.love_count ? val.love_count : ""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {{~}}
+                    </script>
+                    <!-- 案例展示的作品的空状态 -->
+                    <div id="error_workslist_designer" style="width: 100%;height: 400px;background: #fff;display: none;overflow: hidden">
+                        <div style="margin: 150px auto 0;width: 600px;height: 101px;">
+                            <img style="float: left" src="image/errorContent.png" />
+                            <a style="color: #aaa;line-height: 101px;font-size: 16px;display: inline-block;float: left;height: 101px;">TA还不是认证设计师</a>
+                        </div>
+                    </div>
+
+                    <!-- <ul id="work_list_content_ds" class="pblUl_works" style="visibility: hidden;clear: both;overflow: hidden"
+                                    data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 300 }'>
+                                </ul> -->
+
+                    <div name="workListAddMoreContent" id="workListAddMoreContent_designer" style="width: 100px;height: 40px;margin: 0 auto;cursor: pointer;background: #eee;border: 1px solid #aaa;border-radius: 4px;display: block">
+                        <h2 style="line-height: 40px;text-align: center;font-weight: bold">加载更多</h2>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- 我的作品 end -->
+        </div>
+    </div>
+    <img id="sendnoimgshow" src="" style="display: none;">
+    <video id="sendnovideoshow" src="" style="display: none;"></video>
+    <div id="alterbox">
+        <div class="alterbox">
+            <div style="text-align: left">删除原因？<i class="righttopred"> <a style="font-size: 14px;cursor: default;
+        position:absolute;top:-5px;left:10px;width: 160px">(请手动填写原因)</a></i></div>
+            <p style="text-align: start">提示：作品可以删除但行为记录仍会被保留，作品在删除后被发现存在违规行为仍会被追责，并且对于相关作品将会被严肃处理！</p>
+            <label style="padding-bottom: 2px;margin-bottom: 5px;border-bottom: 1px solid #111;"><input type="text"
+                                                                                                    name="delete"
+                                                                                                    class="textinput"
+                                                                                                    style="border:none"
+                                                                                                    placeholder=""/></label>
+            <div class="deletecheck">删除</div>
+            <div class="deletemiss">取消</div>
+        </div>
+    </div>
+
+    <!--百度地图-->
+    <div class="mapWrap">
+        <div class="alertDom">
+            <span>提示:</span>
+            <i></i>
+            <p></p>
+            <a class="alertDomSure" href="javascript:void(0);">确定搜索</a>
+        </div>
+        <div class="mapWrapTop clearfix">
+            <div class="mapWrapTopLeft">
+                <span class="currentCity">当前城市：</span>
+                <span class="currentCityChange" id="cur_city_spn">杭州</span>
+                <span class="changeCurrentCity">切换城市 <i></i></span>
+            </div>
+            <div class="mapWrapTopRight">
+                <input type="text" class="baiduFindCity">
+                <button class="citySearch">查询地址</button>
+            </div>
+            <div class="alertMapClose"></div>
+        </div>
+        <div id="allmap">
+
+        </div>
+        <div id="r-result">
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <!--底部开始-->
+    <div class="footer_on"></div>
+    <!--底部结束-->
+    <div class="Ojs-upload-avatar one" style="z-index:200;">
+        <div class="js-mask"></div>
+        <div class="Ojs-up-wrp js-avatar-clip animate-fadeIn">
+            <header>
+                <span class="tit">选择裁剪区域</span>
+                <i class="icon-closeB"></i>
+            </header>
+            <div class="up-main" id="Ojs-clip-contain">
+            </div>
+            <div class="bottm">
+                <span class="cancle">取消</span>
+                <span class="sure" id="Ojs-clip-sure">确定</span>
+            </div>
+    
+        </div>
+    </div>
+    <div class="Ojs-upload-avatar two" style="z-index:200;">
+        <div class="js-mask"></div>
+        <div class="Ojs-up-wrp js-avatar-clip animate-fadeIn">
+            <header>
+                <span class="tit">选择裁剪区域</span>
+                <i class="icon-closeB"></i>
+            </header>
+            <div class="up-main" id="Ojs-clip-contain2">
+            </div>
+            <div class="bottm">
+                <span class="cancle">取消</span>
+                <span class="sure" id="Ojs-clip-sure2">确定</span>
+            </div>
+    
+        </div>
+    </div>
+    <script>
+        window.FileAPI = {
+            staticPath: './js/plugs/'
+        }
+    </script>
+    <script type="text/javascript" src="js/plugs/FileAPI.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="js/map/map.js"></script>
+    <script type="text/javascript" src="js/personal/config.js"></script>
+    <script type="text/javascript" src="js/plugs/doT.min.js"></script>
+    <script type="text/javascript" src="js/personal/layer/layer.js"></script>
+    <script type="text/javascript" src="js/personal/allWorksList.js"></script>
+    <script type="text/javascript" src="./js/BabelselectPlug.js"></script>
+    <script type="text/javascript" src="./js/BabelformCheck.js"></script>
+    <script>
+        //            document.write('<script src="./js/Babelimagesend.js"></scr'+'ipt>');
+    </script>
+    <script>
+        //            document.write('<script src="./js/Babelvideosend.js"></scr'+'ipt>');
+    </script>
+    <script>
+        document.write('<script src="./js/Babelmain.js"></scr' + 'ipt>');
+    </script>
+    <script>
+        document.write('<script src="./js/BabeltheData.js"></scr' + 'ipt>');
+    </script>
+    <script type="text/javascript" src='js/plugs/iscroll-zoom.js'></script>
+    <script type="text/javascript" src='js/plugs/lrz.all.bundle.js'></script>
+    <script type="text/javascript" src='js/plugs/jquery.photoClip.js'></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".bottm,.icon-closeB").click(function () {
+                $(".Ojs-upload-avatar").css("display", "none");
+                $("#touxiangInput").val(""); //清空input文件
+                $("#cfosendimageinput").val(""); //清空input文件
+            });
+            $("#touxiang").click(function(){
+                // clipArea.size = [250, 250];
+                // clipArea.outputSize = [250, 250];
+                // clipArea.file = "#touxiangInput";
+                // clipArea.view = "#topheader_touxiang";
+                // $(".Ojs-upload-avatar").css("display", "block");
+            });
+            $("#cfosendimagebutton").click(function () {
+                // clipArea.size = [380, 60];
+                // clipArea.outputSize = [1900, 300];
+                // clipArea.file = "#cfosendimageinput";
+                // clipArea.view = "#cfosendimageP-box";
+                // $(".Ojs-upload-avatar").css("display", "block");
+            });
+            var chooses = document.getElementById('touxiangInput');
+            chooses.addEventListener('change', function () {
+                $(".Ojs-upload-avatar.one").css("display", "block");
+            });
+            var chooses2 = document.getElementById('cfosendimageinput');
+            chooses2.addEventListener('change', function () {
+                $(".Ojs-upload-avatar.two").css("display", "block");
+            });
+        });
+        //裁剪图片上传头像
+        var clipArea = new PhotoClip("#Ojs-clip-contain", {
+            size: [250, 250],
+            outputSize: [250, 250],
+            style:{
+                maskColor: "rgba(0,0,0,.3)",
+                maskBorder: "1px dashed #ddd"
+            },
+            file: "#touxiangInput",
+            ok: "#Ojs-clip-sure",
+            done: function (dataURL) {
+                $.post('https://www.huakewang.com/upload/upload_image_byw_upy2', {
+                    'arr': dataURL
+                }, function (data) {
+                    if (data.success) {
+                        $("#touxiangImage").attr("src", data.data.path); //设置预览view
+                        $.ajax({
+                            url: urlLocalhost + newhuakwang + "change_user_info",
+                            type: "post",
+                            dataType: "json",
+                            xhrFields: {
+                                withCredentials: true
+                            },
+                            crossDomain: true,
+                            data: {
+                                user_id: getCookie("user_id"),
+                                path: data.data.path
+                            }
+                        }).done(function (data1) {
+                            if (data1.success) {
+                                alertUploadMsg(data1.message);
+                                $(".Ojs-upload-avatar").css("display", "none");
+                            } else {
+                                alertUploadMsg(data1.message);
+                                $(".Ojs-upload-avatar").css("display", "none");
+                            };
+                        });
+                    } else {
+                        alertUploadMsg('上传头像失败');
+                    }
+                }, 'json');
+            }
+        });
+        //裁剪图片上传设计上主页背景
+        var clipArea2 = new PhotoClip("#Ojs-clip-contain2", {
+                size: [380, 60],
+                outputSize: [1900, 300],
+                style: {
+                    maskColor: "rgba(0,0,0,.3)",
+                    maskBorder: "1px dashed #ddd"
+                },
+                file: "#cfosendimageinput",
+                ok: "#Ojs-clip-sure2",
+                done: function (dataURL) {
+                    $.post('https://www.huakewang.com/upload/upload_image_byw_upy2', {
+                        'arr': dataURL
+                    }, function (data) {
+                        if (data.success) {
+                            $("#cfosendimageP").attr("src", data.data.path); //设置预览view
+                            $.ajax({
+                                url: urlLocalhost + newhuakwang + "change_user_info",
+                                type: "post",
+                                dataType: "json",
+                                xhrFields: {
+                                    withCredentials: true
+                                },
+                                crossDomain: true,
+                                data: {
+                                    user_id: getCookie("user_id"),
+                                    background_path: data.data.path
+                                }
+                            }).done(function (data1) {
+                                if (data1.success) {
+                                    alertUploadMsg(data1.message);
+                                    $(".Ojs-upload-avatar").css("display", "none");
+                                } else {
+                                    alertUploadMsg(data1.message);
+                                    $(".Ojs-upload-avatar").css("display", "none");
+                                };
+                            });
+                        } else {
+                            alertUploadMsg('上传背景图片失败');
+                        }
+                    }, 'json');
+                }
+            });
+    </script>
+</body>
+
+
+</html>

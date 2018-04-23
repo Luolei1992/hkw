@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/client/dialog.css">
+    <link rel="stylesheet" type="text/css" href="css/social.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/social.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.left').load('PersonalNav.html', function() {
+                $(document).find('div.left div.yidenglu-box ul li:eq(6)').css({
+                    'background': '#f1f1f1'
+                });
+            }); //加载已登录导航
+        });
+    </script>
+
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        
+        #main-body.personal div.right div.neirong p.text {
+            text-indent: 0;
+        }
+        
+        #main-body.personal div.right div.neirong div.zhdt ul.zhdtSlide {
+            margin-bottom: 0;
+        }
+        
+        #main-body.personal div.right div.neirong div.zhdt ul.zhdtSlide li.zhdtSlideli div.zhdtSlideli-left.one {
+            width: 22%;
+        }
+        
+        #main-body.personal div.right div.neirong div.zhdt ul.zhdtSlide li.zhdtSlideli div.zhdtSlideli-left.two {
+            width: 56%;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        #main-body.personal div.right div.neirong div.zhdt ul.zhdtSlide li.zhdtSlideli div.zhdtSlideli-right.three {
+            width: 20%;
+        }
+        #truePicCodeWrap {
+            width: 105px;
+            height: 32px;
+            overflow: hidden;
+            margin-bottom:0;
+            margin-left: 10px;
+            text-align: center;
+        }
+        #truePicCodeWrap img{
+            vertical-align: middle;
+            position: relative;
+            left:-10px;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeader">
+            画客网致力于打造一个精确、快捷的设计服务对接平台。来画客网，遇到靠谱的好项目.　　<a href="Personal-8.html">设计师入驻</a>
+        </div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal">
+            <div class="left"></div>
+            <div class="right">
+                <div class="neirong">
+                    <!--<p class="trueNameValidate"  data-id="1">已实名认证，<span style="color: #48A7F0;">查看>></span></p>-->
+                    <!--<p class="trueNameValidate"  data-id="2">提现需要进行实名认证，<a href="Personal-11.html"><span style="color: #48A7F0;">实名认证>></span></a></p>-->
+                    <p class="trueNameValidate" data-id="">
+                        <span>实名认证审核中</span>
+                        <a href="Personal-11.html" style="color: #48A7F0;">查看>></a>
+                    </p>
+                    <div class="trueNameValidateL fl">
+                        <span class="trueNameMoney">0.00</span><span class="trueNameMoneys" style="color: red;">（有￥<i></i>元正在提现）</span><br>
+                        <span>冻结资金：<span class="frozen_cash">0.00</span></span><i></i>
+                        <p class="ts">冻结资金是未完成交易的资金，托管到画客网平台，待交易完成后转入对方的余额。</p>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="trueNameContent">注：每周三开通提现功能，每次提现金额区间为500元-20万元</p>
+                    </div>
+                    <div class="trueNameValidateR fr">
+                        <button class="btn1" disabled>提现<p class="btn1s">实名认证通过后，才能提现！</p></button>
+                        <button class="btn2">充值</button>
+                    </div>
+                    <div class="smrqwrap"></div>
+                    <div class="smrq">
+                        <div class="smrqTop">
+                            <span class="smTop">请选择你稀罕的方式进行充值</span>
+                            <span class="close"></span>
+                        </div>
+                        <ul style="height: 40px;">
+                            <li class="cur" style="height: 39px ; margin-top: 1px; width:130px;">
+                                <span class="ss zfb"></span>
+                                <span>支付宝支付</span>
+                            </li>
+                            <li style="height: 39px ; margin-top: 1px; width:130px;">
+                                <span class="ss wx"></span>
+                                <span>微信支付</span>
+                            </li>
+                        </ul>
+                        <div class="sewm">
+                            <input class="payCashApplys" onkeyup="clearNoNum(this)" type="text" data-modeltype="AliPay" placeholder="请输入充值金额" />
+                            <img class="payCashApplyImg" width="170" height="170" src="images/zwwem.png" />
+                            <p class="color">￥<i class="payZxMoney">0.00</i>元</p>
+                        </div>
+                        <div class="sewm" style="display:none">
+                            <input type="text" class="payCashApplys" data-modeltype="WxPay" placeholder="请输入充值金额" />
+                            <img class="payCashApplyImg" width="170" height="170" src="images/zwwem.png" />
+                            <p class="color">￥<i class="payZxMoney">0.00</i>元</p>
+                        </div>
+                        <div class="wccz">
+                            <p class="text" style="line-height:14px;">感谢你对画客网的支持，发票和提现请往个人管理中心提交申请！联系客服：<span class="blue">0571-86803103</span></p>
+                        </div>
+                        <div class="clear" style="height:1px;width:1px;"></div>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div class="getTrueMoney">
+                        <h3>申请提现：</h3>
+                        <div class="getTrueMoneyWay">
+                            <p>
+                                <span>支付宝账号：</span>
+                                <input type="text" class="getTrueMoneyWay1" placeholder="请输入支付宝账号">
+                            </p>
+                            <p>
+                                <span>支付宝账号姓名：</span>
+                                <input type="text" class="getTrueMoneyWay2" placeholder="请输入支付宝账号姓名">
+                            </p>
+                            <p>
+                                <span>提现金额：</span>
+                                <input type="text" class="getTrueMoneyWay4" onkeyup="clearNoNum(this)" placeholder="请输入提现金额"> 可提现余额：<i class="canGetMoney" style="color: red;">0</i>元</p>
+                            <p>
+                                <span>手机号：</span>
+                                <input type="text" disabled class="getTrueMoneyWayPhone">
+                            </p>
+                            <p>
+                                <span></span>
+                                <input type="text" style="width: 100px;position:relative;top: -11px;" class="getTrueMoneyWay5">
+                                <span id="truePicCodeWrap">
+                                    <img src="https://www.huakewang.com/index.php/verifycode/index/2" id="truePicCode"></span>
+                            </p>
+                            <p>
+                                <span></span>
+                                <input type="text" style="width: 100px;" class="getTrueMoneyWay3" placeholder="请输入验证码"><span id="trueNameCode">获取验证码</span>
+                            </p>
+                            <p>
+                                <span>到账时间：</span>预计<i style="color: #08A1EF;">3-7</i>个工作日内到账<a style="color: #ccc;">（平台承担手续费）</a>
+                            </p>
+                            <button id="sureGetMoney">确定</button>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div class="zhdt">
+                        <ul class="zhdtSlide">
+                            <li class="zhdt-title">
+                                交易记录
+                            </li>
+                            <li class="zhdtSlideli">
+                                <div class="zhdtSlideli-left one">时间</div>
+                                <div class="zhdtSlideli-left two">详情</div>
+                                <div class="zhdtSlideli-right three">金额</div>
+                            </li>
+                            <div id="viewPersonal4"></div>
+                            <script type="text/template" id="templatePersonal4">
+                                {{~it:val:eq}}
+                                <li class="zhdtSlideli">
+                                    {{ var newDate = new Date(); newDate.setTime(val.add_time); }}
+                                    <div class="zhdtSlideli-left one">{{= newDate.getFullYear() +"年"+(newDate.getMonth()+1) + "月"+newDate.getDate()+"日"}}</div>
+                                    <div class="zhdtSlideli-left two">{{= val.cause ? val.cause : "" }}</div>
+                                    <div class="zhdtSlideli-right three">￥{{= val.price ? val.price : ""}}</div>
+                                </li>
+                                {{~}}
+                            </script>
+                            <!-- 							<li class="zhdtSlideli">
+								<div class="zhdtSlideli-left">2015/11/02</div>
+								<div class="zhdtSlideli-left">收入--用户登录</div>
+                                <div class="mingcheng-right">-￥3200.0</div>
+							</li>
+							<li class="zhdtSlideli">
+								<div class="zhdtSlideli-left">2015/10/22</div>
+								<div class="zhdtSlideli-left">收入--用户登录</div>
+                                <div class="mingcheng-right">-￥3200.0</div>
+							</li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div style="width:1px;height:1px; clear:both;"></div>
+            <div id="kkpager"></div>
+            <div class="footer_on"></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+<script type="text/javascript" src="js/plugs/jq.page.js"></script>
+<script type="text/javascript" src="js/personal/config.js"></script>
+<script type="text/javascript" src="js/plugs/doT.min.js"></script>
+<script type="text/javascript" src="js/personal/layer/layer.js"></script>
+<script type="text/javascript" src="js/personal/personal-4.js"></script>
+
+</html>

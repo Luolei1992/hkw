@@ -1,0 +1,116 @@
+body{
+    background-color: #f6f6f6;
+}
+.news-main {
+  width: 870px;
+  margin: 0 auto 100px;
+}
+.news-main .news-ul .news-li {
+  height: 170px;
+  margin-bottom: 40px;
+  padding: 20px 40px 0 5px;
+  background-color: #fff;
+  position: relative;
+}
+
+.news-main .news-li a.news-li-left {
+  display: inline-block;
+  width: 269px;
+  height: 152px;
+  overflow: hidden;
+  float: left;
+}
+
+.news-main .news-li a.news-li-left img{
+    width: 100%;
+}
+
+.news-main .news-li div.news-li-right {
+  margin-left: 290px;
+}
+
+.news-li div.news-li-right h1 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+div.news-li-right h1:hover a {
+  color: #1996E9;
+}
+
+.news-li div.news-li-right p {
+  font-size: 14px;
+  color: #9b9b9b;
+}
+
+.news-li div.news-li-right .news-li-enements {
+  position: absolute;
+  bottom: 15px;
+  color: #9b9b9b;
+  width: 535px;
+}
+
+.news-li div.news-li-right .news-li-enements .times {
+  margin-right: 50px;
+}
+
+.news-li div.news-li-right .news-li-enements .float-right {
+  float: right;
+  margin-right: 8px;
+}
+.crumbs {
+  margin: 30px 0;
+  font-size: 14px;
+}
+
+.crumbs a {
+  color: #a1a1a1;
+}
+
+.crumbs a:hover {
+  color: #1996E9;
+}
+
+.news-main .news-tab-ul {
+  width: 100%;
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 10px;
+}
+
+.news-main .news-tab-ul .news-tab-li {
+  float: left;
+  font-size: 15px;
+  color: #303030;
+  width: 108px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  bottom: -1px;
+  border-top: 3px solid #f6f6f6;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+}
+
+.news-main .news-tab-ul li.cur {
+  border-top: 3px solid #1996E9;
+  border-left: 1px solid #f1f1f1;
+  border-right: 1px solid #f1f1f1;
+  background-color: #fff;
+}
+.news-main .news-tab-ul .news-tab-li:hover{
+    color: #1996E9;
+}
+.news-main .news-li a.news-li-left{
+    background-color: rgb(231,231,231);
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-image: url("../image/logoZhanWei.png");
+}
+.news-main .news-li a.news-li-left img{
+    visibility:hidden;
+}

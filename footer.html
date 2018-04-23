@@ -1,0 +1,24 @@
+<script type="text/javascript" >
+$(function(){
+	$('#main-body-bottom input.butf').click(function(){
+		$(this).parent().children('input.butf').removeClass('cur');
+		$(this).addClass('cur');
+	});
+	$('#main-body-bottom input').hover(function(){
+		$(this).addClass('curbor');
+	},function(){
+		$(this).removeClass('curbor');
+	});
+})
+
+</script>
+		
+	<input class="but butf cur" type="button" value="1"/>
+	<input class="but butf" type="button" value="2"/>
+	<input class="but butf" type="button" value="3"/>
+	<input class="but butf" type="button" value="4"/>
+	<input class="but butf" type="button" value="5"/>
+	<input class="but_2" type="button" value="...65"/>
+	<input class="but_4" type="text" value=""/>
+	<input class="but_3" type="button" value="下一页"/>
+	<div style="clear:both; height:1px;width:1px;"></div>

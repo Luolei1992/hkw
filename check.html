@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/social.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+            } else {
+
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $.show_more_init(); //文字展开、合起
+            $('div.ewm').css({
+                'display': 'none'
+            }); //ewm隐藏
+            $('div.ewm:eq(0)').css({
+                'display': 'block'
+            }); //第一ewm显示
+            $('div.sewm').eq(1).css('display', 'none'); //扫ewm第第二块隐藏
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeader" class="appointment" style="margin-bottom:30px;">原创作品数：17603（每一个作品都能联系到作者）　　今日新增：60</div>
+        <div class="superbox"></div>
+        <!-- 头部 end -->
+        <div id="main-body" class="payment-main-body" style="background:pink;">
+            <div class="ExtendMain w1146" style="display: block;">
+                <div class="clear" style="height:1px;"></div>
+                <div class="paymentMainDiv" style=" margin:15px auto;border:1px solid red; background:#fcf8ef; height:40px;text-align:center;">
+                    <span class="fkcg" style="line-height:40px;"> 下单后设计师确认即项目开始，设计师不接受资金将退回到你的余额！</span>
+                </div>
+                <div class="paymentMainDiv" style="margin-bottom:10px; position:relative;">
+                    <div class="smrq">
+                        <div class="smrqTop">
+                            <span class="smTop">请选择你稀罕的方式进行充值</span>
+                            <span class="close"></span>
+                        </div>
+                        <ul>
+                            <li class="cur">
+                                <span class="ss zfb"></span>
+                                <span>支付宝支付</span>
+                            </li>
+                            <li>
+                                <span class="ss wx"></span>
+                                <span>微信支付</span>
+                            </li>
+                        </ul>
+                        <div class="sewm">
+                            <input type="text" placeholder="请输入充值金额" />
+                            <img src="images/hkwewm.png" />
+                            <p class="color">￥501.00元</p>
+                        </div>
+                        <div class="sewm">
+                            <input type="text" placeholder="请输入充值金额" />
+                            <img src="images/hkwewm.png" />
+                            <p class="color">￥502.00元</p>
+                        </div>
+                        <div class="wccz">
+                            <p class="text" style="line-height:14px;">感谢你对画客网的支持，发票和提现请往个人管理中心提交申请！联系客服：<span class="blue">0571-86803103</span></p>
+                            <div class="czk">完成充值</div>
+                        </div>
+                        <div class="clear" style="height:1px;width:1px;"></div>
+                    </div>
+                    <ul class="zfUl">
+                        <li class="cur"><span class="ss zfb"></span><span>支付宝支付</span></li>
+                        <li><span class="ss wx"></span><span>微信支付</span></li>
+                        <li><span class="ss hk"></span><span>画客网余额支付</span></li>
+                        <div class="clear"></div>
+                    </ul>
+                    <div class="ewm">
+                        <div class="ewmLeft">
+                            <img src="images/ewma.png" />
+                            <p class="text">扫码支付2</p>
+                            <p class="text colortex">￥300.00元</p>
+                        </div>
+                        <div class="text">
+                            <p class="text">服务名称：Mia Zhang约见订单费</p>
+                            <p class="text">交易金额：300.00元</p>
+                            <p class="text">购买时间：2015年07月15日 06:05:25</p>
+                            <p class="text">约见地址：长河街道杭州市长河路351号（托森科技园）3号楼5楼C座518室，310051（邮编）张兰13958054563</p>
+                            <p class="text">交易类型：画客网担保交易</p>
+                            <p class="text">交易号：2015071521001001780289028706</p>
+                        </div>
+                    </div>
+                    <div class="ewm">
+                        <div class="ewmLeft">
+                            <img src="images/ewma.png" />
+                            <p class="text">扫码支付2</p>
+                            <p class="text colortex">￥300.00元</p>
+                        </div>
+                        <div class="text">
+                            <p class="text">服务名称：Mia Zhang约见订单费</p>
+                            <p class="text">交易金额：300.00元</p>
+                            <p class="text">购买时间：2015年07月15日 06:05:25</p>
+                            <p class="text">约见地址：长河街道杭州市长河路351号（托森科技园）3号楼5楼C座518室，310051（邮编）张兰13958054563</p>
+                            <p class="text">交易类型：画客网担保交易</p>
+                            <p class="text">交易号：2015071521001001780289028706</p>
+                        </div>
+                    </div>
+                    <div class="ewm">
+                        <div class="dqye">
+                            <input type="radio" name="payMethod" value="1" />
+                            <span style="margin-left:25px;">当前余额</span>
+                            <span class="color">￥503.00元</span>
+                            <span class="qrzf">确认支付</span>
+                            <span class="zhcz">账户充值</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ExtendMainBody" style=" width:96%;">
+
+                    <div class="ExtendMainBodyWrap">
+                        <p class="text">订单信息：</p>
+                        <div class="text" style="height:40px; border-top:1px solid #e6e9ec;border-bottom:1px solid #f4f4f4;background:#fff">
+                            <ul class="ddUl">
+                                <li>订单编号：1444105236466178</li>
+                                <li>交易号：2016010921001001780219469985</li>
+                                <li>创建时间：2016-01-09 21：26:05</li>
+                                <li>付款时间：2016-01-09 21:35：00</li>
+                            </ul>
+                        </div>
+                        <p class="text">项目名称：画客网logo优化</p>
+                        <div class="textWrap" style="">
+                            <div class="textWrapChildern">
+                                <div class="textWrapChildernL">
+                                    <p class="text">概述：</p>
+                                </div>
+                                <div class="textWrapChildernR">
+                                    <p class="text ptext" style="  line-height: 16px;">1997年7月参加教育工作。研究生学历，硕士学位，上海市特级校长。自1996年起历任5所学校校长书记。兼任中小学校长国家级培训专家、中学高级教师任职资格评审专家、中国教育技术协会小学协作会副理事长、上海市特级教师特级校长联谊会副秘书长、上海市督学、上海市德育基地主持人、上海市解放论坛顾问、上海师范大学兼职教授、上海市教育技术协会理事1996年起历任5所学校校长书记。兼任中小学校长国家级培训专家、中学高级教师任职资格评审专家、中国教育技术协会小学协作会副理事长、上海市特级教师特级校长联谊会副秘书长、上海市督学、上海市德育基地主持人、上海市解放论坛顾问、上海师范大学兼职教授、上海市督学、上海市德育基地主持人、上海市解放论坛顾问、上海师范大学兼职教授、上海市教育技术协会理事</p>
+                                    <span
+                                        class="zhankai">...[展开]</span>
+                                </div>
+                                <div class="clear" style="width:1px;height:1px;"></div>
+                            </div>
+                            <div class="clear" style="width:1px;height:1px;"></div>
+                            <div class="textWrapChildern">
+                                <div class="imagesWrap">
+                                    <img src="images/12.jpg" />
+                                </div>
+                                <div class="clear" style="width:1px;height:1px;"></div>
+                                <div class="textWrapChildernL">
+                                    <p class="text">附件：</p>
+                                </div>
+                                <div class="textWrapChildernR">
+                                    <img src="images/5.jpg" />
+                                    <img src="images/6.jpg" />
+                                    <img src="images/7.jpg" />
+                                    <img src="images/8.jpg" />
+                                    <div class="inputWrap">
+                                        <input class="exc" type="button" />
+                                        <input class="wro" type="button" />
+                                        <input class="pdf" type="button" />
+                                    </div>
+                                </div>
+                                <div class="clear" style="width:1px;height:1px;"></div>
+                            </div>
+                        </div>
+                        <div class="tableWrap">
+                            <table border="0" style="1px solid #ccc" cellspacing="0" cellpadding="0">
+
+                                <tr class="trh firsttrh">
+                                    <td class="xh">序号</td>
+                                    <td class="xm">项目</td>
+                                    <td class="nrcg">内容和成果</td>
+                                    <td>单位</td>
+                                    <td class="dj">单价</td>
+                                    <td class="sl">数量</td>
+                                    <td class="xmj">项目合计</td>
+                                    <td class="xmj">项目总计</td>
+                                    <td class="lasttd">工时（天）</td>
+                                </tr>
+                                <tr>
+                                    <td class="lasttd" height="40" colspan="9">交互设计（基本原来的功能进行用户使用流程优化方案设计）<span class="color">成果：黑白流程说明</span></td>
+                                </tr>
+                                <tr class="trh">
+                                    <td class="xh">1</td>
+                                    <td class="xm">交互策略（微型BS）</td>
+                                    <td class="nrcg">交互原则互动演绎，融合产品与用户的需要参与策划与数据整合（线框图）</td>
+                                    <td>套</td>
+                                    <td class="dj">2400</td>
+                                    <td class="sl">1</td>
+                                    <td class="xmj">400</td>
+                                    <td class="xmj">2472</td>
+                                    <td class="lasttd">5</td>
+                                </tr>
+                                <tr>
+                                    <td height="40" class="lasttd" colspan="9">视觉设计（颜色，风格，质感设计）<span class="color">成果：psd源文件</span></td>
+                                </tr>
+                                <tr class="trh">
+                                    <td class="xh">2</td>
+                                    <td class="xm">logo输出</td>
+                                    <td class="nrcg">png格式,适配不同显示标准（需要提供标实原形）</td>
+                                    <td>租</td>
+                                    <td class="dj">500</td>
+                                    <td class="sl">1</td>
+                                    <td class="xmj">500</td>
+                                    <td class="xmj">515</td>
+                                    <td class="lasttd">1</td>
+                                </tr>
+                                <tr class="trh">
+                                    <td class="xh">3</td>
+                                    <td class="xm">登陆页面</td>
+                                    <td class="nrcg">用户登录</td>
+                                    <td>张</td>
+                                    <td class="dj">800</td>
+                                    <td class="sl">1</td>
+                                    <td class="xmj">800</td>
+                                    <td class="xmj">824</td>
+                                    <td class="lasttd">2</td>
+                                </tr>
+                                <tr class="trh">
+                                    <td class="xh">4</td>
+                                    <td class="xm">主界面</td>
+                                    <td class="nrcg">界面的风格和定位主界面出具2-3套配色提供选择</td>
+                                    <td>组</td>
+                                    <td class="dj">2400</td>
+                                    <td class="sl">1</td>
+                                    <td class="xmj">2400</td>
+                                    <td class="xmj">2472</td>
+                                    <td class="lasttd">5</td>
+                                </tr>
+                                <tr class="trh">
+                                    <td class="xh">5</td>
+                                    <td class="xm">页面组</td>
+                                    <td class="nrcg">线索问题处置，人员详细档案，数据统计分析，处理处分情况，系统设置</td>
+                                    <td>套</td>
+                                    <td class="dj">1200</td>
+                                    <td class="sl">5</td>
+                                    <td class="xmj">6000</td>
+                                    <td class="xmj">6180</td>
+                                    <td class="lasttd">5</td>
+                                </tr>
+                                <tr class="trh">
+                                    <td class="xh">6</td>
+                                    <td class="xm">表单组</td>
+                                    <td class="nrcg">人员档案表</td>
+                                    <td>页</td>
+                                    <td class="dj">800</td>
+                                    <td class="sl">1</td>
+                                    <td class="xmj">800</td>
+                                    <td class="xmj">824</td>
+                                    <td class="lasttd">10</td>
+                                </tr>
+                                <tr class="trh">
+                                    <td class="xh">7</td>
+                                    <td class="xm">图标组</td>
+                                    <td class="nrcg">形状图标，一组多态</td>
+                                    <td>玫</td>
+                                    <td class="dj">100</td>
+                                    <td class="sl">5</td>
+                                    <td class="xmj">500</td>
+                                    <td class="xmj">515</td>
+                                    <td class="lasttd">10</td>
+                                </tr>
+                                <tr class="trh">
+                                    <td class="xh">8</td>
+                                    <td class="xm">控件组</td>
+                                    <td class="nrcg">按钮</td>
+                                    <td>个</td>
+                                    <td class="dj">500</td>
+                                    <td class="sl">1</td>
+                                    <td class="xmj">500</td>
+                                    <td class="xmj">515</td>
+                                    <td class="lasttd">2</td>
+                                </tr>
+                                <tr>
+                                    <td class="lasttd" height="40" colspan="9">前端开发（切片提供）<span class="color">成果.html文件包</span></td>
+                                </tr>
+                                <tr class="trh">
+                                    <td class="xh">9</td>
+                                    <td class="xm">版本输出</td>
+                                    <td class="nrcg">基本于web静态页面首页开发（html适应IE8及以上）</td>
+                                    <td>套</td>
+                                    <td class="dj">2000</td>
+                                    <td class="sl">2</td>
+                                    <td class="xmj">4000</td>
+                                    <td class="xmj">4120</td>
+                                    <td class="lasttd">5</td>
+                                </tr>
+                                <tr class="trh lasttrh">
+                                    <td class="xh">10</td>
+                                    <td class="xm">总计</td>
+                                    <td height="40" colspan="4">（含发票）</td>
+                                    <td class="xmj">17900</td>
+                                    <td class="xmj">18437</td>
+                                    <td class="lasttd"> </td>
+                                </tr>
+
+                            </table>
+
+                        </div>
+                        <div class="textWrap" style="background:#fff;margin-top:0px;">
+                            <div class="textWrapChildern" style="padding-top:10px;">
+                                <div class="textWrapChildernL" style="width: 45px;">
+                                    <p class="text">备注：</p>
+                                </div>
+                                <div class="textWrapChildernR" style="width: 1031px;">
+                                    <p class="text ">1997年7月参加教育工作。研究生学历，硕士学位，上海市特级校长。自1996年起历任5所学校校长书记。兼任中小学校长国家级培训专家、中学高级教师任职资格评审专家、中国教育技术协会小学协作会副理事长</p>
+                                </div>
+                                <div class="clear" style="width:1px;height:1px;"></div>
+                            </div>
+                            <div class="clear" style="width:1px;height:1px;"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="paymentMainDiv zjxd" style="margin-bottom:20px; margin-top:10px;">
+                    <div class="sjsxx">
+                        <div class="row" style="margin-top:10px;border-bottom:1px solid #ccc;">
+                            <div class="rowLeft">到款方式</div>
+                            <div class="rowRight" style="font-size:14px;color:#555;">20%：80%</div>
+                            <div class="clear"></div>
+                        </div>
+                        <ul class="xhnr dkfs">
+                            <li class="li1">序号</li>
+                            <li class="li2">百分比</li>
+                            <li class="li3">付款节点</li>
+                            <li class="li4">描述</li>
+                            <li class="li5">合计</li>
+                            <div class="clear"></div>
+                        </ul>
+                        <ul class="xhnr dkfs yinying ">
+                            <li class="li1">
+                                <span class="yuan">1</span>
+                            </li>
+                            <li class="li2">
+                                <input class="text" type="text" placeholder="20%">
+                            </li>
+                            <li class="li3">
+                                <input class="text" type="text" placeholder="确认接收订单">
+                            </li>
+                            <li class="li4">
+                                <input class="text" type="text" placeholder="预付款">
+                            </li>
+                            <li class="li5">136.00</li>
+                            <div class="clear"></div>
+                        </ul>
+                        <ul class="xhnr dkfs yinying ">
+                            <li class="li1">
+                                <span class="yuan">2</span>
+                            </li>
+                            <li class="li2">
+                                <input class="text" type="text" placeholder="80%">
+                            </li>
+                            <li class="li3">
+                                <input class="text" type="text" placeholder="第一部分">
+                            </li>
+                            <li class="li4">
+                                <input class="text" type="text" placeholder="尾款">
+                            </li>
+                            <li class="li5">136.00</li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear" style="height:1px;"></div>
+            </div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+</body>
+
+</html>

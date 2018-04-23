@@ -1,0 +1,1610 @@
+<style type="text/css">
+/***********弹出层遮罩层开始******************/
+
+/********引入字体图标库 start**********/
+@font-face {font-family: 'hkfont';
+    src: url('https://www.huakewang.com/2017_data/css/font/iconfont.eot'); /* IE9*/
+    src: url('https://www.huakewang.com/2017_data/css/font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('https://www.huakewang.com/2017_data/css/font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('https://www.huakewang.com/2017_data/css/font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('https://www.huakewang.com/2017_data/css/font/iconfont.svg#hkfont') format('svg'); /* iOS 4.1- */
+}
+.hkfont{
+    font-family:"hkfont" !important;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+/********引入字体图标库 end**********/
+
+#mask-detailed{
+    background: #333;
+    opacity: 0.55;
+    filter: alpha(opacity=55);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: none;
+}
+/***********弹出层遮罩层结束******************/
+
+/***********弹出层内容开始******************/
+.pay-detailed{
+	width: 638px;
+	/*height: 605px;*/
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+#pay-detailed {
+    position: fixed;
+    /*left: 30%;*/
+    /*top: 30%;*/
+    z-index: 1001;
+    display: none;
+    padding: 15px;
+}
+.pay-title-word{
+	font-size: 18px;
+	color: #526069;
+}
+#mask-close{
+	font-size: 20px;
+	float: right;
+	cursor: pointer;
+}
+.pay-person{
+	background-color: #f0f2f5;
+	padding: 15px;
+	padding-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dashed #ccc;
+}
+.pay-person img{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	float: left;
+}
+.pay-person-right{
+	font-size: 14px;
+	color: #191c2e;
+}
+.person-right-title{
+	margin-bottom: 10px;
+}
+.person-right-title span{
+	padding: 0 10px;
+	border-right: 1px solid #9a559a;
+}
+.person-right-title span:nth-child(1){
+	padding-left: 2px;
+}
+.person-right-title span:nth-child(4){
+	border-right: none;
+}
+.person-right-address{
+	font-size: 14px;
+}
+.person-right-address .hkfont{
+	font-size: 18px;
+}
+
+.pay-detailed tbody tr{
+	display: block;
+	border-bottom: 1px dashed #ccc;
+}
+.pay-detailed tbody tr:nth-child(1){
+	border-top: 1px dashed #ccc;
+}
+.pay-detailed tbody tr td{
+	height:60px;
+}
+.pay-detailed tbody tr td .title{
+	display: inline-block;
+	font-size: 15px;
+	color: #262626;
+	width: 260px;
+}
+.cartTable{
+    display: block;
+}
+.cartTable .number{
+	width: 170px;
+}
+.cartTable span{
+	display: inline-block;
+    text-align: left;
+}
+.rightbuyNumber {
+	display: inline-block;
+    text-align: left;
+    width: 102px;
+    height: 30px;
+    border: 1px solid #dfdfdf;
+    /*border-radius: 5px;*/
+    vertical-align: middle;
+}
+.buyNumberInput {
+    display: inline-block;
+    float: left;
+    width: 40px;
+    height: 30px;
+}
+.buyNumberInput input {
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    /*padding-left: 10px;*/
+    /* font-family: 'Microsoft YaHei'; */
+    font-size: 16px;
+    color: #4a4a4a;
+    letter-spacing: 0px;
+    border: 0;
+    text-align: center;
+}
+.buyNumberLess {
+    position: relative;
+    float: left;
+    display: inline-block;
+    width: 23px;
+    height: 30px;
+    border-right: 1px solid #dfdfdf;
+    cursor: pointer;
+    padding-left: 7px;
+    font-size: 35px;
+    color: #fff;
+    background-color: #01a1ea;
+    line-height: 26px;
+    text-align: center;
+}
+.buyNumberPlus {
+    position: relative;
+    float: left;
+    display: inline-block;
+    width: 28px;
+    height: 30px;
+    border-left: 1px solid #dfdfdf;
+    cursor: pointer;
+    padding-left: 2px;
+    font-size: 35px;
+    color: #fff;
+    background-color: #01a1ea;
+    line-height: 26px;
+    text-align: center;
+}
+tr td .subtotal{
+	display: inline-block;
+	width: 195px;
+	text-align: right;
+	font-size: 18px;
+	font-weight: 700;
+	color: #ff0000;
+}
+.pay-detailed textarea{
+	margin-top: 10px;
+	padding: 13px 10px;
+	overflow: hidden;
+    resize: none;
+	outline-color: #04a4ee;
+	width: 96%;
+}
+.tax{
+	margin-top: 13px;
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+.tax .tax-price-out{
+	float: right;
+}
+.tax .tax-rate{
+	margin-left: 8px;
+	border:1px solid #ccc;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 15px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.tax .cur{
+	color:#fff;
+	background-color: #01a1ea;
+}
+.priceTotal-out{
+	float: right;
+	font-size: 20px;
+	color: #ff0000;
+	font-weight: 600;
+}
+/***********周期天数开始************/
+.cycle{
+	display: inline-block;
+	font-size: 16px;
+}
+.cycle .number{
+	width: 90px;
+}
+.cycle span{
+	display: inline-block;
+    text-align: left;
+}
+.cycle .rightbuyNumber {
+	display: inline-block;
+    text-align: left;
+    width: 82px;
+    height: 21px;
+    border: 1px solid #dfdfdf;
+    /*border-radius: 5px;*/
+    vertical-align: middle;
+}
+.cycle .buyNumberInput {
+    display: inline-block;
+    float: left;
+    width: 40px;
+    height: 20px;
+}
+.cycle .buyNumberInput input {
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    /*padding-left: 10px;*/
+    /* font-family: 'Microsoft YaHei'; */
+    font-size: 16px;
+    color: #4a4a4a;
+    letter-spacing: 0px;
+    border: 0;
+    text-align: center;
+}
+.cycle .buyNumberLess {
+    position: relative;
+    float: left;
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    border-right: 1px solid #dfdfdf;
+    cursor: pointer;
+    padding-left: 0px;
+    font-size: 35px;
+    color: #fff;
+    background-color: #01a1ea;
+    line-height: 14px;
+    text-align: center;
+}
+.cycle .buyNumberPlus {
+    position: relative;
+    float: left;
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    border-left: 1px solid #dfdfdf;
+    cursor: pointer;
+    padding-left: 0px;
+    font-size: 29px;
+    color: #fff;
+    background-color: #01a1ea;
+    line-height: 16px;
+    text-align: center;
+}
+/***********周期天数结束*****************/
+/***********二维码支付静态页开始**********/
+div.paymentMainDiv ul.zfUl{
+	border-top: 1px dashed #ccc;
+}
+.pay-detailed div.paymentMainDiv{
+	width: 100%!important;
+	height: 200px;
+	border: none!important;
+}
+.pay-detailed div.paymentMainDiv div.ewm{
+	width: 100%;
+    height: 140px;
+    background: #fff;
+    padding-top: 20px;
+}
+div.paymentMainDiv div.ewm div.ewmLeft {
+    float: left;
+    margin: 0 0 0 5px;   
+}
+div.paymentMainDiv div.ewm div.ewmLeft img{
+	width: 105px;
+}
+div.paymentMainDiv div.ewm div.text {
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.paymentMainDiv .ewm .ewmLeft .text{
+	text-align: center;
+	margin-top: 5px;
+}
+.paymentMainDiv .ewm .text .text-left{
+	font-size: 15px;
+	color: #333333;
+}
+.paymentMainDiv .ewm .text .text-right{
+	font-size: 14px;
+	color: #3c3c3c;
+	font-weight: 100;
+}
+.paymentMainDiv .ewm .text p{
+	line-height: 21px;
+}
+.paymentMainDiv .ewm .text p.first{
+	margin-bottom: 10px;
+}
+.paymentMainDiv .ewm .text .RMB-icon{
+	font-size: 26px;
+	font-weight: 100;
+	color: #999
+}
+.paymentMainDiv .ewm .text .RMB{
+	font-size: 26px;
+	font-weight: 600;
+	color: #ff4400;
+}
+.paymentMainDiv .ewm .text .TzLink{
+	color: #1ba9eb;
+	display: inline-block;
+	margin-top: 6px;
+}
+.paymentMainDiv .ewm .dqye2{
+	float: left;
+    width: auto;
+    height: auto;
+    margin: 22px 0 0 0;
+    position: relative;
+}
+.paymentMainDiv .ewm .dqye2 span{
+	line-height: 35px;
+	font-size: 14px;
+}
+.paymentMainDiv .ewm .dqye2 .color{
+	font-size: 18px;
+	color: red;
+}
+.paymentMainDiv .ewm .dqye2 .money{
+	font-size: 18px;
+}
+.paymentMainDiv .ewm .dqye2 p {
+	color: red;
+	display: none;
+}
+.paymentMainDiv .ewm .dqye2 .qrzf,.zhcz {
+    margin-top: 40px;
+    cursor: pointer;
+}
+.paymentMainDiv .ewm .dqye2 .qrzf,.zhcz {
+    display: inline-block;
+    border-radius: 3px;
+    background: #fff;
+    border: 1px solid #a5a5a5;
+    padding: 0 10px;
+}
+/***********二维码支付静态页结束**********/
+/*********update start *********/
+.pay-detailed .right-price-total{
+	float: right;
+	font-size: 14px;
+	margin-bottom: 5px;
+	color: #1a1d2f;
+}
+.pay-detailed .right-price-total .red-price{
+	font-size: 22px;
+	color: #ff0000;
+	vertical-align: middle;
+}
+.pay-detailed .explain .left{
+	width: 40px;
+	float: left;
+}
+.pay-detailed .explain .right{
+	margin-left: 40px;
+}
+.pay-detailed .explain .right .money{
+	color: #ff0000;
+}
+
+/***** update 二维码 start*******/
+.paymentMainDiv .ewm .ewmLeft{
+	position: relative;
+}
+.paymentMainDiv .ewm .ewmLeft .click-pay{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(238, 238, 238, 0.9);
+	cursor: pointer;
+}
+.paymentMainDiv .ewm .ewmLeft .click-pay-span{
+	display: block;
+	text-align: center;
+	margin-top: 58px;
+	font-size: 16px;
+}
+.ewmLeft .display-none{
+	display: none;
+}
+.paymentMainDiv .ewm .text .TzLink.display-none{
+	display: none;
+}
+div.paymentMainDiv div.ewm div.ewmLeft .ewmimg{
+    width: 145px;
+}
+.paymentMainDiv .ewm .text .TzLink.display-none {
+    display: none;
+}
+.changePhonePouup #ok-change-phone0
+.changePhonePouup #ok-change-phone,
+{
+    float: right;
+    display: inline-block;
+    background-color: #0D93D1;
+    color: #fff;
+    padding: 8px 10px;
+	width: auto;
+	font-size: 14px;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    margin-right: 25px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+.changePhonePouup{
+    padding-left: 10px;
+}
+.changePhonePouup p{
+    margin: 16px 0;
+    font-size: 16px;
+    height: 25px;
+}
+.changePhonePouup p span{
+    width: 90px;
+    display: inline-block;
+    text-align: right;
+}
+#changeEmailPouup p span{
+    width: 100px;
+}
+.changePhonePouup p input{
+    font-size: 14px;
+    height: 28px;
+    line-height:24px;
+    padding-left: 10px;
+    width: 190px;
+}
+.changePhonePouup p.SMS-code input{
+    width: 80px;
+}
+.changePhonePouup p.SMS-code a{
+    color: #0e93d1;
+}
+.dqye2 .qrzf.no {
+	background-color: #aaa!important;
+	cursor: initial!important;
+}
+/***** update 二维码 end*******/
+/**********余额支付 start************/
+.changePhonePouup #ok-change-phone,
+.changePhonePouup #ok-change-phone0
+{
+	float: right;
+	display: inline-block;
+	background-color: #0D93D1;
+	color: #fff;
+	padding: 8px 10px;
+	width: auto;
+	font-size: 14px;
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	margin-right: 25px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin-bottom: 15px;
+}
+.changePhonePouup{
+	padding-left: 10px;
+}
+.changePhonePouup p{
+	margin: 16px 0;
+	font-size: 16px;
+	height: 32px;
+}
+.changePhonePouup p span{
+	width: 90px;
+	display: inline-block;
+	text-align: right;
+}
+#changeEmailPouup p span{
+	width: 100px;
+}
+
+.changePhonePouup p.SMS-code a{
+	color: #0e93d1;
+}
+.dqye2 .qrzf.no {
+	background-color: #aaa!important;
+	cursor: default!important;
+}
+#ok-change-phone.paying{
+	background-color: #aaa!important;
+	cursor: default!important;
+}
+div.smrq.cur{
+	/* top: 90px; */
+}
+.tempView{
+    display: block;
+}
+.tempView .one{
+    width: 25%;
+    text-align: right;
+    font-size: 18px;
+}
+.tempView .one .left{
+    margin-left: 70px;
+}
+.tempView .two{
+    width: 69%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.tempView .two .inputSimplePrice{
+    height: 70%;
+    width: 80%;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.tempView .three{
+    font-size: 18px;
+}
+#new-pic-val {
+    width: 80px !important;
+    position: relative;
+    top: -11px;
+}
+.changePhonePouup p.new-pic span.code {
+    width: 105px;
+    height: 32px;
+    overflow: hidden;
+    position: relative;
+    top: 0px;
+    text-align: center;
+}
+.changePhonePouup p.new-pic span.code img {
+    position: relative;
+    left: -8px;
+    vertical-align: middle;
+}
+#SMS-code-txt {
+    margin-left:12px;
+}
+/***********弹出层内容结束******************/
+</style>
+<div id="mask-detailed"></div>
+<div class="pay-detailed" id="pay-detailed">
+    <p class="pay-title">
+        <span class="pay-title-word">支付确认</span>
+        <i class="hkfont" id="mask-close">&#xe600;</i>
+    </p>
+    <div class="pay-person">
+        <img src="https://www.huakewang.com/2017_data/image/bigAvator1.jpg" alt="" class="left">
+        <div class="pay-person-right">
+            <p class="person-right-title">
+                <span class="name"></span>
+                <span class="sex"></span>
+                <span class="experience"></span>
+                <span class="works"></span>
+            </p>
+            <p class="person-right-address">
+                <i class="hkfont">&#xe641;</i>
+                <i class="addr"></i>
+            </p>
+        </div>
+    </div>
+    <table id="cartTable" class="cartTable">
+        <tbody class="tempView">
+            <tr>
+                <td class="one">
+                    <span class="left">订单金额</span>
+                </td>
+                <td  class="two">
+                    <input placeholder="请询问设计师后输入" type="text" class="inputSimplePrice" id="inputSimplePrice"  onkeyup="keyupInputPrice(this)">
+                </td>
+                <td class="three">
+                    <span class="right">(元)</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <textarea rows="1" cols="98" placeholder="需求备注：对本次交易的说明（建议填写前双方就合作内容达成一致）"></textarea>
+    <div class="tax">
+        <span class="tax-title">发票：</span>
+        <span data-tax="0" class="tax-rate cur">不需要</span>
+        <!-- <span class="tax-rate" style="display:none;"></span> -->
+        <span data-tax="1" class="tax-rate">需要(税率6%)</span>
+        <span class="tax-price-out">含税：
+            <span id="taxPrice" data-taxRate="0">0.00</span>元</span>
+    </div>
+    <div class="cycle-out">
+        <div class="cycle">
+            <span>约定完成周期</span>
+            <span class="number" id="cycle-in">
+                <span class="rightTitle rightbuyNumber">
+                    <span class="buyNumberLess" onselectstart="return false">
+                        -
+                    </span>
+                    <span class="buyNumberInput">
+                        <input class="days" data-value="1" type="text" data-min="1" value="1">
+                    </span>
+                    <span class="buyNumberPlus" onselectstart="return false">
+                        +
+                    </span>
+                </span>
+            </span>
+            <span>天</span>
+        </div>
+        <span class="priceTotal-out">总计：￥
+            <span id="priceTotal">0.00</span>元</span>
+    </div>
+    <div class="paymentMainDiv fkfs">
+        <ul class="zfUl">
+            <li class="cur">
+                <span class="ss zfb"></span>
+                <span>支付宝支付</span>
+            </li>
+            <li>
+                <span class="ss wx"></span>
+                <span>微信支付</span>
+            </li>
+            <li>
+                <span class="ss hk"></span>
+                <span>画客网余额支付</span>
+            </li>
+            <div class="clear"></div>
+        </ul>
+        <div class="ewm">
+            <div class="ewmLeft">
+                <div class="click-pay" id="click-pay-id">
+                    <span class="click-pay-span">点击刷新二维码</span>
+                </div>
+                <img class="ewmimg" src="https://www.huakewang.com/2017_data/images/ewma1.png" />
+                <p class="text">支付宝扫码</p>
+            </div>
+            <div class="text">
+                <p>
+                    <span class="text-left">实付款:</span>
+                    <span class="RMB-icon">￥</span>
+                    <span class="RMB">0.00</span>
+                    <span class="refresh"></span>
+                </p>
+                <p>
+                    <span class="text-left">订单类型: </span>
+                    <span class="text-right">服务订单费</span>
+                </p>
+                <p>
+                    <span class="text-left">交易类型: </span>
+                    <span class="text-right">画客网担保交易</span>
+                </p>
+                <a href="javascript:;" class="TzLink">跳转网页版支付宝支付>></a>
+            </div>
+            <div class="yuejianClose closeFkfs" id="closeZFB"></div>
+        </div>
+        <div class="ewm" style="display: none;">
+            <div class="ewmLeft">
+                <div class="click-pay" id="click-pay-id2">
+                    <span class="click-pay-span">点击刷新二维码</span>
+                </div>
+                <img class="ewmimg" src="https://www.huakewang.com/2017_data/images/ewma.png" />
+                <p class="text">微信扫码</p>
+            </div>
+            <div class="text">
+                <p>
+                    <span class="text-left">实付款:</span>
+                    <span class="RMB-icon">￥</span>
+                    <span class="RMB">0.00</span>
+                    <span class="refresh"></span>
+                </p>
+                <p>
+                    <span class="text-left">订单类型: </span>
+                    <span class="text-right">服务订单费</span>
+                </p>
+                <p>
+                    <span class="text-left">交易类型: </span>
+                    <span class="text-right">画客网担保交易</span>
+                </p>
+                <a href="javascript:;" class="TzLink"></a>
+                <!-- <a href="javascript:;" class="TzLink">跳转网页版微信支付>></a> -->
+            </div>
+            <div class="yuejianClose closeFkfs" id="closeZFB"></div>
+        </div>
+        <div class="ewm" style="display: none;">
+            <div class="dqye2">
+                <span class="zhye">余额：</span>
+                <span class="color">￥
+                    <span class="money"></span>元</span>
+                <p class="notMoreBalance">您的余额不足，请充值！</p>
+                <br>
+                <span class="qrzf">确认支付</span>
+                <span class="zhcz">账户充值</span>
+            </div>
+            <div class="text">
+                <p>
+                    <span class="text-left">实付款:</span>
+                    <span class="RMB-icon">￥</span>
+                    <span class="RMB">0.00</span>
+                    <span class="refresh"></span>
+                </p>
+                <p>
+                    <span class="text-left">订单类型: </span>
+                    <span class="text-right">服务订单费</span>
+                </p>
+                <p>
+                    <span class="text-left">交易类型: </span>
+                    <span class="text-right">画客网担保交易</span>
+                </p>
+                <!-- <a href="javascript:;" class="TzLink">跳转网页版微信支付>></a> -->
+            </div>
+            <div class="yuejianClose closeFkfs" id="closeZFB"></div>
+        </div>
+    </div>
+
+    <div class="smrq">
+        <div class="smrqTop">
+            <span class="smTop">请选择你稀罕的方式进行充值</span>
+            <span class="close"></span>
+        </div>
+        <ul style="height: 40px;">
+            <li class="cur" style="height: 39px ; margin-top: 1px; width:130px;">
+                <span class="ss zfb"></span>
+                <span>支付宝支付</span>
+            </li>
+            <li style="height: 39px ; margin-top: 1px; width:130px;">
+                <span class="ss wx"></span>
+                <span>微信支付</span>
+            </li>
+        </ul>
+        <div class="sewm">
+            <input class="payCashApplys" onkeyup="clearNoNum(this)" type="text" placeholder="请输入充值金额" />
+            <img class="payCashApplyImg" width="170" height="170" src="https://www.huakewang.com/2017_data/images/zwwem.png" />
+            <p class="color">￥
+                <i class="payZxMoney">0.00</i>元</p>
+        </div>
+        <div class="sewm" style="display:none">
+            <input data-type="WxPay" type="text" class="payCashApplys" onkeyup="clearNoNum(this)" placeholder="请输入充值金额" />
+            <img class="payCashApplyImg" width="170" height="170" src="https://www.huakewang.com/2017_data/images/zwwem.png" />
+            <p class="color">￥
+                <i class="payZxMoney">0.00</i>元</p>
+        </div>
+        <div class="wccz">
+            <p class="text" style="line-height:14px;">感谢你对画客网的支持，发票和提现请往个人管理中心提交申请！联系客服：
+                <span class="blue">0571-86803103</span>
+            </p>
+        </div>
+        <div class="clear" style="height:1px;width:1px;"></div>
+    </div>
+</div>
+<div class="changePhonePouup" id="changePhonePouup" style="display:none;">
+    <p class="new-phone">
+        <span>手机号：</span>
+        <input id="new-phone-val" type="text">
+    </p>
+    <p class="new-pic">
+        <span></span>
+        <input id="new-pic-val" type="text">
+        <span class="code"><img id="codePouup" src="https://www.huakewang.com/index.php/verifycode/index/2" alt=""></span>
+    </p>
+    <p class="SMS-code">
+        <span>验证码：</span>
+        <input id="SMS-code-val" type="text">
+        <a id="SMS-code-txt" href="javascript:;">获取验证码</a>
+    </p>
+    <a id="ok-change-phone" href="javascript:;">确定</a>
+</div>
+<div id="newWebHtml" style="display:none;"></div>
+<script type="text/javascript">
+    /**
+     * 遮罩弹出层代码
+     * @param  {[type]} mask  [遮罩层id]
+     * @param  {[type]} login [弹出层di]
+     * @param  {[type]} close [关闭按钮id]
+     * @param  {[type]} btn   [打开弹出层按钮class]
+     * @return {[type]}       [没有返回值]
+     */
+    function popUp(mask, login, close, popUpBtnClass) {
+        var oMask = document.getElementById(mask);
+        var oLogin = document.getElementById(login);
+
+        function displayNone() {
+            $(oMask).fadeOut();
+            $(oLogin).fadeOut();
+        }
+
+        function displayBlock() {
+            $(oMask).fadeIn(300);
+            $(oLogin).fadeIn(300);
+        }
+
+        function openNewLogin() {
+            var sHeight = document.documentElement.scrollHeight;
+            var sWidth = document.documentElement.scrollWidth;
+            var wHeight = document.documentElement.clientHeight;
+            oMask.style.height = sHeight + "px";
+            oMask.style.width = sWidth + "px";
+            displayBlock(); //显示弹出层
+            var dHeight = oLogin.offsetHeight;
+            var dWidth = oLogin.offsetWidth;
+            oLogin.style.left = (sWidth - dWidth) / 2 + "px";
+            oLogin.style.top = (wHeight - dHeight) / 2 + "px";
+
+            var oClose = document.getElementById(close);
+            oMask.onclick = oClose.onclick = function () {
+                displayNone(); //隐藏弹出层
+            }
+            return true;
+        }
+
+        // var oBtn = document.getElementById(btn);
+        // oBtn.onclick = function(){
+        // 	NewLoginDOM() && openNewLogin() && shoppingCart() && cycle();
+        // }
+        $("body").on('click', popUpBtnClass, function (event) {
+            event.preventDefault();
+            // getData(this) && openNewLogin();
+            var _cookie_id = $.cookie('user_id');
+            if (_cookie_id == undefined || _cookie_id == "null" || _cookie_id == null || _cookie_id == "undefined" || _cookie_id == "") {
+                go_login();
+                return;
+            } 
+
+            openNewLogin() && cycle();
+
+            var $dom = $(this);
+            //渲染弹出层的数字和文字
+            renderPopUpData($dom);
+
+            getYeNum(); //获取余额
+        });
+    }
+
+    /**
+     * 弹出层初始化
+     * @param  {[type]} ){} [description]
+     * @return {[type]}       [description]
+     */
+    $(function () {
+        var countNum = 10;
+        /*图片验证码*/
+        $(document).on("click","#codePouup",function () {
+            countNum++;
+            $(this).attr('src', 'https://www.huakewang.com/2017_data/images/loading.gif');
+            setTimeout(function () {
+                $("#codePouup").attr('src', baseLink + 'index.php/verifycode/index/' + countNum);
+            },300);
+        });
+        popUp("mask-detailed", "pay-detailed", "mask-close", ".big-orange-link");
+    });
+
+    /**支付宝，微信，画客网支付方式切换**/
+    $('div.paymentMainDiv ul.zfUl li').click(function () {
+        $('div.paymentMainDiv ul.zfUl li').removeClass('cur');
+        $(this).toggleClass('cur');
+        var liIndex = $('div.paymentMainDiv ul.zfUl li').index($(this));
+        $('div.ewm').css({
+            'display': 'none'
+        });
+        $('div.ewm:eq(' + liIndex + ')').css({
+            'display': 'block'
+        });
+        showClickPay(); //二维码显示遮罩层。
+        //清除定时器轮询订单状态
+        window.PayStausTimer.map(function (value, index, elem) {
+            clearInterval(value);
+        });
+    });
+    /**支付宝，微信，画客网支付方式切换**/
+
+
+    //渲染设计师数据,头像，昵称，工作经验，地区等等
+    function renderPopUpData($dom){
+        var id = $dom.attr("data-uid");
+        var nickName = $dom.attr("data-nickname");
+        var avatarUrl = $dom.attr("data-head");
+        var sex = $dom.attr("data-sex");
+        var experience = $dom.attr("data-exprience");
+        var worksNumber = $dom.attr("data-works");
+        var address = $dom.attr("data-address");
+
+        id ? $("#pay-detailed").attr("data-id", id) : "";
+        nickName ? $("#pay-detailed .person-right-title .name").html(nickName) : "";
+        avatarUrl ? $("#pay-detailed .pay-person .left").attr("src", avatarUrl) : "";
+        sex ? $("#pay-detailed .person-right-title .sex").html(sex) : "";
+        experience ? $("#pay-detailed .person-right-title .experience").html(experience) : "";
+        worksNumber ? $("#pay-detailed .person-right-title .works").html(worksNumber) : "";
+        address ? $("#pay-detailed .person-right-address .addr").html(address) : "";
+
+    }
+    //计算总价，用户输入金钱后总价得变化
+    function keyupInputPrice(obj){
+        clearNoNum(obj); //只让输入数字
+
+        var priceTotal = document.getElementById("priceTotal"); //总计
+        var taxPrice = document.getElementById("taxPrice"); //税费
+
+        var indexNum = $('.tax-rate.cur').index(); //点击税率按钮的序列号
+        var preTax = $("#inputSimplePrice").val() || 0; //不计算税费的总价,用户输入的总价
+        var taxRate = [0, 0.06];
+        var tax = (preTax * taxRate[indexNum-1]).toFixed(2); //税费
+
+        taxPrice.setAttribute("data-taxRate", taxRate[indexNum]);
+        taxPrice.innerHTML = tax;
+        var endPrice = (parseFloat(preTax) + parseFloat(tax)).toFixed(2);
+        priceTotal.innerHTML = endPrice; //更新总价
+        $(".ewm .RMB").html(endPrice); //更新二维码右边的总价
+        
+    }
+    function cycle() {
+            var priceTotal = document.getElementById("priceTotal"); //总计
+            var taxPrice = document.getElementById("taxPrice"); //税费
+            //计算费率
+            $(".tax-rate").click(function (event) {
+                $(".tax-rate").removeClass('cur');
+                $(this).addClass('cur');
+                var indexNum = $('.tax-rate').index(this); //点击税率按钮的序列号
+                var preTax = $("#inputSimplePrice").val() || 0; //不计算税费的总价,用户输入的总价
+                var taxRate = [0, 0.06];
+                var tax = (preTax * taxRate[indexNum]).toFixed(2); //税费
+
+                taxPrice.setAttribute("data-taxRate", taxRate[indexNum]);
+                taxPrice.innerHTML = tax;
+                var endPrice = (parseFloat(preTax) + parseFloat(tax)).toFixed(2);
+                priceTotal.innerHTML = endPrice; //更新总价
+                $(".ewm .RMB").html(endPrice); //更新二维码右边的总价
+            });
+
+
+            //计算完成周期
+            var tr = document.getElementById("cycle-in");
+
+            //如果输入框内文字等于1，则减小按钮样式变化，不可点击
+            function lessStyle(countValue) {
+                //如果用户输入数量少于1就改变-号的颜色，显示为不可点击. 有问题
+                var less = tr.getElementsByClassName("buyNumberLess")[0];
+                if (countValue <= 1) {
+                    less.style.backgroundColor = "#ccc";
+                    less.style.cursor = "inherit";
+                } else {
+                    less.style.backgroundColor = "#01a1ea";
+                    less.style.cursor = "pointer";
+                }
+            }
+            lessStyle(1);
+            tr.onclick = function (e) {
+                var e = e || window.event;
+                var el = e.target || e.srcElement; //通过事件对象的target属性获取触发元素，兼容IE
+                var cls = el.className; //触发元素的class
+                var countInput = this.getElementsByTagName('input')[0];//获取input对象
+                var countValue = parseInt(countInput.value) //input的值
+
+                //通过判断触发元素的class确定用户点击了那个元素
+                switch (cls) {
+                    case "buyNumberLess":
+                        if (countValue > 1) {
+                            countInput.value = countValue - 1;
+                            countInput.setAttribute("data-value", countValue - 1);
+                            // getSubtotal(this);
+                            // updateTotal();
+                            lessStyle(countInput.value); //判断减按钮是否可点击
+                        }
+                        break;
+                    case "buyNumberPlus":
+                        countInput.value = countValue + 1;
+                        countInput.setAttribute("data-value", countValue + 1);
+                        // getSubtotal(this);
+                        // updateTotal();
+                        lessStyle(countInput.value); //判断减按钮是否可点击
+                }
+
+                //给数目输入框绑定keyup事件
+                tr.getElementsByTagName("input")[0].onkeyup = function (e) {
+                    if (this.value !== "") {
+                        var val = parseInt(this.value) || 1;
+                        var valData = this.getAttribute("data-value");
+                        if (isNaN(val) || val < 1) {
+                            this.value = valData;
+                        }
+                        if (this.value != val) {
+                            this.value = val;
+                            if (val < 1) {
+                                this.value = valData;
+                            }
+                        }
+                        if (val >= 1) {
+                            // console.log("输入内容： "+val);
+                            this.setAttribute("data-value", val);
+                            //更新单行价格
+                            // console.log("更新单行价格");
+                            // getSubtotal(this.parentNode.parentNode.parentNode.parentNode.parentNode);
+                            // updateTotal(); //更新总价
+                            lessStyle(val); //判断减按钮是否可点击
+                        }
+                    } else {
+                        this.onblur = function (e) {
+                            if (this.value === "") {
+                                this.value = 1;
+                                this.setAttribute("data-value", 1);
+                                //更新单行价格
+                                // getSubtotal(this.parentNode.parentNode.parentNode.parentNode.parentNode);
+                                // updateTotal(); //更新总价
+                                lessStyle(this.value); //判断减按钮是否可点击
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    // 扫码付款代码开始
+
+
+    /**
+     * 获取服务下单的参数
+     * 
+     * @author ZhengGuoQing
+     */
+    function paramBookService() {
+
+        return {
+            user_id: getCookie("user_id"),
+            attention: $("#pay-detailed textarea").val(),
+            need_invoice: $(".tax .tax-rate.cur").attr("data-tax"),
+            days: $("#cycle-in .days").attr("data-value"),
+            tax: $("#taxPrice").html(),
+            total_price: $("#priceTotal").html(),
+            auth_user_id: $("#pay-detailed").attr("data-id")
+        }
+    }
+    /**
+    * ajax发送服务下单
+    *
+    * @author ZhengGuoQing
+    */
+    function ajaxBookService(type) {
+        $.ajax({
+            url: CONFIG.getUrl() + CONFIG.getQuotePath() + 'book_service_simple',
+            type: "POST",
+            dataType: "JSON",
+            data: paramBookService(),
+            success: function (res) {
+                if (res.success) {
+                    var paymoney = $(".ewm .RMB")[0].innerHTML;
+                    getErweima(res.data, paymoney, "project", type); //获取支付二维码
+                } else {
+                    showClickPay("点击重新刷新");
+                }
+            }, error: function () {
+                alert("数据获取异常！");
+            }
+        });
+    }
+    //点击遮罩层，发送服务下单的ajax
+    $(".ewm .ewmLeft #click-pay-id").click(function (e) {
+        e.preventDefault();
+        if (!$("#inputSimplePrice").val()) {
+            layer.alert("请输入订单金额");
+            return 0;
+        }
+        showClickPay("正在刷新中...");
+        ajaxBookService();
+    });
+    //点击遮罩层，发送服务下单的ajax,使用微信支付
+    $(".ewm .ewmLeft #click-pay-id2").click(function (e) {
+        e.preventDefault();
+        if (!$("#inputSimplePrice").val()) {
+            layer.alert("请输入订单金额");
+            return 0;
+        }
+        showClickPay("正在刷新中...");
+        ajaxBookService("WxPay");
+    });
+    //不显示遮罩层，修改二维码url地址
+    function hidenClickPay(url) {
+        var url = url || "https://www.huakewang.com/2017_data/images/ewma1.png";
+        $(".ewmLeft .click-pay").addClass("display-none");
+        $(".ewmLeft .ewmimg").attr("src", url);
+        $(".TzLink").removeClass("display-none");
+    }
+
+    //显示遮罩层，不让扫码,参数书文字，表示遮罩层上面显示的文字
+    function showClickPay(txt) {
+        var txt = txt || "点击刷新二维码";
+        $(".ewmLeft .click-pay").removeClass("display-none");
+        $(".ewmLeft .click-pay .click-pay-span").html(txt);
+        $(".ewmLeft .ewmimg").attr("src", "https://www.huakewang.com/2017_data/images/ewma1.png"); //放假的二维码图片
+
+        $(".TzLink").addClass("display-none");
+    }
+
+    $("#pay-detailed textarea").change(function (e) {
+        e.preventDefault();
+        showClickPay();
+    });
+    //获取支付状态是定时器，支付宝，微信，有两个，用一个数组保存
+    window.PayStausTimer = [];
+    /**
+     * 支付二维码生成，为服务订单付款
+     * @param id[约见id]
+     * @param paymoney
+     * @param mod [支付模块meet]
+     */
+    function getErweima(id, paymoney, mod, type) {
+        var type = type || "AliPay";
+        $.ajax({
+            url: CONFIG.getUrl() + CONFIG.getPayPath() + 'get_pay_qrcode',
+            type: "POST",
+            dataType: "JSON",
+            data: {
+                user_id: getCookie("user_id"),     //支付用户的id
+                totalAmount: paymoney,                //费用总数
+                pay_type: type,                //AliPay：支付宝支付，WeiXinPay：微信支付
+                pay_model: mod,                    //支付模块
+                model_id: id                       //约见id
+            },
+            success: function (res) {
+                if (res.success) {
+                    hidenClickPay(res.data.qr_path); //不显示遮罩层，修改二维码url地址
+                    changeWeb(res.data.out_trade_no); //点击跳转到网页版支付
+                    //定时查询支付状态
+                    var waitingTime = 0;
+                    var timer = setInterval(function () {
+                        waitingTime++;
+                        getPayStaus(res.data.out_trade_no, timer);
+                        if (waitingTime > 90) {
+                            clearInterval(timer);
+                            showClickPay();
+                        };
+                    }, 3000);
+                    window.PayStausTimer.push(timer);
+
+                } else {
+                    layer.alert(res.message);
+                    showClickPay("点击重新刷新");
+                };
+            }, error: function () {
+                showClickPay("点击重新刷新");
+                alert("数据获取异常！");
+            }
+        });
+    };
+
+    //点击跳转到网页版支付
+    function changeWeb(key) {
+        $(document).on("click", ".TzLink", function () {
+            $.ajax({
+                url: CONFIG.getUrl() + CONFIG.getPayPath() + 'turn_to_pay_page/' + key,
+                type: "get",
+                dataType: "html",
+                success: function (res) {
+                    $("#newWebHtml").html(res);
+                }, error: function () {
+                    alert("数据获取异常！");
+                }
+            });
+        });
+    }
+    //获取约见的支付状态
+    function getPayStaus(key, timer) {
+        $.ajax({
+            url: CONFIG.getUrl() + CONFIG.getPayPath() + 'get_pay_status',
+            type: "post",
+            data: {
+                user_id: getCookie('user_id'),
+                out_trade_no: key
+            },
+            dataType: "json",
+            success: function (res) {
+                if (res.success) {
+                    if (res.data.trade_status == "TRADE_SUCCESS") {
+                        // 付款成功
+                        //清除定时器轮询订单状态
+                        window.PayStausTimer.map(function (value, index, elem) {
+                            clearInterval(value);
+                        });
+                        showClickPay();
+                        $("#mask-close").trigger("click"); //关闭弹窗
+                        paySuccessAlert();
+                    };
+                } else {
+                    alert("支付失败！");
+                };
+            },
+            error: function (params) {
+                //清除定时器轮询订单状态
+                window.PayStausTimer.map(function (value, index, elem) {
+                    clearInterval(value);
+                });
+            }
+        });
+    };
+    function paySuccessAlert() {
+        layer.open({
+            title: '支付成功',
+            icon: 1,
+            content: '您已成功支付服务订单',
+            btn: ["查看我的订单", "关闭"],
+            yes: function (index, layero) {
+                var url = "Personal-2.html";
+                window.open(url, "_blank");
+                layer.close(index);
+            },
+            btn2: function (index, layero) {
+                layer.close(index);
+            }
+        });
+    }
+    //获取余额
+    function getYeNum() {
+        $.ajax({
+            url: CONFIG.getUrl() + CONFIG.getPayPath() + 'get_blance',
+            type: "post",
+            dataType: "json",
+            data: {
+                user_id: getCookie("user_id")
+            },
+            success: function (res) {
+                console.log(res);
+                if (res.success) {
+                    $(".ewm .color .money").html((res.message - 0).toFixed(2));
+                    if (res.message < $(".ewm .RMB")[0].innerHTML) {
+                        $(".dqye2 .notMoreBalance").css("display", "block");
+                        $(".dqye2 .qrzf").addClass("no");
+                    } else {
+                        $(".dqye2 .notMoreBalance").css("display", "none");
+                        $(".dqye2 .qrzf").removeClass("no");
+                    }
+                } else {
+                    layer.alert(res.message);
+                };
+            }, error: function () {
+                alert("余额获取失败！");
+            }
+        });
+    }
+    /**
+     * 点击确认支付，弹出手机号验证弹窗
+     */
+    $("body").on("click", ".dqye2 .qrzf", function (event) {
+        event.preventDefault();
+        if ($(this).hasClass("no")) {
+            return;
+        }
+        if (!$("#inputSimplePrice").val()) {
+            layer.alert("请输入订单金额");
+            return 0;
+        }
+        $(".smrq").removeClass("cur"); //隐藏充值弹窗
+
+        var paymoney = $(".ewm .RMB")[0].innerHTML;
+        $("#ok-change-phone").html("确认支付" + paymoney + "元");
+        window.alertInputValidatePhone = layer.open({
+            type: 1,
+            title: "",
+            area: "340px",
+            content: $("#changePhonePouup")
+        });
+    });
+    //点击获取短信验证码事件
+    $("body").on('click', '#SMS-code-txt', function (event) {
+        event.preventDefault();
+        var $dom = $(this);
+        var phone = $("#new-phone-val").val();
+        if (testPhone(phone) && $dom.html() == "获取验证码") {
+            picCheck(phone, $dom);
+        }
+    });
+    function testPhone(val) {
+        if (!(/^1(3|4|5|7|8)\d{9}$/.test(val))) {
+            layer.msg("请输入正确手机号！", { time: 1000 });
+            return false;
+        } else {
+            return true;
+        }
+    }
+    function testSMSCode(val) {
+        if (!(/^\d{4}$/.test(val))) {
+            layer.msg("请输入4位数字短信验证码！", { time: 1000 });
+            return false;
+        } else {
+            return true;
+        }
+    }
+    //验证图形验证码
+    function picCheck(phone,ele) {
+        $.ajax({
+            url: "https://www.huakewang.com/verifycode/check",
+            type: "POST",
+            dataType: "JSON",
+            data: {
+                secode: $("#new-pic-val").val().toUpperCase()
+            },
+            success: function(res) {
+                console.log(res);
+                if (res.success) {
+                    ajaxGetSMSCode(phone, ele);
+                } else {
+                    layer.msg("请输入正确的图形验证码！", { time: 1000 });
+                    $('#wrapYZM').click();
+                };
+            }
+        });
+    };
+    /**
+     * 发送获取短信验证码的请求
+     * @Author   郑国庆
+     * @DateTime 2017-08-28T10:00:49+0800
+     * @param    {[number]} phone [手机号]
+     * @param    {[jquery object]} $dom [点击元素]
+     */
+    function ajaxGetSMSCode(phone, $dom) {
+        //余额支付
+        $.ajax({
+            url: CONFIG.getUrl() + CONFIG.getPath() + 'get_reg_sms_code', //真实接口
+            type: 'POST',
+            dataType: 'JSON',
+            data: {
+                user_id: getCookie("user_id"),
+                type: "pay",
+                mobile: phone,
+                tokeen: $("#new-pic-val").val().toUpperCase()
+            }
+        })
+            .done(function (req) {
+                if (req.success) {
+                    SMSCountdown($dom);
+                }
+                layer.msg(req.message, { time: 1500 });
+            })
+            .fail(function (err) {
+                console.log(err);
+            });
+    }
+    function SMSCountdown($dom) {
+        var second = 60;
+        function render() {
+            var value = second + "秒后重试";
+            $dom.html(value);
+            second--;
+            if (second == 0) {
+                window.clearInterval(token);
+                $dom.html("获取验证码");
+            }
+        }
+        var token = window.setInterval(render, 1000);
+    }
+    /**
+     * 获取短信验证码后向后端发送确认余额支付
+     */
+    $("body").on("click", "#ok-change-phone", function (event) {
+        event.preventDefault();
+        if ($(this).hasClass("paying")) {
+            return;
+        }
+        var phone = $("#new-phone-val").val();
+        var SMSCode = $("#SMS-code-val").val();
+        if (testPhone(phone) && testSMSCode(SMSCode)) {
+            $("#ok-change-phone").html("确认支付中...");
+            $(this).addClass("paying");
+            ajaxBookService2(SMSCode);
+        }
+    });
+    /**
+     * ajax余额支付
+     * 
+     * @author ZhengGuoQing
+     * @param {any} model_id 订单ID
+     * @param {any} code 短信验证码
+     */
+    function ajaxPayByBlance(model_id, code) {
+        $.ajax({
+            url: CONFIG.getUrl() + CONFIG.getPayPath() + 'pay_by_blance',
+            type: "POST",
+            dataType: "JSON",
+            data: {
+                user_id: getCookie("user_id"),
+                pay_model: "project",
+                model_id: model_id,
+                code: code
+            },
+            success: function (res) {
+                if (res.success) {
+                    layer.close(layer.index);
+                    $("#mask-close").trigger("click"); //关闭弹窗
+                    paySuccessAlert();
+                } else {
+                    layer.msg(res.message, { time: 2000 });
+                }
+                $("#ok-change-phone").removeClass("paying");
+                var paymoney = $(".ewm .RMB")[0].innerHTML;
+                $("#ok-change-phone").html("确认支付" + paymoney + "元");
+            },
+            error: function () {
+                layer.close(layer.index);
+                alert("数据获取异常！");
+            }
+        });
+    }
+    /**
+     * ajax发送服务下单
+     * 
+     * @author ZhengGuoQing
+     * @param {any} code 短信验证码
+     */
+    function ajaxBookService2(code) {
+        $.ajax({
+            url: CONFIG.getUrl() + CONFIG.getQuotePath() + 'book_service_simple',
+            type: "POST",
+            dataType: "JSON",
+            data: paramBookService(),
+            success: function (res) {
+                if (res.success) {
+                    // var paymoney = $(".ewm .RMB")[0].innerHTML;
+                    ajaxPayByBlance(res.data, code); //获取订单ID后,ajax余额支付
+                } else {
+                    $("#ok-change-phone").html("确认订单失败，请重试");
+                }
+            }, error: function () {
+                alert("数据获取异常！");
+            }
+        });
+    }
+    /*点击显示充值方式*/
+    $(".ewm .dqye2 .zhcz").click(function () {
+        $(".smrq").addClass("cur");
+    });
+    /**充值方式切换**/
+    $('div.smrq ul li').click(function () {
+        $('div.smrq ul li').removeClass('cur');
+        $(this).toggleClass('cur');
+        $(this).parents('div.smrq').find('div.sewm').css('display', 'none');
+        var liIndex = $('div.smrq ul li').index($(this));
+        $('div.sewm:eq(' + liIndex + ')').css({
+            'display': 'block'
+        });
+        window.PostStausTimer.map(function (value, index, elem) {
+            clearInterval(value);
+        });
+    });
+    /**充值方式切换**/
+    /**点击.close关闭div.smrq**/
+    $('div.smrq div.smrqTop span.close').click(function () {
+        $(this).parents('div.smrq').removeClass('cur');
+    });
+    /**点击.close关闭div.smrq**/
+    //充值
+    $(document).on("keyup", ".payCashApplys", function () {
+        //中断之前的ajax请求
+        if (window.stopAjaxGetQrcode != null) {
+            window.stopAjaxGetQrcode.abort();
+            window.PostStausTimer.map(function (value, index, elem) {
+                clearInterval(value);
+            });
+        };
+        $(this).parent().find(".payZxMoney").html(($(this).val() - 0).toFixed(2));
+        $(this).parent().find(".payCashApplyImg").attr("src", "https://www.huakewang.com/2017_data/images/zwwem.png");
+        var num1 = $(this).val(),
+            num2 = "",
+            num3 = $(this).parent().find(".payZxMoney").html(),
+            $this = $(this);
+        //键盘弹起生成二维码
+        if (num1 > 0) {
+            if (num1.indexOf(".") != -1 && num1.split(".")[1].length > 0) {
+                getPostErweima(num2, num3, 'other', $this);
+            } else if (num1.indexOf(".") == -1) {
+                getPostErweima(num2, num3, 'other', $this);
+            };
+        } else if (num1 == "") {
+            $this.parent().find(".payZxMoney").html("0.00");
+            $this.parent().find(".payCashApplyImg").attr("src", "https://www.huakewang.com/2017_data/images/zwwem.png");
+        };
+    });
+    window.PostStausTimer = [];
+    /**
+     * 充值二维码生成
+     * @param id[空]
+     * @param paymoney
+     * @param mod [支付模块other]
+     */
+    function getPostErweima(id, paymoney, mod, el) {
+        var pay_type = "AliPay";
+        if (el.attr("data-type") == "WxPay") {
+            pay_type = "WxPay";
+        }
+        window.stopAjaxGetQrcode = $.ajax({
+            url: CONFIG.getUrl() + CONFIG.getPayPath() + 'get_pay_qrcode',
+            type: "post",
+            data: {
+                user_id: getCookie("user_id"),     //支付用户的id
+                totalAmount: paymoney,         //费用总数
+                pay_type: pay_type,  //AliPay：支付宝支付，WeiXinPay：微信支付
+                pay_model: mod,                    //支付模块
+                model_id: id                       //约见id
+            },
+            dataType: "json",
+            success: function (res) {
+                console.log("二维码");
+                console.log(res);
+                if (res.success) {
+                    el.parent().find(".payCashApplyImg").attr("src", res.data.qr_path);
+                    //定时查询充值支付状态
+                    var timers = setInterval(function () {
+                        console.log(res.data.out_trade_no);
+                        getPostStaus(res.data.out_trade_no, timers);
+                    }, 3000);
+                    window.PostStausTimer.push(timers);
+                } else {
+                    alert(res.message);
+                };
+            }
+        });
+    };
+    /**
+     * 获取充值的支付状态
+     * @param key
+     * @param timer
+     */
+    function getPostStaus(key, timer) {
+        $.ajax({
+            url: CONFIG.getUrl() + CONFIG.getPayPath() + 'get_pay_status',
+            type: "post",
+            data: {
+                user_id: getCookie('user_id'),
+                out_trade_no: key
+            },
+            dataType: "json",
+            success: function (res) {
+                if (res.success) {
+                    console.log(res);
+                    if (res.data.trade_status == "TRADE_SUCCESS") {
+                        // 约见费用付款成功
+                        $(".smrq").css("display", "none");
+                        getYeNum();
+                        window.PostStausTimer.map(function (value, index, elem) {
+                            clearInterval(value);
+                        });
+                    };
+                } else {
+                    alert("支付失败！");
+                };
+            },
+            error: function () {
+                window.PostStausTimer.map(function (value, index, elem) {
+                    clearInterval(value);
+                });
+            }
+        });
+    }
+    /*
+     * 输入类型的限定
+     * */
+    function clearNoNum(obj) {
+        obj.value = obj.value.replace(/[^\d.]/g, "");  //清除“数字”和“.”以外的字符
+        obj.value = obj.value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的
+        obj.value = obj.value.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+        obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3');//只能输入两个小数
+        obj.value = obj.value.replace(/^\.*$/, '');//开头不能为"."
+
+        if (obj.value.indexOf(".") < 0 && obj.value != "") {//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的数字
+            obj.value = parseFloat(obj.value);
+        };
+    };
+</script>

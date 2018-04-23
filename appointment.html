@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/jedate.css">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/client/dialog.css">
+    <link rel="stylesheet" href="css/social.css" />
+    <link rel="stylesheet" href="css/supply.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.ewm').css({
+                'display': 'none'
+            }); //div.ewm隐藏
+            $('div.ewm:eq(0)').css({
+                'display': 'block'
+            }); //第一个div.ewm显示
+            $('div.sewm').eq(1).css('display', 'none'); //第一个sewm显示
+            jeDate({ //日期插件
+                dateCell: "#dateinfo",
+                format: "YYYY年MM月DD日 hh:mm:ss",
+                isinitVal: true,
+                isTime: true, //isClear:false,
+                minDate: a()
+            });
+
+            $.fn.autoHeight = function() { /*文本域高度自适应*/
+                function autoHeight(elem) {
+                    elem.style.height = 'auto';
+                    elem.scrollTop = 0; //防抖动
+                    elem.style.height = elem.scrollHeight - 20 + 'px';
+                };
+                this.each(function() {
+                    autoHeight(this);
+                    $(this).on('keyup', function() {
+                        autoHeight(this);
+                    });
+                });
+            };
+            $('textarea[autoHeight]').autoHeight();
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1190px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            color: #fff;
+        }
+        
+        div.cityWrap ul.cityWrapUl li.cityWrapUlLi.cityWrapUlLiPub {
+            border: 0 none;
+        }
+        
+        div.cityWrap ul.cityWrapUl li input.addressIpt {
+            outline: none;
+        }
+        
+        div.cityWrap {
+            border: none;
+        }
+        
+        .publish-txt {
+            float: left;
+            position: relative;
+            top: 6px;
+        }
+        
+        div.cityWrap ul.cityWrapUl li.li3 {
+            width: 615px;
+        }
+        
+        .starsNum {
+            margin-right: 20px;
+        }
+        
+        .cityWrap .cityLocal {
+            border-bottom: 0 none;
+        }
+        
+        .meetSend input {
+            border: 1px solid #33C8FF;
+        }
+        
+        .datep input {
+            width: 150px;
+            z-index: 0;
+        }
+        
+        .baiduFindCity {
+            border: 1px solid #dddddd!important;
+        }
+        #appointPicCode {
+            vertical-align: middle;
+            position: relative;
+            left: -1px;
+            top: -12px;
+        }
+        .appointPicCode {
+            width: 96px !important;
+            height: 32px;
+            text-align: center !important;
+            overflow: hidden;
+            position: relative;
+            top: 11px;
+        }
+        .appointPicVal {
+            margin-left: 88px;
+            width: 170px;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye" style=""></div>
+        <div id="topHeader" class="appointment">原创作品数：17603（每一个作品都能联系到作者）今日新增：60</div>
+        <div class="superbox"></div>
+        <!-- 头部 end -->
+        <div class="bg-main-body">
+            <div id="main-body" class="payment-main-body" style="background:pink;">
+                <!--支付方式遮罩-->
+                <div class="fkfsWrap"></div>
+                <div class="paymentMainDiv fkfs">
+                    <div class="smrq">
+                        <div class="smrqTop">
+                            <span class="smTop">请选择你稀罕的方式进行充值</span>
+                            <div class="yuejianClose closeSmrq"></div>
+                        </div>
+                        <ul>
+                            <li class="cur">
+                                <span class="ss zfb"></span>
+                                <span>支付宝支付</span>
+                            </li>
+                            <li>
+                                <span class="ss wx"></span>
+                                <span>微信支付</span>
+                            </li>
+                        </ul>
+                        <div class="sewm yebzczye">
+                            <input type="text" onkeyup="clearNoNum(this)" class="wantPay" data-modeltype="AliPay" placeholder="请输入充值金额" />
+                            <img width="170" height="170" src="images/zwwem.png" />
+                            <p class="color willPay">￥<span>0.00</span>元</p>
+                        </div>
+                        <div class="sewm yebzczyew">
+                            <input type="text" onkeyup="clearNoNum(this)" class="wantPay" data-modeltype="WxPay" placeholder="请输入充值金额" />
+                            <img width="170" height="170" src="images/zwwem.png" />
+                            <p class="color willPay">￥<span>0.00</span>元</p>
+                        </div>
+                        <div class="wccz">
+                            <p class="text" style="line-height:14px;">感谢你对画客网的支持，发票和提现请往个人管理中心提交申请！</p>
+                            <p class="text blueColor">联系客服：0571-86803103</p>
+                        </div>
+                        <div class="clear" style="height:1px;width:1px;"></div>
+                    </div>
+                    <div class="qrzfYm">
+                        <div class="smrqTop sfyz">
+                            <span class="smTop">身份验证</span>
+                            <div class="yuejianClose closeQrzfYm"></div>
+                        </div>
+                        <form class="fkfsForm">
+                            <div>
+                                <span>填写手机号：</span>
+                                <input type="text" required class="fkfsPub">
+                            </div>
+                            <div>
+                                <input type="text" maxlength="4" required class="appointPicVal" style="text-transform: uppercase;">
+                                <span class="appointPicCode">
+                                    <img id="appointPicCode" src="https://www.huakewang.com/index.php/verifycode/index/2">
+                                </span>
+                            </div>
+                            <div>
+                                <input type="text" maxlength="4" required class="fkfsYzm">
+                                <i class="fkfsYzmHq">获取验证码</i>
+                            </div>
+                            <input type="button" class="fkfsBtn fkfsSure" value="确定">
+                            <input type="button" class="fkfsBtn fkfsRequire" value="取消">
+                        </form>
+                    </div>
+                    <ul class="zfUl">
+                        <li class="cur zfbli" title="点击刷新验证码">
+                            <span class="ss zfb"></span>
+                            <span>支付宝支付</span>
+                        </li>
+                        <li class="wxli" title="点击刷新验证码">
+                            <span class="ss wx"></span>
+                            <span>微信支付</span>
+                        </li>
+                        <li class="hkwYeZf">
+                            <span class="ss hk"></span>
+                            <span>画客网余额支付</span>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                    <div class="ewm">
+                        <div class="ewmLeft ewmLeft1">
+                            <!--<img src="" alt="">-->
+                            <!--<img class="reflashewm" width="145" height="145" src="images/reflashewm.png" data-modeltype="AliPay"/>-->
+                            <img class="zwwem" width="145" height="145" src="images/zwwem.png" />
+                            <p class="text">扫码支付1</p>
+                            <p class="text colortex">￥
+                                <a style="color: red;"></a>元</p>
+                        </div>
+                        <div class="shuXian"></div>
+                        <div class="text meetDetails">
+                            <p class="text">服务名称：约见订单费</p>
+                            <p class="text jyje">交易金额：
+                                <a></a>元</p>
+                            <p class="text yjsj">约见时间：
+                                <a></a>
+                            </p>
+                            <p class="text yjdd">约见地址：
+                                <a></a>
+                            </p>
+                            <p class="text yjlx">交易类型：画客网担保交易</p>
+                            <a href="javascript:;" class="TzLink">跳转网页版支付宝支付>></a>
+                        </div>
+                        <div class="yuejianClose closeFkfs" id="closeZFB"></div>
+                    </div>
+                    <div class="ewm">
+                        <div class="ewmLeft ewmLeft2">
+                            <!--<img class="reflashewm" width="145" height="145" src="images/reflashewm.png" data-modeltype="WxPay"/>-->
+                            <img class="zwwem" width="145" height="145" src="images/zwwem.png" />
+                            <p class="text">扫码支付2</p>
+                            <p class="text colortex">￥
+                                <a style="color: red;"></a>元</p>
+                        </div>
+                        <div class="shuXian"></div>
+                        <div class="text meetDetails">
+                            <p class="text">服务名称：约见订单费</p>
+                            <p class="text jyje">交易金额：
+                                <a></a>元</p>
+                            <p class="text yjsj">约见时间：
+                                <a></a>
+                            </p>
+                            <p class="text yjdd">约见地址：
+                                <a></a>
+                            </p>
+                            <p class="text yjlx">交易类型：画客网担保交易</p>
+                        </div>
+                        <div class="yuejianClose closeFkfs"></div>
+                    </div>
+                    <div class="ewm">
+                        <div class="dqye">
+                            <span class="zhye">余额：</span>
+                            <span class="color">￥<i></i>元</span>
+                            <p style="display:none;">您的余额不足，请充值！</p>
+                            <br>
+                            <span class="qrzf">确认支付</span>
+                            <span class="zhcz">账户充值</span>
+                        </div>
+                        <div class="shuXian"></div>
+                        <div class="text meetDetails">
+                            <p class="text">服务名称：约见订单费</p>
+                            <p class="text jyje">交易金额：
+                                <a></a>元</p>
+                            <p class="text yjsj">约见时间：
+                                <a></a>
+                            </p>
+                            <p class="text yjdd">约见地址：
+                                <a></a>
+                            </p>
+                            <p class="text yjlx">交易类型：画客网担保交易</p>
+                        </div>
+                        <div class="yuejianClose closeFkfs"></div>
+                    </div>
+                    <div class="webHtml" style="display:none;"></div>
+                </div>
+
+                <div class="paymentMain " style="position:relative;">
+                    <div class="clear" style="height:1px;width:1px;"></div>
+                    <div class="paymentMainDiv">
+                        <div class="clear" style="height:1px;width:1px;"></div>
+                        <div class="sjsxx" style="margin-top:20px;border-bottom:1px solid #ccc;">
+                            <div class="sjsxxLeft">
+                                <img src="">
+                            </div>
+                            <div class="sjsxxRight">
+                                <p class="text personMsg" style="margin-top:10px;"></p>
+                                <p class="text stars" style="margin-top:5px;display: inline-block;">
+                                    <!--<span class="text starsNum"></span>-->
+                                </p>
+                                <p class="text personMsgAddress" style="display:inline-block;margin-left: 15px;">
+                                    <img src="images/dwtb.jpg">
+                                    <span class="text"></span>
+                                </p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="sjsxx" style="padding:15px 0; border:1px solid #ccc;border-left:none;border-right:none;">
+                            <span style="margin-left:10px;">约见事宜　|　
+                                <p style="display: inline-block;">
+                                    <input class="appointDetail" type="text" placeholder="请输入20字以内的文字">
+                                </p>
+                            </span>
+                        </div>
+                        <div class="cityWrap" style="width:96%;margin:20px auto 0 auto;height:auto; background-color:#fff;">
+                            <ul class="ul">
+                                <span class="publish-txt">需求位置　｜　
+
+                                </span>
+                                <li class="cityLocal">
+                                    <ul class="cityWrapUl">
+                                        <!--<li class="cityWrapUlLi cityWrapUlLiPub cityWrapUlLi1">-->
+                                        <!--<select name="" id="" class="divXlUl1">-->
+                                        <!--<option selected>&#45;&#45;省份&#45;&#45;</option>-->
+                                        <!--</select>-->
+                                        <!--</li>-->
+                                        <!--<li class="cityWrapUlLi cityWrapUlLiPub">-->
+                                        <!--<select class="divXlUl2">-->
+                                        <!--<option selected>&#45;&#45;城市&#45;&#45;</option>-->
+                                        <!--</select>-->
+                                        <!--</li>-->
+                                        <!--<li class="cityWrapUlLi cityWrapUlLiPub">-->
+                                        <!--<select class="divXlUl3">-->
+                                        <!--<option selected>&#45;&#45;区域&#45;&#45;</option>-->
+                                        <!--</select>-->
+                                        <!--</li>-->
+
+                                        <li class="li3 cityWrapUlLi">
+                                            <div class="li-Div">
+                                                <input type="text" id="suggestId" class="addressIpt" placeholder="请填写详细地址">
+                                                <div id="searchResultPanel" style="border:1px solid #C0C0C0;display:none;"></div>
+                                            </div>
+                                            <div class="tuoSenWrap">
+                                                <ul class="tuoSenWrapUl">
+                                                    <li class="tuoSenWrapUlLi tuosenWrapUlLi1">
+                                                        <span class="text">选择常用地址</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <i onclick="alertMapShow()" class="icon-localLocal" title="点击选择你的常用地址"></i>
+                                            <!--百度地图-->
+                                            <div class="mapWrap">
+                                                <div class="alertDom">
+                                                    <span>提示:</span>
+                                                    <i></i>
+                                                    <p></p>
+                                                    <a class="alertDomSure" href="javascript:void(0);">确定搜索</a>
+                                                </div>
+                                                <div class="mapWrapTop clearfix">
+                                                    <div class="mapWrapTopLeft">
+                                                        <span class="currentCity">当前城市：</span>
+                                                        <span class="currentCityChange" id="cur_city_spn">杭州</span>
+                                                        <span class="changeCurrentCity">切换城市 <i></i></span>
+                                                    </div>
+                                                    <div class="mapWrapTopRight">
+                                                        <input type="text" class="baiduFindCity">
+                                                        <button class="citySearch">查询地址</button>
+                                                    </div>
+                                                    <div class="alertMapClose"></div>
+                                                </div>
+                                                <div id="allmap">
+
+                                                </div>
+                                                <div id="r-result">
+                                                    <div id="result"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <div class="clear"></div>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="sjsxx" style="padding:15px 0; border:1px solid #ccc;border-left:none;border-right:none;">
+                            <span style="margin-left:10px;">上门时间　|　
+                                <!--日期插件-->
+                                <p class="datep">
+                                    <input class="datainp wicon" id="dateinfo" type="text" placeholder="请选择"  readonly>
+                                </p>
+                            </span>
+                        </div>
+                        <div class="sjsxx" style="margin-bottom:10px;">
+                            <textarea rows="1" class="lybz" type="text" placeholder="如需特殊情况请留言" autoHeight="true" /></textarea>
+                        </div>
+                        <div class="clear" style="width:1px;height:1px; margin-top:10px;"></div>
+                    </div>
+
+                    <!--约见小费-->
+                    <div class="meetTip">
+                        <label><input type="checkbox" class="yjxfInp"> <span class="yjxf"> 约见小费 ：</span></label>
+                        <input type="text" readonly class="seeYou" placeholder="选择小费" onkeyup="clearNoNum(this)">
+                        <span class="seeAfter"></span>
+                        <span>（单位：元）</span>
+                        <p class="wxts waringColor">约见费是您自愿打赏给设计师的,打赏能增加成功合作的概率</p>
+                        <ul>
+                            <li>18.8</li>
+                            <li>28.8</li>
+                            <li>58.8</li>
+                            <li>68.8</li>
+                            <li>88.8</li>
+                            <li class="srje">输入金额</li>
+                        </ul>
+                    </div>
+
+                    <div class="yueDing">
+                        <p class="waringColor">1、若对方同意，资费会全额转入对方账户,并且无法返还到您的账户，画客网不会收取任何费用!</p>
+                        <p class="waringColor">2、若对方拒绝或超时未处理，资费将全额返还到您的账户!</p>
+                        <p class="waringColor">3、若对方同意却失约了,您可投诉,我们核实后,会对设计师进行严格的处罚!</p>
+
+                    </div>
+                    <div class="meetSend">
+                        <a href="javascript:;" class="linkYue">
+                            <input type="button" value="发送约见">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="success_send_wrap"></div>
+        <div class="success_send">
+            <div class="success_send_message">
+                <p><span></span>约见订单发送成功，等待对方处理！</p>
+            </div>
+            <div class="success_send_btn">
+                <a href="Personal-8.html">查看约见订单</a>
+                <a href="https://www.huakewang.com">返回首页</a>
+            </div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <script src="js/client/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="js/plugs/jedate.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/addJs.js"></script>
+    <script type="text/javascript" src="js/map/publishmap.js"></script>
+    <script type="text/javascript">
+        $(document).on("click", ".alertDomSure", function() {
+            $(this).parent().parent().removeClass("mapWrapBig");
+            $("#suggestId").val($(this).prev().html()).blur();
+        });
+    </script>
+
+</body>
+
+</html>

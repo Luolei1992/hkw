@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/social.css" />
+    <link rel="stylesheet" href="css/supply.css">
+    <link rel="stylesheet" href="css/data.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/plugs/moment.js"></script>
+    <script type="text/javascript" src="js/plugs/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="js/addJs.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'index.html';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('.footer_on').load('bottom.html'); //加载底部
+            $('#header.header-neiye').load('head.html'); //加载头部
+            $('div.ewm').css({
+                'display': 'none'
+            }); //div.ewm隐藏
+            $('div.ewm:eq(0)').css({
+                'display': 'block'
+            }); //第一个div.ewm显示
+            $('div.sewm').eq(1).css('display', 'none'); //第一个sewm显示
+            //            日期选择
+            if ($(".iDate.full").length > 0) {
+                $(".iDate.full").datetimepicker({
+                    locale: "zh-cn",
+                    format: "YYYY-MM-DD a hh:mm",
+                    dayViewHeaderFormat: "YYYY年 MMMM"
+                });
+            }
+            if ($(".iDate.date").length > 0) {
+                $(".iDate.date").datetimepicker({
+                    locale: "zh-cn",
+                    format: "YYYY-MM-DD",
+                    dayViewHeaderFormat: "YYYY年 MMMM"
+                });
+            }
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1190px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye" style=""></div>
+        <div id="topHeader" class="appointment">原创作品数：17603（每一个作品都能联系到作者）　　今日新增：60</div>
+        <div class="superbox"></div>
+        <!-- 头部 end -->
+        <div class="bg-main-body">
+            <div id="main-body" class="payment-main-body" style="background:pink;">
+                <div class="paymentMain " style="position:relative;">
+                    <div class="clear" style="height:1px;width:1px;"></div>
+                    <div class="paymentMainDiv">
+                        <div class="clear" style="height:1px;width:1px;"></div>
+                        <div class="sjsxx" style="margin-top:20px;border-bottom:1px solid #ccc;">
+                            <div class="sjsxxLeft">
+                                <img src="images/touxiang1.jpg" />
+                            </div>
+                            <div class="sjsxxRight">
+                                <p class="text" style="margin-top:10px;">MiaZhang　|　女　|　10年经验　|　20件作品　</p>
+                                <p class="text" style="margin-top:5px;">
+                                    <span class="icon"></span>
+                                    <span class="icon"></span>
+                                    <span class="icon"></span>
+                                    <span class="icon"></span>
+                                    <span class="icon"></span>
+                                    <span class="text">5.0　　</span>
+                                    <img src="images/dwtb.jpg">
+                                    <span class="text">杭州市-滨江区</span>
+                                </p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="sjsxx" style="margin-top:20px; padding:10px 0; ">
+                            <span class="text" style="margin-left:10px;">服务地址　|　</span>
+                            <input class="sousuo" type="text" placeholder="默认加载当前位置 输入显示历史位置 输入关键词开始搜素" />
+                            <ul class="drop-select-options fn-hide dz payment" style="background:#fff; margin-top:15px; width:230px">
+                                <li class="li1">
+                                    <span>我的历史位置:</span>
+                                </li>
+                                <li>
+                                    <i class="wzbj"></i>
+                                    <p class="text1">托森科技园</p>
+                                    <p class="text2">杭州市滨江区</p>
+                                </li>
+                                <li>
+                                    <i class="wzbj"></i>
+                                    <p class="text1">托森科技园</p>
+                                    <p class="text2">杭州市滨江区</p>
+                                </li>
+                                <li>
+                                    <i class="wzbj"></i>
+                                    <p class="text1">托森科技园</p>
+                                    <p class="text2">杭州市滨江区</p>
+                                </li>
+                                <li>
+                                    <i class="wzbj"></i>
+                                    <p class="text1">托森科技园</p>
+                                    <p class="text2">杭州市滨江区</p>
+                                </li>
+                                <li>
+                                    <i class="wzbj"></i>
+                                    <p class="text1">托森科技园</p>
+                                    <p class="text2">杭州市滨江区</p>
+                                </li>
+                            </ul>
+                            <div class="xl"></div>
+                            <div class="ditu">
+
+                            </div>
+                        </div>
+                        <div class="sjsxx" style="padding:15px 0; border:1px solid #ccc;border-left:none;border-right:none;">
+                            <span style="margin-left:10px;">上门时间　|　
+                                <div class="iDate full">
+                                    <input type="text">
+                                    <button type="button" class="addOn"></button>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="sjsxx" style="margin-bottom:10px;">
+                            <input class="lybz" type="text" placeholder="如需特殊情况请留言" />
+                        </div>
+                        <div class="clear" style="width:1px;height:1px; margin-top:10px;"></div>
+                    </div>
+
+                    <!--约见小费-->
+                    <div class="meetTip">
+                        <label><input type="checkbox" class="yjxfInp"> <span class="yjxf"> 约见小费 ：</span></label>
+                        <input type="text" readonly class="seeYou" placeholder="选择小费">
+                        <span class="seeAfter"></span>
+                        <span>（单位：元）</span>
+                        <p class="wxts waringColor">约见费是您自愿打赏给设计师的,打赏能增加成功合作的概率</p>
+
+                        <ul>
+                            <li>18.8</li>
+                            <li>28.8</li>
+                            <li>58.8</li>
+                            <li>68.8</li>
+                            <li>88.8</li>
+                            <li class="srje">输入金额</li>
+                        </ul>
+                    </div>
+                    <div class="fkfsWrap">
+                        <div class="paymentMainDiv fkfs">
+                            <div class="smrq">
+                                <div class="smrqTop">
+                                    <span class="smTop">请选择你稀罕的方式进行充值</span>
+                                    <div class="yuejianClose closeSmrq"></div>
+                                </div>
+                                <ul>
+                                    <li class="cur">
+                                        <span class="ss zfb"></span>
+                                        <span>支付宝支付</span>
+                                    </li>
+                                    <li>
+                                        <span class="ss wx"></span>
+                                        <span>微信支付</span>
+                                    </li>
+                                </ul>
+                                <div class="sewm">
+                                    <input type="text" placeholder="请输入充值金额" />
+                                    <img src="images/hkwewm.png" />
+                                    <p class="color">￥501.00元</p>
+                                </div>
+                                <div class="sewm">
+                                    <input type="text" placeholder="请输入充值金额" />
+                                    <img src="images/hkwewm.png" />
+                                    <p class="color">￥502.00元</p>
+                                </div>
+                                <div class="wccz">
+                                    <p class="text" style="line-height:14px;">感谢你对画客网的支持，发票和提现请往个人管理中心提交申请！</p>
+                                    <p class="text blueColor">联系客服：0571-86803103</p>
+                                </div>
+                                <div class="clear" style="height:1px;width:1px;"></div>
+                            </div>
+                            <div class="qrzfYm">
+                                <div class="smrqTop sfyz">
+                                    <span class="smTop">身份验证</span>
+                                    <div class="yuejianClose closeQrzfYm"></div>
+                                </div>
+                                <div class="fkfsForm">
+                                    <label>
+									<span>填写手机号：</span>
+									<input type="text" class="fkfsPub">
+								</label>
+                                    <br>
+                                    <label>
+									<input type="text" class="fkfsYzm">
+									<i>获取验证码</i>
+								</label>
+                                    <br>
+                                    <label>
+									<span>画客网密码：</span>
+									<input type="password" class="fkfsPub">
+								</label>
+                                    <br>
+                                    <input type="button" class="fkfsBtn fkfsRequire" value="取消">
+                                    <input type="button" class="fkfsBtn fkfsSure" value="确定">
+                                </div>
+                            </div>
+                            <ul class="zfUl">
+                                <li class="cur"><span class="ss zfb"></span><span>支付宝支付</span></li>
+                                <li><span class="ss wx"></span><span>微信支付</span></li>
+                                <li><span class="ss hk"></span><span>画客网余额支付</span></li>
+                                <div class="clear"></div>
+                            </ul>
+                            <div class="ewm">
+                                <div class="ewmLeft">
+                                    <img src="images/ewma.png" />
+                                    <p class="text">扫码支付1</p>
+                                    <p class="text colortex">￥300.00元</p>
+                                </div>
+                                <div class="shuXian"></div>
+                                <div class="text">
+                                    <p class="text">服务名称：约见订单费</p>
+                                    <p class="text">交易金额：300.00元</p>
+                                    <p class="text">约见时间：2015年07月15日 06:05:25</p>
+                                    <p class="text">约见地址：长河街道杭州市长河路351号（托森科技园）3号楼5楼C座518室</p>
+                                    <p class="text">交易类型：画客网担保交易</p>
+                                    <a href="javascript:;" class="TzLink">跳转网页版支付宝支付>></a>
+                                </div>
+                                <div class="yuejianClose closeFkfs" id="closeZFB"></div>
+                            </div>
+                            <div class="ewm">
+                                <div class="ewmLeft">
+                                    <img src="images/ewma.png" />
+                                    <p class="text">扫码支付2</p>
+                                    <p class="text colortex">￥300.00元</p>
+                                </div>
+                                <div class="shuXian"></div>
+                                <div class="text">
+                                    <p class="text">服务名称：约见订单费</p>
+                                    <p class="text">交易金额：300.00元</p>
+                                    <p class="text">约见时间：2015年07月15日 06:05:25</p>
+                                    <p class="text">约见地址：长河街道杭州市长河路351号（托森科技园）3号楼5楼C座518室</p>
+                                    <p class="text">交易类型：画客网担保交易</p>
+                                </div>
+                                <div class="yuejianClose closeFkfs"></div>
+                            </div>
+                            <div class="ewm">
+                                <div class="dqye">
+                                    <span class="zhye">余额：</span>
+                                    <span class="color">￥503.00元</span>
+                                    <p>您的余额不足，请充值！</p>
+                                    <br>
+                                    <span class="qrzf">确认支付</span>
+                                    <span class="zhcz">账户充值</span>
+                                </div>
+                                <div class="shuXian"></div>
+                                <div class="text">
+                                    <p class="text">服务名称：约见订单费</p>
+                                    <p class="text">交易金额：300.00元</p>
+                                    <p class="text">约见时间：2015年07月15日 06:05:25</p>
+                                    <p class="text">约见地址：长河街道杭州市长河路351号（托森科技园）3号楼5楼C座518室</p>
+                                    <p class="text">交易类型：画客网担保交易</p>
+                                </div>
+                                <div class="yuejianClose closeFkfs"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="yueDing">
+                        <p class="waringColor">1、若对方同意，资费会全额转入对方账户,并且无法返还到您的账户，画客网不会收取任何费用!</p>
+                        <p class="waringColor">2、若对方拒绝或超时未处理，资费将全额返还到您的账户!</p>
+                        <p class="waringColor">3、若对方同意却失约了,您可投诉,我们核实后,会对设计师进行严格的处罚!</p>
+
+                    </div>
+                    <div class="meetSend">
+                        <a href="javascript:;" class="linkYue">
+                            <input type="button" value="发送约见">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+</body>
+
+</html>

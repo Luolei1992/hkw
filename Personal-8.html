@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        个人中心-我的约见【画客网】
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/social.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/social.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+            $('div.left').load('PersonalNav.html', function() {
+                $(document).find('div.left div.yidenglu-box ul li:eq(4)').css({
+                    'background': '#f1f1f1'
+                }); //li:eq(5)背景颜色为f1f1f1
+            }); //加载已登录导航
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        
+        .red {
+            color: red;
+        }
+        
+        .personal .divWrap .span-right.span-right-time {
+            margin-right: 20px;
+        }
+        
+        .divWrap .message {
+            padding-left: 30px;
+            padding-bottom: 10px;
+        }
+        
+        .btnWrapTwo .feedback {
+            float: right;
+            display: inline-block;
+            padding: 8px 0;
+            width: 100px;
+            border: 1px solid #CCCCCC;
+            text-align: center;
+            margin-right: 25px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+        
+        #main-body.personal div.right div.neirong div.divWrap .xmDelate_meet {
+            width: 14px;
+            height: 15px;
+            background: url(./images/delate.png);
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            cursor: pointer;
+        }
+        
+        .tempNullPng {
+            width: 160px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeader">
+            画客网致力于打造一个精确、快捷的设计服务对接平台。来画客网，遇到靠谱的好项目。
+            <a href="selfpage.html">设计师入驻</a>
+        </div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal">
+            <div class="left"></div>
+            <div class="right " style="">
+                <div class="neirong">
+                    <div class="neirong-b">
+                        <input type="text" placeholder="输入名称进行搜索"><i></i>
+                        <div class="sele1 selePub">
+                            <span>进度：</span>
+                            <select name="" id="progress">
+								<option value="0">全部</option>
+								<option value="1">待处理</option>
+								<option value="2">已接受</option>
+								<option value="3">已完成</option>
+								<option value="4">已拒绝</option>
+								<option value="5">已取消</option>
+							</select>
+                        </div>
+                        <div class="sele2 selePub">
+                            <span>类型：</span>
+                            <select name="" id="meetType">
+                                <option value="0">全部</option>
+                                <option value="1">发出的</option>
+                                <option value="2">收到的</option>
+                            </select>
+                        </div>
+                        <div class="sele4 selePub">
+                            <span>时间：</span>
+                            <select name="" id="publishTime">
+								<option value="">全部</option>
+								<option value="7">近一周</option>
+								<option value="30">近一个月</option>
+								<option value="90">近三个月</option>
+							</select>
+                        </div>
+                    </div>
+                    <div class="Wrap" id="viewPersonal8"></div>
+                    <script type="text/template" id="templatePersonal8">
+                        {{~it:val:eq}} {{ val.type_state = val.user_id_from == getCookie("user_id") ? 1 : 2; }}
+                        <div class="divWrap">
+                            <i data-inviteid="{{=val.invite_id}}" class="xmDelate_meet" style="display: block;"></i>
+                            <span class="span-left">{{=val.invite_name ? val.invite_name : ""}} —— {{= val.type_state == 1 ? '发起的' : '收到的'}}</span>
+                            <span class="span-right span-right-time">{{=val.Format_send_time ? val.Format_send_time : "" }}</span>
+                            <div style="clear:both;"></div>
+                            <div class="auto" style="clear:both;width:95%;border-top:1px solid #f0f0f0; "></div>
+                            <div class="personMeetAll clearfix">
+                                <div class="personMeetL fl">
+                                    {{ var isLaunch = val.type_state == 1 ? true : false; }}
+                                    <a href="detailed.html?id={{= isLaunch ? val.user_id_to : val.user_id_from }}"><img src="{{= isLaunch ? val.path_to_thumb : val.path_from_thumb }}" alt=""></a>
+                                </div>
+                                <div class="personMeetR fl">
+                                    <p><i class="perName"></i> <a href="detailed.html?id={{= isLaunch ? val.user_id_to : val.user_id_from }}">{{= isLaunch ? val.nick_name_to +'（'+val.mobile_to+'）' : val.nick_name_from +'（'+val.mobile_from+'）'}}</a></p>
+                                    <p><i class="perLocal"></i> {{=val.address ? val.address : ""}}</p>
+                                    <p><i class="perTime"></i> {{=val.Format_invite_time ? val.Format_invite_time : ""}}</p>
+                                </div>
+                            </div>
+                            {{? val.remark}}
+                            <div class="message">留言：{{=val.remark}}</div>
+                            {{?}}
+                            <div style="clear:both;"></div>
+                            <div class="auto" style="clear:both;width:95%;border-top:1px solid #f0f0f0; "></div>
+                            {{? val.sumState == "12"}}
+                            <span class="span-1">约见费：<i style="color:red">{{=val.price ? val.price + "元" : ""}}<i>（还剩{{=val.surplusTimeTxt ? val.surplusTimeTxt : ""}}，若您仍未处理，系统将自动取消该约见）</i></i></span>
+                            <div class="btnWrapTwo">
+                                <a href="javascript:void(0);" class="seeApub personMeetAgree">同意</a>
+                                <a href="javascript:void(0);" class="seeApub personMeetRefuse">拒绝</a>
+                            </div>
+                            <div class="confirms">
+                                <div class="contentTXT"></div>
+                                <button class="btnC">取消</button>
+                                <button class="btnS" data-inviteId="{{=val.invite_id}}">确定</button>
+                            </div>
+                            {{?}} {{? val.sumState == "11"}}
+                            <span class="span-1">约见费：<i style="color:red">{{=val.price ? val.price + "元" : ""}}<i>（还剩{{=val.surplusTimeTxt ? val.surplusTimeTxt : ""}}，若对方仍未处理，系统将自动取消该约见）</i></i></span>
+                            <div class="btnWrapTwo">
+                                <a href="javascript:void(0);" class="seeApub personMeetCancle">取消</a>
+                                <p class="fr">已发送，等待对方处理</p>
+                            </div>
+                            <div class="confirms">
+                                <div class="contentTXT"></div>
+                                <button class="btnC">取消</button>
+                                <button class="btnS" data-inviteId="{{=val.invite_id}}">确定</button>
+                            </div>
+                            {{?}} {{? val.answer_state != "1"}}
+                            <span class="span-1">约见费：<i style="color:red">{{=val.price ? val.price + "元" : ""}}</i></span>
+                            <div class="btnWrapTwo clearfix">
+                                {{? val.answer_state == "3"}} {{ var this_feedback = val.type_state == 1 ? val.feedback_from : val.feedback_to ; }}
+                                <a href="javascript:void(0);" data-feedback="{{= this_feedback ? this_feedback : '' }}" class="feedback" data-inviteId="{{=val.invite_id}}">{{= this_feedback ? "已反馈" : "问题反馈"}}</a> {{?}}
+                                <p class="fr">{{=val.sumStateTxt ? val.sumStateTxt : ""}}</p>
+                            </div>
+                            {{?}}
+                            <div style="clear:both;"></div>
+                        </div>
+                        {{~}}
+                    </script>
+
+                </div>
+            </div>
+
+            <div style="width:1px;height:1px; clear:both; margin:100px auto;"></div>
+            <!-- <div id="main-body-bottom" class="auto" style=" margin: 65px auto 150px auto;"></div> -->
+            <div id="kkpager"></div>
+
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <script>
+        $(function() {
+            //约见同意,拒绝,取消
+            $("body").on("click", ".seeApub", function() {
+                $(this).parent().next().css("display", "block").find(".btnC").click(function() {
+                    $(this).parent().css("display", "none");
+                });
+            });
+            $("body").on("click", ".personMeetAgree", function() {
+                var $this = $(this);
+                var $next = $(this).parent().next();
+                var $prev = $(this).parent().prev();
+                $next.find(".contentTXT").html("<p>同意后，您必须按时赴约！</p><p>不能如约到达者，将受到严厉处罚，情形严重者将永久封号！</p>");
+                // $next.find(".btnS")[0].onclick = function(){
+                //     $this.parent().html('<p class="fr">您已同意，记得准时赴约</p>');
+                //     $next.css("display","none");
+                //     $prev.find("i>i").html("");                    
+                // };                
+                $next.find(".btnS").off().click(function() {
+                    // $this.parent().html('<p class="fr">您已同意，记得准时赴约</p>');
+                    $next.css("display", "none");
+                    $prev.find("i>i").html("");
+                    ajax_change_meet_status($(this).attr('data-inviteId'), 2);
+                });
+            });
+            $("body").on("click", ".personMeetRefuse", function() {
+                var $this = $(this);
+                var $next = $(this).parent().next();
+                var $prev = $(this).parent().prev();
+                $next.find(".contentTXT").html("<p>您将拒绝对方的约见</p>");
+                $next.find(".btnS").off().click(function() {
+                    // $this.parent().html('<p class="fr">您已拒绝</p>');
+                    $next.css("display", "none");
+                    $prev.find("i>i").html("");
+                    ajax_change_meet_status($(this).attr('data-inviteId'), 4);
+                });
+            });
+            $("body").on("click", ".personMeetCancle", function() {
+                var $this = $(this);
+                var $next = $(this).parent().next();
+                var $prev = $(this).parent().prev();
+                $next.find(".contentTXT").html("<p>取消后，约见费将全额返还到您的账户上！</p><p>确认取消约见？</p>");
+                $next.find(".btnS").click(function() {
+                    // $this.parent().html('<p class="fr">约见已取消</p>');
+                    $next.css("display", "none");
+                    $prev.find("i>i").html("");
+                    // $(this).parent().parent().find(".xmDelate").css("display","block");
+                    ajax_change_meet_status($(this).attr('data-inviteId'), 5);
+                });
+            });
+            srueConfirm();
+        });
+    </script>
+</body>
+<textarea id="feedback-content" style="margin: 5px 10px 0; display: none;" rows="6" cols="50"></textarea>
+<script type="text/javascript" src="js/plugs/jq.page.js"></script>
+<script type="text/javascript" src="js/plugs/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/personal/config.js"></script>
+<script type="text/javascript" src="js/plugs/doT.min.js"></script>
+<script type="text/javascript" src="js/personal/layer/layer.js"></script>
+<script type="text/javascript" src="js/personal/personal-8.js"></script>
+
+</html>

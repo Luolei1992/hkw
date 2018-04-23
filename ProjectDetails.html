@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>需求详情</title>
+    <link rel="shortcut icon" href="images/logo.ico "  type="image/x-icon">
+    <link rel="stylesheet" href="css/client/dialog.css">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/demand.css">
+    <link rel="stylesheet" href="css/fenye.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie=$.cookie('user_id');
+            if(_cookie==undefined||_cookie=="null"||_cookie==null||_cookie=="undefined"||_cookie==""){
+                $('#header.header-neiye').load('head.html');//加载导航
+                $('.footer_on').load('bottom.html');
+            }else{
+                $('#header.header-neiye').load('head_success.html');//加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display','none');
+            };
+        });
+    </script>
+    <style>
+        #nav a.but-dl{
+            display:none;
+        }
+        #nav a.but-dl{
+            display:none;
+        }
+        #header.header-neiye div.yidenglu{
+            display:block;
+        }
+        .click-dianzan {
+            width: 100px;
+            height: 100px;
+            margin:20px auto 0;
+            -webkit-border-radius:50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            position: relative;
+            background-color: #EFEFEF;
+        }
+        .click-dianzan .zan-icon {
+            height: 30px;
+            width: 31px;
+            display: inline-block;
+            background: url("images/dianzan.png") no-repeat;
+            position: absolute;
+            top:35px;
+            left:35px;
+        }
+        .click-dianzan span {
+            position: absolute;
+            top:70px;
+            left:45px;
+        }
+        .click-dianzan .zan-icon.position {
+            background-position: -31px 0;
+        }
+        #alertNoLoginMessage{
+            transition: all 0.7s linear;
+        }
+        #header.header-neiye div.yidenglu{
+            display:block;
+        }
+        #main-body{
+            width:1200px;
+            margin:0 auto;
+        }
+        #main-body.md-body .d-content {
+            /* background: #fff; */
+            text-align: left;
+        }
+        .click-like{
+            background-color: rgb(211,208,201);
+        }
+        .click-like .like-icon{
+            background-position: 50%;
+        }
+        .hkw-work-list li{
+            width: auto;
+            height: auto;
+        }
+        .thumb-a{
+            width: 280px;
+            left: 0;
+        }
+        .caption h4 .sc{
+            right: 6px;
+        }
+        .pblUl li:hover .maxImgWidth {
+            transform: scale(1.05);
+        }
+        .ca-item{
+            width: 381px;
+        }
+        .ca-inntro{
+            height: 50px;
+        }
+        .ca-list{
+            padding: 0 20px;
+        }
+        .click-dianzan {
+            width: 100px;
+            height: 100px;
+            margin:0 auto;
+            -webkit-border-radius:50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            position: relative;
+            background-color: #EFEFEF;
+        }
+        .click-dianzan .zan-icon {
+            height: 30px;
+            width: 31px;
+            display: inline-block;
+            background: url("images/dianzan.png") no-repeat;
+            position: absolute;
+            top:35px;
+            left:35px;
+        }
+        .click-dianzan .project_sendaprice {
+            height: 30px;
+            width: 31px;
+            display: inline-block;
+            background: url("images/project_sendaprice.png") no-repeat;
+            position: absolute;
+            top:35px;
+            left:36px;
+        }
+        .click-dianzan span {
+            position: absolute;
+            top:70px;
+            left:50%;
+            transform:translateX(-50%) ;
+        }
+        .click-dianzan .zan-icon.position {
+            background-position: -31px 0;
+        }
+        #project_designer_data3{
+            margin: 10px 0 0 0 ;
+        }
+        #project_designer_data3 a{
+            width: 25%;text-align: center;
+            display: inline-block;
+            border:1px solid #111;
+            margin-left:15px ;
+            padding: 4px 0;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #eee;
+            background: #fff;
+        }
+        #project_designer_data3 a:nth-child(1){
+            background: #318bff;
+        }
+        #project_designer_data3 a:nth-child(2){
+            background: #39c12e;
+        }
+        #project_designer_data3 a:nth-child(3){
+            background: #ff4399;
+        }
+        #project_designer_data3 a:nth-child(4){
+            color: #777;
+            background: #ddd;
+        }
+        #alertNoLoginMessage{
+            transition: all 0.7s linear;
+        }
+        .baoming_box_send{
+            padding:20px;
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+            width: 300px;height: 160px;
+            right:-430px;
+            visibility: hidden;
+        }
+        .project_sendaprice_btn{
+            display: inline-block;
+            width: 90px;height: 30px;
+            font-size: 16px;background: #007db5;
+            color: #fff;text-align: center;
+            line-height: 30px;border-radius: 5px;
+        }
+        .baoming_price_send_check a{
+            display: inline-block;padding: 2px 25px;
+            height: 25px;line-height: 25px;font-size: 16px;text-align: center;border: 1px solid #ccc;border-radius: 5px;
+            margin: 0 10px;
+        }
+        .baoming_price_send_check1 a{
+            display: inline-block;padding: 2px 25px;
+            height: 25px;line-height: 25px;font-size: 16px;text-align: center;border: 1px solid #0bacf5;border-radius: 5px;
+            margin: 0 10px;color: #00a0e9;
+            background: #eee;
+        }
+        .baoming_price_send_check a:nth-child(3){
+            background: #eee;
+        }
+        .baoming_price_send_check a:nth-child(4){
+            background: #0bacf5;color: #fff;
+        }
+
+        .bbs{
+            width: 100%;
+            background-color: #f7f7f7;
+            border: 1px solid #e6e6e6;
+            margin-top: 25px;
+        }
+        .bbs .title{
+            font-size: 18.669px;
+            font-family: "HiraginoSansGB";
+            color: rgb(31, 31, 31);
+            line-height: 1.714;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+        .bbs .message{
+            margin: 40px 62px 30px 62px;
+        }
+        .message .star{
+            margin-bottom: 15px;
+        }
+        .message a{
+            cursor: pointer
+        }
+        .message .star i{
+            font-size: 14px;
+            font-family: "HiraginoSansGB";
+            color: rgb(51, 51, 51);
+            line-height: 2.286;
+        }
+        .message .star .symbol{
+            color:rgb(255, 0, 0);
+        }
+        fieldset{
+            display: inline-block;
+        }
+        .rating{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        textarea{
+            overflow: hidden;
+            resize : none;
+            outline-color:#04a4ee;
+        }
+        .bbs .message textarea {
+            width: 930px;
+            height: 48px;
+            padding:5px 126px 5px 10px;
+        }
+
+        .sublime{
+            display: inline-block;
+            width: 90px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color:#fff;
+            background-color: #3388ff;
+            border-radius: 3px;
+            float: right;
+            position: relative;
+            top:-47px;
+            right:20px;
+        }
+        .message .tag{
+            margin-top: 50px;
+        }
+        .message .tag li{
+            color:#31bdff;
+            float: left;
+            /*width:105px;*/
+            height: 28px;
+            border-radius: 14px;
+            border:1px solid #aee5ff;
+            background-color: #f2faff;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .message .tag li i:first-child{
+            line-height: 8px;
+            margin: 4px 5px 0px 10px;
+            display: inline-block;
+            padding:5px 10px 5px 0px;
+            border-right: 1px solid #aee5ff;
+        }
+        .message .tag li i:last-child{
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .card{
+            margin: 0px 62px 30px 62px;
+            border-bottom: 1px solid #dce0e0;
+            color: #333;
+            font-size: 14px;
+        }
+        .card-title{
+            height:20px;
+            line-height: 20px;
+            margin-bottom: 20px;
+        }
+        .project-name{
+            margin-right: 10px;
+        }
+        .rating-tag{
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 0 5px;
+            margin-left: 5px;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+        .project-price {
+            font-size: 12px;
+        }
+        .project-price i{
+            color:#ed7266;
+        }
+        .card-body img{
+            float: left;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .card-body .right-body{
+            margin-left: 70px;
+            margin-bottom: 25px;
+        }
+        .right-body .name{
+            margin-bottom: 8px;
+            vertical-align: middle;
+        }
+        .right-body .name i{
+            margin-left: 25px;
+            font-size: 12px;
+            color:#9999b2;
+            vertical-align: top;
+        }
+        .card-body-text{
+            font-size: 12px;
+        }
+        .red-start{
+            display: inline-block;
+            background-image: url(images/twostart_left.png);
+            background-repeat: round;
+        }
+        .black-start{
+            display: inline-block;
+            background-image: url(images/twostart_right.png);
+            background-repeat: round;
+        }
+        .rating-read{
+            display: inline-block;
+        }
+        .hkw-work-list .title {
+            font-size: 18.669px;
+            font-family: "HiraginoSansGB";
+            color: rgb(31, 31, 31);
+            line-height: 1.714;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .hkw-work-list li {
+            background-color: #fff;
+            box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+            float: left;
+            height: 212px;
+            margin: 2px 11px 10px 1px;
+            padding: 9px 15px 12px 0;
+            position: relative;
+            width: 260px;
+        }
+        .thumb-a {
+            margin: 0 0 0 0px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            width: 260px;
+            z-index: 0;
+            left: 8px;
+        }
+        div.hkw-work-list.fn-clear.pbl ul.pblUl li div.thumb-a {
+            height: 180px;
+        }
+        .hkw-work-list li:hover img {
+            transform: scale(1.05);
+        }
+        .card-body .hudong {
+            float: right;
+            margin:-25px 25px 0 0;
+            width: 17px;
+            height: 25px;
+            background: url("images/xxtb.jpg") 0px 2px no-repeat;
+        }
+        .card-body .hudong span {
+            margin-left:20px;
+            color: #A5ABB6;
+        }
+        .hudong_txtContent {
+            border: 1px solid #d9d9d9;
+            height: 70px;
+            padding:5px 10px;
+            width: 962px;
+            line-height: 24px;
+            overflow-y: auto;
+        }
+        .hudong_txt {
+            padding:10px 0 50px 68px;
+            display: none;
+        }
+        .curShow {
+            display: block;
+        }
+        .hudong_txt input {
+            display: inline-block;
+            width: 90px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            background-color: #3388ff;
+            border-radius: 3px;
+            position: relative;
+            top: 12px;
+            right: 12px;
+            border:0 none;
+            float: right;
+        }
+        div.ca-container.designer-ca-container div.ca-item {
+            height:670px;
+        }
+        .tempNullPng {
+            width: 160px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .message a {
+            cursor: pointer;
+        }
+        #view5Work .hkw-work-bottom a{
+            width: 140px;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .hkw-work-list li {
+            width: 272px;
+            height: auto;
+        }
+        div.hkw-work-list.fn-clear.pbl #view5Work li div.thumb-a {
+            height: auto;
+        }
+        #view5Work .thumb-a {
+            width: 268px;
+            left: 10px;
+        }
+        #view5Work .hkw-work-img .caption{
+        	bottom: 0;
+        }
+        #view5Work .fn-hide h4 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        #view5Work .fn-hide p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            padding: 2px 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="containers demand">
+    <!-- 头部 start -->
+    <div id="header" class="header-neiye"></div>
+    <!--<div id="topHeader" class="topHeader-l" >-->
+    <!--</div>-->
+    <div id="top-d-Header" class="top-d-Header">
+        <div class="header-content">
+            <div class="p-intro">
+                <img id="project_designer_touxiang" class="img_1" style="border-radius: 50%"/>
+                <div id="project_designer_data1" class="p-info">
+                    <p class="info-n" style="display: block"></p>
+                    <p style="color: #949494"></p>
+                    <p class="info-position">&nbsp;</p>
+                    <p class="info-place"></p>
+                    <p class="info-time" ></p>
+                </div>
+            </div>
+            <div  class="intro-left">
+                <ul id="project_designer_data2" >
+                    <li>
+                        <p></p>
+                        <p>报价</p>
+                    </li>
+                    <li>
+                        <p></p>
+                        <p>见过</p>
+                    </li>
+                    <li>
+                        <p></p>
+                        <p>感兴趣</p>
+                    </li>
+                </ul>
+                <div id="project_designer_data3" >
+                    <a href="javascript:;" target="_blank">对话</a>
+                    <a href="javascript:;" target="_blank">约见</a>
+                    <a href="javascript:;" target="_blank">报价</a>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!-- 头部 end -->
+    <div id="main-body" class="md-body">
+        <div class="nav-list" style="margin-bottom: 0;" >
+            <ul class="nav-list-ul">
+                <li class="cur">需求详细</li>
+                <li id="loveWorkList">喜欢的作品 <i></i></li>
+                <li id="loveDesignerList">喜欢的设计师 <i></i></li>
+                <div style="clear:both"></div>
+            </ul>
+        </div>
+        <div class="wrap-list">
+            <div style="height: 35px;margin: 12px 0;border: 1px solid #0bacf5;border-radius: 5px;background: rgba(39, 242, 255, 0.1);">
+                <p style="text-align: center;line-height: 35px;">如果您已经沟通并了解过项目需求，可以<a style="padding:5px 8px;background: #0bacf5;border:1px solid #eee;margin:0 4px;border-radius: 6px;color: #111;cursor: pointer; " id="project_sendaprice">先报个总价</a>供客户筛选，确认合作后补上报价详单</p>
+            </div>
+            <!-- box start -->
+            <div id="project_content_data_show" class="d-content">
+                <p class="content-big-title"  style="text-align: center"></p>
+                <div class="banner-p" style="display: none;">
+                    <span class="left">发布时间：</span>
+                    <p class="right" style="text-align: center;font-size: 16px;font-weight: bold"></p>
+                </div>
+                <div class="banner-p">
+                    <p class="right" style="text-align: center"><span></span>元以内</p>
+                </div>
+                <div class="banner-p">
+                    <p class="right"  style="text-align: center"></p>
+                </div>
+                <div class="d-withfile banner-p" style="position: relative;left: 50%;display: inline-block;max-width: 100%;transform: translateX(-50%);">
+                    <p class="left" style="width: auto">附件：</p>
+                    <div class="filelist">
+                        <ul>
+
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="filelistImg">
+                        <ul>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="filelistImgShowWrap"></div>
+                <div class="filelistImgShow">
+                    <img src="" alt="">
+                </div>
+                <div style="width: 150px;height: 50px;margin: 0 auto;background: #eee;border-radius: 25px;cursor: pointer;">
+                    <div class="click-dianzan" style="float: left;
+    width: 38px; height: 36px;margin: 7px 0 0 9px;">
+                        <i class='zan-icon' style="top:4px;;left: 3px;"></i>
+                    </div>
+                    <div style="height: 50px;float: left;margin-left: 10px;">
+                    <span style="line-height: 50px;font-size: 14px;">感兴趣&nbsp;<i id="click_zan_love_count"></i><i style="display: none">√</i></span>
+                    </div>
+
+
+                    <div style="float: left;margin-left: 80px;position: relative;top:-50px;">
+                    <i class='project_sendaprice'></i>
+                    <div class="baoming_box_send" style="position: absolute;display: none;">
+                        <a href="javascript:void 0"><img src="images/new_login_gb.jpg" style="width: 16px;height: 16px;float: right;margin: -14px"/></a>
+
+                        <div style="margin-top: 5px;">
+                            <p style="font-size: 16px;">请根据需求提供大致的总报价金额，</p>
+                            <p style="font-size: 16px;"> 需求方会是筛选合适的报价进一步沟通！</p>
+                            <div style="font-size: 22px;margin: 16px 0 0 0;">预报价：<input id="baoming_input_price" min="0" type="number" style="outline: none;height: 30px;margin-right:10px;top:0;width: 120px;font-size: 16px;" />元</div>
+                            <div style="color: #bbb;margin-top: 22px;">
+                                <a class="project_sendaprice_btn" >报名</a>
+                                <p style="font-size: 16px;display: inline-block;margin-left: 15px;">现在已有</p>
+
+                                <p style="font-size: 16px;display: inline-block" id="project_send_people_number"></p>
+                                <p style="font-size: 16px;display: inline-block">人报名</p>
+                            </div>
+                            <div class="baoming_price_send_check" style="display: none;margin-top: 5px;">
+                                <p>发送预报价的次数仅限一次，</p>
+                                <p style="margin-bottom: 5px;">请确认信息无误后再点击确认按钮</p>
+                                <a class="">取消</a>
+                                <a class="bpsc_wait_check">确认发送</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="baoming_box_send" style="position: absolute;display: none">
+                        <a style="overflow: hidden"><img src="images/new_login_gb.jpg" style="width: 16px;height: 16px;float: right;margin: -14px"/></a>
+                        <div class="ajax_wait_text" style="display:none;"></div>
+                        <div class="baoming_box_success_show " style="display: none;">
+                            <a style="font-size: 22px;font-weight: bold;">您的预报价是：<a class="baoming_box_success_show_money" style="color: red;font-size: 22px;font-weight: bold;" ></a><a style="font-size: 22px;font-weight: bold;">元</a></a>
+                            <p style="margin-top: 15px;">需求方筛选为合适的报价后将和设计师进行进一步沟通</p>
+                            <p style="margin-top: 5px;">届时你可以对其发送详细报价，</p>
+                            <p style="margin-top: 5px;">双方会有更大的几率进行合作！</p>
+                            <div class="baoming_price_send_check1" style="margin-top: 15px;">
+                                <a>已报名</a>
+                                <p style="display: inline;"></p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap-list Wrap">
+            <div class="hkw-work-list fn-clear pbl" style="margin-top:20px;">
+                <!-- <img id="work_list_loadingImage" src="./image/loading.gif" style="display: block;margin:10px auto;"/> -->
+                <!-- 喜欢的作品的容器 -->
+                <ul class="pblUl clearfix" id="view5Work"></ul>
+                <!-- 喜欢的作品的模板 -->
+                <script type="text/template" id="template5Work">
+                    {{~it:val:eq}}
+                    {{ var val = val.works_info; }}
+                    <li class="hover-li {{= it[0].diyAnchorPage ? it[0].diyAnchorPage : 'page_1'}}">
+                        <div class="iInspir-block"></div>
+                        <div class="hkw-work-img thumb-a h_a">
+                            <a href="introduction.html?id={{=val.id}}" target=_blank><img class="delay maxImgWidth"   src="{{=val.path_thumb ? val.path_thumb : 'images/17.jpg'}}"  style=""  /></a>
+                            <div class="caption fn-hide">
+                                <h4>
+                                    {{=val.title ? val.title : ""}}
+                                    <a href="javascript:void(0)" class="sc deleteWroks" data-islove="{{=val.MyIsFavorite ? val.MyIsFavorite : 0}}" data-id="{{=val.id ? val.id : 0}}">
+                                        {{= val.MyIsFavorite ? "已收藏" : "收藏"}}
+                                    </a>
+                                </h4>
+                                <p>{{=val.abstract ? val.abstract : ""}}</p>
+                            </div>
+                        </div>
+                        <div class="hkw-work-bottom">
+                            <a href="detailed.html?id={{=it[eq]}}" target=_blank><img src="{{=val.user_path_thumb ? val.user_path_thumb : 'images/pho1.png'}}" width="16" height="16" />
+                                {{=val.nick_name ? val.nick_name : ""}}</a>
+                            <div class="hkw-work-bar fn-right">
+                                <div class="hkw-work-bar-item">
+                            <span class="hkw-join-icon">
+                            </span>
+                                    {{=val.hits ? val.hits : ""}}
+                                </div>
+                                <div class="hkw-work-bar-item">
+                            <span class="hkw-comment-icon">
+                            </span>
+                                    {{=val.comment_count ? val.comment_count : ""}}
+                                </div>
+                                <div class="hkw-work-bar-item">
+                            <span class="hkw-collection-icon">
+                            </span>
+                                    {{=val.love_count ? val.love_count : ""}}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{~}}
+                </script>
+                <!-- 喜欢的作品的空状态 -->
+                <div id="error_workslist_user_like"
+                     style="width: 100%;height: 400px;background: #fff;display: none;overflow: hidden">
+                    <div style="margin: 150px auto 0;width: 600px;height: 101px;">
+                        <img style="float: left" src="image/errorContent.png"/>
+                        <a style="color: #aaa;line-height: 101px;font-size: 16px;display: inline-block;float: left;height: 101px;">TA的评价标准很高，还没有作品能够得到TA的赞赏</a>
+                    </div>
+    
+                </div>
+                <!-- <ul id="work_list_content" class="pblUl" style="visibility: hidden;clear: both;overflow: hidden"
+                    data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 100 }'>
+                </ul> -->
+                <div name="workListAddMoreContent" id="workListAddMoreContent"
+                     style="width: 100px;height: 40px;margin: 0 auto;cursor: pointer;background: #eee;border: 1px solid #aaa;border-radius: 4px;display: block;">
+                    <h2 style="line-height: 40px;text-align: center;font-weight: bold" data-page="1" data-maxPage="1">加载更多</h2>
+                </div>
+                <!-- <div id="workListNoMoreContent"
+                     style="width: 100px;height: 40px;margin: 0 auto;cursor: pointer;background: #eee;border: 1px solid #aaa;border-radius: 4px;display: block;">
+                    <h2 style="font-weight: bold;line-height: 40px;text-align: center">没有更多了</h2>
+                    <a href="#">点击返回顶部</a>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="wrap-list">
+            <div id="ca-container " class="ca-container designer-ca-container">
+                <div class="ca-wrapper">
+                    <div class="ca-item-wrap">
+
+                    </div>
+                </div>
+            </div>
+            <div id="error_Designerlist_user_like" style="width: 100%;height: 400px;background: #fff;display: none;overflow: hidden">
+                <div style="margin: 150px auto 0;width: 600px;height: 101px;">
+                    <img  style="float: left" src="image/errorContent.png"/>
+                    <a  style="color: #aaa;line-height: 101px;font-size: 16px;display: inline-block;float: left;height: 101px;">TA的评价标准很高，还没有设计师能够得到TA的赞赏</a>
+                </div>
+
+            </div>
+            <!--分页开始-->
+            <div id="kkpagers" class="kkpager"></div>
+            <!--分页结束-->
+        </div>
+
+        <div class="bbs">
+            <p class="title">评价(<a id="introduction_comment_count"></a>)</p>
+            <div class="message">
+                <div style="font-size: 16px;margin-bottom: 8px;display: inline-block" id="biaotai_error">
+                    <a class="biaotai_send_login_a" value="1"><img src="images/dj_n.png"/></a>
+                    <a class="biaotai_send_login_a" value="2"><img src="images/dj_n.png"/></a>
+                    <a class="biaotai_send_login_a" value="3"><img src="images/dj_n.png"/></a>
+                    <a class="biaotai_send_login_a" value="4"><img src="images/dj_n.png"/></a>
+                    <a class="biaotai_send_login_a" value="5"><img src="images/dj_n.png"/></a>
+                    <a id="biaotai_send_login" value="0" style="background:#3aceff;padding:2px 8px;border-radius: 5px;font-size: 16px;color: #fff;"> 表个态</a>
+                </div>
+                <div style="font-size: 16px;margin-bottom: 8px;display: inline-block" id="biaotai_had">
+                </div>
+                <form action="">
+                    <textarea id="introductionTextArea"  style="font-size: 14px" cols="170" rows="4"></textarea>
+                    <sublime style="background: #3388ff" class="sublime">发布</sublime>
+                </form>
+            </div>
+            <div id="introudoction_pinglunBox"></div>
+            <!--分页开始-->
+            <div id="kkpager"></div>
+            <!--分页结束-->
+        </div>
+    </div>
+    <!--底部开始-->
+    <div class="footer_on"></div>
+    <!--底部结束-->
+
+    <script type="text/javascript">
+        $(function() {
+//            $.show_more_init();//文本展开收起
+            /*************文字展开收起************/
+            $('div.wrap-list:eq(0)').css({'display': 'block'});
+
+            $('div.nav-list ul.nav-list-ul li').click(function () { //主页，作品，喜欢...导航
+                $('div.nav-list ul.nav-list-ul li').removeClass('cur');
+                $(this).toggleClass('cur');
+                $('div.wrap-list').css({'display': 'none'});
+                var indexNum = $('div.nav-list ul.nav-list-ul li').index(this);
+                if (indexNum == 0) {
+                    $('#main-body .bbs:first').css('display', 'block');
+                } else {
+                    $('#main-body .bbs:first').css('display', 'none');
+                }
+                $('div.wrap-list:eq(' + indexNum + ')').css({'display': 'block'});
+
+                if (indexNum == 1) {
+                    ajaxUserList();
+                }
+            });
+
+});
+    </script>
+</div>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/personal/config.js"></script>
+<script type="text/javascript" src="js/plugs/doT.min.js"></script>
+<script type="text/javascript" src="js/personal/layer/layer.js"></script>
+<script type="text/javascript" src="js/personal/loveWorksFlow.js"></script>
+</body>
+<!-- <script src="js/lzy_NEW/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script>
+    var $workListMasonry=$('.pblUl').masonry({
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 100
+    });
+</script> -->
+<script id="pages" type="text/javascript" src="js/plugs/jq.page.js"></script>
+<!-- <script src="js/lzy_NEW/user_like_works_list.js"></script> -->
+<script src="js/lzy_NEW/user_like_designer_list.js"></script>
+<script src="js/client/dialog-plus-min.js"></script>
+<script src="js/lzy_NEW/project_data.js"></script>
+<script src="js/lzy_NEW/pinglunBox.js"></script>
+
+
+
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>画客网</title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/client/dialog.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+            } else {
+                window.location.href = 'https://www.huakewang.com';
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.WrapZc:eq(1)').css({
+                'display': 'none'
+            });
+            $('#main-body div.register_main div.left div.zctop div.zctop-left').click(function() {
+                $(this).parent().find('div.zctop-right').css({
+                    'color': '#9d9d9d',
+                    'background': '#fff'
+                });
+                $(this).css({
+                    'color': '#424242',
+                    'background': '#f0f0f0'
+                });
+                $('div.WrapZc:eq(0)').css({
+                    'display': 'block'
+                });
+                $('div.WrapZc:eq(1)').css({
+                    'display': 'none'
+                });
+            });
+            $('#main-body div.register_main div.left div.zctop div.zctop-right').click(function() {
+                $(this).parent().find('div.zctop-left').css({
+                    'color': '#9d9d9d',
+                    'background': '#fff'
+                });
+                $(this).css({
+                    'color': '#424242',
+                    'background': '#f0f0f0'
+                });
+                $('div.WrapZc:eq(0)').css({
+                    'display': 'none'
+                });
+                $('div.WrapZc:eq(1)').css({
+                    'display': 'block'
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body style="background:#198ede;">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="main-body" style="">
+            <div class="register_main " id="forget">
+                <div class="top">
+                    <div class="top-left">忘记密码</div>
+                    <div class="top-right">已经有画客网账号？<a href="login.html" class="ll">请直接登录</a></div>
+                </div>
+                <div class="left">
+                    <div class="zctop">
+                        <div class="zctop-box">通过手机号找回</div>
+                    </div>
+                    <div class="zcmain">
+                        <form id="formzc">
+                            <div class="WrapZc">
+                                <div class="zcrows shouji">
+                                    <span class="sp1"></span>
+                                    <input class="getback_shouji" type="text" name="phone" placeholder="请输入手机号" />
+                                </div>
+                                <div class="zcrows newPassword_real">
+                                    <span class="sp3"></span>
+                                    <input class="newPassword_real" type="password" placeholder="请设置新的密码" />
+                                </div>
+                                <div class="zcrows ">
+                                    <span class="sp3 picYzm"></span>
+                                    <input class="getback_yanzhengma" style="text-transform: uppercase;" maxlength="4" name="" type="text" placeholder="输入验证码" />
+                                    <span class="sp2yz">
+                                        <img id="wrapYZM" src="images/loading.gif"/>
+                                    </span>
+                                </div>
+                                <div class="zcrows sjmm">
+                                    <span class="sp1"></span>
+                                    <input class="getback_shoujiyanzhengma" type="text" name="getback_shoujiyanzhengma" placeholder="输入短信验证码" />
+                                    <span class="sp2" id="verifiction" style="margin-right: 20px">获取验证码</span>
+                                    <span class="sp2" id="verifiction_timewait" style="display: none;margin-right: 20px">获取验证码</span>
+                                </div>
+                            </div>
+                            <div class="zcrows" style="border:none">
+                                <div id="getBack_goNext" style="margin: 20px auto 0;float: none" class="qdzc">确认提交</div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="qth"></div>
+                    <div class="zhwrap">
+                        <a href="https://www.huakewang.com/wxopenapi/auth_redirect">
+                            <div class="wx"><span class="sp1"></span>&nbsp;&nbsp;微信</div>
+                        </a>
+                        <a href="http://www.huakewang.com/main/qq_oauth.html">
+                            <div class="qq"><span class="sp1"></span>&nbsp;&nbsp;QQ</div>
+                        </a>
+                        <a href="http://www.huakewang.com/main/sina_oauth.html">
+                            <div class="wb"><span class="sp1"></span>&nbsp;&nbsp;微博</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="rightText">还没有画客网账号?<a href="register.html"><span >注册</span></a></div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="clear:both;"></div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+
+</body>
+<script>
+    $(function() {
+        var numForget = 10;
+        //获取当前页面的URL参数
+        function getLocationParam(name) {
+            var url = window.location.search;
+            if (~url.indexOf("?")) {
+                var search = {};
+                var arrayParam = url.split("?")[1].split("&");
+                arrayParam.map(function(value, index, elem) {
+                    var key = value.split("=")[0];
+                    var val = value.split("=")[1];
+                    search[key] = val;
+                });
+                if (name in search) {
+                    return search[name];
+                } else {
+                    return "";
+                }
+            }
+            return "";
+        };
+        $('#formzc input[name="phone"]').val(getLocationParam("phone"));
+
+        setTimeout(function() {
+            $('#wrapYZM').attr('src', urlLocalhost + 'index.php/verifycode/index/2');
+        }, 100);
+        $('#wrapYZM').on('click', function() {
+            numForget++;
+            $(this).attr('src', 'images/loading.gif');
+            setTimeout(function() {
+                $('#wrapYZM').attr('src', urlLocalhost + 'index.php/verifycode/index/' + numForget);
+            }, 500);
+        });
+
+        $('#formzc input').keyup(function() {
+            //验证码
+            if ($(this).is('.getback_yanzhengma')) {
+                if (this.value == "" || (this.value != "" && !/^[a-zA-Z0-9]{4}$/.test(this.value))) {
+                    $(this).addClass("borderRed");
+                } else {
+                    $(this).removeClass("borderRed");
+                }
+            };
+            if ($(this).is('.getback_shoujiyanzhengma')) {
+                if (this.value == "" || (this.value != "" && !/^[a-zA-Z0-9]{4}$/.test(this.value))) {
+                    $(this).addClass("borderRed");
+                } else {
+                    $(this).removeClass("borderRed");
+                }
+            };
+            //验证手机号
+            if ($(this).is('.getback_shouji')) {
+                if (this.value == "" || (this.value != "" && !/^((\(\d{2,3}\))|(\d{3}\-))?(13|14|15|16|17|18|19)\d{9}$/.test(this.value))) {
+                    $(this).addClass("borderRed");
+                } else {
+                    $(this).removeClass("borderRed");
+                }
+            };
+            if ($(this).parent().is('.newPassword_real')) {
+                if (this.value == "" || (this.value != "" && !/^[a-zA-Z0-9]{6,16}$/.test(this.value))) {
+                    $(this).addClass("borderRed");
+                } else {
+                    $(this).removeClass("borderRed");
+                }
+            };
+        }).blur(function() {
+            $(this).triggerHandler("keyup");
+        });
+
+
+        var waitTime = 60;
+        $('#verifiction').on('click', function() {
+            picCheck();
+        });
+        function getMegCode() {
+            var _mobile_val = $('#formzc input[name="phone"]').val();
+            if ($('input[name="phone"]').hasClass("borderRed")) {
+                alertUploadMsg("请填写正确的手机号！");
+            } else {
+                //hkapi/get_reg_sms_code type:"get_pass"
+                $.ajax({
+                    url: urlLocalhost + newhuakwang + "/get_reg_sms_code",
+                    type: "post",
+                    dataType: "json",
+                    data: {
+                        "type": 'get_pass',
+                        "mobile": _mobile_val,
+                        "tokeen": $(".getback_yanzhengma").val()
+                    }
+                }).done(function(data) {
+                    if (data.success) {
+                        alertUploadMsg(data.message);
+                        $('#verifiction').css('display', 'none');
+                        $('#verifiction_timewait').css('display', 'block');
+                        var ddd = setInterval(function() {
+                            if (waitTime == 0) {
+                                $('#verifiction').css('display', 'block');
+                                $('#verifiction_timewait').css('display', 'none');
+                                clearInterval(ddd);
+                            } else {
+                                $('#verifiction_timewait').html(waitTime + "s");
+                                waitTime--;
+                            };
+                        }, 1000);
+                    } else {
+                        alertUploadMsg(data.message);
+                    }
+                })
+            };
+        }
+        $('#getBack_goNext').on('click', function() {
+            $('#formzc input').keyup();
+            getBack_goNext_check1();
+            if(!$('#formzc input').hasClass('borderRed')) {
+                getBack_goNext_dataSendFunction();
+            };
+        });
+
+        function getBack_goNext_check1() {
+            if ($('#formzc input[name="phone"]').hasClass('borderRed') || $('#formzc input[name="phone"]').val().length == 0) {
+                return false;
+            };
+            if ($('#formzc input.getback_yanzhengma').hasClass('borderRed') || $('#formzc input.getback_yanzhengma').val().length == 0) {
+                return false;
+            };
+            if ($('#formzc input[name="getback_shoujiyanzhengma"]').hasClass('borderRed') || $('#formzc input[name="getback_shoujiyanzhengma"]').val().length == 0) {
+                return false;
+            };
+            if ($('#formzc input.newPassword_real').hasClass('borderRed') || $('#formzc input.newPassword_real').val().length == 0) {
+                return false;
+            };
+        };
+        //验证图形验证码
+        function picCheck() {
+            $.ajax({
+                url: "https://www.huakewang.com/verifycode/check",
+                type: "POST",
+                dataType: "JSON",
+                data: {
+                    secode: $(".getback_yanzhengma").val().toUpperCase()
+                },
+                success: function(res) {
+                    if (res.success) {
+                        getMegCode();
+                    } else {
+                        alertUploadMsg("请输入正确的图形验证码！");
+                        $('#wrapYZM').click();
+                    };
+                }
+            });
+        };
+
+        function getBack_goNext_dataSendFunction() {
+            //        显示修改密码的form
+            //        根据协议key进行对应于用户的密码修改
+            var getBack_goNext_showBox = {
+                data_ready: {
+                    phone: $('#formzc input[name="phone"]').val(),
+                    getback_yanzhengma: $('#formzc input.getback_yanzhengma').val(),
+                    getback_shoujiyanzhengma: $('#formzc input[name="getback_shoujiyanzhengma"]').val(),
+                    getback_pwd: $('#formzc input.newPassword_real').val()
+                }
+            };
+            getBack_goNext_changeFunction();
+
+            function getBack_goNext_changeFunction() {
+                $.ajax({
+                    url: urlLocalhost + newhuakwang + "/get_pass",
+                    type: "post",
+                    dataType: "json",
+                    data: {
+                        "username": getBack_goNext_showBox.data_ready.phone,
+                        "passwd": getBack_goNext_showBox.data_ready.getback_pwd,
+                        "code": getBack_goNext_showBox.data_ready.getback_shoujiyanzhengma,
+                        "secode": getBack_goNext_showBox.data_ready.getback_yanzhengma
+                    }
+                }).done(function(data) {
+                    if (data.success) {
+                        alertUploadMsg(data.message);
+                        setTimeout(function () {
+                            window.location.href="login.html"
+                        },300)
+                    } else {
+                        alertUploadMsg(data.message);
+                    };
+                });
+            };
+        };
+    })
+</script>
+
+</html>

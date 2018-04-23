@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font/font.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.left').load('PersonalNav.html', function() {}); //加载已登录导航
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        
+        .fpHistoryMain .fpHistoryMD .screenFixed.dzfpPicHS {
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="" class="personal-10">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal13">
+            <div class="fpHistoryT">
+                <p>
+                    您的位置：
+                    <a href="javascript:void(0);">个人中心</a> &gt;
+                    <a href="javascript:void(0);">发票申请</a> >
+                    <a href="javascript:void(0);">开票历史</a>
+                </p>
+                <p class="clearfix">
+                    <select class="fr">
+                        <option>全部</option>
+                        <option>电子发票</option>
+                        <option>纸质发票</option>
+                    </select>
+                    <select class="fr">
+                        <option>全部</option>
+                        <option>按时间</option>
+                        <option>按金额</option>
+                    </select>
+                </p>
+            </div>
+            <div class="fpHistoryMain clearfix">
+                <p>发票抬头：<span>发票抬头1234556</span><span class="fr">发票状态：已签收</span></p>
+                <p>发票内容：<span>设计服务费</span></p>
+                <p>发票金额：<span>1263.0元</span></p>
+                <!--<p>发票类型：<span class="fpStyle" data-temp="1">电子发票</span></p>-->
+                <p>发票类型：<span class="fpStyle" data-temp="2">电子发票</span></p>
+                <p>申请时间：<span>2017年8月14日</span></p>
+                <a class="fr fpzk" href="javascript:void(0);" style="color: #08A1EF;">展开>></a>
+                <div class="fpHistoryMD clearfix">
+                    <p>发票预览：</p>
+                    <img src="./images/activity_pic4.png" alt="">
+                    <span>查看大图</span>
+                    <span>下载</span>
+                </div>
+                <div class="fpHistoryMP">
+                    <p>收件人：<span>张凡</span></p>
+                    <p>联系电话：<span>18297532703</span></p>
+                    <p>收货地址：<span>浙江省，杭州市，西湖区，转塘街道，云栖小镇，中大银座5幢601</span></p>
+                </div>
+                <div class="fpHistoryB">
+                    <p>该发票包含六个项目：</p>
+                    <ul>
+                        <li>1、三汇信息科技有限公司</li>
+                        <li>企业网站建设</li>
+                        <li>总金额：33050.00元</li>
+                    </ul>
+                    <ul>
+                        <li>1、三汇信息科技有限公司</li>
+                        <li>企业网站建设</li>
+                        <li>总金额：33050.00元</li>
+                    </ul>
+                    <ul>
+                        <li>1、三汇信息科技有限公司</li>
+                        <li>企业网站建设</li>
+                        <li>总金额：33050.00元</li>
+                    </ul>
+                    <ul>
+                        <li>1、三汇信息科技有限公司</li>
+                        <li>企业网站建设</li>
+                        <li>总金额：33050.00元</li>
+                    </ul>
+                    <a href="javaScript:void(0);" class="fr fpsq" style="color: #08A1EF;">收起>></a>
+                </div>
+            </div>
+            <div class="fpHistoryMain clearfix">
+                <p>发票抬头：<span>发票抬头1234556</span><span class="fr">发票状态：已签收</span></p>
+                <p>发票内容：<span>设计服务费</span></p>
+                <p>发票金额：<span>1263.0元</span></p>
+                <p>发票类型：<span class="fpStyle" data-temp="1">电子发票</span></p>
+                <!--<p>发票类型：<span class="fpStyle" data-temp="2">电子发票</span></p>-->
+                <p>申请时间：<span>2017年8月14日</span></p>
+                <a class="fr fpzk" href="javascript:void(0);" style="color: #08A1EF;">展开>></a>
+                <div class="fpHistoryMD clearfix">
+                    <p>发票预览：</p>
+                    <img class="dzfpPic" src="./images/7.jpg" alt="">
+                    <span>下载</span>
+                    <div class="screenFixed">
+                        <img class="large dzfpPic" src="./images/7.jpg" alt="">
+                    </div>
+                </div>
+                <div class="fpHistoryMP">
+                    <p>收件人：<span>张凡</span></p>
+                    <p>联系电话：<span>18297532703</span></p>
+                    <p>收货地址：<span>浙江省，杭州市，西湖区，转塘街道，云栖小镇，中大银座5幢601</span></p>
+                </div>
+                <div class="fpHistoryB">
+                    <p>该发票包含六个项目：</p>
+                    <ul>
+                        <li>1、三汇信息科技有限公司</li>
+                        <li>企业网站建设</li>
+                        <li>总金额：33050.00元</li>
+                    </ul>
+                    <ul>
+                        <li>1、三汇信息科技有限公司</li>
+                        <li>企业网站建设</li>
+                        <li>总金额：33050.00元</li>
+                    </ul>
+                    <ul>
+                        <li>1、三汇信息科技有限公司</li>
+                        <li>企业网站建设</li>
+                        <li>总金额：33050.00元</li>
+                    </ul>
+                    <ul>
+                        <li>1、三汇信息科技有限公司</li>
+                        <li>企业网站建设</li>
+                        <li>总金额：33050.00元</li>
+                    </ul>
+                    <a href="javaScript:void(0);" class="fr fpsq" style="color: #08A1EF;">收起>></a>
+                </div>
+            </div>
+            <div style="width:1px;height:1px; clear:both;"></div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <script>
+        $(function() {
+            $("body").on("click", ".fpzk", function() {
+                $(this).css("display", "none");
+                var temp = $(this).parent().find(".fpStyle").attr("data-temp");
+                $(this).parent().find(".fpHistoryB").slideDown(100);
+                if (temp == 1) {
+                    $(this).parent().find(".fpHistoryMD").slideDown(100);
+                } else if (temp == 2) {
+                    $(this).parent().find(".fpHistoryMP").slideDown(100);
+                };
+            });
+            $("body").on("click", ".fpsq", function() {
+                $(this).parent().css("display", "none");
+                $(this).parent().parent().find(".fpzk").css("display", "block");
+                $(this).parent().parent().find(".fpHistoryB").slideUp(100);
+                $(this).parent().parent().find(".fpHistoryMD").slideUp(100);
+                $(this).parent().parent().find(".fpHistoryMP").slideUp(100);
+            });
+            $("body").on("click", ".dzfpPic", function() {
+                $(this).parent().parent().find(".screenFixed").toggleClass("dzfpPicHS");
+            });
+
+        });
+    </script>
+</body>
+
+</html>

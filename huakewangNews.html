@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>画客网新闻</title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/fenye.css" />
+    <!--[if lte IE 9]>
+        <script src="js/personal/ie8-eventlistener.js"></script>
+        <script src="https://cdn.bootcss.com/es5-shim/4.5.9/es5-shim.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/huakewangNews.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 头部 start -->
+    <div id="header" class="header-neiye"></div>
+    <!-- 新闻列表 start -->
+    <div class="news-main clearfix">
+        <p class="crumbs">
+            <a href="https://www.huakewang.com">首页</a>&gt;
+            <a href="huakewangNews.html">画客网新闻</a>
+        </p>
+        <ul class="news-tab-ul clearfix">
+            <li class="news-tab-li cur" data-type="id">最新</li>
+            <li class="news-tab-li" data-type="hits">浏览量</li>
+            <li class="news-tab-li" data-type="comment_count">评论数</li>
+            <li class="news-tab-li" data-type="favorite_count">收藏数</li>
+            <li class="news-tab-li" data-type="love_count">点赞数</li>
+        </ul>
+        <ul class="news-ul" id="viewNews"></ul>
+        <script type="text/template" id="templateNews">
+            {{~it.item_list:val:eq}}
+            <li class="news-li">
+                <a target="_blank" href="newsDetails.html?id={{=val.id ? val.id : 0}}" class="news-li-left">
+                    <img src="{{=val.path ? val.path : 'images/activity_pic6.png'}}" onload="imgOnLoad(this)" alt="">
+                </a>
+                <div class="news-li-right">
+                    <h1>
+                        <a target="_blank" href="newsDetails.html?id={{=val.id ? val.id : 0}}">{{=val.title ? val.title : ''}}</a>
+                    </h1>
+                    <p>{{=val.abstract ? val.abstract : ''}}</p>
+                    <div class="news-li-enements">
+                        <span class="times">{{=val.add_time_format ? val.add_time_format : ''}}</span>
+                        <span class="source">{{=val.source ? val.source : ''}}</span>
+                        <span class="favorite_count float-right">{{=val.favorite_count ? val.favorite_count + '收藏' : ''}}</span>
+                        <span class="comment_count float-right">{{=val.comment_count ? val.comment_count + '评论' : ''}}</span>
+                        <span class="love_count float-right">{{=val.love_count ? val.love_count + '点赞' : ''}}</span>
+                        <span class="hits float-right">{{=val.hits ? val.hits + '阅读': ''}}</span>
+                    </div>
+                </div>
+            </li>
+            {{~}}
+        </script>
+
+        <!-- 分页 start -->
+        <div id="kkpager"></div>
+        <!-- 分页 end -->
+    </div>
+    <!-- 新闻列表 end -->
+
+    <!--底部开始-->
+    <div class="footer_on"></div>
+</body>
+<script type="text/javascript" src="js/plugs/jq.page.js"></script>
+<script type="text/javascript" src="js/personal/config.js"></script>
+<script type="text/javascript" src="js/plugs/doT.min.js"></script>
+<script type="text/javascript" src="js/personal/huakewangNews.js"></script>
+
+</html>

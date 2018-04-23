@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/jedate.css">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/yun.css" />
+    <link rel="stylesheet" href="css/client/dialog.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/data/doT.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+            $('.loginWrap').load('new_login.html'); //加载底部
+
+            /*文本域高度自适应*/
+            $.fn.autoHeight = function() {
+                function autoHeight(elem) {
+                    elem.style.height = 'auto';
+                    elem.scrollTop = 0; //防抖动
+                    elem.style.height = elem.scrollHeight - 20 + 'px';
+                };
+                this.each(function() {
+                    autoHeight(this);
+                    $(this).on('keyup', function() {
+                        autoHeight(this);
+                    });
+                });
+            };
+            $('textarea[autoHeight]').autoHeight();
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: block;
+        }
+        
+        .city-barWrap {
+            top: 2px;
+            left: 10px;
+        }
+        
+        .ca-inntro {
+            height: 25px;
+            padding-left: 24px;
+            line-height: 25px;
+        }
+        
+        .containers {
+            background-color: #ccc;
+        }
+        
+        #main-body {
+            overflow: hidden;
+        }
+        /*表单验证css*/
+        
+        .signupFormPub .onError {
+            margin-left: 10px;
+            width: auto;
+            display: inline;
+        }
+        
+        #newsletter_topics .onError {
+            display: none;
+            margin-left: 103px;
+        }
+        
+        .signupFormPub .onError {
+            position: absolute;
+            top: 50px;
+            left: 500px;
+            display: block;
+            border: 1px solid red;
+            padding: 5px 5px;
+            border-radius: 5px;
+            background-color: #fff;
+            color: red;
+            z-index: 10000;
+        }
+        
+        #yunProForm>label {
+            position: relative;
+        }
+        
+        #yunProForm .onError {
+            top: 40px;
+            left: 80px;
+        }
+        
+        .signupFormPub .onError::after {
+            content: " ";
+            position: absolute;
+            left: 10px;
+            top: -6px;
+            width: 10px;
+            height: 10px;
+            border: red solid 1px;
+            border-left: 0;
+            border-bottom: 0;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            z-index: 1000;
+            background: #F8FDEF;
+        }
+        
+        .yun-pro .companyCallWrap {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .yun-pro #yunProForm .companyCallWrap .onError {
+            top: 56px;
+        }
+        
+        .jedatehms {
+            display: none !important;
+        }
+        
+        .jedatebot .botflex {
+            float: right;
+        }
+        
+        .upload-link {
+            color: #36c;
+            display: inline-block;
+            *zoom: 1;
+            *display: inline;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 2px;
+            text-decoration: none;
+        }
+        
+        .upload-link__txt {
+            z-index: 1;
+            position: relative;
+        }
+        
+        .upload-link input {
+            top: -10px;
+            z-index: 2;
+            position: absolute;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            font-size: 66px;
+        }
+        
+        .uploadFileWrap {
+            position: relative;
+            width: 718px;
+            margin: 0 auto;
+        }
+        
+        ul#uploadView li {
+            margin-top: 6px;
+        }
+        
+        #SWFUpload_0 {
+            left: 42px;
+        }
+        
+        .upload-btn-txt {
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="main-body">
+            <!--顶部导航-->
+            <div class="yun-progress">
+                <div class="yunProgressTop">
+                    <div class="yunProgressMain clearfix">
+                        <span class="yun-compete">报价完成度：</span>
+                        <ul class="clearfix">
+                            <a href="#yunStep1">
+                                <li><span><i></i>客户信息</span> ------ </li>
+                            </a>
+                            <a href="#yunStep2">
+                                <li><span><i></i>项目信息</span> ------ </li>
+                            </a>
+                            <a href="#yunStep3">
+                                <li><span><i></i>项目报价单</span> ------ </li>
+                            </a>
+                            <a href="#yunStep4">
+                                <li><span><i></i>付款方式</span>　　　</li>
+                            </a>
+                        </ul>
+                        <input class="yunProgressEnd fr" type="button" value="发送报价">
+                    </div>
+                </div>
+            </div>
+            <div class="main-body-center">
+                <div class="yun-step-form">
+                    <!--保存前的客户信息-->
+                    <div id="proMsgListEdit" class="yun-kehuMessage yun_kehuMessage">
+                        <h3 id="yunStep1">客户信息</h3>
+                        <form action="javascript:;" class="yun-step1-form signupFormPub" id="signupForm">
+                            <p class="yun-step-lab0 alive">
+                                <label for="username" class="pub"><i></i>联系人:</label>
+                                <input class="numSave" id="username" name="username" required type="text" placeholder="客户姓名">
+                                <a href="javascript:void(0);" class="yun-selectPerson">选择已有客户</a>
+                            </p>
+                            <p class="yun-step-lab1 alive">
+                                <label for="companyName" class="pub">企业名称:</label>
+                                <input class="numSave" id="companyName" name="companyName" type="text" placeholder="请与章上的保持一致">
+                            </p>
+                            <p class="yun-step-lab2 alive">
+                                <label for="phone" class="pub"><i></i>手机号:</label>
+                                <input class="numSave" id="phone" name="phone" required type="text">
+                            </p>
+                            <p class="yun-step-lab3 alive">
+                                <label for="email" class="pub">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱:</label>
+                                <input class="numSave" id="email" name="email" type="text">
+                            </p>
+
+                            <a href="javascript:void(0);">
+                                <input data-id="1" id="formMsg1" type="submit" class="yun-save" value="保存">
+                            </a>
+                            <input type="button" id="canMsg1" class="canMsg1" value="取消">
+                        </form>
+                        <div class="yun-wrapper" style="display: none;"></div>
+                        <div class="yun-kehu" style="display: none;">
+                            <h4 id="saveYunStep1">选择联系人</h4>
+                            <div class="clearfix yun-kehuScroll">
+                                <div>
+                                    <dl id="yunLinkName" class="yun-person yunLinkName">
+                                        <dt>联系人</dt>
+                                    </dl>
+                                    <script id="yunLinkNametmpl" type="text/x-dot-template">
+                                        {{for(var i = 0;i
+                                        < it.length;i++){}} <dd><input type="radio" name="user"><span title="{{= it[i].yunLinkName}}">{{= it[i].yunLinkName}}</span></dd>
+                                            {{}}}
+                                    </script>
+                                </div>
+                                <div>
+                                    <dl class="yunLinkPhone" id="yunLinkPhone">
+                                        <dt>手机号</dt>
+                                    </dl>
+                                    <script id="yunLinkPhonetmpl" type="text/x-dot-template">
+                                        {{for(var i = 0;i
+                                        < it.length;i++){}} <dd><span>{{= it[i].yunLinkPhone}}</span></dd>
+                                            {{ } }}
+                                    </script>
+                                </div>
+                                <div>
+                                    <dl class="yunLinkEmail" id="yunLinkEmail">
+                                        <dt>邮箱</dt>
+                                    </dl>
+                                    <script id="yunLinkEmailtmpl" type="text/x-dot-template">
+                                        {{for(var i = 0;i
+                                        < it.length;i++){}} <dd><span>{{= it[i].yunLinkEmail}}</span></dd>
+                                            {{ } }}
+                                    </script>
+                                </div>
+                                <div>
+                                    <dl class="yunLinkCompany" id="yunLinkCompany">
+                                        <dt>企业名称</dt>
+                                    </dl>
+                                    <script id="yunLinkCompanytmpl" type="text/x-dot-template">
+                                        {{for(var i = 0;i
+                                        < it.length;i++){}} <dd><span>{{= it[i].yunLinkCompany}}</span></dd>
+                                            {{ } }}
+                                    </script>
+                                </div>
+
+                            </div>
+
+                            <div class="yun-kehu-btn" id="yun-kehu-btn">
+                                <input type="button" value="确 定">
+                            </div>
+                        </div>
+                    </div>
+                    <!--保存后的客户信息-->
+                    <div id="proMsgListRe" class="yun-kehuMessage yunShowMessage yunPubHide">
+                        <h3>客户信息 <a href="javascript:void (0);"><i class="yun-reEdit" data-num="0">编辑</i></a></h3>
+                        <ul class="yun-kehuMessageUl">
+                            <li>联系人：<span class="numShow"></span></li>
+                            <li>企业名称：<span class="numShow"></span></li>
+                            <li>手机号：<span class="numShow"></span></li>
+                            <li>邮箱：<span class="numShow"></span></li>
+                        </ul>
+                    </div>
+                    <!--保存前的项目信息-->
+                    <div id="proMsgEdit" class="yun-pro">
+                        <h3 id="yunStep2">项目信息</h3>
+                        <form action="javascript:;" id="yunProForm" class="signupFormPub">
+                            <p class="companyCallWrap">
+                                <label for="companyCall">项目名称</label>
+                                <input name="companyCall" class="numSave" id="companyCall" type="text" required>
+                            </p><br>
+                            <label style="vertical-align: top;position:relative;"><span class="xqgs">项目概述</span> <textarea autoHeight="true"  class="numSave" rows="9" name="need" id="need"></textarea></label><br>
+                            <!--上传文件.doc  .pdf格式-->
+                            <div class="uploadFileWrap clearfix">
+                                <div style="float: left; margin: 0px 42px 25px 42px; height: 62px;position:relative;">
+                                    <div class="upload-btn-txt"></div>
+                                    <input id="yun_allFile_upload" name="allFile_upload" type="file" multiple="true">
+                                    <input type="text" id="ids_save" style="display: none;">
+                                    <p style="color: #999999;position:absolute;bottom: -38px;left: -6px;width:260px;">最多上传5个附件，每个大小不能超过10M</p>
+                                </div>
+                                <div class="needSend">
+                                    <ul id="uploadView" class="clearfix">
+                                        <!--上传文件-->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="yun-jz">
+                                <span>截止日期 </span>
+                                <!--日期插件-->
+                                <p class="datep">
+                                    <input class="datainp numSave" id="dateinfo" type="text" placeholder="请选择" style="width:100px;" readonly="readonly">
+                                    <i></i>
+                                </p>
+                                &nbsp;&nbsp;
+                                <span>报价在<i class="editDaysNum" style="color:red;font-size: 16px;">5</i>天后自动截止(至少五天)</span>
+                            </div>
+                            <a href="javascript:void (0);">
+                                <input type="submit" id="formMsg2" data-id="2" class="yun-save" value="保存">
+                            </a>
+                            <input type="button" value="取消" class="canMsg" id="canMsg2">
+                        </form>
+                    </div>
+                    <!--保存后的项目信息-->
+                    <div id="proMsgEditRe" class="yun-pro yunShowPro yunPubHide">
+                        <h3>项目信息 <a href="javascript:void (0);"><i class="yun-reEdit" data-num="1">编辑</i></a></h3>
+                        <div class="yun-messageShow">
+                            <div class="yun-messageShowName">
+                                <p class="yun-messageShowNameL yun-pusPosition">项目名称：</p>
+                                <p class="yun-messageShowNameR yun-pubLeft numShow"></p>
+                            </div>
+                            <div class="yun-messageShowSummary">
+                                <p class="yun-messageShowSummaryL yun-pusPosition">项目概述：</p>
+                                <pre class="yun-messageShowSummaryR yun-pubLeft numShow"></pre>
+                            </div>
+                            <div class="yun-messageShowData">
+                                <p class="yun-messageShowDataL yun-pusPosition">项目截止日期：</p>
+                                <p class="yun-messageShowDataR yun-DataLeft numShow"></p>
+                            </div>
+                            <div class="yun-messageShowAdd">
+                                <p class="yun-messageShowAddL yun-pusPosition">附件：</p>
+                                <div class="yun-messageShowAddR yun-AddLeft">
+                                    <!--保存后的文件-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--保存前的项目报价单-->
+                    <div id="tipMsgEdit" class="yun-price">
+                        <h3 id="yunStep3">项目报价单</h3>
+                        <!--添加项目报价单-->
+                        <div id="yunPriceForm"></div>
+                        <div class="yun-addPrice">
+                            <p id="yun_addPrice">+添加报价单<span>(点击可选择报价模板)</span></p>
+                        </div>
+                        <div class="yunSubmitWrap">
+                            <a href="javascript:void(0);">
+                                <input id="formMsg3" type="submit" data-id="3" class="yun-save" value="保存">
+                            </a>
+                            <input type="button" value="取消" class="canMsg" id="canMsg3">
+                        </div>
+                    </div>
+                    <!--保存后的项目报价单-->
+                    <div id="tipMsgEditRe" class="yun-price yunShowPrice yunPubHide">
+                        <h3>项目报价单 <a href="javascript:void (0);"><i class="yun-reEdit" data-num="2" id="editThree">编辑</i></a></h3>
+                        <table class="yun-tableObj" border="2">
+
+                        </table>
+                        <div class="priceTableWrap">
+
+                        </div>
+                    </div>
+                    <!--保存前的付款方式-->
+                    <div id="payMsgEdit" class="yun-payWay yunEditPayWay yun-price">
+                        <h3 id="yunStep4">付款方式</h3>
+                        <p class="payWayWarring">项目报价单保存完成后，方可编辑付款方式</p>
+                        <form action="javascript:;" class="signupFormPub" id="yunPayForm">
+                            <div class="yun-mainPrice clearfix">
+                                <div class="yun-payFor clearfix">
+                                    <span class="fl payPriceTotal">项目总计：</span>
+                                    <span class="fl payTotal">￥<i class="payTotalNum"></i>元 <p style="display: inline-block;color: red;">(含税:￥<i class="payTotalStr"></i>元)</p></span>
+                                    <div class="clearfix"></div>
+                                    <p class="yunCoupon">
+                                        <span>设置优惠：</span>
+                                        <input class="yunSzyh" type="text" onkeyup="clearNoNum(this)" placeholder="优惠后的价格" readonly="readonly">
+                                        <span class="yunYHZK">
+                                        约<i class="yunYHZKnum" style="color:red;"></i>折 <i class="yunYHZKstrW" style="display: inline-block;color: red;">(含税:￥<i class="yunYHZKstr"></i>元)</i></span>
+                                        <span class="fr payCouponTotal">￥<i></i>元</span>
+                                        <span class="fr payCouponTotalP">优惠价：</span>
+                                    </p>
+                                    <i id="payWarring">优惠后的价格低于原价但不能低于原价的60%！</i>
+                                </div>
+                                <div class="yun-templateFst yun_templateFst aa">
+                                    <div class="yun-part clearfix" id="yun-tepWay">
+                                        <ol class="yunFirstOl yun-fuT clearfix">
+                                            <li class="yun-payWay1">序号</li>
+                                            <li class="yun-payWay2">百分比(%)</li>
+                                            <li class="yun-payWay3">付款节点</li>
+                                            <li class="yun-payWay4">描述</li>
+                                            <li class="yun-payWay5">合计</li>
+                                        </ol>
+                                        <ul class="yunFirstUl yun-fuM clearfix">
+                                            <li>
+                                                <input class="yun-order" value="1" disabled>
+                                            </li>
+                                            <li class="yunPlusNumberWrap">
+                                                <input class="yun-payPercent" type="text" onkeyup="clearNoNumInt(this);" value="30" readonly="readonly">
+                                                <i class="yunPayNumber yunPayReduceNumber">-</i>
+                                                <i class="yunPayNumber yunPayPlusNumber">+</i>
+                                            </li>
+                                            <li>
+                                                <input class="yun-payNode" type="text" value="预付款" readonly="readonly">
+                                            </li>
+                                            <li>
+                                                <input class="yun-payDes" type="text" value="确认接受订单" readonly="readonly">
+                                            </li>
+                                            <li>
+                                                <input class="yun-payTotal" value="" disabled><i><input class="yun-payDiscountPic" value="" disabled></i>
+                                            </li>
+                                            <li class="yunIconRight">
+                                                <i class="yunD" title="下移"></i>
+                                                <i class="yunU" title="上移"></i>
+                                                <i class="yunC" title="删除"></i>
+                                                <i class="yunP" title="添加"></i>
+                                            </li>
+                                        </ul>
+                                        <ul class="yunFirstUl yun-fuM clearfix">
+                                            <li>
+                                                <input class="yun-order" value="2" disabled>
+                                            </li>
+                                            <li class="yunPlusNumberWrap">
+                                                <input class="yun-payPercent" type="text" onkeyup="clearNoNumInt(this);" value="70" readonly="readonly">
+                                                <i class="yunPayNumber yunPayReduceNumber">-</i>
+                                                <i class="yunPayNumber yunPayPlusNumber">+</i>
+                                            </li>
+                                            <li>
+                                                <input class="yun-payNode" type="text" value="尾款" readonly="readonly" value="">
+                                            </li>
+                                            <li>
+                                                <input class="yun-payDes" type="text" value="任务完成" readonly="readonly">
+                                            </li>
+                                            <li>
+                                                <input class="yun-payTotal" value="" disabled><input class="yun-payDiscountPic" value="" disabled>
+                                            </li>
+                                            <li class="yunIconRight">
+                                                <i class="yunD" title="下移"></i>
+                                                <i class="yunU" title="上移"></i>
+                                                <i class="yunC" title="删除"></i>
+                                                <i class="yunP" title="添加"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="javascript:void (0);">
+                                <input id="formMsg4" type="submit" data-id="4" class="yun-save" value="保存">
+                            </a>
+                            <input type="button" class="canMsg" value="取消" id="canMsg4">
+                        </form>
+                    </div>
+                    <!--保存后的付款方式-->
+                    <div id="payMsgEditRe" class="yun-payWay yun-price yunShowPayWay yunPubHide">
+                        <h3>付款方式 <i style="font-size:14px;">(单位:<span style="color: #38BFFF;">元</span>)</i> <a href="javascript:void (0);"><i class="yun-reEdit" data-num="3">编辑</i></a></h3>
+                        <table class="yun-tablePay" border="2">
+
+                        </table>
+                    </div>
+                    <!--草稿显示-->
+                    <div class="yunDraft">
+                        <a href="javascript:void(0);"><i class="caoGaoIcon"></i>我的报价草稿<span class="warringNum"></span></a>
+                    </div>
+                    <div class="caoGaoList">
+                        <ul class="yunDraftUl clearfix yunDraftUlFst">
+                            <li class="yunDraftUl1">项目名称</li>
+                            <li class="yunDraftUl2">创建时间</li>
+                            <li class="yunDraftUl3">操作</li>
+                        </ul>
+                        <div id="caoGaoWrap">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--选择报价模板-->
+        <div class="yun-tempPriceWrap"></div>
+        <div class="yun_tempPrice">
+            <div class="yun_tempHistory">
+                <h3>选择历史报价： <i class="historyAllList">展开全部 <i></i></i>
+                </h3>
+                <span class="fr yun_tempNew">创建新的报价</span>
+                <div class="historyTempWrap">
+                    <ul class="clearfix" id="historyTemp"></ul>
+                    <script id="historyTemptmpl" type="text/x-dot-template">
+                        {{for(var i = 0; i
+                        < it.item_list.length;i++){}} <li data-hs="{{= it.item_list[i].project_id}}">{{= it.item_list[i].project_name }}</li>
+                            {{}}}
+                    </script>
+                </div>
+            </div>
+            <div class="yun_tempOfficial">
+                <h3>选择官方模板：</h3>
+                <ul class="clearfix yun_tempOfficialW" id="officialTemp">
+                    <li>
+                        <i class="bg-icon0"></i>
+                        <h4>艺术绘画</h4>
+                        <ul class="clearfix yun_tempPubStyle detailTemp">
+                            <li>插画</li>
+                            <li>人设</li>
+                            <li>漫画</li>
+                            <li>表情</li>
+                            <li>墙绘</li>
+                            <li>吉祥物</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="bg-icon1"></i>
+                        <h4>品牌建设</h4>
+                        <ul class="clearfix yun_tempPubStyle detailTemp">
+                            <li>品牌档案</li>
+                            <li>名片/卡片</li>
+                            <li>包装设计</li>
+                            <li>易拉宝</li>
+                            <li>封面/画册</li>
+                            <li>导视</li>
+                            <li>logo</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="bg-icon2"></i>
+                        <h4>互联网设计</h4>
+                        <ul class="clearfix yun_tempPubStyle detailTemp">
+                            <li>交互原型</li>
+                            <li>界面设计</li>
+                            <li>网页设计</li>
+                            <li>专题/活动</li>
+                            <li>banner</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="bg-icon3"></i>
+                        <h4>产品设计</h4>
+                        <ul class="clearfix yun_tempPubStyle detailTemp">
+                            <li>外观设计</li>
+                            <li>结构设计</li>
+                            <li>珠宝设计</li>
+                            <li>工具设计</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="bg-icon4"></i>
+                        <h4>空间设计</h4>
+                        <ul class="clearfix yun_tempPubStyle detailTemp">
+                            <li>软装设计</li>
+                            <li>工装设计</li>
+                            <li>家装设计</li>
+                            <li>美陈设计</li>
+                            <li>专卖店设计</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="bg-icon5"></i>
+                        <h4>虚拟现实</h4>
+                        <ul class="clearfix yun_tempPubStyle detailTemp">
+                            <li>建模、渲染</li>
+                            <li>虚拟现实</li>
+                            <li>三维特效</li>
+                            <li>园林景观</li>
+                            <li>雕塑设计</li>
+                            <li>360/720全景</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="bg-icon6"></i>
+                        <h4>多媒体</h4>
+                        <ul class="clearfix yun_tempPubStyle detailTemp">
+                            <li>影视后期</li>
+                            <li>宣传片</li>
+                            <li>微电影</li>
+                            <li>falsh</li>
+                            <li>摄影师</li>
+                            <li>GIF</li>
+                            <li>配音</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i class="bg-icon7"></i>
+                        <h4>程序开发</h4>
+                        <ul class="clearfix yun_tempPubStyle detailTemp">
+                            <li>Android开发</li>
+                            <li>IOS开发</li>
+                            <li>微信开发</li>
+                            <li>企业建设</li>
+                            <li>前端开发</li>
+                            <li>后端开发</li>
+                            <li>SEO</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <input class="btn_1" type="button" value="确定" />
+            <input class="btn_2" type="button" value="取消" />
+            <div class="alertMessage">
+                <span>提示</span><i class="alertClose"></i>
+                <p>请选择模板</p>
+            </div>
+        </div>
+        <!--发送完成生成二维码-->
+        <div class="endAllSendBg"></div>
+        <div class="endAllSend">
+            <p class="endAllSendEmail endAllSendPub">报价已成功发送至<span style="color: #2BA5E8;"></span>的邮箱(<i style="color:#2BA5E8;"></i>),</p>
+            <p class="endAllSendPhone endAllSendPub">并已发送短信通知到他的手机(<span style="color:#2BA5E8;"></span>)!</p>
+            <div class="endAllSendWrap clearfix">
+                <div class="endAllSendLeft fl"></div>
+                <div class="endAllSendRight fr">
+                    <p>用手机扫描二维码，</p>
+                    <p>可将报价单转发至客户的微信，</p>
+                    <p>在线查看并付款，</p>
+                    <p>快速达成交易！</p>
+                </div>
+            </div>
+            <p class="endAllSendButton">
+                <button class="endAllSendBack">
+                <a href="https://www.huakewang.com">返回首页</a>
+            </button>
+                <button class="endAllSendSee">
+                <a href="Personal-9.html">查看报价</a>
+            </button>
+            </p>
+        </div>
+        <div class="endAllSendGif">
+            <img src="images/work_Loading.gif" alt="" width="100" height="20">
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+        <!--登录-->
+        <div class="loginWrap"></div>
+    </div>
+    <!--预览-->
+    <div class="viewFilePicWrap"></div>
+    <div class="viewFilePic"></div>
+    <script>
+        window.FileAPI = {
+            staticPath: '/js/plugs/'
+        };
+    </script>
+    <script type="text/javascript" src="js/plugs/FileAPI.min.js"></script>
+    <script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="js/plugs/jedate.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/yunPro/yun.js"></script>
+    <script type="text/javascript" src="js/yunPro/yun_validate.js"></script>
+    <script type="text/javascript" src="js/data/yunStepxhr.js"></script>
+    <script type="text/javascript" src="js/plugs/jquery.cookie.js"></script>
+    <script>
+        $(function() {
+            $("#signupForm .numSave").each(function() {
+                $(this).val(getCookie($(this).attr("id")));
+            });
+            //日期插件
+            //jeDate.skin('gray');
+            jeDate({
+                dateCell: "#dateinfo",
+                format: "YYYY年MM月DD日",
+                isinitVal: true,
+                isTime: true,
+                // isClear:true,
+                minDate: a(),
+                choosefun:function (obj) {
+                    var simpleDate = obj.replace(/年|月/g, "-").replace(/日/g, " ");
+                    $(".editDaysNum").html(DateDiff(todayData(), simpleDate));
+                }
+            });
+            $("#dateinfo").val(b());
+            //项目截止日期的时间间隔
+            $(".editDaysNum").html(DateDiff(todayData(), a()));
+        });
+    </script>
+</body>
+
+</html>

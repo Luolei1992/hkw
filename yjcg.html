@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'index.html';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+
+            }
+        });
+    </script>
+    <style>
+        div.ExtendMainTop ul.MainTopUl li {
+            width: 16.5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containers">
+        <div id="header" class="header-neiye" style=""></div>
+        <div id="topHeader" class="topHeader-l"></div>
+        <div class="ExtendTop w1146">
+            <div class="lianjie">
+                <img src="images/lianjie.jpg" />
+            </div>
+            <div class="ExtendTopLeft">
+                <div class="ExtendTopImg">
+                    <img src="images/touxiang1.jpg" />
+                </div>
+                <div class="text">
+                    <p class="text">姓名：张兰</p>
+                    <p class="text">手机号：13958054563</p>
+                    <p class="text">微信号：13958054563　　　QQ：88098417 　<span class="qq"></span></p>
+                    <p class="text">邮箱：88098417@qq.com 　　　网址：http://www.feidesign09.com/ <span></span></p>
+                    <p class="text">地址：88098417<span></span></p>
+                </div>
+            </div>
+            <div class="ExtendTopRight">
+                <div class="ExtendTopImg">
+                    <img src="images/100.jpg" />
+                </div>
+                <div class="text">
+                    <p class="text">姓名：张兰</p>
+                    <p class="text">手机号：13958054563</p>
+                    <p class="text">微信号：13958054563　　　QQ：88098417 <span></span></p>
+                    <p class="text">邮箱：88098417@qq.com 　　　网址：http://www.feidesign09.com/ <span></span></p>
+                    <p class="text">地址：88098417<span></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="ExtendMain w1146" style="margin-top:20px;">
+            <!-- 第一页面 -->
+            <div class="clear" style="width:1px;height:1px;"></div>
+            <div class="ExtendMainTop">
+                <ul class="MainTopUl">
+                    <li class="cur">约见下单</li>
+                    <li class="cur">双方确认</li>
+                    <li class="cur">设计师出发</li>
+                    <li>到达</li>
+                    <li>完成</li>
+                    <li>双方互评</li>
+                </ul>
+                <ul class="MainTopUl timer" style="margin:3px 0 8px 0;">
+                    <li>2016-01-09 21:35:00</li>
+                    <li>2016-01-09 21:35:00</li>
+                    <li>2016-01-09 21:35:00</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="ExtendMainBody" style="margin-bottom:20px;">
+                <div class="ExtendMainBodyWrap">
+                    <p class="text">当前订单状态：设计师已经出发</p>
+                    <div class="text">
+                        <p class="text" style="padding-bottom:10px;">1. 设计师已经出发，<span class="kuair">取消订单</span> 所产生的费用将不予退回，并且会影响你的信用记录！</p>
+                    </div>
+                    <p class="text">订单信息：</p>
+                    <div class="text" style="height:40px; border-top:1px solid #e6e9ec;border-bottom:1px solid #f4f4f4;background:#fff">
+                        <ul class="ddUl">
+                            <li>订单编号：1444105236466178</li>
+                            <li>交易号：2016010921001001780219469985</li>
+                            <li>创建时间：2016-01-09 21：26:05</li>
+                            <li>付款时间：2016-01-09 21:35：00</li>
+                        </ul>
+                    </div>
+                    <p class="text">项目名称：约见订单</p>
+                    <div class="text" style="text-indent:15px;border:1px solid #ccc;height:90px;background:#fff; position:relative;">
+                        <p class="text"><span class="textsp sp1"></span>约见地址：杭州市滨江区长河路351号托森科技园3号楼C518室</p>
+                        <p class="text"><span class="textsp sp2"></span>联系人：张兰　联系电话：13958054563</p>
+                        <p class="text"><span class="textsp sp3"></span>约见时间：2015年11月22日　14：30</p>
+                    </div>
+
+                    <div class="textWrap" style="background:#fff;margin-top:0px;">
+                        <div class="textWrapChildern" style="padding-top:10px;">
+                            <div class="textWrapChildernL" style="width: 45px;">
+                                <p class="text">备注：</p>
+                            </div>
+                            <div class="textWrapChildernR" style="width: 1031px;">
+                                <p class="text ">1997年7月参加教育工作。研究生学历，硕士学位，上海市特级校长。自1996年起历任5所学校校长书记。兼任中小学校长国家级培训专家、中学高级教师任职资格评审专家、中国教育技术协会小学协作会副理事长</p>
+                            </div>
+                            <div class="clear" style="width:1px;height:1px;"></div>
+                        </div>
+                        <div class="clear" style="width:1px;height:1px;"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="clear" style="width:1px;height:1px;margin-top:155px;"></div>
+        </div>
+
+        <div class="clear"></div>
+
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+</body>
+
+</html>

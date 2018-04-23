@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="css/fenye.css">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/social.css" />
+    <link rel="stylesheet" href="css/supply.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+            $('div.left').load('PersonalNav.html', function() {
+                $(document).find('div.left div.yidenglu-box ul li:eq(3)').css({
+                    'background': '#f1f1f1'
+                }); //	li:eq(5)背景颜色为f1f1f1
+            }); //加载已登录导航
+            $('.Wrap').css({
+                'display': 'none'
+            }); //Wrap隐藏
+            $('.Wrap:eq(0)').css({
+                'display': 'block'
+            }); //Wrap第一块显示
+
+            $('#popup-order').load('popup2.html'); //加载同意支付的弹出层
+
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body.personal div.right div.neirong div.divWrap span.red {
+            display: inline;
+            color: #ff0000;
+            font-size: 14px;
+        }
+        
+        #main-body.personal div.right div.neirong div.divWrap span.text {
+            display: inline;
+            color: #8b8b8b;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #main-body.personal div.right div.neirong div.divWrap .span-right.text b.no-red {
+            color: #333;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        
+        .personal .neirong-top .tab.cur span {
+            border-bottom: 2px solid #0b83d8;
+        }
+        
+        #mask-layer {
+            background: #333;
+            opacity: 0.55;
+            filter: alpha(opacity=55);
+            width: 100%;
+            /*height: 100%;*/
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 999;
+            display: none;
+        }
+        
+        .divWrap .xmDelate {
+            cursor: pointer;
+        }
+        
+        .tempNullPng {
+            width: 160px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .neirong-top .tab .num{
+            display: initial!important;
+            border-bottom: none!important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeader">
+            画客网致力于打造一个精确、快捷的设计服务对接平台。来画客网，遇到靠谱的好项目。
+            <a href="Personal-8.html">设计师入驻</a>
+        </div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal">
+            <div class="left"></div>
+            <div class="right ">
+                <div class="neirong">
+                    <div class="neirong-top">
+                        <div class="wddt tab cur"><span>作为服务方<span class="num"></span></span></div>
+                        <div class="xttz tab "><span>作为需求方<span class="num"></span></span></div>
+                    </div>
+
+                    <div class="neirong-b">
+                        <input type="text" placeholder="输入项目名称进行搜索"><i></i>
+                        <div class="sele1 selePub">
+                            <span>项目状态：</span>
+                            <select name="" id="projectStatus">
+							<option value="">全部</option>
+							<option value="0">草稿</option>
+							<option value="1">待处理</option>
+							<option value="2">报价成功</option>
+							<option value="3">报价失败</option>
+							<option value="3">取消报价</option>
+						</select>
+                        </div>
+                        <div class="sele2 selePub">
+                            <span>发送时间：</span>
+                            <select name="" id="sendTimeDate">
+							<option value="">全部</option>
+							<option value="7">近一周</option>
+							<option value="30">近一个月</option>
+							<option value="90">近三个月</option>
+						</select>
+                        </div>
+                    </div>
+                    <div class="Wrap" id="viewPersona9"></div>
+                    <script type="text/template" id="templatePersona9">
+                        {{~it:val:eq}} {{?val.quote_status == "0"}}
+                        <div class="divWrap">
+                            <i class="caoGao"></i>
+                            <span class="span-left">项目名称：{{= val.project_name ? val.project_name : "未填写" }}</span>
+                            <span class="span-right span-right-time">上次编辑时间：{{= val.send_time ? val.send_time : "" }}</span>
+                            <div style="clear:both;"></div>
+                            <span class="span-1 caoGao">草稿：报价未完成</span>
+                            <div class="btnWrapTwo">
+                                <a href="javascript:void(0);" data-caoGaoId={{=val.project_id}} class="seeBj delete seeApub">删除</a>
+                                <a href="yunShow.html?id={{=val.project_id}}" target="_blank" class="editBj seeApub">编辑</a>
+                            </div>
+
+                            <div style="clear:both;"></div>
+                        </div>
+                        {{?}} {{?val.quote_status !== "0"}}
+                        <div class="divWrap">
+                            <i class="xmDelate" style="display: none;"></i>
+                            <span class="span-left">《{{= val.project_name ? val.project_name : "" }}》</span>
+                            <span class="span-right span-right-time">发送时间：{{= val.send_time ? val.send_time : "" }}</span>
+                            <div style="clear:both;"></div>
+                            <ul class="ulBt ulBtPub">
+                                <li class="li1">报价单名称</li>
+                                <li class="li2">组成部分</li>
+                                <li class="li3">总计</li>
+                            </ul>
+                            {{~val.content:val2:eq2}}
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">{{= val2.name ? val2.name : "" }}</li>
+                                <li class="li2">共<span>{{= val2.num ? val2.num : "" }}</span>部分</li>
+                                <li class="li3">{{= val2.total_price ? val2.total_price : "" }}</li>
+                            </ul>
+                            {{~}}
+                            <span class="span-right text">项目总计：<b>&yen;{{=val.price_after_discount ? val.price_after_discount : (val.price_before_discount ? val.price_before_discount : "") }}元</b><b class="no-red"> {{=val.tax_after_discount ? "(含税金：&yen;"+val.tax_after_discount+"元)" : ( parseFloat(val.tax_before_discount) ? "("+val.tax_before_discount+")" : "(无税金)")}}</b></span>
+                            <div style="clear:both;"></div>
+                            <div class="auto" style="clear:both;width:95%;border-top:1px solid #f0f0f0; "></div>
+                            {{? val.quote_status == "1"}}
+                            <span class="span-1">报价已发送，等待对方处理 <i class="span-1-i"><p class="systemWarring"><span class="span-2-red">还剩{{= val.quote_time_least ? val.quote_time_least : "" }}</span>，若对方仍未处理，系统将自动取消该报价</p>
+                            </i>
+                            </span>
+                            <div class="btnWrapTwo">
+                                <button data-projectId={{=val.project_id}} class="BtnC cancel">取消报价</button>
+                                <a href="yunShow.html?id={{=val.project_id}}" target="_blank"><button class="BtnS">修改</button></a>
+                                <a href="yunShowDisabled.html?id={{=val.project_id}}" target="_blank" class="seeApub">查看报价</a>
+                            </div>
+                            {{?}} {{? val.quote_status == "2"}}
+                            <span class="span-1">对方同意了您的报价！可在&lt;我的订单&gt;中 <a style="color: #04A4EE;" href="Personal-2.html?tag=3">查看&gt;&gt;</a></span>
+                            <div class="btnWrapTwo">
+                                <a href="yunShowDisabled.html?id={{=val.project_id}}" target="_blank" class="seeApub">查看报价</a>
+                            </div>
+                            {{?}} {{? val.quote_status == "3"}}
+                            <span class="span-1">对方不满意！原因：{{= val.error_message ? val.error_message : "" }}</span>
+                            <div class="btnWrapTwo">
+                                <a href="yunShowDisabled.html?id={{=val.project_id}}" target="_blank" class="seeApub">查看报价</a>
+                            </div>
+                            {{?}} {{? val.quote_status == "4"}}
+                            <span class="span-1">您已取消报价！{{= val.error_message ? " / "+val.error_message : "" }}</span>
+                            <div class="btnWrapTwo">
+                                <a href="yunShowDisabled.html?id={{=val.project_id}}" target="_blank" class="seeApub">查看报价</a>
+                            </div>
+                            {{?}} {{? val.quote_status == "5"}}
+                            <span class="span-1">对方超时未处理，已取消报价！{{= val.error_message ? " / "+val.error_message : "" }}</span>
+                            <div class="btnWrapTwo">
+                                <a href="yunShowDisabled.html?id={{=val.project_id}}" target="_blank" class="seeApub">查看报价</a>
+                            </div>
+                            {{?}}
+                            <div style="clear:both;"></div>
+                        </div>
+                        {{?}} {{~}}
+                    </script>
+                    <div class="Wrap" id="viewPersona9Demand"></div>
+                    <script type="text/template" id="templatePersona9Demand">
+                        {{~it:val:eq}}
+                        <div class="divWrap">
+                            <i data-projectId="{{=val.project_id}}" class="xmDelate demand"></i>
+                            <span class="span-left">《{{=val.project_name ? val.project_name : ""}}》</span>
+                            <span class="span-left whoSend">发送人：<a href="detailed.html?id={{=val.user_id_from}}">{{=val.nick_name_from ? val.nick_name_from : ""}}</a></span>
+                            <span class="span-right span-right-time">接收时间：{{=val.send_time ? val.send_time : ""}}</span>
+                            <div style="clear:both;"></div>
+                            <ul class="ulBt ulBtPub">
+                                <li class="li1">报价单名称</li>
+                                <li class="li2">组成部分</li>
+                                <li class="li3">总计</li>
+                            </ul>
+                            {{~val.content:val2:eq2}}
+                            <ul class="ulBt-a ulBtPub">
+                                <li class="li1">{{= val2.name ? val2.name : "" }}</li>
+                                <li class="li2">共<span>{{= val2.num ? val2.num : "" }}</span>部分</li>
+                                <li class="li3">{{= val2.total_price ? val2.total_price : "" }}</li>
+                            </ul>
+                            {{~}}
+                            <span class="span-right text">项目总计：<b>&yen;{{=val.price_after_discount ? val.price_after_discount : (val.price_before_discount ? val.price_before_discount : "") }}元</b><b class="no-red"> {{=val.tax_after_discount ? "(含税金：&yen;"+val.tax_after_discount+"元)" : ( parseFloat(val.tax_before_discount) ? "("+val.tax_before_discount+")" : "(无税金)")}}</b></span>
+                            <div style="clear:both;"></div>
+                            <div class="auto" style="clear:both;width:95%;border-top:1px solid #f0f0f0; "></div>
+                            {{? val.quote_status == "1"}}
+                            <span class="span-1"><span class="span-2-red">还剩{{= val.quote_time_least ? val.quote_time_least : "" }}</span>，若您仍未处理，系统将自动拒绝该报价</span>
+                            <div class="btnWrapTwo">
+                                <button class="Refuse BtnC">拒绝</button>
+                                <button data-modelId="{{= val.project_id ? val.project_id : 0  }}" data-eq="{{= eq ? eq : 0 }}" class="agree BtnS">同意支付</button>
+                                <a href="yunShowDisabled.html?id={{=val.project_id}}" target="_blank" class="seeApub">查看报价</a>
+                            </div>
+                            <div data-projectId="{{=val.project_id}}" class="popRefuse BtnCtc BtnCtcDefault">
+                                <p>若对报价不满意，可与设计师沟通修改报价，可极大地增加合作率！</p>
+                                <span class="refuseWhy">拒绝原因：</span>
+                                <select>
+                                <option value="已找到合作者">已找到合作者</option>
+                                <option value="报价内容不满意">报价内容不满意</option>
+                                <option value="报价偏高">报价偏高</option>
+                                <option value="其他原因">其他原因</option>
+                            </select><br>
+                                <button class="BtnCtcC">取消</button>
+                                <button class="BtnCtcSD">确认</button>
+                            </div>
+                            <div class="fkfsWrap"></div>
+                            {{?}} {{? val.quote_status == "2"}}
+                            <span class="span-1">您已同意该报价报价！可在&lt;我的订单&gt;中 <a style="color: #04A4EE;" href="Personal-2.html?tag=1">查看&gt;&gt;</a></span>
+                            <div class="btnWrapTwo">
+                                <a href="yunShowDisabled.html?id={{=val.project_id}}" target="_blank" class="seeApub">查看报价</a>
+                            </div>
+                            {{?}} {{? val.quote_status == "4"}}
+                            <span class="span-1">对方取消了报价！{{=val.error_message ? " / "+val.error_message : "" }}</span>
+                            <div class="btnWrapTwo">
+                                <a href="yunShowDisabled.html?id={{=val.project_id}}" target="_blank" class="seeApub">查看报价</a>
+                            </div>
+                            {{?}} {{? val.quote_status == "5"}}
+                            <span class="span-1">由于您超时未处理，已取消报价！{{=val.error_message ? " / "+val.error_message : "" }}</span>
+                            <div class="btnWrapTwo">
+                                <a href="yunShowDisabled.html?id={{=val.project_id}}" target="_blank" class="seeApub">查看报价</a>
+                            </div>
+                            {{?}} {{? val.quote_status == "3"}}
+                            <span class="span-1">您已拒绝该报价！{{= val.error_message ? " / "+val.error_message : "" }}</span>
+                            <div class="btnWrapTwo">
+                                <a href="yunShowDisabled.html?id={{=val.project_id}}" target="_blank" class="seeApub">查看报价</a>
+                            </div>
+                            {{?}}
+                            <div style="clear:both;"></div>
+                        </div>
+                        {{~}}
+                    </script>
+                </div>
+            </div>
+            <div style="width:1px;height:1px; clear:both;"></div>
+            <!--<div id="main-body-bottom" class="auto" style=" margin: 65px auto 150px auto;"></div>-->
+            <div id="kkpager"></div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <!-- 遮罩层开始 -->
+    <div id="mask-layer"></div>
+    <!-- 遮罩层结束 -->
+    <!-- 弹出层开始 -->
+    <div id="popup-order">
+        <!--     <div class="BtnCtc BtnCtcDefault">
+        <p>若对报价不满意，可与设计师沟通修改报价，可极大地增加合作率！</p>
+        <span class="refuseWhy">拒绝原因：</span>
+        <select>
+            <option>已找到合作者</option>
+            <option>报价内容不满意</option>
+            <option>报价偏高</option>
+            <option>其他原因</option>
+        </select><br>
+        <button class="BtnCtcC">取消</button>
+        <button class="BtnCtcSD">确认</button>
+    </div>    -->
+    </div>
+
+    <!-- 弹出层结束 -->
+
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/social.js"></script>
+    <!-- <script type="text/javascript" src="js/addJs.js"></script> -->
+    <script type="text/javascript" src="js/plugs/jq.page.js"></script>
+    <script type="text/javascript" src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/personal/config.js"></script>
+    <script type="text/javascript" src="js/plugs/doT.min.js"></script>
+    <script type="text/javascript" src="js/personal/layer/layer.js"></script>
+    <script type="text/javascript" src="js/personal/personal-9.js"></script>
+    <!-- <script>
+    init
+    $(function() {
+        var totalPage = 20;
+        var pageNo = 1;
+        //生成分页
+        kkpager.generPageHtml({
+            pno: pageNo,
+            //总页码
+            total: totalPage,
+            //总数据条数
+            mode: 'click', //默认值是link，可选link或者click
+            click: function(n) {
+                // do something
+                //手动选中按钮
+                this.selectPage(n);
+                return false;
+            }
+        });
+    });
+</script> -->
+</body>
+
+</html>

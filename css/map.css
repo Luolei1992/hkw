@@ -1,0 +1,381 @@
+@charset "utf-8";
+.thumb {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 163px;
+    z-index: 0;
+}
+.h150 {
+    height: 117px;
+}
+.thumb img {
+    display: block;
+    width: 163px;
+}
+.thumb-a {
+    margin: 0 0 0 -20px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 295px;
+    z-index: 0;
+}
+.h_a {
+    height: 195px;
+}
+.thumb img {
+    display: block;
+    width: 275px;
+}
+.order_map {
+    background-color: #fff;
+    border: 1px solid #d0d0d2;
+    display: none;
+    float: left;
+    height: 500px;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: -250px;
+    position: fixed;
+    top: 50%;
+    width: 1000px;
+    z-index: 999;
+}
+#allmap {
+    height: 449px;
+    width: 1000px;
+    z-index: 99;
+}
+.map_box {
+    height: 448px;
+    left: 0;
+    position: absolute;
+    top: 51px;
+    width: 260px;
+    z-index: 999;
+}
+.map_left {
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+    float: left;
+    height: 448px;
+    opacity: 0.8;
+    overflow-y: scroll;
+    width: 240px;
+}
+.map_left dl {
+    line-height: 20px;
+    padding: 5px 10px 5px 35px;
+    position: relative;
+}
+.map_left dl span {
+    background: rgba(0, 0, 0, 0) url("../../images/client/map_icon.png") no-repeat scroll 0 -114px;
+    color: #fff;
+    display: inline-block;
+    font: 13px/26px "΢���ź�";
+    height: 31px;
+    left: 5px;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    width: 21px;
+}
+.map_left .active span {
+    background: rgba(0, 0, 0, 0) url("../../images/client/map_icon.png") no-repeat scroll 0 -147px;
+    color: #fff;
+    display: inline-block;
+    font: 13px/26px "΢���ź�";
+    height: 31px;
+    left: 5px;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    width: 21px;
+}
+.map_left dl dt {
+    color: #f26931;
+    font-size: 14px;
+}
+.map_left dl dd {
+    color: #333;
+    font-size: 13px;
+}
+.map_left .active {
+    background: #f8f8f8 none repeat scroll 0 0;
+}
+.map_right {
+    display: block;
+    float: left;
+    text-indent: -9999px;
+    width: 14px;
+}
+.map_right .btnOpen, .map_right .btnCtn {
+    background: rgba(0, 0, 0, 0) url("../../images/client/map_icon.png") no-repeat scroll 0 0;
+    display: block;
+    height: 58px;
+    position: relative;
+    top: 196px;
+    width: 14px;
+    z-index: 9999;
+}
+.map_right .btnOpen {
+    background-position: 0 -55px;
+    left: -1px;
+}
+.map_right .btnCtn {
+    background-position: -19px -55px;
+}
+#r-result {
+    border-bottom: 1px solid #d0d0d2;
+    font-size: 14px;
+    height: 50px;
+    width: 1000px;
+    z-index: 9999;
+}
+#r-result .map_input {
+    border: 1px solid #dddddd;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 0 0;
+    text-indent: 10px;
+    width: 210px;
+}
+#r-result .close {
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 0 0;
+    width: 20px;
+}
+.reply-btn {
+    padding: 10px 0 5px;
+}
+.reply-btn input {
+    vertical-align: middle;
+}
+.reply-text {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+    width: 325px;
+}
+.reply-text_rep {
+    background-color: #fff;
+    border-color: #e6e6e6 #e6e6e6 #e6e6e6 #fff;
+    border-style: solid;
+    border-width: 1px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px 0 5px;
+    width: 325px;
+}
+.reply-text_rep_div {
+    border-color: #e6e6e6 #fff #e6e6e6 #e6e6e6;
+    border-style: solid;
+    border-width: 1px;
+    float: left;
+    height: 28px;
+    line-height: 28px;
+    max-width: 150px;
+    padding-left: 5px;
+    text-align: right;
+    width: auto;
+}
+.curr a {
+    color: red;
+}
+.popup {
+    display: none;
+    height: 536px;
+    left: 50%;
+    margin-left: -460px;
+    margin-top: -268px;
+    position: fixed;
+    top: 50%;
+    width: 920px;
+    z-index: 99999;
+}
+.popup-city {
+    background-color: #fff;
+    border: 1px solid #d0d0d2;
+    line-height: 24px;
+    width: 918px;
+}
+.scall {
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    position: absolute;
+    right: 50px;
+    top: 5px;
+}
+.scall .Btn {
+    background-position: -200px -730px;
+    height: 29px;
+    text-indent: -9999px;
+    width: 97px;
+}
+.sctilte {
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 60px;
+    text-align: center;
+}
+.popup-city table {
+    width: 100%;
+}
+.popup-city table table {
+    width: auto;
+}
+.popup-city table table.province {
+    width: 100%;
+}
+.popup-city td {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+.popup-city td td {
+    border: 0 none;
+    cursor: pointer;
+    padding: 0 0 0 15px;
+    white-space: nowrap;
+}
+.popup-city td td.cityOrange {
+    border: 0 none;
+    color: #ff7400;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0 0 0 15px;
+    width: auto;
+}
+.sc-left {
+    background-color: #f7f7f7;
+    text-align: center;
+    width: 100px;
+}
+.other-country a {
+    margin-left: 30px;
+}
+.b-cityclose {
+    background-position: -260px -60px;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    text-indent: -9999px;
+    top: 15px;
+    width: 30px;
+}
+.btn24, .Btn, .BtnAtt {
+    background-color: transparent;
+    background-image: url("assets/btn.png");
+    background-repeat: no-repeat;
+    border: 0 none;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    text-shadow: 1px 1px #fff;
+    vertical-align: middle;
+}
+
+.cityxiala{
+	width:365px;
+	height:40px;
+	float:left;
+	border:1px solid #ececec;
+	margin:3px 20px 0 3px;
+	line-height:40px;
+	position:relative;
+	z-index:9999;
+}
+.cityxiala .cityxiala-l {
+	text-align:center;
+	width:100px;
+		float:left;
+}
+
+.cityxiala .cityxiala-z{
+	text-align:center;
+	width:160px;
+		float:left;
+
+}
+.cityxiala .cityxiala-z span.text{
+	color:#0f96dc;
+}
+.cityxiala .cityxiala-r{
+	float:right;
+	width:100px;
+	height:40px;
+}
+
+.cityxiala .cityxiala-r i{
+	background:url(../images/xltb.jpg) no-repeat;
+	display:block;
+	width:17px;
+	height:11px;
+	float:right;
+	margin:15px 5px 0 0;
+}
+.cityxiala .cityxiala-r i:hover{
+	cursor:pointer;
+}
+.cityxiala div.cityxuanze{
+	width:364px;
+	height:235px;
+	background:#fff;
+	position:absolute;
+	top:40px;
+	border:1px solid #ececec;
+	display:none;
+}
+.cityxiala div.cityxuanze ul.HotCity{
+	width:81%;
+	margin:0 auto;
+
+	text-align:center;
+	
+		
+}
+.cityxiala div.cityxuanze ul.HotCity li{
+	float:left;
+	margin-right:16px;
+	height:20px;
+	text-align:center;
+	line-height:20px;
+	margin-top:5px;
+
+}
+.cityxiala div.cityxuanze ul.HotCity li:hover{
+	cursor:pointer;
+}
+.cityxiala div.cityxuanze ul.HotCity li.hangmo{
+	margin-right:0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

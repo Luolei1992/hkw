@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/social.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/plugs/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="css/font/font.css">
+    <link rel="stylesheet" type="text/css" href="css/client/dialog.css">
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+            $('div.left').load('PersonalNav.html', function() {
+                $(document).find('div.left div.yidenglu-box ul li:eq(0)').css({
+                    'background': '#f1f1f1'
+                });
+            }); //加载已登录导航
+            $('.Wrap').css({
+                'display': 'none'
+            }); //隐藏Wrap
+            $('.Wrap:eq(0)').css({
+                'display': 'block'
+            }); //显示第一个Wrap
+            $('div.sewm').eq(1).css('display', 'none'); //扫二维码第一块显示
+
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        
+        .zjfk {
+            display: block !important;
+        }
+        
+        div.wrap-list {
+            margin-bottom: 5px;
+        }
+        
+        .changePhonePouup #ok-change-phone,
+        .changePhonePouup #ok-change-phone0 {
+            float: right;
+            display: inline-block;
+            background-color: #0D93D1;
+            color: #fff;
+            padding: 8px 0;
+            width: 100px;
+            border: 1px solid #CCCCCC;
+            text-align: center;
+            margin-right: 25px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+        
+        .changePhonePouup {
+            padding-left: 10px;
+        }
+        
+        .changePhonePouup p {
+            margin: 16px 0;
+            font-size: 16px;
+            height: 25px;
+        }
+        
+        .changePhonePouup p span {
+            width: 90px;
+            display: inline-block;
+            text-align: right;
+        }
+        
+        #changeEmailPouup p span {
+            width: 100px;
+        }
+        
+        .changePhonePouup p input {
+            font-size: 16px;
+            height: 20px;
+            padding-left: 10px;
+        }
+        
+        .changePhonePouup p.SMS-code input {
+            width: 100px;
+        }
+        
+        .changePhonePouup p.SMS-code a {
+            color: #0e93d1;
+        }
+        
+        #phoneBind2,
+        #emailBind2 {
+            cursor: pointer;
+        }
+        
+        .neirong .neirong-top .tab.cur {
+            border-bottom: 2px solid #0b83d8;
+        }
+
+        .tempNullPng {
+            width: 160px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .neirong-top .tab .num{
+            display: initial!important;
+            border-bottom: none!important;
+        }
+        #personal1Val {
+            width: 80px !important;
+            position: relative;
+            top: -11px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeader">
+            画客网致力于打造一个精确、快捷的设计服务对接平台。来画客网，遇到靠谱的好项目。
+            <a href="selfpage.html">设计师入驻</a>
+        </div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal">
+            <div class="left"></div>
+            <div class="right " style="">
+                <div class="top">
+                    <div class="imgWrap">
+                        <input type="file" id="Ojs-upload-avater" class="person-avatar-ipt" accept="image/*" title="点击更换头像">
+                        <div id="Ojs-view">
+                            <input type="hidden" id="Ojs-avatar-ipt">
+                            <img id="Ojs-person-avatar" />
+                        </div>
+                    </div>
+                    <div class="formWrap">
+                        <div class="formWrapleft">
+                            <div>&nbsp;&nbsp; 昵称
+                                <input class="formWrapInput" type="text" /></div>
+                            <div>&nbsp;&nbsp; 账号
+                                <input class="formWrapInput" type="text" value="" readonly>
+                                <span id="phoneBind2">修改</span>
+                            </div>
+                            <div>&nbsp;&nbsp; 公司
+                                <input class="formWrapInput" type="text" value="" />
+                            </div>
+                            <div>&nbsp;&nbsp;&nbsp;QQ
+                                <input class="formWrapInput" type="text" value="" />
+                            </div>
+                        </div>
+                        <div class="formWrapright">
+                            <div>&nbsp;&nbsp; 性别&nbsp;&nbsp;
+                                <input class="formWrapInput" type="radio" name="gender" checked>&nbsp;男&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input class="formWrapInput" type="radio" name="gender">&nbsp;女
+                            </div>
+                            <div>&nbsp;&nbsp; 邮箱 <input class="formWrapInput" type="text" readonly/><span id="emailBind2">修改</span></div>
+                            <div>&nbsp;&nbsp; 职位 <input class="formWrapInput" type="text" /></div>
+                            <div>&nbsp;&nbsp; 微信 <input class="formWrapInput" type="text" /></div>
+                        </div>
+                        <button class="baocun">保存</button>
+                    </div>
+                </div>
+                <div class="qian">
+                    <ul>
+                        <li class="li1">
+                            <a href="Personal-4.html">
+                                <div class="zuo">
+                                    <p class="p1">余额</p>
+                                    <p class="p2">￥0</p>
+                                </div>
+                            </a>
+                            <div class="you">
+                                <a href="Personal-4.html">
+                                    <span class="cz zhcz">充值</span>
+                                    <span class="tx">提现</span>
+                                </a>
+                            </div>
+                        </li>
+                        <a href="Personal-2.html">
+                            <li class="li2">
+                                <p class="p1">订单</p>
+                                <p class="p2">0/0</p>
+                            </li>
+                        </a>
+                        <a href="Personal-9.html">
+                            <li class="li3">
+                                <p class="p1">报价</p>
+                                <p class="p2">0/0</p>
+                            </li>
+                        </a>
+                        <a href="Personal-8.html">
+                            <li class="li4">
+                                <p class="p1">约见</p>
+                                <p class="p2">0/0</p>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="neirong">
+                    <div class="neirong-top">
+                        <div class="wddt"><span class="tab cur">社交动态<span class="num"></span></span></div>
+                        <div class="xttz"><span class="tab">系统消息<span class="num"></span></span></div>
+                    </div>
+                    <div class="Wrap" id="viewPersona1Notice"></div>
+                    <script type="text/template" id="templatePersona1Notice">
+                        {{ var dataType = {works:"作品",guestbook:"留言",doc:"文档",cool:"酷站"}; }} {{~it:val:eq}} {{? val.action == "comment"}}
+                        <div class="newsWrap">
+                            <div class="newsWrap-left">
+                                <a href="detailed.html??id={{=val.user_id_from}}"><img src="{{=val.path_thumb ? val.path_thumb : 'image/bigAvator1.png'}}" /></a>
+                            </div>
+                            <div class="newsWrap-right">
+                                <p class="text"><a href="detailed.html?id={{=val.user_id_from}}"><span class="text">{{=val.nick_name}}</span></a>　评论了我的{{=dataType[val.type]}}《{{=val.title}}》</p>
+                                <p class="text">{{=val.content}}</p>
+                                <span class="text">{{= val.add_time_month ? val.add_time_month : ""}} {{= val.add_time_day ? val.add_time_day : ""}} {{= val.add_time ? CONFIG.utilTime(val.add_time) : ""}}</span><a href="introduction.html?id={{=val.article_id}}"
+                                    class="pubCk">查看</a>
+                            </div>
+                            <div style="clear:both;width:1px;height:1px;"></div>
+                        </div>
+                        {{?}} {{? val.action == "collect"}}
+                        <div class="newsWrap">
+                            <div class="newsWrap-left">
+                                <a href="detailed.html"><img src="images/touxiang1.jpg" /></a>
+                            </div>
+                            <div class="newsWrap-right">
+                                <p class="text"><a href="detailed.html"><span class="text">miazhang</span></a>　收藏了你的作品《百鸟朝凤》</p>
+                                <p class="text"></p>
+                                <span class="text">昨天13：:30</span>
+                                <div style="clear:both;width:1px;height:1px;"></div>
+                            </div>
+                            <div style="clear:both;width:1px;height:1px;"></div>
+                        </div>
+                        {{?}} {{? val.action == "guestbook"}}
+                        <div class="newsWrap">
+                            <div class="newsWrap-left">
+                                <a href="detailed.html?id={{=val.user_id_from}}"><img src="{{=val.path_thumb ? val.path_thumb : 'image/bigAvator1.png'}}" /></a>
+                            </div>
+                            <div class="newsWrap-right">
+                                <p class="text"><a href="detailed.html?id={{=val.user_id_from}}"><span class="text">{{=val.nick_name}}</span></a>　给你留言：</p>
+                                <p class="text">“{{=val.content}}”</p>
+                                <span class="text">{{= val.add_time_month ? val.add_time_month : ""}} {{= val.add_time_day ? val.add_time_day : ""}} {{= val.add_time ? CONFIG.utilTime(val.add_time) : ""}}</span><a href="detailed.html?id={{=val.user_id_from}}"
+                                    class="pubCk">查看</a>
+                                <div style="clear:both;width:1px;height:1px;"></div>
+                            </div>
+                            <div style="clear:both;width:1px;height:1px;"></div>
+                        </div>
+                        {{?}} {{? val.action == "publish"}}
+                        <div class="newsWrap">
+                            <div class="newsWrap-left">
+                                <a href="detailed.html?id={{=val.user_id_from}}"><img src="{{=val.path_thumb ? val.path_thumb : 'image/bigAvator1.png'}}" /></a>
+                            </div>
+                            <div class="newsWrap-right">
+                                <p class="text"><a href="detailed.html?id={{=val.user_id_from}}"><span class="text">{{=val.nick_name}}</span></a>　发布了新的{{=dataType[val.type]}}：</p>
+
+                                <div style="display: block;" class="wrap-list">
+                                    <div class="box">
+                                        <a href="detailed.html?id={{=val.user_id_from}}">
+                                            <div class="bg-img">
+                                                <img src="{{= val.path ? val.path : 'image/word_doc.png'}}" alt="">
+                                                <div class="caption">
+                                                    <h4 class="caption-title ellipsis">{{=val.title}}<a href="" class="collect">收藏</a></h4>
+                                                    <p class="caption-body ellipsis">{{=val.content}}</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <p class="title ellipsis">{{=val.title}}</p>
+                                    </div>
+                                </div>
+                                <span class="text">{{= val.add_time_month ? val.add_time_month : ""}} {{= val.add_time_day ? val.add_time_day : ""}} {{= val.add_time ? CONFIG.utilTime(val.add_time) : ""}}</span>
+                                <div style="clear:both;width:1px;height:1px;"></div>
+                            </div>
+                            <div style="clear:both;width:1px;height:1px;"></div>
+                        </div>
+                        {{?}} {{~}}
+                    </script>
+                    <div class="Wrap" id="viewPersona1SysNotice"></div>
+                    <div style="width:1px;height:1px; clear:both;"></div>
+                    <script type="text/template" id="templatePersona1SysNotice">
+                        {{~it:value:index}} 
+                        {{? index< 12 }} 
+                        <div class="newsWrap">
+                            <div class="newsWrap-left">
+                                <a href="#"><img src="images/system.png" /></a>
+                            </div>
+                            <div class="newsWrap-right">
+                                <p class="text">{{=value.content}}</p>
+                                <!-- <p class="text"></p> -->
+                                <span class="text">{{= value.add_time_month ? value.add_time_month : ""}} {{= value.add_time_day ? value.add_time_day : ""}} {{= value.add_time ? CONFIG.utilTime(value.add_time) : ""}}</span>
+                                <div style="clear:both;width:1px;height:1px;"></div>
+                            </div>
+                            <div style="clear:both;width:1px;height:1px;"></div>
+                </div>
+                {{?}} {{~}}
+                </script>
+            </div>
+        </div>
+        <div style="width:1px;height:1px; clear:both;"></div>
+        <div id="kkpager" class="auto" style=" margin: 65px auto 150px auto;"></div>
+        <!-- <div id="main-body-bottom" class="auto" style=" margin: 65px auto 150px auto;"></div>			 -->
+    </div>
+    <!--底部开始-->
+    <div class="footer_on"></div>
+    <!--底部结束-->
+    </div>
+    <div class="Ojs-upload-avatar">
+        <div class="js-mask"></div>
+        <div class="Ojs-up-wrp js-avatar-clip animate-fadeIn">
+            <header><span class="tit">选择裁剪区域</span><i class="icon-closeB"></i></header>
+            <div class="up-main" id="Ojs-clip-contain">
+                <!-- <div class="hidbox">
+					<div class="img-contain"><img src="images/personal/289618.jpg" alt=""></div>
+					<div class="img-mask"></div>
+					<div class="mask mask-t"></div>
+					<div class="mask mask-r"></div>
+					<div class="mask mask-b"></div>
+					<div class="mask mask-l"></div>
+				</div> -->
+            </div>
+            <div class="bottm">
+                <span class="cancle">取消</span><span class="sure" id="Ojs-clip-sure">确定</span>
+            </div>
+
+        </div>
+    </div>
+    <!--<script src='js/plugs/jquery.form.js'></script>-->
+    <script src='js/plugs/iscroll-zoom.js'></script>
+    <script src='js/plugs/lrz.all.bundle.js'></script>
+    <script src='js/plugs/jquery.photoClip.js'></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/social.js"></script>
+    <script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="js/personal/config.js"></script>
+    <script type="text/javascript" src="js/plugs/doT.min.js"></script>
+    <script type="text/javascript" src="js/personal/common-input-valid.js"></script>
+    <script type="text/javascript" src="js/plugs/jq.page.js"></script>
+    <script type="text/javascript" src="js/personal/layer/layer.js"></script>
+    <script type="text/javascript" src="js/personal/personal-1.js"></script>
+    <script>
+        //裁剪图片上传头像
+            $(function () {
+                $(".bottm,.icon-closeB").click(function () {
+                    $(".Ojs-upload-avatar").css("display", "none");
+                    $("#Ojs-upload-avater").val(""); //清空input文件
+                });
+                var chooses = document.getElementById('Ojs-upload-avater');
+                    chooses.addEventListener('change', function () {
+                        $(".Ojs-upload-avatar").css("display", "block");
+                    });
+            });
+            var clipArea = new PhotoClip("#Ojs-clip-contain", {
+                size: [250, 250],
+                outputSize: [250, 250],
+                style: {
+                    maskColor: "rgba(0,0,0,.3)",
+                    maskBorder: "1px dashed #ddd"
+                },
+                file: "#Ojs-upload-avater",
+                ok: "#Ojs-clip-sure",
+                done: function (dataURL) {
+                    $.post('https://www.huakewang.com/upload/upload_image_byw_upy2', {
+                        'arr': dataURL
+                    }, function (data) {
+                        if (data.success) {
+                            $("#Ojs-person-avatar").attr("src", data.data.path); //设置预览view
+                            $.ajax({
+                                url: urlLocalhost + newhuakwang + "change_user_info",
+                                type: "post",
+                                dataType: "json",
+                                xhrFields: {
+                                    withCredentials: true
+                                },
+                                crossDomain: true,
+                                data: {
+                                    user_id: getCookie("user_id"),
+                                    path: data.data.path
+                                }
+                            }).done(function (data1) {
+                                if (data1.success) {
+                                    alertUploadMsg(data1.message);
+                                    $(".Ojs-upload-avatar").css("display", "none");
+                                } else {
+                                    alertUploadMsg(data1.message);
+                                    $(".Ojs-upload-avatar").css("display", "none");
+                                };
+                            });
+                        } else {
+                            alertUploadMsg('上传头像失败');
+                        }
+                    }, 'json');
+                }
+            });
+    </script>
+    <div class="changePhonePouup" id="changePhonePouup" style="display:none;">
+        <p class="new-phone">
+            <span>新手机号：</span>
+            <input id="new-phone-val" type="text">
+        </p>
+        <p class="new-pic">
+            <span></span>
+            <input id="personal1Val" type="text">
+            <span class="code">
+                <img id="personalImgCode" src="https://www.huakewang.com/index.php/verifycode/index/2" alt="">
+            </span>
+        </p>
+        <p class="SMS-code">
+            <span>验证码：</span>
+            <input id="SMS-code-val" type="text">
+            <a id="SMS-code-txt" href="javascript:;">获取验证码</a>
+        </p>
+        <a id="ok-change-phone" href="javascript:;">确定</a>
+    </div>
+    <div class="changePhonePouup" id="changeEmailPouup" style="display:none;">
+        <p class="new-phone">
+            <span>新邮箱账号：</span>
+            <input id="new-phone-val0" type="text">
+        </p>
+        <p class="SMS-code">
+            <span>验证码：</span>
+            <input id="SMS-code-val0" type="text">
+            <a id="SMS-code-txt0" href="javascript:;">获取验证码</a>
+        </p>
+        <a id="ok-change-phone0" href="javascript:;">确定</a>
+    </div>
+</body>
+
+</html>

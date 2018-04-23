@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/social.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+            } else {
+
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            /**分享滑动框开始**/
+            $('  div.div-right img.img1').mouseenter(function() {
+                $(this).parent().finish().animate({
+                    'margin-right': '13px'
+                });
+            });
+            $('  div.div-right div.div1 div.div1-1').mouseleave(function() {
+                $(this).finish().animate({
+                    'margin-right': '-140px'
+                });
+            });
+            /**分享滑动框结束**/
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="main-body">
+            <div id="article-main-body-left">
+                <div class="newskuai right">
+                    <p class="biaoti"><a href="news-more.html">美国退役上将叫中餐拒付款 殴打外卖郎被捕</a></p>
+                    <p class="time">2015-8-17　转自:人人网</p>
+                    <img class="img_1" src="images/002.jpg" />
+                    <p class="text">据美国《世界日报》编译报道，一名曾任美军驻韩司令官的退役陆军四星上将，日前向乔治亚州法叶维尔(Fayetteville)一家中餐馆订餐外送后，因拒绝付款并殴打外卖郎，而遭警方逮捕和控罪。 84岁利夫塞(William Livsey)15日晚间7时左右向乔州法叶维尔“御厨”(Royal Chef)中餐馆订购80.60元(美元，下同)的餐点餐，在外卖郎把餐点送到府后，因付款和退回餐点的问题，发生冲突。 <a href="#">[…]</a></p>
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <div class="div-right" style="">
+                        <div class="div1" style="">
+                            <div class="div1-1">
+                                <img class="img1" src="images/fxtb.jpg" />
+                                <div class="div-img3 div-img"><img class="img3" src="images/fenxiang.png" /></div>
+                                <div class="div-img4 div-img"><img class="img4" src="images/fenxiang.png" /></div>
+                                <div class="div-img5 div-img"><img class="img5" src="images/fenxiang.png" /></div>
+                                <div class="div-img6 div-img"><img class="img6" src="images/fenxiang.png" /></div>
+                                <div class="div-img7 div-img"><img class="img7" src="images/fenxiang.png" /></div>
+                            </div>
+                        </div>
+                        <div class="div2"><img class="img2" src="images/xxtb.jpg" /><span>2</span></div>
+                    </div>
+                    <div class="huifu" style="">
+                        <textarea></textarea>
+                        <div class="fabiao">发表</div>
+                    </div>
+                </div>
+                <div class="newskuai right">
+                    <p class="biaoti"><a href="news-more.html">美国退役上将叫中餐拒付款 殴打外卖郎被捕</a></p>
+                    <p class="time">2015-8-17　转自:人人网</p>
+                    <img class="img_1" src="images/002.jpg" />
+                    <p class="text">据美国《世界日报》编译报道，一名曾任美军驻韩司令官的退役陆军四星上将，日前向乔治亚州法叶维尔(Fayetteville)一家中餐馆订餐外送后，因拒绝付款并殴打外卖郎，而遭警方逮捕和控罪。 84岁利夫塞(William Livsey)15日晚间7时左右向乔州法叶维尔“御厨”(Royal Chef)中餐馆订购80.60元(美元，下同)的餐点餐，在外卖郎把餐点送到府后，因付款和退回餐点的问题，发生冲突。 <a href="#">[…]</a></p>
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <div class="div-right" style="">
+                        <div class="div1" style="">
+                            <div class="div1-1">
+                                <img class="img1" src="images/fxtb.jpg" />
+                                <div class="div-img3 div-img"><img class="img3" src="images/fenxiang.png" /></div>
+                                <div class="div-img4 div-img"><img class="img4" src="images/fenxiang.png" /></div>
+                                <div class="div-img5 div-img"><img class="img5" src="images/fenxiang.png" /></div>
+                                <div class="div-img6 div-img"><img class="img6" src="images/fenxiang.png" /></div>
+                                <div class="div-img7 div-img"><img class="img7" src="images/fenxiang.png" /></div>
+                            </div>
+                        </div>
+                        <div class="div2"><img class="img2" src="images/xxtb.jpg" /><span>2</span></div>
+                    </div>
+                    <div class="huifu" style="">
+                        <textarea></textarea>
+                        <div class="fabiao">发表</div>
+                    </div>
+                </div>
+                <div class="newskuai right">
+                    <p class="biaoti"><a href="news-more.html">美国退役上将叫中餐拒付款 殴打外卖郎被捕</a></p>
+                    <p class="time">2015-8-17　转自:人人网</p>
+                    <img class="img_1" src="images/002.jpg" />
+                    <p class="text">据美国《世界日报》编译报道，一名曾任美军驻韩司令官的退役陆军四星上将，日前向乔治亚州法叶维尔(Fayetteville)一家中餐馆订餐外送后，因拒绝付款并殴打外卖郎，而遭警方逮捕和控罪。 84岁利夫塞(William Livsey)15日晚间7时左右向乔州法叶维尔“御厨”(Royal Chef)中餐馆订购80.60元(美元，下同)的餐点餐，在外卖郎把餐点送到府后，因付款和退回餐点的问题，发生冲突。 <a href="#">[…]</a></p>
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <div class="div-right" style="">
+                        <div class="div1" style="">
+                            <div class="div1-1">
+                                <img class="img1" src="images/fxtb.jpg" />
+                                <div class="div-img3 div-img"><img class="img3" src="images/fenxiang.png" /></div>
+                                <div class="div-img4 div-img"><img class="img4" src="images/fenxiang.png" /></div>
+                                <div class="div-img5 div-img"><img class="img5" src="images/fenxiang.png" /></div>
+                                <div class="div-img6 div-img"><img class="img6" src="images/fenxiang.png" /></div>
+                                <div class="div-img7 div-img"><img class="img7" src="images/fenxiang.png" /></div>
+                            </div>
+                        </div>
+                        <div class="div2"><img class="img2" src="images/xxtb.jpg" /><span>2</span></div>
+                    </div>
+                    <div class="huifu" style="">
+                        <textarea></textarea>
+                        <div class="fabiao">发表</div>
+                    </div>
+                </div>
+                <div class="newskuai right">
+                    <p class="biaoti"><a href="news-more.html">美国退役上将叫中餐拒付款 殴打外卖郎被捕</a></p>
+                    <p class="time">2015-8-17　转自:人人网</p>
+                    <img class="img_1" src="images/002.jpg" />
+                    <p class="text">据美国《世界日报》编译报道，一名曾任美军驻韩司令官的退役陆军四星上将，日前向乔治亚州法叶维尔(Fayetteville)一家中餐馆订餐外送后，因拒绝付款并殴打外卖郎，而遭警方逮捕和控罪。 84岁利夫塞(William Livsey)15日晚间7时左右向乔州法叶维尔“御厨”(Royal Chef)中餐馆订购80.60元(美元，下同)的餐点餐，在外卖郎把餐点送到府后，因付款和退回餐点的问题，发生冲突。 <a href="#">[…]</a></p>
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <img class="img_2" src="images/100.jpg" />
+                    <div class="div-right" style="">
+                        <div class="div1" style="">
+                            <div class="div1-1">
+                                <img class="img1" src="images/fxtb.jpg" />
+                                <div class="div-img3 div-img"><img class="img3" src="images/fenxiang.png" /></div>
+                                <div class="div-img4 div-img"><img class="img4" src="images/fenxiang.png" /></div>
+                                <div class="div-img5 div-img"><img class="img5" src="images/fenxiang.png" /></div>
+                                <div class="div-img6 div-img"><img class="img6" src="images/fenxiang.png" /></div>
+                                <div class="div-img7 div-img"><img class="img7" src="images/fenxiang.png" /></div>
+                            </div>
+                        </div>
+                        <div class="div2"><img class="img2" src="images/xxtb.jpg" /><span>2</span></div>
+                    </div>
+                    <div class="huifu" style="">
+                        <textarea></textarea>
+                        <div class="fabiao">发表</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="article-main-body-right">
+                <ul class="ul_2">
+                    <a href="#">
+                        <li class="li-1">全部<span class="sptext">77</span></li>
+                    </a>
+                    <a href="#">
+                        <li class="li-2">正在发生<span class="sptext">24</span></li>
+                    </a>
+                    <a href="#">
+                        <li class="li-3">媒体报道<span class="sptext">17</span></li>
+                    </a>
+                    <a href="#">
+                        <li class="li-4">洞察<span class="sptext">11</span></li>
+                    </a>
+                    <a href="#">
+                        <li class="li-5">设计利器<span class="sptext">10</span></li>
+                    </a>
+                    <a href="#">
+                        <li class="li-6">团队活动<span class="sptext">8</span></li>
+                    </a>
+                    <a href="#">
+                        <li class="li-7">创意产品<span class="sptext">5</span></li>
+                    </a>
+                    <a href="#">
+                        <li class="li-8">设计沙龙<span class="sptext">4</span></li>
+                    </a>
+                </ul>
+            </div>
+            <div style="clear:both; height:1px;width:1px;"></div>
+            <div id="main-body-bottom" class="auto" style="margin:65px 0 150px 80px;"></div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/social.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" href="css/font/font.css">
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('div.left').load('PersonalNav.html', function() {
+                $(document).find('div.left div.yidenglu-box ul li:eq(0)').css({
+                    'background': '#f1f1f1'
+                });
+            }); //加载已登录导航
+            $('.Wrap').css({
+                'display': 'none'
+            }); //隐藏Wrap
+            $('.Wrap:eq(0)').css({
+                'display': 'block'
+            }); //显示第一个Wrap
+            $('div.sewm').eq(1).css('display', 'none'); //扫二维码第一块显示
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body {
+            width: 1195px;
+            margin: 0 auto;
+        }
+        
+        #topHeader {
+            background-color: #03A5EE;
+            height: 70px;
+            line-height: 70px;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        #topHeader a {
+            background: #fff none repeat scroll 0 0;
+            border-radius: 5px;
+            color: #333;
+            display: inline-block;
+            font-size: 18px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            width: 130px;
+        }
+        .personal .neirong-top .tab.cur span {
+            border-bottom: 2px solid #0b83d8;
+        }
+        .tempNullPng {
+            width: 160px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="main-body" class="personal">
+            <div class="left"></div>
+            <div class="right " style="">
+
+                <div class="neirong">
+                    <div class="neirong-top">
+                        <div class="wddt tab cur"><span>我的粉丝</span></div>
+                        <div class="xttz tab"><span>黑名单</span></div>
+                    </div>
+                    <div class="Wrap" id="viewPersonNameFavorite"></div>
+                    <script type="text/template" id="templatePersonNameFavorite">
+                        {{~it:val:eq}}
+                        <div class="newsWrap">
+                            <div class="newsWrap-left">
+                                <a target="_blank" href="detailed.html?id={{=val.favorite_id}}"><img src="{{= val.path ? val.path : 'image/bigAvator1.png'}}" /></a>
+                            </div>
+                            <div class="newsWrap-right">
+                                <p class="text">{{=val.nick_name ? val.nick_name : ''}}<span class="text"></span></p>
+                                <p class="text">{{=val.user_info.signature ? val.user_info.signature : ''}}</p>
+                                {{ var newDate = new Date();newDate.setTime(val.add_time*1000);}}
+                                <span class="text">{{= newDate.Format("yyyy-MM-dd hh:mm:ss")}}</span>
+                                {{? val.user_info.MyIsFavorite}}
+                                <i data-id="{{= val.user_id}}" title="点击关注" style="border: 0 none;color: #555;">✔ 已关注</i>
+                                {{??}}
+                                <i data-id="{{= val.user_id}}" title="点击关注"><span>+</span> 关注</i>
+                                {{?}}
+                            </div>
+                            <div style="clear:both;width:1px;height:1px;"></div>
+                        </div>
+                        {{~}}
+                    </script>
+                    <div class="Wrap" id="viewPersonNameBlack"></div>
+                    <script type="text/template" id="templatePersonNameBlack">
+                        {{~it:val:eq}}
+                        <div class="newsWrap">
+                            <div class="newsWrap-left">
+                                <a target="_blank" href="detailed.html?id={{=val.to_user_id}}"><img src="{{= val.path_thumb ? val.path_thumb : 'image/bigAvator1.png'}}" /></a>
+                            </div>
+                            <div class="newsWrap-right">
+                                <p class="text">{{=val.nick_name ? val.nick_name : ''}}<span class="text"></span></p>
+                                <span class="text">{{=val.add_time_format ? val.add_time_format : ''}}</span>
+                                <i data-id="{{= val.to_user_id}}" title="点击取消拉黑" class="cancelPub">取消拉黑</i>
+                            </div>
+                            <div style="clear:both;width:1px;height:1px;"></div>
+                        </div>
+                        {{~}}
+                    </script>
+                    <div style="width:1px;height:1px; clear:both;"></div>
+                </div>
+            </div>
+            <div style="width:1px;height:1px; clear:both;"></div>
+            <div id="kkpager" class="auto" style=" margin: 65px auto 150px auto;"></div>
+        </div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/personal/config.js"></script>
+    <script type="text/javascript" src="js/plugs/doT.min.js"></script>
+    <script type="text/javascript" src="js/plugs/jq.page.js"></script>
+    <script type="text/javascript" src="js/personal/personName.js"></script>
+    <script>
+        $(function() {
+            $(".formWrap").change(function() {
+                $(window).bind('beforeunload', function(e) {
+                    e = e || window.event;
+                    if (e) {
+                        e.returnValue = '请确定数据已经保存';
+                    }
+                    return '请确定数据已经保存';
+                });
+            });
+            $("#main-body.personal div.right div.neirong").on("click", " div.newsWrap div.newsWrap-right i", function() {
+                var $dom = $(this);
+                var id = $(this).attr('data-id');
+                if ($(this).html() == "<span>+</span> 关注") {
+                    addLove("user", id, $dom);
+                } else if ($(this).html() == "取消拉黑") {
+                    deleteBlack(id, $dom);
+                } else {
+                    addLove("user", id, $dom);
+                }
+
+            });
+            //    页面跳转传值
+            if (window.location.search.split("?")[1]) {
+                var tag = window.location.search.split("?")[1].split("=")[1];
+                if (tag == 1) {
+                    $('#main-body.personal div.right div.neirong div.neirong-top div').removeClass("cur");
+                    $('.Wrap:eq(0)').css({
+                        'display': 'block'
+                    });
+                    $('.Wrap:eq(1)').css({
+                        'display': 'none'
+                    });
+                    $('#main-body.personal div.right div.neirong div.neirong-top div.wddt').addClass("cur");
+                    ajaxFavoriteList();
+                }
+                if (tag == 2) {
+                    $('#main-body.personal div.right div.neirong div.neirong-top div').removeClass("cur");
+                    $('.Wrap:eq(0)').css({
+                        'display': 'none'
+                    });
+                    $('.Wrap:eq(1)').css({
+                        'display': 'block'
+                    });
+                    $('#main-body.personal div.right div.neirong div.neirong-top div.xttz').addClass("cur");
+                    ajaxBlackList();
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

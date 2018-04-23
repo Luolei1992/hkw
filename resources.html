@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="发布原创作品" />
+    <meta name="description" content="发布原创作品" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>发布原创作品【画客网】-中国知名平面网页界面_室内工业珠宝独立设计师排行榜</title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/client/social.css" />
+    <link rel="stylesheet" href="css/fonts/iconfont.css">
+    <link rel="stylesheet" href="css/client/dialog.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/client/dialog-plus-min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'login.html';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+
+            $(".but_2").click(function() {
+                $("#upload_1").hide();
+                $("#upload_2").show();
+                $("#upload_3").hide();
+                $(".previewTemplate").show();
+                $(".but_1").css({
+                    "background": "#fbfbfb",
+                    "border": "none",
+                    "margin-top": "5px"
+                });
+                $(".but_3").css({
+                    "background": "#fbfbfb",
+                    "border": "none",
+                    "margin-top": "5px"
+                });
+                $(".but_2").css({
+                    "background": "#ffffff",
+                    "border": "1px solid #d2d2d2",
+                    "border-top-left-radius": "5px",
+                    "border-top-right-radius": "5px",
+                    "margin-top": "6px",
+                    "border-bottom": "1px solid #ffffff"
+                });
+            });
+            $(".but_1").click(function() {
+                $("#upload_1").show();
+                $("#upload_2").hide();
+                $("#upload_3").hide();
+                $(".previewTemplate").show();
+                $(".but_2").css({
+                    "background": "#fbfbfb",
+                    "border": "none",
+                    "margin-top": "5px"
+                });
+                $(".but_3").css({
+                    "background": "#fbfbfb",
+                    "border": "none",
+                    "margin-top": "5px"
+                });
+                $(".but_1").css({
+                    "background": "#ffffff",
+                    "border": "1px solid #d2d2d2",
+                    "border-top-left-radius": "5px",
+                    "border-top-right-radius": "5px",
+                    "margin-top": "6px",
+                    "border-bottom": "1px solid #ffffff"
+                });
+            });
+            $(".but_3").click(function() {
+                $("#upload_3").show();
+                $("#upload_1").hide();
+                $("#upload_2").hide();
+                $(".previewTemplate").hide();
+                $(".but_2").css({
+                    "background": "#fbfbfb",
+                    "border": "none",
+                    "margin-top": "5px"
+                });
+                $(".but_1").css({
+                    "background": "#fbfbfb",
+                    "border": "none",
+                    "margin-top": "5px"
+                });
+                $(".but_3").css({
+                    "background": "#ffffff",
+                    "border": "1px solid #d2d2d2",
+                    "border-top-left-radius": "5px",
+                    "border-top-right-radius": "5px",
+                    "margin-top": "6px",
+                    "border-bottom": "1px solid #ffffff"
+                });
+            });
+            $("#title").blur(function() {
+                var title = $("#title").val();
+                if (title) {
+                    $.ajax({
+                        url: baseURL + 'getKeycode',
+                        type: 'post',
+                        data: {
+                            "title": title
+                        },
+                        dataType: 'json',
+                        xhrFields: {
+                            withCredentials: true
+                        },
+                        crossDomain: true,
+                        success: function(res) {
+                            if (res.success) {
+                                $("#keyword").val(res.data.keycode);
+                                return false;
+                            } else {
+                                return false;
+                            };
+                        }
+                    })
+                };
+
+            });
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: block;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+        
+        #main-body.personal div.right div.neirong div.divWrap span.red {
+            display: inline;
+            color: #ff0000;
+            font-size: 14px;
+        }
+        
+        #main-body.personal div.right div.neirong div.divWrap span.text {
+            display: inline;
+            color: #8b8b8b;
+        }
+        #main-body {
+            width: 1180px;
+            margin: 0 auto;
+            padding-left: 0px;
+            position: relative;
+            left: 0px;
+        }
+
+        .web {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 490px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .div_1>img {
+            /*background: url(./images/loding.gif) no-repeat scroll 50% 50%;*/
+            width: 100%;
+            /*display: none;*/
+        }
+        textarea {
+            resize: none;
+        }
+        .div_2 textarea[name="content"] {
+            width: 708px;
+            height: 280px;
+            padding: 10px;
+            outline: none;
+            box-sizing: border-box;
+            border: 0 none;
+            resize: none;
+        }
+        #main-body.publishedWork .input_1 {
+            height: 44px;
+            margin-top: 18px;
+        }
+        #main-body.publishedWork .input_1.youku {
+            width: 550px;
+        }
+        #main-body.publishedWork .div_4 {
+            border: 0 none;
+        }
+        .input_7 {
+            border: 1px solid #d0d0d0;
+            font-size: 16px;
+            height: 44px;
+            margin: 35px 0 0 5px;
+            text-indent: 20px;
+            width: 550px;
+        }
+        .input_8 {
+            width: 102px;
+            height: 42px;
+            background-color: #F15849;
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            font-size: 16px;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-left: 13px;
+            border: 0 none;
+        }
+        #chooseUploadFile,
+        #batch_image_upload {
+            width: 121px;
+            height: 42px;
+            opacity: 0;
+            position: absolute;
+            z-index: 2;
+            cursor: pointer;
+            top: 0px;
+            left: -72px;
+        }
+        #main-body.publishedWork .div_1 {
+            width: 385px;
+            height: 556px;
+            margin: 22px 0 0 799px;
+        }
+        #batch_image_upload {
+            left: 6px;
+            top: 3px;
+        }
+        .upload-btn-txt-see {
+            left: -72px;
+        }
+        #main-body.publishedWork .span_2 {
+            margin: 45px 0 0 52px;
+        }
+        #main-body.publishedWork .span_1 {
+            margin-top: 30px;
+        }
+        .industryBlue {
+            color: #2FA4FF;
+        }
+    </style>
+</head>
+
+<body class="reeg" style="">
+    <!-- 头部 start -->
+    <div id="header" class="header-neiye"></div>
+    <div id="resourcesTop" class="resourcesTop">
+        <div class="resourcesRules">
+            <p>上传涉及侵权的内容和资源与描述不符将会被清除，并扣罚20-100资源币&nbsp;&nbsp;<a href="#">查看审核标准>></a></p>
+        </div>
+        <div class="resourcesFiles">
+            <button>选择文件</button>
+            <p class="resourcesP1">提供下载<i>*</i> : <input type="text" class="sourcesName"> <input type="file" id="sourcesUpload" value="选择文件">
+                <select>
+                    <option value="1">源文件格式</option>
+                    <option value="2">PSD</option>
+                    <option value="3">EPS</option>
+                    <option value="4">AI</option>
+                    <option value="5">CDR</option>
+                    <option value="5">FLA</option>
+                    <option value="5">WMF</option>
+                    <option value="5">PNG</option>
+                    <option value="5">其他</option>
+                </select>
+            </p>
+            <p id="fileRange" class="clearfix"><span></span></p><i id="sourRange"></i><a class="cancelResources" href="javascript:;">取消</a>
+            <p class="resourcesP2">文件支持格式 : doc,docx,ppt,pptx,xls,xlsx,pdf,txt,rar,zip</p>
+        </div>
+    </div>
+    <!-- 头部 end -->
+    <div class="containers">
+        <form method="post" action="#" name="jsonForm" class="publishedWork" id="jsonForm">
+            <div id="main-body" class="publishedWork">
+                <span class="span_1">标题</span>
+                <input value="" placeholder="必填，最多100个汉字。" name="title" id="title" required errmsg="标题不能为空" maxlength="100" class="input_1" type="text" />
+                <!-- 封面开始 -->
+                <div style="float: right; margin:18px -75px 0px 0px; height: 40px;position:relative;">
+                    <div class="upload-btn-txt-see"></div>
+                    <input id="chooseUploadFile" style="width:380px;" name="image_upload" type="file" multiple="true">
+                </div>
+                <div class="div_1" style="background: url(./images/zyfm.png) no-repeat;">
+                    <img id="thumbnail_path_src" alt="" src="" width="270">
+                    <input style="display:none;" name="path" id="thumbnail_path" value="">
+                    <div style="display:none;" id="thumbnail_path_file_queue"></div>
+                </div>
+                <div class="sourcesPrice">
+                    <p>售价</p>
+                    <select id="pricesList">
+                        <option value="1">免费</option>
+                        <option value="2">1画币</option>
+                        <option value="3">2画币</option>
+                        <option value="4">5画币</option>
+                        <option value="5">8画币</option>
+                        <option value="6">10画币</option>
+                        <option value="7">20画币</option>
+                    </select>
+                    &nbsp;&nbsp;&nbsp;<span>重在分享，请合理出价！</span>
+                </div>
+                <div class="div_2">
+                    <span style="float: left;font-size: 18px;margin: 0 0 0 -56px;">描述</span>
+                    <div style="width:710px;height:285px;margin:0 auto;">
+                        <textarea name="content" cols="88" rows="12" id="work_des"></textarea>
+                    </div>
+                    <span style="font-size: 18px;margin: 7px 0px 0px -56px;float: left;">文件</span>
+                    <div class="div_2_b">
+                        <input class="input_3 but_1" type="button" value="本地上传" />
+                        <input class="input_4 but_3" type="button" value="插入视频" />
+                        <input class="input_4 but_2" type="button" value="网络获取" />
+                    </div>
+                    <div class="div_2_c  div_2_c_but1">
+                        <table width="100%" id="preview">
+                            <tr>
+                                <td>
+                                    <div id="upload_1" style="margin:20px 0px 15px 15px;;">
+                                        <div style="width:100px;height: 40px;display:inline-block;margin-bottom: 20px;position:relative;">
+                                            <div class="upload-btn-txt-sees"></div>
+                                            <input id="batch_image_upload" name="batch_image_upload" style="margin-bottom: 15px;" type="file" multiple="true">
+                                            <div id="batch_upload_file_queue" style="width: 680px;"></div>
+                                        </div>
+                                        <p class="p_1">单张图片10M以内，RGB模式，支持jpg/png格式，长不超过8000，宽不超过2000。<br>最多允许上传100张图片，支持批量上传</p>
+                                    </div>
+                                    <div id="upload_2" style="margin:0px 0px 0px 15px;display:none;" class="upload-webpic">
+                                        <input placeholder="请输入网址..." class="input_7" id="batch_download_image_url" type="text" />
+                                        <input class="input_8" type="button" value="获取图片" onClick="javascript:batch_download_image();" />
+                                        <p class="pleaseEnterUrl">请输入采集的作品网址，格式："http://www.huakewang.com/test.html"</p>
+                                    </div>
+                                    <div id="upload_3" style="margin:0px 0px 0px 0px;display:none;" class="js-publish-videow">
+                                        <input placeholder="请输入优酷视频网址..." name="file_path" class="input_1 youku js-ipt-web" type="text" /><span class="u-sure js-publish-video">确定</span>
+
+                                        <p class="pleaseEnterUrl">请输入视频网址，格式："http://http://v.youku.com/v_show/id_XNzE0MDU2MjQ4.html"</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="picRangeList">
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="div_3">
+                    <p>类别</p>
+                    <div class="div_3_a" style="width:auto;border-right:none;">
+                        <select style="width:100px;height:215px;padding: 5px;border: 0 none;" size="6" name="category_ids_2" id="category_ids_2" valid="required" errmsg="请选择分类">
+                        <!--一级分类-->
+                    </select>
+                        <select size="6" style="min-width:100px;height:215px;float: left;display:none;" name="category_ids_3" id="category_ids_3">
+                        <!--二级分类-->
+                    </select>
+                        <select size="6" style="width:100px;height:215px;display:none;" name="category_ids_4" id="category_ids_4">
+                    </select>
+                        <select size="6" style="width:100px;height:215px;display:none;" name="category_ids_5" id="category_ids_5">
+                    </select>
+                    </div>
+                </div>
+                <span class="span_1 upload-keyword" style="left: -16px;position:relative;">行业</span>
+                <ul class="industryList clearfix">
+                    <li data-navid="37">政府</li>
+                    <li data-navid="28">医疗/教育</li>
+                    <li data-navid="36">工业化工</li>
+                    <li data-navid="34">建筑房产</li>
+                    <li data-navid="24">互联网科技</li>
+                    <li data-navid="25">节能环保</li>
+                    <li data-navid="32">工业设计</li>
+                    <li data-navid="27">动画/影视</li>
+                    <li data-navid="29">摄影艺术</li>
+                    <li data-navid="26">产品设计</li>
+                </ul>
+                <span class="span_1 upload-keyword" style="left: -16px;position:relative;">关键字</span>
+                <input value="" name="keyword" style="margin-left:0" id="keyword" class="input_1" type="text" />
+                <div class="div_4">
+                    <p class="p_2">点击"提交发布"，即表示您已阅读并接受<a href="javascrpt:void(0);">版权声明</a>和<a href="javascrpt:void(0);">使用协议</a></p>
+                    <input class="input_9" type="button" value="发布资源" />
+                    <input onClick="javascript:history.back(-1);" class="input_10" type="button" value="取消" />
+                </div>
+            </div>
+        </form>
+        <!--<a href="https://www.huakewang.com/2017_data/css/text.pdf">pdf</a>-->
+        <div class="footer_on"></div>
+        <script>
+            window.FileAPI = {
+                staticPath: '/js/plugs/'
+            };
+        </script>
+        <script type="text/javascript" src="js/plugs/FileAPI.min.js"></script>
+        <script type="text/javascript" src="js/data/publishWorkXhrs.js"></script>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,307 @@
+<link rel="stylesheet" href="https://www.huakewang.com/2017_data/fonts/iconfont.css">
+<link rel="stylesheet" type="text/css" href="https://www.huakewang.com/2017_data/css/fastDesign.css">
+<script type="text/javascript">
+    var _LZY_real_Url = 'https://www.huakewang.com/';
+    $(function() {
+        $('#header div#nav div.yidenglu').mouseenter(function() { //已登录显示
+            //            $('#header.header-neiye div.yidenglu-box').toggle();
+            $('div.pub-wrap.fn-hide:eq(1)').css({
+                'display': 'none'
+            });
+            $('div.pub-wrap.fn-hide:eq(0)').css({
+                'display': 'none'
+            });
+        });
+        $('#header div.yidenglu-box').mouseleave(function() {
+            //            $(this).css('display','none');
+        });
+
+        $('#nav a.but-fb').mouseenter(function() { //发布框显示
+            $('div.pub-wrap.fn-hide:eq(0)').css({
+                'display': 'block'
+            });
+            $('div.pub-wrap.fn-hide:eq(1)').css({
+                'display': 'none'
+            });
+            $('div.pub-wrap.fn-hide:eq(0)').on('mouseleave', function() {
+                $('div.pub-wrap.fn-hide:eq(0)').css({
+                    'display': 'none'
+                });
+            });
+        });
+        $('#nav a.but-fb').mouseleave(function() {
+            var nav_box = setTimeout(function() {
+                $('div.pub-wrap.fn-hide:eq(0)').css({
+                    'display': 'none'
+                });
+            }, 800);
+
+            $('div.pub-wrap.fn-hide:eq(0)').on('mouseenter', function() {
+                clearTimeout(nav_box);
+                $('div.pub-wrap.fn-hide:eq(0)').css({
+                    'display': 'block'
+                });
+            });
+        });
+
+        $('#nav a.but-dl').mouseenter(function() { //发布框显示
+            $('div.pub-wrap.fn-hide:eq(1)').css({
+                'display': 'block'
+            });
+            $('div.pub-wrap.fn-hide:eq(0)').css({
+                'display': 'none'
+            });
+            $('div.pub-wrap.fn-hide:eq(1)').on('mouseleave', function() {
+                $('div.pub-wrap.fn-hide:eq(1)').css({
+                    'display': 'none'
+                });
+            });
+        });
+        $('#nav a.but-dl').mouseleave(function() {
+            var nav_box = setTimeout(function() {
+                $('div.pub-wrap.fn-hide:eq(1)').css({
+                    'display': 'none'
+                });
+            }, 800);
+
+            $('div.pub-wrap.fn-hide:eq(1)').on('mouseenter', function() {
+                clearTimeout(nav_box);
+                $('div.pub-wrap.fn-hide:eq(1)').css({
+                    'display': 'block'
+                });
+            });
+        });
+
+        var par = false;
+        $('div.yidenglu').hover(function() {
+            $('div.logined-con').css({
+                'display': 'block'
+            });
+        }, function() {
+            setTimeout(function() {
+                if (!par) {
+                    $('div.logined-con').css({
+                        'display': 'none'
+                    });
+                }
+            }, 200)
+        });
+        $('div.logined-con').hover(function() {
+            $('div.logined-con').css({
+                'display': 'block'
+            });
+            par = true;
+        }, function() {
+            $('div.logined-con').css({
+                'display': 'none'
+            });
+            par = false;
+        });
+
+        $(".navLogo-wrap").mouseenter(function() {
+            $(".navLogo-select").css("display", "block");
+        });
+        $(".navLogo-wrap").mouseleave(function() {
+            $(".navLogo-select").css("display", "none");
+        });
+        $(".navLogo-select").mouseenter(function() {
+            $(this).css("display", "block");
+        });
+        $(".navLogo-select").mouseleave(function() {
+            $(this).css("display", "none");
+        });
+    });
+    /*设计师多选下拉列表*/
+
+    function go_login() {
+        if (window.location.href.indexOf('login.html') > -1) {
+            window.location.reload();
+        } else if (window.location.href.indexOf('register.html') > -1) {
+            window.location.href = 'https://www.huakewang.com/2017_data/login.html'
+        } else if (window.location.href.indexOf('forget-pass.html') > -1) {
+            window.location.href = 'https://www.huakewang.com/2017_data/login.html'
+        } else {
+            $("#new_login").css("display", "block");
+            $(".new_login_wrap").css({
+                'display': 'block'
+            });
+        }
+    };
+
+    function closed_login() {
+        $("#new_login").css('display', 'none');
+        $(".new_login_wrap").css('display', 'none');
+        if (window.location.href.indexOf('yuejian.html') > -1) {
+            window.history.back();
+            location.reload();
+        };
+    };
+</script>
+<style>
+    #nav a.but-dl {
+        color: #fff;
+        font-size: 14px;
+        width: 76px;
+        height: 34px;
+        line-height: 34px;
+        background: url('https://www.huakewang.com/css/images/hkwBtn.png') 0 -39px;
+        display: block;
+        float: right;
+        margin: 20px 0 0 0;
+    }
+    #nav a.but-dl:hover {
+        cursor: pointer;
+    }
+    .hkw-login {
+        margin-right:26px;
+    }
+    .hkw-qq-icon,.hkw-wx-icon,.hkw-wb-icon {
+        margin:20px 15px 10px 15px;
+    }
+</style>
+<div id="nav">
+    <div class="navLogo-select">
+        <div class="navLogo-select-t">
+            <ul class="navLogo-select-ul">
+                <!--列表-->
+            </ul>
+        </div>
+        <div class="navLogo-select-m">
+            <div class="navLogo-select-line"></div>
+        </div>
+        <div class="navLogo-select-b">
+            <a href="javascript:;" class="makesure">确认搜索</a>
+            <a href="javascript:;" class="cannotfind">找不到,请告诉我们</a>
+        </div>
+    </div>
+    <a class="hkw-header-nav-logo-img" href="https://www.huakewang.com/"></a>
+    <ul class="hkw-header-nav-ul hkw_header_nav_ul">
+        <a href="https://www.huakewang.com/2017_data/designer.html">
+            <li class="navLogo-wrap headnav1">
+                <i class="navLogo"></i>设计师
+            </li>
+        </a>
+        <a href="https://www.huakewang.com/2017_data/works.html">
+            <li class="headnav2">作品库</li>
+        </a>
+        <span class="lis3">|</span>
+        <a href="https://www.huakewang.com/2017_data/project.html">
+            <li class="headnav3">项目</li>
+        </a>
+        <a href="javascript:void(0);">
+            <li class="headnav4">设计提速
+                <ul class="headnav4_1 clearfix" style="display: none;">
+                    <li><a href="https://www.huakewang.com/2017_data/fastdesign.html" target="_blank">常用资源</a></li>
+                    <li><a href="https://www.huakewang.com/link.html" target="_blank">设计网址</a></li>
+                    <li><a href="https://www.huakewang.com/cool/index/140.html" target="_blank">酷站加油</a></li>
+                    <li><a href="https://www.huakewang.com/2017_data/yun.html" target="_blank">云报价</a></li>
+                    <li><a href="javascript:void(0);" target="_blank">画客APP</a></li>
+                </ul>
+            </li>
+            <i class="new"></i>
+        </a>
+    </ul>
+
+    <a class="but-dl" onclick="javascript:go_login();" href="#"></a>
+
+    <a class="but-fb" href="#"></a>
+    <!--免费发布弹出框 start-->
+    <div class="pub-wrap animate-fadeInTop fn-hide" style=";">
+        <i class="caret">
+        </i>
+        <div class="pub-box">
+            <ul class="hkw-fix">
+                <li>
+                    <a href="javascript:;" onclick="javascript:go_login();">
+                        <i class="iconfont iconfont1"></i> 发布需求
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" onclick="javascript:go_login();">
+                        <i class="iconfont iconfont2"></i> 上传作品
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" onclick="javascript:go_login();">
+                        <i class="iconfont iconfont3"></i> 发送报价
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pub-wrap animate-fadeInTop fn-hide">
+        <i class="caret" style="right:44px; "></i>
+        <div class="pub-box">
+            <p class="p-30">你好！看官，求登录~</p>
+            <div class="hkw-fix-btn">
+                <a href="https://www.huakewang.com/2017_data/login.html" class="hkw-login">登录</a>
+
+                <a href='https://www.huakewang.com/2017_data/register.html' class="hkw-reg hkw_reg_href_cookie">注册</a>
+            </div><br>
+            <p class="pub-box-list">使用合作伙伴账号登录</p>
+            <div class="pub-box-list">
+                <a href="https://www.huakewang.com/wxopenapi/auth_redirect" class="hkw-wx-icon">
+                    微信
+                </a>
+                <a target="_blank" href="https://www.huakewang.com/main/sina_oauth.html" class="hkw-wb-icon">
+                    微博
+                </a>
+                <a href="https://www.huakewang.com/main/qq_oauth.html" class="hkw-qq-icon">
+                    QQ
+                </a>
+            </div>
+            <div class="pub-box-other">
+                <ul>
+                    <li>
+                        <a href="https://www.huakewang.com/2017_data/forget-pass.html">忘记密码？</a>
+                    </li>
+                    <li>
+                        <a href="#">常见问题？</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--搜索-->
+    <div class="hkw-header-nav-search">
+        <input class="hkw-header-search-input" type="text" value="">
+        <a href="javascript:;">
+            <input class="hkw-header-search-but" type="button">
+        </a>
+    </div>
+
+    <div style="clear:both;width:1px;"></div>
+</div>
+<div id="HuanXinInit"></div>
+<div id="new_login_box"></div>
+<script type="text/javascript">
+    function NewhHuanXin() {
+        $("#HuanXinInit").append('<script src="https://www.huakewang.com/2017_data/js/huanxin/sdk/webim.config.js"><\/script>');
+        $("#HuanXinInit").append('<script src="https://www.huakewang.com/2017_data/js/huanxin/sdk/strophe-1.2.8.min.js"><\/script>');
+        $("#HuanXinInit").append('<script src="https://www.huakewang.com/2017_data/js/huanxin/sdk/websdk-1.4.11.js"><\/script>');
+        $("#HuanXinInit").append('<script src="https://www.huakewang.com/2017_data/js/huanxin/newHuanXin.js"><\/script>');
+        if (~window.location.href.indexOf("Personal-x.html")) {
+            $("#HuanXinInit").append('<script src="https://www.huakewang.com/2017_data/demo/javascript/dist/demo-1.4.11.js"><\/script>');
+        }
+    }
+    if (window.location.href.indexOf('login.html') > -1 || window.location.href.indexOf('register.html') > -1) {
+
+    } else {
+        setTimeout(function() {
+            //            NewhHuanXin();
+        }, 500);
+    };
+    var urlLocalhost = "https://www.huakewang.com/";
+    var newhuakwang = "hkw_newapi/";
+    $("#new_login_box").load('https://www.huakewang.com/2017_data/new_login.1.html');
+    if (window.location.href.indexOf('selfpage.html') > -1) {
+        window.location.href = 'https://www.huakewang.com';
+    };
+    $('.hkw_reg_href_cookie:first').on('click', function(e) {
+        //        e.preventDefault();
+        var _href = window.location.href.split('.html')[0];
+        var _herfArr = _href.split('/');
+        _href = _herfArr[_herfArr.length - 1];
+        setCookie('backhref', _href)
+    });
+</script>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>
+        云报价-让设计回归设计本质
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/yun.css" />
+    <link rel="stylesheet" href="css/client/dialog.css" />
+    <link rel="stylesheet" href="css/jedate.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+            //日期插件
+            //jeDate.skin('gray');
+            jeDate({
+                dateCell: "#dateinfo",
+                format: "YYYY年MM月DD日",
+                isinitVal: true,
+                isTime: true, //isClear:false,
+                minDate: "2014-09-19",
+            })
+        });
+    </script>
+    <style>
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0.3) inset;
+        }
+        
+        div.ca-container.project-ca-container div.ca-item {
+            position: absolute;
+        }
+        
+        #nav a.but-dl {
+            display: block;
+        }
+        
+        div.tclogin.cur {
+            display: none;
+        }
+        
+        .headnav4 {
+            color: #0679ca !important;
+        }
+        
+        div.tclogin {
+            position: fixed;
+            float: left;
+            width: 100%;
+            z-index: 9999;
+            top: -50px;
+            height: 130%;
+            display: none;
+        }
+        
+        div.tcloginBj {
+            opacity: 0.5;
+            background: #000;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            z-index: 9997;
+        }
+        
+        div.tclogintc {
+            position: fixed;
+            z-index: 9999;
+            width: 440px;
+            left: 50%;
+            margin-left: -220px;
+            top: 150px;
+        }
+        
+        #main-body {
+            background-color: #fff;
+        }
+        
+        .yun-phone-bg1 {
+            background-image: url("yunimg/yun-message.png");
+        }
+        
+        .yun-phone-bg2 {}
+        
+        .yun-ms1-color {
+            color: #000;
+            background-color: #fff;
+        }
+        
+        .yun-ms2-color {
+            color: #fff;
+            background-color: transparent;
+        }
+        /*表单验证css*/
+        
+        #signupForm .onError {
+            margin-left: 10px;
+            width: auto;
+            display: inline;
+        }
+        
+        #newsletter_topics .onError {
+            display: none;
+            margin-left: 103px;
+        }
+        
+        #signupForm .onError {
+            position: absolute;
+            top: 50px;
+            left: 500px;
+            display: block;
+            border: 1px solid red;
+            padding: 5px 5px;
+            border-radius: 5px;
+            background-color: #fff;
+            color: red;
+            z-index: 1000;
+        }
+        
+        #signupForm>label {
+            position: relative;
+        }
+        
+        #signupForm .onError {
+            top: 60px;
+            left: 28px;
+        }
+        
+        #signupForm .onError::after {
+            content: " ";
+            position: absolute;
+            left: 10px;
+            top: -6px;
+            width: 10px;
+            height: 10px;
+            border: red solid 1px;
+            border-left: 0;
+            border-bottom: 0;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            z-index: 1000;
+            background: #F8FDEF;
+        }
+        
+        .yun-pro .companyCallWrap {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .jedatebot .jedatehms {
+            display: none;
+        }
+        
+        .jedatebot .botflex {
+            float: right;
+        }
+
+        .headnav4>a {
+            color: #2FA4FF !important;
+        }
+        #nav .new {
+            background: url(images/xltpb1.png) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <!--主体部分开始-->
+        <div id="main-body">
+            <div class="yun-banner">
+                <div class="yun-banner-center">
+                    <div class="yun-banner-t">
+                        <h2>让设计回归设计本质</h2>
+                        <p class="yun-banner-p">长于设计而羞于销售, 一直是原创设计师的致命点,画客网正在打破这一固有认识, 12年坚持, 8年供/需沉淀,用经验为基石, 致力于打造一款帮助设计师创业过程中<br>发生的商务困扰的平台。 目标是让有才华的设计师不为凡事所操心， 得以安心创作设计出更多绝妙的作品， 实现设计师与客户之间最大化共赢！</p>
+                        <div class="yun-banner-support">
+                            <ul class="yun-banner-ul">
+                                <li><i></i><span>报价模板</span></li>
+                                <li><i></i><span>设计合同</span></li>
+                                <li><i></i><span>发票代开</span></li>
+                                <li><i></i><span>社保代缴</span></li>
+                                <li><i></i><span>免费办公位</span></li>
+                                <li class="yun-banner-lis">(目前仅支持杭州)</li>
+                            </ul>
+                        </div>
+                        <div class="yun-btn">
+                            <a href="#yunSuggess">全国免费征代理</a>
+                        </div>
+                    </div>
+                    <div class="yun-banner-b">
+                        <div class="yun-banner-l">
+                            <div class="yun-phone">
+                                <img src="yunimg/yunphone.png" alt="短信提示">
+                                <div class="yunGetMsgPhone yunGetMsgPub">
+                                    <p>尊敬的<span class="yunname">XX</span><span class="yunGender">先生</span>：</p>
+                                    <p>《***》项目报价已发送到您的邮箱<span class="yunemail">15346155@163.com</span>请注意查收！您也可以登录<a href="https://www.huakewang.com">画客网</a>查看详情!</p>
+                                </div>
+                                <div class="hide yunGetMsgEmail yunGetMsgPub">
+                                    <p>尊敬的<span class="yunname">XX</span><span class="yunGender">先生</span>：</p>
+                                    <p>您收到***设计师发送的《***》项目报价单，您可以登录画客网<a href="https://www.huakewang.com">(www.huakewang.com)，</a>进一步查看和管理项目！</p>
+                                </div>
+                            </div>
+                            <div class="yun-phone-select">
+                                <span class="yun-message1"><i class="yun-ms1">预览报价短信</i></span>
+                                <span class="yun-message2"><i class="yun-ms2">预览邮箱提醒</i></span>
+                            </div>
+                            <div class="yun-banner-middle">
+
+                            </div>
+                        </div>
+                        <div class="yun-banner-r">
+                            <h4>报价开始</h4>
+                            <span class="yun-arrow"></span>
+                            <form class="cmxform yun-step1-form signupFormPub" id="signupForm" autocomplete="off">
+                                <p class="alive">
+                                    <label for="username" class="pub">姓名:</label>
+                                    <input class="cookPub" id="username" name="username" type="text">
+                                    <span class="address yun-selectPerson">通讯录</span>
+                                </p>
+                                <p class="call">
+                                    <span>称谓:</span>
+                                    <label>
+                                    <input type="radio" name="gender" checked="checked">先生</label>
+                                    <label>
+                                    <input name="gender" type="radio">女士</label>
+                                </p>
+                                <br>
+                                <p class="alive">
+                                    <label for="companyName" class="pub">公司:</label>
+                                    <input class="cookPub" id="companyName" name="companyName" type="text">
+                                </p>
+                                <p class="alive">
+                                    <label for="phone" class="pub">手机:</label>
+                                    <input class="cookPub" id="phone" name="phone" type="text">
+                                </p>
+                                <p class="alive">
+                                    <label for="email" class="pub">邮箱:</label>
+                                    <input class="cookPub" id="email" name="email" type="text">
+                                </p>
+                                <label><a href="yunStep.html" id="userCheck"><input type="button" value="保存,下一步"></a></label>
+                            </form>
+                            <P class="old">已有<i>12364</i>人成功发送报价</P>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-body-center">
+                <div class="main-step">
+                    <h4>云报价使用流程</h4>
+                    <div class="main-step-list">
+                        <div class="main-step-pub main-step1">
+                            <a href="javascript:;">新建/选择客户</a>
+                            <p>创立客户档案</p>
+                            <p>开发新客户,维护老客户</p>
+                        </div>
+                        <div class="main-step-pub main-step2">
+                            <a href="javascript:;">选择报价模板</a>
+                            <p>看专业的公司是怎么报的</p>
+                            <p>学习专业化报价</p>
+                        </div>
+                        <div class="main-step-pub main-step3">
+                            <a href="javascript:;">确认报价并发送</a>
+                            <p>方案、合同等商务文件</p>
+                            <p>一键生成</p>
+                        </div>
+                        <div class="main-step-pub main-step4">
+                            <a href="javascript:;">客户快速付款</a>
+                            <p>通过邮件，微信，支付宝</p>
+                            <p>快速付款</p>
+                        </div>
+                        <div class="main-step-pub main-step5">
+                            <a href="javascript:;">进入项目管理</a>
+                            <p>专业化项目流程</p>
+                            <p>项目历史查询</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="yun-service">
+                    <h4>懂你所需&nbsp;&nbsp;&nbsp;&nbsp;做你所想</h4>
+                    <p class="target">画客网的目标: 解决你不擅长的那些商务事宜 你只需要把设计做好 其他的都交给画客网解决</p>
+                    <div class="yun-target-t">
+                        <ul>
+                            <li class="yun-target-lis1">
+                                <div class="yun-target-lis">
+                                    <h5>规范的项目流程</h5>
+                                    <p>按照设计行业标准的交易流程，帮助设计师轻松完成项目订单。</p>
+                                </div>
+                            </li>
+                            <li class="yun-target-lis2">
+                                <div class="yun-target-lis">
+                                    <h5>便捷的报价模板</h5>
+                                    <p>运用大数据制定不同行业的项目模板，同时也可生成自己的个性模板，填写报价表单有依可循、方便快捷。</p>
+                                </div>
+                            </li>
+                            <li class="yun-target-lis3">
+                                <div class="yun-target-lis">
+                                    <h5>庞大的数据参考</h5>
+                                    <p>画客网平台的大数据，为设计师提供价格和描述的参考，帮助设计师了解当下市场行情并快速完成报价单。</p>
+                                </div>
+                            </li>
+                            <li class="yun-target-lis4">
+                                <div class="yun-target-lis">
+                                    <h5>即时的项目动态</h5>
+                                    <p>项目动态及时提醒，方便双方快速了解和处理项目动态，促进项目顺利完成。</p>
+                                </div>
+                            </li>
+                            <li class="yun-target-lis5">
+                                <div class="yun-target-lis">
+                                    <h5>持续的法律保障</h5>
+                                    <p>清晰、明确的报价表单，为项目提供法律依据，解决项目返工和追尾款的后苦之忧。</p>
+                                </div>
+                            </li>
+                            <li class="yun-target-lis6">
+                                <div class="yun-target-lis">
+                                    <h5>低廉的创业成本</h5>
+                                    <p>云报价让设计师减少多余的管理成本，实现设计师利益最大化。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="yun-target-line"></div>
+                <div class="yun-thank" id="yunSuggess">
+                    <h4>感谢您的建议</h4>
+                    <p>感谢您为行业贡献宝贵的经验,一封邮件或许正是成就一个出色产品的开端。</p>
+                    <p>欢迎填写表格或发送邮件至： <a href="javascript:;">service@huakewang.com，</a>您也可以直接拨打热线：<a href="javascript:;">0571-86803103</a></p>
+                    <div class="yun-excel">
+                        <form>
+                            <div>
+                                <dt>您的姓名:</dt>
+                                <dd><label><input required type="username" id="user_name"></label><i class="yun-must"></i></dd>
+                                <dt class="yun-pub-dt">公司名称:</dt>
+                                <dd><label><input required type="text" id="company_name"></label><i></i></dd>
+                            </div>
+                            <div>
+                                <dt>您的邮箱:</dt>
+                                <dd><label><input required type="email" id="your_email"></label><i class="yun-must"></i></dd>
+                                <dt class="yun-pub-dt">联系电话:</dt>
+                                <dd><label><input required type="text" id="link_phone"></label><i></i></dd>
+                            </div>
+                            <div>
+                                <dt>公司网站:</dt>
+                                <dd><label><input type="text" id="company_net"></label></dd>
+                                <dt class="yun-pub-dt">所在城市:</dt>
+                                <dd><label><input type="text" id="current_city"></label></dd>
+                            </div>
+                            <div>
+                                <dt>所属行业:</dt>
+                                <dd id="yun-industry">
+                                    <label><input type="text" id="jobsName"></label>
+                                    <span class="yun-sp"></span>
+                                    <div class="yun-industry">
+                                        <ul>
+                                            <li>艺术绘画</li>
+                                            <li>品牌建设</li>
+                                            <li>互联网设计</li>
+                                            <li>产品设计</li>
+                                            <li>空间设计</li>
+                                            <li>虚拟现实</li>
+                                            <li>多媒体</li>
+                                            <li>程序开发</li>
+                                        </ul>
+                                    </div>
+                                </dd>
+                                <dt class="yun-pub-dt">期望开始时间:</dt>
+                                <dd>
+                                    <label>
+                                    <!--<input class="yun-last" type="text">-->
+                                    <!--日期插件-->
+                                    <p class="datep">
+                                        <input class="yun-last datainp numSave" id="dateinfo" type="text" placeholder="请选择" readonly>
+                                    </p>
+                                </label>
+                                </dd>
+                            </div>
+                            <div class="yun-area">
+                                <textarea name="hz" cols="150" rows="10" placeholder="合作需求：" id="text_area"></textarea>
+                            </div>
+                            <br>
+                            <label><input type="button" id="yun_end_and_send" value="完成并发送"></label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yun-wrapper" style="display: none;"></div>
+        <div class="yun-kehu" style="display: none;">
+            <h4>选择联系人</h4>
+            <div class="clearfix yun-kehuScroll">
+                <div>
+                    <dl id="yunLinkName" class="yun-person yunLinkName">
+                        <dt>联系人</dt>
+                    </dl>
+                    <script id="yunLinkNametmpl" type="text/x-dot-template">
+                        {{for(var i = 0;i
+                        < it.length;i++){}} <dd><input type="radio" name="user"><span>{{= it[i].yunLinkName}}</span></dd>
+                            {{}}}
+                    </script>
+                </div>
+                <div>
+                    <dl class="yunLinkPhone" id="yunLinkPhone">
+                        <dt>手机号</dt>
+                    </dl>
+                    <script id="yunLinkPhonetmpl" type="text/x-dot-template">
+                        {{for(var i = 0;i
+                        < it.length;i++){}} <dd><span>{{= it[i].yunLinkPhone}}</span></dd>
+                            {{ } }}
+                    </script>
+                </div>
+                <div>
+                    <dl class="yunLinkEmail" id="yunLinkEmail">
+                        <dt>邮箱</dt>
+                    </dl>
+                    <script id="yunLinkEmailtmpl" type="text/x-dot-template">
+                        {{for(var i = 0;i
+                        < it.length;i++){}} <dd><span>{{= it[i].yunLinkEmail}}</span></dd>
+                            {{ } }}
+                    </script>
+                </div>
+                <div>
+                    <dl class="yunLinkCompany" id="yunLinkCompany">
+                        <dt>企业名称</dt>
+                    </dl>
+                    <script id="yunLinkCompanytmpl" type="text/x-dot-template">
+                        {{for(var i = 0;i
+                        < it.length;i++){}} <dd>
+                            <span>{{= it[i].yunLinkCompany}}</span>
+                            </dd>
+                            {{ } }}
+                    </script>
+                </div>
+
+            </div>
+
+            <div class="yun-kehu-btn" id="yun-kehu-btn">
+                <input type="button" value="确定">
+            </div>
+        </div>
+        <!--主体部分结束-->
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+        <!--登录-->
+        <!--<div class="loginWrap"></div>-->
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="js/data/doT.js"></script>
+    <script type="text/javascript" src="js/plugs/jedate.js"></script>
+    <script type="text/javascript" src="js/yunPro/yun.js"></script>
+    <script type="text/javascript" src="js/yunPro/yun_validate.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script language="javascript">
+        $(function() {
+            $("#userCheck").click(function() {
+                $("#signupForm .cookPub").each(function() {
+                    setCookie($(this).attr("id"), $(this).val(), "d3");
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

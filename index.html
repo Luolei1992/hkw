@@ -1,0 +1,516 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="keywords" content="独立设计师,UI设计师,交互设计师,设计人才网,平面设计师,网页设计师,界面设计师,工业设计师,珠宝设计师,室内设计师,设计外包,网页设计外包,平面设计外包,设计师排行榜,中国设计师排行,中国设计师排行榜,中国知名设计师,中国知名平面设计师,中国知名珠宝设计师">
+    <meta name="description" content="画客网是一个帮助优秀设计师独立的工具型服务平台，13年设计公司背景,用经验为基石; 帮助设计师避开创业弯路，降低创业成本和风险，提高创作效率和服务质量...目标是让有才华的设计师大胆走出办公室，零距离接触市场和用户。解放脑力，开拓视野，全方位助力设计突破。从而提高中国设计创新整体硬实力； 实现设计师、用户、客户之间最大化共赢！ 汇集中国知名平面设计师、网页设计师、界面设计师、工业设计师、珠宝设计师、室内设计师团队,为您提供高端项目设计体验和中国设计师排行榜！">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        画客网，网画客；网罗天下设计英才-中国知名平面网页界面_室内工业珠宝独立设计师排行榜
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/client/dialog.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie=$.cookie('user_id');
+            if(_cookie==undefined||_cookie=="null"||_cookie==null||_cookie=="undefined"||_cookie==""){
+                $('#header').load('head.html');//加载导航
+                $('.footer_on').load('bottom.html');
+            }else{
+                $('#header').load('head_success.html');//加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display','none');
+            };
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: block;
+        }
+
+        #header div.yidenglu {
+            display: block;
+        }
+
+        div.ca-container.project-ca-container div.ca-item {
+            /*position: absolute;*/
+            height: 381px;
+        }
+
+        div.tclogin.cur {
+            display: block;
+        }
+
+        div.tclogin {
+            position: fixed;
+            float: left;
+            width: 100%;
+            z-index: 9999;
+            top: -50px;
+            height: 130%;
+            display: none;
+        }
+
+        div.tcloginBj {
+            opacity: 0.5;
+            background: #000;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            z-index: 9997;
+        }
+
+        div.tclogintc {
+            position: fixed;
+            z-index: 9999;
+            width: 440px;
+            left: 50%;
+            margin-left: -220px;
+            top: 150px;
+        }
+
+        #flexslider {
+            height: 536px;
+            overflow: hidden;
+        }
+
+        .iInspir-block:hover {
+            border: 1px solid red;
+        }
+        .hkw-work-h3 h3 ,.hkw-view h4 {
+            width:350px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            white-space: nowrap;
+        }
+        .hkw-work-bottom {
+            padding-right:6px;
+        }
+        #nav div.hkw-header-nav-search input.hkw-header-search-but {
+            margin-left:232px;
+        }
+        #nav div.hkw-header-nav-search input.hkw-header-search-input {
+            width: 268px;
+        }
+        .hkw-work-bottom img.hkw-bottom-per {
+            vertical-align: top;
+        }
+        .hkw-join-name {
+            font-size: 14px;
+            display: inline-block;
+            padding-left: -2px;
+            margin-top: 0px;
+            width: 120px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            white-space: nowrap;
+        }
+        .hkw-check-news a:hover{
+            color: #03a5ee;
+        }
+        #huakewangNewsItemList li{
+            max-width: 250px;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        #huakewangNewsItemList li:hover{
+            color: #03a5ee;
+            cursor: pointer;
+        }
+        .hkw-check-news li a{
+            font-weight: 500;
+        }
+        #proPrice {
+            height:128px;
+        }
+        .headnav4 a {
+            color: #fff;
+        }
+        .headnav4 .headnav4_1 {
+            -webkit-box-shadow: 0px 0px 10px #000;
+            -moz-box-shadow: 0px 0px 10px #000;
+            box-shadow: 0px 0px 10px #000;
+        }
+    </style>
+</head>
+
+<body>
+<div class="containers">
+    <!-- 头部 start -->
+    <div id="header"></div>
+    <!-- 头部 end -->
+    <!-- 广告 start -->
+    <div id="flexslider" class="flexslider">
+        <span class="flexslider-left"></span>
+        <span class="flexslider-right"></span>
+        <ul class="slides">
+            <li>
+                <img src="images/banner001.png"/>
+            </li>
+            <li>
+                <img src="images/banner1.jpg"/>
+            </li>
+            <li>
+                <img src="images/banner2.jpg"/>
+            </li>
+        </ul>
+    </div>
+    <div class="slides-cloud" style="width:1078px;height: 122px;position:relative;top: -122px;margin: 0 auto;">
+        <img style="display: block;margin: 0 auto;" src="images/slides-yun.png" alt="">
+    </div>
+    <div class="tclogin">
+        <div class="tclogintc"></div>
+        <div class="tcloginBj"></div>
+    </div>
+    <!-- 广告 end -->
+    <div class="city-bar">
+        <div class="city-barWrap">
+            <div class="drop-select">
+                <a href="javascript:void(0)" class="change-city">
+                    <i class="city-show">杭州</i>
+                    <i class="xltb"></i>
+                </a>
+                <ul class="drop-select-options huoqv fn-hide" style="">
+                    <li class="current"><a href="designer.html?lng=116.395645&lat=39.929986">北京</a></li>
+                    <li><a href="designer.html?lng=121.487899&lat=31.249162">上海</a></li>
+                    <li><a href="designer.html?lng=114.025974&lat=22.546054">深圳</a></li>
+                    <li><a href="designer.html?lng=120.219375&lat=30.259244">杭州</a></li>
+                    <li><a href="designer.html?lng=113.30765&lat=23.120049">广州</a></li>
+                </ul>
+            </div>
+
+            <div class="cityInput drop-select" style="width:200px; border-right: 1px solid #fff;">
+                <input type="text" placeholder=""/>
+                <ul class="headHistoryWrap drop-select-options fn-hide dz" style="background:#fff; margin-top:15px; width:200px">
+                    <li class="headHistoryAddress"><p>历史地址：</p></li>
+                </ul>
+
+            </div>
+            <a href="javascript:;" class="view-recently">
+                搜索附近
+            </a>
+        </div>
+        <div class="ditu" onClick="alertMapShow()">
+            <img src="images/mapclk.png"/>
+        </div>
+        <div style="clear:both;"></div>
+        <!--百度地图-->
+        <div class="mapWrap">
+            <div class="alertDom">
+                <span>提示:</span>
+                <i></i>
+                <p></p>
+                <a class="alertDomSure" href="javascript:void(0);">确定搜索</a>
+            </div>
+            <div class="mapWrapTop clearfix">
+                <div class="mapWrapTopLeft">
+                    <span class="currentCity">当前城市：</span>
+                    <span class="currentCityChange" id="cur_city_spn">杭州</span>
+                    <span class="changeCurrentCity">切换城市 <i></i></span>
+                </div>
+                <div class="mapWrapTopRight">
+                    <input type="text" class="baiduFindCity">
+                    <button class="citySearch">查询地址</button>
+                </div>
+                <div class="alertMapClose"></div>
+            </div>
+            <div id="allmap">
+
+            </div>
+            <div id="r-result">
+                <div id="result"></div>
+            </div>
+        </div>
+    </div>
+    <!-- box start -->
+    <div id="ca-container" class="ca-container">
+        <div class="ca-nav">
+            <span class="ca-nav-prev">Previous</span>
+            <span class="ca-nav-next">Next</span>
+        </div>
+        <div class="ca-wrapper" id="hkw-ca-wrapper" style="overflow:hidden;">
+            <div id="ca-item-wrap" class="ca-item-wrap">
+                <!-- box start -->
+                <!--设计师列表-->
+                <!-- box end -->
+            </div>
+
+        </div>
+    </div>
+    <!-- box end -->
+    <div class="hkw-btn_round">
+        <ul class="fn-clear" id="hkw-btn_round">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <div><a href="./designer.html">•••</a></div>
+    </div>
+    <h2 class="hkw-title-2 hkw-title-two">选择服务类目或关键词, 找到合适的设计师
+        <p style="font-size:22px; margin-top:20px; font-weight: 500;">BAT级别行业专家.平台包保障项目质量</p>
+    </h2>
+    <div class="container-main fn-clear">
+        <!-- box start -->
+        <ul class="hkw-box-1">
+            <li class="hkw-box-lis1">
+                <div>
+                    <span class="icon-img-1 icon-span"></span>
+                    <h5>艺术绘画</h5>
+                </div>
+                <a href="designer.html?p=插画" target="_blank">插画</a>,
+                <a href="designer.html?p=人设" target="_blank">人设</a>,
+                <a href="designer.html?p=漫画" target="_blank">漫画</a>,
+                <a href="designer.html?p=表情" target="_blank">表情</a>,
+                <a href="designer.html?p=墙绘" target="_blank">墙绘</a>,
+                <a href="designer.html?p=吉祥物" target="_blank">吉祥物</a>
+            </li>
+            <li>
+                <div>
+                    <span class="icon-img-2 icon-span"></span>
+                    <h5>品牌建设</h5>
+                </div>
+                <a href="designer.html?p=品牌档案" target="_blank">品牌档案</a>,
+                <a href="designer.html?p=名片/卡片" target="_blank">名片/卡片</a>,
+                <a href="designer.html?p=包装设计" target="_blank">包装设计</a>,
+                <a href="designer.html?p=易拉宝" target="_blank">易拉宝</a>,
+                <a href="designer.html?p=封面/画册" target="_blank">封面/画册</a>,
+                <a href="designer.html?p=导视" target="_blank">导视</a>,
+                <a href="designer.html?p=logo" target="_blank">logo</a>
+            </li>
+            <li>
+                <div>
+                    <span class="icon-img-3 icon-span"></span>
+                    <h5>互联网设计</h5>
+                </div>
+                <a href="designer.html?p=交互原型" target="_blank">交互原型</a>,
+                <a href="designer.html?p=界面设计" target="_blank">界面设计</a>,
+                <a href="designer.html?p=网页设计" target="_blank">网页设计</a>,
+                <a href="designer.html?p=专题/活动" target="_blank">专题/活动</a>,
+                <a href="designer.html?p=banner" target="_blank">banner</a>
+            </li>
+            <li>
+                <div><span class="icon-img-4 icon-span"></span>
+                    <h5>产品设计</h5></div>
+                <a href="designer.html?p=外观设计" target="_blank">外观设计</a>,
+                <a href="designer.html?p=结构设计" target="_blank">结构设计</a>,
+                <a href="designer.html?p=珠宝设计" target="_blank">珠宝设计</a>,
+                <a href="designer.html?p=工具设计" target="_blank">工具设计</a>
+            </li>
+            <li>
+                <div><span class="icon-img-5 icon-span"></span>
+                    <h5>空间设计</h5>
+                </div>
+                <a href="designer.html?p=软装设计" target="_blank">软装设计</a>,
+                <a href="designer.html?p=工装设计" target="_blank">工装设计</a>,
+                <a href="designer.html?p=家装设计" target="_blank">家装设计</a>,
+                <a href="designer.html?p=美陈设计" target="_blank">美陈设计</a>,
+                <a href="designer.html?p=专卖店设计" target="_blank">专卖店设计</a>
+            </li>
+            <li class="hkw-box-lis6">
+                <div>
+                    <span class="icon-img-6 icon-span"></span>
+                    <h5>虚拟现实</h5>
+                </div>
+                <a href="designer.html?p=建模、渲染" target="_blank">建模、渲染</a>,
+                <a href="designer.html?p=虚拟现实" target="_blank">虚拟现实</a>,
+                <a href="designer.html?p=三维特效" target="_blank">三维特效</a>,
+                <a href="designer.html?p=园林景观" target="_blank">园林景观</a>,
+                <a href="designer.html?p=雕塑设计" target="_blank">雕塑设计</a>,
+                <a href="designer.html?p=360/720全景" target="_blank">360/720全景</a>
+            </li>
+            <li>
+                <div>
+                    <span class="icon-img-7 icon-span"></span>
+                    <h5>多媒体</h5>
+                </div>
+                <a href="designer.html?p=影视后期" target="_blank">影视后期</a>,
+                <a href="designer.html?p=宣传片" target="_blank">宣传片</a>,
+                <a href="designer.html?p=微电影" target="_blank">微电影</a>,
+                <a href="designer.html?p=falsh" target="_blank">falsh</a>,
+                <a href="designer.html?p=摄影师" target="_blank">摄影师</a>,
+                <a href="designer.html?p=GIF" target="_blank">GIF</a>,
+                <a href="designer.html?p=配音" target="_blank">配音</a>
+            </li>
+            <li>
+                <div>
+                    <span class="icon-img-8 icon-span"></span>
+                    <h5>程序开发</h5>
+                </div>
+                <a href="designer.html?p=Android开发" target="_blank">Android开发</a>,
+                <a href="designer.html?p=IOS开发" target="_blank">IOS开发</a>,
+                <a href="designer.html?p=微信开发" target="_blank">微信开发</a>,
+                <a href="designer.html?p=企业建设" target="_blank">企业建设</a>,
+                <a href="designer.html?p=前端开发" target="_blank">前端开发</a>,
+                <a href="designer.html?p=后端开发" target="_blank">后端开发</a>,
+                <a href="designer.html?p=SEO" target="_blank">SEO</a>
+            </li>
+        </ul>
+        <!-- box end -->
+        <div class="hkw-btn-item fn-clear">
+            <div class="hkw-btn_1 fn-left" style="float:none;"><a href="selfpage.html" style="margin: 0 auto;">入驻画客网</a>
+            </div>
+            <!--<div class="hkw-btn_1 fn-right"><a href="allDistinguish.html">查看全部分类</a></div>-->
+        </div>
+        <div class="line"></div>
+        <!-- box start -->
+        <div class="container-main fn-clear">
+            <div class="hkw-work-list fn-clear">
+                <h2 class="hkw-title-7">作品推荐
+                    <p style="font-size:12px; margin-top:20px;font-weight:500">
+                        只有5%的申请人能通过我们的筛选。他们大多数年薪大于30w，并且有3年工作经验和8个真实落地的项目案例。
+                    <p style="text-align: center"><a style="font-size:12px;color:#1FB3F3;position: relative;top: 6px;font-weight:500;" href="works.html">查看全部>></a></p>
+
+                </h2>
+                <div class="hkw-work-link">
+                    <a href="javascript:void(0);" class="hkw-link-pub hkw_link_pub hkw_link_pubColor" data_val='hits'>首页推荐</a>
+                    <a href="javascript:void(0);" class="hkw-link-pub hkw_link_pub" data_val='add_time'>最新发布</a>
+                    <div class="hkw-link-pub">全部类别
+                        <i></i>
+                        <div class="hkw-work-select">
+                            <a href="works-list.html?tag=1">平面设计</a>
+                            <a href="works-list.html?tag=2">交互设计</a>
+                            <a href="works-list.html?tag=3">三维艺术</a>
+                            <a href="works-list.html?tag=4">网页设计</a>
+                            <a href="works-list.html?tag=5">艺术绘画</a>
+                            <a href="works-list.html?tag=6">工业设计</a>
+                            <a href="works-list.html?tag=7">动画/影视</a>
+                            <a href="works-list.html?tag=8">摄影艺术</a>
+                            <a href="works-list.html?tag=9">产品设计</a>
+                        </div>
+                    </div>
+                </div>
+                <ul id="indexWorkLis">
+                    <!--作品列表-->
+                </ul>
+            </div>
+
+            <h2 class="hkw-title-2" id="hkw-title-new">最新项目
+                <p style="font-size:12px; margin-top:20px;font-weight: 500;">
+                    已有数百个高质项目，涉及金额：5542万元，平均为每位已入驻设计师增加年收入10万！</p>
+            </h2>
+            <a href="project.html" class="find">发现更多>></a>
+            <div class="container-main fn-clear">
+                <div class="ca-container ba-container project-ca-container" id="project-ca-container">
+                    <div class="ca-wrapper project-ca-wrapper" id="caProWrap">
+                        <!--需求-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 合作伙伴 -->
+    <div class="boxWrap" style="background-color:#fff;display:none; margin-top:-77px;">
+        <div class="tabWrap clearfix" id="tabWrap">
+            <div class="company">
+                <h2 class="hkw-title-7">品牌企业</h2>
+                <div class="companyDif">
+                    <p class="companyTxt">行业分类 :</p>
+                    <ul class="companyLis" id="companyLis">
+                        <li id="" class="companyLisBg">全部</li>
+                        <!--行业分类-->
+                    </ul>
+                </div>
+                <div class="companyTime">
+                    <p class="companyJoin">合作时间 :</p>
+                    <ul class="companyLis" id="companyLisTime">
+                        <li class="companyLisBg">全部</li>
+                        <li>2004</li>
+                        <li>2005</li>
+                        <li>2006</li>
+                        <li>2007</li>
+                        <li>2008</li>
+                        <li>2009</li>
+                        <li>2010</li>
+                        <li>2011</li>
+                        <li>2012</li>
+                        <li>2013</li>
+                        <li>2014</li>
+                        <li>2015</li>
+                        <li>2016</li>
+                        <span class="companyOrder">排名不分先后</span>
+                    </ul>
+                </div>
+                <div class="companyLine"></div>
+                <div class="companyLogo clearfix logoShow">
+                    <div class="screen">
+                        <div class="companyLisWrap">
+                            <!--合作伙伴-->
+                        </div>
+                    </div>
+                </div>
+                <div class="companyArr">
+                    <div class="companyArrL"></div>
+                    <div class="companyArrR"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="hkw-check">-->
+        <!--<h2 class="hkw-title-2">数字验证了平台的可靠性-->
+            <!--<p style="font-size:12px; margin-top:20px;font-weight:500;">-->
+                <!--Meia汇聚IXDC多年积累的创意设计领域的海量资源,旨在打造最新、最全、最便捷的一站式学习平台。</p>-->
+        <!--</h2>-->
+        <!--<div class="hkw-number-wrap fn-clear">-->
+            <!--<div class="hkw-number-l hkw-number-pub fl">-->
+                <!--<p class="hkw-blue">顶级设计大师</p>-->
+                <!--<p class="hkw-large">1,603位</p>-->
+                <!--<p>16,000人申请,只有5%能通过我们的筛选</p>-->
+                <!--<p class="hkw-pub-p">层层筛选,集结真正的实力派</p>-->
+            <!--</div>-->
+            <!--<div class="hkw-number-m hkw-number-pub fl">-->
+                <!--<p class="hkw-blue">顶级设计大师</p>-->
+                <!--<p class="hkw-large">1,603位</p>-->
+                <!--<p>16,000人申请,只有5%能通过我们的筛选</p>-->
+                <!--<p class="hkw-pub-p">层层筛选,集结真正的实力派</p>-->
+            <!--</div>-->
+            <!--<div class="hkw-number-r hkw-number-pub fr">-->
+                <!--<p class="hkw-blue">顶级设计大师</p>-->
+                <!--<p class="hkw-large">1,603位</p>-->
+                <!--<p>16,000人申请,只有5%能通过我们的筛选</p>-->
+                <!--<p class="hkw-pub-p">层层筛选,集结真正的实力派</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="hkw-check-news fn-clear">
+            <a href="huakewangNews.html" target="_blank" class="fl">画客网新闻</a>
+            <ul id="huakewangNewsItemList">
+                <li>▪ UI风格是A/B testing 能解决的么?</li>
+                <li>▪ 用好MD你也可以做配色大人</li>
+                <li>▪ IXDC美国设计之旅————终于上了Google的无人车</li>
+            </ul>
+        </div>
+    </div>
+    <!-- 弹窗快速下单HTML start -->
+    <div id="loadServiceSimplePopUp"></div>
+    <!-- 弹窗快速下单HTML end -->
+    <!--底部开始-->
+    <div class="footer_on"></div>
+    <!--底部结束-->
+</div>
+<script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/data/pubXhr.js"></script>
+<script type="text/javascript" src="js/data/indexhr.js"></script>
+<script type="text/javascript" src="js/map/map.js"></script>
+
+<!-- 弹窗快速下单 -->
+<script type="text/javascript" src="js/personal/config.js"></script>
+<script type="text/javascript" src="js/personal/layer/layer.js"></script>
+<script type="text/javascript">
+    $('#loadServiceSimplePopUp').load('serviceSimplePopUp.html');
+</script>
+</body>
+</html>
+
+
+
+
+
+

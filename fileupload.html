@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<style>
+        .upload-btn {
+            width: 130px;
+            height: 25px;
+            overflow: hidden;
+            position: relative;
+            border: 3px solid #06c;
+            border-radius: 5px;
+            background: #0cf;
+
+        }
+        .upload-btn:hover {
+            background: #09f;
+        }
+        .upload-btn__txt {
+            z-index: 1;
+            position: relative;
+            color: #fff;
+            font-size: 18px;
+            font-family: "Helvetica Neue";
+            line-height: 24px;
+            text-align: center;
+            text-shadow: 0 1px 1px #000;
+        }
+        .upload-btn input {
+            top: -10px;
+            right: -40px;
+            z-index: 2;
+            position: absolute;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            font-size: 50px;
+        }
+    </style>-->
+    <style>
+        .upload-link {
+            color: #36c;
+            display: inline-block;
+            *zoom: 1;
+            *display: inline;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 2px;
+            text-decoration: none;
+        }
+        .upload-link__txt {
+            z-index: 1;
+            position: relative;
+            border-bottom: 1px dotted #36c;
+        }
+        .upload-link:hover .upload-link__txt {
+            color: #f00;
+            border-bottom-color: #f00;
+        }
+
+        .upload-link input {
+            top: -10px;
+            right: -40px;
+            z-index: 2;
+            position: absolute;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <!-- "js-fileapi-wrapper" -- required class -->
+    <div class="js-fileapi-wrapper upload-btn upload-link">
+
+
+        <!--,image/gif,application/msword" multiple />-->
+        <div id="images"><!--预览图片--></div>
+    </div>
+</div>
+<script>window.FileAPI = {
+    staticPath: '/js/fileApi/'
+};
+</script>
+<script src="FileAPI.mindel.js"></script>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+    var choose = $('#choose')[0];
+    var images = $("#images");
+    FileAPI.event.on(choose, 'change', function (file){   //evt 为点击的当前input
+        var files = FileAPI.getFiles(file); //获取文件列表
+        //设定上传格式
+//        var upLoadType = '.doc,.pdf,.png,.jpg';
+        var val = choose.value;
+        //从字符串中抽出最后一次出现.之后的字符（文件格式），并且转换成小写
+        var fileExt = val.substr(val.lastIndexOf(".")).toLowerCase();
+        //查找后缀名是否符合条件，如果符合返回 >= 0，如果不符合则返回负数;
+//        var result = upLoadType.indexOf(fileExt);
+//        if (result < 0) {
+//            alert("文件类型不符合要求");
+//            return false;
+
+//        };
+        FileAPI.filterFiles(files, function (file, info/**Object*/){
+//            file.type  文件类型
+            if( /^application/.test(file.type)){
+                return true;
+                images.append('<img src="images/saosao.png">');
+            }else if(/^image/.test(file.type)){
+                return true;
+                return	info.width >= 320 && info.height >= 240;
+            }else{
+                alert(1);
+                //图片大小不符合
+            };
+        }, function (files/**Array*/, rejected/**Array*/){
+            if( files.length ){
+                // 预览图片大小
+                FileAPI.each(files, function (file){
+                    FileAPI.Image(file).rotate(90).preview(200).get(function (err, img){
+                        images.append(img);
+                    });
+                });
+                // 上传文件
+                FileAPI.upload({
+                    url: 'http://139.224.68.145:10080//filesvr/uploadForFileAPI',    //上传地址
+                    files: { images: files },
+                    progress: function (evt){
+//                        alert("上传过程中");
+                    },complete: function (err, xhr){
+                        var upfileFilePath = (JSON.parse(xhr.responseText)).body.upfileFilePath;
+                        var url = 'http://139.224.68.145:10080' + upfileFilePath;
+
+//                        alert("上传结束");
+                        console.log(xhr.responseText)
+                    }
+
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
+
+<!--
+
+               if(fileExt==".doc") {
+images.append('<div class="uploadImgWrap"><img src="yunimg/uploadDoc.png" alt=""><i title="'+file.name+'" class="uploadImgExp">'+file.name+'</i><i class="uploadImgClose"></i></div>');
+}else if(fileExt==".pdf"){
+images.append('<div class="uploadImgWrap"><img src="yunimg/uploadPdf.png" alt=""><i title="'+file.name+'" class="uploadImgExp">'+file.name+'</i><i class="uploadImgClose"></i></div>');
+};-->

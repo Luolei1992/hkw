@@ -1,0 +1,862 @@
+<head>
+    <meta charset="UTF-8"/>
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/map.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $('.cityxiala .cityxiala-r i').click(function () {
+                $('.cityxiala div.cityxuanze').slideToggle();
+            });
+            $('.cityxiala div.cityxuanze ul.HotCity li').click(function () {
+                var str = $(this).text();
+                $('.cityxiala-z span.text ').text(str);
+                $('.cityxiala div.cityxuanze').slideToggle();
+            });
+            $('#r-result .close').click(function () {
+                $('.superbox').toggle();
+
+            });
+        });
+    </script>
+</head>
+
+
+<div class="order_map" style="display: block;">
+    <div id="r-result">
+        <div class="cityxiala">
+            <div class="cityxiala-l">
+                当前城市:
+            </div>
+            <div class="cityxiala-z">
+                <span class="text">杭州</span>
+            </div>
+            <div class="cityxiala-r">
+                切换城市:<i></i>
+            </div>
+            <div class="cityxuanze">
+                <ul class="HotCity" style="padding-bottom:10px;border-bottom:1px dashed #e9e9e9;	margin-top:20px;">
+                    <li class="li1"> 北京</li>
+                    <li> 上海</li>
+                    <li> 广州</li>
+                    <li> 深圳</li>
+                    <li> 杭州</li>
+                    <li> 南京</li>
+                    <li class="hangmo"> 重庆</li>
+                    <div style="clear:both;"></div>
+                </ul>
+
+                <ul class="HotCity" style="">
+                    <li class="li1"> 北京</li>
+                    <li> 长沙</li>
+                    <li> 长春</li>
+                    <li> 成都</li>
+                    <li> 大连</li>
+                    <li> 东莞</li>
+                    <li class="hangmo"> 佛山</li>
+                    <li> 福州</li>
+                    <li> 贵阳</li>
+                    <li> 合肥</li>
+                    <li> 金华</li>
+                    <li> 济南</li>
+                    <li> 嘉兴</li>
+                    <li class="hangmo"> 昆明</li>
+                    <li> 南昌</li>
+                    <li> 青岛</li>
+                    <li> 泉州</li>
+                    <li> 沈阳</li>
+                    <li> 南京</li>
+                    <li> 苏州</li>
+                    <li class="hangmo"> 天津</li>
+                    <li> 温州</li>
+                    <li>无锡</li>
+                    <li>武汉</li>
+                    <li>西安</li>
+                    <li>厦门</li>
+                    <li>郑州</li>
+                    <li class="hangmo">中山</li>
+                    <li>石家庄</li>
+
+                    <div style="clear:both;"></div>
+                </ul>
+            </div>
+        </div>
+        当前位置:
+        <input id="cityName" class="map_input" type="text" style="width:300px; margin-right:10px;">
+        <input type="button" onclick="theLocation()" value=" 查 询 ">
+        <div class="close">x</div>
+    </div>
+    <div class="map_box">
+        <div id="mapView" class="map_left">
+            <div style="font: 12px arial,simsun,sans-serif; border: 1px solid rgb(153, 153, 153);">
+                <div style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;">
+                    <ol style="list-style: outside none none; padding: 0px; margin: 0px;">
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="overflow: hidden; padding: 0px 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+<span style="color:#00c;">
+芳草地
+<b>酒店</b>
+</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=ea1b62610f56f3fbbe48422f&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+<span style="color:#666;display:block;zoom:1;overflow:hidden;">
+江干区彭埠镇云峰一区88号芳草地
+<b>酒店</b>
+内(塘工局路,运新路,运新花苑(三区)北面)
+</span>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">电话:</b>
+                                    <span style="color:#666;">(0571)86018777</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+<span style="color:#00c;">
+芳草地
+<b>酒店</b>
+</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=45a87a713a5aaffb583ac851&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">杭州市江干区运新路</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+                                    <span style="color:#00c;">杭州市人民政府机关幼儿园（运新园区）</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=408489eb978fec2c88db7365&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">运新花苑(二区)附近</span>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">电话:</b>
+                                    <span style="color:#666;">(0571)86804950</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+<span style="color:#00c;">
+运新社区法制
+<b>学校</b>
+</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=9cdaecdecedf791f631c671b&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">运新花苑一区6幢4-6</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+                                    <span style="color:#00c;">浙江老年电视大学江干分校运新社区教学点</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=c6c1ce0c2e2d0738c356ac0e&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">运新花苑一区6幢4-6</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+                                    <span style="color:#00c;">运新花苑南-公交车站</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=7f1fd7a89248c9b621022072&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">19路; 126路; 140路; 140路区间; 401路</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+                                    <span style="color:#00c;">昙花庵桥东-公交车站</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=fee3b4f34fef6055a8059d09&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">35路; 81路; 108路; 123路; 304路</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+                                    <span style="color:#00c;">运新花苑北-公交车站</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=21f072ef490898c375e5b6f5&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">19路; 1604路</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+                                    <span style="color:#00c;">运新花苑三区-公交车站</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=6b64bf5fdbe7352f8bf15d39&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">1604路</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+                                    <span style="color:#00c;">运新花苑-公交车站</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=9f7d1a9cf3edbce2843304d5&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">9路; 19路; 126路; 299路; 1604路</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+                                    <span style="color:#00c;">运新花苑一区</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=073f244ee873f55d88f15db7&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">三堡运河东路</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+                                    <span style="color:#00c;">运新花苑</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=01fc81b80fdce0397fc87673&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">浙江省京杭运河陈列馆向东200米御景路与运河东路十字路口的东北角</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+                                    <span style="color:#00c;">运新花苑(二区)</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=7770992f690584799a00502a&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">运河东路</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+                                    <span style="color:#00c;">三堡东苑</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=1bf85b25bcf225daa1a9342b&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">运新花苑一区3幢16临附近</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="margin: 2px 0px; padding: 0px 5px 5px 0px; cursor: pointer; overflow: hidden; line-height: 17px;">
+                            <span style="background:url(http://api.map.baidu.com/images/markers.png) -23px -275px no-repeat;width:19px;height:25px;cursor:pointer;float:left;*zoom:1;overflow:hidden;margin:2px 3px 0 5px;*margin-right:0px;display:inline;"> </span>
+                            <div style="zoom:1;overflow:hidden;padding:0 5px;">
+                                <div style="line-height:20px;font-size:12px;">
+                                    <span style="color:#00c;">运新花苑(三区)</span>
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=55cd3643882b14048bfc0633&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </div>
+                                <div style="padding:2px 0;line-height:18px;*zoom:1;overflow:hidden;">
+                                    <b style="float:left;font-weight:bold;*zoom:1;overflow:hidden;padding-right:5px;*margin-right:-3px;">地址:</b>
+                                    <span style="color:#666;display:block;zoom:1;overflow:hidden;">三堡船闸东运河东路</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div style="white-space: nowrap; text-align: right; background: rgb(229, 236, 249) none repeat scroll 0% 0%; margin-top: 5px; padding: 2px; overflow: hidden;">
+                    <div style="float: left; margin-right: 5px;">
+                        <p style="margin:0;padding:0;white-space:nowrap">
+                            <span style="margin-right:3px">1</span>
+<span>
+<a onclick="BMap.I('TANGRAM__32').toPage(2);" href="javascript:void(0)" style="color:#7777cc;margin-right:3px">[2]</a>
+</span>
+<span>
+<a onclick="BMap.I('TANGRAM__32').toPage(3);" href="javascript:void(0)" style="color:#7777cc;margin-right:3px">[3]</a>
+</span>
+<span>
+<a onclick="BMap.I('TANGRAM__32').toPage(2);" href="javascript:void(0)" style="color:#7777cc">下一页</a>
+</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map_right">
+            <a id="L_Show" class="btnOpen" href="javascript:void(0);" style="display:block;">展开</a>
+            <a id="L_Hide" class="btnCtn" href="javascript:void(0);" style="display:none;">收缩</a>
+        </div>
+    </div>
+    <div id="allmap"
+         style="overflow: hidden; position: relative; z-index: 0; background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); text-align: left;">
+        <div style="overflow: visible; position: absolute; z-index: 0; left: 950px; top: 96px; cursor: grab;">
+            <div class="BMap_mask"
+                 style="position: absolute; left: -950px; top: -96px; z-index: 9; overflow: hidden; width: 1000px; height: 449px;"></div>
+            <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;">
+                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 800;">
+                    <div class="BMap_pop"
+                         style="box-sizing: content-box; position: absolute; cursor: default; left: -562px; top: -86px; display: none;">
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 0px; width: 25px; height: 25px;">
+                            <div style="box-sizing:content-box;background:#fff;border-top:1px solid #ababab;border-left:1px solid #ababab;width:30px;height:30px;"></div>
+                        </div>
+                        <div class="BMap_top"
+                             style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 25px; top: 0px; width: 212px; height: 25px;"></div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 237px; top: 0px; width: 25px; height: 25px;">
+                            <div style="box-sizing:content-box;position:absolute;top:0;left:-6px;background:#fff;border-top:1px solid #ababab;border-right:1px solid #ababab;width:30px;height:30px;"></div>
+                        </div>
+                        <div class="BMap_center"
+                             style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 25px; width: 260px; height: 91px;"></div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 116px; width: 25px; height: 25px;">
+                            <div style="box-sizing:content-box;position:absolute;top:-6px;left:0;background:#fff;border-bottom:1px solid #ababab;border-left:1px solid #ababab;width:30px;height:30px;"></div>
+                        </div>
+                        <div class="BMap_bottom"
+                             style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 25px; top: 116px; width: 212px; height: 24px;"></div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 237px; top: 116px; width: 25px; height: 25px;">
+                            <div style="box-sizing:content-box;position:absolute;top:-6px;left:-6px;background:#fff;border-right:1px solid #ababab;border-bottom:1px solid #ababab;width:30px;height:30px;"></div>
+                        </div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 114px; top: 116px; width: 34px; height: 50px;">
+                            <img src="http://api0.map.bdimg.com/images/iw3.png"
+                                 style="box-sizing:content-box;border:none;margin:0px;padding:0px;margin-left:-186px;margin-top:-691px;max-width:none; width:690px;height:786px;">
+                        </div>
+                        <div style="box-sizing: content-box; width: 230px; height: 109px; position: absolute; left: 16px; top: 16px; z-index: 10; overflow: hidden;">
+                            <div class="BMap_bubble_title"
+                                 style="overflow: hidden; height: auto; line-height: 24px; white-space: nowrap; width: auto;">
+                                <p title="芳草地酒店"
+                                   style="width:210px;font:bold 14px/16px arial,simsun,sans-serif;margin:0;color:#cc5522;white-space:nowrap;overflow:hidden">
+                                    芳草地酒店
+                                    <a style="margin-left:5px;font-size:12px;color:#3d6dcc;font-weight:normal;text-decoration:none;"
+                                       href="http://api.map.baidu.com/place/detail?uid=ea1b62610f56f3fbbe48422f&output=html&source=jsapi"
+                                       target="_blank">详情»</a>
+                                </p>
+                            </div>
+                            <div class="BMap_bubble_content" style="width: auto; height: auto;">
+                                <div style="font:12px arial,simsun,sans-serif;margin-top:10px">
+                                    <table cellspacing="0"
+                                           style="overflow:hidden;table-layout:fixed;width:100%;font:12px arial,simsun,sans-serif">
+                                        <tbody>
+                                        <tr>
+                                            <td style="vertical-align:top;width:38px;white-space:nowrap;word-break:keep-all">
+                                                地址：
+                                            </td>
+                                            <td style="line-height:16px">江干区彭埠镇云峰一区88号芳草地酒店内(塘工局路,运新路,运新花苑(三区)北面)</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align:top;">电话：</td>
+                                            <td>(0571)86018777</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="BMap_bubble_max_content" style="display:none;position:relative"></div>
+                        </div>
+                        <img src="http://api0.map.bdimg.com/images/iw_close1d3.gif"
+                             style="position: absolute; top: 12px; width: 10px; height: 10px; -moz-user-select: none; cursor: pointer; z-index: 10000; left: 237px;">
+                        <img title="进入全景" src="http://api0.map.bdimg.com/images/quanjing.png"
+                             style="position:absolute;top:12px;width:10px;height:10px;-moz-user-select:none;cursor:pointer;z-index:10000;display:none">
+                        <img title="发送到手机" src="http://api0.map.bdimg.com/images/phone.png"
+                             style="position:absolute;top:10px;width:9px;height:14px;-moz-user-select:none;cursor:pointer;z-index:10000;display:none;">
+                        <img src="http://api0.map.bdimg.com/images/iw_plus1d3.gif"
+                             style="position: absolute; top: 12px; width: 10px; height: 10px; -moz-user-select: none; cursor: pointer; z-index: 10000; display: none; left: 217px;">
+                        <div style="position: absolute; top: 0px; left: 0px; -moz-user-select: none; z-index: 10000; width: 262px;"></div>
+                    </div>
+                </div>
+                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 700;">
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;left: -457px; top: 79px; z-index: 19000000;" unselectable="on" title="芳草地酒店"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -429px; top: 28px; z-index: -6056208;"unselectable="on" title="芳草地酒店"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -406px; top: 182px; z-index: -6055728;" unselectable="on"
+                    title="杭州市人民政府机关幼儿园（运新园区）"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -478px; top: 217px; z-index: -6055620;" unselectable="on" title="运新社区法制学校"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -478px; top: 216px; z-index: -6055622;" unselectable="on" title="浙江老年电视大学江干分校运新社区教学点"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -301px; top: 210px; z-index: -6055642;" unselectable="on" title="运新花苑南"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -617px; top: 52px; z-index: -6056134;" unselectable="on" title="昙花庵桥东"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -550px; top: 156px; z-index: -6055810;" unselectable="on" title="运新花苑北"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -396px; top: 92px; z-index: -6056010;" unselectable="on" title="运新花苑三区"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -551px; top: 281px; z-index: -6055422;" unselectable="on" title="运新花苑"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -541px; top: 239px; z-index: -6055550;" unselectable="on" title="运新花苑一区"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -452px; top: 192px; z-index: -6055698;" unselectable="on" title="运新花苑"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -367px; top: 130px; z-index: -6055890;" unselectable="on" title="运新花苑(二区)"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -569px; top: 279px; z-index: -6055426;" unselectable="on" title="三堡东苑"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 23px; height: 25px;
+                    left: -382px; top: 89px; z-index: -6056018;" unselectable="on" title="运新花苑(三区)"></span>
+                    <span class="BMap_Marker BMap_noprint"
+                          style="position: absolute; padding: 0px; margin: 0px; border: 0px none; -moz-user-select: none; cursor: pointer; background: transparent url('http://api0.map.bdimg.com/images/blank.gif') repeat scroll 0% 0%; width: 18px; height: 18px;
+                    left: -372px; top: 113px; z-index: 19000000; display: none;" unselectable="on" title=""></span>
+                </div>
+                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 600;">
+                    <div class="BMap_shadow" type="infowindow_shadow"
+                         style="position: absolute; left: -584px; top: -15px; display: none;">
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 63px; top: 0px; width: 70px; height: 30px;">
+                            <img src="http://api0.map.bdimg.com/images/iws3.png"
+                                 style="margin-left: -323px; margin-top: 0px;" onmousedown="return false">
+                        </div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 133px; top: 0px; width: 173px; height: 30px;">
+                            <img src="http://api0.map.bdimg.com/images/iws3.png"
+                                 style="margin-left: -393px; margin-top: 0px;" onmousedown="return false">
+                        </div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 306px; top: 0px; width: 70px; height: 30px;">
+                            <img src="http://api0.map.bdimg.com/images/iws3.png"
+                                 style="margin-left: -1033px; margin-top: 0px;" onmousedown="return false">
+                        </div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 29px; top: 30px; width: 104px; height: 34px;">
+                            <img src="http://api0.map.bdimg.com/images/iws3.png"
+                                 style="margin-top: -30px; margin-left: -289px;" onmousedown="return false">
+                        </div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 133px; top: 30px; width: 168px; height: 34px;">
+                            <img src="http://api0.map.bdimg.com/images/iws3.png"
+                                 style="margin-left: -360px; margin-top: -30px;" onmousedown="return false">
+                        </div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 301px; top: 30px; width: 104px; height: 34px;">
+                            <img src="http://api0.map.bdimg.com/images/iws3.png"
+                                 style="margin-top: -30px; margin-left: -1029px;" onmousedown="return false">
+                        </div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 64px; width: 50px; height: 60px;">
+                            <img src="http://api0.map.bdimg.com/images/iws3.png"
+                                 style="margin-left: -14px; margin-top: -310px;" onmousedown="return false">
+                        </div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 50px; top: 64px; width: 16px; height: 60px;">
+                            <img src="http://api0.map.bdimg.com/images/iws3.png"
+                                 style="margin-left: -255px; margin-top: -310px;" onmousedown="return false">
+                        </div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 66px; top: 64px; width: 140px; height: 60px;">
+                            <img src="http://api0.map.bdimg.com/images/iws3.png"
+                                 style="margin-left: -440px; margin-top: -310px;" onmousedown="return false">
+                        </div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 206px; top: 64px; width: 66px; height: 60px;">
+                            <img src="http://api0.map.bdimg.com/images/iws3.png"
+                                 style="margin-left: -255px; margin-top: -310px;" onmousedown="return false">
+                        </div>
+                        <div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 272px; top: 64px; width: 70px; height: 60px;">
+                            <img src="http://api0.map.bdimg.com/images/iws3.png"
+                                 style="margin-left: -754px; margin-top: -310px;" onmousedown="return false">
+                        </div>
+                    </div>
+                </div>
+                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 500;">
+                    <label class="BMapLabel" unselectable="on"
+                           style="position: absolute; -moz-user-select: none; display: none; cursor: inherit; background-color: rgb(190, 190, 190); border: 1px solid rgb(190, 190, 190); padding: 1px; white-space: nowrap; font: 12px arial,simsun,sans-serif; z-index: -20000; color: rgb(190, 190, 190);">shadow</label>
+                    <label class="BMapLabel" unselectable="on"
+                           style="position: absolute; -moz-user-select: none; cursor: inherit; background-color: rgb(255, 255, 225); border: 1px solid rgb(140, 140, 140); padding: 1px; white-space: nowrap; font: 12px arial,simsun,sans-serif; z-index: -6055906; color: rgb(77, 77, 77); left: -302px; top: 150px; display: none;">点击可查看详情</label>
+                </div>
+                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 400;">
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -457px; top: 79px; z-index: 19000000;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -429px; top: 28px; z-index: -6056208;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -406px; top: 182px; z-index: -6055728;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -478px; top: 217px; z-index: -6055620;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -478px; top: 216px; z-index: -6055622;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -301px; top: 210px; z-index: -6055642;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -617px; top: 52px; z-index: -6056134;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -550px; top: 156px; z-index: -6055810;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -396px; top: 92px; z-index: -6056010;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -551px; top: 281px; z-index: -6055422;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -541px; top: 239px; z-index: -6055550;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -452px; top: 192px; z-index: -6055698;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -367px; top: 130px; z-index: -6055890;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -569px; top: 279px; z-index: -6055426;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -382px; top: 89px; z-index: -6056018;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 23px; height: 25px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:0px; margin-top:-300px; "
+     src="http://api0.map.bdimg.com/images/markers.png">
+</div>
+</span>
+<span class="BMap_Marker"
+      style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 0px; height: 0px; -moz-user-select: none; left: -372px; top: 113px; z-index: 19000000; display: none;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 18px; height: 18px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-178px; margin-top:-352px; "
+     src="http://api0.map.bdimg.com/images/spotmkrs.png">
+</div>
+</span>
+                </div>
+                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 300;">
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -454px; top: 93px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -426px; top: 42px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -403px; top: 196px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -475px; top: 231px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -475px; top: 230px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -298px; top: 224px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -614px; top: 66px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -547px; top: 170px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -393px; top: 106px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -548px; top: 295px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -538px; top: 253px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -449px; top: 206px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -364px; top: 144px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -566px; top: 293px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+<span style="position: absolute; padding: 0px; margin: 0px; border: 0px none; width: 20px; height: 11px; -moz-user-select: none; left: -379px; top: 103px;"
+      unselectable="on">
+<div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;">
+<img style="display: block; border:none;margin-left:-19px; margin-top:-13px; "
+     src="http://api0.map.bdimg.com/images/marker_red_sprite.png">
+</div>
+</span>
+                </div>
+                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 201;"></div>
+                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"></div>
+            </div>
+            <div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 1;">
+                <div style="position: absolute; overflow: visible; z-index: -100; left: -450px; top: 129px; display: block;">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -33px; top: -59px; max-width: none; opacity: 1;"
+                         src="http://online1.map.bdimg.com/tile/?qt=tile&x=26141&y=6870&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -289px; top: -59px; max-width: none; opacity: 1;"
+                         src="http://online0.map.bdimg.com/tile/?qt=tile&x=26140&y=6870&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: 223px; top: -59px; max-width: none; opacity: 1;"
+                         src="http://online2.map.bdimg.com/tile/?qt=tile&x=26142&y=6870&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -33px; top: 197px; max-width: none; opacity: 1;"
+                         src="http://online0.map.bdimg.com/tile/?qt=tile&x=26141&y=6869&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -33px; top: -315px; max-width: none; opacity: 1;"
+                         src="http://online2.map.bdimg.com/tile/?qt=tile&x=26141&y=6871&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -545px; top: -59px; max-width: none; opacity: 1;"
+                         src="http://online4.map.bdimg.com/tile/?qt=tile&x=26139&y=6870&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: 479px; top: -59px; max-width: none; opacity: 1;"
+                         src="http://online3.map.bdimg.com/tile/?qt=tile&x=26143&y=6870&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -289px; top: 197px; max-width: none; opacity: 1;"
+                         src="http://online4.map.bdimg.com/tile/?qt=tile&x=26140&y=6869&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -289px; top: -315px; max-width: none; opacity: 1;"
+                         src="http://online1.map.bdimg.com/tile/?qt=tile&x=26140&y=6871&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: 223px; top: 197px; max-width: none; opacity: 1;"
+                         src="http://online1.map.bdimg.com/tile/?qt=tile&x=26142&y=6869&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: 223px; top: -315px; max-width: none; opacity: 1;"
+                         src="http://online3.map.bdimg.com/tile/?qt=tile&x=26142&y=6871&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -545px; top: 197px; max-width: none; opacity: 1;"
+                         src="http://online3.map.bdimg.com/tile/?qt=tile&x=26139&y=6869&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: -545px; top: -315px; max-width: none; opacity: 1;"
+                         src="http://online0.map.bdimg.com/tile/?qt=tile&x=26139&y=6871&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: 479px; top: 197px; max-width: none; opacity: 1;"
+                         src="http://online2.map.bdimg.com/tile/?qt=tile&x=26143&y=6869&z=17&styles=pl&scaler=1&udt=20150528">
+                    <img style="-moz-user-select: none; position: absolute; border: medium none; width: 256px; height: 256px; left: 479px; top: -315px; max-width: none; opacity: 1;"
+                         src="http://online4.map.bdimg.com/tile/?qt=tile&x=26143&y=6871&z=17&styles=pl&scaler=1&udt=20150528">
+                </div>
+            </div>
+            <div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 2; display: none;">
+                <div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 0; display: none;"></div>
+            </div>
+            <div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 3;"></div>
+        </div>
+        <div class="pano_close" style="z-index: 1201; display: none;" title="退出全景"></div>
+        <a class="pano_pc_indoor_exit" style="z-index: 1201; display: none;" title="退出室内景">
+            <span style="float:right;margin-right:12px;">出口</span>
+        </a>
+        <div class=" anchorBL"
+             style="height: 32px; position: absolute; z-index: 30; -moz-user-select: none; bottom: 0px; right: auto; top: auto; left: 1px;">
+            <a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: medium none;">
+                <img src="http://api0.map.bdimg.com/images/copyright_logo.png"
+                     style="border:none;width:77px;height:32px">
+            </a>
+        </div>
+        <div id="zoomer"
+             style="position:absolute;z-index:0;top:0px;left:0px;overflow:hidden;visibility:hidden;cursor:-moz-grab">
+            <div class="BMap_zoomer" style="top:0;left:0;"></div>
+            <div class="BMap_zoomer" style="top:0;right:0;"></div>
+            <div class="BMap_zoomer" style="bottom:0;left:0;"></div>
+            <div class="BMap_zoomer" style="bottom:0;right:0;"></div>
+        </div>
+        <div class=" BMap_cpyCtrl BMap_noprint anchorBL" unselectable="on"
+             style="cursor: default; white-space: nowrap; -moz-user-select: none; color: black; background: transparent none repeat scroll 0% 0%; font: 11px/15px arial,simsun,sans-serif; bottom: 2px; right: auto; top: auto; left: 81px; position: absolute; z-index: 10;">
+<span _cid="1" style="display: inline;">
+<span style="font-size:11px">
+© 2015 Baidu - Data ©
+<a style="display:inline;" href="http://www.navinfo.com/" target="_blank">NavInfo</a>
+&
+<a style="display:inline;" href="http://www.cennavi.com.cn/" target="_blank">CenNavi</a>
+&
+<a style="display:inline;" href="http://www.365ditu.com/" target="_blank">道道通</a>
+</span>
+</span>
+        </div>
+    </div>
+</div>
+
+

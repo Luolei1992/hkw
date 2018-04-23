@@ -1,0 +1,12 @@
+# robots.txt to https://www.huakewang.com/
+User-agent: *
+Disallow:
+Disallow: /PIE/                       //文件夹
+Disallow: /selfpagecss/               //文件夹
+Disallow: /css/                       //文件夹
+Disallow: /image/                     //文件夹
+Disallow: /yunimg/                    //文件夹
+Disallow: .jpeg$
+Disallow: .gif$
+Disallow: .bmp$
+Sitemap:https://www.huakewang.com/sitemap.xml

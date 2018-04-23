@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>画客网</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/detailedcss.css">
+    <link rel="stylesheet" href="css/unverified.css">
+    <link rel="stylesheet" href="css/star-rating-svg.css">
+</head>
+<style>
+    #nav a.but-dl {
+        display: none;
+    }
+</style>
+
+<body>
+    <!-- 头部 start -->
+    <div id="header" class="header-neiye"></div>
+    <div class="header">
+        <div class="header-container">
+            <div class="intro-left">
+                <ul>
+                    <li>
+                        <p>31</p>
+                        <p>评论</p>
+                        <p onselectstart="return false"><a href="#messageAnchor">留言</a></p>
+                    </li>
+                    <li>
+                        <p>4</p>
+                        <p>粉丝</p>
+                        <p onselectstart="return false" id="followIcon">关注</p>
+                    </li>
+                    <li>
+                        <p>30</p>
+                        <p>得票</p>
+                        <p onselectstart="return false" class="unverified-icon">投一票</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="p-img" id="p-img">
+                <img class="img-touxiang" src="images/touxiang.png" id="img-touxiang">
+                <p class="name">Miazhang</p>
+                <!-- <p class="text">"为珠宝设计而生"</p> -->
+                <p class="unverified-touxiang"><i class="hkfont">&#xe632;</i>未认证设计师</p>
+                <!-- <p class="min-text">女  /  8年  / 杭州市-滨江区</p> -->
+                <!-- <div class="intro-more" id="intro-more">
+					<ul class="testify clearfix">
+						<li>
+							<i>身份认证</i>
+							<i class="hkfont">&#xe639;</i>
+						</li>
+						<li>
+							<i>手机绑定</i>
+							<i class="hkfont">&#xe609;</i>
+						</li>
+						<li>
+							<i>学历认证</i>
+							<i class="hkfont">&#xe637;</i>
+						</li>
+						<li>
+							<i>学历认证</i>
+							<i class="hkfont">&#xe60e;</i>
+						</li>
+					</ul>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br>Explicabo quasi, illum fugiat facilis aut vero pariatur accusamus laboriosam voluptatem quam aliquam quos, <br>reiciendis eaque inventore excepturi corporis magni ut necessitatibus.</p>
+					<p class="intro-more-bottom" id="intro-more-bottom" style="cursor: pointer;">
+						<i class="hkfont">&#xe650;</i>
+					</p>
+				</div> -->
+            </div>
+            <div class="intro-left">
+                <ul>
+                    <li>
+                        <p>31</p>
+                        <p>作品</p>
+                        <p onselectstart="return false">对话</p>
+                    </li>
+                    <li>
+                        <p>0</p>
+                        <p>见过</p>
+                        <p onselectstart="return false" class="unverified-icon">约见</p>
+                    </li>
+                    <li>
+                        <p>5.0</p>
+                        <p>信用度</p>
+                        <p onselectstart="return false" class="unverified-icon">发需求</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="context">
+        <ul class="tab clearfix">
+            <li><i class="icon hkfont">&#xe61b;</i>主页</li>
+            <li>案例展示(12)</li>
+            <li>有偿服务(12)</li>
+            <li>喜欢的作品</li>
+            <li>喜欢的设计师</li>
+        </ul>
+        <div class="wrap-list">
+            <div class="un-404">
+                <img src="images/unverified.png" alt="">
+                <span class="un-404-text">TA还不是认证设计师！ / TA还没有喜欢的作品/设计师</span>
+            </div>
+        </div>
+        <div class="wrap-list">
+            <div class="un-404">
+                <img src="images/unverified.png" alt="">
+                <span class="un-404-text">TA还不是认证设计师！ / TA还没有喜欢的作品/设计师</span>
+            </div>
+        </div>
+        <div class="wrap-list">
+            <div class="un-404">
+                <img src="images/unverified.png" alt="">
+                <span class="un-404-text">TA还不是认证设计师！ / TA还没有喜欢的作品/设计师</span>
+            </div>
+        </div>
+        <div class="wrap-list">
+            <div class="hkw-work-list fn-clear pbl" style="">
+                <ul class="pblUl">
+                    <li>
+                        <div class="iInspir-block"></div>
+                        <div class="hkw-work-img thumb-a h_a">
+                            <a href="introduction.html" target=_blank><img class="delay maxImgWidth" src="images/18.jpg" style="" /></a>
+                            <div class="caption fn-hide">
+                                <h4>
+                                    东方红
+                                    <a href="#" class="sc">
+                                        收藏
+                                    </a>
+                                </h4>
+                                <p>独特木纹纹理设计，贴近自然，更加符合自然纹理设计</p>
+                            </div>
+                        </div>
+                        <div class="hkw-work-bottom">
+                            <a href="detailed.html" target=_blank><img src="images/pho1.png" width="16" height="16" /> 极影设计
+                            </a>
+                            <div class="hkw-work-bar fn-right">
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-join-icon">
+										</span> 259
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-comment-icon">
+										</span> 0
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-collection-icon">
+										</span> 0
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="iInspir-block"></div>
+                        <div class="hkw-work-img thumb-a h_a">
+                            <a href="introduction.html" target=_blank><img class="delay maxImgWidth" src="images/pho2.png" style="" /></a>
+                            <div class="caption fn-hide">
+                                <h4>
+                                    东方红
+                                    <a href="#" class="sc">
+                                        收藏
+                                    </a>
+                                </h4>
+                                <p>独特木纹纹理设计，贴近自然，更加符合自然纹理设计</p>
+                            </div>
+                        </div>
+                        <div class="hkw-work-bottom">
+                            <a href="detailed.html" target=_blank><img src="images/pho1.png" width="16" height="16" /> 极影设计
+                            </a>
+                            <div class="hkw-work-bar fn-right">
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-join-icon">
+										</span> 259
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-comment-icon">
+										</span> 0
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-collection-icon">
+										</span> 0
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="iInspir-block"></div>
+                        <div class="hkw-work-img thumb-a h_a">
+                            <a href="introduction.html" target=_blank><img class="delay maxImgWidth" src="images/21.jpg" style="" /></a>
+                            <div class="caption fn-hide">
+                                <h4>
+                                    东方红
+                                    <a href="#" class="sc">
+                                        收藏
+                                    </a>
+                                </h4>
+                                <p>独特木纹纹理设计，贴近自然，更加符合自然纹理设计</p>
+                            </div>
+                        </div>
+                        <div class="hkw-work-bottom">
+                            <a href="detailed.html" target=_blank><img src="images/pho1.png" width="16" height="16" /> 极影设计
+                            </a>
+                            <div class="hkw-work-bar fn-right">
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-join-icon">
+										</span> 259
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-comment-icon">
+										</span> 0
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-collection-icon">
+										</span> 0
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="iInspir-block"></div>
+                        <div class="hkw-work-img thumb-a h_a">
+                            <a href="introduction.html" target=_blank><img class="delay maxImgWidth" src="images/11.jpg" style="" /></a>
+                            <div class="caption fn-hide">
+                                <h4>
+                                    东方红
+                                    <a href="#" class="sc">
+                                        收藏
+                                    </a>
+                                </h4>
+                                <p>独特木纹纹理设计，贴近自然，更加符合自然纹理设计</p>
+                            </div>
+                        </div>
+                        <div class="hkw-work-bottom">
+                            <a href="detailed.html" target=_blank><img src="images/pho1.png" width="16" height="16" /> 极影设计
+                            </a>
+                            <div class="hkw-work-bar fn-right">
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-join-icon">
+										</span> 259
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-comment-icon">
+										</span> 0
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-collection-icon">
+										</span> 0
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="iInspir-block"></div>
+                        <div class="hkw-work-img thumb-a h_a">
+                            <a href="introduction.html" target=_blank><img class="delay maxImgWidth" src="images/14.jpg" style="" /></a>
+                            <div class="caption fn-hide">
+                                <h4>
+                                    东方红
+                                    <a href="#" class="sc">
+                                        收藏
+                                    </a>
+                                </h4>
+                                <p>独特木纹纹理设计，贴近自然，更加符合自然纹理设计</p>
+                            </div>
+                        </div>
+                        <div class="hkw-work-bottom">
+                            <a href="detailed.html" target=_blank><img src="images/pho1.png" width="16" height="16" /> 极影设计
+                            </a>
+                            <div class="hkw-work-bar fn-right">
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-join-icon">
+										</span> 259
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-comment-icon">
+										</span> 0
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-collection-icon">
+										</span> 0
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="iInspir-block"></div>
+                        <div class="hkw-work-img thumb-a h_a">
+                            <a href="introduction.html" target=_blank><img class="delay maxImgWidth" src="images/11.jpg" style="" /></a>
+                            <div class="caption fn-hide">
+                                <h4>
+                                    东方红
+                                    <a href="#" class="sc">
+                                        收藏
+                                    </a>
+                                </h4>
+                                <p>独特木纹纹理设计，贴近自然，更加符合自然纹理设计</p>
+                            </div>
+                        </div>
+                        <div class="hkw-work-bottom">
+                            <a href="detailed.html" target=_blank><img src="images/pho1.png" width="16" height="16" /> 极影设计
+                            </a>
+                            <div class="hkw-work-bar fn-right">
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-join-icon">
+										</span> 259
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-comment-icon">
+										</span> 0
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-collection-icon">
+										</span> 0
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="iInspir-block"></div>
+                        <div class="hkw-work-img thumb-a h_a">
+                            <a href="introduction.html" target=_blank><img class="delay maxImgWidth" src="images/pr1.jpg" style="" /></a>
+                            <div class="caption fn-hide">
+                                <h4>
+                                    东方红
+                                    <a href="#" class="sc">
+                                        收藏
+                                    </a>
+                                </h4>
+                                <p>独特木纹纹理设计，贴近自然，更加符合自然纹理设计</p>
+                            </div>
+                        </div>
+                        <div class="hkw-work-bottom">
+                            <a href="detailed.html" target=_blank><img src="images/pho1.png" width="16" height="16" /> 极影设计
+                            </a>
+                            <div class="hkw-work-bar fn-right">
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-join-icon">
+										</span> 259
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-comment-icon">
+										</span> 0
+                                </div>
+                                <div class="hkw-work-bar-item">
+                                    <span class="hkw-collection-icon">
+										</span> 0
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap-list clearfix">
+            <div id="ca-container" class="ca-container designer-ca-container">
+                <div class="ca-wrapper">
+                    <!-- box start -->
+                    <div class="ca-item ca-item-select ca-item-1" id="1">
+                        <div class="ca-item-main">
+                            <div class="ca-item-photo">
+                                <a href="detailed.html" target=_blank><img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231131956609839.png!138x138" /></a>
+                            </div>
+                            <h3>
+                                设计师
+                            </h3>
+                            <p>
+                                Miazhang<span class="shugang">|</span>女<span class="shugang">|</span>10年经验<span class="shugang">|</span>20 件作品
+                            </p>
+                            <p>
+                                <span class="imgGZ1"></span><i class="text">3087</i>
+                                <span class="imgGZ2"></span><i class="text">123</i>
+                                <span class="imgGZ3"></span><i class="text">2</i>
+                            </p>
+                            <div class="ca-info">
+                                <div class="ca-star">
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span> &nbsp;&nbsp;&nbsp;&nbsp;5.0
+                                </div>
+                                <div class="ca-location">
+                                    <span class="ca-location-icon">
+											</span> 杭州市&nbsp;&nbsp;-&nbsp;&nbsp;滨江区
+                                </div>
+                            </div>
+                            <div class="ca-main">
+                                <div class="ca-inntro">
+                                    <span class="sp1-bk">APP</span>
+                                    <span class="sp1-bk">UI</span>
+                                    <span class="sp1-bk">极简主义</span>
+                                    <span class="sp1-bk">UE</span>
+                                    <span class="sp1-bk">独当一面</span>
+                                    <span class="sp1-bk">前端</span>
+                                    <span class="sp1-bk">WEB</span>
+                                    <span class="sp1-bk">完美主义</span>
+                                    <span class="sp1-bk">强迫症</span>
+                                    <span class="sp1-bk">完美主义</span>
+                                </div>
+                                <div class="ca-list">
+                                    <ul>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231134422156492.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231141901379831.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231143728609783.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231144343279139.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231144705421348.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231151950195750.jpg!209x150" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="shoucang" style="">已收藏,并关注! </div>
+                            </div>
+                            <div class="ca-mian-detailed fn-hide">
+                                <div class="ca-mian-detailed-bottom fn-clear">
+                                    <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-blue"></i>对话</div>
+                                    <a href="appointment.html" target=_blank>
+                                        <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-red"></i>约见</div>
+                                    </a>
+                                    <a href="check.html" target=_blank>
+                                        <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-orange"></i>下单</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- box end -->
+                    <!-- box start -->
+                    <div class="ca-item ca-item-select ca-item-1" id="1">
+                        <div class="ca-item-main">
+                            <div class="ca-item-photo">
+                                <a href="detailed.html" target=_blank><img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231131956609839.png!138x138" /></a>
+                            </div>
+                            <h3>
+                                设计师
+                            </h3>
+                            <p>
+                                Miazhang<span class="shugang">|</span>女<span class="shugang">|</span>10年经验<span class="shugang">|</span>20 件作品
+                            </p>
+                            <p>
+                                <span class="imgGZ1"></span><i class="text">3087</i>
+                                <span class="imgGZ2"></span><i class="text">123</i>
+                                <span class="imgGZ3"></span><i class="text">2</i>
+                            </p>
+                            <div class="ca-info">
+                                <div class="ca-star">
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span> &nbsp;&nbsp;&nbsp;&nbsp;5.0
+                                </div>
+                                <div class="ca-location">
+                                    <span class="ca-location-icon">
+											</span> 杭州市&nbsp;&nbsp;-&nbsp;&nbsp;滨江区
+                                </div>
+                            </div>
+                            <div class="ca-main">
+                                <div class="ca-inntro">
+                                    <span class="sp1-bk">APP</span>
+                                    <span class="sp1-bk">UI</span>
+                                    <span class="sp1-bk">极简主义</span>
+                                    <span class="sp1-bk">UE</span>
+                                    <span class="sp1-bk">独当一面</span>
+                                    <span class="sp1-bk">前端</span>
+                                    <span class="sp1-bk">WEB</span>
+                                    <span class="sp1-bk">完美主义</span>
+                                    <span class="sp1-bk">强迫症</span>
+                                    <span class="sp1-bk">完美主义</span>
+                                </div>
+                                <div class="ca-list">
+                                    <ul>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231134422156492.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231141901379831.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231143728609783.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231144343279139.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231144705421348.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231151950195750.jpg!209x150" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="shoucang" style="">已收藏,并关注! </div>
+                            </div>
+                            <div class="ca-mian-detailed fn-hide">
+                                <div class="ca-mian-detailed-bottom fn-clear">
+                                    <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-blue"></i>对话</div>
+                                    <a href="appointment.html" target=_blank>
+                                        <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-red"></i>约见</div>
+                                    </a>
+                                    <a href="check.html" target=_blank>
+                                        <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-orange"></i>下单</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- box end -->
+                    <!-- box start -->
+                    <div class="ca-item ca-item-select ca-item-1" id="1">
+                        <div class="ca-item-main">
+                            <div class="ca-item-photo">
+                                <a href="detailed.html" target=_blank><img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231131956609839.png!138x138" /></a>
+                            </div>
+                            <h3>
+                                设计师
+                            </h3>
+                            <p>
+                                Miazhang<span class="shugang">|</span>女<span class="shugang">|</span>10年经验<span class="shugang">|</span>20 件作品
+                            </p>
+                            <p>
+                                <span class="imgGZ1"></span><i class="text">3087</i>
+                                <span class="imgGZ2"></span><i class="text">123</i>
+                                <span class="imgGZ3"></span><i class="text">2</i>
+                            </p>
+                            <div class="ca-info">
+                                <div class="ca-star">
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span> &nbsp;&nbsp;&nbsp;&nbsp;5.0
+                                </div>
+                                <div class="ca-location">
+                                    <span class="ca-location-icon">
+											</span> 杭州市&nbsp;&nbsp;-&nbsp;&nbsp;滨江区
+                                </div>
+                            </div>
+                            <div class="ca-main">
+                                <div class="ca-inntro">
+                                    <span class="sp1-bk">APP</span>
+                                    <span class="sp1-bk">UI</span>
+                                    <span class="sp1-bk">极简主义</span>
+                                    <span class="sp1-bk">UE</span>
+                                    <span class="sp1-bk">独当一面</span>
+                                    <span class="sp1-bk">前端</span>
+                                    <span class="sp1-bk">WEB</span>
+                                    <span class="sp1-bk">完美主义</span>
+                                    <span class="sp1-bk">强迫症</span>
+                                    <span class="sp1-bk">完美主义</span>
+                                </div>
+                                <div class="ca-list">
+                                    <ul>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231134422156492.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231141901379831.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231143728609783.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231144343279139.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231144705421348.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231151950195750.jpg!209x150" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="shoucang" style="">已收藏,并关注! </div>
+                            </div>
+                            <div class="ca-mian-detailed fn-hide">
+                                <div class="ca-mian-detailed-bottom fn-clear">
+                                    <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-blue"></i>对话</div>
+                                    <a href="appointment.html" target=_blank>
+                                        <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-red"></i>约见</div>
+                                    </a>
+                                    <a href="check.html" target=_blank>
+                                        <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-orange"></i>下单</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- box end -->
+                    <!-- box start -->
+                    <div class="ca-item ca-item-select ca-item-1" id="1">
+                        <div class="ca-item-main">
+                            <div class="ca-item-photo">
+                                <a href="detailed.html" target=_blank><img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231131956609839.png!138x138" /></a>
+                            </div>
+                            <h3>
+                                设计师
+                            </h3>
+                            <p>
+                                Miazhang<span class="shugang">|</span>女<span class="shugang">|</span>10年经验<span class="shugang">|</span>20 件作品
+                            </p>
+                            <p>
+                                <span class="imgGZ1"></span><i class="text">3087</i>
+                                <span class="imgGZ2"></span><i class="text">123</i>
+                                <span class="imgGZ3"></span><i class="text">2</i>
+                            </p>
+                            <div class="ca-info">
+                                <div class="ca-star">
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span>
+                                    <span class="ca-star-icon">
+											</span> &nbsp;&nbsp;&nbsp;&nbsp;5.0
+                                </div>
+                                <div class="ca-location">
+                                    <span class="ca-location-icon">
+											</span> 杭州市&nbsp;&nbsp;-&nbsp;&nbsp;滨江区
+                                </div>
+                            </div>
+                            <div class="ca-main">
+                                <div class="ca-inntro">
+                                    <span class="sp1-bk">APP</span>
+                                    <span class="sp1-bk">UI</span>
+                                    <span class="sp1-bk">极简主义</span>
+                                    <span class="sp1-bk">UE</span>
+                                    <span class="sp1-bk">独当一面</span>
+                                    <span class="sp1-bk">前端</span>
+                                    <span class="sp1-bk">WEB</span>
+                                    <span class="sp1-bk">完美主义</span>
+                                    <span class="sp1-bk">强迫症</span>
+                                    <span class="sp1-bk">完美主义</span>
+                                </div>
+                                <div class="ca-list">
+                                    <ul>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231134422156492.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231141901379831.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231143728609783.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231144343279139.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231144705421348.jpg!209x150" />
+                                        </li>
+                                        <li class="thumb h150">
+                                            <img src="http://huakewang.b0.upaiyun.com/2014/12/31/20141231151950195750.jpg!209x150" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="shoucang" style="">已收藏,并关注! </div>
+                            </div>
+                            <div class="ca-mian-detailed fn-hide">
+                                <div class="ca-mian-detailed-bottom fn-clear">
+                                    <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-blue"></i>对话</div>
+                                    <a href="appointment.html" target=_blank>
+                                        <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-red"></i>约见</div>
+                                    </a>
+                                    <a href="check.html" target=_blank>
+                                        <div class="ca-mian-detailed-bottom-item fn-left"><i class="big-orange"></i>下单</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- box end -->
+                </div>
+            </div>
+        </div>
+        <div class="op-nice">
+            <p class="nice">最近访客：</p>
+            <ul class="ulslidetb clearfix">
+                <li>
+                    <img class="img-1" src="images/snipaste_20170331_154223.png" alt="两天前" />
+                </li>
+                <li>
+                    <img class="img-1" src="images/snipaste_20170331_154311.png" alt="两天前" />
+                </li>
+                <li>
+                    <img class="img-1" src="images/snipaste_20170331_154408.png" alt="两天前" />
+                </li>
+            </ul>
+            <div class="fxhf">
+                <p class="text2">历史访问：1264　 今日：12</p>
+            </div>
+        </div>
+        <div class="bbs" id="messageAnchor">
+            <p class="title">留言/评价(12)</p>
+            <div class="message">
+                <div class="star">
+                    <i>表个态: </i>
+                    <i class="symbol">*</i>
+                    <div class="rating" id="set-rating"></div>
+                    <i>很好！！</i>
+                </div>
+                <form action="">
+                    <textarea cols="170" rows="4"></textarea>
+                    <sublime class="sublime">发布</sublime>
+                </form>
+                <ul class="tag clearfix">
+                    <li><i>服务态度好</i><i>1</i></li>
+                    <li><i>创新能力好</i><i>1</i></li>
+                    <li><i>专业水平高</i><i>1</i></li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <i class="project-name">某物流公司LOGO及VI系统设计</i>
+                    <div class="rating-read" data-start="4">
+                    </div>
+                    <i class="rating-tag"><i>5.0</i>分</i>
+                    <i class="project-price"><i>1500</i>元</i>
+                </div>
+                <div class="card-body">
+                    <img src="images/snipaste_20170331_154223.png" alt="头像" class="img-left">
+                    <div class="right-body">
+                        <p class="name">乞力马扎罗的咸鱼<i class="time">2017-02-03</i></p>
+                        <p class="card-body-text">沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <i class="project-name">某物流公司LOGO及VI系统设计</i>
+                    <div class="rating-read" data-start="2"></div>
+                    <i class="rating-tag"><i>5.0</i>分</i>
+                    <i class="project-price"><i>1500</i>元</i>
+                </div>
+                <div class="card-body">
+                    <img src="images/snipaste_20170331_154223.png" alt="头像" class="img-left">
+                    <div class="right-body">
+                        <p class="name">乞力马扎罗的咸鱼<i class="time">2017-02-03</i></p>
+                        <p class="card-body-text">沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，<br>非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，<br>交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <i class="project-name">某物流公司LOGO及VI系统设计</i>
+                    <div class="rating-read" data-start="9">
+                    </div>
+                    <i class="rating-tag"><i>5.0</i>分</i>
+                    <i class="project-price"><i>1500</i>元</i>
+                </div>
+                <div class="card-body">
+                    <img src="images/snipaste_20170331_154223.png" alt="头像" class="img-left">
+                    <div class="right-body">
+                        <p class="name">乞力马扎罗的咸鱼<i class="time">2017-02-03</i></p>
+                        <p class="card-body-text">沟通顺利，速度很快，交付物完整，另外给了很多额外的建议，非常好的一次合作</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="main-body-bottom" class="auto" style=" margin: 65px auto 150px auto;"></div>
+    </div>
+    <!--底部开始-->
+    <div class="footer_on"></div>
+    <!--底部结束-->
+</body>
+<script type="text/javascript" src="js/ratingRead.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/plugs/doT.min.js"></script>
+<script type="text/javascript" src="js/plugs/jquery.star-rating-svg.js"></script>
+<script type="text/javascript" src="js/unverified.js"></script>
+<script src="js/plugs/jquery.cookie.js"></script>
+
+<script type="text/javascript">
+    /**
+     * 自动加载头部和尾部以及页码
+     */
+    $(function() {
+        var _cookie = $.cookie('user_id');
+        if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+            $('#header.header-neiye').load('head.html'); //加载导航
+            $('#main-body-bottom').load('footer.html'); //加载页码
+            $('.footer_on').load('bottom.html');
+        } else {
+
+            $('#header.header-neiye').load('head_success.html'); //加载导航
+            $('#main-body-bottom').load('footer.html'); //加载页码
+            $('.footer_on').load('bottom.html');
+            $('#alertNoLoginMessage').css('display', 'none');
+
+        }
+    });
+    $("#set-rating").starRating({
+        starSize: 20,
+        useFullStars: true,
+        hoverColor: '#ED7266',
+        activeColor: '#ED7266',
+        disableAfterRate: false,
+        useGradient: false,
+        callback: function(currentRating, $el) {
+            // make a server call here
+        }
+    });
+    //鼠标滑过头像，设置透明度动画效果
+    $(function() {
+        // $("#p-img").hover(function() {
+        // 	$("#img-touxiang").hover(function() {
+        // 		$("#intro-more").css('opacity', '1');
+        // 		$("#p-img").css({
+        // 			"background-color": '#22212e',
+        // 			"z-index": '1'
+        // 		});
+        // 	}, function() {
+
+        // 	});
+        // }, function() {
+        // 	$("#p-img").css({
+        // 		"background-color": 'transparent',
+        // 		"z-index": '0'
+        // 	});
+        //  	$("#intro-more").css('opacity', '0');
+        // });
+        /**
+         * 点击个人信息底部向上按钮，自动关闭个人信息
+         * @param  
+         * @return {[type]}        [description]
+         */
+        $("#intro-more-bottom").click(function(event) {
+            $("#p-img").css({
+                "background-color": 'transparent',
+                "z-index": '0'
+            });
+            $("#intro-more").css('opacity', '0');
+        });
+    });
+
+    $(function() {
+        var ratingReadArray = document.getElementsByClassName("rating-read");
+        for (var i = 0; i < ratingReadArray.length; i++) {
+            var dataStart = ratingReadArray[i].getAttribute("data-start");
+            ratingRead(dataStart, 15, ratingReadArray[i]);
+        }
+        $(".context .wrap-list:first").css('display', 'block');
+        $(".context .tab li:first").addClass('cur');
+    });
+</script>
+
+</html>

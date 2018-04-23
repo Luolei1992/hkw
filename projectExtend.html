@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        报价订单详情-画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/fonts/iconfont.css">
+    <link rel="stylesheet" href="css/fenye.css">
+    <link rel="stylesheet" type="text/css" href="css/client/dialog.css">
+    <link rel="stylesheet" href="css/yun.css">
+    <link rel="stylesheet" type="text/css" href="css/jedate.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                window.location.href = 'https://www.huakewang.com';
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+            //时间插件
+            jeDate({
+                dateCell: "#dateinfo",
+                format: "YYYY年MM月DD日",
+                isinitVal: true,
+                isTime: true, //isClear:false,
+                minDate: a()
+            });
+
+            $.show_more_init();
+            $('div.ExtendMain').css({
+                'display': 'none'
+            }); //隐藏页面
+            $('div.ExtendMain:eq(0)').css({
+                'display': 'block'
+            }); //显示第一页面
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        .yun-step-form {
+            width: 1180px;
+        }
+        
+        .botflex.jedatehms li {
+            display: none;
+        }
+        
+        #main-body.personal div.right {
+            -webkit-box-shadow: 0 0 0 0;
+            -moz-box-shadow: 0 0 0 0;
+            box-shadow: 0 0 0 0;
+            margin-top: 0;
+            padding: 0;
+        }
+        
+        #main-body.personal div.right div.neirong div.divWrap {
+            border: 0 none;
+            margin-bottom: 0;
+        }
+        
+        div.ExtendMain div.textWrapper div.text.right div.fs {
+            margin-top: -10px;
+            background-color: #CCCCCC;
+            position: relative;
+            z-index: 10;
+        }
+        
+        div.ExtendMain div.textWrapper div.text.right div.fs:hover {
+            background-color: #03A5EE;
+        }
+        
+        #SWFUpload_0 {
+            margin-left: -62px;
+        }
+        
+        ul#uploadView li {
+            /*margin-top:2px;*/
+        }
+        
+        #uploadView {
+            margin: -83px 0 0 0;
+            position: absolute;
+            left: 72px;
+        }
+    </style>
+</head>
+
+<body style="background:#fff; ">
+    <div class="containers">
+        <div id="header" class="header-neiye"></div>
+        <div id="topHeader" class="topHeader-l"></div>
+        <div class="ExtendTop w1146">
+            <div class="lianjie">
+                <img src="images/lianjie.jpg" />
+            </div>
+            <div class="ExtendTopLeft">
+                <div class="ExtendTopImg">
+                    <img class="extendImgL" src="./images/selec.jpeg" />
+                </div>
+                <div class="text">
+                    <p class="text">昵称：<i class="extendNameL"></i></p>
+                    <p class="text">手机号：<i class="extendPhoneL"></i></p>
+                    <p class="text">微信号：<i class="extendWXL"></i>　　　QQ：<i class="extendQQL"></i></p>
+                    <p class="text">邮箱：<i class="extendEmailL"></i></p>
+                </div>
+            </div>
+            <div class="ExtendTopRight">
+                <div class="ExtendTopImg">
+                    <img class="extendImgR" src="" />
+                </div>
+                <div class="text">
+                    <p class="text">昵称：<i class="extendNameR"></i></p>
+                    <p class="text">手机号：<i class="extendPhoneR"></i></p>
+                    <p class="text">微信号：<i class="extendWXR"></i>　　　QQ：<i class="extendQQR"></i></p>
+                    <p class="text">邮箱：<i class="extendEmailR"></i></p>
+                </div>
+            </div>
+        </div>
+        <div class="ExtendNav w1146">
+            <ul class="ExtendNavLeft">
+                <li class="cur">订单详情</li>
+                <li data-stats="true">工作记录</li>
+                <li data-stats="true">作业中心</li>
+            </ul>
+            <ul class="ExtendNavRight">
+                <li>投诉</li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="ExtendMain w1146">
+            <!-- 第一页面 -->
+            <div class="clear" style="width:1px;height:1px;"></div>
+            <div class="ExtendMainTop">
+                <ul class="MainTopUl MainTopUlT">
+                    <li class="cur">甲方付首款</li>
+                    <li class="">乙方作业中</li>
+                    <li class="">甲方付尾款</li>
+                    <li class="">双方互评</li>
+                </ul>
+                <ul class="MainTopUl timer" style="margin:3px 0 8px 0;">
+                    <li class="MainTopUl1">
+
+                    </li>
+                    <li class="MainTopUl2">
+
+                    </li>
+                    <li class="MainTopUl3">
+
+                    </li>
+                    <li class="MainTopUl4">
+
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div id="main-body" class="personal">
+                <div class="right">
+                    <div class="neirong">
+                        <div class="divWrap">
+                            <div class="clearfix moreWarringW2 moreWarring">
+                                <span class="moreWarringW2Sp1">评分：</span>
+                                <ul class="startComment">
+
+                                </ul>
+                                <br>
+                                <span class="moreWarringW2Sp2">评价：</span>
+                                <textarea style="outline: none;" readonly></textarea><br>
+                                <i class="iconfont11 icon-tubiao06"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="oneByOne">
+                <div class="oneByOneT clearfix" id="oneByOneFst">
+                    <div class="oneByOneTL fl">
+                        <p>对方提示已完成此阶段作业，请确认验收！</p>
+                        <p>注：还剩<span></span>，若仍未处理，系统将默认同意！</p>
+                    </div>
+                    <div class="oneByOneTR fr">
+                        <button class="agreeYs">同意验收</button>
+                    </div>
+
+                </div>
+
+                <div class="oneByOneT clearfix" id="oneByOneSec">
+                    <div class="oneByOneTL fl">
+                        <p>对方要求延长项目时间至2017/03/25</p>
+                        <p>原因是：设计效果不是很满意，希望延长时间再做修改下。是否同意？</p>
+                        <p>注：还剩<span></span>，若仍未处理，系统将默认同意！</p>
+                    </div>
+                    <div class="oneByOneTR fr">
+                        <button class="agreeYc">同意</button>
+                        <button class="confuseYc">拒绝</button>
+                    </div>
+                </div>
+
+                <div class="oneByOneT clearfix" id="oneByOneTrd">
+                    <div class="oneByOneTL fl">
+                        <p>对方提出终止项目！</p>
+                        <p>原因是：和设计师再三沟通，发现很难达成一致，设计成果不是很满意！</p>
+                        <p>若您同意，该项目合作结束，对方已付的款项不会退回，依旧在您的账户里；</p>
+                        <p>若您拒绝，则画客网平台介入仲裁,您也可以直接 <a href="">发起申诉</a>。</p>
+                        <p>注：还剩<span>4天20时</span>，若仍未处理，系统将默认同意！</p>
+                    </div>
+                    <div class="oneByOneTR fr">
+                        <button class="agreeFinish">同意</button>
+                        <button class="confuseFinish">拒绝</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ExtendMainBody" style="margin-bottom:20px;">
+                <div class="ExtendMainBodyWrap">
+                    <p class="text">当前状态：乙方作业中</p>
+                    <div class="text" style="position:relative;">
+                        <p class="text warringPositionPub">
+                            <i>1. </i>如果您已经完成此阶段的作业并已提交给对方，您可以
+                            <span class="kuair moreWarringT agreeYs" data-idx="0">
+                            <i class="warringYs">提醒验收</i>
+                            </span>待对方确认验收，您便收到此阶段的款项。
+                        </p>
+                        <div class="alertWarringYs alertPub">
+                            <i class="alertWrapClose"></i>
+                            <p>确定完成阶段项目，并提醒对方验收？</p>
+                            <p>注：一天最多提醒三次</p>
+                            <button class="alertWarringYsS">确认</button>
+                            <button class="alertWarringYsC">取消 </button>
+                        </div>
+                        <p class="text warringPositionPub">
+                            <i class="warringPositionPubSort2">2. </i>如果项目期限紧张，您可以申请<span class="kuair" id="delayTime">延长项目时间</span>待对方同意即可
+                        </p>
+
+                        <div class="delayTime">
+                            <i class="alertWrapClose"></i>
+                            <p>原先约定的项目日期是：<span class="delayDataTime"></span></p>
+                            <p style="display: inline-block;">您将延长项目时间至：
+                                <!--日期插件-->
+                                <p class="datep" style="display: inline-block;">
+                                    <input class="datainp" id="dateinfo" type="text" placeholder="请选择" style="width:95px;" readonly>
+                                    <i></i>
+                                </p>
+                            </p>
+                            <span class="delayWhy">原因：</span><textarea></textarea>
+                            <button class="btn2">确定</button>
+                            <button class="btn1">取消</button>
+                        </div>
+
+                        <p class="text warringPositionPub">
+                            <i class="warringPositionPubSort3">3. </i>如果您对收到的成果不喜欢，或不想做了，您可以<span class="kuair endPro">
+                            终止项目
+                        </span>届时画客网会介入仲裁，做出合理的款项分配
+                        </p>
+                        <div class="endProWrap">
+                            <i class="alertWrapClose"></i>
+                            <span class="endWhy">终止原因：</span><textarea></textarea>
+                            <p>1.若设计师同意或者超时未处理，则项目终止</p>
+                            <p>2.若设计师拒绝，则画客网介入仲裁</p>
+                            <p>3.设计师卖的是知识产权，项目终止不会退还已入设计师账户的款项，而其余托管在画客平台的资金会全额返还到您的账户</p>
+                            <p>4.您将收到项目金额的<span>20%</span>，共计<span>560.0元</span>的退款</p>
+                            <button class="endProWrapSure">确认</button>
+                            <button class="endProWrapCancle">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--报价单详细信息-->
+            <div class="main-body-center">
+                <div class="yun-step-form">
+                    <!--保存后的客户信息-->
+                    <div id="proMsgListRe" class="yun-kehuMessage yunShowMessage">
+                        <h3>客户信息</h3>
+                        <ul class="yun-kehuMessageUl">
+                            <li>联系人：<span class="numShow"></span></li>
+                            <li>企业名称：<span class="numShow"></span></li>
+                            <li>手机号：<span class="numShow"></span></li>
+                            <li>邮箱：<span class="numShow"></span></li>
+                        </ul>
+                    </div>
+
+                    <!--保存后的项目信息-->
+                    <div id="proMsgEditRe" class="yun-pro yunShowPro">
+                        <h3>项目信息</h3>
+                        <div class="yun-messageShow">
+                            <div class="yun-messageShowName">
+                                <p class="yun-messageShowNameL yun-pusPosition">项目名称：</p>
+                                <p class="yun-messageShowNameR yun-pubLeft numShow"></p>
+                            </div>
+                            <div class="yun-messageShowSummary">
+                                <p class="yun-messageShowSummaryL yun-pusPosition">项目概述：</p>
+                                <pre class="yun-messageShowSummaryR yun-pubLeft numShow">
+                            </pre>
+                            </div>
+                            <div class="yun-messageShowData">
+                                <p class="yun-messageShowDataL yun-pusPosition">项目截止日期：</p>
+                                <p class="yun-messageShowDataR yun-DataLeft numShow"></p>
+                            </div>
+                            <div class="yun-messageShowAdd">
+                                <p class="yun-messageShowAddL yun-pusPosition">附件：</p>
+                                <div class="yun-messageShowAddR yun-AddLeft">
+                                    <!--保存后的文件-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--保存后的项目报价单-->
+                    <div id="tipMsgEditRe" class="yun-price yunShowPrice">
+                        <h3>项目报价单</h3>
+                        <table class="yun-tableObj" border="2">
+
+                        </table>
+                        <div class="priceTableWrap">
+
+                        </div>
+                    </div>
+
+                    <!--保存后的付款方式-->
+                    <div id="payMsgEditRe" class="yun-payWay yun-price yunShowPayWay">
+                        <h3>付款方式</h3>
+                        <table class="yun-tablePay" border="2">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="clear" style="width:1px;height:1px;margin-top:30px;"></div>
+        </div>
+        <div class="ExtendMain w1146">
+            <!-- //第二页面 -->
+            <div class="clear" style="width:1px;height:1px;"></div>
+
+            <div class="askHistoryList"></div>
+            <!--分页开始-->
+            <div id="kkpager"></div>
+            <!--分页结束-->
+            <div class="clear" style="width:1px;height:1px;"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="ExtendMain w1146">
+            <!-- //第三页面 -->
+            <div class="ulname">
+                <ul>
+                    <li>最近</li>
+                    <li class="cur howNum"></li>
+                    <li>记录</li>
+                    <div class="clear" style="width:1px;height:1px;"></div>
+                </ul>
+            </div>
+            <div class="clear" style="width:1px;height:1px;"></div>
+            <div class="askHistoryList2">
+
+            </div>
+            <div class="textWrapper textWrapperLast" style="margin-top:20px;">
+                <div class="touRight touRightStatic">
+                    <img src="./images/selec.jpeg" />
+                </div>
+                <div class="text right">
+                    <span class="bagdR"></span>
+                    <textarea id="workListSendTxt"></textarea>
+                    <div class="uploadFileWrap">
+                        <div class="js-fileapi-wrapper upload-btn">
+                            <div class="upload-btn-txt"></div>
+                            <input id="chooseUploadFile" name="files" type="file" />
+                            <p style="color: #999999;position:absolute;bottom: -39px;left: 0px;">最多上传5个附件，每个大小不能超过10M</p>
+                        </div>
+                        <div class="needSend" style="position:relative;">
+                            <ul id="uploadView" class="clearfix">
+                                <!--上传文件-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fs workListSend">
+                        <span>发送</span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear" style="width:1px;height:1px; margin-top:50px;"></div>
+        </div>
+
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+    <script type="text/javascript" src="js/plugs/jedate.js"></script>
+    <script type="text/javascript" src="js/yunPro/yun.js"></script>
+    <script type="text/javascript" src="js/data/yunShowDisabledXhr.js"></script>
+    <script type="text/javascript" src="js/data/projectExtendXhr.js"></script>
+    <script id="pages" type="text/javascript" src="js/plugs/jq.page.js"></script>
+    <script>
+        window.FileAPI = {
+            staticPath: '/js/plugs/'
+        };
+    </script>
+    <script type="text/javascript" src="js/plugs/FileAPI.min.js"></script>
+</body>
+
+</html>

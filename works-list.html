@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="keywords" content="优秀网站欣赏，海报设计欣赏，优秀室内设计欣赏，店铺设计欣赏，商城设计欣赏，动画欣赏">
+    <meta name="description" content="提供优秀设计作品欣赏">
+    <meta name="abstract" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+        设计作品画客网，网画客；网罗天下设计英才-中国知名平面网页界面_室内工业珠宝独立设计师排行榜
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+            } else {
+
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            }
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+
+        .city-barWrap {
+            top: 2px;
+            left: 10px;
+        }
+
+        .ca-inntro {
+            height: 25px;
+            padding-left: 24px;
+            line-height: 25px;
+        }
+
+        .hkw-work-list li {
+            width: 285px;
+            height: auto;
+        }
+
+        .thumb-a {
+            width: 260px;
+            left: 12px;
+        }
+
+        .hkw-work-bottom {
+            padding: 9px 0 0 8px;
+        }
+
+        .hkw-work-bottom img {
+            border-radius: 50%;
+            vertical-align: top;
+        }
+
+        .pblUl li:hover .maxImgWidth {
+            transform: scale(1.05);
+        }
+
+        .caption h4 .sc {
+            margin-right: 10px;
+        }
+
+        #workListKindMoreContentChange li {
+            float: left;
+            display: inline-block;
+        }
+
+        .grid-item .caption {
+            bottom: 0;
+            -webkit-transition: none;
+            -moz-transition: none;
+            -ms-transition: none;
+            -o-transition: none;
+            transition: none;
+        }
+
+        .grid-item:hover .captionContent {
+            color: #838383;
+            padding: 0px 0 0px 10px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+        }
+
+        #work_list_content .caption h4 {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        .caption p.captionContent {
+            color: #838383;
+            padding: 0px 0 0px 10px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body style="">
+<div class="containers">
+    <!-- 头部 start -->
+    <div id="header" class="header-neiye"></div>
+    <!-- 头部 end -->
+    <div id="main-body">
+        <div id="workListFirstSelectMoreBox"
+             style="height:100%;width:100%;position:fixed;display: none;background: rgba(0,0,0,0.5);z-index: 1000;top:0">
+            <div style="margin:200px auto 0;background:rgba(255,255,255,0.8);border:1px solid #111;border-radius: 5px;width: 600px;min-height:300px;position: relative">
+                <a class="WLFSMB_close"
+                   style="position: absolute;display: block;border:1px dotted #666;top:5px;right: 5px;width: 16px;height:16px;text-align: center;cursor: pointer;border-radius: 2px;">X</a>
+                <div style="width: 100%">
+                    <div style="width: auto;border-bottom: 1px solid #ccc">
+                        <h6 style="font-size:16px;color: #111;font-weight: bold;line-height: 30px;text-align: center ">
+                            更多</h6>
+                    </div>
+                    <div>
+                        <ul id="workListKindMoreContentChange" class="designer-select-navUl auto">
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="280">Loading(5)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="281">其他(227)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="275">图标/icon(4118)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="277">移动设备(468)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="276">软件产品(115)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="292">建筑设计(17)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="293">室内设计(1447)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="294">舞台设计(7)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="295">展览/展示(42)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="296">园林景观/规划(3)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="297">模具(36)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="298">其它(109)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="266">综合门户(51)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="267">企业门户(458)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="268">产品网站(370)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="269">个人网站(55)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="271">专题/活动/商城(1850)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="273">Banner(205)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="274">其他(618)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="249">矢量绘画(68)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="250">壁纸设计(6)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="251">像素画(8)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="377">创意图片(41)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="252">吉祥物(31)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="253">CG/油画/插画(2450)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="255">卡通/漫画(299)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="257">其它(93)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="282">家具设计(43)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="283">数码产品(36)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="285">工具设计(14)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="286">设备设计(46)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="287">交通工具(75)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="289">生活用品(240)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="290">礼品设计(94)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="291">其他(85)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="299">Gif动画(33)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="300">flash动画(11)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="301">三维动画(46)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="302">影视动画(62)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="305">其他(21)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="362">宠物摄影(49)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="306">婚纱照(51)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="307">写真照(262)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="308">品牌广告(26)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer" data-selector-id="309">网店商品(64)</a></span>
+                            </li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="310">图像处理(118)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="311">高清摄影(418)</a></span></li>
+                            <li><span class="text"><a style="cursor: pointer"
+                                                      data-selector-id="387">珠宝设计(603)</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="main-body-center">
+            <div class="designer-select-nav" name="" style="">
+                <ul id="firstSelect" class="designer-select-navUl auto" style="border-top:0px solid #dcdcdc;">
+                    <li><span class="text"><a href="works-list.html?tag=0">全部</a></span></li>
+                    <li><span class="text"><a href="works-list.html?tag=1">平面设计(9590)</a></span></li>
+                    <li><span class="text"><a href="works-list.html?tag=2">交互设计(5376)</a></span></li>
+                    <li><span class="text"><a href="works-list.html?tag=3">三维艺术(1661)</a></span></li>
+                    <li><span class="text"><a href="works-list.html?tag=4">网页设计(3608)</a></span></li>
+                    <li><span class="text"><a href="works-list.html?tag=5">艺术绘画(2994)</a></span></li>
+                    <li><span class="text"><a href="works-list.html?tag=6">工业设计(633)</a></span></li>
+                    <li><span class="text"><a href="works-list.html?tag=7">动画/影视(172)</a></span></li>
+                    <li><span class="text"><a href="works-list.html?tag=8">摄影艺术(988)</a></span></li>
+                    <li><span class="text"><a href="works-list.html?tag=9">产品设计(603)</a></span></li>
+                </ul>
+                <ul id="secondSelect" class="designer-select-navUl auto" style="display: none">
+                    <li><span class="text text1" style="line-height:38px">子类目：</span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">标志/logo(6733)</a></span>
+                    </li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">字体设计(230)</a></span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">折页/海报/画册(688)</a></span>
+                    </li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">包装设计(360)</a></span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">名片/VI(618)</a></span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">其他(785)</a></span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">品牌策划(175)</a></span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">娱乐游戏(425)</a></span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">登录/注册(17)</a></span></li>
+                    <li style="display: none"><span class="text"><a id="workListFirstSelectMore2"
+                                                                    style="cursor: pointer;visibility: visible;">更多</a></span>
+                    </li>
+                </ul>
+                <ul id="thirdSelect" class="designer-select-navUl auto" style="border-bottom:1px solid #dcdcdc;">
+                    <li><span style="line-height:38px" class="text text1">热门关键词：</span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">标志</a></span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">logo</a></span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">名片</a></span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">海报</a></span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">画册</a></span></li>
+                    <li style="display: none"><span class="text"><a style="cursor: pointer">艺术绘画作品，绘画作品，艺术绘画</a></span>
+                    </li>
+                </ul>
+            </div>
+            <!-- box start -->
+            <div class="hkw-work-list fn-clear pbl" style="margin-top:20px;">
+                <ul id="work_list_content" class="pblUl" style="visibility: hidden;clear: both;overflow: hidden"
+                    data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 100 }'>
+                </ul>
+                <!--<div name="workListAddMoreContent" id="workListAddMoreContent" style="width: 100px;height: 40px;margin: 0 auto;cursor: pointer;background: #eee;border: 1px solid #aaa;border-radius: 4px;display: block">-->
+                <!--<h2 style="line-height: 40px;text-align: center;font-weight: bold">加载更多</h2>-->
+                <!--</div>-->
+                <img id="work_list_loadingImage" src="./images/work-loading.gif"
+                     style="display: block;margin:30px auto;"/>
+                <div id="workListNoMoreContent"
+                     style="width: 100px;height: 40px;margin: 0 auto;cursor: pointer;background: #eee;border: 1px solid #aaa;border-radius: 4px;display: none;">
+                    <h2 style="font-weight: bold;line-height: 40px;text-align: center">没有更多了</h2>
+                    <a href="#">点击返回顶部</a>
+                </div>
+            </div>
+            <!-- box end -->
+            <!-- box start -->
+
+            <!-- box end -->
+
+        </div>
+    </div>
+    <!--底部开始-->
+    <div class="footer_on"></div>
+    <!--底部结束-->
+</div>
+</body>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="js/lzy_NEW/masonry.pkgd.min.js"></script>
+<script src="js/plugs/imgloaded.js"></script>
+<script>
+    var $workListMasonry = $('.pblUl').masonry({
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 100
+    });
+    $("body").on("mouseenter mouseleave", ".grid-item", function (event) {
+        event.preventDefault();
+        if (event.type == "mouseenter") {
+            $(this).find('div.caption').finish().slideDown(100);
+            $(this).children('.iInspir-block').css({
+                'border': '1px solid #03a5ee'
+            });
+        } else if (event.type == "mouseleave") {
+            $(this).find('div.caption').finish().slideUp(100);
+            $(this).children('.iInspir-block').css({
+                'border': '1px solid #ececec'
+            });
+        };
+    });
+
+</script>
+<script type="text/javascript" src="js/personal/layer/layer.js"></script>
+<script type="text/javascript" src="js/lzy_NEW/works_list_a.js"></script>
+</html>

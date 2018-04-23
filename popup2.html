@@ -1,0 +1,759 @@
+<style type="text/css">
+/***********弹出层遮罩层开始******************/
+#mask-detailed{
+    background: #333;
+    opacity: 0.55;
+    filter: alpha(opacity=55);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: none;
+}
+/***********弹出层遮罩层结束******************/
+
+/***********弹出层内容开始******************/
+.pay-detailed{
+	width: 638px;
+	/*height: 605px;*/
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+#pay-detailed {
+    position: fixed;
+    /*left: 30%;*/
+    /*top: 30%;*/
+    z-index: 1001;
+    display: none;
+    padding: 15px;
+}
+.pay-title-word{
+	font-size: 18px;
+	color: #526069;
+}
+#mask-close{
+	font-size: 20px;
+	float: right;
+	cursor: pointer;
+}
+.pay-person{
+	background-color: #f0f2f5;
+	padding: 15px;
+	padding-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px dashed #ccc;
+}
+.pay-person img{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	float: left;
+}
+.pay-person-right{
+	font-size: 14px;
+	color: #191c2e;
+}
+.person-right-title{
+	margin-bottom: 10px;
+}
+.person-right-title span{
+	padding: 0 10px;
+	border-right: 1px solid #9a559a;
+}
+.person-right-title span:nth-child(1){
+	padding-left: 2px;
+}
+.person-right-title span:nth-child(4){
+	border-right: none;
+}
+.person-right-address{
+	font-size: 14px;
+}
+.person-right-address .hkfont{
+	font-size: 18px;
+}
+
+tbody tr{
+	display: block;	
+	border-bottom: 1px dashed #ccc;
+} 
+tbody tr:nth-child(1){
+	border-top: 1px dashed #ccc; 
+}
+tbody tr td{
+	height:60px;
+}
+tbody tr td .title{
+	display: inline-block;
+	font-size: 15px;
+	color: #262626;
+	width: 260px;
+}
+.cartTable .number{
+	width: 170px;
+}
+.cartTable span{
+	display: inline-block;
+    text-align: left;
+}
+.rightbuyNumber {
+	display: inline-block;
+    text-align: left;
+    width: 102px;
+    height: 30px;
+    border: 1px solid #dfdfdf;
+    /*border-radius: 5px;*/
+    vertical-align: middle;
+}
+.buyNumberInput {
+    display: inline-block;
+    float: left;
+    width: 40px;
+    height: 30px;
+}
+.buyNumberInput input {
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    /*padding-left: 10px;*/
+    /* font-family: 'Microsoft YaHei'; */
+    font-size: 16px;
+    color: #4a4a4a;
+    letter-spacing: 0px;
+    border: 0;
+    text-align: center;
+}
+.buyNumberLess {
+    position: relative;
+    float: left;
+    display: inline-block;
+    width: 23px;
+    height: 30px;
+    border-right: 1px solid #dfdfdf;
+    cursor: pointer;
+    padding-left: 7px;
+    font-size: 35px;
+    color: #fff;
+    background-color: #01a1ea;
+    line-height: 26px;
+    text-align: center;
+}
+.buyNumberPlus {
+    position: relative;
+    float: left;
+    display: inline-block;
+    width: 28px;
+    height: 30px;
+    border-left: 1px solid #dfdfdf;
+    cursor: pointer;
+    padding-left: 2px;
+    font-size: 35px;
+    color: #fff;
+    background-color: #01a1ea;
+    line-height: 26px;
+    text-align: center;
+}
+tr td .subtotal{
+	display: inline-block;
+	width: 195px;
+	text-align: right;
+	font-size: 18px;
+	font-weight: 700;
+	color: #ff0000;
+}
+.pay-detailed textarea{
+	margin-top: 10px;
+	padding: 13px 10px;
+	overflow: hidden;
+    resize: none;
+	outline-color: #04a4ee;
+	width: 96%;
+}
+.tax{
+	margin-top: 13px;
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+.tax .tax-price-out{
+	float: right;
+}
+.tax .tax-rate{
+	margin-left: 8px;
+	border:1px solid #ccc;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 15px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.tax .cur{
+	color:#fff;
+	background-color: #01a1ea;
+}
+.priceTotal-out{
+	float: right;
+	font-size: 20px;
+	color: #ff0000;
+	font-weight: 600;
+}
+/***********二维码支付静态页开始**********/
+div.paymentMainDiv ul.zfUl{
+	border-top: 1px dashed #ccc;
+}
+.pay-detailed div.paymentMainDiv{
+	width: 100%!important;
+	height: 200px;
+	border: none!important;
+}
+.pay-detailed div.paymentMainDiv div.ewm{
+	width: 100%;
+    height: 140px;
+    background: #fff;
+    padding-top: 20px;
+}
+div.paymentMainDiv div.ewm div.ewmLeft {
+    float: left;
+    margin: 0 0 0 5px;   
+}
+div.paymentMainDiv div.ewm div.ewmLeft img{
+	width: 105px;
+}
+div.paymentMainDiv div.ewm div.text {
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.paymentMainDiv .ewm .ewmLeft .text{
+	text-align: center;
+	margin-top: 5px;
+}
+.paymentMainDiv .ewm .text .text-left{
+	font-size: 15px;
+	color: #333333;
+}
+.paymentMainDiv .ewm .text .text-right{
+	font-size: 14px;
+	color: #3c3c3c;
+	font-weight: 100;
+}
+.paymentMainDiv .ewm .text p{
+	line-height: 21px;
+}
+.paymentMainDiv .ewm .text p.first{
+	margin-bottom: 10px;
+}
+.paymentMainDiv .ewm .text .RMB-icon{
+	font-size: 26px;
+	font-weight: 100;
+	color: #999
+}
+.paymentMainDiv .ewm .text .RMB{
+	font-size: 26px;
+	font-weight: 600;
+	color: #ff4400;
+}
+.paymentMainDiv .ewm .text .TzLink{
+	color: #1ba9eb;
+	display: inline-block;
+	margin-top: 6px;
+}
+.paymentMainDiv .ewm .dqye2{
+	float: left;
+    width: auto;
+    height: auto;
+    margin: 22px 0 0 0;
+    position: relative;
+}
+.paymentMainDiv .ewm .dqye2 span{
+	line-height: 35px;
+	font-size: 14px;
+}
+.paymentMainDiv .ewm .dqye2 .color{
+	font-size: 18px;
+	color: red;
+}
+.paymentMainDiv .ewm .dqye2 .money{
+	font-size: 18px;
+}
+.paymentMainDiv .ewm .dqye2 p {
+	color: red;
+	display: none;
+}
+.paymentMainDiv .ewm .dqye2 .qrzf,.zhcz {
+    margin-top: 40px;
+    cursor: pointer;
+}
+.paymentMainDiv .ewm .dqye2 .qrzf,.zhcz {
+    display: inline-block;
+    border-radius: 3px;
+    background: #fff;
+    border: 1px solid #a5a5a5;
+    padding: 0 10px;
+}
+/***********二维码支付静态页结束**********/
+/*********update start *********/
+.pay-detailed .right-price-total{
+	float: right;
+	font-size: 14px;
+	margin-bottom: 5px;
+	color: #1a1d2f;
+}
+.pay-detailed .right-price-total .red-price{
+	font-size: 22px;
+	color: #ff0000;
+	vertical-align: middle;
+}
+.pay-detailed .explain .left{
+	width: 40px;
+	float: left;
+}
+.pay-detailed .explain .right{
+	margin-left: 40px;
+}
+.pay-detailed .explain .right .money{
+	color: #ff0000;
+}
+
+/***** update 二维码 start*******/
+.paymentMainDiv .ewm .ewmLeft{
+	position: relative;
+}
+.paymentMainDiv .ewm .ewmLeft .click-pay{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(238, 238, 238, 0.9);
+	cursor: pointer;
+}
+.paymentMainDiv .ewm .ewmLeft .click-pay-span{
+	display: block;
+	text-align: center;
+	margin-top: 58px;
+	font-size: 16px;
+}
+.ewmLeft .display-none{
+	display: none;
+}
+.paymentMainDiv .ewm .text .TzLink.display-none{
+	display: none;
+}
+div.paymentMainDiv div.ewm div.ewmLeft .ewmimg{
+    width: 145px;
+}
+.paymentMainDiv .ewm .text .TzLink.display-none {
+    display: none;
+}
+.changePhonePouup #ok-change-phone0
+.changePhonePouup #ok-change-phone,
+{
+    float: right;
+    display: inline-block;
+    background-color: #0D93D1;
+    color: #fff;
+    padding: 8px 10px;
+	width: auto;
+	font-size: 14px;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    margin-right: 25px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+.changePhonePouup{
+    padding-left: 10px;
+}
+.changePhonePouup p{
+    margin: 16px 0;
+    font-size: 16px;
+    height: 25px;
+}
+.changePhonePouup p span{
+    width: 90px;
+    display: inline-block;
+    text-align: right;
+}
+#changeEmailPouup p span{
+    width: 100px;
+}
+.changePhonePouup p input{
+    font-size: 16px;
+    height: 20px;
+    padding-left: 10px;
+}
+.changePhonePouup p.SMS-code input{
+    width: 100px;
+}
+.changePhonePouup p.SMS-code a{
+    color: #0e93d1;
+}
+.dqye2 .qrzf.no {
+	background-color: #aaa!important;
+	cursor: initial!important;
+}
+/***** update 二维码 end*******/
+/**********余额支付 start************/
+.changePhonePouup #ok-change-phone,
+.changePhonePouup #ok-change-phone0
+{
+	float: right;
+	display: inline-block;
+	background-color: #0D93D1;
+	color: #fff;
+	padding: 8px 10px;
+	width: auto;
+	font-size: 14px;
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	margin-right: 25px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin-bottom: 15px;
+}
+.changePhonePouup{
+	padding-left: 10px;
+}
+.changePhonePouup p{
+	margin: 16px 0;
+	font-size: 16px;
+	height: 25px;
+}
+.changePhonePouup p span{
+	width: 90px;
+	display: inline-block;
+	text-align: right;
+}
+#changeEmailPouup p span{
+	width: 100px;
+}
+.changePhonePouup p input{
+	font-size: 16px;
+	height: 20px;
+	padding-left: 10px;
+}
+.changePhonePouup p.SMS-code input{
+	width: 100px;
+}
+.changePhonePouup p.SMS-code a{
+	color: #0e93d1;
+}
+.dqye2 .qrzf.no {
+	background-color: #aaa!important;
+	cursor: default!important;
+}
+#ok-change-phone.paying{
+	background-color: #aaa!important;
+	cursor: default!important;
+}
+div.smrq.cur{
+	/* top: 90px; */
+}
+#new-pic-val {
+    width: 80px !important;
+    position: relative;
+    top: -11px;
+}
+.changePhonePouup p.new-pic span.code {
+    width: 105px;
+    height: 32px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    top: 0px;
+}
+.changePhonePouup p.new-pic span.code img {
+    position: relative;
+    left: -8px;
+    vertical-align: middle;
+}
+/**********余额支付 end************/
+/*********update end *********/
+
+/***********弹出层内容结束******************/	
+</style>
+
+<div id="mask-detailed"></div>
+<div class="pay-detailed" id="pay-detailed">
+	<p class="pay-title">
+		<span class="pay-title-word">支付确认</span>
+		<i class="hkfont" id="mask-close">&#xe600;</i>
+	</p>
+	<div class="pay-person">
+		<div class="pay-person-right">
+			<p class="person-right-title">项目名称：三汇信息科技有限公司的企业网站设计</p>
+			<p class="person-right-address">服务方：张三</p>
+		</div>
+	</div>
+	<div class="clearfix">
+		<p class="right-price-total">费用总计（含税）：<span class="red-price">￥33053.00元</span></p>
+	</div>
+	<div class="explain">
+		<div class="left">说明：</div>
+		<div class="right">
+			<p>1，您的资金将托管于画客网平台，在您每次验收设计师成功后，相应比例的资金才会打入设计师的账户</p>
+			<p>2，付款成功后，首付款将直接打入设计师账户上，作为启动资金，共计：<span class="money"></span></p>
+			<p>3，若出于某种原因您要终止项目，则未打入设计师账户上的资金将会全额返回到您的账户上</p>
+		</div>
+	</div>
+	<textarea rows="1" cols="99" placeholder="需求备注：对本次交易的说明（建议填写前双方就合作内容达成一致）"></textarea>
+	<div class="paymentMainDiv">
+		<ul class="zfUl">
+               <li class="cur"><span class="ss zfb"></span><span>支付宝支付</span></li>
+               <li><span class="ss wx"></span><span>微信支付</span></li>
+               <li><span class="ss hk"></span><span>画客网余额支付</span></li>
+               <div class="clear"></div>
+           </ul>
+           <div class="ewm">
+               <div class="ewmLeft">
+					<div class="click-pay" id="click-pay-id">
+						<span class="click-pay-span">点击刷新二维码</span>
+					</div>
+                   <img class="ewmimg" src="images/ewma1.png"/>
+                   <p class="text">扫码支付1</p>
+               </div>
+               <div class="text">
+                   <p class="first">
+                   	<span class="text-left">实付款:</span>
+                   	<span class="RMB-icon">￥</span>
+                   	<span class="RMB"></span>
+                   	<span class="refresh"></span>
+                   </p>
+                   <p>
+					<span class="text-left">订单类型: </span>
+                    <span class="text-right">报价订单费</span>
+                   </p>
+                   <p>
+					<span class="text-left">交易类型: </span>
+                    <span class="text-right">画客网担保交易</span>
+                   </p>
+                   <a href="javascript:;" class="TzLink display-none">跳转网页版支付宝支付>></a>
+               </div>
+           </div>
+           <div class="ewm" style="display: none;">
+               <div class="ewmLeft">
+					<div class="click-pay" id="click-pay-id2">
+						<span class="click-pay-span">点击刷新二维码</span>
+					</div>
+                   <img class="ewmimg" src="images/ewma.png"/>
+                   <p class="text">扫码支付2</p>
+               </div>
+               <div class="text">
+                   <p class="first">
+                   	<span class="text-left">实付款:</span>
+                   	<span class="RMB-icon">￥</span>
+                   	<span class="RMB"></span>
+                   	<span class="refresh"></span>
+                   </p>
+                   <p>
+                   	<span class="text-left">订单类型: </span>
+                   	<span class="text-right">报价订单费</span>
+                   </p>
+                   <p>
+                   	<span class="text-left">交易类型:</span>
+					<span class="text-right">画客网担保交易</span>
+                   </p>
+                   <!-- <a href="javascript:;" class="TzLink">跳转网页版微信支付>></a> -->
+                   <a href="javascript:;" class="TzLink"></a>
+               </div>
+           </div>
+           <div class="ewm" style="display: none;">
+               <div class="dqye2">
+                   <span class="zhye">余额：</span>
+                   <span class="color">￥<span class="money"></span>元</span>
+                   <p class="notMoreBalance">您的余额不足，请充值！</p>
+                   <br>
+                   <span class="qrzf">确认支付</span>
+                   <span class="zhcz">账户充值</span>
+               </div>
+               <div class="text">
+                   <p class="first">
+                   	<span class="text-left">实付款:</span>
+                   	<span class="RMB-icon">￥</span>
+                   	<span class="RMB"></span>
+                   	<span class="refresh"></span>
+                   </p>
+                   <p>
+					<span class="text-left">订单类型: </span>
+                    <span class="text-right">报价订单费</span>
+                   </p>
+                   <p>
+					<span class="text-left">交易类型: </span>
+                    <span class="text-right">画客网担保交易</span>
+                   </p>
+                   <!-- <a href="javascript:;" class="TzLink">跳转网页版微信支付>></a> -->
+               </div>             
+           </div>
+	</div>
+
+	<div class="smrq">
+        <div class="smrqTop">
+            <span class="smTop">请选择你稀罕的方式进行充值</span>
+            <span class="close"></span>
+        </div>
+        <ul style="height: 40px;">
+            <li class="cur" style="height: 39px ; margin-top: 1px; width:130px;" >
+                <span class="ss zfb"></span>
+                <span>支付宝支付</span>
+            </li>
+            <li style="height: 39px ; margin-top: 1px; width:130px;" >
+                <span class="ss wx"></span>
+                <span>微信支付</span>
+            </li>
+        </ul>
+        <div class="sewm">
+            <input class="payCashApplys" onkeyup="clearNoNum(this)" type="text" placeholder="请输入充值金额"/>
+            <img class="payCashApplyImg" width="170" height="170" src="images/zwwem.png"/>
+            <p class="color">￥<i class="payZxMoney">0.00</i>元</p>
+        </div>
+        <div class="sewm" style="display:none">
+            <input data-type="WxPay" type="text" onkeyup="clearNoNum(this)" class="payCashApplys" placeholder="请输入充值金额"/>
+            <img class="payCashApplyImg" width="170" height="170"  src="images/zwwem.png" />
+            <p class="color">￥<i class="payZxMoney">0.00</i>元</p>
+        </div>
+        <div class="wccz">
+            <p class="text" style="line-height:14px;">感谢你对画客网的支持，发票和提现请往个人管理中心提交申请！联系客服：<span class="blue">0571-86803103</span></p>
+        </div>
+        <div class="clear" style="height:1px;width:1px;"></div>
+    </div>
+</div>
+<div class="changePhonePouup" id="changePhonePouup" style="display:none;">
+	<p class="new-phone">
+		<span>手机号：</span>
+		<input id="new-phone-val" type="text">
+	</p>
+	<p class="new-pic">
+		<span></span>
+		<input id="new-pic-val" type="text">
+		<span class="code">
+			<img id="codePouup" src="https://www.huakewang.com/index.php/verifycode/index/2" alt="">
+		</span>
+	</p>
+	<p class="SMS-code">
+		<span>验证码：</span>
+		<input id="SMS-code-val" type="text">
+		<a id="SMS-code-txt" href="javascript:;">获取验证码</a>
+	</p>
+	<a id="ok-change-phone" href="javascript:;">确定</a>
+</div>
+<div id="newWebHtml" style="display:none;"></div>
+<script type="text/javascript">
+/**
+ * 遮罩弹出层代码
+ * @param  {[type]} mask  [遮罩层id]
+ * @param  {[type]} login [弹出层di]
+ * @param  {[type]} close [关闭按钮id]
+ * @param  {[type]} btn   [打开弹出层按钮id]
+ * @return {[type]}       [没有返回值]
+ */
+function popUp(mask,login,close,btn){
+	var oMask = document.getElementById(mask);
+	var oLogin = document.getElementById(login);
+
+	function displayNone(){
+		$(oMask).fadeOut();
+		$(oLogin).fadeOut();
+	}
+
+	function displayBlock(){
+		$(oMask).fadeIn(300);
+		$(oLogin).fadeIn(300);
+	}
+
+	function openNewLogin(){
+		var sHeight = document.documentElement.scrollHeight;
+		var sWidth = document.documentElement.scrollWidth;
+		var wHeight = document.documentElement.clientHeight;
+		oMask.style.height = sHeight + "px";
+		oMask.style.width = sWidth + "px";
+		displayBlock(); //显示弹出层
+		var dHeight = oLogin.offsetHeight;
+		var dWidth = oLogin.offsetWidth;
+		oLogin.style.left = (sWidth - dWidth) / 2 + "px";
+		oLogin.style.top = (wHeight - dHeight) / 2 + "px";
+
+		var oClose = document.getElementById(close);
+		oMask.onclick = oClose.onclick = function(){
+			displayNone(); //隐藏弹出层
+		}
+		return true;
+	}
+
+	// var oBtn = document.getElementById(btn);
+	// oBtn.onclick = function(){
+	// 	NewLoginDOM() && openNewLogin() && shoppingCart() && cycle();
+	// }
+	$("body").on('click', '.btnWrapTwo .agree.BtnS', function(event) {
+        event.preventDefault();
+		// getData(this) && openNewLogin();
+		openNewLogin();
+
+		//渲染弹出层的数字和文字
+		renderPopUp($(this).attr("data-modelId"));
+
+		getYeNum(); //获取余额
+    });	
+}
+
+/**
+ * 弹出层初始化
+ * @param  {[type]} ){} [description]
+ * @return {[type]}       [description]
+ */
+$(function(){
+	popUp("mask-detailed","pay-detailed","mask-close");
+});	
+
+/**支付宝，微信，画客网支付方式切换**/
+$('div.paymentMainDiv ul.zfUl li').click(function() {
+	$('div.paymentMainDiv ul.zfUl li').removeClass('cur');
+	$(this).toggleClass('cur');
+	var liIndex = $('div.paymentMainDiv ul.zfUl li').index($(this));
+	$('div.ewm').css({
+		'display': 'none'
+	});
+	$('div.ewm:eq(' + liIndex + ')').css({
+		'display': 'block'
+	});
+	showClickPay(); //二维码显示遮罩层。
+	//清除定时器轮询订单状态
+	window.PayStausTimer.map(function (value, index, elem) {
+		clearInterval(value);
+	});
+});
+/**支付宝，微信，画客网支付方式切换**/
+
+/*
+*渲染弹出层的数字和文字
+*/
+function renderPopUp(eq){
+	var eq = parseInt(eq);
+	// var val = window.orderDemandListData[eq];
+	var val = {};
+	var bigData = window.orderDemandListData;
+	for (var i = 0; i < bigData.length; i++) {
+		var element = bigData[i];
+		if (element.project_id == eq) {
+			val = element;
+			break;
+		}
+	}
+	$("#pay-detailed .person-right-title").html("项目名称："+val.project_name);
+	$("#pay-detailed .person-right-address").html("服务方："+val.nick_name_from);
+	var sumPrice = val.price_after_discount ? val.price_after_discount : (val.price_before_discount ? val.price_before_discount : 0);
+	$("#pay-detailed .red-price").html("￥"+sumPrice + "元");
+	$(".ewm .RMB").html(sumPrice); //更新二维码右边的总价
+	$("#pay-detailed .explain .money").html("￥"+val.pay_stages[0].pay_amount + "元");
+
+	//绑定二维码遮罩层的支付ID
+	$(".ewm .ewmLeft .click-pay").attr("data-payid", val.project_id);
+
+}
+
+</script>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/social.css" />
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+            } else {
+
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('#main-body-bottom').load('footer.html'); //加载页码
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+
+            }
+        });
+    </script>
+    <style>
+        #main-body.allDistinguish-main-body .allDistinguish-main ul.ulList li.curr {
+            color: #ffffff;
+            background: #00a0e9;
+            border-radius: 5px;
+        }
+        
+        #main-body.allDistinguish-main-body .allDistinguish-main ul.ulList li {
+            cursor: pointer;
+        }
+        
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header.header-neiye div.yidenglu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye" style="background-color: #fff;box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);"></div>
+
+        <!-- 头部 end -->
+        <div id="main-body" class="allDistinguish-main-body">
+            <div style="clear:both;"></div>
+            <div class="allDistinguish-main auto">
+                <div style="height:780px;width:1px; float:left;position:absolute;border-left:1px solid #eeeeee;margin:0 0 0 150px;"></div>
+                <ul class="ulList">
+                    <span class="li-1">品牌建设</span>
+                    <li>品牌策划</li>
+                    <li>VI/CI设计</li>
+                    <li>LOGO标志设计</li>
+                    <li>吉祥物</li>
+                    <li>品牌文案</li>
+                    <li>品牌营销</li>
+                </ul>
+                <ul class="ulList">
+                    <span class="li-1">平面设计</span>
+                    <li>画册设计</li>
+                    <li>海报设计</li>
+                    <li>易拉宝</li>
+                    <li>PPT/演示</li>
+                    <li>包装设计</li>
+                    <li>封面设计</li>
+                    <li>banner</li>
+                    <li>名片/卡片</li>
+                    <li>照片/图片处理</li>
+                </ul>
+                <ul class="ulList">
+                    <span class="li-1">交互界面</span>
+                    <li> 用户体验 </li>
+                    <li> 交互原型 </li>
+                    <li> 软件界面 </li>
+                    <li> 移动端界面 </li>
+                    <li> 游戏界面 </li>
+                    <li> 网站界面 </li>
+                    <li> 界面开发 </li>
+                </ul>
+                <ul class="ulList">
+                    <span class="li-1">网站建设</span>
+                    <li> 网站策划 </li>
+                    <li> 网页设计 </li>
+                    <li> 专题活动 </li>
+                    <li> banner </li>
+                    <li> 前段开发 </li>
+                    <li> html5 </li>
+                    <li> SEO优化 </li>
+                </ul>
+                <ul class="ulList">
+                    <span class="li-1">动漫手绘</span>
+                    <li> 墙绘 </li>
+                    <li> 装饰画 </li>
+                    <li> FLASH </li>
+                    <li> 人物设定 </li>
+                    <li> 游戏插画 </li>
+                    <li> 宣传插画 </li>
+                    <li> 儿童插画 </li>
+                    <li> 表情设计 </li>
+                    <li> 推广漫画 </li>
+                    <li> 图像处理 </li>
+                </ul>
+                <ul class="ulList">
+                    <span class="li-1">空间设计</span>
+                    <li> 商用/公装 </li>
+                    <li> 商场/店面展厅设计 </li>
+                    <li> 专卖店设计 </li>
+                    <li> 导视设计 </li>
+                    <li> 美陈设计 </li>
+                    <li> 家装设计 </li>
+                </ul>
+                <ul class="ulList">
+                    <span class="li-1">三维制作</span>
+                    <li> 三维动画 </li>
+                    <li> 三维特效 </li>
+                    <li> 园林景观 </li>
+                    <li> 建模 </li>
+                    <li> 渲染 </li>
+                    <li> 效果图 </li>
+                    <li> 建筑设计 </li>
+                    <li> 雕塑设计 </li>
+                    <li> 环艺 </li>
+                    <li> 路桥/水电/其他 </li>
+                </ul>
+                <ul class="ulList">
+                    <span class="li-1">工业艺术</span>
+                    <li> 产品外观 </li>
+                    <li> 电子产品 </li>
+                    <li> 礼品设计 </li>
+                    <li> 珠宝设计 </li>
+                    <li> 服装设计与定制 </li>
+                </ul>
+                <ul class="ulList">
+                    <span class="li-1">程序开发</span>
+                    <li> DIV+CSS+JS前端 </li>
+                    <li> HTML5 </li>
+                    <li> 网站开发 </li>
+                    <li> 微信开发 </li>
+                    <li> APP开发 </li>
+                    <li> 桌面软件开发 </li>
+                    <li> 数据库/服务器 </li>
+                    <li> 调试/评测SEO </li>
+                </ul>
+                <ul class="ulList">
+                    <span class="li-1">影视制作</span>
+                    <li> 宣传片 </li>
+                    <li> 广告片 </li>
+                    <li> 影视特效 </li>
+                    <li> 拍摄 </li>
+                    <li> 纪实 </li>
+                    <li> 影视后期 </li>
+                    <li> 配音录音 </li>
+                </ul>
+                <ul class="ulList">
+                    <span class="li-1">文案策划</span>
+                    <li> 文章/说明/讲稿 </li>
+                    <li> 论文写作 </li>
+                    <li> 影视剧本 </li>
+                    <li> 游戏策划 </li>
+                    <li> 活动策划 </li>
+                    <li> 营销/推广策划 </li>
+                    <li> 商业计划书 </li>
+                    <li> 经验/点子 </li>
+                    <li> 策划其他 </li>
+                </ul>
+            </div>
+            <a href="designer.html">
+                <div class="quanbufenlei_div_1_but ">确认</div>
+            </a>
+        </div>
+
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        画客网
+    </title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/client/dialog.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+    <script src="js/plugs/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+            } else {
+                window.location.href = 'https://www.huakewang.com';
+            }
+        });
+    </script>
+    <script type="text/javascript" src="js/jqueryvalidation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jqueryvalidation/additional-methods.min.js"></script>
+    <script type="text/javascript" src="js/jqueryvalidation/messages_zh.js"></script>
+
+</head>
+
+<body style="background:#198ede;">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!-- 头部 end -->
+        <div id="main-body" style="">
+            <div class="register_main ">
+                <div class="top">
+                    <div class="top-left">欢迎登陆画客网</div>
+                    <div class="top-right">有意见或建议 , <a href="#" class="ll">对画客网说两句</a></div>
+                </div>
+                <div class="left">
+                    <div class="zctop" style="border:1px solid #fff;"></div>
+                    <div class="zcmain dlmain ">
+                        <form id="formzc">
+                            <div class="WrapZc">
+                                <div class="zcrows shouji" style="position: relative">
+                                    <span class="sp1"></span>
+                                    <input class="shoujiInput" type="text" name="pohone" placeholder="请输入手机号码" />
+                                    <span class="sp2yz sp2yz_message" style="color:red;position: absolute;right: 10px;top: 35px;"></span>
+                                </div>
+                                <div class="zcrows sjmm">
+                                    <span class="sp1"></span>
+                                    <input class="sjmmInput" type="password" name="possword" placeholder="请输入登陆密码" />
+                                    <a id="loginForget" style="float: right;display: block;margin: 35px 40px 0 0;color: orangered;cursor:pointer;">忘记密码</a>
+                                </div>
+                                <div class="zcrows yxyz">
+                                    <span class="sp3"></span>
+                                    <input class="yxyzInput" style="text-transform: uppercase;" type="text" maxlength="4" name="yanzhengma" placeholder="输入验证码" />
+                                    <span class="sp2yz">
+                                        <img id="wrapYZM" src="images/loading.gif"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="zcrows" style="border:none">
+                                <a class="qdzc" style="margin-left:170px;cursor: pointer;display: block;">确定登录</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="qth"></div>
+                    <div class="zhwrap">
+                        <a href="https://www.huakewang.com/wxopenapi/auth_redirect">
+                            <div class="wx"><span class="sp1"></span>&nbsp;&nbsp;微信</div>
+                        </a>
+                        <a href="https://www.huakewang.com/main/qq_oauth.html">
+                            <div class="qq"><span class="sp1"></span>&nbsp;&nbsp;QQ</div>
+                        </a>
+                        <a href="https://www.huakewang.com/main/sina_oauth.html">
+                            <div class="wb"><span class="sp1"></span>&nbsp;&nbsp;微博</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="rightText">还没有画客网账号?<a href="register.html"><span style="background: #FD5A00">注册</span></a></div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="clear:both;"></div>
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+
+</body>
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+    //弹窗提示
+    var numTeps = 10;
+
+    function alertUploadMsg(msg) {
+        var d = dialog({
+            fixed: true,
+            title: '提示',
+            content: msg
+        });
+        d.show();
+        setTimeout(function() {
+            d.close().remove();
+        }, 2000);
+    }
+    $(function() {
+        var urlLocalhost = "https://www.huakewang.com/";
+        var newhuakwang = "hkw_newapi/";
+        $("#loginForget").click(function() {
+            if ($(".shoujiInput").hasClass("borderRed")) {
+                window.location.href = "forget-pass.html";
+            } else {
+                window.location.href = "forget-pass.html?phone=" + $(".shoujiInput").val();
+            };
+        });
+        //登录窗口信息验证
+        $('#formzc input').keyup(function() {
+            //验证码
+            if ($(this).is('.yxyzInput')) {
+                if (this.value == "" || (this.value != "" && !/^[a-zA-Z0-9]{4}$/.test(this.value))) {
+                    $(this).addClass("borderRed");
+                } else {
+                    $(this).removeClass("borderRed");
+                }
+            };
+            //密码
+            if ($(this).is('.sjmmInput')) {
+                if (this.value == "" || (this.value != "" && !/^[a-zA-Z0-9]{6,16}$/.test(this.value))) {
+                    $(this).addClass("borderRed");
+                } else {
+                    $(this).removeClass("borderRed");
+                }
+            };
+            //验证手机号
+            if ($(this).is('.shoujiInput')) {
+                if (this.value == "" || (this.value != "" && !/^((\(\d{2,3}\))|(\d{3}\-))?(13|14|15|16|17|18|19)\d{9}$/.test(this.value))) {
+                    $(this).addClass("borderRed");
+                } else {
+                    $(this).removeClass("borderRed");
+                };
+            };
+        }).blur(function() {
+            $(this).triggerHandler("keyup");
+        });
+        //获取注册状态
+        $('.shoujiInput').on('blur', function() {
+            var _this_val = $(this).val();
+            $.ajax({
+                url: urlLocalhost + newhuakwang + "get_reg_status",
+                type: "post",
+                dataType: "json",
+                data: {
+                    username: _this_val
+                },
+                success: function(data) {
+                    if (data.success) {
+                        if (data.data.reg_status == 0) {
+                            $('.sp2yz.sp2yz_message:first').html("该用户未被注册！请注册后再进行登录！");
+                        };
+                    };
+                }
+            });
+        });
+        $('.shoujiInput').on('keyup', function() {
+            $('.sp2yz.sp2yz_message:first').html("")
+        });
+
+        setTimeout(function() {
+            $('#wrapYZM').attr('src', urlLocalhost + 'index.php/verifycode/index/2');
+        }, 100);
+        $('#wrapYZM').on('click', function() {
+            numTeps++;
+            $(this).attr('src', 'images/loading.gif');
+            setTimeout(function() {
+                $('#wrapYZM').attr('src', urlLocalhost + 'index.php/verifycode/index/' + numTeps);
+            }, 500);
+        });
+
+    });
+    //获取验证码（ http://www.huakewang.com/index.php/verifycode/index/2 ）
+    $('#wrapYZM').click(function() {
+        getYZM();
+    });
+
+    function getYZM() {
+        numTeps++;
+        $('#wrapYZM').attr('src', 'images/loading.gif');
+        setTimeout(function() {
+            $('#wrapYZM').attr("src", 'https://www.huakewang.com/index.php/verifycode/index/' + numTeps);
+        }, 500);
+    };
+    var _qdzc = document.getElementsByClassName('qdzc')[0];
+    _qdzc.onclick = null;
+    _qdzc.onclick = function() {
+        var _cookie = $.cookie('user_id');
+        if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+            denglu_login_click11111();
+        } else {
+            alertUploadMsg('您已经登录！');
+            setTimeout(function() {
+                window.history.go(-1);
+            }, 500)
+        }
+    };
+
+    function denglu_login_click11111() {
+        //登录窗最终验证
+        var user_login = {
+            "nick_name": $('#formzc input[name="pohone"]').val(),
+            "password": $('#formzc input[name="possword"]').val(),
+            "yzm": $('#formzc input[name="yanzhengma"]').val(),
+            "code": $('#formzc input[name="yanzhengma"]').val(),
+            "keepLoading": $(".new_login_input4").prop("checked")
+        };
+        $("#new_login input[required]").trigger('keyup');
+        var numError = $(this).parents("#formzc").find('.borderRed').length;
+        if (numError) {
+
+        } else {
+            //ajax验证图形验证码
+            // $.ajax({
+            //     url: "https://www.huakewang.com/verifycode/check",
+            //     type: "POST",
+            //     dataType: "JSON",
+            //     data: {
+            //         secode: user_login.yzm.toUpperCase()
+            //     },
+            //     success: function(res) {
+            //         if (res.success) {
+            //             dlLast();
+            //         } else {
+            //             alertUploadMsg("图形验证码错误");
+            //             $('#wrapYZM').click();
+            //         };
+            //     }
+            // });
+            $.ajax({
+                url: urlLocalhost + newhuakwang + "login",
+                type: "post",
+                dataType: "json",
+                data: {
+                    username: user_login.nick_name,
+                    password: user_login.password,
+                    code:user_login.code
+                },
+                success: function(data) {
+                    //登录成功[返回头像地址，用户姓名，手机号码，qq..]
+                    if (data.success) {
+                        // setCookie("id", data.data.id);
+                        // setCookie("user_id", data.data.id);
+//                            setCookie("lng", data.data.longitude);
+//                            setCookie("lat", data.data.latitude);
+                        //设置头像，昵称和手机号
+                        // setCookie("avatar",data.data.path_thumb);
+//                            setCookie("nick_name", data.data.nick_name);
+                        // setCookie("mobile",data.data.mobile);
+                        setCookie("as", data.data.is_auth);
+                        // 设置环信id到cookie里
+                        // setCookie("hxid", data.data.hxid);
+                        alertUploadMsg('登录成功！');
+                        setTimeout(function() {
+                            window.history.go(-1);
+                        }, 700);
+                    } else {
+                        alertUploadMsg(data.message);
+                    }
+                },
+                error: function(data) {
+                    alertUploadMsg('登录失败！');
+                }
+            })
+        }
+    }
+</script>
+
+</html>

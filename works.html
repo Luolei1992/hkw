@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="优秀网站欣赏，海报设计欣赏，优秀室内设计欣赏，店铺设计欣赏，商城设计欣赏，动画欣赏">
+    <meta name="description" content="提供优秀设计作品欣赏">
+    <meta name="abstract" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>设计作品画客网，网画客；网罗天下设计英才-中国知名平面网页界面_室内工业珠宝独立设计师排行榜</title>
+    <link rel="shortcut icon" href="images/logo.ico " type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fenye.css">
+    <link rel="stylesheet" href="css/client/dialog.css">
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="css/pr.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var _cookie = $.cookie('user_id');
+            if (_cookie == undefined || _cookie == "null" || _cookie == null || _cookie == "undefined" || _cookie == "") {
+                $('#header.header-neiye').load('head.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+            } else {
+                $('#header.header-neiye').load('head_success.html'); //加载导航
+                $('.footer_on').load('bottom.html');
+                $('#alertNoLoginMessage').css('display', 'none');
+            };
+            $("#nav .hkw_header_nav_ul a").each(function() {
+                if (location.href.indexOf($(this).attr("href")) > -1) {
+                    $(this).children().css("color", "#0679CA");
+                }
+            });
+        });
+    </script>
+    <style>
+        #nav a.but-dl {
+            display: none;
+        }
+        
+        #header div.yidenglu {
+            display: block;
+        }
+        
+        .headnav2 {
+            color: #2FA4FF !important;
+        }
+        
+        .hkw-work-list li {
+            height: auto;
+        }
+        
+        .hkw-work-img img {
+            width: 100%;
+        }
+        
+        #flexslider ul.slides {
+            height: 352px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body style="overflow-x: hidden;">
+    <div class="containers">
+        <!-- 头部 start -->
+        <div id="header" class="header-neiye"></div>
+        <!--轮播图-->
+        <div id="flexslider" class="flexslider">
+            <span class="flexslider-left"></span>
+            <span class="flexslider-right"></span>
+            <ul class="slides">
+                <li>
+                    <img src="images/banner_project.png" />
+                </li>
+                <li>
+                    <img src="images/banner_project2.png" />
+                </li>
+            </ul>
+        </div>
+        <!--轮播-->
+        <div class="container-main-background">
+            <div class="container-main">
+                <div class="hkw-work-link">
+                    <a href="javascript:void(0);" data_val="hits" data_custom="f" class="hkw-link-pub hkw_link_pub hkw_link_pubColor">首页推荐</a>
+                    <a href="javascript:void(0);" data_val="add_time" data_custom="all" class="hkw-link-pub hkw_link_pub">最新发布</a>
+                    <div class="hkw-link-pub">全部类别
+                        <i class="triangle"></i>
+                        <div class="hkw-work-select">
+                            <a href="works-list.html?tag=1">平面设计</a>
+                            <a href="works-list.html?tag=2">交互设计</a>
+                            <a href="works-list.html?tag=3">三维艺术</a>
+                            <a href="works-list.html?tag=4">网页设计</a>
+                            <a href="works-list.html?tag=5">艺术绘画</a>
+                            <a href="works-list.html?tag=6">工业设计</a>
+                            <a href="works-list.html?tag=7">动画/影视</a>
+                            <a href="works-list.html?tag=7">摄影艺术</a>
+                            <a href="works-list.html?tag=7">产品设计</a>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0);" class="number newWorkNumber">今日新增：<span></span></a>
+                    <a href="javascript:void(0);" class="number totalWorkNumber">作品数：<span></span></a>
+                </div>
+                <ul class="clearfix hkw-work-list" id="indexWorkLis">
+                    <!--作品-->
+                </ul>
+                <div id="main-body-bottom" class="auto" style=" margin: 100px auto 10px auto;"></div>
+
+                <!--分页开始-->
+                <div id="kkpager"></div>
+                <!--分页结束-->
+            </div>
+        </div>
+
+        <!--底部开始-->
+        <div class="footer_on"></div>
+        <!--底部结束-->
+    </div>
+</body>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/client/dialog-plus-min.js"></script>
+<script type="text/javascript" src="js/data/pubXhr.js"></script>
+<script type="text/javascript" src="js/data/worksXhr.js"></script>
+<script id="pages" type="text/javascript" src="js/plugs/jq.page.js"></script>
+<script type="text/javascript" src="js/plugs/jquery.cookie.js"></script>
+
+</html>
